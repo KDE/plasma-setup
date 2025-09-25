@@ -13,11 +13,11 @@
 #include <KSharedConfig>
 
 #include "authhelper.h"
-#include "config-kiss.h"
+#include "config-plasma-setup.h"
 
-const QString SDDM_AUTOLOGIN_CONFIG_PATH = QStringLiteral("/etc/sddm.conf.d/99-kde-initial-system-setup.conf");
+const QString SDDM_AUTOLOGIN_CONFIG_PATH = QStringLiteral("/etc/sddm.conf.d/99-plasma-setup.conf");
 
-ActionReply KISSAuthHelper::createnewuserautostarthook(const QVariantMap &args)
+ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap &args)
 {
     ActionReply reply;
 
@@ -47,18 +47,18 @@ ActionReply KISSAuthHelper::createnewuserautostarthook(const QVariantMap &args)
         return reply;
     }
 
-    QString initialSetupExecutablePath = QStringLiteral(KDE_INITIAL_SETUP_LIBEXECDIR) + QStringLiteral("/kde-initial-system-setup");
-    if (initialSetupExecutablePath.isEmpty()) {
+    QString plasmaSetupExecutablePath = QStringLiteral(PLASMA_SETUP_LIBEXECDIR) + QStringLiteral("/plasma-setup");
+    if (plasmaSetupExecutablePath.isEmpty()) {
         reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(i18n("Failed to find the initial setup executable path."));
+        reply.setErrorDescription(i18n("Failed to find the Plasma Setup executable path."));
         return reply;
     }
 
     QTextStream stream(&desktopFile);
     stream << "[Desktop Entry]\n";
     stream << "Type=Application\n";
-    stream << "Name=Remove KISS Autologin\n";
-    stream << "Exec=sh -c \"" << initialSetupExecutablePath << " --remove-autologin && rm --force '" << desktopFilePath << "'\"\n";
+    stream << "Name=Remove Plasma Setup Autologin\n";
+    stream << "Exec=sh -c \"" << plasmaSetupExecutablePath << " --remove-autologin && rm --force '" << desktopFilePath << "'\"\n";
     stream << "X-KDE-StartupNotify=false\n";
     stream << "NoDisplay=true\n";
     desktopFile.close();
@@ -68,7 +68,7 @@ ActionReply KISSAuthHelper::createnewuserautostarthook(const QVariantMap &args)
     return reply;
 }
 
-ActionReply KISSAuthHelper::disablesystemdunit(const QVariantMap &args)
+ActionReply PlasmaSetupAuthHelper::disablesystemdunit(const QVariantMap &args)
 {
     Q_UNUSED(args);
 
@@ -79,7 +79,7 @@ ActionReply KISSAuthHelper::disablesystemdunit(const QVariantMap &args)
                                     QStringLiteral("org.freedesktop.systemd1.Manager"),
                                     QDBusConnection::systemBus());
 
-    QStringList unitFiles = {QStringLiteral("kde-initial-system-setup.service")};
+    QStringList unitFiles = {QStringLiteral("plasma-setup.service")};
     bool runtime = false; // Disable permanently, not just for runtime
 
     QDBusPendingReply<> dbusReply = systemdInterface.call(QStringLiteral("DisableUnitFiles"), unitFiles, runtime);
@@ -94,7 +94,7 @@ ActionReply KISSAuthHelper::disablesystemdunit(const QVariantMap &args)
     return ActionReply::SuccessReply();
 }
 
-ActionReply KISSAuthHelper::removeautologin(const QVariantMap &args)
+ActionReply PlasmaSetupAuthHelper::removeautologin(const QVariantMap &args)
 {
     Q_UNUSED(args);
 
@@ -114,7 +114,7 @@ ActionReply KISSAuthHelper::removeautologin(const QVariantMap &args)
     return ActionReply::SuccessReply();
 }
 
-ActionReply KISSAuthHelper::setnewuserglobaltheme(const QVariantMap &args)
+ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args)
 {
     ActionReply reply;
 
@@ -142,7 +142,7 @@ ActionReply KISSAuthHelper::setnewuserglobaltheme(const QVariantMap &args)
     }
 
     // Set the global theme for the new user
-    QString sourceFilePath = QStringLiteral("/run/kde-initial-system-setup/.config/kdeglobals");
+    QString sourceFilePath = QStringLiteral("/run/plasma-setup/.config/kdeglobals");
     QString destFilePath = QStringLiteral("/home/%1/.config/kdeglobals").arg(username);
 
     if (!QFile::copy(sourceFilePath, destFilePath)) {
@@ -154,7 +154,7 @@ ActionReply KISSAuthHelper::setnewuserglobaltheme(const QVariantMap &args)
     return ActionReply::SuccessReply();
 }
 
-ActionReply KISSAuthHelper::setnewuserdisplayscaling(const QVariantMap &args)
+ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &args)
 {
     ActionReply reply;
 
@@ -167,7 +167,7 @@ ActionReply KISSAuthHelper::setnewuserdisplayscaling(const QVariantMap &args)
     QString username = args[QStringLiteral("username")].toString();
 
     // Copy display scaling configuration files to the new user
-    QString sourceBasePath = QDir::cleanPath(QStringLiteral("/run/kde-initial-system-setup/.config"));
+    QString sourceBasePath = QDir::cleanPath(QStringLiteral("/run/plasma-setup/.config"));
     QString destBasePath = QDir::cleanPath(QStringLiteral("/home/") + username + QStringLiteral("/.config"));
     QDir destDir(destBasePath);
     if (!destDir.exists()) {
@@ -191,7 +191,7 @@ ActionReply KISSAuthHelper::setnewuserdisplayscaling(const QVariantMap &args)
     return ActionReply::SuccessReply();
 }
 
-ActionReply KISSAuthHelper::setnewuserhomedirectoryownership(const QVariantMap &args)
+ActionReply PlasmaSetupAuthHelper::setnewuserhomedirectoryownership(const QVariantMap &args)
 {
     ActionReply reply;
 
@@ -216,7 +216,7 @@ ActionReply KISSAuthHelper::setnewuserhomedirectoryownership(const QVariantMap &
     return ActionReply::SuccessReply();
 }
 
-ActionReply KISSAuthHelper::setnewusertempautologin(const QVariantMap &args)
+ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &args)
 {
     ActionReply reply;
 
@@ -245,4 +245,4 @@ ActionReply KISSAuthHelper::setnewusertempautologin(const QVariantMap &args)
     return ActionReply::SuccessReply();
 }
 
-KAUTH_HELPER_MAIN("org.kde.initialsystemsetup", KISSAuthHelper)
+KAUTH_HELPER_MAIN("org.kde.plasmasetup", PlasmaSetupAuthHelper)

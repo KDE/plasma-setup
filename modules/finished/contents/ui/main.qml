@@ -9,10 +9,10 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
-import org.kde.initialsystemsetup.components as KissComponents
-import org.kde.initialsystemsetup
+import org.kde.plasmasetup.components as PlasmaSetupComponents
+import org.kde.plasmasetup
 
-KissComponents.SetupModule {
+PlasmaSetupComponents.SetupModule {
     id: root
 
     nextEnabled: true

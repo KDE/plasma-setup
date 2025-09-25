@@ -1,0 +1,34 @@
+# -*- mode: properties -*-
+
+# SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+#
+# SPDX-License-Identifier: LGPL-2.1-or-later
+
+# tmpfiles.d file for creating the home directory of the plasma-setup
+# user, which is required for Plasma Setup to run correctly.
+#
+# /usr/lib/tmpfiles.d/plasma-setup.conf
+
+# Create the home dir of the plasma-setup user
+d /run/plasma-setup - - - - -
+
+# Copy the autostart file so it runs on login
+C /run/plasma-setup/.config/autostart/plasma-setup.desktop - - - - ${CMAKE_INSTALL_FULL_DATADIR}/plasma-setup/plasma-setup.desktop
+
+# Prevent plasma-welcome from running
+#
+# This works because plasma-welcome checks this config to decide whether to
+# run or not. A bit hacky, might break if plasma-welcome changes.
+f /run/plasma-setup/.config/plasma-welcomerc - - - - [General]\nLastSeenVersion=6.4.2
+
+# Disable screen locking, leaving only screen dimming / blanking enabled.
+#
+# The plasma-setup special user does not have a password (nor would it be appropriate
+# to require one during first user setup).
+f /run/plasma-setup/.config/kscreenlockerrc - - - - [Daemon]\nAutolock=false\nTimeout=0
+
+# Disable KWallet so it doesn't bother the user during initial setup
+f /run/plasma-setup/.config/kwalletrc - - - - [Wallet]\nEnabled=false
+
+# Recursively set the ownership of the home directory
+Z /run/plasma-setup 0750 plasma-setup plasma-setup - -

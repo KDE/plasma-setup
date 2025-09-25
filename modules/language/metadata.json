@@ -1,5 +1,5 @@
 {
-    "KPackageStructure": "KDE/InitialSystemSetup",
+    "KPackageStructure": "KDE/PlasmaSetup",
     "KPlugin": {
         "Authors": [
             {
@@ -52,7 +52,7 @@
         "Description[uk]": "Дозволити користувачеві встановлювати мову інтерфейсу системи.",
         "Description[zh_CN]": "允许用户设置系统语言。",
         "Description[zh_TW]": "允許使用者設定系統語言。",
-        "Id": "org.kde.initialsystemsetup.language",
+        "Id": "org.kde.plasmasetup.language",
         "License": "LGPL-2.1-or-later",
         "Name": "Language",
         "Name[ar]": "اللغة",
@@ -80,6 +80,6 @@
         "Website": "https://kde.org"
     },
     "NoDisplay": true,
-    "X-KDE-ParentApp": "org.kde.initialsystemsetup",
+    "X-KDE-ParentApp": "org.kde.plasmasetup",
     "X-KDE-Weight": 0
 }

@@ -3,10 +3,10 @@
 # SPDX-License-Identifier: LGPL-2.1-or-later
 
 [Desktop Entry]
-Exec=${CMAKE_INSTALL_FULL_LIBEXECDIR}/kde-initial-system-setup
+Exec=${CMAKE_INSTALL_FULL_LIBEXECDIR}/plasma-setup
 NoDisplay=true
 Type=Application
-Name=KDE Initial System Setup
+Name=Plasma Setup
 Name[ar]=الإعداد الأولي لنظام كيدي
 Name[ca]=Configuració inicial del sistema KDE
 Name[ca@valencia]=Configuració inicial del sistema KDE
@@ -49,5 +49,5 @@ Comment[uk]=Виконати початкове налаштовування с�
 Comment[zh_CN]=运行 KDE 的初始系统设置
 Comment[zh_TW]=為 KDE 進行初始系統設定
 Icon=kde
-AutostartCondition=unless-exists kde-initial-setup-done
+AutostartCondition=unless-exists plasma-setup-done
 X-KDE-StartupNotify=false

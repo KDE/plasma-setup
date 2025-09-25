@@ -3,25 +3,25 @@
 # SPDX-License-Identifier: LGPL-2.0-or-later
 
 add_subdirectory(account)
-kpackage_install_package(account org.kde.initialsystemsetup.account packages plasma)
+kpackage_install_package(account org.kde.plasmasetup.account packages plasma)
 
 # add_subdirectory(cellular)
-# kpackage_install_package(cellular org.kde.initialsystemsetup.cellular packages plasma)
+# kpackage_install_package(cellular org.kde.plasmasetup.cellular packages plasma)
 
 add_subdirectory(finished)
-kpackage_install_package(finished org.kde.initialsystemsetup.finished packages plasma)
+kpackage_install_package(finished org.kde.plasmasetup.finished packages plasma)
 
 add_subdirectory(keyboard)
-kpackage_install_package(keyboard org.kde.initialsystemsetup.keyboard packages plasma)
+kpackage_install_package(keyboard org.kde.plasmasetup.keyboard packages plasma)
 
 add_subdirectory(language)
-kpackage_install_package(language org.kde.initialsystemsetup.language packages plasma)
+kpackage_install_package(language org.kde.plasmasetup.language packages plasma)
 
 add_subdirectory(prepare)
-kpackage_install_package(prepare org.kde.initialsystemsetup.prepare packages plasma)
+kpackage_install_package(prepare org.kde.plasmasetup.prepare packages plasma)
 
 add_subdirectory(time)
-kpackage_install_package(time org.kde.initialsystemsetup.time packages plasma)
+kpackage_install_package(time org.kde.plasmasetup.time packages plasma)
 
 add_subdirectory(wifi)
-kpackage_install_package(wifi org.kde.initialsystemsetup.wifi packages plasma)
+kpackage_install_package(wifi org.kde.plasmasetup.wifi packages plasma)

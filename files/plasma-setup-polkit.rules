@@ -4,14 +4,14 @@
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-// Polkit rule allowing the initial system setup to run actions without requiring interactive authentication.
+// Polkit rule allowing Plasma Setup to run actions without requiring interactive authentication.
 //
-// /etc/polkit-1/rules.d/kde-initial-system-setup.rules
+// /etc/polkit-1/rules.d/plasma-setup.rules
 
 polkit.addRule(function (action, subject) {
-    polkit.log("kde-initial-system-setup: action: " + action + ", subject: " + subject);
+    polkit.log("plasma-setup: action: " + action + ", subject: " + subject);
 
-    if (subject.user !== "kde-initial-system-setup") {
+    if (subject.user !== "plasma-setup") {
         return;
     }
 

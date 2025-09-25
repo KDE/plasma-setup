@@ -8,7 +8,7 @@
 
 using namespace KAuth;
 
-class KISSAuthHelper : public QObject
+class PlasmaSetupAuthHelper : public QObject
 {
     Q_OBJECT
 
@@ -26,9 +26,9 @@ public Q_SLOTS:
     ActionReply createnewuserautostarthook(const QVariantMap &args);
 
     /**
-     * Disables the systemd unit for the initial system setup.
+     * Disables the systemd unit for Plasma Setup.
      *
-     * This action is used to disable the systemd unit which runs the initial system setup
+     * This action is used to disable the systemd unit which runs Plasma Setup
      * once the first user has been created.
      *
      * @param args The arguments passed to the action (not used here).
@@ -37,7 +37,7 @@ public Q_SLOTS:
     ActionReply disablesystemdunit(const QVariantMap &args);
 
     /**
-     * Removes the configuration file that enables autologin for KISS.
+     * Removes the configuration file that enables autologin for Plasma Setup.
      *
      * @param args The arguments passed to the action (not used here).
      * @return An ActionReply indicating success or failure.
@@ -57,7 +57,7 @@ public Q_SLOTS:
      * Sets the display scaling for the newly created user.
      *
      * Copies a few configurations files containing the chosen display scaling options
-     * from the KISS user to the new user, namely:
+     * from the plasma-setup user to the new user, namely:
      * - ~/.config/kwinrc
      * - ~/.config/kwinoutputconfig.json
      *
@@ -71,7 +71,7 @@ public Q_SLOTS:
      * Sets the ownership of the new user's home directory to the newly created user.
      *
      * This is necessary to ensure that the new user has proper ownership of their home directory
-     * after KISS has added files like the autostart hook, otherwise when the new user logs in,
+     * after Plasma Setup has added files like the autostart hook, otherwise when the new user logs in,
      * they may not have the correct permissions to access their own files.
      *
      * @param args The arguments passed to the action, which should include:
@@ -84,7 +84,7 @@ public Q_SLOTS:
      * Sets the configuration for the newly created user to login automatically.
      *
      * This sets an autologin config with `Relogin=true`, so we can switch from the
-     * KISS user to the new user when setup is complete.
+     * plasma-setup user to the new user when setup is complete.
      *
      * @param args The arguments passed to the action, which should include:
      * - String: "username": The username of the newly created user.

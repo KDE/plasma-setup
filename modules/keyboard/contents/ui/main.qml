@@ -14,12 +14,12 @@ import QtQuick.Controls
 import org.kde.kirigami as Kirigami
 import org.kde.kitemmodels as KItemModels
 
-import org.kde.initialsystemsetup
-import org.kde.initialsystemsetup.components as KissComponents
+import org.kde.plasmasetup
+import org.kde.plasmasetup.components as PlasmaSetupComponents
 
 import org.kde.plasma.private.kcm_keyboard as KCMKeyboard
 
-KissComponents.SetupModule {
+PlasmaSetupComponents.SetupModule {
     id: root
 
     cardWidth: Math.min(Kirigami.Units.gridUnit * 30, root.contentItem.width - Kirigami.Units.gridUnit * 2)

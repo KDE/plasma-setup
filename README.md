@@ -4,7 +4,7 @@
 -->
 
 
-# KDE Initial System Setup (KISS)
+# Plasma Setup
 
 The Out-of-the-box (OOTB) experience that greets a user after system
 installation or when starting up a new computer. Guides the user in creating the
@@ -28,7 +28,7 @@ system's first user account and configuring initial settings.
 - Clone the repository:
 
 ```bash
-git clone https://invent.kde.org/plasma/kiss.git
+git clone https://invent.kde.org/plasma/plasma-setup.git
 ```
 
 - Build and install:
@@ -48,7 +48,7 @@ sudo systemd-sysusers
 - Enable the systemd service:
 
 ```bash
-sudo systemctl enable kde-initial-system-setup.service
+sudo systemctl enable plasma-setup.service
 ```
 
 - Reboot:

@@ -1,8 +1,8 @@
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#include "initialsystemsetup_language_debug.h"
 #include "languageutil.h"
+#include "plasmasetup_language_debug.h"
 
 #include <KLocalizedString>
 
@@ -82,9 +82,9 @@ void LanguageUtil::applyLanguageAsSystemDefault()
         watcher->deleteLater();
 
         if (watcher->isError()) {
-            qCWarning(KDEInitialSystemSetupLanguage) << "Failed to set system default language:" << watcher->error().message();
+            qCWarning(PlasmaSetupLanguage) << "Failed to set system default language:" << watcher->error().message();
         } else {
-            qCInfo(KDEInitialSystemSetupLanguage) << "Successfully set system default language.";
+            qCInfo(PlasmaSetupLanguage) << "Successfully set system default language.";
         }
     });
 }

@@ -1,5 +1,5 @@
 {
-    "KPackageStructure": "KDE/InitialSystemSetup",
+    "KPackageStructure": "KDE/PlasmaSetup",
     "KPlugin": {
         "Authors": [
             {
@@ -52,7 +52,7 @@
         "Description[uk]": "Буде показано після завершення початкового налаштовування системи, і користувач зможе вносити зміни.",
         "Description[zh_CN]": "在初始系统设置完成后显示，此时用户可以提交更改。",
         "Description[zh_TW]": "在初始系統設定完成時顯示，讓使用者能提交變更。",
-        "Id": "org.kde.plasma.plasmainitialstart.finished",
+        "Id": "org.kde.plasmasetup.finished",
         "License": "LGPL-2.0-or-later",
         "Name": "Completed!",
         "Name[ar]": "اكتمل!",
@@ -80,6 +80,6 @@
         "Version": "1.0"
     },
     "NoDisplay": true,
-    "X-KDE-ParentApp": "org.kde.initialsystemsetup",
+    "X-KDE-ParentApp": "org.kde.plasmasetup",
     "X-KDE-Weight": 200
 }

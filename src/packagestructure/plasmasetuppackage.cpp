@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include "kdeinitialsystemsetuppackage.h"
+#include "plasmasetuppackage.h"
 
 #include <KPackage/Package>
 
-void KDEInitialSystemSetupPackageStructure::initPackage(KPackage::Package *package)
+void PlasmaSetupPackageStructure::initPackage(KPackage::Package *package)
 {
     package->setDefaultPackageRoot(QStringLiteral("plasma/packages"));
     package->addDirectoryDefinition("ui", QStringLiteral("ui"));
@@ -14,8 +14,8 @@ void KDEInitialSystemSetupPackageStructure::initPackage(KPackage::Package *packa
     package->setRequired("mainscript", true);
 }
 
-K_PLUGIN_CLASS_WITH_JSON(KDEInitialSystemSetupPackageStructure, "kde-initialsystemsetup-packagestructure.json")
+K_PLUGIN_CLASS_WITH_JSON(PlasmaSetupPackageStructure, "plasmasetup-packagestructure.json")
 
-#include "kdeinitialsystemsetuppackage.moc"
+#include "plasmasetuppackage.moc"
 
-#include "moc_kdeinitialsystemsetuppackage.cpp"
+#include "moc_plasmasetuppackage.cpp"

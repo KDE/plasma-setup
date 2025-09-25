@@ -3,7 +3,7 @@
 
 #include "keyboardutil.h"
 
-#include "initialsystemsetup_debug.h"
+#include "plasmasetup_debug.h"
 
 #include <KConfig>
 #include <KConfigGroup>
@@ -36,17 +36,17 @@ void KeyboardUtil::setLayout(const QString &layout, const QString &variant)
 void KeyboardUtil::applyLayout()
 {
     if (m_layout.name.isEmpty()) {
-        qCWarning(KDEInitialSystemSetup) << "No keyboard layout set.";
+        qCWarning(PlasmaSetup) << "No keyboard layout set.";
         return;
     }
 
 #ifdef QT_DEBUG
-    qCInfo(KDEInitialSystemSetup) << "Skipping actual layout application in debug mode. Would have applied layout:" << m_layout.name
-                                  << "with variant:" << m_layout.variant;
+    qCInfo(PlasmaSetup) << "Skipping actual layout application in debug mode. Would have applied layout:" << m_layout.name
+                        << "with variant:" << m_layout.variant;
     return;
 #endif
 
-    qCInfo(KDEInitialSystemSetup) << "Applying keyboard layout:" << m_layout.name << "with variant:" << m_layout.variant;
+    qCInfo(PlasmaSetup) << "Applying keyboard layout:" << m_layout.name << "with variant:" << m_layout.variant;
 
     applyLayoutForCurrentUser();
     applyLayoutAsSystemDefault();
@@ -87,9 +87,9 @@ void KeyboardUtil::applyLayoutAsSystemDefault()
     QDBusMessage resultMessage = QDBusConnection::systemBus().call(message);
 
     if (resultMessage.type() == QDBusMessage::ErrorMessage) {
-        qCWarning(KDEInitialSystemSetup) << "Failed to set system default keyboard layout:" << resultMessage.errorMessage();
+        qCWarning(PlasmaSetup) << "Failed to set system default keyboard layout:" << resultMessage.errorMessage();
     } else {
-        qCInfo(KDEInitialSystemSetup) << "Successfully set system default keyboard layout.";
+        qCInfo(PlasmaSetup) << "Successfully set system default keyboard layout.";
     }
 }
 

@@ -10,8 +10,8 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.initialsystemsetup
-import org.kde.initialsystemsetup.components as KissComponents
+import org.kde.plasmasetup
+import org.kde.plasmasetup.components as PlasmaSetupComponents
 
 Kirigami.Page {
     id: root
@@ -29,7 +29,7 @@ Kirigami.Page {
     property Control currentStepItem: null
     property Control nextStepItem: null
     property Control previousStepItem: null
-    property KissComponents.SetupModule currentModule: null
+    property PlasmaSetupComponents.SetupModule currentModule: null
 
     readonly property bool onFinalPage: currentIndex === (stepCount - 1)
 
@@ -352,7 +352,7 @@ Kirigami.Page {
         required property int index
         required property string name
 
-        property KissComponents.SetupModule module: null
+        property PlasmaSetupComponents.SetupModule module: null
 
         Component.onCompleted: {
             module = pagesModel.pageItem(index);

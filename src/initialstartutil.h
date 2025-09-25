@@ -32,20 +32,20 @@ public:
     Q_INVOKABLE void finish();
 
     /**
-     * Removes the autologin configuration for KISS.
+     * Removes the autologin configuration for Plasma Setup.
      *
-     * This allows the next login to be a normal login, unless the KISS systemd service runs again.
+     * This allows the next login to be a normal login, unless the Plasma Setup systemd service runs again.
      */
-    void disableKISSAutologin();
+    void disablePlasmaSetupAutologin();
 
 private:
     /**
-     * Disables the systemd unit that runs KISS on boot.
+     * Disables the systemd unit that runs Plasma Setup on boot.
      */
     void disableSystemdUnit();
 
     /**
-     * Logs out of the KISS user.
+     * Logs out of the plasma-setup user.
      *
      * This will cause the new user to be logged in automatically, since the autologin is set for the new user.
      */
@@ -60,7 +60,7 @@ private:
      * Enables temporary autologin for the specified new user.
      *
      * This function configures the system so that after the initial setup, the new user will be automatically logged in once,
-     * facilitating the transition from the KISS user to the newly created user account.
+     * facilitating the transition from the plasma-setup user to the newly created user account.
      */
     void setNewUserTempAutologin();
 
@@ -88,7 +88,7 @@ private:
     QWindow *m_window = nullptr;
 
     /**
-     * Provides session management capabilities, notably for logging out of the initial setup user session.
+     * Provides session management capabilities, notably for logging out of plasma-setup user session.
      */
     SessionManagement m_session;
 };

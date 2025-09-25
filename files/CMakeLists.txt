@@ -2,30 +2,30 @@
 #
 # SPDX-License-Identifier: BSD-2-Clause
 
-configure_file(kde-initial-system-setup.service.in kde-initial-system-setup.service)
+configure_file(plasma-setup.service.in plasma-setup.service)
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/kde-initial-system-setup.service
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/plasma-setup.service
     DESTINATION ${KDE_INSTALL_SYSTEMDUNITDIR}/system
 )
 
 install(
-    FILES "kde-initial-system-setup-polkit.rules"
+    FILES "plasma-setup-polkit.rules"
     DESTINATION ${KDE_INSTALL_DATADIR}/polkit-1/rules.d
 )
 
 install(
-    FILES "kde-initial-system-setup-sysuser.conf"
+    FILES "plasma-setup-sysuser.conf"
     DESTINATION  "lib/sysusers.d"
 )
 
-configure_file(kde-initial-system-setup-tmpfiles.conf.in kde-initial-system-setup-tmpfiles.conf)
+configure_file(plasma-setup-tmpfiles.conf.in plasma-setup-tmpfiles.conf)
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/kde-initial-system-setup-tmpfiles.conf
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/plasma-setup-tmpfiles.conf
     DESTINATION "lib/tmpfiles.d"
 )
 
-configure_file(kde-initial-system-setup.desktop.in kde-initial-system-setup.desktop)
+configure_file(plasma-setup.desktop.in plasma-setup.desktop)
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/kde-initial-system-setup.desktop
-    DESTINATION ${CMAKE_INSTALL_DATADIR}/kde-initial-system-setup
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/plasma-setup.desktop
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/plasma-setup
 )

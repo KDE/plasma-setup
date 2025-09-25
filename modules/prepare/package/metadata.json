@@ -29,7 +29,7 @@
                 "Name[zh_TW]": "Devin Lin"
             }
         ],
-        "Id": "org.kde.plasma.mobileinitialstart.prepare",
+        "Id": "org.kde.plasmasetup.prepare",
         "License": "GPL-2.0+",
         "Name": "Prepare",
         "Name[ar]": "حضّر",

@@ -1,5 +1,5 @@
 {
-    "KPackageStructure": "KDE/InitialSystemSetup",
+    "KPackageStructure": "KDE/PlasmaSetup",
     "KPlugin": {
         "Authors": [
             {
@@ -50,7 +50,7 @@
         "Description[uk]": "Дозволити користувачеві вибирати розкладку клавіатури.",
         "Description[zh_CN]": "允许用户选择键盘布局。",
         "Description[zh_TW]": "允許使用者選擇鍵盤佈局。",
-        "Id": "org.kde.initialsystemsetup.keyboard",
+        "Id": "org.kde.plasmasetup.keyboard",
         "License": "LGPL-2.1-or-later",
         "Name": "Keyboard Layout",
         "Name[ar]": "تخطيط لوحة المفاتيح",
@@ -75,6 +75,6 @@
         "Name[zh_TW]": "鍵盤佈局",
         "Website": "https://kde.org"
     },
-    "X-KDE-ParentApp": "org.kde.initialsystemsetup",
+    "X-KDE-ParentApp": "org.kde.plasmasetup",
     "X-KDE-Weight": 5
 }

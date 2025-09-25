@@ -5,7 +5,7 @@
 
 cmake_minimum_required(VERSION 3.20)
 
-project(kiss VERSION "0.1.0")
+project(plasma-setup VERSION "0.1.0")
 
 set(QT_MIN_VERSION "6.6.0")
 set(KF_MIN_VERSION "6.5.0")
@@ -53,8 +53,8 @@ if (QT_KNOWN_POLICY_QTP0004)
 endif ()
 
 ecm_setup_version(${PROJECT_VERSION}
-    VARIABLE_PREFIX KISS
-    VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/kiss-version.h
+    VARIABLE_PREFIX PLASMASETUP
+    VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/plasma-setup-version.h
 )
 
 find_package(KF6Screen CONFIG REQUIRED)
@@ -65,7 +65,7 @@ feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAG
 
 ################# build and install #################
 
-configure_file(config-kiss.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kiss.h)
+configure_file(config-plasma-setup.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-plasma-setup.h)
 
 ecm_set_disabled_deprecation_versions(
     QT 6.8.3
@@ -90,7 +90,7 @@ feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAG
 ki18n_install(po)
 
 ecm_qt_install_logging_categories(
-    EXPORT INITIALSYSTEMSETUP
-    FILE initialsystemsetup.categories
+    EXPORT PLASMASETUP
+    FILE plasmasetup.categories
     DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )

@@ -12,7 +12,7 @@
 #include <QTextStream>
 
 #include "bootutil.h"
-#include "initialsystemsetup_bootutil_debug.h"
+#include "plasmasetup_bootutil_debug.h"
 
 BootUtil::BootUtil(QObject *parent)
     : QObject(parent)
@@ -22,7 +22,7 @@ BootUtil::BootUtil(QObject *parent)
 bool BootUtil::writeSDDMAutologin(const bool autoLogin)
 {
     // Make sure the directory exists
-    const QString configFilePath = QStringLiteral("/etc/sddm.conf.d/99-kde-initial-system-setup.conf");
+    const QString configFilePath = QStringLiteral("/etc/sddm.conf.d/99-plasma-setup.conf");
     QFileInfo fileInfo(configFilePath);
     QDir dir = fileInfo.dir();
 
@@ -30,7 +30,7 @@ bool BootUtil::writeSDDMAutologin(const bool autoLogin)
     if (!autoLogin) {
         if (fileInfo.exists()) {
             if (!QFile::remove(fileInfo.filePath())) {
-                qCWarning(KDEInitialSystemSetupBootUtil) << "Failed to remove file:" << fileInfo.filePath();
+                qCWarning(PlasmaSetupBootUtil) << "Failed to remove file:" << fileInfo.filePath();
                 return false;
             }
         }
@@ -38,26 +38,26 @@ bool BootUtil::writeSDDMAutologin(const bool autoLogin)
     }
 
     if (!dir.exists() && !dir.mkpath(QStringLiteral("."))) {
-        qCWarning(KDEInitialSystemSetupBootUtil) << "Failed to create directory:" << dir.absolutePath();
+        qCWarning(PlasmaSetupBootUtil) << "Failed to create directory:" << dir.absolutePath();
         return false;
     }
 
     QFile file(configFilePath);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        qCWarning(KDEInitialSystemSetupBootUtil) << "Failed to open file for writing:" << file.fileName();
+        qCWarning(PlasmaSetupBootUtil) << "Failed to open file for writing:" << file.fileName();
         return false;
     }
 
     // Write the autologin configuration for SDDM
     QTextStream stream(&file);
     stream << "[Autologin]\n";
-    stream << "User=kde-initial-system-setup\n";
+    stream << "User=plasma-setup\n";
     stream << "Session=plasma\n";
     file.close();
 
     removeEmptyAutologinEntry();
 
-    qCInfo(KDEInitialSystemSetupBootUtil) << "SDDM autologin configuration written successfully.";
+    qCInfo(PlasmaSetupBootUtil) << "SDDM autologin configuration written successfully.";
     return true;
 }
 
@@ -69,7 +69,7 @@ void BootUtil::removeEmptyAutologinEntry()
     config->deleteGroup(QStringLiteral("Autologin"));
     config->sync();
 
-    qCInfo(KDEInitialSystemSetupBootUtil) << "Removed empty autologin group from SDDM configuration.";
+    qCInfo(PlasmaSetupBootUtil) << "Removed empty autologin group from SDDM configuration.";
 }
 
 #include "bootutil.moc"

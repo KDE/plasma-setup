@@ -9,9 +9,9 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
-import org.kde.initialsystemsetup.language as Language
+import org.kde.plasmasetup.language as Language
 
-import org.kde.initialsystemsetup.components as KissComponents
+import org.kde.plasmasetup.components as PlasmaSetupComponents
 
 /**
 * @brief Module for selecting system language
@@ -20,7 +20,7 @@ import org.kde.initialsystemsetup.components as KissComponents
 * It displays a scrollable list of available languages with search functionality
 * to help users easily find and select their preferred language.
 */
-KissComponents.SetupModule {
+PlasmaSetupComponents.SetupModule {
     id: root
 
     cardWidth: Math.min(Kirigami.Units.gridUnit * 30, root.contentItem.width - Kirigami.Units.gridUnit * 2)

@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "displayutil.h"
-#include "initialsystemsetup_debug.h"
+#include "plasmasetup_debug.h"
 
 #include <KAuth/Action>
 #include <KAuth/ExecuteJob>
@@ -19,36 +19,36 @@ DisplayUtil::DisplayUtil(QObject *parent)
 
 void DisplayUtil::setGlobalThemeForNewUser(QWindow *window, QString userName)
 {
-    qCInfo(KDEInitialSystemSetup) << "Setting global theme for new user.";
+    qCInfo(PlasmaSetup) << "Setting global theme for new user.";
 
-    KAuth::Action action(QStringLiteral("org.kde.initialsystemsetup.setnewuserglobaltheme"));
+    KAuth::Action action(QStringLiteral("org.kde.plasmasetup.setnewuserglobaltheme"));
     action.setParentWindow(window);
-    action.setHelperId(QStringLiteral("org.kde.initialsystemsetup"));
+    action.setHelperId(QStringLiteral("org.kde.plasmasetup"));
     action.addArgument(QStringLiteral("username"), userName);
 
     KAuth::ExecuteJob *job = action.execute();
 
     if (!job->exec()) {
-        qCWarning(KDEInitialSystemSetup) << "Failed to set global theme for new user:" << job->errorString();
+        qCWarning(PlasmaSetup) << "Failed to set global theme for new user:" << job->errorString();
     } else {
-        qCInfo(KDEInitialSystemSetup) << "Global theme for new user set successfully.";
+        qCInfo(PlasmaSetup) << "Global theme for new user set successfully.";
     }
 }
 
 void DisplayUtil::setScalingForNewUser(QWindow *window, QString userName)
 {
-    qCInfo(KDEInitialSystemSetup) << "Setting scaling for new user:" << userName;
+    qCInfo(PlasmaSetup) << "Setting scaling for new user:" << userName;
 
-    KAuth::Action action(QStringLiteral("org.kde.initialsystemsetup.setnewuserdisplayscaling"));
+    KAuth::Action action(QStringLiteral("org.kde.plasmasetup.setnewuserdisplayscaling"));
     action.setParentWindow(window);
-    action.setHelperId(QStringLiteral("org.kde.initialsystemsetup"));
+    action.setHelperId(QStringLiteral("org.kde.plasmasetup"));
     action.addArgument(QStringLiteral("username"), userName);
 
     KAuth::ExecuteJob *job = action.execute();
 
     if (!job->exec()) {
-        qCWarning(KDEInitialSystemSetup) << "Failed to set scaling for new user.";
+        qCWarning(PlasmaSetup) << "Failed to set scaling for new user.";
     } else {
-        qCInfo(KDEInitialSystemSetup) << "Set scaling for new user.";
+        qCInfo(PlasmaSetup) << "Set scaling for new user.";
     }
 }

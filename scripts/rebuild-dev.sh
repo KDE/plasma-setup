@@ -4,18 +4,18 @@
 #
 # SPDX-License-Identifier: LGPL-2.1-or-later
 
-# A simple script to (re)build KISS from source for testing during development.
+# A simple script to (re)build Plasma Setup from source for testing during development.
 # 
-# This makes (re)building KISS easier because it should be done in a VM during 
+# This makes (re)building Plasma Setup easier because it should be done in a VM during 
 # development, to prevent breaking the host system.
 # 
-# Expects to be run from the kiss source directory, eg:
+# Expects to be run from the Plasma Setup source directory, eg:
 # ./scripts/rebuild-dev.sh
 
 set -e
 
 # Use a consistent named temporary build directory
-BUILD_DIR="/tmp/kiss-build"
+BUILD_DIR="/tmp/plasma-setup-build"
 
 # Change to the repo root directory, in case the script was run from elsewhere
 cd "$(dirname "$0")/.."

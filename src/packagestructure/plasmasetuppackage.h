@@ -9,11 +9,11 @@
 #include <KLocalizedString>
 #include <kpackage/packagestructure.h>
 
-class KDEInitialSystemSetupPackageStructure : public KPackage::PackageStructure
+class PlasmaSetupPackageStructure : public KPackage::PackageStructure
 {
     Q_OBJECT
 public:
-    explicit KDEInitialSystemSetupPackageStructure(QObject *parent = nullptr, const QVariantList &args = QVariantList())
+    explicit PlasmaSetupPackageStructure(QObject *parent = nullptr, const QVariantList &args = QVariantList())
         : KPackage::PackageStructure(parent, args)
     {
     }

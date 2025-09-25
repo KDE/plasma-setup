@@ -3,25 +3,25 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 ecm_qt_declare_logging_category(logging_SRCS
-    HEADER "initialsystemsetup_bootutil_debug.h"
-    IDENTIFIER "KDEInitialSystemSetupBootUtil"
-    CATEGORY_NAME "org.kde.initialsystemsetup.bootutil"
-    DESCRIPTION "KDE Initial System Setup Boot Utility"
+    HEADER "plasmasetup_bootutil_debug.h"
+    IDENTIFIER "PlasmaSetupBootUtil"
+    CATEGORY_NAME "org.kde.plasmasetup.bootutil"
+    DESCRIPTION "Plasma Setup Boot Utility"
     DEFAULT_SEVERITY Debug
-    EXPORT INITIALSYSTEMSETUP_BOOTUTIL
+    EXPORT PLASMASETUP_BOOTUTIL
 )
 
-add_executable(kde-initial-system-setup-bootutil
+add_executable(plasma-setup-bootutil
     bootutil.cpp
     bootutil.h
     main.cpp
     ${logging_SRCS}
 )
 
-target_link_libraries(kde-initial-system-setup-bootutil
+target_link_libraries(plasma-setup-bootutil
     PRIVATE
         KF6::ConfigCore
         Qt::Core
 )
 
-install(TARGETS kde-initial-system-setup-bootutil RUNTIME DESTINATION ${CMAKE_INSTALL_LIBEXECDIR})
+install(TARGETS plasma-setup-bootutil RUNTIME DESTINATION ${CMAKE_INSTALL_LIBEXECDIR})

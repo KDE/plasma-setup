@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: LGPL-2.1-or-later
 
 ecm_add_qml_module(account
-    URI "org.kde.initialsystemsetup.account"
+    URI "org.kde.plasmasetup.account"
     GENERATE_PLUGIN_SOURCE
 )
 

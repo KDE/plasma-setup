@@ -2,4 +2,4 @@
 # SPDX-FileCopyrightText: None
 # SPDX-License-Identifier: CC0-1.0
 
-$XGETTEXT `find -name \*.cpp -o -name \*.qml` -o "$podir/org.kde.initialsystemsetup.pot"
+$XGETTEXT `find -name \*.cpp -o -name \*.qml` -o "$podir/org.kde.plasmasetup.pot"

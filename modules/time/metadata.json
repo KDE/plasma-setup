@@ -1,5 +1,5 @@
 {
-    "KPackageStructure": "KDE/InitialSystemSetup",
+    "KPackageStructure": "KDE/PlasmaSetup",
     "KPlugin": {
         "Authors": [
             {
@@ -52,7 +52,7 @@
         "Description[uk]": "Дозволити користувачеві встановлювати часовий пояс.",
         "Description[zh_CN]": "允许用户设置时区。",
         "Description[zh_TW]": "允許使用者設定時區。",
-        "Id": "org.kde.plasma.plasmainitialstart.time",
+        "Id": "org.kde.plasmasetup.time",
         "License": "LGPL-2.0-or-later",
         "Name": "Time and Date",
         "Name[ar]": "الوقت والتّاريخ",
@@ -80,6 +80,6 @@
         "Version": "1.0"
     },
     "NoDisplay": true,
-    "X-KDE-ParentApp": "org.kde.initialsystemsetup",
+    "X-KDE-ParentApp": "org.kde.plasmasetup",
     "X-KDE-Weight": 40
 }

@@ -9,11 +9,11 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
-import org.kde.initialsystemsetup.time.private as Time
+import org.kde.plasmasetup.time.private as Time
 
-import org.kde.initialsystemsetup.components as KissComponents
+import org.kde.plasmasetup.components as PlasmaSetupComponents
 
-KissComponents.SetupModule {
+PlasmaSetupComponents.SetupModule {
     id: root
 
     contentItem: ScrollView {

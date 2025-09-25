@@ -1,5 +1,5 @@
 {
-    "KPackageStructure": "KDE/InitialSystemSetup",
+    "KPackageStructure": "KDE/PlasmaSetup",
     "KPlugin": {
         "Authors": [
             {
@@ -52,7 +52,7 @@
         "Description[uk]": "Дозволити користувачеві налаштовувати стільникову мережу.",
         "Description[zh_CN]": "允许用户配置移动网络。",
         "Description[zh_TW]": "允許使用者設定行動網路。",
-        "Id": "org.kde.plasma.initialsetup.cellular",
+        "Id": "org.kde.plasmasetup.cellular",
         "License": "GPL-2.0-or-later",
         "Name": "Cellular",
         "Name[ar]": "هاتف خلوي",
@@ -79,6 +79,6 @@
         "Name[zh_TW]": "行動電話"
     },
     "NoDisplay": true,
-    "X-KDE-ParentApp": "org.kde.initialsystemsetup",
+    "X-KDE-ParentApp": "org.kde.plasmasetup",
     "X-KDE-Weight": 60
 }

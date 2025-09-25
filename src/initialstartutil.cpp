@@ -3,9 +3,9 @@
 //
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-#include "displayutil.h"
 #include "initialstartutil.h"
-#include "initialsystemsetup_debug.h"
+#include "displayutil.h"
+#include "plasmasetup_debug.h"
 
 #include <KAuth/Action>
 #include <KAuth/ExecuteJob>
@@ -18,7 +18,7 @@ InitialStartUtil::InitialStartUtil(QObject *parent)
 {
     QList<QWindow *> topLevelWindows = QGuiApplication::topLevelWindows();
     m_window = topLevelWindows.isEmpty() ? nullptr : topLevelWindows.first();
-    disableKISSAutologin();
+    disablePlasmaSetupAutologin();
 }
 
 QString InitialStartUtil::distroName() const
@@ -32,7 +32,7 @@ void InitialStartUtil::finish()
 
     const bool userCreated = m_accountController->createUser();
     if (!userCreated) {
-        qCWarning(KDEInitialSystemSetup) << "Failed to create user:" << m_accountController->username();
+        qCWarning(PlasmaSetup) << "Failed to create user:" << m_accountController->username();
         // TODO: Handle the error appropriately, e.g., show a message to the user
         return;
     }
@@ -53,35 +53,35 @@ void InitialStartUtil::finish()
     logOut();
 }
 
-void InitialStartUtil::disableKISSAutologin()
+void InitialStartUtil::disablePlasmaSetupAutologin()
 {
-    qCInfo(KDEInitialSystemSetup) << "Removing autologin configuration for KISS user.";
+    qCInfo(PlasmaSetup) << "Removing autologin configuration for plasma-setup user.";
 
-    KAuth::Action action(QStringLiteral("org.kde.initialsystemsetup.removeautologin"));
+    KAuth::Action action(QStringLiteral("org.kde.plasmasetup.removeautologin"));
     action.setParentWindow(m_window);
-    action.setHelperId(QStringLiteral("org.kde.initialsystemsetup"));
+    action.setHelperId(QStringLiteral("org.kde.plasmasetup"));
     KAuth::ExecuteJob *job = action.execute();
 
     if (!job->exec()) {
-        qCWarning(KDEInitialSystemSetup) << "Failed to remove autologin configuration:" << job->errorString();
+        qCWarning(PlasmaSetup) << "Failed to remove autologin configuration:" << job->errorString();
     } else {
-        qCInfo(KDEInitialSystemSetup) << "Autologin configuration removed successfully.";
+        qCInfo(PlasmaSetup) << "Autologin configuration removed successfully.";
     }
 }
 
 void InitialStartUtil::disableSystemdUnit()
 {
-    qCInfo(KDEInitialSystemSetup) << "Disabling systemd unit for initial system setup.";
+    qCInfo(PlasmaSetup) << "Disabling systemd unit for Plasma Setup.";
 
-    KAuth::Action action(QStringLiteral("org.kde.initialsystemsetup.disablesystemdunit"));
+    KAuth::Action action(QStringLiteral("org.kde.plasmasetup.disablesystemdunit"));
     action.setParentWindow(m_window);
-    action.setHelperId(QStringLiteral("org.kde.initialsystemsetup"));
+    action.setHelperId(QStringLiteral("org.kde.plasmasetup"));
     KAuth::ExecuteJob *job = action.execute();
 
     if (!job->exec()) {
-        qCWarning(KDEInitialSystemSetup) << "Failed to disable systemd unit:" << job->errorString();
+        qCWarning(PlasmaSetup) << "Failed to disable systemd unit:" << job->errorString();
     } else {
-        qCInfo(KDEInitialSystemSetup) << "Systemd unit disabled successfully.";
+        qCInfo(PlasmaSetup) << "Systemd unit disabled successfully.";
     }
 }
 
@@ -93,54 +93,54 @@ void InitialStartUtil::logOut()
 void InitialStartUtil::setNewUserHomeDirectoryOwnership()
 {
     const QString username = m_accountController->username();
-    qCInfo(KDEInitialSystemSetup) << "Setting ownership of new user's home directory to:" << username;
+    qCInfo(PlasmaSetup) << "Setting ownership of new user's home directory to:" << username;
 
-    KAuth::Action action(QStringLiteral("org.kde.initialsystemsetup.setnewuserhomedirectoryownership"));
+    KAuth::Action action(QStringLiteral("org.kde.plasmasetup.setnewuserhomedirectoryownership"));
     action.setParentWindow(m_window);
-    action.setHelperId(QStringLiteral("org.kde.initialsystemsetup"));
+    action.setHelperId(QStringLiteral("org.kde.plasmasetup"));
     action.setArguments({{QStringLiteral("username"), username}});
     KAuth::ExecuteJob *job = action.execute();
 
     if (!job->exec()) {
-        qCWarning(KDEInitialSystemSetup) << "Failed to set new user home directory ownership:" << job->errorString();
+        qCWarning(PlasmaSetup) << "Failed to set new user home directory ownership:" << job->errorString();
     } else {
-        qCInfo(KDEInitialSystemSetup) << "New user home directory ownership set successfully.";
+        qCInfo(PlasmaSetup) << "New user home directory ownership set successfully.";
     }
 }
 
 void InitialStartUtil::setNewUserTempAutologin()
 {
     const QString username = m_accountController->username();
-    qCInfo(KDEInitialSystemSetup) << "Setting temporary autologin for new user:" << username;
+    qCInfo(PlasmaSetup) << "Setting temporary autologin for new user:" << username;
 
-    KAuth::Action action(QStringLiteral("org.kde.initialsystemsetup.setnewusertempautologin"));
+    KAuth::Action action(QStringLiteral("org.kde.plasmasetup.setnewusertempautologin"));
     action.setParentWindow(m_window);
-    action.setHelperId(QStringLiteral("org.kde.initialsystemsetup"));
+    action.setHelperId(QStringLiteral("org.kde.plasmasetup"));
     action.setArguments({{QStringLiteral("username"), username}});
     KAuth::ExecuteJob *job = action.execute();
 
     if (!job->exec()) {
-        qCWarning(KDEInitialSystemSetup) << "Failed to set temporary autologin for new user:" << job->errorString();
+        qCWarning(PlasmaSetup) << "Failed to set temporary autologin for new user:" << job->errorString();
     } else {
-        qCInfo(KDEInitialSystemSetup) << "Temporary autologin set for new user successfully.";
+        qCInfo(PlasmaSetup) << "Temporary autologin set for new user successfully.";
     }
 }
 
 void InitialStartUtil::createNewUserAutostartHook()
 {
     const QString username = m_accountController->username();
-    qCInfo(KDEInitialSystemSetup) << "Creating autostart hook for new user:" << username;
+    qCInfo(PlasmaSetup) << "Creating autostart hook for new user:" << username;
 
-    KAuth::Action action(QStringLiteral("org.kde.initialsystemsetup.createnewuserautostarthook"));
+    KAuth::Action action(QStringLiteral("org.kde.plasmasetup.createnewuserautostarthook"));
     action.setParentWindow(m_window);
-    action.setHelperId(QStringLiteral("org.kde.initialsystemsetup"));
+    action.setHelperId(QStringLiteral("org.kde.plasmasetup"));
     action.setArguments({{QStringLiteral("username"), username}});
     KAuth::ExecuteJob *job = action.execute();
 
     if (!job->exec()) {
-        qCWarning(KDEInitialSystemSetup) << "Failed to create autostart hook for new user:" << job->errorString();
+        qCWarning(PlasmaSetup) << "Failed to create autostart hook for new user:" << job->errorString();
     } else {
-        qCInfo(KDEInitialSystemSetup) << "Autostart hook created successfully for new user.";
+        qCInfo(PlasmaSetup) << "Autostart hook created successfully for new user.";
     }
 }
 

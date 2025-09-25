@@ -4,7 +4,7 @@
 add_library(componentsplugin STATIC)
 
 ecm_add_qml_module(componentsplugin
-    URI "org.kde.initialsystemsetup.components"
+    URI "org.kde.plasmasetup.components"
     GENERATE_PLUGIN_SOURCE
     DEPENDENCIES
         QtQuick

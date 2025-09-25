@@ -3,7 +3,7 @@
 
 #include "pagesmodel.h"
 
-#include "initialsystemsetup_debug.h"
+#include "plasmasetup_debug.h"
 
 #include <KPackage/PackageLoader>
 #include <KPluginMetaData>
@@ -20,7 +20,7 @@ void PagesModel::reload()
 {
     clear();
 
-    auto packages = KPackage::PackageLoader::self()->listKPackages(QStringLiteral("KDE/InitialSystemSetup"));
+    auto packages = KPackage::PackageLoader::self()->listKPackages(QStringLiteral("KDE/PlasmaSetup"));
 
     std::ranges::sort(packages, [](const KPackage::Package &left, const KPackage::Package &right) {
         const auto leftData = left.metadata().rawData();
@@ -105,7 +105,7 @@ SetupModule *PagesModel::createGui(const QString &qmlPath)
     auto module = qobject_cast<SetupModule *>(guiObject);
 
     if (!module) {
-        qCCritical(KDEInitialSystemSetup) << "ERROR: QML gui" << guiObject << "not a QQuickItem instance" << qmlPath;
+        qCCritical(PlasmaSetup) << "ERROR: QML gui" << guiObject << "not a QQuickItem instance" << qmlPath;
         guiObject->deleteLater();
         return nullptr;
     }

@@ -6,7 +6,7 @@
 #include "accountcontroller.h"
 
 #include "accounts_interface.h"
-#include "initialsystemsetup_debug.h"
+#include "plasmasetup_debug.h"
 #include "user.h"
 
 #include <QDBusObjectPath>
@@ -47,7 +47,7 @@ QString AccountController::username() const
 
 void AccountController::setUsername(const QString &username)
 {
-    qCInfo(KDEInitialSystemSetup) << "Setting username to" << username;
+    qCInfo(PlasmaSetup) << "Setting username to" << username;
 
     if (m_username == username) {
         return;
@@ -63,7 +63,7 @@ QString AccountController::fullName() const
 
 void AccountController::setFullName(const QString &fullName)
 {
-    qCInfo(KDEInitialSystemSetup) << "Setting full name to" << fullName;
+    qCInfo(PlasmaSetup) << "Setting full name to" << fullName;
 
     if (m_fullName == fullName) {
         return;
@@ -75,20 +75,20 @@ void AccountController::setFullName(const QString &fullName)
 
 bool AccountController::createUser()
 {
-    qCInfo(KDEInitialSystemSetup) << "Creating user" << m_username << "with full name" << m_fullName;
+    qCInfo(PlasmaSetup) << "Creating user" << m_username << "with full name" << m_fullName;
 
     bool isAdmin = true;
     QDBusPendingReply<QDBusObjectPath> reply = m_dbusInterface->CreateUser(m_username, m_fullName, static_cast<qint32>(isAdmin));
     reply.waitForFinished();
     if (reply.isValid()) {
-        qCInfo(KDEInitialSystemSetup) << "User created with path" << reply.value().path();
+        qCInfo(PlasmaSetup) << "User created with path" << reply.value().path();
         User *createdUser = new User(this);
         createdUser->setPath(reply.value());
         createdUser->setPassword(m_password);
         delete createdUser;
         return true;
     } else {
-        qCWarning(KDEInitialSystemSetup) << "Failed to create user:" << reply.error().message();
+        qCWarning(PlasmaSetup) << "Failed to create user:" << reply.error().message();
         return false;
     }
 }

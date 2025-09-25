@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: LGPL-2.1-or-later
 
 [Domain]
-Name=KDE Initial System Setup
+Name=Plasma Setup
 Name[ar]=الإعداد الأولي لنظام كيدي
 Name[ca]=Configuració inicial del sistema KDE
 Name[ca@valencia]=Configuració inicial del sistema KDE
@@ -27,9 +27,9 @@ Name[uk]=Початкове налаштовування системи KDE
 Name[zh_CN]=KDE 初始系统设置程序
 Name[zh_TW]=KDE 初始系統設定
 Icon=kauth-example
-URL=https://invent.kde.org/plasma/kiss
+URL=https://invent.kde.org/plasma/plasma-setup
 
-[org.kde.initialsystemsetup.createnewuserautostarthook]
+[org.kde.plasmasetup.createnewuserautostarthook]
 Name=Create New User Autostart Hook
 Name[ar]=إنشاء خطاف بدء آلي لمستخدم جديد
 Name[ca]=Ganxo d'inici automàtic de creació d'usuari nou
@@ -72,7 +72,7 @@ Description[zh_CN]=为新创建的用户创建一个自动启动钩子
 Description[zh_TW]=為新建立的使用者建立自動啟動掛鉤
 Policy=yes
 
-[org.kde.initialsystemsetup.disablesystemdunit]
+[org.kde.plasmasetup.disablesystemdunit]
 Name=Disable Systemd Unit
 Name[ar]=تعطيل وحدة Systemd
 Name[ca]=Desactiva la unitat del Systemd
@@ -93,7 +93,7 @@ Name[tr]=Systemd Birimini Devre Dışı Bırak
 Name[uk]=Вимкнути модуль Systemd
 Name[zh_CN]=禁用 Systemd 单元
 Name[zh_TW]=停用 systemd 單元
-Description=Disable the systemd unit for the initial system setup
+Description=Disable the systemd unit for Plasma Setup
 Description[ar]=تعطيل وحدة systemd لإعداد النظام الأولي
 Description[ca]=Desactiva la unitat del «systemd» per a la configuració inicial del sistema
 Description[ca@valencia]=Desactiva la unitat de «systemd» per a la configuració inicial del sistema
@@ -115,7 +115,7 @@ Description[zh_CN]=禁用初始系统设置使用的 systemd 单元
 Description[zh_TW]=將初始系統設定的 systemd 單元停用
 Policy=yes
 
-[org.kde.initialsystemsetup.removeautologin]
+[org.kde.plasmasetup.removeautologin]
 Name=Remove Autologin
 Name[ar]=إزالة الولوج الآلي
 Name[ca]=Elimina l'inici de sessió automàtic
@@ -158,7 +158,7 @@ Description[zh_CN]=移除 SDDM 自动登录配置
 Description[zh_TW]=移除 SDDM 自動登入配置
 Policy=yes
 
-[org.kde.initialsystemsetup.setnewuserglobaltheme]
+[org.kde.plasmasetup.setnewuserglobaltheme]
 Name=Set New User Global Theme
 Name[ar]=عيِّن سمة عامة جديدة للمستخدم
 Name[ca]=Estableix el tema global d'usuari nou
@@ -197,7 +197,7 @@ Description[uk]=Встановити загальну тему для новог
 Description[zh_TW]=為新建立的使用者設定全域主題
 Policy=yes
 
-[org.kde.initialsystemsetup.setnewuserdisplayscaling]
+[org.kde.plasmasetup.setnewuserdisplayscaling]
 Name=Set New User Display Scaling
 Name[ar]=عيّن مقياس عرض المستخدم الجديد
 Name[ca]=Estableix l'escalat de pantalla d'usuari nou
@@ -236,7 +236,7 @@ Description[uk]=Встановити масштабування дисплея �
 Description[zh_TW]=為新建立的使用者建立顯示器縮放
 Policy=yes
 
-[org.kde.initialsystemsetup.setnewuserhomedirectoryownership]
+[org.kde.plasmasetup.setnewuserhomedirectoryownership]
 Name=Set New User Home Directory Ownership
 Name[ar]=تعيين ملكية مجلد البيت للمستخدمين الجدد
 Name[ca]=Estableix la propietat del directori d'inici de l'usuari nou
@@ -279,7 +279,7 @@ Description[zh_CN]=将新用户的主目录所有权设置为新建用户所有
 Description[zh_TW]=將新使用者的家目錄的擁有者設為該新使用者
 Policy=yes
 
-[org.kde.initialsystemsetup.setnewusertempautologin]
+[org.kde.plasmasetup.setnewusertempautologin]
 Name=Set New User Temporary Autologin
 Name[ar]=تعيين الولوج الآلي المؤقت للمستخدمين الجدد
 Name[ca]=Estableix l'inici de sessió automàtic temporal de l'usuari nou
