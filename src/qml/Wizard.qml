@@ -200,6 +200,13 @@ Kirigami.Page {
             color: Kirigami.Theme.backgroundColor
             clip: true
 
+            // The overlay card takes up a larger percentage of the screen on
+            // smaller displays to ensure usability. In this case we consider
+            // anything less than FHD in logical pixels to be a small screen.
+            //
+            // On mobile we just fill the screen.
+            readonly property bool isSmallScreen: Screen.width < 1920 || Screen.height < 1080
+
             radius: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.cornerRadius + 8
 
             anchors {
@@ -208,8 +215,13 @@ Kirigami.Page {
                 centerIn: Kirigami.Settings.isMobile ? undefined : parent
             }
 
-            width: Kirigami.Settings.isMobile ? undefined : Math.min(parent.width * 0.4, Kirigami.Units.gridUnit * 60)
-            height: Kirigami.Settings.isMobile ? undefined : Math.min(parent.height * 0.5, Kirigami.Units.gridUnit * 45)
+            width: Kirigami.Settings.isMobile ? undefined
+                                              : isSmallScreen ? parent.width * 0.7
+                                                              : parent.width * 0.3
+
+            height: Kirigami.Settings.isMobile ? undefined
+                                               : isSmallScreen ? parent.height * 0.9
+                                                               : parent.height * 0.5
 
             Behavior on height {
                 NumberAnimation {
@@ -278,16 +290,10 @@ Kirigami.Page {
 
                     Layout.fillWidth: true
                     Layout.alignment: Qt.AlignBottom
+                    Layout.margins: Kirigami.Units.gridUnit
 
                     Button {
                         Layout.alignment: Qt.AlignLeft
-                        Layout.leftMargin: Kirigami.Units.gridUnit
-                        Layout.bottomMargin: Kirigami.Units.gridUnit
-
-                        topPadding: Kirigami.Units.largeSpacing
-                        bottomPadding: Kirigami.Units.largeSpacing
-                        leftPadding: Kirigami.Units.gridUnit
-                        rightPadding: Kirigami.Units.gridUnit
 
                         text: i18nc("@action:button", "Back") // qmllint disable unqualified
                         icon.name: "arrow-left-symbolic"
@@ -301,15 +307,8 @@ Kirigami.Page {
 
                     Button {
                         Layout.alignment: Qt.AlignRight
-                        Layout.rightMargin: Kirigami.Units.gridUnit
-                        Layout.bottomMargin: Kirigami.Units.gridUnit
                         // Nicer to have the arrow on the side it's pointing to
                         LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.LeftToRight // qmllint disable missing-property
-
-                        topPadding: Kirigami.Units.largeSpacing
-                        bottomPadding: Kirigami.Units.largeSpacing
-                        leftPadding: Kirigami.Units.gridUnit
-                        rightPadding: Kirigami.Units.gridUnit
 
                         visible: !root.onFinalPage
                         text: i18nc("@action:button", "Next") // qmllint disable unqualified
@@ -322,13 +321,6 @@ Kirigami.Page {
 
                     Button {
                         Layout.alignment: Qt.AlignRight
-                        Layout.rightMargin: Kirigami.Units.gridUnit
-                        Layout.bottomMargin: Kirigami.Units.gridUnit
-
-                        topPadding: Kirigami.Units.largeSpacing
-                        bottomPadding: Kirigami.Units.largeSpacing
-                        leftPadding: Kirigami.Units.gridUnit
-                        rightPadding: Kirigami.Units.gridUnit
 
                         visible: root.onFinalPage
                         text: i18nc("@action:button", "Finish") // qmllint disable unqualified
@@ -368,6 +360,7 @@ Kirigami.Page {
             value: Math.min(Kirigami.Units.gridUnit * 30, item.contentItem.width - Kirigami.Units.gridUnit * 2)
         }
 
+        clip: true
         topPadding: Kirigami.Units.gridUnit
         bottomPadding: Kirigami.Units.gridUnit
         leftPadding: Kirigami.Units.gridUnit

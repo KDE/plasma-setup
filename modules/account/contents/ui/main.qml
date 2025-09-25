@@ -21,13 +21,12 @@ KissComponents.SetupModule {
 
     nextEnabled: usernameField.text.length > 0 && paswordField.text.length > 0 && repeatField.text === paswordField.text
 
-    contentItem: ScrollView {
-        ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
-        contentWidth: -1
+    contentItem: ColumnLayout {
+        anchors.fill: parent
+        spacing: Kirigami.Units.mediumSpacing
 
         ColumnLayout {
-            anchors.fill: parent
-            spacing: Kirigami.Units.mediumSpacing
+            Layout.alignment: Qt.AlignCenter
 
             KirigamiComponents.AvatarButton {
                 id: avatar
@@ -110,6 +109,7 @@ KissComponents.SetupModule {
             }
 
             Label {
+                id: titleLabel
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
                 text: i18n("We need a few details to complete the setup.")
@@ -120,6 +120,7 @@ KissComponents.SetupModule {
             }
 
             RowLayout {
+                id: adminInfoRow
                 Layout.alignment: Qt.AlignHCenter
 
                 Label {
@@ -136,108 +137,126 @@ KissComponents.SetupModule {
                 Layout.bottomMargin: Kirigami.Units.gridUnit
             }
 
-            FormCard.FormCard {
-                maximumWidth: root.cardWidth
+            ScrollView {
+                Layout.fillWidth: true
+                // Maximum height prevents the list from growing too tall on large screens
+                // Layout.maximumHeight: Kirigami.Units.gridUnit * 40
+                // Implicit height allows the list to shrink on smaller screens,
+                // without overflowing the available space or being unnecessarily small.
+                Layout.maximumHeight: root.contentItem.height - avatar.height - titleLabel.height - adminInfoRow.height - Kirigami.Units.gridUnit * 4
 
-                FormCard.FormTextFieldDelegate {
-                    id: fullNameField
+                ColumnLayout {
+                    width: parent.width
+                    spacing: Kirigami.Units.smallSpacing
 
-                    label: i18nc("@label:textfield", "Full Name")
-                    property string previousText: ''
-                    onTextChanged: {
-                        if (usernameField.text.length === 0 || usernameField.text === previousText) {
-                            usernameField.text = previousText = fullNameField.text.toLowerCase().replace(/\s/g, '');
-                        }
-                    }
+                    FormCard.FormCard {
+                        id: fullNameCard
+                        maximumWidth: root.cardWidth
 
-                    Binding {
-                        target: AccountController
-                        property: 'fullName'
-                        value: fullNameField.text
-                    }
-                }
-            }
+                        FormCard.FormTextFieldDelegate {
+                            id: fullNameField
 
-            FormCard.FormCard {
-                maximumWidth: root.cardWidth
+                            label: i18nc("@label:textfield", "Full Name")
+                            property string previousText: ''
+                            onTextChanged: {
+                                if (usernameField.text.length === 0 || usernameField.text === previousText) {
+                                    usernameField.text = previousText = fullNameField.text.toLowerCase().replace(/\s/g, '');
+                                }
+                            }
 
-                FormCard.FormTextFieldDelegate {
-                    id: usernameField
-                    label: i18nc("@label:textfield", "Username")
-
-                    Binding {
-                        target: AccountController
-                        property: 'username'
-                        value: usernameField.text
-                    }
-                }
-            }
-
-            FormCard.FormCard {
-                maximumWidth: root.cardWidth
-
-                FormCard.FormPasswordFieldDelegate {
-                    id: paswordField
-
-                    label: i18nc("@label:textfield", "Password")
-
-                    onTextChanged: {
-                        showPasswordQuality = text.length > 0;
-                    }
-                }
-            }
-
-            FormCard.FormCard {
-                maximumWidth: root.cardWidth
-
-                FormCard.FormPasswordFieldDelegate {
-                    id: repeatField
-                    label: i18nc("@label:textfield", "Confirm Password")
-                    status: Kirigami.MessageType.Error
-
-                    function setPasswordMatchError() {
-                        repeatField.statusMessage = i18nc("@info:status", "Passwords don’t match");
-                        repeatField.status = Kirigami.MessageType.Error;
-                    }
-
-                    function clearPasswordMatchError() {
-                        repeatField.statusMessage = '';
-                        repeatField.status = Kirigami.MessageType.Information;
-                    }
-
-                    // Timer delays validation while the user is typing.
-                    Timer {
-                        id: validationTimer
-                        interval: Kirigami.Units.humanMoment
-                        running: false
-                        repeat: false
-
-                        onTriggered: {
-                            if (repeatField.text.length > 0 && repeatField.text !== paswordField.text) {
-                                repeatField.setPasswordMatchError();
-                            } else {
-                                repeatField.clearPasswordMatchError();
+                            Binding {
+                                target: AccountController
+                                property: 'fullName'
+                                value: fullNameField.text
                             }
                         }
                     }
 
-                    // Reset timer when the user types.
-                    onTextChanged: {
-                        // If passwords match, immediately clear the error message.
-                        if (text.length > 0 && text === paswordField.text) {
-                            repeatField.clearPasswordMatchError();
-                        } else {
-                            validationTimer.restart();
+                    FormCard.FormCard {
+                        id: usernameCard
+                        maximumWidth: root.cardWidth
+
+                        FormCard.FormTextFieldDelegate {
+                            id: usernameField
+                            label: i18nc("@label:textfield", "Username")
+
+                            Binding {
+                                target: AccountController
+                                property: 'username'
+                                value: usernameField.text
+                            }
                         }
                     }
 
-                    onEditingFinished: function () {
-                        if (text.length < 1 || text !== paswordField.text) {
-                            repeatField.setPasswordMatchError();
-                        } else {
-                            repeatField.clearPasswordMatchError();
-                            AccountController.password = text;
-                            return;
+                    FormCard.FormCard {
+                        id: passwordCard
+                        maximumWidth: root.cardWidth
+
+                        FormCard.FormPasswordFieldDelegate {
+                            id: paswordField
+
+                            label: i18nc("@label:textfield", "Password")
+
+                            onTextChanged: {
+                                showPasswordQuality = text.length > 0;
+                            }
+                        }
+                    }
+
+                    FormCard.FormCard {
+                        id: passwordRepeatCard
+                        maximumWidth: root.cardWidth
+
+                        FormCard.FormPasswordFieldDelegate {
+                            id: repeatField
+                            label: i18nc("@label:textfield", "Confirm Password")
+                            status: Kirigami.MessageType.Error
+
+                            function setPasswordMatchError() {
+                                repeatField.statusMessage = i18nc("@info:status", "Passwords don’t match");
+                                repeatField.status = Kirigami.MessageType.Error;
+                            }
+
+                            function clearPasswordMatchError() {
+                                repeatField.statusMessage = '';
+                                repeatField.status = Kirigami.MessageType.Information;
+                            }
+
+                            // Timer delays validation while the user is typing.
+                            Timer {
+                                id: validationTimer
+                                interval: Kirigami.Units.humanMoment
+                                running: false
+                                repeat: false
+
+                                onTriggered: {
+                                    if (repeatField.text.length > 0 && repeatField.text !== paswordField.text) {
+                                        repeatField.setPasswordMatchError();
+                                    } else {
+                                        repeatField.clearPasswordMatchError();
+                                    }
+                                }
+                            }
+
+                            // Reset timer when the user types.
+                            onTextChanged: {
+                                // If passwords match, immediately clear the error message.
+                                if (text.length > 0 && text === paswordField.text) {
+                                    repeatField.clearPasswordMatchError();
+                                } else {
+                                    validationTimer.restart();
+                                }
+                            }
+
+                            onEditingFinished: function () {
+                                if (text.length < 1 || text !== paswordField.text) {
+                                    repeatField.setPasswordMatchError();
+                                } else {
+                                    repeatField.clearPasswordMatchError();
+                                    AccountController.password = text;
+                                    return;
+                                }
+                            }
                         }
                     }
                 }
