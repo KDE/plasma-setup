@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-20 00:44+0000\n"
-"PO-Revision-Date: 2025-09-05 20:37+0200\n"
+"POT-Creation-Date: 2025-09-25 00:44+0000\n"
+"PO-Revision-Date: 2025-09-21 09:26+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -309,20 +309,16 @@ msgid "Failed to remove file %1"
 msgstr "Impossible de supprimer le fichier %1"
 
 #: src/auth/authhelper.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "%1 is a directory path"
-#| msgid "Failed to create autostart directory: %1"
+#, kde-format
 msgctxt "%1 is a directory path"
 msgid "Failed to create .config directory: %1"
-msgstr "Impossible de créer le dossier de démarrage automatique : %1"
+msgstr "Impossible de créer le dossier « .config » : %1"
 
 #: src/auth/authhelper.cpp:150 src/auth/authhelper.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "%1 is a file path"
-#| msgid "Failed to remove file %1"
+#, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to copy file %1"
-msgstr "Impossible de supprimer le fichier %1"
+msgstr "Impossible de copier le fichier %1"
 
 #: src/auth/authhelper.cpp:212
 #, kde-format
