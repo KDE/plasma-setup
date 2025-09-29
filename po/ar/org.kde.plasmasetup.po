@@ -1,52 +1,53 @@
-# Copyright (C) 2024 This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kiss package.
+# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
-# SPDX-FileCopyrightText: 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
-"PO-Revision-Date: 2024-08-03 13:36+0100\n"
-"Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
-"Language-Team: British English\n"
-"Language: en_GB\n"
+"POT-Creation-Date: 2025-09-28 00:46+0000\n"
+"PO-Revision-Date: 2025-09-20 20:30+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "زايد السعيدي"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "zayed.alsaidi@gmail.com"
 
 #: modules/account/contents/ui/main.qml:68
 #, kde-format
 msgid "Upload new avatar"
-msgstr ""
+msgstr "ارفع صورة رمزية جديدة"
 
 #: modules/account/contents/ui/main.qml:85
 #, kde-format
 msgid "Remove current avatar"
-msgstr ""
+msgstr "أزل الصورة الرمزية الحالية"
 
 #: modules/account/contents/ui/main.qml:115
 #, kde-format
 msgid "We need a few details to complete the setup."
-msgstr ""
+msgstr "نحتاج إلى بعض التفاصيل لإكمال الإعداد."
 
 #: modules/account/contents/ui/main.qml:126
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
-msgstr ""
+msgstr "سيكون هذا المستخدم مسؤولاً."
 
 #: modules/account/contents/ui/main.qml:130
 #, kde-kuit-format
@@ -56,106 +57,104 @@ msgid ""
 "means that they can change system settings, install software, and access all "
 "files on the system.<nl/><nl/>Choose a strong password for this user."
 msgstr ""
+"سيتمتع هذا المستخدم بامتيازات إدارية على النظام.<nl/><nl/>وهذا يعني أنه "
+"يمكنه تغيير إعدادات النظام وتثبيت البرامج والوصول إلى جميع الملفات الموجودة "
+"على النظام.<nl/><nl/>اختر كلمة سر قوية لهذا المستخدم."
 
 #: modules/account/contents/ui/main.qml:145
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Full Name"
-msgstr ""
+msgstr "الاسم الكامل"
 
 #: modules/account/contents/ui/main.qml:166
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Username"
-msgstr "Username:"
+msgstr "اسم المستخدم"
 
 #: modules/account/contents/ui/main.qml:182
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Password"
-msgstr "Password:"
+msgstr "كلمة السّر"
 
 #: modules/account/contents/ui/main.qml:195
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@label:textfield"
 msgid "Confirm Password"
-msgstr "Password:"
+msgstr "تأكيد كلمة السر"
 
 #: modules/account/contents/ui/main.qml:199
 #, kde-format
 msgctxt "@info:status"
 msgid "Passwords don’t match"
-msgstr ""
+msgstr "كلمتا السر لم تتطابقا."
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format
 msgid "Edit APN"
-msgstr ""
+msgstr "حرّر اسم نقطة الوصول APN"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:38
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "الاسم"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:43
 #, kde-format
 msgid "APN"
-msgstr ""
+msgstr "اسم نقطة الوصول APN"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:48
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "Username"
-msgstr "Username:"
+msgstr "اسم المستخدم"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:53
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Password"
-msgstr "Password:"
+msgstr "كلمة السّر"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:58
 #, kde-format
 msgid "Network type"
-msgstr ""
+msgstr "نوع الشبكة"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "4G/3G/2G"
-msgstr ""
+msgstr "4G/3G/2G"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "3G/2G"
-msgstr ""
+msgstr "3G/2G"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "2G"
-msgstr ""
+msgstr "2G"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 4G"
-msgstr ""
+msgstr "4G فقط"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 3G"
-msgstr ""
+msgstr "3G فقط"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 2G"
-msgstr ""
+msgstr "2G فقط"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Any"
-msgstr ""
+msgstr "أيّ شيء"
 
 #: modules/cellular/contents/ui/main.qml:45
 #, kde-format
@@ -163,41 +162,43 @@ msgid ""
 "Please configure your APN below for mobile data, further information will be "
 "available with your carrier."
 msgstr ""
+"يرجى ضبط اسم نقطة الوصول (APN) الخاص بك أدناه لبيانات الهاتف المحمول، وسوف "
+"تتوفر المزيد من المعلومات مع شركة الاتصالات الخاصة بك."
 
 #: modules/cellular/contents/ui/main.qml:47
 #, kde-format
 msgid "You are connected to the mobile network."
-msgstr ""
+msgstr "أنت متصل بشبكة الهاتف المحمول."
 
 #: modules/cellular/contents/ui/main.qml:49
 #, kde-format
 msgid "Please insert a SIM card into your device."
-msgstr ""
+msgstr "الرجاء إدخال شريحة SIM في جهازك."
 
 #: modules/cellular/contents/ui/main.qml:51
 #, kde-format
 msgid "Your device does not have a modem available."
-msgstr ""
+msgstr "لا يتوفر مودم لجهازك."
 
 #: modules/cellular/contents/ui/main.qml:63
 #, kde-format
 msgid "Mobile Data"
-msgstr ""
+msgstr "بيانات المحمول"
 
 #: modules/cellular/contents/ui/main.qml:109
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "حرّر"
 
 #: modules/cellular/contents/ui/main.qml:117
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "احذف"
 
 #: modules/cellular/contents/ui/main.qml:127
 #, kde-format
 msgid "Add APN"
-msgstr ""
+msgstr "أضف اسم نقطة الوصول APN"
 
 #: modules/finished/contents/ui/main.qml:30
 #, kde-format
@@ -206,258 +207,248 @@ msgid ""
 "Your device is now ready. <br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
+"جهازك جاهز الآن. <br /><br />بعد النقر على <b>أنهِ</b>، ستتمكن من الولوج إلى "
+"حسابك الجديد.<br /><br />استمتع بـ <b>%1</b>!"
 
 #: modules/keyboard/contents/ui/main.qml:164
 #, kde-format
 msgid "Select your keyboard layout and language."
-msgstr ""
+msgstr "حدد تخطيط لوحة المفاتيح واللغة."
 
 #: modules/language/contents/ui/main.qml:46
 #, kde-format
 msgid "Please select your preferred language."
-msgstr ""
+msgstr "الرجاء اختر لغتك المفضلة"
 
 #: modules/language/contents/ui/main.qml:55
 #, kde-format
 msgid "Search languages…"
-msgstr ""
+msgstr "ابحث اللغات…"
 
 #: modules/prepare/contents/ui/main.qml:38
 #, kde-format
 msgid "Adjust the size of elements on the screen."
-msgstr ""
+msgstr "اضبط حجم العناصر على الشاشة."
 
 #: modules/prepare/contents/ui/main.qml:49
 #, kde-format
 msgid "Display Scaling"
-msgstr ""
+msgstr "تحجيم العرض"
 
 #: modules/prepare/contents/ui/main.qml:74
 #, kde-format
 msgid "Dark Theme"
-msgstr ""
+msgstr "سمة مظلمة"
 
 #: modules/time/contents/ui/main.qml:35
 #, kde-format
 msgid "Select your time zone and preferred time format."
-msgstr ""
+msgstr "حدد منطقتك الزمنية وتنسيق الوقت المفضل لديك."
 
 #: modules/time/contents/ui/main.qml:46
 #, kde-format
 msgid "24-Hour Format"
-msgstr ""
+msgstr "تنسيق 24 ساعة"
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
 msgid "Connect to"
-msgstr ""
+msgstr "متصل ب"
 
 #: modules/wifi/contents/ui/main.qml:77
 #, kde-format
 msgid "Connect to a WiFi network for network access."
-msgstr ""
+msgstr "الاتصال بشبكة واي فاي للوصول إلى الشبكة."
 
 #: modules/wifi/contents/ui/PasswordField.qml:14
 #, kde-format
 msgid "Password:"
-msgstr "Password:"
+msgstr "كلمة السر:"
 
 #: modules/wifi/contents/ui/PasswordField.qml:26
 #, kde-format
 msgid "Invalid input."
-msgstr ""
+msgstr "إدخال غير صحيح"
 
 #: src/auth/authhelper.cpp:26 src/auth/authhelper.cpp:123
 #: src/auth/authhelper.cpp:163 src/auth/authhelper.cpp:200
 #: src/auth/authhelper.cpp:225
 #, kde-format
 msgid "Username argument is missing or invalid."
-msgstr ""
+msgstr "اسم المستخدم غير موجود أو غير صالح."
 
 #: src/auth/authhelper.cpp:37
 #, kde-format
 msgctxt "%1 is a directory path"
 msgid "Failed to create autostart directory: %1"
-msgstr ""
+msgstr "فشل في إنشاء دليل التشغيل الآلي: %1"
 
 #: src/auth/authhelper.cpp:46
 #, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to open file for writing: %1"
-msgstr ""
+msgstr "فشل فتح الملفّ للكتابة: %1"
 
 #: src/auth/authhelper.cpp:53
-#, kde-format
-msgid "Failed to find the initial setup executable path."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Failed to find the initial setup executable path."
+msgid "Failed to find the Plasma Setup executable path."
+msgstr "فشل في العثور على مسار الملف القابل للتنفيذ للإعداد الأولي."
 
 #: src/auth/authhelper.cpp:90
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Failed to disable systemd unit: %1"
-msgstr ""
+msgstr "فشل تعطيل وحدة systemd: %1"
 
 #: src/auth/authhelper.cpp:110
 #, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to remove file %1"
-msgstr ""
+msgstr "فشل في إزالة الملف %1"
 
 #: src/auth/authhelper.cpp:140
 #, kde-format
 msgctxt "%1 is a directory path"
 msgid "Failed to create .config directory: %1"
-msgstr ""
+msgstr "فشل في إنشاء دليل .config: %1"
 
 #: src/auth/authhelper.cpp:150 src/auth/authhelper.cpp:186
 #, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to copy file %1"
-msgstr ""
+msgstr "فشل في نسخ الملف %1"
 
 #: src/auth/authhelper.cpp:212
 #, kde-format
 msgctxt "%1 is a directory path, %2 an exit code"
 msgid "Failed to set ownership for home directory %1: exit code %2"
-msgstr ""
+msgstr "فشل تعيين ملكية الدليل الرئيس %1: رمز الخروج %2"
 
 #: src/auth/authhelper.cpp:234
 #, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to open file %1 for writing."
-msgstr ""
+msgstr "فشل فتح ملفّ %1 للكتابة"
 
-#: src/main.cpp:35
+#: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
-msgid "KDE Initial System Setup"
+msgid "Plasma Setup"
 msgstr ""
 
 #: src/main.cpp:37
 #, kde-format
 msgid "Make Plasma yours"
-msgstr ""
+msgstr "خصص بلازما لك"
 
 #: src/main.cpp:39
 #, kde-format
 msgid "© 2021-2024 KDE Community"
-msgstr ""
+msgstr "© 2021-2024 مجتمع كِيدِي"
 
 #: src/main.cpp:44
-#, kde-format
-msgid "Remove the initial setup autologin configuration."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Remove the initial setup autologin configuration."
+msgid "Remove the Plasma Setup autologin configuration."
+msgstr "أزل إعدادات الولوج الآلي للإعداد الأولي."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr ""
+msgstr "مرحبًا في<br/><b>بلازما الجوال</b>"
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr ""
+msgstr "مرحبًا بك في <br/><b>سطح مكتب البلازما</b>"
 
 #: src/qml/LandingComponent.qml:117
-#, fuzzy, kde-format
-#| msgid "User Setup"
+#, kde-format
 msgid "Begin Setup"
-msgstr "User Setup"
+msgstr "بداية الإعداد"
 
 #: src/qml/LandingComponent.qml:144
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
-msgstr ""
-
-#: src/qml/Main.qml:14
-#, kde-format
-msgid "Initial Start"
-msgstr ""
+msgstr "ممكنة بواسطة<br/><b>%1</b>"
 
 #: src/qml/Wizard.qml:292
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
-msgstr ""
+msgstr "السابق"
 
 #: src/qml/Wizard.qml:315
-#, fuzzy, kde-format
-#| msgid "Next"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr "Next"
+msgstr "التالي"
 
 #: src/qml/Wizard.qml:334
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
-msgstr ""
+msgstr "أنهِ"
 
 #: src/user.cpp:125
 #, kde-format
 msgctxt "@info, %1 is an error message"
 msgid "Failed to crop image: %1"
-msgstr ""
+msgstr "فشل اقتصاص الصورة: %1"
 
 #: src/user.cpp:306
 #, kde-format
 msgctxt "%1 is the username"
 msgid "Could not get permission to save user %1"
-msgstr ""
+msgstr "تعذر الحصول على إذن لحفظ المستخدم %1"
 
 #: src/user.cpp:311
 #, kde-format
 msgid "There was an error while saving changes"
-msgstr ""
+msgstr "حدث خطأ أثناء حفظ التغييرات"
 
 #: src/user.cpp:412
 #, kde-format
 msgid "Failed to resize image: opening temp file failed"
-msgstr ""
+msgstr "فشل في تغيير حجم الصورة: فشل في فتح الملف المؤقت"
 
 #: src/user.cpp:420
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
-msgstr ""
+msgstr "فشل في تغيير حجم الصورة: فشلت الكتابة إلى ملف مؤقت"
 
-#~ msgid "Next"
-#~ msgstr "Next"
+#, fuzzy
+#~| msgid "KDE Initial System Setup"
+#~ msgid "KDE Initial System Setup"
+#~ msgstr "الإعداد الأولي لنظام كيدي"
 
-#~ msgid "Previous"
-#~ msgstr "Previous"
+#, fuzzy
+#~| msgid "Initial Start"
+#~ msgid "Initial Start"
+#~ msgstr "أول بدء"
 
-#~ msgid "All Done!"
-#~ msgstr "All Done!"
+#~ msgid ""
+#~ "Adjust the screen brightness to be comfortable for the installation "
+#~ "process."
+#~ msgstr "اضبط سطوع الشاشة لتكون مريحة لعملية التثبيت."
 
-#~ msgid "Let's get started"
-#~ msgstr "Let's get started"
+#~ msgctxt "%1 is the distro name"
+#~ msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+#~ msgstr "جهازك جاهز الآن.<br /><br />استمتع مع <b>%1</b>!"
 
-#~ msgid "Welcome"
-#~ msgstr "Welcome"
+#~ msgid "Language"
+#~ msgstr "اللغة"
 
-#~ msgid "Select a language to begin setup"
-#~ msgstr "Select a language to begin setup"
+#~ msgid "Be careful not to lose your password."
+#~ msgstr "احرص على ألا تفقد كلمة سرّك."
 
-#~ msgid "I accept these terms and conditions"
-#~ msgstr "I accept these terms and conditions"
+#~ msgid "Tokodon"
+#~ msgstr "توكودون"
 
-#~ msgid "Legal Terms"
-#~ msgstr "Legal Terms"
+#~ msgid "Browse the Fediverse"
+#~ msgstr "تصفح فيديفيرس"
 
-#~ msgid "Let's get the legalese out of the way..."
-#~ msgstr "Let's get the legalese out of the way..."
-
-#~ msgid "Hello World!"
-#~ msgstr "Hello World!"
-
-#~ msgid "Sample Page"
-#~ msgstr "Sample Page"
-
-#~ msgid "This is an example page"
-#~ msgstr "This is an example page"
-
-#~ msgid "Realname:"
-#~ msgstr "Realname:"
-
-#~ msgid "Let's set up your user account"
-#~ msgstr "Let us set up your user account"
+#~ msgctxt "@info"
+#~ msgid "This will be used to name your home folder and can't be changed."
+#~ msgstr "سيُستخدم هذا الاسم لتسمية مجلد البيت الخاص بك، ولا يمكن تغييره."

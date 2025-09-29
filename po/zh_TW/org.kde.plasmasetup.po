@@ -1,52 +1,52 @@
-# Copyright (C) 2025 This file is copyright:
-# This file is distributed under the same license as the plasma-setup package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kiss package.
 #
-# SPDX-FileCopyrightText: 2025 Emir SARI <emir_sari@îcloud.com>
+# SPDX-FileCopyrightText: 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: plasma-setup\n"
+"Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
-"PO-Revision-Date: 2025-09-28 20:22+0300\n"
-"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
-"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
-"Language: tr\n"
+"POT-Creation-Date: 2025-09-28 00:46+0000\n"
+"PO-Revision-Date: 2025-09-22 03:53+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Emir SARI"
+msgstr "Kisaragi Hiu"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "emir_sari@icloud.com"
+msgstr "mail@kisaragi-hiu.com"
 
 #: modules/account/contents/ui/main.qml:68
 #, kde-format
 msgid "Upload new avatar"
-msgstr "Yeni avatar yükle"
+msgstr "上傳新的頭貼"
 
 #: modules/account/contents/ui/main.qml:85
 #, kde-format
 msgid "Remove current avatar"
-msgstr "Geçerli avatarı kaldır"
+msgstr "移除目前頭貼"
 
 #: modules/account/contents/ui/main.qml:115
 #, kde-format
 msgid "We need a few details to complete the setup."
-msgstr "Kurulumu tamamlamak için birkaç ayrıntıya gereksinimimiz var."
+msgstr "我們需要一些細節來完成設定。"
 
 #: modules/account/contents/ui/main.qml:126
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
-msgstr "Bu kullanıcı, bir yönetici olacak."
+msgstr "這個使用者將會是一個管理員。"
 
 #: modules/account/contents/ui/main.qml:130
 #, kde-kuit-format
@@ -56,70 +56,68 @@ msgid ""
 "means that they can change system settings, install software, and access all "
 "files on the system.<nl/><nl/>Choose a strong password for this user."
 msgstr ""
-"Bu kullanıcının sistemde yönetici ayrıcalıkları olacak.<nl/><nl/>Bu, kullanıcı"
-"nın sistem ayarlarını değiştirebileceği, yazılımlar kurabileceği ve tüm dosyal"
-"ara erişebileceği anlamına gelir.<nl/><nl/>Bu kullanıcı için güçlü bir parola "
-"seçin."
+"這個使用者將在系統上有管理員權限。<nl/><nl/>這代表他能變更系統設定、安裝軟"
+"體，並存取系統上的所有檔案。<nl/><nl/>請為這個使用者選擇高強度的密碼。"
 
 #: modules/account/contents/ui/main.qml:145
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Full Name"
-msgstr "Tam ad"
+msgstr "全名"
 
 #: modules/account/contents/ui/main.qml:166
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Username"
-msgstr "Kullanıcı adı"
+msgstr "使用者名稱"
 
 #: modules/account/contents/ui/main.qml:182
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Password"
-msgstr "Parola"
+msgstr "密碼"
 
 #: modules/account/contents/ui/main.qml:195
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Confirm Password"
-msgstr "Parolayı onayla"
+msgstr "確認密碼"
 
 #: modules/account/contents/ui/main.qml:199
 #, kde-format
 msgctxt "@info:status"
 msgid "Passwords don’t match"
-msgstr "Parolalar eşleşmiyor"
+msgstr "密碼不符"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format
 msgid "Edit APN"
-msgstr "Erişim Noktasını Düzenle"
+msgstr "編輯 APN"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:38
 #, kde-format
 msgid "Name"
-msgstr "Ad"
+msgstr "名稱"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:43
 #, kde-format
 msgid "APN"
-msgstr "Erişim noktası"
+msgstr "APN"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:48
 #, kde-format
 msgid "Username"
-msgstr "Kullanıcı adı"
+msgstr "使用者名稱"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:53
 #, kde-format
 msgid "Password"
-msgstr "Parola"
+msgstr "密碼"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:58
 #, kde-format
 msgid "Network type"
-msgstr "Ağ türü"
+msgstr "網路類型"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
@@ -139,66 +137,64 @@ msgstr "2G"
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 4G"
-msgstr "Yalnızca 4G"
+msgstr "僅 4G"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 3G"
-msgstr "Yalnızca 3G"
+msgstr "僅 3G"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 2G"
-msgstr "Yalnızca 2G"
+msgstr "僅 2G"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Any"
-msgstr "Herhangi biri"
+msgstr "任何"
 
 #: modules/cellular/contents/ui/main.qml:45
 #, kde-format
 msgid ""
 "Please configure your APN below for mobile data, further information will be "
 "available with your carrier."
-msgstr ""
-"Lütfen hücresel veri için erişim noktanızı yapılandırın. Bununla ilgiyi bilgil"
-"eri, operatörünüzden alabilirsiniz."
+msgstr "請在下方為行動資料設定您的 APN，更多訊息會由您的電信提供。"
 
 #: modules/cellular/contents/ui/main.qml:47
 #, kde-format
 msgid "You are connected to the mobile network."
-msgstr "Hücresel ağa bağlısınız."
+msgstr "您目前已連線至行動網路。"
 
 #: modules/cellular/contents/ui/main.qml:49
 #, kde-format
 msgid "Please insert a SIM card into your device."
-msgstr "Lütfen aygıtınıza bir SIM kart takın."
+msgstr "請插入 SIM 卡到您的裝置中。"
 
 #: modules/cellular/contents/ui/main.qml:51
 #, kde-format
 msgid "Your device does not have a modem available."
-msgstr "Aygıtınızda kullanılabilir bir modem/çevirme aygıtı yok."
+msgstr "您的裝置沒有可用的數據晶片。"
 
 #: modules/cellular/contents/ui/main.qml:63
 #, kde-format
 msgid "Mobile Data"
-msgstr "Hücresel Veri"
+msgstr "行動資料"
 
 #: modules/cellular/contents/ui/main.qml:109
 #, kde-format
 msgid "Edit"
-msgstr "Düzenle"
+msgstr "編輯"
 
 #: modules/cellular/contents/ui/main.qml:117
 #, kde-format
 msgid "Delete"
-msgstr "Sil"
+msgstr "刪除"
 
 #: modules/cellular/contents/ui/main.qml:127
 #, kde-format
 msgid "Add APN"
-msgstr "Erişim Noktası Ekle"
+msgstr "新增 APN"
 
 #: modules/finished/contents/ui/main.qml:30
 #, kde-format
@@ -207,218 +203,286 @@ msgid ""
 "Your device is now ready. <br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
-"Aygıtınız artık hazır.<br /><br /><b>Bitir</b>’e tıkladıktan sonra yeni hesabı"
-"nıza oturum açabileceksiniz.<br /><br /><b>%1</b> sisteminin keyfini çıkarın!"
+"您的裝置現已就緒。<br /><br />點擊<b>完成</b>之後您便能夠登入您的新帳號。"
+"<br /><br />享受 <b>%1</b> 吧！"
 
 #: modules/keyboard/contents/ui/main.qml:164
 #, kde-format
 msgid "Select your keyboard layout and language."
-msgstr "Klavye yerleşiminizi ve dilinizi seçin."
+msgstr "請選擇您的鍵盤佈局與語言。"
 
 #: modules/language/contents/ui/main.qml:46
 #, kde-format
 msgid "Please select your preferred language."
-msgstr "Lütfen yeğlediğiniz dili seçin."
+msgstr "請選擇您偏好使用的語言。"
 
 #: modules/language/contents/ui/main.qml:55
 #, kde-format
 msgid "Search languages…"
-msgstr "Dilleri ara…"
+msgstr "搜尋語言…"
 
 #: modules/prepare/contents/ui/main.qml:38
 #, kde-format
 msgid "Adjust the size of elements on the screen."
-msgstr "Ekrandaki ögelerin büyüklüğünü ayarlayın."
+msgstr "請調整螢幕上元素的大小。"
 
 #: modules/prepare/contents/ui/main.qml:49
 #, kde-format
 msgid "Display Scaling"
-msgstr "Görüntü Ölçeklendirmesi"
+msgstr "顯示縮放"
 
 #: modules/prepare/contents/ui/main.qml:74
 #, kde-format
 msgid "Dark Theme"
-msgstr "Koyu Tema"
+msgstr "暗色主題"
 
 #: modules/time/contents/ui/main.qml:35
 #, kde-format
 msgid "Select your time zone and preferred time format."
-msgstr "Zaman diliminizi ve yeğlediğiniz zaman biçimini seçin."
+msgstr "選取您的時區與偏好的時間格式。"
 
 #: modules/time/contents/ui/main.qml:46
 #, kde-format
 msgid "24-Hour Format"
-msgstr "24 saatlik biçim"
+msgstr "24 時制"
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
 msgid "Connect to"
-msgstr "Bağlan"
+msgstr "連線到"
 
 #: modules/wifi/contents/ui/main.qml:77
 #, kde-format
 msgid "Connect to a WiFi network for network access."
-msgstr "Ağ erişimi için bir Wi-Fi ağına bağlanın."
+msgstr "連線到 WiFi 網路來存取網路。"
 
 #: modules/wifi/contents/ui/PasswordField.qml:14
 #, kde-format
 msgid "Password:"
-msgstr "Parola:"
+msgstr "密碼："
 
 #: modules/wifi/contents/ui/PasswordField.qml:26
 #, kde-format
 msgid "Invalid input."
-msgstr "Geçersiz giriş."
+msgstr "無效輸入。"
 
 #: src/auth/authhelper.cpp:26 src/auth/authhelper.cpp:123
 #: src/auth/authhelper.cpp:163 src/auth/authhelper.cpp:200
 #: src/auth/authhelper.cpp:225
 #, kde-format
 msgid "Username argument is missing or invalid."
-msgstr "Kullanıcı adı bilgisi eksik veya geçersiz."
+msgstr "使用者參數缺乏或是無效。"
 
 #: src/auth/authhelper.cpp:37
 #, kde-format
 msgctxt "%1 is a directory path"
 msgid "Failed to create autostart directory: %1"
-msgstr "Kendiliğinden başlat dizini oluşturulamadı: %1"
+msgstr "建立自動啟動目錄失敗：%1"
 
 #: src/auth/authhelper.cpp:46
 #, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to open file for writing: %1"
-msgstr "Dosya, yazmak için açılamadı: %1"
+msgstr "開啟檔案以寫入時失敗：%1"
 
 #: src/auth/authhelper.cpp:53
-#, kde-format
-msgid "Failed to find the initial setup executable path."
-msgstr "Başlangıç kurulumu yürütülebiliri yolu bulunamadı."
+#, fuzzy, kde-format
+#| msgid "Failed to find the initial setup executable path."
+msgid "Failed to find the Plasma Setup executable path."
+msgstr "找不到初始設定執行檔路徑。"
 
 #: src/auth/authhelper.cpp:90
 #, kde-format
 msgctxt "%1 is an error message"
 msgid "Failed to disable systemd unit: %1"
-msgstr "Systemd birimi devre dışı bırakılamadı: %1"
+msgstr "停用 systemd 單元失敗：%1"
 
 #: src/auth/authhelper.cpp:110
 #, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to remove file %1"
-msgstr "Dosya kaldırılamadı: %1"
+msgstr "移除檔案 %1 失敗"
 
 #: src/auth/authhelper.cpp:140
 #, kde-format
 msgctxt "%1 is a directory path"
 msgid "Failed to create .config directory: %1"
-msgstr ".config dizini oluşturulamadı: %1"
+msgstr "建立 .config 目錄失敗：%1"
 
 #: src/auth/authhelper.cpp:150 src/auth/authhelper.cpp:186
 #, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to copy file %1"
-msgstr "Dosya kopyalanamadı: %1"
+msgstr "複製檔案 %1 失敗"
 
 #: src/auth/authhelper.cpp:212
 #, kde-format
 msgctxt "%1 is a directory path, %2 an exit code"
 msgid "Failed to set ownership for home directory %1: exit code %2"
-msgstr "%1 ana klasörü için sahiplik bilgisi ayarlanamadı: Çıkış kodu: %2"
+msgstr "設定家目錄 %1 擁有者失敗：結束碼 %2"
 
 #: src/auth/authhelper.cpp:234
 #, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to open file %1 for writing."
-msgstr "%1 dosyası, yazmak için açılamadı."
+msgstr "開啟檔案 %1 以寫入時失敗。"
 
-#: src/main.cpp:35
+#: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
-msgid "KDE Initial System Setup"
-msgstr "KDE İlk Kullanım Ayarları"
+msgid "Plasma Setup"
+msgstr ""
 
 #: src/main.cpp:37
 #, kde-format
 msgid "Make Plasma yours"
-msgstr "Plasma’yı kendinizin yapın"
+msgstr "自訂 Plasma 行為"
 
 #: src/main.cpp:39
 #, kde-format
 msgid "© 2021-2024 KDE Community"
-msgstr "© 2021–2024 KDE Topluluğu"
+msgstr "© 2021-2024 KDE 社群"
 
 #: src/main.cpp:44
-#, kde-format
-msgid "Remove the initial setup autologin configuration."
-msgstr ""
-"Başlangıç kurulumu için olan kendiliğinden oturum açma yapılandırmasını kaldır"
-"ın."
+#, fuzzy, kde-format
+#| msgid "Remove the initial setup autologin configuration."
+msgid "Remove the Plasma Setup autologin configuration."
+msgstr "移除初始設定自動登入配置。"
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr "<b>Plasma Cep</b>’e<br/>hoş geldiniz!"
+msgstr "歡迎來到<br/><b>Plasma 行動</b>"
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr "<b>Plasma Masaüstü</b>’ne<br/>hoş geldiniz!"
+msgstr "歡迎來到<br/><b>Plasma 桌面</b>"
 
 #: src/qml/LandingComponent.qml:117
 #, kde-format
 msgid "Begin Setup"
-msgstr "Kurulumu Başlat"
+msgstr "開始設定"
 
 #: src/qml/LandingComponent.qml:144
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
-msgstr "<b>%1</b><br/>tarafından sağlanır"
-
-#: src/qml/Main.qml:14
-#, kde-format
-msgid "Initial Start"
-msgstr "İlk Başlangıç"
+msgstr "基於<br/><b>%1</b>"
 
 #: src/qml/Wizard.qml:292
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
-msgstr "Geri"
+msgstr "返回"
 
 #: src/qml/Wizard.qml:315
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr "Sonraki"
+msgstr "下一步"
 
 #: src/qml/Wizard.qml:334
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
-msgstr "Bitir"
+msgstr "完成"
 
 #: src/user.cpp:125
 #, kde-format
 msgctxt "@info, %1 is an error message"
 msgid "Failed to crop image: %1"
-msgstr "Görsel kırpılamadı: %1"
+msgstr "裁剪影像失敗：%1"
 
 #: src/user.cpp:306
 #, kde-format
 msgctxt "%1 is the username"
 msgid "Could not get permission to save user %1"
-msgstr "%1 kullanıcısını kaydetmek için izin alınamadı"
+msgstr "無法取得權限儲存使用者 %1"
 
 #: src/user.cpp:311
 #, kde-format
 msgid "There was an error while saving changes"
-msgstr "Değişiklikler kaydedilirken bir hata oluştu"
+msgstr "儲存變更時出現錯誤"
 
 #: src/user.cpp:412
 #, kde-format
 msgid "Failed to resize image: opening temp file failed"
-msgstr "Görsel yeniden boyutlandırılamadı: Geçici dosya açılamadı"
+msgstr "圖片尺寸調整失敗：無法開啟暫存檔"
 
 #: src/user.cpp:420
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
-msgstr "Görsel yeniden boyutlandırılamadı: Geçici dosyaya yazılamadı"
+msgstr "圖片尺寸調整失敗：無法寫入至暫存檔"
+
+#~ msgid "KDE Initial System Setup"
+#~ msgstr "KDE 初始系統設定"
+
+#~ msgid "Initial Start"
+#~ msgstr "初次啟動"
+
+#~ msgid ""
+#~ "Adjust the screen brightness to be comfortable for the installation "
+#~ "process."
+#~ msgstr "請為安裝過程調整螢幕亮度到舒服的程度。"
+
+#~ msgctxt "%1 is the distro name"
+#~ msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+#~ msgstr "您的裝置現已就緒。<br /><br />享受 <b>%1</b> 吧！"
+
+#~ msgid "Language"
+#~ msgstr "語言"
+
+#~ msgid "Be careful not to lose your password."
+#~ msgstr "請小心不要遺失您的密碼。"
+
+#~ msgid "Tokodon"
+#~ msgstr "Tokodon"
+
+#~ msgid "Browse the Fediverse"
+#~ msgstr "瀏覽聯邦宇宙"
+
+#~ msgctxt "@info"
+#~ msgid "This will be used to name your home folder and can't be changed."
+#~ msgstr "這會用來命名您的家目錄，並且不能變更。"
+
+#~ msgid "Next"
+#~ msgstr "下一步"
+
+#~ msgid "Previous"
+#~ msgstr "上一頁"
+
+#~ msgid "All Done!"
+#~ msgstr "成功完成！"
+
+#~ msgid "Let's get started"
+#~ msgstr "讓我們開始吧"
+
+#~ msgid "Welcome"
+#~ msgstr "歡迎"
+
+#~ msgid "Select a language to begin setup"
+#~ msgstr "選擇語言來進行初始設定"
+
+#~ msgid "I accept these terms and conditions"
+#~ msgstr "我接受這些條款與細則"
+
+#~ msgid "Legal Terms"
+#~ msgstr "法律條款"
+
+#~ msgid "Let's get the legalese out of the way..."
+#~ msgstr "先把法律的東西處理掉吧…"
+
+#~ msgid "Hello World!"
+#~ msgstr "Hello World!"
+
+#~ msgid "Sample Page"
+#~ msgstr "範例頁面"
+
+#~ msgid "This is an example page"
+#~ msgstr "這是一個範例頁面"
+
+#~ msgid "Realname:"
+#~ msgstr "實名："
+
+#~ msgid "Let's set up your user account"
+#~ msgstr "讓我們設定您的使用者帳號吧"

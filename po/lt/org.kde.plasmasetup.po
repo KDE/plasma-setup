@@ -1,52 +1,53 @@
+# Lithuanian translations for kiss package.
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the kiss package.
+# Automatically generated, 2025.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
-"PO-Revision-Date: 2024-07-15 19:45\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"POT-Creation-Date: 2025-09-28 00:46+0000\n"
+"PO-Revision-Date: 2025-08-29 00:44+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/kiss/org.kde.initialsystemsetup.pot\n"
-"X-Crowdin-File-ID: 57488\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Tyson Tan"
+msgstr ""
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tds00@qq.com"
+msgstr ""
 
 #: modules/account/contents/ui/main.qml:68
 #, kde-format
 msgid "Upload new avatar"
-msgstr "上传新头像"
+msgstr ""
 
 #: modules/account/contents/ui/main.qml:85
 #, kde-format
 msgid "Remove current avatar"
-msgstr "移除当前头像"
+msgstr ""
 
 #: modules/account/contents/ui/main.qml:115
 #, kde-format
 msgid "We need a few details to complete the setup."
-msgstr "我们需要一些详细信息来完成设置。"
+msgstr ""
 
 #: modules/account/contents/ui/main.qml:126
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
-msgstr "此用户将成为管理员。"
+msgstr ""
 
 #: modules/account/contents/ui/main.qml:130
 #, kde-kuit-format
@@ -56,145 +57,143 @@ msgid ""
 "means that they can change system settings, install software, and access all "
 "files on the system.<nl/><nl/>Choose a strong password for this user."
 msgstr ""
-"此用户将在系统中拥有管理员权限。<nl/><nl/>这意味着此用户可以更改系统设置、安"
-"装软件以及访问系统中的所有文件。<nl/><nl/>请为此用户选择一个强密码。"
 
 #: modules/account/contents/ui/main.qml:145
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Full Name"
-msgstr "全名"
+msgstr ""
 
 #: modules/account/contents/ui/main.qml:166
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Username"
-msgstr "用户名"
+msgstr ""
 
 #: modules/account/contents/ui/main.qml:182
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Password"
-msgstr "密码"
+msgstr ""
 
 #: modules/account/contents/ui/main.qml:195
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Confirm Password"
-msgstr "确认密码"
+msgstr ""
 
 #: modules/account/contents/ui/main.qml:199
 #, kde-format
 msgctxt "@info:status"
 msgid "Passwords don’t match"
-msgstr "密码不匹配"
+msgstr ""
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format
 msgid "Edit APN"
-msgstr "编辑接入点 (APN)"
+msgstr ""
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:38
 #, kde-format
 msgid "Name"
-msgstr "名称"
+msgstr ""
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:43
 #, kde-format
 msgid "APN"
-msgstr "APN"
+msgstr ""
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:48
 #, kde-format
 msgid "Username"
-msgstr "用户名"
+msgstr ""
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:53
 #, kde-format
 msgid "Password"
-msgstr "密码"
+msgstr ""
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:58
 #, kde-format
 msgid "Network type"
-msgstr "网络类型"
+msgstr ""
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "4G/3G/2G"
-msgstr "4G/3G/2G"
+msgstr ""
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "3G/2G"
-msgstr "3G/2G"
+msgstr ""
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "2G"
-msgstr "2G"
+msgstr ""
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 4G"
-msgstr "仅 4G"
+msgstr ""
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 3G"
-msgstr "仅 3G"
+msgstr ""
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 2G"
-msgstr "仅 2G"
+msgstr ""
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Any"
-msgstr "任意"
+msgstr ""
 
 #: modules/cellular/contents/ui/main.qml:45
 #, kde-format
 msgid ""
 "Please configure your APN below for mobile data, further information will be "
 "available with your carrier."
-msgstr "请在下方配置您的 APN 以使用移动数据，更多相关信息请咨询您的运营商。"
+msgstr ""
 
 #: modules/cellular/contents/ui/main.qml:47
 #, kde-format
 msgid "You are connected to the mobile network."
-msgstr "您已连接到该移动网络。"
+msgstr ""
 
 #: modules/cellular/contents/ui/main.qml:49
 #, kde-format
 msgid "Please insert a SIM card into your device."
-msgstr "请将 SIM 卡插入您的设备。"
+msgstr ""
 
 #: modules/cellular/contents/ui/main.qml:51
 #, kde-format
 msgid "Your device does not have a modem available."
-msgstr "您的设备没有可用的调制解调器。"
+msgstr ""
 
 #: modules/cellular/contents/ui/main.qml:63
 #, kde-format
 msgid "Mobile Data"
-msgstr "移动数据"
+msgstr ""
 
 #: modules/cellular/contents/ui/main.qml:109
 #, kde-format
 msgid "Edit"
-msgstr "编辑"
+msgstr ""
 
 #: modules/cellular/contents/ui/main.qml:117
 #, kde-format
 msgid "Delete"
-msgstr "删除"
+msgstr ""
 
 #: modules/cellular/contents/ui/main.qml:127
 #, kde-format
 msgid "Add APN"
-msgstr "添加 APN"
+msgstr ""
 
 #: modules/finished/contents/ui/main.qml:30
 #, kde-format
@@ -207,237 +206,205 @@ msgstr ""
 #: modules/keyboard/contents/ui/main.qml:164
 #, kde-format
 msgid "Select your keyboard layout and language."
-msgstr "选择您的键盘布局和语言。"
+msgstr ""
 
 #: modules/language/contents/ui/main.qml:46
 #, kde-format
 msgid "Please select your preferred language."
-msgstr "请选择您的首选语言。"
+msgstr ""
 
 #: modules/language/contents/ui/main.qml:55
-#, fuzzy, kde-format
-#| msgid "Search languages..."
+#, kde-format
 msgid "Search languages…"
-msgstr "搜索语言..."
+msgstr ""
 
 #: modules/prepare/contents/ui/main.qml:38
 #, kde-format
 msgid "Adjust the size of elements on the screen."
-msgstr "调整屏幕显示的元素大小。"
+msgstr ""
 
 #: modules/prepare/contents/ui/main.qml:49
 #, kde-format
 msgid "Display Scaling"
-msgstr "显示缩放"
+msgstr ""
 
 #: modules/prepare/contents/ui/main.qml:74
 #, kde-format
 msgid "Dark Theme"
-msgstr "深色主题"
+msgstr ""
 
 #: modules/time/contents/ui/main.qml:35
 #, kde-format
 msgid "Select your time zone and preferred time format."
-msgstr "选择您的时区和首选的时间格式。"
+msgstr ""
 
 #: modules/time/contents/ui/main.qml:46
 #, kde-format
 msgid "24-Hour Format"
-msgstr "24 小时格式"
+msgstr ""
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
 msgid "Connect to"
-msgstr "连接到"
+msgstr ""
 
 #: modules/wifi/contents/ui/main.qml:77
 #, kde-format
 msgid "Connect to a WiFi network for network access."
-msgstr "连接到 WiFi 网络以访问互联网。"
+msgstr ""
 
 #: modules/wifi/contents/ui/PasswordField.qml:14
 #, kde-format
 msgid "Password:"
-msgstr "密码："
+msgstr ""
 
 #: modules/wifi/contents/ui/PasswordField.qml:26
 #, kde-format
 msgid "Invalid input."
-msgstr "输入的内容无效。"
+msgstr ""
 
 #: src/auth/authhelper.cpp:26 src/auth/authhelper.cpp:123
 #: src/auth/authhelper.cpp:163 src/auth/authhelper.cpp:200
 #: src/auth/authhelper.cpp:225
 #, kde-format
 msgid "Username argument is missing or invalid."
-msgstr "用户名参数缺失或无效。"
+msgstr ""
 
 #: src/auth/authhelper.cpp:37
-#, fuzzy, kde-format
-#| msgid "Failed to create autostart directory: %1"
+#, kde-format
 msgctxt "%1 is a directory path"
 msgid "Failed to create autostart directory: %1"
-msgstr "创建自动启动目录失败：%1"
+msgstr ""
 
 #: src/auth/authhelper.cpp:46
-#, fuzzy, kde-format
-#| msgid "Failed to open file for writing: %1"
+#, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to open file for writing: %1"
-msgstr "无法打开文件以写入：%1"
+msgstr ""
 
 #: src/auth/authhelper.cpp:53
 #, kde-format
-msgid "Failed to find the initial setup executable path."
-msgstr "无法找到初始化设置可执行程序路径。"
+msgid "Failed to find the Plasma Setup executable path."
+msgstr ""
 
 #: src/auth/authhelper.cpp:90
-#, fuzzy, kde-format
-#| msgid "Failed to disable systemd unit: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Failed to disable systemd unit: %1"
-msgstr "禁用 systemd 单元失败：%1"
+msgstr ""
 
 #: src/auth/authhelper.cpp:110
-#, fuzzy, kde-format
-#| msgid "Failed to remove file %1"
+#, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to remove file %1"
-msgstr "移除文件 %1 失败"
+msgstr ""
 
 #: src/auth/authhelper.cpp:140
-#, fuzzy, kde-format
-#| msgid "Failed to create autostart directory: %1"
+#, kde-format
 msgctxt "%1 is a directory path"
 msgid "Failed to create .config directory: %1"
-msgstr "创建自动启动目录失败：%1"
+msgstr ""
 
 #: src/auth/authhelper.cpp:150 src/auth/authhelper.cpp:186
-#, fuzzy, kde-format
-#| msgid "Failed to remove file %1"
+#, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to copy file %1"
-msgstr "移除文件 %1 失败"
+msgstr ""
 
 #: src/auth/authhelper.cpp:212
-#, fuzzy, kde-format
-#| msgid "Failed to set ownership for home directory %1: exit code %2"
+#, kde-format
 msgctxt "%1 is a directory path, %2 an exit code"
 msgid "Failed to set ownership for home directory %1: exit code %2"
-msgstr "无法为主目录 %1 设置所有权：退出代码 %2"
+msgstr ""
 
 #: src/auth/authhelper.cpp:234
-#, fuzzy, kde-format
-#| msgid "Failed to open file %1 for writing."
+#, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to open file %1 for writing."
-msgstr "打开文件 %1 写入失败。"
+msgstr ""
 
-#: src/main.cpp:35
+#: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
-msgid "KDE Initial System Setup"
-msgstr "KDE 初始系统设置程序"
+msgid "Plasma Setup"
+msgstr ""
 
 #: src/main.cpp:37
 #, kde-format
 msgid "Make Plasma yours"
-msgstr "帮助您进行 Plasma 的初始系统设置"
+msgstr ""
 
 #: src/main.cpp:39
 #, kde-format
 msgid "© 2021-2024 KDE Community"
-msgstr "© 2021-2024 KDE Community"
+msgstr ""
 
 #: src/main.cpp:44
 #, kde-format
-msgid "Remove the initial setup autologin configuration."
-msgstr "移除初始化设置自动登录配置。"
+msgid "Remove the Plasma Setup autologin configuration."
+msgstr ""
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr "欢迎使用<br/><b>Plasma Mobile</b>"
+msgstr ""
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr "欢迎使用<br/><b>Plasma 桌面</b>"
+msgstr ""
 
 #: src/qml/LandingComponent.qml:117
 #, kde-format
 msgid "Begin Setup"
-msgstr "开始设置"
+msgstr ""
 
 #: src/qml/LandingComponent.qml:144
-#, fuzzy, kde-format
-#| msgid "Powered by<br/><b>%1</b>"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
-msgstr "由 <b>%1</b><br/>开发维护"
-
-#: src/qml/Main.qml:14
-#, kde-format
-msgid "Initial Start"
-msgstr "初始化首页"
+msgstr ""
 
 #: src/qml/Wizard.qml:292
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
-msgstr "后退"
+msgstr ""
 
 #: src/qml/Wizard.qml:315
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr "下一步"
+msgstr ""
 
 #: src/qml/Wizard.qml:334
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
-msgstr "完成"
+msgstr ""
 
 #: src/user.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to crop image: %1"
+#, kde-format
 msgctxt "@info, %1 is an error message"
 msgid "Failed to crop image: %1"
-msgstr "裁剪图像失败：%1"
+msgstr ""
 
 #: src/user.cpp:306
-#, fuzzy, kde-format
-#| msgid "Could not get permission to save user %1"
+#, kde-format
 msgctxt "%1 is the username"
 msgid "Could not get permission to save user %1"
-msgstr "无法获取保存用户 %1 的权限"
+msgstr ""
 
 #: src/user.cpp:311
 #, kde-format
 msgid "There was an error while saving changes"
-msgstr "保存更改时出错"
+msgstr ""
 
 #: src/user.cpp:412
 #, kde-format
 msgid "Failed to resize image: opening temp file failed"
-msgstr "调整图像大小失败：无法打开临时文件"
+msgstr ""
 
 #: src/user.cpp:420
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
-msgstr "调整图像大小失败：无法写入临时文件"
-
-#~ msgid ""
-#~ "Adjust the screen brightness to be comfortable for the installation "
-#~ "process."
-#~ msgstr "调整屏幕亮度，以便在安装过程中舒适地阅读屏幕显示的内容。"
-
-#, fuzzy
-#~| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
-#~ msgctxt "%1 is the distro name"
-#~ msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
-#~ msgstr "您的设备已经准备就绪。<br /><br />请随心所欲地使用 <b>%1</b>！"
-
-#~ msgid "Language"
-#~ msgstr "语言"
+msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
+"POT-Creation-Date: 2025-09-28 00:46+0000\n"
 "PO-Revision-Date: 2025-09-20 06:38+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -292,8 +292,9 @@ msgid "Failed to open file for writing: %1"
 msgstr "ფაილის ჩასაწერად გახსნის შეცდომა: %1"
 
 #: src/auth/authhelper.cpp:53
-#, kde-format
-msgid "Failed to find the initial setup executable path."
+#, fuzzy, kde-format
+#| msgid "Failed to find the initial setup executable path."
+msgid "Failed to find the Plasma Setup executable path."
 msgstr "საწყისი მორგების გამშვები ფაილის ბილიკის აღმოჩენა შეუძლებელია."
 
 #: src/auth/authhelper.cpp:90
@@ -332,10 +333,10 @@ msgctxt "%1 is a file path"
 msgid "Failed to open file %1 for writing."
 msgstr "ფაილის %1 ჩასაწერად გახსნა ჩავარდა."
 
-#: src/main.cpp:35
+#: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
-msgid "KDE Initial System Setup"
-msgstr "KDE-ის სისტემის საწყისი მორგება"
+msgid "Plasma Setup"
+msgstr ""
 
 #: src/main.cpp:37
 #, kde-format
@@ -348,8 +349,9 @@ msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 KDE-ის საზოგადოება"
 
 #: src/main.cpp:44
-#, kde-format
-msgid "Remove the initial setup autologin configuration."
+#, fuzzy, kde-format
+#| msgid "Remove the initial setup autologin configuration."
+msgid "Remove the Plasma Setup autologin configuration."
 msgstr "საწყისი მორგების ავტოშესვლის კონფიგურაციის წაშლა."
 
 #: src/qml/LandingComponent.qml:103
@@ -372,11 +374,6 @@ msgstr "მორგების დაწყება"
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "<br/><b>%1</b>-ის მიერ"
-
-#: src/qml/Main.qml:14
-#, kde-format
-msgid "Initial Start"
-msgstr "საწყისი გაშვება"
 
 #: src/qml/Wizard.qml:292
 #, kde-format
@@ -422,6 +419,12 @@ msgstr "გამოსახულების ზომის შეცვლ�
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
 msgstr "გამოსახულების ზომის შეცვლის შეცდომა: დროებითი ფაილის ჩაწერის შეცდომა"
+
+#~ msgid "KDE Initial System Setup"
+#~ msgstr "KDE-ის სისტემის საწყისი მორგება"
+
+#~ msgid "Initial Start"
+#~ msgstr "საწყისი გაშვება"
 
 #~ msgid ""
 #~ "Adjust the screen brightness to be comfortable for the installation "

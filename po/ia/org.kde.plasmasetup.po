@@ -1,53 +1,52 @@
-# Copyright (C) 2024 This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kiss package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Matjaž Jeran <matjaz.jeran@amis.net>
+# SPDX-FileCopyrightText: 2025 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
-"PO-Revision-Date: 2025-09-20 08:26+0200\n"
-"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
-"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
-"Language: sl\n"
+"POT-Creation-Date: 2025-09-28 00:46+0000\n"
+"PO-Revision-Date: 2025-09-02 17:58+0200\n"
+"Last-Translator: giovanni <g.sora@tiscali.it>\n"
+"Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
+"Language: ia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.7\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Matjaž Jeran"
+msgstr "Giovanni Sora"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "matjaz.jeran@amis.net"
+msgstr "g.sora@tiscali.it"
 
 #: modules/account/contents/ui/main.qml:68
 #, kde-format
 msgid "Upload new avatar"
-msgstr "Naloži nov avatar"
+msgstr "Incarga nove avatar"
 
 #: modules/account/contents/ui/main.qml:85
 #, kde-format
 msgid "Remove current avatar"
-msgstr "Odstrani trenutni avatar"
+msgstr "Remove avatar currente"
 
 #: modules/account/contents/ui/main.qml:115
 #, kde-format
 msgid "We need a few details to complete the setup."
-msgstr "Za dokončanje nastavitve potrebujemo nekaj podrobnosti."
+msgstr "On necessita alcun detalios per completar le configuration."
 
 #: modules/account/contents/ui/main.qml:126
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
-msgstr "Ta uporabnik bo skrbnik."
+msgstr ""
 
 #: modules/account/contents/ui/main.qml:130
 #, kde-kuit-format
@@ -57,49 +56,46 @@ msgid ""
 "means that they can change system settings, install software, and access all "
 "files on the system.<nl/><nl/>Choose a strong password for this user."
 msgstr ""
-"Ta uporabnik bo imel skrbniške pravice v sistemu.<nl/><nl/>To pomeni, da "
-"lahko spreminja sistemske nastavitve, namešča programsko opremo in dostopa "
-"do vseh datotek v sistemu.<nl/><nl/>Izberite močno geslo za tega uporabnika."
 
 #: modules/account/contents/ui/main.qml:145
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Full Name"
-msgstr "Polno ime"
+msgstr "Nomine complete"
 
 #: modules/account/contents/ui/main.qml:166
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Username"
-msgstr "Uporabniško ime"
+msgstr "Nomine usator"
 
 #: modules/account/contents/ui/main.qml:182
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Password"
-msgstr "Geslo"
+msgstr "Contrasigno"
 
 #: modules/account/contents/ui/main.qml:195
 #, kde-format
 msgctxt "@label:textfield"
 msgid "Confirm Password"
-msgstr "Potrdite geslo"
+msgstr "Confirma contrasigno"
 
 #: modules/account/contents/ui/main.qml:199
 #, kde-format
 msgctxt "@info:status"
 msgid "Passwords don’t match"
-msgstr "Gesli se ne ujemata"
+msgstr "Le contrasignos non coincide"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format
 msgid "Edit APN"
-msgstr "Uredi APN"
+msgstr "Edita APN"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:38
 #, kde-format
 msgid "Name"
-msgstr "Ime"
+msgstr "Nomine"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:43
 #, kde-format
@@ -109,17 +105,17 @@ msgstr "APN"
 #: modules/cellular/contents/ui/EditProfileDialog.qml:48
 #, kde-format
 msgid "Username"
-msgstr "Uporabniško ime"
+msgstr "Nomine usator"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:53
 #, kde-format
 msgid "Password"
-msgstr "Geslo"
+msgstr "Contrasigno"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:58
 #, kde-format
 msgid "Network type"
-msgstr "Vrsta omrežja"
+msgstr "Typo de rete"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
@@ -139,22 +135,22 @@ msgstr "2G"
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 4G"
-msgstr "Samo 4G"
+msgstr "Solmente 4G"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 3G"
-msgstr "Samo 3G"
+msgstr "Solmente 3G"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 2G"
-msgstr "Samo 2G"
+msgstr "Solmente 2G"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Any"
-msgstr "Katerikoli"
+msgstr "Ulle"
 
 #: modules/cellular/contents/ui/main.qml:45
 #, kde-format
@@ -162,43 +158,43 @@ msgid ""
 "Please configure your APN below for mobile data, further information will be "
 "available with your carrier."
 msgstr ""
-"Spodaj konfigurirajte svoj APN za mobilne podatke. Več informacij bo na "
-"voljo pri vašem operaterju."
+"Pro favor tu configura tu APN a basso per datos mobile, ulterior information "
+"essera disponibile con tu carrier (portator)."
 
 #: modules/cellular/contents/ui/main.qml:47
 #, kde-format
 msgid "You are connected to the mobile network."
-msgstr "Povezani ste z mobilnim omrežjem."
+msgstr "Tu es connectite al rete mobile."
 
 #: modules/cellular/contents/ui/main.qml:49
 #, kde-format
 msgid "Please insert a SIM card into your device."
-msgstr "Vstavite kartico SIM v napravo."
+msgstr "Pro favor tu inserta un carta SIM in tu dispositivo."
 
 #: modules/cellular/contents/ui/main.qml:51
 #, kde-format
 msgid "Your device does not have a modem available."
-msgstr "Vaša naprava nima na voljo modema."
+msgstr "Tu dispositivo non ha un modem disponibile"
 
 #: modules/cellular/contents/ui/main.qml:63
 #, kde-format
 msgid "Mobile Data"
-msgstr "Mobilni podatki"
+msgstr "Datos Mobile"
 
 #: modules/cellular/contents/ui/main.qml:109
 #, kde-format
 msgid "Edit"
-msgstr "Uredi"
+msgstr "Modifica"
 
 #: modules/cellular/contents/ui/main.qml:117
 #, kde-format
 msgid "Delete"
-msgstr "Zbriši"
+msgstr "Dele"
 
 #: modules/cellular/contents/ui/main.qml:127
 #, kde-format
 msgid "Add APN"
-msgstr "Dodaj APN"
+msgstr "Adde APN"
 
 #: modules/finished/contents/ui/main.qml:30
 #, kde-format
@@ -207,287 +203,259 @@ msgid ""
 "Your device is now ready. <br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
-"Vaša naprava je zdaj pripravljena. <br /><br />Ko kliknete <b>Dokončaj</b>, "
-"se boste lahko prijavili v svoj novi račun.<br /><br />Uživajte <b>%1</b>!"
 
 #: modules/keyboard/contents/ui/main.qml:164
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Please select your preferred language."
 msgid "Select your keyboard layout and language."
-msgstr "Izberite razporeditev tipkovnice in jezik."
+msgstr "Pro favor selige tu linguage preferite."
 
 #: modules/language/contents/ui/main.qml:46
 #, kde-format
 msgid "Please select your preferred language."
-msgstr "Prosim izberite želeni jezik."
+msgstr "Pro favor selige tu linguage preferite."
 
 #: modules/language/contents/ui/main.qml:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Search languages..."
 msgid "Search languages…"
-msgstr "Išči jezike…"
+msgstr "Cerca linguages..."
 
 #: modules/prepare/contents/ui/main.qml:38
 #, kde-format
 msgid "Adjust the size of elements on the screen."
-msgstr "Prilagodite velikost elementov na zaslonu."
+msgstr "Adapta le grandor de elementos sur le schermo."
 
 #: modules/prepare/contents/ui/main.qml:49
 #, kde-format
 msgid "Display Scaling"
-msgstr "Prikaži merilo"
+msgstr "Scalar de monstrator"
 
 #: modules/prepare/contents/ui/main.qml:74
 #, kde-format
 msgid "Dark Theme"
-msgstr "Temna tema"
+msgstr "Thema obscur"
 
 #: modules/time/contents/ui/main.qml:35
 #, kde-format
 msgid "Select your time zone and preferred time format."
-msgstr "Izberite svoj časovni pas in želeno obliko zapisa časa."
+msgstr "Selige tu fuso horari e formato de tempore preferite."
 
 #: modules/time/contents/ui/main.qml:46
 #, kde-format
 msgid "24-Hour Format"
-msgstr "24-urni format"
+msgstr "Formato a 24 horas"
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
 msgid "Connect to"
-msgstr "Povežite se na"
+msgstr "Connecte a"
 
 #: modules/wifi/contents/ui/main.qml:77
 #, kde-format
 msgid "Connect to a WiFi network for network access."
-msgstr "Za dostop do omrežja se povežite z omrežjem WiFi."
+msgstr "Connecte a unrete WiFi per accesso de rete."
 
 #: modules/wifi/contents/ui/PasswordField.qml:14
 #, kde-format
 msgid "Password:"
-msgstr "Geslo:"
+msgstr "Contrasigno:"
 
 #: modules/wifi/contents/ui/PasswordField.qml:26
 #, kde-format
 msgid "Invalid input."
-msgstr "Neveljaven vhod."
+msgstr "Entrata invalide."
 
 #: src/auth/authhelper.cpp:26 src/auth/authhelper.cpp:123
 #: src/auth/authhelper.cpp:163 src/auth/authhelper.cpp:200
 #: src/auth/authhelper.cpp:225
 #, kde-format
 msgid "Username argument is missing or invalid."
-msgstr "Argument uporabniškega imena manjka ali je neveljaven."
+msgstr ""
 
 #: src/auth/authhelper.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to crop image: %1"
 msgctxt "%1 is a directory path"
 msgid "Failed to create autostart directory: %1"
-msgstr "Ustvarjanje imenika za samodejni zagon ni uspelo: %1"
+msgstr "Il falleva a tonder imagine: %1"
 
 #: src/auth/authhelper.cpp:46
 #, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to open file for writing: %1"
-msgstr "Ni bilo mogoče odpreti datoteke za pisanje: %1"
+msgstr "Il falleva a aperir  file pro scriber: %1"
 
 #: src/auth/authhelper.cpp:53
 #, kde-format
-msgid "Failed to find the initial setup executable path."
-msgstr "Ni bilo mogoče najti poti do izvedljive datoteke začetne namestitve."
+msgid "Failed to find the Plasma Setup executable path."
+msgstr ""
 
 #: src/auth/authhelper.cpp:90
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to crop image: %1"
 msgctxt "%1 is an error message"
 msgid "Failed to disable systemd unit: %1"
-msgstr "Onemogočenje enote systemd: %1 ni uspelo"
+msgstr "Il falleva a tonder imagine: %1"
 
 #: src/auth/authhelper.cpp:110
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to crop image: %1"
 msgctxt "%1 is a file path"
 msgid "Failed to remove file %1"
-msgstr "Neuspelo odstranjevanje datoteke %1"
+msgstr "Falleva a remover file %1:<nl/>%2"
 
 #: src/auth/authhelper.cpp:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to crop image: %1"
 msgctxt "%1 is a directory path"
 msgid "Failed to create .config directory: %1"
-msgstr "Ustvarjanje imenika .config ni uspelo: %1"
+msgstr "Il falleva a tonder imagine: %1"
 
 #: src/auth/authhelper.cpp:150 src/auth/authhelper.cpp:186
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to crop image: %1"
 msgctxt "%1 is a file path"
 msgid "Failed to copy file %1"
-msgstr "Neuspelo kopiranje datoteke %1"
+msgstr "Falleva a remover file %1:<nl/>%2"
 
 #: src/auth/authhelper.cpp:212
 #, kde-format
 msgctxt "%1 is a directory path, %2 an exit code"
 msgid "Failed to set ownership for home directory %1: exit code %2"
-msgstr "Ni uspelo nastaviti lastništva za domači imenik %1: izhodna koda %2"
+msgstr ""
 
 #: src/auth/authhelper.cpp:234
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to crop image: %1"
 msgctxt "%1 is a file path"
 msgid "Failed to open file %1 for writing."
-msgstr "Ni bilo mogoče odpreti datoteke %1 za pisanje."
+msgstr "Il falleva a aperir  file pro scriber: %1"
 
-#: src/main.cpp:35
+#: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
-msgid "KDE Initial System Setup"
-msgstr "Začetna namestitev sistema KDE"
+msgid "Plasma Setup"
+msgstr ""
 
 #: src/main.cpp:37
 #, kde-format
 msgid "Make Plasma yours"
-msgstr "Naredite Plasmo vašo"
+msgstr ""
 
 #: src/main.cpp:39
 #, kde-format
 msgid "© 2021-2024 KDE Community"
-msgstr "© 2021-2024 Skupnost KDE"
+msgstr "© 2021-2024 Communitate de KDE"
 
 #: src/main.cpp:44
 #, kde-format
-msgid "Remove the initial setup autologin configuration."
-msgstr "Odstrani začetno konfiguracijo samodejne prijave."
+msgid "Remove the Plasma Setup autologin configuration."
+msgstr ""
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr "Dobrodošli v<br/><b>Plasma Mobile</b>"
+msgstr "Benvenite a <br/><b>Plasma Mobile</b>"
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr "Dobrodošli na<br/><b>namizju Plasma</b>"
+msgstr "Benvenite a <br/><b>Plasma Desktop (Scriptorio de Plasma)</b>"
 
 #: src/qml/LandingComponent.qml:117
 #, kde-format
 msgid "Begin Setup"
-msgstr "Začni nastavitve"
+msgstr "Initia configuration"
 
 #: src/qml/LandingComponent.qml:144
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
-msgstr "Poganja<br/><b>%1</b>"
-
-#: src/qml/Main.qml:14
-#, kde-format
-msgid "Initial Start"
-msgstr "Začetni zagon"
+msgstr "Potentiate per <br/><b>%1</b>"
 
 #: src/qml/Wizard.qml:292
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
-msgstr "Nazaj"
+msgstr "Retro"
 
 #: src/qml/Wizard.qml:315
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr "Naslednji"
+msgstr "Proxime"
 
 #: src/qml/Wizard.qml:334
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
-msgstr "Končaj"
+msgstr "Termina"
 
 #: src/user.cpp:125
 #, kde-format
 msgctxt "@info, %1 is an error message"
 msgid "Failed to crop image: %1"
-msgstr "Obrezovanje slike ni uspelo: %1"
+msgstr "Il falleva a tonder imagine: %1"
 
 #: src/user.cpp:306
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Could not get permission to save user %1"
 msgctxt "%1 is the username"
 msgid "Could not get permission to save user %1"
-msgstr "Ni bilo mogoče pridobiti dovoljenja za shranjevanje uporabnika %1"
+msgstr "Non poteva obtener permission a salveguardar usator %1"
 
 #: src/user.cpp:311
 #, kde-format
 msgid "There was an error while saving changes"
-msgstr "Pri shranjevanju sprememb je prišlo do napake"
+msgstr "Il habeva un error durante que il salveguardava cambiamentos"
 
 #: src/user.cpp:412
 #, kde-format
 msgid "Failed to resize image: opening temp file failed"
-msgstr ""
-"Spreminjanje velikosti slike ni uspelo: odpiranje začasne datoteke ni uspelo"
+msgstr "Falleva a redimensionar image. il falleva a aperir file temp"
 
 #: src/user.cpp:420
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
-msgstr ""
-"Spreminjanje velikosti slike ni uspelo: pisanje v začasno datoteko ni uspelo"
+msgstr "Falleva a redimensionar image. il falleva a scriber in file temp"
+
+#~ msgid "Initial Start"
+#~ msgstr "Startar initial"
 
 #~ msgid ""
 #~ "Adjust the screen brightness to be comfortable for the installation "
 #~ "process."
-#~ msgstr "Prilagodite svetlost zaslona, ​​da bo udobna za postopek namestitve."
+#~ msgstr ""
+#~ "Adapta le brillantia de schermo a esser confortabile per le processo de "
+#~ "installation."
 
 #~ msgctxt "%1 is the distro name"
 #~ msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
-#~ msgstr "Vaša naprava je zdaj pripravljena. <br /><br />Uživajte <b>%1</b>!"
+#~ msgstr "Tu dispositivo es nunc preste. <br /><br /> Gaude de <b>%1</b>!"
 
 #~ msgid "Language"
-#~ msgstr "Jezik"
+#~ msgstr "Linguage"
 
 #~ msgid "Be careful not to lose your password."
-#~ msgstr "Pazite, da ne izgubite gesla."
+#~ msgstr "Sea attente a non perder tu contrasigno."
 
 #~ msgid "Tokodon"
 #~ msgstr "Tokodon"
 
 #~ msgid "Browse the Fediverse"
-#~ msgstr "Brskajte po fediversu"
+#~ msgstr "Naviga le Fediverse"
 
 #~ msgctxt "@info"
 #~ msgid "This will be used to name your home folder and can't be changed."
 #~ msgstr ""
-#~ "To bo uporabljeno za poimenovanje vaše domače mape in ga ni mogoče "
-#~ "spremeniti."
+#~ "Isto essera usate per nominar tu dossier domo (o initial) e nonpote esser "
+#~ "cambiate."
 
 #~ msgid "Next"
-#~ msgstr "Naslednji"
-
-#~ msgid "Previous"
-#~ msgstr "Prejšnji"
-
-#~ msgid "All Done!"
-#~ msgstr "Vse opravljeno!"
-
-#~ msgid "Let's get started"
-#~ msgstr "Pa začnimo"
-
-#~ msgid "Welcome"
-#~ msgstr "Dobrodošli"
-
-#~ msgid "Select a language to begin setup"
-#~ msgstr "Izberite jezik za začetek nastavitev"
-
-#~ msgid "I accept these terms and conditions"
-#~ msgstr "Sprejemam te določbe in pogoje"
-
-#~ msgid "Legal Terms"
-#~ msgstr "Pravne določbe"
-
-#~ msgid "Let's get the legalese out of the way..."
-#~ msgstr "Spravimo pravniške podrobnosti s poti..."
-
-#~ msgid "Hello World!"
-#~ msgstr "Pozdravljen svet!"
-
-#~ msgid "Sample Page"
-#~ msgstr "Vzorčna stran"
-
-#~ msgid "This is an example page"
-#~ msgstr "To je stran primera"
-
-#~ msgid "Realname:"
-#~ msgstr "Pravo ime:"
-
-#~ msgid "Let's set up your user account"
-#~ msgstr "Nastavimo vaš uporabniški račun"
+#~ msgstr "Proxime"
