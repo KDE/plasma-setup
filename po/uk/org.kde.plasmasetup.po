@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:46+0000\n"
-"PO-Revision-Date: 2025-09-20 15:28+0300\n"
+"PO-Revision-Date: 2025-09-29 15:50+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -292,11 +292,9 @@ msgid "Failed to open file for writing: %1"
 msgstr "Не вдалося відкрити файл для записування: %1"
 
 #: src/auth/authhelper.cpp:53
-#, fuzzy, kde-format
-#| msgid "Failed to find the initial setup executable path."
+#, kde-format
 msgid "Failed to find the Plasma Setup executable path."
-msgstr ""
-"Не вдалося знайти шлях до виконуваних файлів початкового налаштовування."
+msgstr "Не вдалося знайти шлях до виконуваних файлів налаштовування Плазми."
 
 #: src/auth/authhelper.cpp:90
 #, kde-format
@@ -338,7 +336,7 @@ msgstr "Не вдалося відкрити файл %1 для записува
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "Налаштування Плазми"
 
 #: src/main.cpp:37
 #, kde-format
@@ -351,11 +349,9 @@ msgid "© 2021-2024 KDE Community"
 msgstr "© Спільнота KDE, 2021–2024"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Remove the initial setup autologin configuration."
+#, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
-msgstr ""
-"Вилучити налаштування автоматичного входу для початкового налаштовування."
+msgstr "Вилучити налаштування автоматичного входу для налаштовування Плазми."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format

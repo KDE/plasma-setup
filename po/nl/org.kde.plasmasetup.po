@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:46+0000\n"
-"PO-Revision-Date: 2025-09-20 12:03+0200\n"
+"PO-Revision-Date: 2025-09-29 10:49+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -291,10 +291,9 @@ msgid "Failed to open file for writing: %1"
 msgstr "Bestand openen voor schrijven is mislukt: %1"
 
 #: src/auth/authhelper.cpp:53
-#, fuzzy, kde-format
-#| msgid "Failed to find the initial setup executable path."
+#, kde-format
 msgid "Failed to find the Plasma Setup executable path."
-msgstr "Vinden van het uitvoerbare pad voor initiële opzet is mislukt."
+msgstr "Vinden van het uitvoerbare pad voor opzet van Plasma is mislukt."
 
 #: src/auth/authhelper.cpp:90
 #, kde-format
@@ -335,7 +334,7 @@ msgstr "Bestand %1 openen voor schrijven is mislukt."
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "Opzet van Plasma"
 
 #: src/main.cpp:37
 #, kde-format
@@ -348,11 +347,11 @@ msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 KDE-gemeenschap"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Remove the initial setup autologin configuration."
+#, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr ""
-"Verwijder de initiële opzet van de configuratie van automatisch aanmelden."
+"Verwijder het opzetten van Plasma uit de configuratie voor automatisch "
+"aanmelden."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format

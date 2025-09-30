@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:46+0000\n"
-"PO-Revision-Date: 2025-09-20 06:38+0200\n"
+"PO-Revision-Date: 2025-09-29 12:17+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -292,10 +292,9 @@ msgid "Failed to open file for writing: %1"
 msgstr "ფაილის ჩასაწერად გახსნის შეცდომა: %1"
 
 #: src/auth/authhelper.cpp:53
-#, fuzzy, kde-format
-#| msgid "Failed to find the initial setup executable path."
+#, kde-format
 msgid "Failed to find the Plasma Setup executable path."
-msgstr "საწყისი მორგების გამშვები ფაილის ბილიკის აღმოჩენა შეუძლებელია."
+msgstr "მორგების გამშვები ფაილის ბილიკის აღმოჩენა შეუძლებელია."
 
 #: src/auth/authhelper.cpp:90
 #, kde-format
@@ -336,7 +335,7 @@ msgstr "ფაილის %1 ჩასაწერად გახსნა ჩ
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "Plasma-ის მორგება"
 
 #: src/main.cpp:37
 #, kde-format
@@ -349,10 +348,9 @@ msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 KDE-ის საზოგადოება"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Remove the initial setup autologin configuration."
+#, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
-msgstr "საწყისი მორგების ავტოშესვლის კონფიგურაციის წაშლა."
+msgstr "მორგების ავტოშესვლის კონფიგურაციის წაშლა."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
