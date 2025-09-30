@@ -15,7 +15,7 @@
 # systemd/system/plasma-setup.service
 
 [Unit]
-Description=Plasma Setup First Run
+Description=Plasma Setup - Out-of-Box / First-Run setup wizard
 After=systemd-user-sessions.service plymouth-quit.service systemd-logind.service
 Before=display-manager.service
 
