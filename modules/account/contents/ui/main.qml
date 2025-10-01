@@ -19,7 +19,7 @@ import org.kde.plasmasetup.components as PlasmaSetupComponents
 PlasmaSetupComponents.SetupModule {
     id: root
 
-    nextEnabled: usernameField.text.length > 0 && paswordField.text.length > 0 && repeatField.text === paswordField.text
+    // nextEnabled: usernameField.text.length > 0 && paswordField.text.length > 0 && repeatField.text === paswordField.text
 
     contentItem: ColumnLayout {
         anchors.fill: parent

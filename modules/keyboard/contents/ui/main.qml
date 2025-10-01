@@ -145,7 +145,7 @@ PlasmaSetupComponents.SetupModule {
         id: mainColumn
 
         ColumnLayout {
-            Layout.maximumWidth: root.cardWidth
+            // Layout.maximumWidth: root.cardWidth
             Layout.alignment: Qt.AlignCenter
             spacing: Kirigami.Units.smallSpacing
 
@@ -172,7 +172,7 @@ PlasmaSetupComponents.SetupModule {
 
             RowLayout {
                 Layout.fillWidth: true
-                Layout.maximumHeight: Kirigami.Units.gridUnit * 20
+                // Layout.maximumHeight: Kirigami.Units.gridUnit * 20
                 implicitHeight: mainColumn.height - titleLabel.height - searchField.height - Kirigami.Units.smallSpacing
 
                 ScrollView {

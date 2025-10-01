@@ -34,7 +34,7 @@ PlasmaSetupComponents.SetupModule {
 
         FormCard.FormCard {
             id: timeFormatCard
-            maximumWidth: root.cardWidth
+            // maximumWidth: root.cardWidth
 
             Layout.fillWidth: true
 
@@ -51,11 +51,11 @@ PlasmaSetupComponents.SetupModule {
         }
 
         ColumnLayout {
-            Layout.maximumWidth: root.cardWidth
+            // Layout.maximumWidth: root.cardWidth
             Layout.alignment: Qt.AlignCenter
-            Layout.leftMargin: Kirigami.Units.gridUnit
-            Layout.rightMargin: Kirigami.Units.gridUnit
-            Layout.bottomMargin: Kirigami.Units.gridUnit
+            // Layout.leftMargin: Kirigami.Units.gridUnit
+            // Layout.rightMargin: Kirigami.Units.gridUnit
+            // Layout.bottomMargin: Kirigami.Units.gridUnit
 
             Kirigami.SearchField {
                 id: searchField

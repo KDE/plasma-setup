@@ -78,7 +78,7 @@ PlasmaSetupComponents.SetupModule {
 
             FormCard.FormCard {
                 id: savedCard
-                maximumWidth: root.cardWidth
+                // maximumWidth: root.cardWidth
                 visible: enabledConnections.wirelessEnabled && count > 0
 
                 // number of visible entries
@@ -108,13 +108,13 @@ PlasmaSetupComponents.SetupModule {
             }
 
             FormCard.FormCard {
-                maximumWidth: root.cardWidth
+                // maximumWidth: root.cardWidth
                 visible: enabledConnections.wirelessEnabled
-                Layout.minimumWidth: Kirigami.Settings.isMobile ? null : Kirigami.Units.gridUnit * 25
+                // Layout.minimumWidth: Kirigami.Settings.isMobile ? null : Kirigami.Units.gridUnit * 25
 
                 ScrollView {
                     Layout.fillWidth: true
-                    Layout.maximumHeight: Kirigami.Units.gridUnit * 20
+                    // Layout.maximumHeight: Kirigami.Units.gridUnit * 20
                     implicitHeight: mainColumn.height - titleLabel.height - savedCard.height - Kirigami.Units.gridUnit
 
                     ListView {

@@ -215,13 +215,10 @@ Kirigami.Page {
                 centerIn: Kirigami.Settings.isMobile ? undefined : parent
             }
 
-            width: Kirigami.Settings.isMobile ? undefined
-                                              : isSmallScreen ? parent.width * 0.7
-                                                              : parent.width * 0.3
-
-            height: Kirigami.Settings.isMobile ? undefined
-                                               : isSmallScreen ? parent.height * 0.9
-                                                               : parent.height * 0.5
+            // width: Kirigami.Settings.isMobile ? undefined : parent.width * 0.5
+            // height: Kirigami.Settings.isMobile ? undefined : parent.height * 0.7
+            width: Kirigami.Settings.isMobile ? undefined : parent.width * 0.4
+            height: Kirigami.Settings.isMobile ? undefined : parent.height * 0.7
 
             Component.onCompleted: {
                 console.info("Screen size:", Screen.width, "x", Screen.height);

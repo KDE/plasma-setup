@@ -27,7 +27,7 @@ PlasmaSetupComponents.SetupModule {
         id: mainColumn
 
         ColumnLayout {
-            Layout.maximumWidth: root.cardWidth
+            // Layout.maximumWidth: root.cardWidth
             Layout.alignment: Qt.AlignCenter
             spacing: Kirigami.Units.smallSpacing
 
@@ -57,7 +57,7 @@ PlasmaSetupComponents.SetupModule {
             ScrollView {
                 Layout.fillWidth: true
                 // Maximum height prevents the list from growing too tall on large screens
-                Layout.maximumHeight: Kirigami.Units.gridUnit * 20
+                // Layout.maximumHeight: Kirigami.Units.gridUnit * 20
                 // Implicit height allows the list to shrink on smaller screens,
                 // without overflowing the available space or being unnecessarily small.
                 implicitHeight: mainColumn.height - titleLabel.height - searchField.height - Kirigami.Units.gridUnit
