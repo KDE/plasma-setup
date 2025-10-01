@@ -19,57 +19,56 @@ PlasmaSetupComponents.SetupModule {
 
     available: availableDevices.wirelessDeviceAvailable
 
-    contentItem: ScrollView {
-        ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
-        contentWidth: -1
+    contentItem: ColumnLayout {
+        id: mainColumn
+
+        PlasmaNM.AvailableDevices {
+            id: availableDevices
+        }
+
+        PlasmaNM.Handler {
+            id: handler
+        }
+
+        PlasmaNM.EnabledConnections {
+            id: enabledConnections
+        }
+
+        PlasmaNM.NetworkModel {
+            id: connectionModel
+        }
+
+        PlasmaNM.MobileProxyModel {
+            id: mobileProxyModel
+            sourceModel: connectionModel
+            showSavedMode: false
+        }
+
+        ConnectDialog {
+            id: connectionDialog
+            handler: handler
+            parent: root.contentItem.Overlay.overlay
+        }
+
+        Component.onCompleted: handler.requestScan()
+
+        Timer {
+            id: scanTimer
+            interval: 10200
+            repeat: true
+            running: parent.visible
+
+            onTriggered: handler.requestScan()
+        }
 
         ColumnLayout {
-            anchors.centerIn: parent
-            spacing: Kirigami.Units.gridUnit
-
-            PlasmaNM.AvailableDevices {
-                id: availableDevices
-            }
-
-            PlasmaNM.Handler {
-                id: handler
-            }
-
-            PlasmaNM.EnabledConnections {
-                id: enabledConnections
-            }
-
-            PlasmaNM.NetworkModel {
-                id: connectionModel
-            }
-
-            PlasmaNM.MobileProxyModel {
-                id: mobileProxyModel
-                sourceModel: connectionModel
-                showSavedMode: false
-            }
-
-            ConnectDialog {
-                id: connectionDialog
-                handler: handler
-                parent: root.contentItem.Overlay.overlay
-            }
-
-            Component.onCompleted: handler.requestScan()
-
-            Timer {
-                id: scanTimer
-                interval: 10200
-                repeat: true
-                running: parent.visible
-
-                onTriggered: handler.requestScan()
-            }
+            Layout.alignment: Qt.AlignCenter
 
             Label {
+                id: titleLabel
                 Layout.leftMargin: Kirigami.Units.gridUnit
                 Layout.rightMargin: Kirigami.Units.gridUnit
-                Layout.alignment: Qt.AlignTop
+                Layout.bottomMargin: Kirigami.Units.gridUnit
                 Layout.fillWidth: true
 
                 wrapMode: Text.Wrap
@@ -115,8 +114,8 @@ PlasmaSetupComponents.SetupModule {
 
                 ScrollView {
                     Layout.fillWidth: true
-                    Layout.minimumHeight: Kirigami.Units.gridUnit * 14
                     Layout.maximumHeight: Kirigami.Units.gridUnit * 20
+                    implicitHeight: mainColumn.height - titleLabel.height - savedCard.height - Kirigami.Units.gridUnit
 
                     ListView {
                         id: listView
