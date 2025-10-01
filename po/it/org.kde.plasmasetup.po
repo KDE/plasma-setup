@@ -1,21 +1,22 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kiss package.
 # SPDX-FileCopyrightText: 2024, 2025 Valter Mura <valtermura@gmail.com>
+# SPDX-FileCopyrightText: 2025 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:46+0000\n"
-"PO-Revision-Date: 2025-09-20 20:15+0200\n"
-"Last-Translator: Valter Mura <valtermura@gmail.com>\n"
+"PO-Revision-Date: 2025-09-29 17:19+0200\n"
+"Last-Translator: Vincenzo Reale <>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -290,12 +291,9 @@ msgid "Failed to open file for writing: %1"
 msgstr "Apertura del file in scrittura non riuscito: %1"
 
 #: src/auth/authhelper.cpp:53
-#, fuzzy, kde-format
-#| msgid "Failed to find the initial setup executable path."
+#, kde-format
 msgid "Failed to find the Plasma Setup executable path."
-msgstr ""
-"Impossibile trovare il percorso dell'eseguibile per la configurazione "
-"iniziale."
+msgstr "Impossibile trovare il percorso dell'eseguibile per Plasma Setup"
 
 #: src/auth/authhelper.cpp:90
 #, kde-format
@@ -338,7 +336,7 @@ msgstr "Apertura del file %1 in scrittura non riuscito."
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "Plasma Setup"
 
 #: src/main.cpp:37
 #, kde-format
@@ -351,11 +349,9 @@ msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 La Comunità di KDE"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Remove the initial setup autologin configuration."
+#, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
-msgstr ""
-"Rimuovi l'impostazione di accesso automatico alla configurazione iniziale."
+msgstr "Rimuovi la configurazione di accesso automatico di Plasma Setup."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format

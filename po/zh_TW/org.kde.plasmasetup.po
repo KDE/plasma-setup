@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:46+0000\n"
-"PO-Revision-Date: 2025-09-22 03:53+0900\n"
+"PO-Revision-Date: 2025-09-30 16:39+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 25.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -286,10 +286,9 @@ msgid "Failed to open file for writing: %1"
 msgstr "開啟檔案以寫入時失敗：%1"
 
 #: src/auth/authhelper.cpp:53
-#, fuzzy, kde-format
-#| msgid "Failed to find the initial setup executable path."
+#, kde-format
 msgid "Failed to find the Plasma Setup executable path."
-msgstr "找不到初始設定執行檔路徑。"
+msgstr "找不到《Plasma 初始設定》執行檔路徑。"
 
 #: src/auth/authhelper.cpp:90
 #, kde-format
@@ -330,7 +329,7 @@ msgstr "開啟檔案 %1 以寫入時失敗。"
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "Plasma 初始設定"
 
 #: src/main.cpp:37
 #, kde-format
@@ -343,10 +342,9 @@ msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 KDE 社群"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Remove the initial setup autologin configuration."
+#, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
-msgstr "移除初始設定自動登入配置。"
+msgstr "移除《Plasma 初始設定》自動登入配置。"
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
