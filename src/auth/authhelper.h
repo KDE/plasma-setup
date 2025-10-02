@@ -8,6 +8,26 @@
 
 using namespace KAuth;
 
+/**
+ * Struct to hold user information.
+ */
+struct UserInfo {
+    /** The username of the user. */
+    QString username;
+
+    /** The home directory path of the user. */
+    QString homePath;
+
+    /** The user ID (UID) of the user. */
+    int uid;
+
+    /** The group ID (GID) of the user. */
+    int gid;
+};
+
+/**
+ * A KAuth helper class for performing privileged actions related to Plasma Setup.
+ */
 class PlasmaSetupAuthHelper : public QObject
 {
     Q_OBJECT
@@ -91,4 +111,18 @@ public Q_SLOTS:
      * @return An ActionReply indicating success or failure.
      */
     ActionReply setnewusertempautologin(const QVariantMap &args);
+
+private:
+    /**
+     * Validates the given username and retrieves information about the user.
+     *
+     * This function performs important security checks to ensure that the username
+     * is valid and that the user exists on the system. It also prevents actions from being performed
+     * on invalid users.
+     *
+     * @param username The username to look up.
+     * @param reply Reference to an ActionReply object to set error information if needed.
+     * @return A UserInfo struct containing information about the user, or null if the user is invalid.
+     */
+    std::optional<UserInfo> getUserInfo(const QString &username, ActionReply &reply);
 };

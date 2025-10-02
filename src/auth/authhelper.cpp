@@ -15,7 +15,14 @@
 #include "authhelper.h"
 #include "config-plasma-setup.h"
 
+#include <pwd.h>
+
 const QString SDDM_AUTOLOGIN_CONFIG_PATH = QStringLiteral("/etc/sddm.conf.d/99-plasma-setup.conf");
+
+/**
+ * Minimum UID for regular (non-system) users.
+ */
+constexpr int MIN_REGULAR_USER_UID = 1000;
 
 ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap &args)
 {
@@ -28,7 +35,15 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     }
 
     QString username = args[QStringLiteral("username")].toString();
-    QString autostartDirPath = QDir::cleanPath(QStringLiteral("/home/") + username + QStringLiteral("/.config/autostart"));
+    std::optional<UserInfo> userInfoMaybe = getUserInfo(username, reply);
+    if (!userInfoMaybe.has_value()) {
+        // getUserInfo already set the error in reply
+        return reply;
+    }
+    UserInfo userInfo = userInfoMaybe.value();
+    QString homePath = userInfo.homePath;
+
+    QString autostartDirPath = QDir::cleanPath(homePath + QStringLiteral("/.config/autostart"));
     QDir autostartDir(autostartDirPath);
 
     // Ensure the autostart directory exists
@@ -125,6 +140,13 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
     }
 
     QString username = args[QStringLiteral("username")].toString();
+    auto userInfoMaybe = getUserInfo(username, reply);
+    if (!userInfoMaybe.has_value()) {
+        // getUserInfo already set the error in reply
+        return reply;
+    }
+    UserInfo userInfo = userInfoMaybe.value();
+    QString homePath = userInfo.homePath;
 
     // Ensure the .config directory exists in the new user's home
     //
@@ -132,7 +154,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
     // action that is called explicitly before all others, since it will definitely be needed for
     // any other configuration actions. This will also avoid redundant error handling code in each
     // action.
-    QString configDirPath = QDir::cleanPath(QStringLiteral("/home/") + username + QStringLiteral("/.config"));
+    QString configDirPath = QDir::cleanPath(homePath + QStringLiteral("/.config"));
     QDir configDir(configDirPath);
 
     if (!configDir.exists() && !configDir.mkpath(QStringLiteral("."))) {
@@ -143,7 +165,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
 
     // Set the global theme for the new user
     QString sourceFilePath = QStringLiteral("/run/plasma-setup/.config/kdeglobals");
-    QString destFilePath = QStringLiteral("/home/%1/.config/kdeglobals").arg(username);
+    QString destFilePath = QDir::cleanPath(configDirPath + QStringLiteral("/kdeglobals"));
 
     if (!QFile::copy(sourceFilePath, destFilePath)) {
         reply = ActionReply::HelperErrorReply();
@@ -165,10 +187,17 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
     }
 
     QString username = args[QStringLiteral("username")].toString();
+    auto userInfoMaybe = getUserInfo(username, reply);
+    if (!userInfoMaybe.has_value()) {
+        // getUserInfo already set the error in reply
+        return reply;
+    }
+    UserInfo userInfo = userInfoMaybe.value();
+    QString homePath = userInfo.homePath;
 
     // Copy display scaling configuration files to the new user
     QString sourceBasePath = QDir::cleanPath(QStringLiteral("/run/plasma-setup/.config"));
-    QString destBasePath = QDir::cleanPath(QStringLiteral("/home/") + username + QStringLiteral("/.config"));
+    QString destBasePath = QDir::cleanPath(homePath + QStringLiteral("/.config"));
     QDir destDir(destBasePath);
     if (!destDir.exists()) {
         destDir.mkpath(destBasePath);
@@ -202,7 +231,13 @@ ActionReply PlasmaSetupAuthHelper::setnewuserhomedirectoryownership(const QVaria
     }
 
     QString username = args[QStringLiteral("username")].toString();
-    QString homePath = QDir::cleanPath(QStringLiteral("/home/") + username);
+    auto userInfoMaybe = getUserInfo(username, reply);
+    if (!userInfoMaybe.has_value()) {
+        // getUserInfo already set the error in reply
+        return reply;
+    }
+    UserInfo userInfo = userInfoMaybe.value();
+    QString homePath = userInfo.homePath;
 
     // Recursively set ownership of the home directory to the new user
     int exitCode = QProcess::execute(QStringLiteral("chown"), {QStringLiteral("-R"), username + QStringLiteral(":") + username, homePath});
@@ -228,6 +263,15 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
 
     QString username = args[QStringLiteral("username")].toString();
 
+    // Validate the username. We don't actually need the home directory here,
+    // but this function performs the necessary security checks.
+    auto userInfoMaybe = getUserInfo(username, reply);
+    if (!userInfoMaybe.has_value()) {
+        // getUserInfo already set the error in reply
+        return reply;
+    }
+    UserInfo userInfo = userInfoMaybe.value();
+
     QFile file(SDDM_AUTOLOGIN_CONFIG_PATH);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         reply = ActionReply::HelperErrorReply();
@@ -243,6 +287,44 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
     file.close();
 
     return ActionReply::SuccessReply();
+}
+
+std::optional<UserInfo> PlasmaSetupAuthHelper::getUserInfo(const QString &username, ActionReply &reply)
+{
+    struct passwd pwd;
+    struct passwd *result = nullptr;
+    QByteArray usernameBytes = username.toLocal8Bit();
+    long bufsize = sysconf(_SC_GETPW_R_SIZE_MAX);
+    if (bufsize <= 0) {
+        bufsize = 16384; // fallback size
+    }
+    QByteArray buf(static_cast<int>(bufsize), 0);
+
+    int ret = getpwnam_r(usernameBytes.constData(), &pwd, buf.data(), buf.size(), &result);
+
+    if (result == nullptr) {
+        reply = ActionReply::HelperErrorReply();
+        if (ret == 0) {
+            reply.setErrorDescription(i18nc("%1 is a username", "User does not exist: %1", username));
+        } else {
+            reply.setErrorDescription(i18nc("%1 is a username, %2 is an error code", "System error while looking up user %1: error code %2", username, ret));
+        }
+        return std::nullopt;
+    }
+
+    if (pwd.pw_uid < MIN_REGULAR_USER_UID) {
+        reply = ActionReply::HelperErrorReply();
+        reply.setErrorDescription(i18nc("%1 is a username", "Refusing to perform action for system user: %1", username));
+        return std::nullopt;
+    }
+
+    UserInfo userInfo;
+    userInfo.username = QString::fromLocal8Bit(pwd.pw_name);
+    userInfo.homePath = QString::fromLocal8Bit(pwd.pw_dir);
+    userInfo.uid = pwd.pw_uid;
+    userInfo.gid = pwd.pw_gid;
+
+    return userInfo;
 }
 
 KAUTH_HELPER_MAIN("org.kde.plasmasetup", PlasmaSetupAuthHelper)

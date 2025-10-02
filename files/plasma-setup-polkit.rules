@@ -12,7 +12,7 @@ polkit.addRule(function (action, subject) {
     polkit.log("plasma-setup: action: " + action + ", subject: " + subject);
 
     if (subject.user !== "plasma-setup") {
-        return;
+        return polkit.Result.NO;
     }
 
     if (action.id === "org.freedesktop.locale1.set-keyboard" ||

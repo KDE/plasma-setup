@@ -21,4 +21,4 @@ target_include_directories(plasma-setup-auth-helper PRIVATE
 
 kauth_install_actions(org.kde.plasmasetup org.kde.plasmasetup.actions)
 install(TARGETS plasma-setup-auth-helper DESTINATION ${KAUTH_HELPER_INSTALL_DIR})
-kauth_install_helper_files(plasma-setup-auth-helper org.kde.plasmasetup root)
+kauth_install_helper_files(plasma-setup-auth-helper org.kde.plasmasetup plasma-setup)
