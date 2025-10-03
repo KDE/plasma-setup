@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:46+0000\n"
-"PO-Revision-Date: 2025-09-21 02:14+0200\n"
+"PO-Revision-Date: 2025-10-02 21:28+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -294,11 +294,9 @@ msgid "Failed to open file for writing: %1"
 msgstr "Fitxategia idazteko irekitzea huts egin du: %1"
 
 #: src/auth/authhelper.cpp:53
-#, fuzzy, kde-format
-#| msgid "Failed to find the initial setup executable path."
+#, kde-format
 msgid "Failed to find the Plasma Setup executable path."
-msgstr ""
-"Hasierako ezarpenenaren exekutagarriaren bide-izena aurkitzea huts egin du."
+msgstr "Plasma Ezarpenaren exekutagarriaren bide-izena aurkitzea huts egin du."
 
 #: src/auth/authhelper.cpp:90
 #, kde-format
@@ -340,7 +338,7 @@ msgstr "%1 fitxategia idazteko irekitzea huts egin du."
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "Plasma Ezarpena"
 
 #: src/main.cpp:37
 #, kde-format
@@ -353,11 +351,9 @@ msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 KDE Komunitatea"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Remove the initial setup autologin configuration."
+#, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
-msgstr ""
-"Kendu hasierako ezarpenaren saioan automatikoki sartzeko konfigurazioa."
+msgstr "Kendu Plasma Ezarpena saioan automatikoki sartzeko konfigurazioa."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
