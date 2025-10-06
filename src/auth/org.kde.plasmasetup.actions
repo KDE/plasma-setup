@@ -6,6 +6,7 @@
 
 [Domain]
 Name=Plasma Setup
+Name[ar]=إعداد بلازما
 Name[ca]=Configuració del Plasma
 Name[ca@valencia]=Configureu Plasma
 Name[es]=Configuración de Plasma
@@ -16,6 +17,7 @@ Name[ka]=Plasma-ის მორგება
 Name[nl]=Plasma opzet
 Name[pt_BR]=Configuração do Plasma
 Name[sl]=Plasma Setup
+Name[sv]=Inställning av Plasma
 Name[tr]=Plasma İlk Kullanım Yardımcısı
 Name[uk]=Налаштування Плазми
 Name[zh_TW]=Plasma 初始設定
@@ -87,6 +89,7 @@ Name[uk]=Вимкнути модуль Systemd
 Name[zh_CN]=禁用 Systemd 单元
 Name[zh_TW]=停用 systemd 單元
 Description=Disable the systemd unit for Plasma Setup
+Description[ar]=تعطيل وحدة systemd لإعداد بلازما
 Description[ca]=Desactiva la unitat del «systemd» per a la configuració del Plasma
 Description[ca@valencia]=Desactiva la unitat de «systemd» per a la configuració de Plasma
 Description[es]=Desactivar la unidad systemd para la configuración de Plasma
@@ -97,6 +100,7 @@ Description[ka]=Systemd-ის ერთეულის გამორთვა
 Description[nl]=Systemd-eenheid uitschakelen voor Plasma opzet
 Description[pt_BR]=Desabilitar a unidade systemd para a configuração do Plasma
 Description[sl]=Onemogoči enoto systemd za Plasma Setup
+Description[sv]=Inaktivera systemd-enhet för inställning av Plasma
 Description[tr]=Plasma İlk Kullanım Yardımcısı için Systemd birimini devre dışı bırakın
 Description[uk]=Вимкнути модуль systemd для налаштовування Плазми
 Description[zh_TW]=將《Plasma 初始設定》的 systemd 單元停用
