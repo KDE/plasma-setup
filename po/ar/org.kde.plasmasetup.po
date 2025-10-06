@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:46+0000\n"
-"PO-Revision-Date: 2025-09-20 20:30+0400\n"
+"PO-Revision-Date: 2025-10-05 10:25+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -290,10 +290,9 @@ msgid "Failed to open file for writing: %1"
 msgstr "فشل فتح الملفّ للكتابة: %1"
 
 #: src/auth/authhelper.cpp:53
-#, fuzzy, kde-format
-#| msgid "Failed to find the initial setup executable path."
+#, kde-format
 msgid "Failed to find the Plasma Setup executable path."
-msgstr "فشل في العثور على مسار الملف القابل للتنفيذ للإعداد الأولي."
+msgstr "فشل في العثور على مسار الملف القابل للتنفيذ للإعداد بلازما."
 
 #: src/auth/authhelper.cpp:90
 #, kde-format
@@ -334,7 +333,7 @@ msgstr "فشل فتح ملفّ %1 للكتابة"
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "إعداد بلازما"
 
 #: src/main.cpp:37
 #, kde-format
@@ -347,10 +346,9 @@ msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 مجتمع كِيدِي"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Remove the initial setup autologin configuration."
+#, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
-msgstr "أزل إعدادات الولوج الآلي للإعداد الأولي."
+msgstr "أزل إعدادات الولوج الآلي للإعداد بلازما."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format

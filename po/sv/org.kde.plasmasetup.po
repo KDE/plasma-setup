@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:46+0000\n"
-"PO-Revision-Date: 2025-09-20 09:59+0200\n"
+"PO-Revision-Date: 2025-10-05 08:51+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -290,12 +290,11 @@ msgid "Failed to open file for writing: %1"
 msgstr "Misslyckades öppna fil för skrivning: %1"
 
 #: src/auth/authhelper.cpp:53
-#, fuzzy, kde-format
-#| msgid "Failed to find the initial setup executable path."
+#, kde-format
 msgid "Failed to find the Plasma Setup executable path."
 msgstr ""
-"Misslyckades hitta sökväg till det körbara programmet för initial "
-"inställning."
+"Misslyckades hitta sökväg till det körbara programmet för inställning av "
+"Plasma."
 
 #: src/auth/authhelper.cpp:90
 #, kde-format
@@ -336,7 +335,7 @@ msgstr "Misslyckades öppna filen %1 för skrivning."
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "Inställning av Plasma"
 
 #: src/main.cpp:37
 #, kde-format
@@ -349,10 +348,9 @@ msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 KDE-gemenskapen"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Remove the initial setup autologin configuration."
+#, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
-msgstr "Tog bort automatisk inloggningsinställning för initial inställning."
+msgstr "Tog bort automatisk inloggningsinställning för inställning av Plasma."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
