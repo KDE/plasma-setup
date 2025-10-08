@@ -9,7 +9,6 @@
 
 #include <KAuth/HelperSupport>
 #include <KConfigGroup>
-#include <KLocalizedString>
 #include <KSharedConfig>
 
 #include "authhelper.h"
@@ -23,7 +22,7 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
 
     if (!args.contains(QStringLiteral("username")) || !args[QStringLiteral("username")].canConvert<QString>()) {
         reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(i18n("Username argument is missing or invalid."));
+        reply.setErrorDescription(QStringLiteral("Username argument is missing or invalid."));
         return reply;
     }
 
@@ -34,7 +33,7 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     // Ensure the autostart directory exists
     if (!autostartDir.exists() && !autostartDir.mkpath(QStringLiteral("."))) {
         reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(i18nc("%1 is a directory path", "Failed to create autostart directory: %1", autostartDirPath));
+        reply.setErrorDescription(QStringLiteral("Unable to create autostart directory: ") + autostartDirPath);
         return reply;
     }
 
@@ -43,14 +42,15 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     QFile desktopFile(desktopFilePath);
     if (!desktopFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
         reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(i18nc("%1 is a file path", "Failed to open file for writing: %1", desktopFilePath));
+        reply.setErrorDescription(QStringLiteral("Unable to open file for writing: ") + desktopFilePath + QStringLiteral(" error:")
+                                  + desktopFile.errorString());
         return reply;
     }
 
     QString plasmaSetupExecutablePath = QStringLiteral(PLASMA_SETUP_LIBEXECDIR) + QStringLiteral("/plasma-setup");
     if (plasmaSetupExecutablePath.isEmpty()) {
         reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(i18n("Failed to find the Plasma Setup executable path."));
+        reply.setErrorDescription(QStringLiteral("Unable to find the Plasma Setup executable path."));
         return reply;
     }
 
@@ -87,7 +87,7 @@ ActionReply PlasmaSetupAuthHelper::disablesystemdunit(const QVariantMap &args)
 
     if (dbusReply.isError()) {
         actionReply = ActionReply::HelperErrorReply();
-        actionReply.setErrorDescription(i18nc("%1 is an error message", "Failed to disable systemd unit: %1", dbusReply.error().message()));
+        actionReply.setErrorDescription(QStringLiteral("Unable to disable systemd unit: ") + dbusReply.error().message());
         return actionReply;
     }
 
@@ -105,9 +105,11 @@ ActionReply PlasmaSetupAuthHelper::removeautologin(const QVariantMap &args)
         return ActionReply::SuccessReply();
     }
 
-    if (!QFile::remove(fileInfo.filePath())) {
+    QFile file(fileInfo.filePath());
+    if (!file.remove()) {
         reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(i18nc("%1 is a file path", "Failed to remove file %1", fileInfo.filePath()));
+        QString errorDetails = file.errorString();
+        reply.setErrorDescription(QStringLiteral("Unable to remove file ") + fileInfo.filePath() + QStringLiteral(": ") + errorDetails);
         return reply;
     }
 
@@ -120,7 +122,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
 
     if (!args.contains(QStringLiteral("username")) || !args[QStringLiteral("username")].canConvert<QString>()) {
         reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(i18n("Username argument is missing or invalid."));
+        reply.setErrorDescription(QStringLiteral("Username argument is missing or invalid."));
         return reply;
     }
 
@@ -137,7 +139,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
 
     if (!configDir.exists() && !configDir.mkpath(QStringLiteral("."))) {
         reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(i18nc("%1 is a directory path", "Failed to create .config directory: %1", configDirPath));
+        reply.setErrorDescription(QStringLiteral("Unable to create .config directory: ") + configDirPath);
         return reply;
     }
 
@@ -160,7 +162,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
 
     if (!args.contains(QStringLiteral("username")) || !args[QStringLiteral("username")].canConvert<QString>()) {
         reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(i18n("Username argument is missing or invalid."));
+        reply.setErrorDescription(QStringLiteral("Username argument is missing or invalid."));
         return reply;
     }
 
@@ -222,7 +224,7 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
 
     if (!args.contains(QStringLiteral("username")) || !args[QStringLiteral("username")].canConvert<QString>()) {
         reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(i18n("Username argument is missing or invalid."));
+        reply.setErrorDescription(QStringLiteral("Username argument is missing or invalid."));
         return reply;
     }
 
@@ -231,7 +233,7 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
     QFile file(SDDM_AUTOLOGIN_CONFIG_PATH);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(i18nc("%1 is a file path", "Failed to open file %1 for writing.", SDDM_AUTOLOGIN_CONFIG_PATH));
+        reply.setErrorDescription(QStringLiteral("Unable to open file ") + SDDM_AUTOLOGIN_CONFIG_PATH + QStringLiteral(" for writing: ") + file.errorString());
         return reply;
     }
 
