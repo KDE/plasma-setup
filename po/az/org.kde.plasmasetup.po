@@ -1,0 +1,417 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the plasma-setup package.
+#
+# SPDX-FileCopyrightText: 2025 linux <xxmn77@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-setup\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-09-28 00:46+0000\n"
+"PO-Revision-Date: 2025-10-08 02:08+0400\n"
+"Last-Translator: linux <xxmn77@gmail.com>\n"
+"Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
+"Language: az\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.08.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Xəyyam Qocayev"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xxmn77@gmail.com"
+
+#: modules/account/contents/ui/main.qml:68
+#, kde-format
+msgid "Upload new avatar"
+msgstr "Yeni avatar yükləyin"
+
+#: modules/account/contents/ui/main.qml:85
+#, kde-format
+msgid "Remove current avatar"
+msgstr "Hazırkı avatarı silin"
+
+#: modules/account/contents/ui/main.qml:115
+#, kde-format
+msgid "We need a few details to complete the setup."
+msgstr "Quraşdırmanı tamamlamaq üçün bir neçə detal lazımdır."
+
+#: modules/account/contents/ui/main.qml:126
+#, kde-format
+msgctxt "@info"
+msgid "This user will be an administrator."
+msgstr "Bu istifadəçi adminstrator olacaq."
+
+#: modules/account/contents/ui/main.qml:130
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"This user will have administrative privileges on the system.<nl/><nl/>This "
+"means that they can change system settings, install software, and access all "
+"files on the system.<nl/><nl/>Choose a strong password for this user."
+msgstr ""
+"bu istifadəçi sistemdə adminstrator imtiyazlarına malik olacaq.<nl/><nl/>Bu "
+"o deməkdir ki, onlar sistem ayarlarını dəyişə, tətbiqlər quraşdıra və kök "
+"fayl sisteminə daxil ola bilərlər.<nl/><nl/>Bu istifadəçi üçün güclü "
+"şifrədən istifadə edin."
+
+#: modules/account/contents/ui/main.qml:145
+#, kde-format
+msgctxt "@label:textfield"
+msgid "Full Name"
+msgstr "Tam ad"
+
+#: modules/account/contents/ui/main.qml:166
+#, kde-format
+msgctxt "@label:textfield"
+msgid "Username"
+msgstr "İstifadəşi adı"
+
+#: modules/account/contents/ui/main.qml:182
+#, kde-format
+msgctxt "@label:textfield"
+msgid "Password"
+msgstr "Şifrə"
+
+#: modules/account/contents/ui/main.qml:195
+#, kde-format
+msgctxt "@label:textfield"
+msgid "Confirm Password"
+msgstr "Şifrənin təsdiqi"
+
+#: modules/account/contents/ui/main.qml:199
+#, kde-format
+msgctxt "@info:status"
+msgid "Passwords don’t match"
+msgstr "Şifrələr eyni deyil"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:14
+#, kde-format
+msgid "Edit APN"
+msgstr "Giriş nöqtəsinə düzəliş edin"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:38
+#, kde-format
+msgid "Name"
+msgstr "Ad"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:43
+#, kde-format
+msgid "APN"
+msgstr "Giriş nöqtəsi"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:48
+#, kde-format
+msgid "Username"
+msgstr "İstifadəşi adı"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:53
+#, kde-format
+msgid "Password"
+msgstr "Şifrə"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:58
+#, kde-format
+msgid "Network type"
+msgstr "Şəbəkə növü"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "4G/3G/2G"
+msgstr "4G/3G/2G"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "3G/2G"
+msgstr "3G/2G"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "2G"
+msgstr "2G"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "Only 4G"
+msgstr "Yalnız 4G"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "Only 3G"
+msgstr "Yalnız 3G"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "Only 2G"
+msgstr "Yalnız 2G"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "Any"
+msgstr "İstənilən"
+
+#: modules/cellular/contents/ui/main.qml:45
+#, kde-format
+msgid ""
+"Please configure your APN below for mobile data, further information will be "
+"available with your carrier."
+msgstr ""
+"Aşağıda mobil verilənlər üçün giriş nöqtəsini ayarlayın. Bundan sonrakı "
+"məlumatları xidmət təminatçınız təqdim edəcək."
+
+#: modules/cellular/contents/ui/main.qml:47
+#, kde-format
+msgid "You are connected to the mobile network."
+msgstr "Mobil şəbəkəsinə qoşulmusunuz."
+
+#: modules/cellular/contents/ui/main.qml:49
+#, kde-format
+msgid "Please insert a SIM card into your device."
+msgstr "SİM kartınızı cihazınıza daxil edin."
+
+#: modules/cellular/contents/ui/main.qml:51
+#, kde-format
+msgid "Your device does not have a modem available."
+msgstr "Cihazınızda modem mövcud deyil."
+
+#: modules/cellular/contents/ui/main.qml:63
+#, kde-format
+msgid "Mobile Data"
+msgstr "Mobil verilənlər"
+
+#: modules/cellular/contents/ui/main.qml:109
+#, kde-format
+msgid "Edit"
+msgstr "Düzəliş edin"
+
+#: modules/cellular/contents/ui/main.qml:117
+#, kde-format
+msgid "Delete"
+msgstr "Silin"
+
+#: modules/cellular/contents/ui/main.qml:127
+#, kde-format
+msgid "Add APN"
+msgstr "APN əlavə edin"
+
+#: modules/finished/contents/ui/main.qml:30
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready. <br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"Cihazınız indi hazırdır.<br /><br /><b>Son</b> düyməsinə vursuqdan sonra "
+"hesabınıza daxil ola biləcəksiniz.<br /><br /><b>%1</b> ilə sizə uğurlar!"
+
+#: modules/keyboard/contents/ui/main.qml:164
+#, kde-format
+msgid "Select your keyboard layout and language."
+msgstr "Klaviatura qatını və dili seçin."
+
+#: modules/language/contents/ui/main.qml:46
+#, kde-format
+msgid "Please select your preferred language."
+msgstr "İstədiyiniz dili seçin."
+
+#: modules/language/contents/ui/main.qml:55
+#, kde-format
+msgid "Search languages…"
+msgstr "Dilləri axtarmaq..."
+
+#: modules/prepare/contents/ui/main.qml:38
+#, kde-format
+msgid "Adjust the size of elements on the screen."
+msgstr "Ekrandakı elementlərin ölçüsünü tənzimləyin."
+
+#: modules/prepare/contents/ui/main.qml:49
+#, kde-format
+msgid "Display Scaling"
+msgstr "Ekran miqyası"
+
+#: modules/prepare/contents/ui/main.qml:74
+#, kde-format
+msgid "Dark Theme"
+msgstr "Qaranlıq görünüş"
+
+#: modules/time/contents/ui/main.qml:35
+#, kde-format
+msgid "Select your time zone and preferred time format."
+msgstr "Saaat qurşağınızı və istədiyiniz vaxt formatını seçin."
+
+#: modules/time/contents/ui/main.qml:46
+#, kde-format
+msgid "24-Hour Format"
+msgstr "24 saat formatı"
+
+#: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
+#, kde-format
+msgid "Connect to"
+msgstr "24 saat formatı"
+
+#: modules/wifi/contents/ui/main.qml:77
+#, kde-format
+msgid "Connect to a WiFi network for network access."
+msgstr "İnternetə giriş üçün WiFi şəbəkəsinə qoşulun."
+
+#: modules/wifi/contents/ui/PasswordField.qml:14
+#, kde-format
+msgid "Password:"
+msgstr "Şifrə:"
+
+#: modules/wifi/contents/ui/PasswordField.qml:26
+#, kde-format
+msgid "Invalid input."
+msgstr "Səhv daxiletmə."
+
+#: src/auth/authhelper.cpp:26 src/auth/authhelper.cpp:123
+#: src/auth/authhelper.cpp:163 src/auth/authhelper.cpp:200
+#: src/auth/authhelper.cpp:225
+#, kde-format
+msgid "Username argument is missing or invalid."
+msgstr "İstifadəçi adında çatışmazlıqlar var və ya o səhvdir."
+
+#: src/auth/authhelper.cpp:37
+#, kde-format
+msgctxt "%1 is a directory path"
+msgid "Failed to create autostart directory: %1"
+msgstr "Avtomatik başlatma kataloqu yaradılmadı: %1"
+
+#: src/auth/authhelper.cpp:46
+#, kde-format
+msgctxt "%1 is a file path"
+msgid "Failed to open file for writing: %1"
+msgstr "Yazmaq üçün fayl açılmadı: %1"
+
+#: src/auth/authhelper.cpp:53
+#, kde-format
+msgid "Failed to find the Plasma Setup executable path."
+msgstr "Plasma quraşdırmasını icra etmək üçün yol tapılmadı."
+
+#: src/auth/authhelper.cpp:90
+#, kde-format
+msgctxt "%1 is an error message"
+msgid "Failed to disable systemd unit: %1"
+msgstr "Systemd modulunu söndürmək mümkün olmadı: %1"
+
+#: src/auth/authhelper.cpp:110
+#, kde-format
+msgctxt "%1 is a file path"
+msgid "Failed to remove file %1"
+msgstr "%1 faylını silmək mümkün olmadı"
+
+#: src/auth/authhelper.cpp:140
+#, kde-format
+msgctxt "%1 is a directory path"
+msgid "Failed to create .config directory: %1"
+msgstr "%1 tənzimləmə (.config) qovluğunu yaratmaq mümkün olmadı"
+
+#: src/auth/authhelper.cpp:150 src/auth/authhelper.cpp:186
+#, kde-format
+msgctxt "%1 is a file path"
+msgid "Failed to copy file %1"
+msgstr "%1 faylını kopyalamaq mümkün olmadı"
+
+#: src/auth/authhelper.cpp:212
+#, kde-format
+msgctxt "%1 is a directory path, %2 an exit code"
+msgid "Failed to set ownership for home directory %1: exit code %2"
+msgstr "%1 ev qovluğu üçün sahiblik təyin etmək mümkün olmadı: çıxış kodu %2"
+
+#: src/auth/authhelper.cpp:234
+#, kde-format
+msgctxt "%1 is a file path"
+msgid "Failed to open file %1 for writing."
+msgstr "Yazmaq üçün %1 faylını açmaq mümkün olmadı."
+
+#: src/main.cpp:35 src/qml/Main.qml:14
+#, kde-format
+msgid "Plasma Setup"
+msgstr "Plasma qurulması"
+
+#: src/main.cpp:37
+#, kde-format
+msgid "Make Plasma yours"
+msgstr "Plasmanı özünüzünkü edin"
+
+#: src/main.cpp:39
+#, kde-format
+msgid "© 2021-2024 KDE Community"
+msgstr "© 2021-2024 KDE Cəmiyyəti"
+
+#: src/main.cpp:44
+#, kde-format
+msgid "Remove the Plasma Setup autologin configuration."
+msgstr "Plasma qurulması üçün avtomatik tənzimləməni silin."
+
+#: src/qml/LandingComponent.qml:103
+#, kde-format
+msgid "Welcome to<br/><b>Plasma Mobile</b>"
+msgstr "<br/><b>Plasma Mobile</b> Sizi Salamlayır"
+
+#: src/qml/LandingComponent.qml:103
+#, kde-format
+msgid "Welcome to<br/><b>Plasma Desktop</b>"
+msgstr "<br/><b>Plasma Masaüstü</b> Sizi Salamlayır"
+
+#: src/qml/LandingComponent.qml:117
+#, kde-format
+msgid "Begin Setup"
+msgstr "Quraşdırmağa başlayın"
+
+#: src/qml/LandingComponent.qml:144
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid "Powered by<br/><b>%1</b>"
+msgstr "<br/><b>%1</b> tərəfindən dəstəklənir"
+
+#: src/qml/Wizard.qml:292
+#, kde-format
+msgctxt "@action:button"
+msgid "Back"
+msgstr "Geriyə"
+
+#: src/qml/Wizard.qml:315
+#, kde-format
+msgctxt "@action:button"
+msgid "Next"
+msgstr "İrəli"
+
+#: src/qml/Wizard.qml:334
+#, kde-format
+msgctxt "@action:button"
+msgid "Finish"
+msgstr "Tamamlandı"
+
+#: src/user.cpp:125
+#, kde-format
+msgctxt "@info, %1 is an error message"
+msgid "Failed to crop image: %1"
+msgstr "Şəkili kəsmək mümkün olmadı: %1"
+
+#: src/user.cpp:306
+#, kde-format
+msgctxt "%1 is the username"
+msgid "Could not get permission to save user %1"
+msgstr "%1 istifadəçini saxlamaq üçün icazə almaq mümkün olmadı"
+
+#: src/user.cpp:311
+#, kde-format
+msgid "There was an error while saving changes"
+msgstr "Dəyişikliklərin saxlanılması zamanı xəta baş verdi"
+
+#: src/user.cpp:412
+#, kde-format
+msgid "Failed to resize image: opening temp file failed"
+msgstr "Şəklin ölçüsünü dəyişmək mümkün olmadı: müvəqqəti fayl açılmadı"
+
+#: src/user.cpp:420
+#, kde-format
+msgid "Failed to resize image: writing to temp file failed"
+msgstr "Şəklin ölçüsü dəyişmək mümkün olmadı: müvəqqəti fayla yazılmadı"
