@@ -68,7 +68,7 @@ Description[tr]=Yeni oluşturulan kullanıcı için bir kendiliğinden başlatma
 Description[uk]=Створити скрипт автозапуску для новоствореного користувача
 Description[zh_CN]=为新创建的用户创建一个自动启动钩子
 Description[zh_TW]=為新建立的使用者建立自動啟動掛鉤
-Policy=yes
+Policy=no
 
 [org.kde.plasmasetup.disablesystemdunit]
 Name=Disable Systemd Unit
@@ -109,7 +109,7 @@ Description[sv]=Inaktivera systemd-enhet för inställning av Plasma
 Description[tr]=Plasma İlk Kullanım Yardımcısı için Systemd birimini devre dışı bırakın
 Description[uk]=Вимкнути модуль systemd для налаштовування Плазми
 Description[zh_TW]=將《Plasma 初始設定》的 systemd 單元停用
-Policy=yes
+Policy=no
 
 [org.kde.plasmasetup.removeautologin]
 Name=Remove Autologin
@@ -154,7 +154,7 @@ Description[tr]=SDDM kendiliğinden oturum açma yapılandırmasını kaldırın
 Description[uk]=Вилучити налаштування автозапуску SDDM
 Description[zh_CN]=移除 SDDM 自动登录配置
 Description[zh_TW]=移除 SDDM 自動登入配置
-Policy=yes
+Policy=no
 
 [org.kde.plasmasetup.setnewuserglobaltheme]
 Name=Set New User Global Theme
@@ -197,7 +197,7 @@ Description[tr]=Yeni kullanıcı için global temayı ayarlayın
 Description[uk]=Встановити загальну тему для нового користувача
 Description[zh_CN]=设置新用户的全局主题
 Description[zh_TW]=為新建立的使用者設定全域主題
-Policy=yes
+Policy=no
 
 [org.kde.plasmasetup.setnewuserdisplayscaling]
 Name=Set New User Display Scaling
@@ -240,52 +240,7 @@ Description[tr]=Yeni kullanıcı için görüntü ölçeklendirmesini ayarlayın
 Description[uk]=Встановити масштабування дисплея для нового користувача
 Description[zh_CN]=设置新用户的显示缩放
 Description[zh_TW]=為新建立的使用者建立顯示器縮放
-Policy=yes
-
-[org.kde.plasmasetup.setnewuserhomedirectoryownership]
-Name=Set New User Home Directory Ownership
-Name[ar]=تعيين ملكية مجلد البيت للمستخدمين الجدد
-Name[az]=Yeni istifadəçi üçün ev qovluğu sahibliyi
-Name[ca]=Estableix la propietat del directori d'inici de l'usuari nou
-Name[ca@valencia]=Establix la propietat del directori d'inici de l'usuari nou
-Name[de]=Die Eigentumsrechte des persönlichen Ordners für den neuen Benutzer setzen
-Name[es]=Definir el propietario del directorio personal de nuevo usuario
-Name[eu]=Ezarri Etxeko karpetaren jabetza berria
-Name[fr]=Définir la propriété du dossier personnel du nouvel utilisateur
-Name[he]=הגדרת בעלות תיקייה בית של משתמשים חדשים
-Name[it]=Imposta la proprietà della cartella home del nuovo utente
-Name[ka]=ახალი მომხმარებლის საწყისი საქაღალდის მფლობელობის დაყენება
-Name[lv]=Iestatīt jaunā lietotāja mājas mapes īpašnieku
-Name[nl]=Persoonlijke map van nieuwe gebruiker instellen op eigendom
-Name[pt_BR]=Definir propriedade do diretório inicial do novo usuário
-Name[sl]=Nastavi lastništvo domačega imenika novega uporabnika
-Name[sv]=Ställ in ägare av hemkatalog för ny användare
-Name[tr]=Yeni Kullanıcı Ana Klasör Sahipliğini Ayarla
-Name[uk]=Встановити права власності на домашній каталог нового користувача
-Name[zh_CN]=设置新用户主目录所有权
-Name[zh_TW]=設定新使用者家目錄擁有者
-Description=Set ownership of the new users home directory to the newly created user
-Description[ar]=تعيين ملكية مجلد البيت للمستخدمين الجدد
-Description[az]=Ən yeni yaradılmış istifadəçi üçün yeni ev qovluğuna sahibliyi təyin etmək
-Description[ca]=Estableix la propietat del directori d'inici dels usuaris nous al nou usuari creat
-Description[ca@valencia]=Establix la propietat del directori d'inici dels usuaris nous a l'usuari nou creat
-Description[de]=Die Eigentumsrechte des persönlichen Ordners werden auf den neu erstellten Benutzer übertragen
-Description[es]=Definir el propietario del directorio personal de los nuevos usuarios al usuario recién creado
-Description[eu]=Ezarri erabiltzaileen etxeko direktorio berriaren jabetza berriki sortutako erabiltzaileari
-Description[fr]=Définissez la propriété du dossier personnel des nouveaux utilisateurs sur l'utilisateur nouvellement créé
-Description[he]=הגדרת בעלות על תיקיית הבית של המשתמשים החדשים לטובת המשתמשים החדשים
-Description[it]=Imposta la proprietà della cartella home del nuovo utente sull'utente appena creato
-Description[ka]=ახალი მომხმარებლების საწყისი საქაღალდის მფლობელობის დაყენება ახლად შექმნილ მომხმარებელზე
-Description[lv]=Iestatīt īpašnieku jaunā lietotāja mājas mapei uz no jauna izveidojamo lietotāju
-Description[nl]=Eigendom van de nieuwe persoonlijke map van de gebruiker instellen op de nieuw aangemaakte gebruiker
-Description[pt_BR]=Definir a propriedade do diretório inicial (home) dos novos usuários para o usuário recém-criado
-Description[sl]=Nastavi lastništvo domačega imenika novega uporabnika na novo ustvarjenega uporabnika
-Description[sv]=Ställ in ägare av den nya användarens hemkatalog till den nyskapade användaren
-Description[tr]=Yeni kullanıcının ana klasör sahipliğini yeni oluşturulan kullanıcıya verin
-Description[uk]=Встановити права власності на домашній каталог нових користувачів для новоствореного користувача
-Description[zh_CN]=将新用户的主目录所有权设置为新建用户所有
-Description[zh_TW]=將新使用者的家目錄的擁有者設為該新使用者
-Policy=yes
+Policy=no
 
 [org.kde.plasmasetup.setnewusertempautologin]
 Name=Set New User Temporary Autologin
@@ -330,4 +285,4 @@ Description[tr]=Yeni oluşturulan kullanıcı için SDDM geçici kendiliğinden 
 Description[uk]=Встановити налаштування тимчасового автоматичного входу SDDM для новоствореного користувача
 Description[zh_CN]=为新建用户设置 SDDM 临时自动登录配置
 Description[zh_TW]=為新建立的使用者設定 SDDM 暫時性自動登入配置
-Policy=yes
+Policy=no

@@ -52,11 +52,6 @@ private:
     void logOut();
 
     /**
-     * Sets the new user's home directory ownership to the new user.
-     */
-    void setNewUserHomeDirectoryOwnership();
-
-    /**
      * Enables temporary autologin for the specified new user.
      *
      * This function configures the system so that after the initial setup, the new user will be automatically logged in once,
