@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:46+0000\n"
-"PO-Revision-Date: 2025-07-20 01:49+0200\n"
+"PO-Revision-Date: 2025-10-09 01:30+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -40,13 +40,13 @@ msgstr "현재 아바타 삭제"
 #: modules/account/contents/ui/main.qml:115
 #, kde-format
 msgid "We need a few details to complete the setup."
-msgstr "설정을 완료하려면 몇 가지 정보가 필요합니다."
+msgstr "초기 설정을 완료하려면 몇 가지 정보가 필요합니다."
 
 #: modules/account/contents/ui/main.qml:126
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
-msgstr ""
+msgstr "이 사용자는 관리자가 될 것입니다."
 
 #: modules/account/contents/ui/main.qml:130
 #, kde-kuit-format
@@ -56,6 +56,9 @@ msgid ""
 "means that they can change system settings, install software, and access all "
 "files on the system.<nl/><nl/>Choose a strong password for this user."
 msgstr ""
+"이 사용자는 시스템에서 관리 권한을 갖습니다.<nl/><nl/>시스템 설정 변경, 소프"
+"트웨어 설치, 시스템의 모든 파일에 접근이 가능합니다.<nl/><nl/>이 사용자의 암"
+"호를 강력하게 설정하기를 추천합니다."
 
 #: modules/account/contents/ui/main.qml:145
 #, kde-format
@@ -203,6 +206,8 @@ msgid ""
 "Your device is now ready. <br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
+"장치가 준비되었습니다. <br /><br /><b>완료</b> 단추를 클릭하면 새 계정을 사용"
+"할 수 있습니다.<br /><br /><b>%1</b>을(를) 즐겁게 사용하세요!"
 
 #: modules/keyboard/contents/ui/main.qml:164
 #, kde-format
@@ -215,10 +220,9 @@ msgid "Please select your preferred language."
 msgstr "선호하는 언어를 선택하십시오."
 
 #: modules/language/contents/ui/main.qml:55
-#, fuzzy, kde-format
-#| msgid "Search languages..."
+#, kde-format
 msgid "Search languages…"
-msgstr "언어 검색..."
+msgstr "언어 검색…"
 
 #: modules/prepare/contents/ui/main.qml:38
 #, kde-format
@@ -270,79 +274,65 @@ msgstr "잘못 입력했습니다."
 #: src/auth/authhelper.cpp:225
 #, kde-format
 msgid "Username argument is missing or invalid."
-msgstr ""
+msgstr "사용자 이름 인자가 없거나 잘못되었습니다."
 
 #: src/auth/authhelper.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to crop image: %1"
+#, kde-format
 msgctxt "%1 is a directory path"
 msgid "Failed to create autostart directory: %1"
-msgstr "그림을 잘라낼 수 없음: %1"
+msgstr "autostart 디렉터리를 생성할 수 없음: %1"
 
 #: src/auth/authhelper.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to crop image: %1"
+#, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to open file for writing: %1"
-msgstr "그림을 잘라낼 수 없음: %1"
+msgstr "파일에 쓰려고 열 수 없음: %1"
 
 #: src/auth/authhelper.cpp:53
 #, kde-format
 msgid "Failed to find the Plasma Setup executable path."
-msgstr ""
+msgstr "Plasma 초기 설정 실행 파일 경로를 찾을 수 없습니다."
 
 #: src/auth/authhelper.cpp:90
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to crop image: %1"
+#, kde-format
 msgctxt "%1 is an error message"
 msgid "Failed to disable systemd unit: %1"
-msgstr "그림을 잘라낼 수 없음: %1"
+msgstr "systemd 유닛을 비활성화할 수 없음: %1"
 
 #: src/auth/authhelper.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to crop image: %1"
+#, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to remove file %1"
-msgstr "그림을 잘라낼 수 없음: %1"
+msgstr "%1 파일을 삭제할 수 없음"
 
 #: src/auth/authhelper.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to crop image: %1"
+#, kde-format
 msgctxt "%1 is a directory path"
 msgid "Failed to create .config directory: %1"
-msgstr "그림을 잘라낼 수 없음: %1"
+msgstr ".config 디렉터리를 생성할 수 없음: %1"
 
 #: src/auth/authhelper.cpp:150 src/auth/authhelper.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to crop image: %1"
+#, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to copy file %1"
-msgstr "그림을 잘라낼 수 없음: %1"
+msgstr "%1 파일을 복사할 수 없음"
 
 #: src/auth/authhelper.cpp:212
 #, kde-format
 msgctxt "%1 is a directory path, %2 an exit code"
 msgid "Failed to set ownership for home directory %1: exit code %2"
-msgstr ""
+msgstr "홈 디렉터리 %1의 소유권을 설정할 수 없음: 종료 코드 %2"
 
 #: src/auth/authhelper.cpp:234
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to crop image: %1"
+#, kde-format
 msgctxt "%1 is a file path"
 msgid "Failed to open file %1 for writing."
-msgstr "그림을 잘라낼 수 없음: %1"
+msgstr "%1 파일에 쓰려고 열 수 없음"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "Plasma 초기 설정"
 
 #: src/main.cpp:37
 #, kde-format
@@ -357,7 +347,7 @@ msgstr "© 2021-2024 KDE Community"
 #: src/main.cpp:44
 #, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
-msgstr ""
+msgstr "Plasma 초기 설정 자동 로그인 설정을 삭제합니다."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
@@ -375,8 +365,7 @@ msgid "Begin Setup"
 msgstr "설정 시작"
 
 #: src/qml/LandingComponent.qml:144
-#, fuzzy, kde-format
-#| msgid "Powered by<br/><b>%1</b>"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Powered by<br/><b>%1</b>"
@@ -400,16 +389,13 @@ msgid "Finish"
 msgstr "완료"
 
 #: src/user.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to crop image: %1"
+#, kde-format
 msgctxt "@info, %1 is an error message"
 msgid "Failed to crop image: %1"
 msgstr "그림을 잘라낼 수 없음: %1"
 
 #: src/user.cpp:306
-#, fuzzy, kde-format
-#| msgid "Could not get permission to save user %1"
+#, kde-format
 msgctxt "%1 is the username"
 msgid "Could not get permission to save user %1"
 msgstr "%1 사용자를 저장할 권한을 얻을 수 없음"
