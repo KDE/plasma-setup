@@ -22,12 +22,14 @@ PlasmaSetupComponents.SetupModule {
     nextEnabled: usernameField.text.length > 0 && paswordField.text.length > 0 && repeatField.text === paswordField.text
 
     contentItem: ScrollView {
-        ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
-        contentWidth: -1
+        anchors.centerIn: parent
+        width: Math.min(mainColumn.implicitWidth + (Kirigami.Units.gridUnit * 2), parent.width)
+        height: Math.min(mainColumn.implicitHeight, parent.height)
 
         ColumnLayout {
-            anchors.fill: parent
-            spacing: Kirigami.Units.mediumSpacing
+            id: mainColumn
+
+            width: root.cardWidth
 
             KirigamiComponents.AvatarButton {
                 id: avatar
@@ -136,13 +138,11 @@ PlasmaSetupComponents.SetupModule {
                 Layout.bottomMargin: Kirigami.Units.gridUnit
             }
 
-            FormCard.FormCard {
-                maximumWidth: root.cardWidth
-
-                FormCard.FormTextFieldDelegate {
+            Kirigami.FormLayout {
+                TextField {
                     id: fullNameField
 
-                    label: i18nc("@label:textfield", "Full Name")
+                    Kirigami.FormData.label: i18nc("@label:textbox", "Full Name") // qmllint disable unqualified
                     property string previousText: ''
                     onTextChanged: {
                         if (usernameField.text.length === 0 || usernameField.text === previousText) {
@@ -156,14 +156,11 @@ PlasmaSetupComponents.SetupModule {
                         value: fullNameField.text
                     }
                 }
-            }
 
-            FormCard.FormCard {
-                maximumWidth: root.cardWidth
-
-                FormCard.FormTextFieldDelegate {
+                TextField {
                     id: usernameField
-                    label: i18nc("@label:textfield", "Username")
+
+                    Kirigami.FormData.label: i18nc("@label:textbox", "Username") // qmllint disable unqualified
 
                     Binding {
                         target: AccountController
@@ -171,32 +168,24 @@ PlasmaSetupComponents.SetupModule {
                         value: usernameField.text
                     }
                 }
-            }
 
-            FormCard.FormCard {
-                maximumWidth: root.cardWidth
-
-                FormCard.FormPasswordFieldDelegate {
+                Kirigami.PasswordField {
                     id: paswordField
 
-                    label: i18nc("@label:textfield", "Password")
+                    Kirigami.FormData.label: i18nc("@label:textbox", "Password") // qmllint disable unqualified
 
                     onTextChanged: {
                         showPasswordQuality = text.length > 0;
                     }
                 }
-            }
 
-            FormCard.FormCard {
-                maximumWidth: root.cardWidth
-
-                FormCard.FormPasswordFieldDelegate {
+                Kirigami.PasswordField {
                     id: repeatField
-                    label: i18nc("@label:textfield", "Confirm Password")
-                    status: Kirigami.MessageType.Error
+
+                    Kirigami.FormData.label: i18nc("@label:textbox", "Confirm Password") // qmllint disable unqualified
 
                     function setPasswordMatchError() {
-                        repeatField.statusMessage = i18nc("@info:status", "Passwords don’t match");
+                        repeatField.statusMessage = i18nc("@info:status", "Passwords don’t match"); // qmllint disable unqualified
                         repeatField.status = Kirigami.MessageType.Error;
                     }
 
