@@ -208,8 +208,8 @@ Kirigami.Page {
                 centerIn: Kirigami.Settings.isMobile ? undefined : parent
             }
 
-            width: Kirigami.Settings.isMobile ? undefined : Math.min(parent.width * 0.4, Kirigami.Units.gridUnit * 60)
-            height: Kirigami.Settings.isMobile ? undefined : Math.min(parent.height * 0.5, Kirigami.Units.gridUnit * 45)
+            width: Kirigami.Settings.isMobile ? undefined : parent.width * 0.4
+            height: Kirigami.Settings.isMobile ? undefined : parent.height * 0.7
 
             Behavior on height {
                 NumberAnimation {
@@ -278,16 +278,10 @@ Kirigami.Page {
 
                     Layout.fillWidth: true
                     Layout.alignment: Qt.AlignBottom
+                    Layout.margins: Kirigami.Units.gridUnit
 
                     Button {
                         Layout.alignment: Qt.AlignLeft
-                        Layout.leftMargin: Kirigami.Units.gridUnit
-                        Layout.bottomMargin: Kirigami.Units.gridUnit
-
-                        topPadding: Kirigami.Units.largeSpacing
-                        bottomPadding: Kirigami.Units.largeSpacing
-                        leftPadding: Kirigami.Units.gridUnit
-                        rightPadding: Kirigami.Units.gridUnit
 
                         text: i18nc("@action:button", "Back") // qmllint disable unqualified
                         icon.name: "arrow-left-symbolic"
@@ -301,15 +295,8 @@ Kirigami.Page {
 
                     Button {
                         Layout.alignment: Qt.AlignRight
-                        Layout.rightMargin: Kirigami.Units.gridUnit
-                        Layout.bottomMargin: Kirigami.Units.gridUnit
                         // Nicer to have the arrow on the side it's pointing to
                         LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.LeftToRight // qmllint disable missing-property
-
-                        topPadding: Kirigami.Units.largeSpacing
-                        bottomPadding: Kirigami.Units.largeSpacing
-                        leftPadding: Kirigami.Units.gridUnit
-                        rightPadding: Kirigami.Units.gridUnit
 
                         visible: !root.onFinalPage
                         text: i18nc("@action:button", "Next") // qmllint disable unqualified
@@ -322,13 +309,6 @@ Kirigami.Page {
 
                     Button {
                         Layout.alignment: Qt.AlignRight
-                        Layout.rightMargin: Kirigami.Units.gridUnit
-                        Layout.bottomMargin: Kirigami.Units.gridUnit
-
-                        topPadding: Kirigami.Units.largeSpacing
-                        bottomPadding: Kirigami.Units.largeSpacing
-                        leftPadding: Kirigami.Units.gridUnit
-                        rightPadding: Kirigami.Units.gridUnit
 
                         visible: root.onFinalPage
                         text: i18nc("@action:button", "Finish") // qmllint disable unqualified
@@ -368,8 +348,9 @@ Kirigami.Page {
             value: Math.min(Kirigami.Units.gridUnit * 30, item.contentItem.width - Kirigami.Units.gridUnit * 2)
         }
 
+        clip: true
         topPadding: Kirigami.Units.gridUnit
-        bottomPadding: Kirigami.Units.gridUnit
+        bottomPadding: 0
         leftPadding: Kirigami.Units.gridUnit
         rightPadding: Kirigami.Units.gridUnit
 

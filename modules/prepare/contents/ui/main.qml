@@ -19,17 +19,17 @@ PlasmaSetupComponents.SetupModule {
 
     nextEnabled: true
 
-    contentItem: ScrollView {
-        ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
-        contentWidth: -1
+    contentItem: ColumnLayout {
 
         ColumnLayout {
-            anchors.centerIn: parent
-            spacing: Kirigami.Units.gridUnit
+            Layout.maximumWidth: root.cardWidth
+            Layout.alignment: Qt.AlignCenter
+            spacing: Kirigami.Units.smallSpacing
 
             Label {
                 Layout.leftMargin: Kirigami.Units.gridUnit
                 Layout.rightMargin: Kirigami.Units.gridUnit
+                Layout.bottomMargin: Kirigami.Units.gridUnit
                 Layout.alignment: Qt.AlignTop
                 Layout.fillWidth: true
 

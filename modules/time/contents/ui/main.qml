@@ -16,84 +16,80 @@ import org.kde.plasmasetup.components as PlasmaSetupComponents
 PlasmaSetupComponents.SetupModule {
     id: root
 
-    contentItem: ScrollView {
-        ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
-        contentWidth: -1
+    contentItem: ColumnLayout {
+        id: mainColumn
+        spacing: Kirigami.Units.gridUnit
+
+        Label {
+            id: titleLabel
+            Layout.leftMargin: Kirigami.Units.gridUnit
+            Layout.rightMargin: Kirigami.Units.gridUnit
+            Layout.topMargin: Kirigami.Units.gridUnit
+            Layout.fillWidth: true
+
+            wrapMode: Text.Wrap
+            horizontalAlignment: Text.AlignHCenter
+            text: i18n("Select your time zone and preferred time format.")
+        }
+
+        FormCard.FormCard {
+            id: timeFormatCard
+
+            Layout.fillWidth: true
+
+            FormCard.FormSwitchDelegate {
+                Layout.fillWidth: true
+                text: i18n("24-Hour Format")
+                checked: Time.TimeUtil.is24HourTime
+                onCheckedChanged: {
+                    if (checked !== Time.TimeUtil.is24HourTime) {
+                        Time.TimeUtil.is24HourTime = checked;
+                    }
+                }
+            }
+        }
 
         ColumnLayout {
-            anchors.centerIn: parent
-            spacing: Kirigami.Units.gridUnit
+            Layout.alignment: Qt.AlignCenter
 
-            Label {
-                Layout.leftMargin: Kirigami.Units.gridUnit
-                Layout.rightMargin: Kirigami.Units.gridUnit
-                Layout.alignment: Qt.AlignTop
+            Kirigami.SearchField {
+                id: searchField
                 Layout.fillWidth: true
 
-                wrapMode: Text.Wrap
-                horizontalAlignment: Text.AlignHCenter
-                text: i18n("Select your time zone and preferred time format.")
-            }
-
-            FormCard.FormCard {
-                maximumWidth: root.cardWidth
-
-                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-                Layout.fillWidth: true
-
-                FormCard.FormSwitchDelegate {
-                    Layout.fillWidth: true
-                    text: i18n("24-Hour Format")
-                    checked: Time.TimeUtil.is24HourTime
-                    onCheckedChanged: {
-                        if (checked !== Time.TimeUtil.is24HourTime) {
-                            Time.TimeUtil.is24HourTime = checked;
-                        }
-                    }
+                onTextChanged: {
+                    Time.TimeUtil.timeZones.filterString = text;
                 }
             }
 
-            ColumnLayout {
-                Kirigami.SearchField {
-                    id: searchField
-                    Layout.fillWidth: true
+            ScrollView {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
 
-                    onTextChanged: {
-                        Time.TimeUtil.timeZones.filterString = text;
+                Component.onCompleted: {
+                    if (background) {
+                        background.visible = true;
                     }
                 }
 
-                ScrollView {
-                    Layout.fillWidth: true
-                    Layout.minimumHeight: Kirigami.Units.gridUnit * 14
-                    Layout.maximumHeight: Kirigami.Units.gridUnit * 20
+                ListView {
+                    id: listView
 
-                    Component.onCompleted: {
-                        if (background) {
-                            background.visible = true;
-                        }
-                    }
+                    clip: true
+                    model: Time.TimeUtil.timeZones
+                    currentIndex: -1 // ensure focus is not on the listview
 
-                    ListView {
-                        id: listView
+                    bottomMargin: 2
 
-                        clip: true
-                        model: Time.TimeUtil.timeZones
-                        currentIndex: -1 // ensure focus is not on the listview
+                    delegate: FormCard.FormRadioDelegate {
+                        required property string timeZoneId
 
-                        bottomMargin: 2
-
-                        delegate: FormCard.FormRadioDelegate {
-                            required property string timeZoneId
-
-                            width: ListView.view.width
-                            text: timeZoneId
-                            checked: Time.TimeUtil.currentTimeZone === timeZoneId
-                            onToggled: {
-                                if (checked && timeZoneId !== Time.TimeUtil.currentTimeZone) {
-                                    Time.TimeUtil.currentTimeZone = timeZoneId;
-                                    checked = Qt.binding(() => Time.TimeUtil.currentTimeZone === timeZoneId);
-                                }
+                        width: ListView.view.width
+                        text: timeZoneId
+                        checked: Time.TimeUtil.currentTimeZone === timeZoneId
+                        onToggled: {
+                            if (checked && timeZoneId !== Time.TimeUtil.currentTimeZone) {
+                                Time.TimeUtil.currentTimeZone = timeZoneId;
+                                checked = Qt.binding(() => Time.TimeUtil.currentTimeZone === timeZoneId);
                             }
                         }
                     }

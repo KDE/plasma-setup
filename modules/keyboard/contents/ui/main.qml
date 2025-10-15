@@ -22,9 +22,6 @@ import org.kde.plasma.private.kcm_keyboard as KCMKeyboard
 PlasmaSetupComponents.SetupModule {
     id: root
 
-    cardWidth: Math.min(Kirigami.Units.gridUnit * 30, root.contentItem.width - Kirigami.Units.gridUnit * 2)
-    nextEnabled: true
-
     function onPageActivated(): void {
         // Temporarily disable the highlight move duration so the correct
         // layout is preselected when the page is activated.
@@ -144,18 +141,18 @@ PlasmaSetupComponents.SetupModule {
         }
     }
 
-    contentItem: ScrollView {
-        id: mainScrollView
-        ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
-        contentWidth: -1
+    contentItem: ColumnLayout {
+        id: mainColumn
 
         ColumnLayout {
-            anchors.centerIn: parent
-            spacing: Kirigami.Units.gridUnit
+            Layout.alignment: Qt.AlignCenter
+            spacing: Kirigami.Units.smallSpacing
 
             Label {
+                id: titleLabel
                 Layout.leftMargin: Kirigami.Units.gridUnit
                 Layout.rightMargin: Kirigami.Units.gridUnit
+                Layout.bottomMargin: Kirigami.Units.gridUnit
                 Layout.alignment: Qt.AlignTop
                 Layout.fillWidth: true
 
@@ -164,68 +161,62 @@ PlasmaSetupComponents.SetupModule {
                 text: i18n("Select your keyboard layout and language.") // qmllint disable unqualified
             }
 
-            ColumnLayout {
-                spacing: Kirigami.Units.smallSpacing
+            Kirigami.SearchField {
+                id: searchField
+                Layout.fillWidth: true
+                onAccepted: {
+                    layoutSearchProxy.searchString = searchField.text.trim();
+                }
+            }
 
-                Layout.maximumWidth: root.cardWidth
-                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+            RowLayout {
+                Layout.fillWidth: true
+                implicitHeight: mainColumn.height - titleLabel.height - searchField.height - Kirigami.Units.smallSpacing
 
-                Kirigami.SearchField {
-                    id: searchField
+                ScrollView {
+                    clip: true
+                    implicitWidth: Math.round(mainColumn.width / 2)
                     Layout.fillWidth: true
-                    onAccepted: {
-                        layoutSearchProxy.searchString = searchField.text.trim();
+                    Layout.fillHeight: true
+
+                    Component.onCompleted: {
+                        if (background) {
+                            background.visible = true;
+                        }
+                    }
+
+                    contentItem: ListView {
+                        id: layoutsView
+                        model: layoutsProxy
+                        delegate: LayoutDelegate {}
+                        keyNavigationEnabled: true
+                        activeFocusOnTab: true
+
+                        onCurrentIndexChanged: {
+                            variantProxy.invalidateFilter();
+                            layoutsProxy.setLayout(currentIndex);
+                        }
                     }
                 }
 
-                RowLayout {
-                    ScrollView {
-                        clip: true
-                        implicitWidth: Math.round(mainScrollView.width / 2)
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-                        Layout.maximumHeight: Kirigami.Units.gridUnit * 20
+                ScrollView {
+                    clip: true
+                    implicitWidth: Math.round(mainColumn.width / 2)
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
 
-                        Component.onCompleted: {
-                            if (background) {
-                                background.visible = true;
-                            }
-                        }
-
-                        contentItem: ListView {
-                            id: layoutsView
-                            model: layoutsProxy
-                            delegate: LayoutDelegate {}
-                            keyNavigationEnabled: true
-                            activeFocusOnTab: true
-
-                            onCurrentIndexChanged: {
-                                variantProxy.invalidateFilter();
-                                layoutsProxy.setLayout(currentIndex);
-                            }
+                    Component.onCompleted: {
+                        if (background) {
+                            background.visible = true;
                         }
                     }
 
-                    ScrollView {
-                        clip: true
-                        implicitWidth: Math.round(mainScrollView.width / 2)
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-                        Layout.maximumHeight: Kirigami.Units.gridUnit * 20
-
-                        Component.onCompleted: {
-                            if (background) {
-                                background.visible = true;
-                            }
-                        }
-
-                        contentItem: ListView {
-                            id: variantView
-                            model: layoutsView.currentItem ? variantProxy : []
-                            delegate: LayoutDelegate {}
-                            keyNavigationEnabled: true
-                            activeFocusOnTab: true
-                        }
+                    contentItem: ListView {
+                        id: variantView
+                        model: layoutsView.currentItem ? variantProxy : []
+                        delegate: LayoutDelegate {}
+                        keyNavigationEnabled: true
+                        activeFocusOnTab: true
                     }
                 }
             }

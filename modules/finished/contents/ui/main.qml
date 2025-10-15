@@ -17,14 +17,14 @@ PlasmaSetupComponents.SetupModule {
 
     nextEnabled: true
 
-    contentItem: ScrollView {
-        ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
-        contentWidth: -1
+    contentItem: ColumnLayout {
+        id: mainColumn
 
         ColumnLayout {
-            anchors.centerIn: parent
+            Layout.alignment: Qt.AlignCenter
 
             Label {
+                id: finishedMessage
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
                 text: i18nc("%1 is the distro name", "Your device is now ready. <br /><br />After clicking <b>Finish</b> you will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!", InitialStartUtil.distroName)
@@ -36,6 +36,7 @@ PlasmaSetupComponents.SetupModule {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter
                 Layout.topMargin: Kirigami.Units.gridUnit
+                Layout.maximumHeight: mainColumn.height - finishedMessage.height - Kirigami.Units.gridUnit
                 fillMode: Image.PreserveAspectFit
                 source: "konqi-calling.png"
             }
