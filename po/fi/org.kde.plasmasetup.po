@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-28 00:46+0000\n"
-"PO-Revision-Date: 2025-10-02 18:29+0300\n"
+"PO-Revision-Date: 2025-10-13 21:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -291,7 +291,7 @@ msgstr "Tiedostoa ei saatu avattua kirjoitettavaksi: %1"
 #: src/auth/authhelper.cpp:53
 #, kde-format
 msgid "Failed to find the Plasma Setup executable path."
-msgstr ""
+msgstr "Plasma-asetuksen ohjelmatiedostoa ei löytynyt."
 
 #: src/auth/authhelper.cpp:90
 #, kde-format
@@ -332,7 +332,7 @@ msgstr "Tiedostoa %1 ei saatu avattua kirjoitettavaksi"
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "Plasma-asetus"
 
 #: src/main.cpp:37
 #, kde-format
@@ -347,7 +347,7 @@ msgstr "© 2021–2024 KDE-yhteisö"
 #: src/main.cpp:44
 #, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
-msgstr ""
+msgstr "Poista Plasma-asetuksen automaattikirjautumismääritys."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
