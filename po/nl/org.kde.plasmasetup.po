@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-28 00:46+0000\n"
+"POT-Creation-Date: 2025-10-21 00:44+0000\n"
 "PO-Revision-Date: 2025-09-29 10:49+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -27,28 +27,28 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "freekdekruijf@kde.nl"
 
-#: modules/account/contents/ui/main.qml:68
+#: modules/account/contents/ui/main.qml:70
 #, kde-format
 msgid "Upload new avatar"
 msgstr "Nieuwe avatar uploaden"
 
-#: modules/account/contents/ui/main.qml:85
+#: modules/account/contents/ui/main.qml:87
 #, kde-format
 msgid "Remove current avatar"
 msgstr "Huidige avatar verwijderen"
 
-#: modules/account/contents/ui/main.qml:115
+#: modules/account/contents/ui/main.qml:117
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "We hebben een paar details nodig om de opzet te voltooien."
 
-#: modules/account/contents/ui/main.qml:126
+#: modules/account/contents/ui/main.qml:128
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Deze gebruiker zal een systeembeheerder zijn."
 
-#: modules/account/contents/ui/main.qml:130
+#: modules/account/contents/ui/main.qml:132
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -62,30 +62,36 @@ msgstr ""
 ">Kies een sterk wachtwoord voor deze gebruiker."
 
 #: modules/account/contents/ui/main.qml:145
-#, kde-format
-msgctxt "@label:textfield"
+#, fuzzy, kde-format
+#| msgctxt "@label:textfield"
+#| msgid "Full Name"
+msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Volledige naam"
 
-#: modules/account/contents/ui/main.qml:166
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:163
+#, fuzzy, kde-format
+#| msgid "Username"
+msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: modules/account/contents/ui/main.qml:182
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:175
+#, fuzzy, kde-format
+#| msgid "Password"
+msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: modules/account/contents/ui/main.qml:195
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:185
+#, fuzzy, kde-format
+#| msgctxt "@label:textfield"
+#| msgid "Confirm Password"
+msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Wachtwoord bevestigen"
 
-#: modules/account/contents/ui/main.qml:199
+#: modules/account/contents/ui/main.qml:188
 #, kde-format
 msgctxt "@info:status"
 msgid "Passwords don’t match"
@@ -211,17 +217,17 @@ msgstr ""
 "in staat zijn u aan te melden in uw nieuwe account.<br /><br />Veel plezier "
 "<b>%1</b>!"
 
-#: modules/keyboard/contents/ui/main.qml:164
+#: modules/keyboard/contents/ui/main.qml:161
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Selecteer uw toetsenbordindeling en taal."
 
-#: modules/language/contents/ui/main.qml:46
+#: modules/language/contents/ui/main.qml:42
 #, kde-format
 msgid "Please select your preferred language."
 msgstr "Selecteer uw taal met voorkeur."
 
-#: modules/language/contents/ui/main.qml:55
+#: modules/language/contents/ui/main.qml:48
 #, kde-format
 msgid "Search languages…"
 msgstr "Doorzoek talen…"
@@ -241,12 +247,12 @@ msgstr "Schaal van het scherm"
 msgid "Dark Theme"
 msgstr "Donker thema"
 
-#: modules/time/contents/ui/main.qml:35
+#: modules/time/contents/ui/main.qml:32
 #, kde-format
 msgid "Select your time zone and preferred time format."
 msgstr "Selecteer uw tijdzone en indeling van de tijd met uw voorkeur."
 
-#: modules/time/contents/ui/main.qml:46
+#: modules/time/contents/ui/main.qml:42
 #, kde-format
 msgid "24-Hour Format"
 msgstr "24-uurs formaat"
@@ -256,7 +262,7 @@ msgstr "24-uurs formaat"
 msgid "Connect to"
 msgstr "Verbinden met"
 
-#: modules/wifi/contents/ui/main.qml:77
+#: modules/wifi/contents/ui/main.qml:76
 #, kde-format
 msgid "Connect to a WiFi network for network access."
 msgstr "Verbind met een WiFi-netwerk voor toegang tot het netwerk."
@@ -374,19 +380,19 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Aangedreven door<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:292
+#: src/qml/Wizard.qml:286
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Terug"
 
-#: src/qml/Wizard.qml:315
+#: src/qml/Wizard.qml:302
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Volgende"
 
-#: src/qml/Wizard.qml:334
+#: src/qml/Wizard.qml:314
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
@@ -422,6 +428,14 @@ msgid "Failed to resize image: writing to temp file failed"
 msgstr ""
 "Afbeelding van grootte wijzigen is mislukt: schrijven naar tijdelijk bestand "
 "is mislukt "
+
+#~ msgctxt "@label:textfield"
+#~ msgid "Username"
+#~ msgstr "Gebruikersnaam"
+
+#~ msgctxt "@label:textfield"
+#~ msgid "Password"
+#~ msgstr "Wachtwoord"
 
 #~ msgid "KDE Initial System Setup"
 #~ msgstr "KDE initiële systeemopzet"

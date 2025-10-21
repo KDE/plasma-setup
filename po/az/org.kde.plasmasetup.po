@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-28 00:46+0000\n"
+"POT-Creation-Date: 2025-10-21 00:44+0000\n"
 "PO-Revision-Date: 2025-10-08 02:08+0400\n"
 "Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -27,28 +27,28 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xxmn77@gmail.com"
 
-#: modules/account/contents/ui/main.qml:68
+#: modules/account/contents/ui/main.qml:70
 #, kde-format
 msgid "Upload new avatar"
 msgstr "Yeni avatar yükləyin"
 
-#: modules/account/contents/ui/main.qml:85
+#: modules/account/contents/ui/main.qml:87
 #, kde-format
 msgid "Remove current avatar"
 msgstr "Hazırkı avatarı silin"
 
-#: modules/account/contents/ui/main.qml:115
+#: modules/account/contents/ui/main.qml:117
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Quraşdırmanı tamamlamaq üçün bir neçə detal lazımdır."
 
-#: modules/account/contents/ui/main.qml:126
+#: modules/account/contents/ui/main.qml:128
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Bu istifadəçi adminstrator olacaq."
 
-#: modules/account/contents/ui/main.qml:130
+#: modules/account/contents/ui/main.qml:132
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -62,30 +62,36 @@ msgstr ""
 "şifrədən istifadə edin."
 
 #: modules/account/contents/ui/main.qml:145
-#, kde-format
-msgctxt "@label:textfield"
+#, fuzzy, kde-format
+#| msgctxt "@label:textfield"
+#| msgid "Full Name"
+msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Tam ad"
 
-#: modules/account/contents/ui/main.qml:166
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:163
+#, fuzzy, kde-format
+#| msgid "Username"
+msgctxt "@label:textbox"
 msgid "Username"
 msgstr "İstifadəşi adı"
 
-#: modules/account/contents/ui/main.qml:182
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:175
+#, fuzzy, kde-format
+#| msgid "Password"
+msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Şifrə"
 
-#: modules/account/contents/ui/main.qml:195
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:185
+#, fuzzy, kde-format
+#| msgctxt "@label:textfield"
+#| msgid "Confirm Password"
+msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Şifrənin təsdiqi"
 
-#: modules/account/contents/ui/main.qml:199
+#: modules/account/contents/ui/main.qml:188
 #, kde-format
 msgctxt "@info:status"
 msgid "Passwords don’t match"
@@ -210,17 +216,17 @@ msgstr ""
 "Cihazınız indi hazırdır.<br /><br /><b>Son</b> düyməsinə vursuqdan sonra "
 "hesabınıza daxil ola biləcəksiniz.<br /><br /><b>%1</b> ilə sizə uğurlar!"
 
-#: modules/keyboard/contents/ui/main.qml:164
+#: modules/keyboard/contents/ui/main.qml:161
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Klaviatura qatını və dili seçin."
 
-#: modules/language/contents/ui/main.qml:46
+#: modules/language/contents/ui/main.qml:42
 #, kde-format
 msgid "Please select your preferred language."
 msgstr "İstədiyiniz dili seçin."
 
-#: modules/language/contents/ui/main.qml:55
+#: modules/language/contents/ui/main.qml:48
 #, kde-format
 msgid "Search languages…"
 msgstr "Dilləri axtarmaq..."
@@ -240,12 +246,12 @@ msgstr "Ekran miqyası"
 msgid "Dark Theme"
 msgstr "Qaranlıq görünüş"
 
-#: modules/time/contents/ui/main.qml:35
+#: modules/time/contents/ui/main.qml:32
 #, kde-format
 msgid "Select your time zone and preferred time format."
 msgstr "Saaat qurşağınızı və istədiyiniz vaxt formatını seçin."
 
-#: modules/time/contents/ui/main.qml:46
+#: modules/time/contents/ui/main.qml:42
 #, kde-format
 msgid "24-Hour Format"
 msgstr "24 saat formatı"
@@ -255,7 +261,7 @@ msgstr "24 saat formatı"
 msgid "Connect to"
 msgstr "24 saat formatı"
 
-#: modules/wifi/contents/ui/main.qml:77
+#: modules/wifi/contents/ui/main.qml:76
 #, kde-format
 msgid "Connect to a WiFi network for network access."
 msgstr "İnternetə giriş üçün WiFi şəbəkəsinə qoşulun."
@@ -371,19 +377,19 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "<br/><b>%1</b> tərəfindən dəstəklənir"
 
-#: src/qml/Wizard.qml:292
+#: src/qml/Wizard.qml:286
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Geriyə"
 
-#: src/qml/Wizard.qml:315
+#: src/qml/Wizard.qml:302
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "İrəli"
 
-#: src/qml/Wizard.qml:334
+#: src/qml/Wizard.qml:314
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
@@ -415,3 +421,11 @@ msgstr "Şəklin ölçüsünü dəyişmək mümkün olmadı: müvəqqəti fayl a
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
 msgstr "Şəklin ölçüsü dəyişmək mümkün olmadı: müvəqqəti fayla yazılmadı"
+
+#~ msgctxt "@label:textfield"
+#~ msgid "Username"
+#~ msgstr "İstifadəşi adı"
+
+#~ msgctxt "@label:textfield"
+#~ msgid "Password"
+#~ msgstr "Şifrə"

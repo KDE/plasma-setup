@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-28 00:46+0000\n"
+"POT-Creation-Date: 2025-10-21 00:44+0000\n"
 "PO-Revision-Date: 2025-09-29 12:17+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,28 +28,28 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "temuri.doghonadze@gmail.com"
 
-#: modules/account/contents/ui/main.qml:68
+#: modules/account/contents/ui/main.qml:70
 #, kde-format
 msgid "Upload new avatar"
 msgstr "ახალი ავატარის ატვირთვა"
 
-#: modules/account/contents/ui/main.qml:85
+#: modules/account/contents/ui/main.qml:87
 #, kde-format
 msgid "Remove current avatar"
 msgstr "მიმდინარე ავატარის წაშლა"
 
-#: modules/account/contents/ui/main.qml:115
+#: modules/account/contents/ui/main.qml:117
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "მორგების დასასრულებლად რამდენიმე დეტალი დაგვჭირდება."
 
-#: modules/account/contents/ui/main.qml:126
+#: modules/account/contents/ui/main.qml:128
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "ეს მომხმარებელი ადმინისტრატორი იქნება."
 
-#: modules/account/contents/ui/main.qml:130
+#: modules/account/contents/ui/main.qml:132
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -63,30 +63,36 @@ msgstr ""
 "ამ მომხმარებელს რთული პაროლი დაუყენოთ."
 
 #: modules/account/contents/ui/main.qml:145
-#, kde-format
-msgctxt "@label:textfield"
+#, fuzzy, kde-format
+#| msgctxt "@label:textfield"
+#| msgid "Full Name"
+msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "სრული სახელი"
 
-#: modules/account/contents/ui/main.qml:166
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:163
+#, fuzzy, kde-format
+#| msgid "Username"
+msgctxt "@label:textbox"
 msgid "Username"
 msgstr "მომხმარებლის სახელი"
 
-#: modules/account/contents/ui/main.qml:182
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:175
+#, fuzzy, kde-format
+#| msgid "Password"
+msgctxt "@label:textbox"
 msgid "Password"
 msgstr "პაროლი"
 
-#: modules/account/contents/ui/main.qml:195
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:185
+#, fuzzy, kde-format
+#| msgctxt "@label:textfield"
+#| msgid "Confirm Password"
+msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "გაიმეორეთ პაროლი"
 
-#: modules/account/contents/ui/main.qml:199
+#: modules/account/contents/ui/main.qml:188
 #, kde-format
 msgctxt "@info:status"
 msgid "Passwords don’t match"
@@ -212,17 +218,17 @@ msgstr ""
 "შემდეგ შეგეძლებათ, თქვენი ანგარიშით შეხვიდეთ.<br /><br />ისიამოვნეთ "
 "დისტრიბუტივით <b>%1</b>!"
 
-#: modules/keyboard/contents/ui/main.qml:164
+#: modules/keyboard/contents/ui/main.qml:161
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "აირჩიეთ თქვენი კლავიატურის განლაგება და ენა."
 
-#: modules/language/contents/ui/main.qml:46
+#: modules/language/contents/ui/main.qml:42
 #, kde-format
 msgid "Please select your preferred language."
 msgstr "აირჩიეთ სასურველი ენა."
 
-#: modules/language/contents/ui/main.qml:55
+#: modules/language/contents/ui/main.qml:48
 #, kde-format
 msgid "Search languages…"
 msgstr "ენის მოძებნა…"
@@ -242,12 +248,12 @@ msgstr "ეკრანის მასშტაბი"
 msgid "Dark Theme"
 msgstr "მუქი თემა"
 
-#: modules/time/contents/ui/main.qml:35
+#: modules/time/contents/ui/main.qml:32
 #, kde-format
 msgid "Select your time zone and preferred time format."
 msgstr "აირჩიეთ თქვენი დროის სარტყელი და რჩეული დროის ფორმატი."
 
-#: modules/time/contents/ui/main.qml:46
+#: modules/time/contents/ui/main.qml:42
 #, kde-format
 msgid "24-Hour Format"
 msgstr "24-საათიანი ფორმატი"
@@ -257,7 +263,7 @@ msgstr "24-საათიანი ფორმატი"
 msgid "Connect to"
 msgstr "დაკავშირება"
 
-#: modules/wifi/contents/ui/main.qml:77
+#: modules/wifi/contents/ui/main.qml:76
 #, kde-format
 msgid "Connect to a WiFi network for network access."
 msgstr "ქსელთან წვდომისთვის მიუერთდით WiFi-ს."
@@ -373,19 +379,19 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "<br/><b>%1</b>-ის მიერ"
 
-#: src/qml/Wizard.qml:292
+#: src/qml/Wizard.qml:286
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "უკან"
 
-#: src/qml/Wizard.qml:315
+#: src/qml/Wizard.qml:302
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "შემდეგი"
 
-#: src/qml/Wizard.qml:334
+#: src/qml/Wizard.qml:314
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
@@ -417,6 +423,14 @@ msgstr "გამოსახულების ზომის შეცვლ�
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
 msgstr "გამოსახულების ზომის შეცვლის შეცდომა: დროებითი ფაილის ჩაწერის შეცდომა"
+
+#~ msgctxt "@label:textfield"
+#~ msgid "Username"
+#~ msgstr "მომხმარებლის სახელი"
+
+#~ msgctxt "@label:textfield"
+#~ msgid "Password"
+#~ msgstr "პაროლი"
 
 #~ msgid "KDE Initial System Setup"
 #~ msgstr "KDE-ის სისტემის საწყისი მორგება"

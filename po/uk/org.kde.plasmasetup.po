@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-28 00:46+0000\n"
+"POT-Creation-Date: 2025-10-21 00:44+0000\n"
 "PO-Revision-Date: 2025-09-29 15:50+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -28,28 +28,28 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: modules/account/contents/ui/main.qml:68
+#: modules/account/contents/ui/main.qml:70
 #, kde-format
 msgid "Upload new avatar"
 msgstr "Вивантажити новий аватар"
 
-#: modules/account/contents/ui/main.qml:85
+#: modules/account/contents/ui/main.qml:87
 #, kde-format
 msgid "Remove current avatar"
 msgstr "Вилучити поточний аватар"
 
-#: modules/account/contents/ui/main.qml:115
+#: modules/account/contents/ui/main.qml:117
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Для завершення налаштовування нам знадобиться декілька дрібничок."
 
-#: modules/account/contents/ui/main.qml:126
+#: modules/account/contents/ui/main.qml:128
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Цей користувач буде адміністратором."
 
-#: modules/account/contents/ui/main.qml:130
+#: modules/account/contents/ui/main.qml:132
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -63,30 +63,36 @@ msgstr ""
 "для цього користувача."
 
 #: modules/account/contents/ui/main.qml:145
-#, kde-format
-msgctxt "@label:textfield"
+#, fuzzy, kde-format
+#| msgctxt "@label:textfield"
+#| msgid "Full Name"
+msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Ім'я повністю"
 
-#: modules/account/contents/ui/main.qml:166
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:163
+#, fuzzy, kde-format
+#| msgid "Username"
+msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Користувач"
 
-#: modules/account/contents/ui/main.qml:182
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:175
+#, fuzzy, kde-format
+#| msgid "Password"
+msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Пароль"
 
-#: modules/account/contents/ui/main.qml:195
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:185
+#, fuzzy, kde-format
+#| msgctxt "@label:textfield"
+#| msgid "Confirm Password"
+msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Підтвердження пароля"
 
-#: modules/account/contents/ui/main.qml:199
+#: modules/account/contents/ui/main.qml:188
 #, kde-format
 msgctxt "@info:status"
 msgid "Passwords don’t match"
@@ -212,17 +218,17 @@ msgstr ""
 "<b>Завершити</b> ви зможете увійти до вашого нового облікового запису.<br /"
 "><br />Насолоджуйтеся <b>%1</b>!"
 
-#: modules/keyboard/contents/ui/main.qml:164
+#: modules/keyboard/contents/ui/main.qml:161
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Вибір розкладки клаіатури і мови."
 
-#: modules/language/contents/ui/main.qml:46
+#: modules/language/contents/ui/main.qml:42
 #, kde-format
 msgid "Please select your preferred language."
 msgstr "Будь ласка, виберіть пріоритетну мову."
 
-#: modules/language/contents/ui/main.qml:55
+#: modules/language/contents/ui/main.qml:48
 #, kde-format
 msgid "Search languages…"
 msgstr "Шукати мови…"
@@ -242,12 +248,12 @@ msgstr "Масштабування дисплея"
 msgid "Dark Theme"
 msgstr "Темна тема"
 
-#: modules/time/contents/ui/main.qml:35
+#: modules/time/contents/ui/main.qml:32
 #, kde-format
 msgid "Select your time zone and preferred time format."
 msgstr "Виберіть ваш часовий пояс і бажаний формат запису часу."
 
-#: modules/time/contents/ui/main.qml:46
+#: modules/time/contents/ui/main.qml:42
 #, kde-format
 msgid "24-Hour Format"
 msgstr "24-годинний формат"
@@ -257,7 +263,7 @@ msgstr "24-годинний формат"
 msgid "Connect to"
 msgstr "З’єднатися з"
 
-#: modules/wifi/contents/ui/main.qml:77
+#: modules/wifi/contents/ui/main.qml:76
 #, kde-format
 msgid "Connect to a WiFi network for network access."
 msgstr "З'єднатися з мережею WiFi для доступу до мережі."
@@ -374,19 +380,19 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "На основі<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:292
+#: src/qml/Wizard.qml:286
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Назад"
 
-#: src/qml/Wizard.qml:315
+#: src/qml/Wizard.qml:302
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Далі"
 
-#: src/qml/Wizard.qml:334
+#: src/qml/Wizard.qml:314
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
@@ -422,6 +428,14 @@ msgid "Failed to resize image: writing to temp file failed"
 msgstr ""
 "Не вдалося змінити розміри зображення: не вдалося виконати запис до "
 "тимчасового файла"
+
+#~ msgctxt "@label:textfield"
+#~ msgid "Username"
+#~ msgstr "Користувач"
+
+#~ msgctxt "@label:textfield"
+#~ msgid "Password"
+#~ msgstr "Пароль"
 
 #~ msgid "KDE Initial System Setup"
 #~ msgstr "Початкове налаштовування системи KDE"

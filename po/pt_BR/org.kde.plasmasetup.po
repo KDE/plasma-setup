@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-28 00:46+0000\n"
+"POT-Creation-Date: 2025-10-21 00:44+0000\n"
 "PO-Revision-Date: 2025-09-28 02:02-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -27,28 +27,28 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "geraldosimiao@fedoraproject.org"
 
-#: modules/account/contents/ui/main.qml:68
+#: modules/account/contents/ui/main.qml:70
 #, kde-format
 msgid "Upload new avatar"
 msgstr "Enviar novo avatar"
 
-#: modules/account/contents/ui/main.qml:85
+#: modules/account/contents/ui/main.qml:87
 #, kde-format
 msgid "Remove current avatar"
 msgstr "Remover avatar atual"
 
-#: modules/account/contents/ui/main.qml:115
+#: modules/account/contents/ui/main.qml:117
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Precisamos de alguns detalhes para concluir a configuração."
 
-#: modules/account/contents/ui/main.qml:126
+#: modules/account/contents/ui/main.qml:128
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Este usuário será um administrador."
 
-#: modules/account/contents/ui/main.qml:130
+#: modules/account/contents/ui/main.qml:132
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -62,30 +62,36 @@ msgstr ""
 "forte para este usuário."
 
 #: modules/account/contents/ui/main.qml:145
-#, kde-format
-msgctxt "@label:textfield"
+#, fuzzy, kde-format
+#| msgctxt "@label:textfield"
+#| msgid "Full Name"
+msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Nome completo"
 
-#: modules/account/contents/ui/main.qml:166
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:163
+#, fuzzy, kde-format
+#| msgid "Username"
+msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Nome de usuário"
 
-#: modules/account/contents/ui/main.qml:182
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:175
+#, fuzzy, kde-format
+#| msgid "Password"
+msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Senha"
 
-#: modules/account/contents/ui/main.qml:195
-#, kde-format
-msgctxt "@label:textfield"
+#: modules/account/contents/ui/main.qml:185
+#, fuzzy, kde-format
+#| msgctxt "@label:textfield"
+#| msgid "Confirm Password"
+msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Confirme a senha"
 
-#: modules/account/contents/ui/main.qml:199
+#: modules/account/contents/ui/main.qml:188
 #, kde-format
 msgctxt "@info:status"
 msgid "Passwords don’t match"
@@ -210,17 +216,17 @@ msgstr ""
 "Seu dispositivo agora está pronto. <br /><br />Após clicar em <b>Concluir</"
 "b>, você poderá entrar em sua nova conta.<br /><br />Aproveite <b>%1</b>!"
 
-#: modules/keyboard/contents/ui/main.qml:164
+#: modules/keyboard/contents/ui/main.qml:161
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Selecione o layout do teclado e o idioma."
 
-#: modules/language/contents/ui/main.qml:46
+#: modules/language/contents/ui/main.qml:42
 #, kde-format
 msgid "Please select your preferred language."
 msgstr "Selecione seu idioma preferido."
 
-#: modules/language/contents/ui/main.qml:55
+#: modules/language/contents/ui/main.qml:48
 #, kde-format
 msgid "Search languages…"
 msgstr "Pesquisar idiomas…"
@@ -240,12 +246,12 @@ msgstr "Escala do monitor"
 msgid "Dark Theme"
 msgstr "Tema escuro"
 
-#: modules/time/contents/ui/main.qml:35
+#: modules/time/contents/ui/main.qml:32
 #, kde-format
 msgid "Select your time zone and preferred time format."
 msgstr "Selecione seu fuso horário e formato de hora preferido."
 
-#: modules/time/contents/ui/main.qml:46
+#: modules/time/contents/ui/main.qml:42
 #, kde-format
 msgid "24-Hour Format"
 msgstr "Formato de 24 horas"
@@ -255,7 +261,7 @@ msgstr "Formato de 24 horas"
 msgid "Connect to"
 msgstr "Conectar a"
 
-#: modules/wifi/contents/ui/main.qml:77
+#: modules/wifi/contents/ui/main.qml:76
 #, kde-format
 msgid "Connect to a WiFi network for network access."
 msgstr "Conecte-se a uma rede WiFi para ter acesso à rede."
@@ -372,19 +378,19 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Distribuído por<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:292
+#: src/qml/Wizard.qml:286
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Voltar"
 
-#: src/qml/Wizard.qml:315
+#: src/qml/Wizard.qml:302
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Próximo"
 
-#: src/qml/Wizard.qml:334
+#: src/qml/Wizard.qml:314
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
@@ -416,3 +422,11 @@ msgstr "Falha ao redimensionar imagem: falha ao abrir o arquivo temporário"
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
 msgstr "Falha ao redimensionar imagem: falha ao gravar o arquivo temporário"
+
+#~ msgctxt "@label:textfield"
+#~ msgid "Username"
+#~ msgstr "Nome de usuário"
+
+#~ msgctxt "@label:textfield"
+#~ msgid "Password"
+#~ msgstr "Senha"
