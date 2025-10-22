@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-21 00:44+0000\n"
-"PO-Revision-Date: 2025-09-29 15:59+0200\n"
+"PO-Revision-Date: 2025-10-21 06:39+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -59,34 +59,28 @@ msgstr ""
 "do vseh datotek v sistemu.<nl/><nl/>Izberite močno geslo za tega uporabnika."
 
 #: modules/account/contents/ui/main.qml:145
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Full Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Polno ime"
 
 #: modules/account/contents/ui/main.qml:163
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Uporabniško ime"
 
 #: modules/account/contents/ui/main.qml:175
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Geslo"
 
 #: modules/account/contents/ui/main.qml:185
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
-msgstr "Potrdi geslo"
+msgstr "Potrdite geslo"
 
 #: modules/account/contents/ui/main.qml:188
 #, kde-format

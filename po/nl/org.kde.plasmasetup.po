@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-21 00:44+0000\n"
-"PO-Revision-Date: 2025-09-29 10:49+0200\n"
+"PO-Revision-Date: 2025-10-22 00:28+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -62,31 +62,25 @@ msgstr ""
 ">Kies een sterk wachtwoord voor deze gebruiker."
 
 #: modules/account/contents/ui/main.qml:145
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Full Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Volledige naam"
 
 #: modules/account/contents/ui/main.qml:163
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Gebruikersnaam"
 
 #: modules/account/contents/ui/main.qml:175
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Wachtwoord"
 
 #: modules/account/contents/ui/main.qml:185
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Wachtwoord bevestigen"
