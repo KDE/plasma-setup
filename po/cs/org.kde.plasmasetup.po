@@ -73,8 +73,7 @@ msgid "Username"
 msgstr "Uživatelské jméno"
 
 #: modules/account/contents/ui/main.qml:175
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Heslo"
