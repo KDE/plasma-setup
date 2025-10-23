@@ -4,6 +4,7 @@
 
 #include <QDir>
 #include <QProcess>
+#include <QTemporaryDir>
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusPendingReply>
 
@@ -14,7 +15,15 @@
 #include "authhelper.h"
 #include "config-plasma-setup.h"
 
+#include <pwd.h>
+#include <sys/stat.h>
+
 const QString SDDM_AUTOLOGIN_CONFIG_PATH = QStringLiteral("/etc/sddm.conf.d/99-plasma-setup.conf");
+
+/**
+ * Minimum UID for regular (non-system) users.
+ */
+constexpr int MIN_REGULAR_USER_UID = 1000;
 
 ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap &args)
 {
@@ -27,7 +36,15 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     }
 
     QString username = args[QStringLiteral("username")].toString();
-    QString autostartDirPath = QDir::cleanPath(QStringLiteral("/home/") + username + QStringLiteral("/.config/autostart"));
+    std::optional<UserInfo> userInfoMaybe = getUserInfo(username, reply);
+    if (!userInfoMaybe.has_value()) {
+        // getUserInfo already set the error in reply
+        return reply;
+    }
+    UserInfo userInfo = userInfoMaybe.value();
+    QString homePath = userInfo.homePath;
+
+    QString autostartDirPath = QDir::cleanPath(homePath + QStringLiteral("/.config/autostart"));
     QDir autostartDir(autostartDirPath);
 
     // Ensure the autostart directory exists
@@ -37,10 +54,18 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
         return reply;
     }
 
+    // Adopt the new user's ownership to create files in their home directory with their own permissions
+    if (!becomeUser(userInfo, reply)) {
+        return reply;
+    }
+
     // Create the desktop entry file
     QString desktopFilePath = autostartDir.filePath(QStringLiteral("remove-autologin.desktop"));
     QFile desktopFile(desktopFilePath);
     if (!desktopFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        if (!becomeAdminAgain(reply)) {
+            return reply;
+        }
         reply = ActionReply::HelperErrorReply();
         reply.setErrorDescription(QStringLiteral("Unable to open file for writing: ") + desktopFilePath + QStringLiteral(" error:")
                                   + desktopFile.errorString());
@@ -49,6 +74,10 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
 
     QString plasmaSetupExecutablePath = QStringLiteral(PLASMA_SETUP_LIBEXECDIR) + QStringLiteral("/plasma-setup");
     if (plasmaSetupExecutablePath.isEmpty()) {
+        desktopFile.close();
+        if (!becomeAdminAgain(reply)) {
+            return reply;
+        }
         reply = ActionReply::HelperErrorReply();
         reply.setErrorDescription(QStringLiteral("Unable to find the Plasma Setup executable path."));
         return reply;
@@ -62,6 +91,11 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     stream << "X-KDE-StartupNotify=false\n";
     stream << "NoDisplay=true\n";
     desktopFile.close();
+
+    // Restore root privileges
+    if (!becomeAdminAgain(reply)) {
+        return reply;
+    }
 
     reply = ActionReply::SuccessReply();
     reply.setData({{QStringLiteral("autostartFilePath"), desktopFilePath}});
@@ -127,6 +161,53 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
     }
 
     QString username = args[QStringLiteral("username")].toString();
+    auto userInfoMaybe = getUserInfo(username, reply);
+    if (!userInfoMaybe.has_value()) {
+        // getUserInfo already set the error in reply
+        return reply;
+    }
+    UserInfo userInfo = userInfoMaybe.value();
+    QString homePath = userInfo.homePath;
+
+    // Create a temporary directory accessible to the new user
+    QString tempDirPath;
+    QTemporaryDir tempDir;
+    if (!tempDir.isValid()) {
+        reply = ActionReply::HelperErrorReply();
+        reply.setErrorDescription(QStringLiteral("Unable to create temporary directory."));
+        return reply;
+    }
+    tempDirPath = tempDir.path();
+
+    // Copy the file to the temp directory while we still have privileges
+    QString sourceFilePath = QStringLiteral("/run/plasma-setup/.config/kdeglobals");
+    QString tempFilePath = tempDirPath + QStringLiteral("/kdeglobals");
+    QFile sourceFile(sourceFilePath);
+    if (!sourceFile.copy(tempFilePath)) {
+        reply = ActionReply::HelperErrorReply();
+        reply.setErrorDescription(QStringLiteral("Unable to copy file to temp directory: ") + sourceFilePath + QStringLiteral(" to ") + tempFilePath
+                                  + QStringLiteral(" -- Error message: ") + sourceFile.errorString());
+        return reply;
+    }
+
+    // Set permissions on the temp directory and file so the new user can access them
+    if (chmod(tempDirPath.toLocal8Bit().constData(), 0755) != 0) {
+        reply = ActionReply::HelperErrorReply();
+        reply.setErrorDescription(QStringLiteral("Unable to set directory permissions: error code ") + QString::number(errno));
+        return reply;
+    }
+
+    // Set file permissions to be readable by everyone
+    if (chmod(tempFilePath.toLocal8Bit().constData(), 0644) != 0) {
+        reply = ActionReply::HelperErrorReply();
+        reply.setErrorDescription(QStringLiteral("Unable to set file permissions: error code ") + QString::number(errno));
+        return reply;
+    }
+
+    // Adopt the new user's ownership to create files in their home directory with their own permissions
+    if (!becomeUser(userInfo, reply)) {
+        return reply;
+    }
 
     // Ensure the .config directory exists in the new user's home
     //
@@ -134,7 +215,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
     // action that is called explicitly before all others, since it will definitely be needed for
     // any other configuration actions. This will also avoid redundant error handling code in each
     // action.
-    QString configDirPath = QDir::cleanPath(QStringLiteral("/home/") + username + QStringLiteral("/.config"));
+    QString configDirPath = QDir::cleanPath(homePath + QStringLiteral("/.config"));
     QDir configDir(configDirPath);
 
     if (!configDir.exists() && !configDir.mkpath(QStringLiteral("."))) {
@@ -144,12 +225,21 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
     }
 
     // Set the global theme for the new user
-    QString sourceFilePath = QStringLiteral("/run/plasma-setup/.config/kdeglobals");
-    QString destFilePath = QStringLiteral("/home/%1/.config/kdeglobals").arg(username);
+    QString destFilePath = QDir::cleanPath(configDirPath + QStringLiteral("/kdeglobals"));
 
-    if (!QFile::copy(sourceFilePath, destFilePath)) {
+    QFile tempFile(tempFilePath);
+    if (!tempFile.copy(destFilePath)) {
+        if (!becomeAdminAgain(reply)) {
+            return reply;
+        }
         reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(i18nc("%1 is a file path", "Failed to copy file %1", sourceFilePath));
+        reply.setErrorDescription(QStringLiteral("Unable to copy file to destination: ") + tempFilePath + QStringLiteral(" to ") + destFilePath
+                                  + QStringLiteral(" -- Error message: ") + tempFile.errorString());
+        return reply;
+    }
+
+    // Restore root privileges
+    if (!becomeAdminAgain(reply)) {
         return reply;
     }
 
@@ -167,51 +257,91 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
     }
 
     QString username = args[QStringLiteral("username")].toString();
-
-    // Copy display scaling configuration files to the new user
-    QString sourceBasePath = QDir::cleanPath(QStringLiteral("/run/plasma-setup/.config"));
-    QString destBasePath = QDir::cleanPath(QStringLiteral("/home/") + username + QStringLiteral("/.config"));
-    QDir destDir(destBasePath);
-    if (!destDir.exists()) {
-        destDir.mkpath(destBasePath);
+    auto userInfoMaybe = getUserInfo(username, reply);
+    if (!userInfoMaybe.has_value()) {
+        // getUserInfo already set the error in reply
+        return reply;
     }
+    UserInfo userInfo = userInfoMaybe.value();
+    QString homePath = userInfo.homePath;
+
+    // Create a temporary directory accessible to the new user
+    QString tempDirPath;
+    QTemporaryDir tempDir;
+    if (!tempDir.isValid()) {
+        reply = ActionReply::HelperErrorReply();
+        reply.setErrorDescription(QStringLiteral("Unable to create temporary directory."));
+        return reply;
+    }
+    tempDirPath = tempDir.path();
 
     QStringList filesToCopy = {
         QStringLiteral("kwinoutputconfig.json"),
         QStringLiteral("kwinrc"),
     };
+
+    QString sourceBasePath = QDir::cleanPath(QStringLiteral("/run/plasma-setup/.config"));
+
+    // Copy files to temp directory while we still have privileges
     for (const QString &fileName : filesToCopy) {
         QString sourceFilePath = QDir::cleanPath(sourceBasePath + QStringLiteral("/") + fileName);
-        QString destFilePath = QDir::cleanPath(destBasePath + QStringLiteral("/") + fileName);
-        if (!QFile::copy(sourceFilePath, destFilePath)) {
+        QString tempFilePath = QDir::cleanPath(tempDirPath + QStringLiteral("/") + fileName);
+
+        QFile sourceFile(sourceFilePath);
+        if (!sourceFile.copy(tempFilePath)) {
             reply = ActionReply::HelperErrorReply();
-            reply.setErrorDescription(i18nc("%1 is a file path", "Failed to copy file %1", sourceFilePath));
+            reply.setErrorDescription(QStringLiteral("Unable to copy file to temp directory: ") + sourceFilePath + QStringLiteral(" to ") + tempFilePath
+                                      + QStringLiteral(" -- Error message: ") + sourceFile.errorString());
+            return reply;
+        }
+
+        // Make sure the user can read the file
+        if (chmod(tempFilePath.toLocal8Bit().constData(), 0644) != 0) {
+            reply = ActionReply::HelperErrorReply();
+            reply.setErrorDescription(QStringLiteral("Unable to set permissions on ") + tempFilePath + QStringLiteral(": error code ")
+                                      + QString::number(errno));
             return reply;
         }
     }
 
-    return ActionReply::SuccessReply();
-}
-
-ActionReply PlasmaSetupAuthHelper::setnewuserhomedirectoryownership(const QVariantMap &args)
-{
-    ActionReply reply;
-
-    if (!args.contains(QStringLiteral("username")) || !args[QStringLiteral("username")].canConvert<QString>()) {
+    // Set permissions on the temp directory so the new user can access it
+    if (chmod(tempDirPath.toLocal8Bit().constData(), 0755) != 0) {
         reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(i18n("Username argument is missing or invalid."));
+        reply.setErrorDescription(QStringLiteral("Unable to set directory permissions: error code ") + QString::number(errno));
         return reply;
     }
 
-    QString username = args[QStringLiteral("username")].toString();
-    QString homePath = QDir::cleanPath(QStringLiteral("/home/") + username);
+    // Ensure the config directory exists
+    QString destBasePath = QDir::cleanPath(homePath + QStringLiteral("/.config"));
+    QDir destDir(destBasePath);
+    if (!destDir.exists()) {
+        destDir.mkpath(destBasePath);
+    }
 
-    // Recursively set ownership of the home directory to the new user
-    int exitCode = QProcess::execute(QStringLiteral("chown"), {QStringLiteral("-R"), username + QStringLiteral(":") + username, homePath});
+    // Adopt the new user's ownership to create files in their home directory with their own permissions
+    if (!becomeUser(userInfo, reply)) {
+        return reply;
+    }
 
-    if (exitCode != 0) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(i18nc("%1 is a directory path, %2 an exit code", "Failed to set ownership for home directory %1: exit code %2", homePath, exitCode));
+    // Copy display scaling configuration files to the new user from temp directory
+    for (const QString &fileName : filesToCopy) {
+        QString tempFilePath = QDir::cleanPath(tempDirPath + QStringLiteral("/") + fileName);
+        QString destFilePath = QDir::cleanPath(destBasePath + QStringLiteral("/") + fileName);
+
+        QFile tempFile(tempFilePath);
+        if (!tempFile.copy(destFilePath)) {
+            if (!becomeAdminAgain(reply)) {
+                return reply;
+            }
+            reply = ActionReply::HelperErrorReply();
+            reply.setErrorDescription(QStringLiteral("Unable to copy file to destination: ") + tempFilePath + QStringLiteral(" to ") + destFilePath
+                                      + QStringLiteral(" -- Error message: ") + tempFile.errorString());
+            return reply;
+        }
+    }
+
+    // Restore root privileges
+    if (!becomeAdminAgain(reply)) {
         return reply;
     }
 
@@ -230,6 +360,15 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
 
     QString username = args[QStringLiteral("username")].toString();
 
+    // Validate the username. We don't actually need the home directory here,
+    // but this function performs the necessary security checks.
+    auto userInfoMaybe = getUserInfo(username, reply);
+    if (!userInfoMaybe.has_value()) {
+        // getUserInfo already set the error in reply
+        return reply;
+    }
+    UserInfo userInfo = userInfoMaybe.value();
+
     QFile file(SDDM_AUTOLOGIN_CONFIG_PATH);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         reply = ActionReply::HelperErrorReply();
@@ -245,6 +384,65 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
     file.close();
 
     return ActionReply::SuccessReply();
+}
+
+bool PlasmaSetupAuthHelper::becomeAdminAgain(ActionReply &reply)
+{
+    if (setegid(0) != 0 || seteuid(0) != 0) {
+        reply = ActionReply::HelperErrorReply();
+        reply.setErrorDescription(QStringLiteral("Unable to restore root privileges: error code ") + QString::number(errno));
+        return false;
+    }
+    return true;
+}
+
+bool PlasmaSetupAuthHelper::becomeUser(const UserInfo &userInfo, ActionReply &reply)
+{
+    if (setegid(userInfo.gid) != 0 || seteuid(userInfo.uid) != 0) {
+        reply = ActionReply::HelperErrorReply();
+        reply.setErrorDescription(QStringLiteral("Unable to become user ") + userInfo.username + QStringLiteral(": error code ") + QString::number(errno));
+        return false;
+    }
+    return true;
+}
+
+std::optional<UserInfo> PlasmaSetupAuthHelper::getUserInfo(const QString &username, ActionReply &reply)
+{
+    struct passwd pwd;
+    struct passwd *result = nullptr;
+    QByteArray usernameBytes = username.toLocal8Bit();
+    long bufsize = sysconf(_SC_GETPW_R_SIZE_MAX);
+    if (bufsize <= 0) {
+        bufsize = 16384; // fallback size
+    }
+    QByteArray buf(static_cast<int>(bufsize), 0);
+
+    int ret = getpwnam_r(usernameBytes.constData(), &pwd, buf.data(), buf.size(), &result);
+
+    if (result == nullptr) {
+        reply = ActionReply::HelperErrorReply();
+        if (ret == 0) {
+            reply.setErrorDescription(QStringLiteral("User does not exist: ") + username);
+        } else {
+            reply.setErrorDescription(QStringLiteral("System error while looking up user ") + username + QStringLiteral(": error code ")
+                                      + QString::number(ret));
+        }
+        return std::nullopt;
+    }
+
+    if (pwd.pw_uid < MIN_REGULAR_USER_UID) {
+        reply = ActionReply::HelperErrorReply();
+        reply.setErrorDescription(QStringLiteral("Refusing to perform action for system user: ") + username);
+        return std::nullopt;
+    }
+
+    UserInfo userInfo;
+    userInfo.username = QString::fromLocal8Bit(pwd.pw_name);
+    userInfo.homePath = QString::fromLocal8Bit(pwd.pw_dir);
+    userInfo.uid = pwd.pw_uid;
+    userInfo.gid = pwd.pw_gid;
+
+    return userInfo;
 }
 
 KAUTH_HELPER_MAIN("org.kde.plasmasetup", PlasmaSetupAuthHelper)
