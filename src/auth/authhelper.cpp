@@ -62,12 +62,7 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     }
 
     QString username = args[QStringLiteral("username")].toString();
-    std::optional<UserInfo> userInfoMaybe = getUserInfo(username);
-    if (!userInfoMaybe.has_value()) {
-        // getUserInfo already set the error in reply
-        return reply;
-    }
-    UserInfo userInfo = userInfoMaybe.value();
+    UserInfo userInfo = getUserInfo(username);
     QString homePath = userInfo.homePath;
 
     QString autostartDirPath = QDir::cleanPath(homePath + QStringLiteral("/.config/autostart"));
@@ -173,12 +168,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
     }
 
     QString username = args[QStringLiteral("username")].toString();
-    auto userInfoMaybe = getUserInfo(username);
-    if (!userInfoMaybe.has_value()) {
-        // getUserInfo already set the error in reply
-        return reply;
-    }
-    UserInfo userInfo = userInfoMaybe.value();
+    UserInfo userInfo = getUserInfo(username);
     QString homePath = userInfo.homePath;
 
     // Create a temporary directory accessible to the new user
@@ -258,12 +248,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
     }
 
     QString username = args[QStringLiteral("username")].toString();
-    auto userInfoMaybe = getUserInfo(username);
-    if (!userInfoMaybe.has_value()) {
-        // getUserInfo already set the error in reply
-        return reply;
-    }
-    UserInfo userInfo = userInfoMaybe.value();
+    UserInfo userInfo = getUserInfo(username);
     QString homePath = userInfo.homePath;
 
     // Create a temporary directory accessible to the new user
@@ -352,12 +337,7 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
 
     // Validate the username. We don't actually need the home directory here,
     // but this function performs the necessary security checks.
-    auto userInfoMaybe = getUserInfo(username);
-    if (!userInfoMaybe.has_value()) {
-        // getUserInfo already set the error in reply
-        return reply;
-    }
-    UserInfo userInfo = userInfoMaybe.value();
+    UserInfo userInfo = getUserInfo(username);
 
     QFile file(SDDM_AUTOLOGIN_CONFIG_PATH);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
@@ -376,7 +356,7 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
     return ActionReply::SuccessReply();
 }
 
-std::optional<UserInfo> PlasmaSetupAuthHelper::getUserInfo(const QString &username)
+UserInfo PlasmaSetupAuthHelper::getUserInfo(const QString &username)
 {
     struct passwd pwd;
     struct passwd *result = nullptr;
@@ -395,7 +375,6 @@ std::optional<UserInfo> PlasmaSetupAuthHelper::getUserInfo(const QString &userna
         } else {
             throw std::runtime_error("System error while looking up user " + username.toStdString() + ": error code " + std::to_string(ret));
         }
-        return std::nullopt;
     }
 
     if (pwd.pw_uid < MIN_REGULAR_USER_UID) {
