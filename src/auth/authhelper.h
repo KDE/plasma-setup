@@ -101,31 +101,6 @@ public Q_SLOTS:
 
 private:
     /**
-     * Changes the effective user and group ID of the current process back to root.
-     *
-     * This function is used to resume privileges after temporarily dropping them to those of
-     * another user with `becomeUser()`.
-     *
-     * @param reply Reference to an ActionReply object to set error information if needed.
-     * @return True if the operation was successful, false otherwise.
-     */
-    bool becomeAdminAgain(ActionReply &reply);
-
-    /**
-     * Changes the effective user and group ID of the current process to that of the specified user.
-     *
-     * This function is used to drop privileges to those of a specified user, allowing
-     * file operations and other actions to be performed with the permissions of that user.
-     *
-     * Calling `becomeAdminAgain()` will restore the original privileges.
-     *
-     * @param userInfo A UserInfo struct containing the UID and GID of the target user.
-     * @param reply Reference to an ActionReply object to set error information if needed.
-     * @return True if the operation was successful, false otherwise.
-     */
-    bool becomeUser(const UserInfo &userInfo, ActionReply &reply);
-
-    /**
      * Validates the given username and retrieves information about the user.
      *
      * This function performs important security checks to ensure that the username
