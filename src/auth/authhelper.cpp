@@ -70,9 +70,7 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
 
     // Ensure the autostart directory exists
     if (!autostartDir.exists() && !autostartDir.mkpath(QStringLiteral("."))) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to create autostart directory: ") + autostartDirPath);
-        return reply;
+        return makeErrorReply(QStringLiteral("Unable to create autostart directory: ") + autostartDirPath);
     }
 
     PrivilegeGuard guard(userInfo);
@@ -81,18 +79,13 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     QString desktopFilePath = autostartDir.filePath(QStringLiteral("remove-autologin.desktop"));
     QFile desktopFile(desktopFilePath);
     if (!desktopFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to open file for writing: ") + desktopFilePath + QStringLiteral(" error:")
-                                  + desktopFile.errorString());
-        return reply;
+        return makeErrorReply(QStringLiteral("Unable to open file for writing: ") + desktopFilePath + QStringLiteral(" error:") + desktopFile.errorString());
     }
 
     QString plasmaSetupExecutablePath = QStringLiteral(PLASMA_SETUP_LIBEXECDIR) + QStringLiteral("/plasma-setup");
     if (plasmaSetupExecutablePath.isEmpty()) {
         desktopFile.close();
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to find the Plasma Setup executable path."));
-        return reply;
+        return makeErrorReply(QStringLiteral("Unable to find the Plasma Setup executable path."));
     }
 
     QTextStream stream(&desktopFile);
@@ -127,9 +120,7 @@ ActionReply PlasmaSetupAuthHelper::disablesystemdunit(const QVariantMap &args)
     dbusReply.waitForFinished();
 
     if (dbusReply.isError()) {
-        actionReply = ActionReply::HelperErrorReply();
-        actionReply.setErrorDescription(QStringLiteral("Unable to disable systemd unit: ") + dbusReply.error().message());
-        return actionReply;
+        return makeErrorReply(QStringLiteral("Unable to disable systemd unit: ") + dbusReply.error().message());
     }
 
     return ActionReply::SuccessReply();
@@ -148,10 +139,8 @@ ActionReply PlasmaSetupAuthHelper::removeautologin(const QVariantMap &args)
 
     QFile file(fileInfo.filePath());
     if (!file.remove()) {
-        reply = ActionReply::HelperErrorReply();
         QString errorDetails = file.errorString();
-        reply.setErrorDescription(QStringLiteral("Unable to remove file ") + fileInfo.filePath() + QStringLiteral(": ") + errorDetails);
-        return reply;
+        return makeErrorReply(QStringLiteral("Unable to remove file ") + fileInfo.filePath() + QStringLiteral(": ") + errorDetails);
     }
 
     return ActionReply::SuccessReply();
@@ -162,9 +151,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
     ActionReply reply;
 
     if (!args.contains(QStringLiteral("username")) || !args[QStringLiteral("username")].canConvert<QString>()) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Username argument is missing or invalid."));
-        return reply;
+        return makeErrorReply(QStringLiteral("Username argument is missing or invalid."));
     }
 
     QString username = args[QStringLiteral("username")].toString();
@@ -175,9 +162,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
     QString tempDirPath;
     QTemporaryDir tempDir;
     if (!tempDir.isValid()) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to create temporary directory."));
-        return reply;
+        return makeErrorReply(QStringLiteral("Unable to create temporary directory."));
     }
     tempDirPath = tempDir.path();
 
@@ -186,24 +171,18 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
     QString tempFilePath = tempDirPath + QStringLiteral("/kdeglobals");
     QFile sourceFile(sourceFilePath);
     if (!sourceFile.copy(tempFilePath)) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to copy file to temp directory: ") + sourceFilePath + QStringLiteral(" to ") + tempFilePath
-                                  + QStringLiteral(" -- Error message: ") + sourceFile.errorString());
-        return reply;
+        return makeErrorReply(QStringLiteral("Unable to copy file to temp directory: ") + sourceFilePath + QStringLiteral(" to ") + tempFilePath
+                              + QStringLiteral(" -- Error message: ") + sourceFile.errorString());
     }
 
     // Set permissions on the temp directory and file so the new user can access them
     if (chmod(tempDirPath.toLocal8Bit().constData(), 0755) != 0) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to set directory permissions: error code ") + QString::number(errno));
-        return reply;
+        return makeErrorReply(QStringLiteral("Unable to set directory permissions: error code ") + QString::number(errno));
     }
 
     // Set file permissions to be readable by everyone
     if (chmod(tempFilePath.toLocal8Bit().constData(), 0644) != 0) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to set file permissions: error code ") + QString::number(errno));
-        return reply;
+        return makeErrorReply(QStringLiteral("Unable to set file permissions: error code ") + QString::number(errno));
     }
 
     PrivilegeGuard guard(userInfo);
@@ -218,9 +197,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
     QDir configDir(configDirPath);
 
     if (!configDir.exists() && !configDir.mkpath(QStringLiteral("."))) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to create .config directory: ") + configDirPath);
-        return reply;
+        return makeErrorReply(QStringLiteral("Unable to create .config directory: ") + configDirPath);
     }
 
     // Set the global theme for the new user
@@ -228,10 +205,8 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
 
     QFile tempFile(tempFilePath);
     if (!tempFile.copy(destFilePath)) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to copy file to destination: ") + tempFilePath + QStringLiteral(" to ") + destFilePath
-                                  + QStringLiteral(" -- Error message: ") + tempFile.errorString());
-        return reply;
+        return makeErrorReply(QStringLiteral("Unable to copy file to destination: ") + tempFilePath + QStringLiteral(" to ") + destFilePath
+                              + QStringLiteral(" -- Error message: ") + tempFile.errorString());
     }
 
     return ActionReply::SuccessReply();
@@ -242,9 +217,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
     ActionReply reply;
 
     if (!args.contains(QStringLiteral("username")) || !args[QStringLiteral("username")].canConvert<QString>()) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Username argument is missing or invalid."));
-        return reply;
+        return makeErrorReply(QStringLiteral("Username argument is missing or invalid."));
     }
 
     QString username = args[QStringLiteral("username")].toString();
@@ -255,9 +228,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
     QString tempDirPath;
     QTemporaryDir tempDir;
     if (!tempDir.isValid()) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to create temporary directory."));
-        return reply;
+        return makeErrorReply(QStringLiteral("Unable to create temporary directory."));
     }
     tempDirPath = tempDir.path();
 
@@ -275,26 +246,19 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
 
         QFile sourceFile(sourceFilePath);
         if (!sourceFile.copy(tempFilePath)) {
-            reply = ActionReply::HelperErrorReply();
-            reply.setErrorDescription(QStringLiteral("Unable to copy file to temp directory: ") + sourceFilePath + QStringLiteral(" to ") + tempFilePath
-                                      + QStringLiteral(" -- Error message: ") + sourceFile.errorString());
-            return reply;
+            return makeErrorReply(QStringLiteral("Unable to copy file to temp directory: ") + sourceFilePath + QStringLiteral(" to ") + tempFilePath
+                                  + QStringLiteral(" -- Error message: ") + sourceFile.errorString());
         }
 
         // Make sure the user can read the file
         if (chmod(tempFilePath.toLocal8Bit().constData(), 0644) != 0) {
-            reply = ActionReply::HelperErrorReply();
-            reply.setErrorDescription(QStringLiteral("Unable to set permissions on ") + tempFilePath + QStringLiteral(": error code ")
-                                      + QString::number(errno));
-            return reply;
+            return makeErrorReply(QStringLiteral("Unable to set permissions on ") + tempFilePath + QStringLiteral(": error code ") + QString::number(errno));
         }
     }
 
     // Set permissions on the temp directory so the new user can access it
     if (chmod(tempDirPath.toLocal8Bit().constData(), 0755) != 0) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to set directory permissions: error code ") + QString::number(errno));
-        return reply;
+        return makeErrorReply(QStringLiteral("Unable to set directory permissions: error code ") + QString::number(errno));
     }
 
     // Ensure the config directory exists
@@ -313,10 +277,8 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
 
         QFile tempFile(tempFilePath);
         if (!tempFile.copy(destFilePath)) {
-            reply = ActionReply::HelperErrorReply();
-            reply.setErrorDescription(QStringLiteral("Unable to copy file to destination: ") + tempFilePath + QStringLiteral(" to ") + destFilePath
-                                      + QStringLiteral(" -- Error message: ") + tempFile.errorString());
-            return reply;
+            return makeErrorReply(QStringLiteral("Unable to copy file to destination: ") + tempFilePath + QStringLiteral(" to ") + destFilePath
+                                  + QStringLiteral(" -- Error message: ") + tempFile.errorString());
         }
     }
 
@@ -328,9 +290,7 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
     ActionReply reply;
 
     if (!args.contains(QStringLiteral("username")) || !args[QStringLiteral("username")].canConvert<QString>()) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Username argument is missing or invalid."));
-        return reply;
+        return makeErrorReply(QStringLiteral("Username argument is missing or invalid."));
     }
 
     QString username = args[QStringLiteral("username")].toString();
@@ -341,9 +301,7 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
 
     QFile file(SDDM_AUTOLOGIN_CONFIG_PATH);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to open file ") + SDDM_AUTOLOGIN_CONFIG_PATH + QStringLiteral(" for writing: ") + file.errorString());
-        return reply;
+        return makeErrorReply(QStringLiteral("Unable to open file ") + SDDM_AUTOLOGIN_CONFIG_PATH + QStringLiteral(" for writing: ") + file.errorString());
     }
 
     QTextStream stream(&file);
