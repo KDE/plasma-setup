@@ -58,9 +58,7 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     ActionReply reply;
 
     if (!args.contains(QStringLiteral("username")) || !args[QStringLiteral("username")].canConvert<QString>()) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Username argument is missing or invalid."));
-        return reply;
+        return makeErrorReply(QStringLiteral("Username argument is missing or invalid."));
     }
 
     QString username = args[QStringLiteral("username")].toString();
@@ -436,6 +434,13 @@ std::optional<UserInfo> PlasmaSetupAuthHelper::getUserInfo(const QString &userna
     userInfo.gid = pwd.pw_gid;
 
     return userInfo;
+}
+
+ActionReply PlasmaSetupAuthHelper::makeErrorReply(const QString &errorDescription)
+{
+    ActionReply reply = ActionReply::HelperErrorReply();
+    reply.setErrorDescription(errorDescription);
+    return reply;
 }
 
 KAUTH_HELPER_MAIN("org.kde.plasmasetup", PlasmaSetupAuthHelper)

@@ -112,4 +112,12 @@ private:
      * @return A UserInfo struct containing information about the user, or null if the user is invalid.
      */
     std::optional<UserInfo> getUserInfo(const QString &username, ActionReply &reply);
+
+    /**
+     * Helper function to create an error ActionReply with the given description.
+     *
+     * @param errorDescription The description of the error.
+     * @return An ActionReply representing the error.
+     */
+    ActionReply makeErrorReply(const QString &errorDescription);
 };
