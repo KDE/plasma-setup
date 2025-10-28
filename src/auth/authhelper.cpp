@@ -261,14 +261,14 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
         return makeErrorReply(QStringLiteral("Unable to set directory permissions: error code ") + QString::number(errno));
     }
 
+    PrivilegeGuard guard(userInfo);
+
     // Ensure the config directory exists
     QString destBasePath = QDir::cleanPath(homePath + QStringLiteral("/.config"));
     QDir destDir(destBasePath);
     if (!destDir.exists()) {
         destDir.mkpath(destBasePath);
     }
-
-    PrivilegeGuard guard(userInfo);
 
     // Copy display scaling configuration files to the new user from temp directory
     for (const QString &fileName : filesToCopy) {
