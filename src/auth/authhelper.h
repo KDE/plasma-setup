@@ -108,10 +108,9 @@ private:
      * on invalid users (e.g., system users or non-existent users).
      *
      * @param username The username to look up.
-     * @param reply Reference to an ActionReply object to set error information if needed.
      * @return A UserInfo struct containing information about the user, or null if the user is invalid.
      */
-    std::optional<UserInfo> getUserInfo(const QString &username, ActionReply &reply);
+    std::optional<UserInfo> getUserInfo(const QString &username);
 
     /**
      * Helper function to create an error ActionReply with the given description.

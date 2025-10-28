@@ -62,7 +62,7 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     }
 
     QString username = args[QStringLiteral("username")].toString();
-    std::optional<UserInfo> userInfoMaybe = getUserInfo(username, reply);
+    std::optional<UserInfo> userInfoMaybe = getUserInfo(username);
     if (!userInfoMaybe.has_value()) {
         // getUserInfo already set the error in reply
         return reply;
@@ -173,7 +173,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
     }
 
     QString username = args[QStringLiteral("username")].toString();
-    auto userInfoMaybe = getUserInfo(username, reply);
+    auto userInfoMaybe = getUserInfo(username);
     if (!userInfoMaybe.has_value()) {
         // getUserInfo already set the error in reply
         return reply;
@@ -258,7 +258,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
     }
 
     QString username = args[QStringLiteral("username")].toString();
-    auto userInfoMaybe = getUserInfo(username, reply);
+    auto userInfoMaybe = getUserInfo(username);
     if (!userInfoMaybe.has_value()) {
         // getUserInfo already set the error in reply
         return reply;
@@ -352,7 +352,7 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
 
     // Validate the username. We don't actually need the home directory here,
     // but this function performs the necessary security checks.
-    auto userInfoMaybe = getUserInfo(username, reply);
+    auto userInfoMaybe = getUserInfo(username);
     if (!userInfoMaybe.has_value()) {
         // getUserInfo already set the error in reply
         return reply;
@@ -376,7 +376,7 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
     return ActionReply::SuccessReply();
 }
 
-std::optional<UserInfo> PlasmaSetupAuthHelper::getUserInfo(const QString &username, ActionReply &reply)
+std::optional<UserInfo> PlasmaSetupAuthHelper::getUserInfo(const QString &username)
 {
     struct passwd pwd;
     struct passwd *result = nullptr;
@@ -390,20 +390,16 @@ std::optional<UserInfo> PlasmaSetupAuthHelper::getUserInfo(const QString &userna
     int ret = getpwnam_r(usernameBytes.constData(), &pwd, buf.data(), buf.size(), &result);
 
     if (result == nullptr) {
-        reply = ActionReply::HelperErrorReply();
         if (ret == 0) {
-            reply.setErrorDescription(QStringLiteral("User does not exist: ") + username);
+            throw std::runtime_error("User does not exist: " + username.toStdString());
         } else {
-            reply.setErrorDescription(QStringLiteral("System error while looking up user ") + username + QStringLiteral(": error code ")
-                                      + QString::number(ret));
+            throw std::runtime_error("System error while looking up user " + username.toStdString() + ": error code " + std::to_string(ret));
         }
         return std::nullopt;
     }
 
     if (pwd.pw_uid < MIN_REGULAR_USER_UID) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Refusing to perform action for system user: ") + username);
-        return std::nullopt;
+        throw std::runtime_error("Refusing to perform action for system user: " + username.toStdString());
     }
 
     UserInfo userInfo;
