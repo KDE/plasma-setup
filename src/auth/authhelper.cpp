@@ -80,14 +80,7 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
         return reply;
     }
 
-    std::optional<PrivilegeGuard> guard;
-    try {
-        guard.emplace(userInfo);
-    } catch (const std::runtime_error &e) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to become user ") + userInfo.username + QString::fromLocal8Bit(e.what()));
-        return reply;
-    }
+    PrivilegeGuard guard(userInfo);
 
     // Create the desktop entry file
     QString desktopFilePath = autostartDir.filePath(QStringLiteral("remove-autologin.desktop"));
@@ -223,14 +216,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
         return reply;
     }
 
-    std::optional<PrivilegeGuard> guard;
-    try {
-        guard.emplace(userInfo);
-    } catch (const std::runtime_error &e) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to become user ") + userInfo.username + QString::fromLocal8Bit(e.what()));
-        return reply;
-    }
+    PrivilegeGuard guard(userInfo);
 
     // Ensure the .config directory exists in the new user's home
     //
@@ -333,14 +319,7 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
         destDir.mkpath(destBasePath);
     }
 
-    std::optional<PrivilegeGuard> guard;
-    try {
-        guard.emplace(userInfo);
-    } catch (const std::runtime_error &e) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to become user ") + userInfo.username + QString::fromLocal8Bit(e.what()));
-        return reply;
-    }
+    PrivilegeGuard guard(userInfo);
 
     // Copy display scaling configuration files to the new user from temp directory
     for (const QString &fileName : filesToCopy) {
