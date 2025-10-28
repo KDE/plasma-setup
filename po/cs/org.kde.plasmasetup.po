@@ -58,19 +58,16 @@ msgid ""
 msgstr ""
 
 #: modules/account/contents/ui/main.qml:145
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Full Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
-msgstr "Celé jméno"
+msgstr ""
 
 #: modules/account/contents/ui/main.qml:163
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
-msgstr "Uživatelské jméno"
+msgstr ""
 
 #: modules/account/contents/ui/main.qml:175
 #, kde-format
@@ -79,12 +76,10 @@ msgid "Password"
 msgstr "Heslo"
 
 #: modules/account/contents/ui/main.qml:185
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
-msgstr "Potvrdit heslo"
+msgstr ""
 
 #: modules/account/contents/ui/main.qml:188
 #, kde-format
@@ -413,11 +408,3 @@ msgstr "Změna velikosti obrázku selhala: otevření dočasného souboru selhal
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
 msgstr "Změna velikosti obrázku selhala: zápis do dočasného souboru selhal"
-
-#~ msgctxt "@label:textfield"
-#~ msgid "Username"
-#~ msgstr "Uživatelské jméno"
-
-#~ msgctxt "@label:textfield"
-#~ msgid "Password"
-#~ msgstr "Heslo"
