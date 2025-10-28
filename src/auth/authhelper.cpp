@@ -68,12 +68,12 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     QString autostartDirPath = QDir::cleanPath(homePath + QStringLiteral("/.config/autostart"));
     QDir autostartDir(autostartDirPath);
 
+    PrivilegeGuard guard(userInfo);
+
     // Ensure the autostart directory exists
     if (!autostartDir.exists() && !autostartDir.mkpath(QStringLiteral("."))) {
         return makeErrorReply(QStringLiteral("Unable to create autostart directory: ") + autostartDirPath);
     }
-
-    PrivilegeGuard guard(userInfo);
 
     // Create the desktop entry file
     QString desktopFilePath = autostartDir.filePath(QStringLiteral("remove-autologin.desktop"));
