@@ -62,8 +62,6 @@ private:
 
 ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap &args)
 {
-    ActionReply reply;
-
     if (!args.contains(QStringLiteral("username")) || !args[QStringLiteral("username")].canConvert<QString>()) {
         return makeErrorReply(QStringLiteral("Username argument is missing or invalid."));
     }
@@ -104,7 +102,7 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     stream << "NoDisplay=true\n";
     desktopFile.close();
 
-    reply = ActionReply::SuccessReply();
+    ActionReply reply = ActionReply::SuccessReply();
     reply.setData({{QStringLiteral("autostartFilePath"), desktopFilePath}});
     return reply;
 }
@@ -137,7 +135,6 @@ ActionReply PlasmaSetupAuthHelper::removeautologin(const QVariantMap &args)
 {
     Q_UNUSED(args);
 
-    ActionReply reply;
     QFileInfo fileInfo(SDDM_AUTOLOGIN_CONFIG_PATH);
 
     if (!fileInfo.exists()) {
@@ -155,8 +152,6 @@ ActionReply PlasmaSetupAuthHelper::removeautologin(const QVariantMap &args)
 
 ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args)
 {
-    ActionReply reply;
-
     if (!args.contains(QStringLiteral("username")) || !args[QStringLiteral("username")].canConvert<QString>()) {
         return makeErrorReply(QStringLiteral("Username argument is missing or invalid."));
     }
@@ -198,8 +193,6 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
 
 ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &args)
 {
-    ActionReply reply;
-
     if (!args.contains(QStringLiteral("username")) || !args[QStringLiteral("username")].canConvert<QString>()) {
         return makeErrorReply(QStringLiteral("Username argument is missing or invalid."));
     }
@@ -247,8 +240,6 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
 
 ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &args)
 {
-    ActionReply reply;
-
     if (!args.contains(QStringLiteral("username")) || !args[QStringLiteral("username")].canConvert<QString>()) {
         return makeErrorReply(QStringLiteral("Username argument is missing or invalid."));
     }
