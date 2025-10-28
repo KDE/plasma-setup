@@ -25,6 +25,34 @@ const QString SDDM_AUTOLOGIN_CONFIG_PATH = QStringLiteral("/etc/sddm.conf.d/99-p
  */
 constexpr int MIN_REGULAR_USER_UID = 1000;
 
+class PrivilegeGuard
+{
+public:
+    PrivilegeGuard(const UserInfo &userInfo)
+    {
+        // Drop privileges to specified user
+        if (setegid(userInfo.gid) != 0 || seteuid(userInfo.uid) != 0) {
+            throw std::runtime_error("Failed to drop privileges to user " + userInfo.username.toStdString() + ": error " + std::to_string(errno));
+        }
+    }
+
+    ~PrivilegeGuard()
+    {
+        // Automatically restore admin privileges when going out of scope
+        if (setegid(0) != 0 || seteuid(0) != 0) {
+            qWarning() << "Failed to restore admin privileges: error" << errno;
+            // This path is unlikely, however if we failed to restore privileges, there's not much we can do.
+            // Just terminate this helper process to avoid any further issues.
+            std::terminate();
+        }
+    }
+
+private:
+    // Prevent copying
+    PrivilegeGuard(const PrivilegeGuard &) = delete;
+    PrivilegeGuard &operator=(const PrivilegeGuard &) = delete;
+};
+
 ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap &args)
 {
     ActionReply reply;
@@ -54,8 +82,12 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
         return reply;
     }
 
-    // Adopt the new user's ownership to create files in their home directory with their own permissions
-    if (!becomeUser(userInfo, reply)) {
+    std::optional<PrivilegeGuard> guard;
+    try {
+        guard.emplace(userInfo);
+    } catch (const std::runtime_error &e) {
+        reply = ActionReply::HelperErrorReply();
+        reply.setErrorDescription(QStringLiteral("Unable to become user ") + userInfo.username + QString::fromLocal8Bit(e.what()));
         return reply;
     }
 
@@ -63,9 +95,6 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     QString desktopFilePath = autostartDir.filePath(QStringLiteral("remove-autologin.desktop"));
     QFile desktopFile(desktopFilePath);
     if (!desktopFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        if (!becomeAdminAgain(reply)) {
-            return reply;
-        }
         reply = ActionReply::HelperErrorReply();
         reply.setErrorDescription(QStringLiteral("Unable to open file for writing: ") + desktopFilePath + QStringLiteral(" error:")
                                   + desktopFile.errorString());
@@ -75,9 +104,6 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     QString plasmaSetupExecutablePath = QStringLiteral(PLASMA_SETUP_LIBEXECDIR) + QStringLiteral("/plasma-setup");
     if (plasmaSetupExecutablePath.isEmpty()) {
         desktopFile.close();
-        if (!becomeAdminAgain(reply)) {
-            return reply;
-        }
         reply = ActionReply::HelperErrorReply();
         reply.setErrorDescription(QStringLiteral("Unable to find the Plasma Setup executable path."));
         return reply;
@@ -91,11 +117,6 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     stream << "X-KDE-StartupNotify=false\n";
     stream << "NoDisplay=true\n";
     desktopFile.close();
-
-    // Restore root privileges
-    if (!becomeAdminAgain(reply)) {
-        return reply;
-    }
 
     reply = ActionReply::SuccessReply();
     reply.setData({{QStringLiteral("autostartFilePath"), desktopFilePath}});
@@ -204,8 +225,12 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
         return reply;
     }
 
-    // Adopt the new user's ownership to create files in their home directory with their own permissions
-    if (!becomeUser(userInfo, reply)) {
+    std::optional<PrivilegeGuard> guard;
+    try {
+        guard.emplace(userInfo);
+    } catch (const std::runtime_error &e) {
+        reply = ActionReply::HelperErrorReply();
+        reply.setErrorDescription(QStringLiteral("Unable to become user ") + userInfo.username + QString::fromLocal8Bit(e.what()));
         return reply;
     }
 
@@ -229,17 +254,9 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
 
     QFile tempFile(tempFilePath);
     if (!tempFile.copy(destFilePath)) {
-        if (!becomeAdminAgain(reply)) {
-            return reply;
-        }
         reply = ActionReply::HelperErrorReply();
         reply.setErrorDescription(QStringLiteral("Unable to copy file to destination: ") + tempFilePath + QStringLiteral(" to ") + destFilePath
                                   + QStringLiteral(" -- Error message: ") + tempFile.errorString());
-        return reply;
-    }
-
-    // Restore root privileges
-    if (!becomeAdminAgain(reply)) {
         return reply;
     }
 
@@ -318,8 +335,12 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
         destDir.mkpath(destBasePath);
     }
 
-    // Adopt the new user's ownership to create files in their home directory with their own permissions
-    if (!becomeUser(userInfo, reply)) {
+    std::optional<PrivilegeGuard> guard;
+    try {
+        guard.emplace(userInfo);
+    } catch (const std::runtime_error &e) {
+        reply = ActionReply::HelperErrorReply();
+        reply.setErrorDescription(QStringLiteral("Unable to become user ") + userInfo.username + QString::fromLocal8Bit(e.what()));
         return reply;
     }
 
@@ -330,19 +351,11 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
 
         QFile tempFile(tempFilePath);
         if (!tempFile.copy(destFilePath)) {
-            if (!becomeAdminAgain(reply)) {
-                return reply;
-            }
             reply = ActionReply::HelperErrorReply();
             reply.setErrorDescription(QStringLiteral("Unable to copy file to destination: ") + tempFilePath + QStringLiteral(" to ") + destFilePath
                                       + QStringLiteral(" -- Error message: ") + tempFile.errorString());
             return reply;
         }
-    }
-
-    // Restore root privileges
-    if (!becomeAdminAgain(reply)) {
-        return reply;
     }
 
     return ActionReply::SuccessReply();
@@ -384,26 +397,6 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
     file.close();
 
     return ActionReply::SuccessReply();
-}
-
-bool PlasmaSetupAuthHelper::becomeAdminAgain(ActionReply &reply)
-{
-    if (setegid(0) != 0 || seteuid(0) != 0) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to restore root privileges: error code ") + QString::number(errno));
-        return false;
-    }
-    return true;
-}
-
-bool PlasmaSetupAuthHelper::becomeUser(const UserInfo &userInfo, ActionReply &reply)
-{
-    if (setegid(userInfo.gid) != 0 || seteuid(userInfo.uid) != 0) {
-        reply = ActionReply::HelperErrorReply();
-        reply.setErrorDescription(QStringLiteral("Unable to become user ") + userInfo.username + QStringLiteral(": error code ") + QString::number(errno));
-        return false;
-    }
-    return true;
 }
 
 std::optional<UserInfo> PlasmaSetupAuthHelper::getUserInfo(const QString &username, ActionReply &reply)
