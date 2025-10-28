@@ -4,7 +4,6 @@
 
 #include <QDir>
 #include <QProcess>
-#include <QTemporaryDir>
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusPendingReply>
 
@@ -18,12 +17,20 @@
 #include <pwd.h>
 #include <sys/stat.h>
 
-const QString SDDM_AUTOLOGIN_CONFIG_PATH = QStringLiteral("/etc/sddm.conf.d/99-plasma-setup.conf");
-
 /**
  * Minimum UID for regular (non-system) users.
  */
 constexpr int MIN_REGULAR_USER_UID = 1000;
+
+/**
+ * Path to the Plasma Setup home directory.
+ */
+const QString PLASMA_SETUP_HOMEDIR = QStringLiteral("/run/plasma-setup");
+
+/**
+ * Path to the SDDM autologin configuration file.
+ */
+const QString SDDM_AUTOLOGIN_CONFIG_PATH = QStringLiteral("/etc/sddm.conf.d/99-plasma-setup.conf");
 
 class PrivilegeGuard
 {
@@ -158,32 +165,10 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
     UserInfo userInfo = getUserInfo(username);
     QString homePath = userInfo.homePath;
 
-    // Create a temporary directory accessible to the new user
-    QString tempDirPath;
-    QTemporaryDir tempDir;
-    if (!tempDir.isValid()) {
-        return makeErrorReply(QStringLiteral("Unable to create temporary directory."));
-    }
-    tempDirPath = tempDir.path();
-
-    // Copy the file to the temp directory while we still have privileges
+    // Copy the file to a temp file while we still have privileges
     QString sourceFilePath = QStringLiteral("/run/plasma-setup/.config/kdeglobals");
-    QString tempFilePath = tempDirPath + QStringLiteral("/kdeglobals");
-    QFile sourceFile(sourceFilePath);
-    if (!sourceFile.copy(tempFilePath)) {
-        return makeErrorReply(QStringLiteral("Unable to copy file to temp directory: ") + sourceFilePath + QStringLiteral(" to ") + tempFilePath
-                              + QStringLiteral(" -- Error message: ") + sourceFile.errorString());
-    }
-
-    // Set permissions on the temp directory and file so the new user can access them
-    if (chmod(tempDirPath.toLocal8Bit().constData(), 0755) != 0) {
-        return makeErrorReply(QStringLiteral("Unable to set directory permissions: error code ") + QString::number(errno));
-    }
-
-    // Set file permissions to be readable by everyone
-    if (chmod(tempFilePath.toLocal8Bit().constData(), 0644) != 0) {
-        return makeErrorReply(QStringLiteral("Unable to set file permissions: error code ") + QString::number(errno));
-    }
+    std::unique_ptr<QTemporaryFile> tempFile = copyToTempFile(sourceFilePath);
+    QString tempFilePath = tempFile->fileName();
 
     PrivilegeGuard guard(userInfo);
 
@@ -203,10 +188,9 @@ ActionReply PlasmaSetupAuthHelper::setnewuserglobaltheme(const QVariantMap &args
     // Set the global theme for the new user
     QString destFilePath = QDir::cleanPath(configDirPath + QStringLiteral("/kdeglobals"));
 
-    QFile tempFile(tempFilePath);
-    if (!tempFile.copy(destFilePath)) {
+    if (!tempFile->copy(destFilePath)) {
         return makeErrorReply(QStringLiteral("Unable to copy file to destination: ") + tempFilePath + QStringLiteral(" to ") + destFilePath
-                              + QStringLiteral(" -- Error message: ") + tempFile.errorString());
+                              + QStringLiteral(" -- Error message: ") + tempFile->errorString());
     }
 
     return ActionReply::SuccessReply();
@@ -224,14 +208,6 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
     UserInfo userInfo = getUserInfo(username);
     QString homePath = userInfo.homePath;
 
-    // Create a temporary directory accessible to the new user
-    QString tempDirPath;
-    QTemporaryDir tempDir;
-    if (!tempDir.isValid()) {
-        return makeErrorReply(QStringLiteral("Unable to create temporary directory."));
-    }
-    tempDirPath = tempDir.path();
-
     QStringList filesToCopy = {
         QStringLiteral("kwinoutputconfig.json"),
         QStringLiteral("kwinrc"),
@@ -239,26 +215,11 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
 
     QString sourceBasePath = QDir::cleanPath(QStringLiteral("/run/plasma-setup/.config"));
 
-    // Copy files to temp directory while we still have privileges
+    // Copy files to temp files while we still have privileges
+    std::map<QString, std::unique_ptr<QTemporaryFile>> tempFiles;
     for (const QString &fileName : filesToCopy) {
         QString sourceFilePath = QDir::cleanPath(sourceBasePath + QStringLiteral("/") + fileName);
-        QString tempFilePath = QDir::cleanPath(tempDirPath + QStringLiteral("/") + fileName);
-
-        QFile sourceFile(sourceFilePath);
-        if (!sourceFile.copy(tempFilePath)) {
-            return makeErrorReply(QStringLiteral("Unable to copy file to temp directory: ") + sourceFilePath + QStringLiteral(" to ") + tempFilePath
-                                  + QStringLiteral(" -- Error message: ") + sourceFile.errorString());
-        }
-
-        // Make sure the user can read the file
-        if (chmod(tempFilePath.toLocal8Bit().constData(), 0644) != 0) {
-            return makeErrorReply(QStringLiteral("Unable to set permissions on ") + tempFilePath + QStringLiteral(": error code ") + QString::number(errno));
-        }
-    }
-
-    // Set permissions on the temp directory so the new user can access it
-    if (chmod(tempDirPath.toLocal8Bit().constData(), 0755) != 0) {
-        return makeErrorReply(QStringLiteral("Unable to set directory permissions: error code ") + QString::number(errno));
+        tempFiles[fileName] = copyToTempFile(sourceFilePath);
     }
 
     PrivilegeGuard guard(userInfo);
@@ -270,15 +231,14 @@ ActionReply PlasmaSetupAuthHelper::setnewuserdisplayscaling(const QVariantMap &a
         destDir.mkpath(destBasePath);
     }
 
-    // Copy display scaling configuration files to the new user from temp directory
+    // Copy display scaling configuration files to the new user from temp files
     for (const QString &fileName : filesToCopy) {
-        QString tempFilePath = QDir::cleanPath(tempDirPath + QStringLiteral("/") + fileName);
         QString destFilePath = QDir::cleanPath(destBasePath + QStringLiteral("/") + fileName);
 
-        QFile tempFile(tempFilePath);
-        if (!tempFile.copy(destFilePath)) {
-            return makeErrorReply(QStringLiteral("Unable to copy file to destination: ") + tempFilePath + QStringLiteral(" to ") + destFilePath
-                                  + QStringLiteral(" -- Error message: ") + tempFile.errorString());
+        auto tempFile = tempFiles[fileName].get();
+        if (!tempFile->copy(destFilePath)) {
+            return makeErrorReply(QStringLiteral("Unable to copy file to destination: ") + tempFile->fileName() + QStringLiteral(" to ") + destFilePath
+                                  + QStringLiteral(" -- Error message: ") + tempFile->errorString());
         }
     }
 
@@ -346,6 +306,40 @@ UserInfo PlasmaSetupAuthHelper::getUserInfo(const QString &username)
     userInfo.gid = pwd.pw_gid;
 
     return userInfo;
+}
+
+std::unique_ptr<QTemporaryFile> PlasmaSetupAuthHelper::copyToTempFile(const QString &sourceFilePath)
+{
+    // Create a temporary file
+    auto tempFile = std::make_unique<QTemporaryFile>();
+    tempFile->setAutoRemove(true);
+
+    if (!tempFile->open()) {
+        throw std::runtime_error("Unable to create temporary file: " + tempFile->errorString().toStdString());
+    }
+
+    // Copy the source file to the temp file
+    QFile sourceFile(sourceFilePath);
+    if (!sourceFile.open(QIODevice::ReadOnly)) {
+        throw std::runtime_error("Unable to open source file: " + sourceFilePath.toStdString() + " -- Error: " + sourceFile.errorString().toStdString());
+    }
+
+    QByteArray data = sourceFile.readAll();
+    sourceFile.close();
+
+    if (tempFile->write(data) != data.size()) {
+        throw std::runtime_error("Unable to write to temporary file: " + tempFile->errorString().toStdString());
+    }
+
+    tempFile->flush();
+
+    // Set file permissions to be readable by everyone
+    QString tempFilePath = tempFile->fileName();
+    if (chmod(tempFilePath.toLocal8Bit().constData(), 0644) != 0) {
+        throw std::runtime_error("Unable to set permissions on temporary file: error code " + std::to_string(errno));
+    }
+
+    return tempFile;
 }
 
 ActionReply PlasmaSetupAuthHelper::makeErrorReply(const QString &errorDescription)
