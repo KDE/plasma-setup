@@ -124,6 +124,7 @@ private:
      *
      * @param username The username to look up.
      * @return A UserInfo struct containing information about the user.
+     * @throws std::runtime_error if the username is invalid or the user does not exist.
      */
     UserInfo getUserInfo(const QString &username);
 
