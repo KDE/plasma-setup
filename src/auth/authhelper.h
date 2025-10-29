@@ -103,6 +103,19 @@ public Q_SLOTS:
 
 private:
     /**
+     * Copies a source file to a temporary file with permissions that allow the new user to read it.
+     *
+     * Creates a temporary file, copies the contents from the source file, and sets permissions
+     * so that the specified user can access it. The temporary file is automatically cleaned up
+     * when the returned QTemporaryFile object is destroyed.
+     *
+     * @param sourceFilePath The path to the source file to copy.
+     * @return A unique pointer to the QTemporaryFile on success.
+     * @throws std::runtime_error if any operation fails.
+     */
+    std::unique_ptr<QTemporaryFile> copyToTempFile(const QString &sourceFilePath);
+
+    /**
      * Validates the given username and retrieves information about the user.
      *
      * This function performs important security checks to ensure that the username
@@ -121,17 +134,4 @@ private:
      * @return An ActionReply representing the error.
      */
     ActionReply makeErrorReply(const QString &errorDescription);
-
-    /**
-     * Copies a source file to a temporary file with permissions that allow the new user to read it.
-     *
-     * Creates a temporary file, copies the contents from the source file, and sets permissions
-     * so that the specified user can access it. The temporary file is automatically cleaned up
-     * when the returned QTemporaryFile object is destroyed.
-     *
-     * @param sourceFilePath The path to the source file to copy.
-     * @return A unique pointer to the QTemporaryFile on success.
-     * @throws std::runtime_error if any operation fails.
-     */
-    std::unique_ptr<QTemporaryFile> copyToTempFile(const QString &sourceFilePath);
 };
