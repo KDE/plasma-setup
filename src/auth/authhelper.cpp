@@ -14,6 +14,7 @@
 #include "authhelper.h"
 #include "config-plasma-setup.h"
 
+#include <grp.h>
 #include <pwd.h>
 #include <sys/stat.h>
 
@@ -37,6 +38,11 @@ class PrivilegeGuard
 public:
     PrivilegeGuard(const UserInfo &userInfo)
     {
+        // Clear supplementary groups that root may belong to. Not likely to be necessary, but just in case.
+        if (setgroups(0, nullptr) != 0) {
+            throw std::runtime_error("Failed to clear supplementary groups that root may belong to: error " + std::to_string(errno));
+        }
+
         // Drop privileges to specified user
         if (setegid(userInfo.gid) != 0 || seteuid(userInfo.uid) != 0) {
             throw std::runtime_error("Failed to drop privileges to user " + userInfo.username.toStdString() + ": error " + std::to_string(errno));
