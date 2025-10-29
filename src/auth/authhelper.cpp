@@ -33,6 +33,24 @@ const QString PLASMA_SETUP_HOMEDIR = QStringLiteral("/run/plasma-setup");
  */
 const QString SDDM_AUTOLOGIN_CONFIG_PATH = QStringLiteral("/etc/sddm.conf.d/99-plasma-setup.conf");
 
+/**
+ * RAII guard for temporarily dropping privileges to a specific user.
+ *
+ * This class uses the RAII (Resource Acquisition Is Initialization) pattern to
+ * safely drop privileges from root to a specified user and automatically restore
+ * root privileges when the guard goes out of scope.
+ *
+ * @note This class is not copyable to prevent accidental privilege state duplication.
+ *
+ * Example usage:
+ * @code
+ * {
+ *     PrivilegeGuard guard(userInfo);
+ *     // Code here runs with user privileges
+ *     // ...
+ * }   // Privileges automatically restored to root when the guard goes out of scope
+ * @endcode
+ */
 class PrivilegeGuard
 {
 public:
