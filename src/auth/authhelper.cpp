@@ -265,40 +265,6 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
     return ActionReply::SuccessReply();
 }
 
-UserInfo PlasmaSetupAuthHelper::getUserInfo(const QString &username)
-{
-    struct passwd pwd;
-    struct passwd *result = nullptr;
-    QByteArray usernameBytes = username.toLocal8Bit();
-    long bufsize = sysconf(_SC_GETPW_R_SIZE_MAX);
-    if (bufsize <= 0) {
-        bufsize = 16384; // fallback size
-    }
-    QByteArray buf(static_cast<int>(bufsize), 0);
-
-    int ret = getpwnam_r(usernameBytes.constData(), &pwd, buf.data(), buf.size(), &result);
-
-    if (result == nullptr) {
-        if (ret == 0) {
-            throw std::runtime_error("User does not exist: " + username.toStdString());
-        } else {
-            throw std::runtime_error("System error while looking up user " + username.toStdString() + ": error code " + std::to_string(ret));
-        }
-    }
-
-    if (pwd.pw_uid < MIN_REGULAR_USER_UID) {
-        throw std::runtime_error("Refusing to perform action for system user: " + username.toStdString());
-    }
-
-    UserInfo userInfo;
-    userInfo.username = QString::fromLocal8Bit(pwd.pw_name);
-    userInfo.homePath = QString::fromLocal8Bit(pwd.pw_dir);
-    userInfo.uid = pwd.pw_uid;
-    userInfo.gid = pwd.pw_gid;
-
-    return userInfo;
-}
-
 std::unique_ptr<QTemporaryFile> PlasmaSetupAuthHelper::copyToTempFile(const QString &sourceFilePath)
 {
     // Create a temporary file
@@ -331,6 +297,40 @@ std::unique_ptr<QTemporaryFile> PlasmaSetupAuthHelper::copyToTempFile(const QStr
     }
 
     return tempFile;
+}
+
+UserInfo PlasmaSetupAuthHelper::getUserInfo(const QString &username)
+{
+    struct passwd pwd;
+    struct passwd *result = nullptr;
+    QByteArray usernameBytes = username.toLocal8Bit();
+    long bufsize = sysconf(_SC_GETPW_R_SIZE_MAX);
+    if (bufsize <= 0) {
+        bufsize = 16384; // fallback size
+    }
+    QByteArray buf(static_cast<int>(bufsize), 0);
+
+    int ret = getpwnam_r(usernameBytes.constData(), &pwd, buf.data(), buf.size(), &result);
+
+    if (result == nullptr) {
+        if (ret == 0) {
+            throw std::runtime_error("User does not exist: " + username.toStdString());
+        } else {
+            throw std::runtime_error("System error while looking up user " + username.toStdString() + ": error code " + std::to_string(ret));
+        }
+    }
+
+    if (pwd.pw_uid < MIN_REGULAR_USER_UID) {
+        throw std::runtime_error("Refusing to perform action for system user: " + username.toStdString());
+    }
+
+    UserInfo userInfo;
+    userInfo.username = QString::fromLocal8Bit(pwd.pw_name);
+    userInfo.homePath = QString::fromLocal8Bit(pwd.pw_dir);
+    userInfo.uid = pwd.pw_uid;
+    userInfo.gid = pwd.pw_gid;
+
+    return userInfo;
 }
 
 ActionReply PlasmaSetupAuthHelper::makeErrorReply(const QString &errorDescription)
