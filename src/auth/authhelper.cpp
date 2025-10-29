@@ -292,7 +292,7 @@ std::unique_ptr<QTemporaryFile> PlasmaSetupAuthHelper::copyToTempFile(const QStr
 
     // Set file permissions to be readable by everyone
     QString tempFilePath = tempFile->fileName();
-    if (chmod(tempFilePath.toLocal8Bit().constData(), 0644) != 0) {
+    if (chmod(tempFilePath.toUtf8().constData(), 0644) != 0) {
         throw std::runtime_error("Unable to set permissions on temporary file: error code " + std::to_string(errno));
     }
 
