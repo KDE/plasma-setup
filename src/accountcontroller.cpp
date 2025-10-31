@@ -103,3 +103,5 @@ void AccountController::setPassword(const QString &password)
     m_password = password;
     Q_EMIT passwordChanged();
 }
+
+#include "moc_accountcontroller.cpp"

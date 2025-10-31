@@ -73,3 +73,5 @@ void BootUtil::removeEmptyAutologinEntry()
 }
 
 #include "bootutil.moc"
+
+#include "moc_bootutil.cpp"

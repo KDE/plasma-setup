@@ -102,3 +102,5 @@ void LanguageUtil::loadAvailableLanguages()
 
     Q_EMIT availableLanguagesChanged();
 }
+
+#include "moc_languageutil.cpp"

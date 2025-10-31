@@ -52,3 +52,5 @@ void DisplayUtil::setScalingForNewUser(QWindow *window, QString userName)
         qCInfo(PlasmaSetup) << "Set scaling for new user.";
     }
 }
+
+#include "moc_displayutil.cpp"

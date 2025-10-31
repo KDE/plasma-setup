@@ -84,3 +84,5 @@ void TimeUtil::setUser(const QString &user)
     m_user = user;
     Q_EMIT userChanged();
 }
+
+#include "moc_timeutil.cpp"

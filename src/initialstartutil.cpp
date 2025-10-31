@@ -145,3 +145,5 @@ void InitialStartUtil::createNewUserAutostartHook()
 }
 
 #include "initialstartutil.moc"
+
+#include "moc_initialstartutil.cpp"

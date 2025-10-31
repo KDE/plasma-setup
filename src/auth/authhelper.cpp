@@ -246,3 +246,5 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
 }
 
 KAUTH_HELPER_MAIN("org.kde.plasmasetup", PlasmaSetupAuthHelper)
+
+#include "moc_authhelper.cpp"

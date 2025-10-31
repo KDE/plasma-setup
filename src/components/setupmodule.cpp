@@ -69,3 +69,5 @@ QQmlListProperty<QObject> SetupModule::children()
 {
     return QQmlListProperty<QObject>(this, &m_children);
 }
+
+#include "moc_setupmodule.cpp"

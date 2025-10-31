@@ -104,3 +104,5 @@ void PrepareUtil::setUsingDarkTheme(bool usingDarkTheme)
     m_usingDarkTheme = usingDarkTheme;
     Q_EMIT usingDarkThemeChanged();
 }
+
+#include "moc_prepareutil.cpp"

@@ -90,3 +90,5 @@ QHash<int, QByteArray> TimeZoneModel::roleNames() const
 {
     return {{TimeZoneIdRole, "timeZoneId"}};
 }
+
+#include "moc_timezonemodel.cpp"
