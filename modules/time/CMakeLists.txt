@@ -1,4 +1,6 @@
 # SPDX-FileCopyrightText: 2023 Devin Lin <devin@kde.org>
+# SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+#
 # SPDX-License-Identifier: GPL-2.0-or-later
 
 ecm_add_qml_module(plasmasetup_time
@@ -16,8 +18,6 @@ qt_add_dbus_interface(plasmasetup_time_DBUS_SRCS
 target_sources(plasmasetup_time PRIVATE
     timeutil.cpp
     timeutil.h
-    timezonemodel.cpp
-    timezonemodel.h
     ${plasmasetup_time_DBUS_SRCS}
 )
 
@@ -25,9 +25,6 @@ target_link_libraries(plasmasetup_time PUBLIC
     Qt::Core
     Qt::DBus
     Qt::Quick
-    KF6::CoreAddons
-    KF6::ConfigCore
-    KF6::ConfigGui
     KF6::I18n
 )
 
