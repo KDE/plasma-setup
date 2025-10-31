@@ -33,6 +33,10 @@
                 "Name[uk]": "Devin Lin",
                 "Name[zh_CN]": "Devin Lin",
                 "Name[zh_TW]": "Devin Lin"
+            },
+            {
+                "Email": "kristen@kde.org",
+                "Name": "Kristen McWilliam"
             }
         ],
         "Description": "Allow the user to set the timezone.",

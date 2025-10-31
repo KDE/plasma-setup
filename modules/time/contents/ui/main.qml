@@ -8,8 +8,8 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.plasmasetup.time.private as Time
+import org.kde.plasma.workspace.timezoneselector as TimeZone
 
 import org.kde.plasmasetup.components as PlasmaSetupComponents
 
@@ -29,71 +29,25 @@ PlasmaSetupComponents.SetupModule {
 
             wrapMode: Text.Wrap
             horizontalAlignment: Text.AlignHCenter
-            text: i18n("Select your time zone and preferred time format.")
+            text: i18n("Select your time zone.") // qmllint disable unqualified
         }
 
-        FormCard.FormCard {
-            id: timeFormatCard
+        TimeZone.TimezoneSelector {
+            id: timezoneSelector
 
             Layout.fillWidth: true
+            Layout.fillHeight: true
 
-            FormCard.FormSwitchDelegate {
-                Layout.fillWidth: true
-                text: i18n("24-Hour Format")
-                checked: Time.TimeUtil.is24HourTime
-                onCheckedChanged: {
-                    if (checked !== Time.TimeUtil.is24HourTime) {
-                        Time.TimeUtil.is24HourTime = checked;
-                    }
-                }
-            }
-        }
-
-        ColumnLayout {
-            Layout.alignment: Qt.AlignCenter
-
-            Kirigami.SearchField {
-                id: searchField
-                Layout.fillWidth: true
-
-                onTextChanged: {
-                    Time.TimeUtil.timeZones.filterString = text;
-                }
+            Component.onCompleted: {
+                // Initialize the selector with the current time zone.
+                //
+                // We do this in Component.onCompleted instead of in the property
+                // binding directly because otherwise the combobox is empty.
+                selectedTimeZone = Time.TimeUtil.currentTimeZone;
             }
 
-            ScrollView {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-
-                Component.onCompleted: {
-                    if (background) {
-                        background.visible = true;
-                    }
-                }
-
-                ListView {
-                    id: listView
-
-                    clip: true
-                    model: Time.TimeUtil.timeZones
-                    currentIndex: -1 // ensure focus is not on the listview
-
-                    bottomMargin: 2
-
-                    delegate: FormCard.FormRadioDelegate {
-                        required property string timeZoneId
-
-                        width: ListView.view.width
-                        text: timeZoneId
-                        checked: Time.TimeUtil.currentTimeZone === timeZoneId
-                        onToggled: {
-                            if (checked && timeZoneId !== Time.TimeUtil.currentTimeZone) {
-                                Time.TimeUtil.currentTimeZone = timeZoneId;
-                                checked = Qt.binding(() => Time.TimeUtil.currentTimeZone === timeZoneId);
-                            }
-                        }
-                    }
-                }
+            onSelectedTimeZoneChanged: {
+                Time.TimeUtil.currentTimeZone = selectedTimeZone;
             }
         }
     }
