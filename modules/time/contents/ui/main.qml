@@ -32,22 +32,26 @@ PlasmaSetupComponents.SetupModule {
             text: i18n("Select your time zone.") // qmllint disable unqualified
         }
 
-        TimeZone.TimezoneSelector {
-            id: timezoneSelector
-
+        Frame {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            Component.onCompleted: {
-                // Initialize the selector with the current time zone.
-                //
-                // We do this in Component.onCompleted instead of in the property
-                // binding directly because otherwise the combobox is empty.
-                selectedTimeZone = Time.TimeUtil.currentTimeZone;
-            }
+            TimeZone.TimezoneSelector {
+                id: timezoneSelector
 
-            onSelectedTimeZoneChanged: {
-                Time.TimeUtil.currentTimeZone = selectedTimeZone;
+                anchors.fill: parent
+
+                Component.onCompleted: {
+                    // Initialize the selector with the current time zone.
+                    //
+                    // We do this in Component.onCompleted instead of in the property
+                    // binding directly because otherwise the combobox is empty.
+                    selectedTimeZone = Time.TimeUtil.currentTimeZone;
+                }
+
+                onSelectedTimeZoneChanged: {
+                    Time.TimeUtil.currentTimeZone = selectedTimeZone;
+                }
             }
         }
     }
