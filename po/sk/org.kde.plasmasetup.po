@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.kde.initialsystemsetup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 00:44+0000\n"
+"POT-Creation-Date: 2025-11-04 00:44+0000\n"
 "PO-Revision-Date: 2024-11-12 17:03+0100\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -237,12 +237,7 @@ msgstr ""
 
 #: modules/time/contents/ui/main.qml:32
 #, kde-format
-msgid "Select your time zone and preferred time format."
-msgstr ""
-
-#: modules/time/contents/ui/main.qml:42
-#, kde-format
-msgid "24-Hour Format"
+msgid "Select your time zone."
 msgstr ""
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94

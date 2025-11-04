@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 00:44+0000\n"
+"POT-Creation-Date: 2025-11-04 00:44+0000\n"
 "PO-Revision-Date: 2025-10-25 09:23+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -243,14 +243,10 @@ msgid "Dark Theme"
 msgstr "Ciemny tryb"
 
 #: modules/time/contents/ui/main.qml:32
-#, kde-format
-msgid "Select your time zone and preferred time format."
+#, fuzzy, kde-format
+#| msgid "Select your time zone and preferred time format."
+msgid "Select your time zone."
 msgstr "Ustaw swoją strefę czasową i zapis czasu."
-
-#: modules/time/contents/ui/main.qml:42
-#, kde-format
-msgid "24-Hour Format"
-msgstr "24 godzinny zapis czasu"
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
@@ -422,6 +418,9 @@ msgid "Failed to resize image: writing to temp file failed"
 msgstr ""
 "Nie udało się zmienić rozmiaru obrazu: nie udało się zapisać do pliku "
 "tymczasowego"
+
+#~ msgid "24-Hour Format"
+#~ msgstr "24 godzinny zapis czasu"
 
 #, fuzzy
 #~| msgid "Username:"

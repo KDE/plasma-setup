@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 00:44+0000\n"
-"PO-Revision-Date: 2025-09-21 09:26+0200\n"
+"POT-Creation-Date: 2025-11-04 00:44+0000\n"
+"PO-Revision-Date: 2025-10-22 09:25+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -60,31 +60,25 @@ msgstr ""
 ">Veuillez sélectionner un mot de passe fort pour cet utilisateur."
 
 #: modules/account/contents/ui/main.qml:145
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Full Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Nom et prénom"
 
 #: modules/account/contents/ui/main.qml:163
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
 #: modules/account/contents/ui/main.qml:175
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Mot de passe"
 
 #: modules/account/contents/ui/main.qml:185
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Confirmez le mot de passe"
@@ -248,14 +242,10 @@ msgid "Dark Theme"
 msgstr "Thème sombre"
 
 #: modules/time/contents/ui/main.qml:32
-#, kde-format
-msgid "Select your time zone and preferred time format."
+#, fuzzy, kde-format
+#| msgid "Select your time zone and preferred time format."
+msgid "Select your time zone."
 msgstr "Sélectionnez votre fuseau horaire et votre format d'heure préféré."
-
-#: modules/time/contents/ui/main.qml:42
-#, kde-format
-msgid "24-Hour Format"
-msgstr "Format 24 heures"
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
@@ -297,11 +287,11 @@ msgid "Failed to open file for writing: %1"
 msgstr "Impossible d'ouvrir le fichier en écriture : %1"
 
 #: src/auth/authhelper.cpp:53
-#, fuzzy, kde-format
-#| msgid "Failed to find the initial setup executable path."
+#, kde-format
 msgid "Failed to find the Plasma Setup executable path."
 msgstr ""
-"Impossible de trouver l'emplacement d'exécution de la configuration initiale."
+"Impossible de trouver l'emplacement de l'exécutable pour la configuration de "
+"Plasma."
 
 #: src/auth/authhelper.cpp:90
 #, kde-format
@@ -344,7 +334,7 @@ msgstr "Impossible d'ouvrir le fichier %1 en écriture."
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "Configuration de Plasma"
 
 #: src/main.cpp:37
 #, kde-format
@@ -357,10 +347,11 @@ msgid "© 2021-2024 KDE Community"
 msgstr "© 2021-2024 Communauté KDE"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Remove the initial setup autologin configuration."
+#, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
-msgstr "Supprimez la configuration initiale de la connexion automatique."
+msgstr ""
+"Supprimer la configuration de connexion automatique de la configuration "
+"générale de Plasma."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
@@ -431,6 +422,9 @@ msgid "Failed to resize image: writing to temp file failed"
 msgstr ""
 "Échec du redimensionnement de l'image : échec de l'écriture dans le fichier "
 "temporaire"
+
+#~ msgid "24-Hour Format"
+#~ msgstr "Format 24 heures"
 
 #~ msgctxt "@label:textfield"
 #~ msgid "Username"

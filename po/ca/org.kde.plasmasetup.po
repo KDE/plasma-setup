@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 00:44+0000\n"
+"POT-Creation-Date: 2025-11-04 00:44+0000\n"
 "PO-Revision-Date: 2025-10-21 09:03+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -244,14 +244,10 @@ msgid "Dark Theme"
 msgstr "Tema fosc"
 
 #: modules/time/contents/ui/main.qml:32
-#, kde-format
-msgid "Select your time zone and preferred time format."
+#, fuzzy, kde-format
+#| msgid "Select your time zone and preferred time format."
+msgid "Select your time zone."
 msgstr "Seleccioneu la zona horària i el format de l'hora."
-
-#: modules/time/contents/ui/main.qml:42
-#, kde-format
-msgid "24-Hour Format"
-msgstr "Format de 24 hores"
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
@@ -427,6 +423,9 @@ msgid "Failed to resize image: writing to temp file failed"
 msgstr ""
 "Ha fallat en redimensionar la imatge: ha fallat en escriure al fitxer "
 "temporal"
+
+#~ msgid "24-Hour Format"
+#~ msgstr "Format de 24 hores"
 
 #~ msgctxt "@label:textfield"
 #~ msgid "Username"

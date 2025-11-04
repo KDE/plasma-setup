@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 00:44+0000\n"
+"POT-Creation-Date: 2025-11-04 00:44+0000\n"
 "PO-Revision-Date: 2025-10-21 06:15+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -243,14 +243,10 @@ msgid "Dark Theme"
 msgstr "მუქი თემა"
 
 #: modules/time/contents/ui/main.qml:32
-#, kde-format
-msgid "Select your time zone and preferred time format."
+#, fuzzy, kde-format
+#| msgid "Select your time zone and preferred time format."
+msgid "Select your time zone."
 msgstr "აირჩიეთ თქვენი დროის სარტყელი და რჩეული დროის ფორმატი."
-
-#: modules/time/contents/ui/main.qml:42
-#, kde-format
-msgid "24-Hour Format"
-msgstr "24-საათიანი ფორმატი"
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
@@ -417,6 +413,9 @@ msgstr "გამოსახულების ზომის შეცვლ�
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
 msgstr "გამოსახულების ზომის შეცვლის შეცდომა: დროებითი ფაილის ჩაწერის შეცდომა"
+
+#~ msgid "24-Hour Format"
+#~ msgstr "24-საათიანი ფორმატი"
 
 #~ msgctxt "@label:textfield"
 #~ msgid "Username"

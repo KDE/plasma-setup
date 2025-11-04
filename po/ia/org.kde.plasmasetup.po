@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 00:44+0000\n"
+"POT-Creation-Date: 2025-11-04 00:44+0000\n"
 "PO-Revision-Date: 2025-09-02 17:58+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -243,14 +243,10 @@ msgid "Dark Theme"
 msgstr "Thema obscur"
 
 #: modules/time/contents/ui/main.qml:32
-#, kde-format
-msgid "Select your time zone and preferred time format."
+#, fuzzy, kde-format
+#| msgid "Select your time zone and preferred time format."
+msgid "Select your time zone."
 msgstr "Selige tu fuso horari e formato de tempore preferite."
-
-#: modules/time/contents/ui/main.qml:42
-#, kde-format
-msgid "24-Hour Format"
-msgstr "Formato a 24 horas"
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
@@ -430,6 +426,9 @@ msgstr "Falleva a redimensionar image. il falleva a aperir file temp"
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
 msgstr "Falleva a redimensionar image. il falleva a scriber in file temp"
+
+#~ msgid "24-Hour Format"
+#~ msgstr "Formato a 24 horas"
 
 #~ msgctxt "@label:textfield"
 #~ msgid "Username"
