@@ -79,7 +79,7 @@ Description[tr]=Yeni oluşturulan kullanıcı için bir kendiliğinden başlatma
 Description[uk]=Створити скрипт автозапуску для новоствореного користувача
 Description[zh_CN]=为新创建的用户创建一个自动启动钩子
 Description[zh_TW]=為新建立的使用者建立自動啟動掛鉤
-Policy=yes
+Policy=no
 
 [org.kde.plasmasetup.disablesystemdunit]
 Name=Disable Systemd Unit
@@ -127,7 +127,7 @@ Description[sv]=Inaktivera systemd-enhet för inställning av Plasma
 Description[tr]=Plasma İlk Kullanım Yardımcısı için Systemd birimini devre dışı bırakın
 Description[uk]=Вимкнути модуль systemd для налаштовування Плазми
 Description[zh_TW]=將《Plasma 初始設定》的 systemd 單元停用
-Policy=yes
+Policy=no
 
 [org.kde.plasmasetup.removeautologin]
 Name=Remove Autologin
@@ -178,7 +178,7 @@ Description[tr]=SDDM kendiliğinden oturum açma yapılandırmasını kaldırın
 Description[uk]=Вилучити налаштування автозапуску SDDM
 Description[zh_CN]=移除 SDDM 自动登录配置
 Description[zh_TW]=移除 SDDM 自動登入配置
-Policy=yes
+Policy=no
 
 [org.kde.plasmasetup.setnewuserglobaltheme]
 Name=Set New User Global Theme
@@ -227,7 +227,7 @@ Description[tr]=Yeni kullanıcı için global temayı ayarlayın
 Description[uk]=Встановити загальну тему для нового користувача
 Description[zh_CN]=设置新用户的全局主题
 Description[zh_TW]=為新建立的使用者設定全域主題
-Policy=yes
+Policy=no
 
 [org.kde.plasmasetup.setnewuserdisplayscaling]
 Name=Set New User Display Scaling
@@ -276,7 +276,7 @@ Description[tr]=Yeni kullanıcı için görüntü ölçeklendirmesini ayarlayın
 Description[uk]=Встановити масштабування дисплея для нового користувача
 Description[zh_CN]=设置新用户的显示缩放
 Description[zh_TW]=為新建立的使用者建立顯示器縮放
-Policy=yes
+Policy=no
 
 [org.kde.plasmasetup.setnewuserhomedirectoryownership]
 Name=Set New User Home Directory Ownership
@@ -327,7 +327,7 @@ Description[tr]=Yeni kullanıcının ana klasör sahipliğini yeni oluşturulan 
 Description[uk]=Встановити права власності на домашній каталог нових користувачів для новоствореного користувача
 Description[zh_CN]=将新用户的主目录所有权设置为新建用户所有
 Description[zh_TW]=將新使用者的家目錄的擁有者設為該新使用者
-Policy=yes
+Policy=no
 
 [org.kde.plasmasetup.setnewusertempautologin]
 Name=Set New User Temporary Autologin
@@ -378,4 +378,4 @@ Description[tr]=Yeni oluşturulan kullanıcı için SDDM geçici kendiliğinden 
 Description[uk]=Встановити налаштування тимчасового автоматичного входу SDDM для новоствореного користувача
 Description[zh_CN]=为新建用户设置 SDDM 临时自动登录配置
 Description[zh_TW]=為新建立的使用者設定 SDDM 暫時性自動登入配置
-Policy=yes
+Policy=no

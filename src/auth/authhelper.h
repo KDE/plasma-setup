@@ -6,8 +6,30 @@
 
 #include <KAuth/ActionReply>
 
+#include <QTemporaryFile>
+
 using namespace KAuth;
 
+/**
+ * Struct to hold user information.
+ */
+struct UserInfo {
+    /** The username of the user. */
+    QString username;
+
+    /** The home directory path of the user. */
+    QString homePath;
+
+    /** The user ID (UID) of the user. */
+    int uid;
+
+    /** The group ID (GID) of the user. */
+    int gid;
+};
+
+/**
+ * A KAuth helper class for performing privileged actions related to Plasma Setup.
+ */
 class PlasmaSetupAuthHelper : public QObject
 {
     Q_OBJECT
@@ -68,19 +90,6 @@ public Q_SLOTS:
     ActionReply setnewuserdisplayscaling(const QVariantMap &args);
 
     /**
-     * Sets the ownership of the new user's home directory to the newly created user.
-     *
-     * This is necessary to ensure that the new user has proper ownership of their home directory
-     * after Plasma Setup has added files like the autostart hook, otherwise when the new user logs in,
-     * they may not have the correct permissions to access their own files.
-     *
-     * @param args The arguments passed to the action, which should include:
-     * - String: "username": The username of the newly created user.
-     * @return An ActionReply indicating success or failure.
-     */
-    ActionReply setnewuserhomedirectoryownership(const QVariantMap &args);
-
-    /**
      * Sets the configuration for the newly created user to login automatically.
      *
      * This sets an autologin config with `Relogin=true`, so we can switch from the
@@ -91,4 +100,39 @@ public Q_SLOTS:
      * @return An ActionReply indicating success or failure.
      */
     ActionReply setnewusertempautologin(const QVariantMap &args);
+
+private:
+    /**
+     * Copies a source file to a temporary file with permissions that allow the new user to read it.
+     *
+     * Creates a temporary file, copies the contents from the source file, and sets permissions
+     * so that the specified user can access it. The temporary file is automatically cleaned up
+     * when the returned QTemporaryFile object is destroyed.
+     *
+     * @param sourceFilePath The path to the source file to copy.
+     * @return A unique pointer to the QTemporaryFile on success.
+     * @throws std::runtime_error if any operation fails.
+     */
+    std::unique_ptr<QTemporaryFile> copyToTempFile(const QString &sourceFilePath);
+
+    /**
+     * Validates the given username and retrieves information about the user.
+     *
+     * This function performs important security checks to ensure that the username
+     * is valid and that the user exists on the system. It also prevents actions from being performed
+     * on invalid users (e.g., system users or non-existent users).
+     *
+     * @param username The username to look up.
+     * @return A UserInfo struct containing information about the user.
+     * @throws std::runtime_error if the username is invalid or the user does not exist.
+     */
+    UserInfo getUserInfo(const QString &username);
+
+    /**
+     * Helper function to create an error ActionReply with the given description.
+     *
+     * @param errorDescription The description of the error.
+     * @return An ActionReply representing the error.
+     */
+    ActionReply makeErrorReply(const QString &errorDescription);
 };

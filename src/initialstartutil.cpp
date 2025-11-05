@@ -49,7 +49,6 @@ void InitialStartUtil::finish()
     displayUtil.setGlobalThemeForNewUser(m_window, m_accountController->username());
     displayUtil.setScalingForNewUser(m_window, m_accountController->username());
 
-    setNewUserHomeDirectoryOwnership();
     logOut();
 }
 
@@ -88,24 +87,6 @@ void InitialStartUtil::disableSystemdUnit()
 void InitialStartUtil::logOut()
 {
     m_session.requestLogout(SessionManagement::ConfirmationMode::Skip);
-}
-
-void InitialStartUtil::setNewUserHomeDirectoryOwnership()
-{
-    const QString username = m_accountController->username();
-    qCInfo(PlasmaSetup) << "Setting ownership of new user's home directory to:" << username;
-
-    KAuth::Action action(QStringLiteral("org.kde.plasmasetup.setnewuserhomedirectoryownership"));
-    action.setParentWindow(m_window);
-    action.setHelperId(QStringLiteral("org.kde.plasmasetup"));
-    action.setArguments({{QStringLiteral("username"), username}});
-    KAuth::ExecuteJob *job = action.execute();
-
-    if (!job->exec()) {
-        qCWarning(PlasmaSetup) << "Failed to set new user home directory ownership:" << job->errorString();
-    } else {
-        qCInfo(PlasmaSetup) << "New user home directory ownership set successfully.";
-    }
 }
 
 void InitialStartUtil::setNewUserTempAutologin()
