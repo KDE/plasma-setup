@@ -423,6 +423,3 @@ msgid "Failed to resize image: writing to temp file failed"
 msgstr ""
 "No s'ha pogut redimensionar la imatge: ha fallat en escriure en el fitxer "
 "temporal"
-
-#~ msgid "24-Hour Format"
-#~ msgstr "Format de 24 hores"

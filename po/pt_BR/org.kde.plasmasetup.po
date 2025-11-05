@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-04 00:44+0000\n"
-"PO-Revision-Date: 2025-10-21 07:41-0300\n"
+"PO-Revision-Date: 2025-11-04 08:33-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -242,10 +242,9 @@ msgid "Dark Theme"
 msgstr "Tema escuro"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
+#, kde-format
 msgid "Select your time zone."
-msgstr "Selecione seu fuso horário e formato de hora preferido."
+msgstr "Selecione seu fuso horário."
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format

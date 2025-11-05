@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-04 00:44+0000\n"
-"PO-Revision-Date: 2025-10-22 00:28+0200\n"
+"PO-Revision-Date: 2025-11-04 13:41+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -242,10 +242,9 @@ msgid "Dark Theme"
 msgstr "Donker thema"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
+#, kde-format
 msgid "Select your time zone."
-msgstr "Selecteer uw tijdzone en indeling van de tijd met uw voorkeur."
+msgstr "Selecteer uw tijdzone."
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
