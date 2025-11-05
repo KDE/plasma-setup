@@ -47,7 +47,7 @@ void DisplayUtil::setScalingForNewUser(QWindow *window, QString userName)
     KAuth::ExecuteJob *job = action.execute();
 
     if (!job->exec()) {
-        qCWarning(PlasmaSetup) << "Failed to set scaling for new user.";
+        qCWarning(PlasmaSetup) << "Failed to set scaling for new user:" << job->errorString();
     } else {
         qCInfo(PlasmaSetup) << "Set scaling for new user.";
     }
