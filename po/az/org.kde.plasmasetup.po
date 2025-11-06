@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 00:44+0000\n"
+"POT-Creation-Date: 2025-11-06 08:07+0000\n"
 "PO-Revision-Date: 2025-10-21 19:46+0400\n"
 "Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -266,66 +266,6 @@ msgstr "Şifrə:"
 msgid "Invalid input."
 msgstr "Səhv daxiletmə."
 
-#: src/auth/authhelper.cpp:26 src/auth/authhelper.cpp:123
-#: src/auth/authhelper.cpp:163 src/auth/authhelper.cpp:200
-#: src/auth/authhelper.cpp:225
-#, kde-format
-msgid "Username argument is missing or invalid."
-msgstr "İstifadəçi adında çatışmazlıqlar var və ya o səhvdir."
-
-#: src/auth/authhelper.cpp:37
-#, kde-format
-msgctxt "%1 is a directory path"
-msgid "Failed to create autostart directory: %1"
-msgstr "Avtomatik başlatma kataloqu yaradılmadı: %1"
-
-#: src/auth/authhelper.cpp:46
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to open file for writing: %1"
-msgstr "Yazmaq üçün fayl açılmadı: %1"
-
-#: src/auth/authhelper.cpp:53
-#, kde-format
-msgid "Failed to find the Plasma Setup executable path."
-msgstr "Plasma quraşdırmasını icra etmək üçün yol tapılmadı."
-
-#: src/auth/authhelper.cpp:90
-#, kde-format
-msgctxt "%1 is an error message"
-msgid "Failed to disable systemd unit: %1"
-msgstr "Systemd modulunu söndürmək mümkün olmadı: %1"
-
-#: src/auth/authhelper.cpp:110
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to remove file %1"
-msgstr "%1 faylını silmək mümkün olmadı"
-
-#: src/auth/authhelper.cpp:140
-#, kde-format
-msgctxt "%1 is a directory path"
-msgid "Failed to create .config directory: %1"
-msgstr "%1 tənzimləmə (.config) qovluğunu yaratmaq mümkün olmadı"
-
-#: src/auth/authhelper.cpp:150 src/auth/authhelper.cpp:186
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to copy file %1"
-msgstr "%1 faylını kopyalamaq mümkün olmadı"
-
-#: src/auth/authhelper.cpp:212
-#, kde-format
-msgctxt "%1 is a directory path, %2 an exit code"
-msgid "Failed to set ownership for home directory %1: exit code %2"
-msgstr "%1 ev qovluğu üçün sahiblik təyin etmək mümkün olmadı: çıxış kodu %2"
-
-#: src/auth/authhelper.cpp:234
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to open file %1 for writing."
-msgstr "Yazmaq üçün %1 faylını açmaq mümkün olmadı."
-
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
@@ -411,6 +351,45 @@ msgstr "Şəklin ölçüsünü dəyişmək mümkün olmadı: müvəqqəti fayl a
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
 msgstr "Şəklin ölçüsü dəyişmək mümkün olmadı: müvəqqəti fayla yazılmadı"
+
+#~ msgid "Username argument is missing or invalid."
+#~ msgstr "İstifadəçi adında çatışmazlıqlar var və ya o səhvdir."
+
+#~ msgctxt "%1 is a directory path"
+#~ msgid "Failed to create autostart directory: %1"
+#~ msgstr "Avtomatik başlatma kataloqu yaradılmadı: %1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to open file for writing: %1"
+#~ msgstr "Yazmaq üçün fayl açılmadı: %1"
+
+#~ msgid "Failed to find the Plasma Setup executable path."
+#~ msgstr "Plasma quraşdırmasını icra etmək üçün yol tapılmadı."
+
+#~ msgctxt "%1 is an error message"
+#~ msgid "Failed to disable systemd unit: %1"
+#~ msgstr "Systemd modulunu söndürmək mümkün olmadı: %1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to remove file %1"
+#~ msgstr "%1 faylını silmək mümkün olmadı"
+
+#~ msgctxt "%1 is a directory path"
+#~ msgid "Failed to create .config directory: %1"
+#~ msgstr "%1 tənzimləmə (.config) qovluğunu yaratmaq mümkün olmadı"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to copy file %1"
+#~ msgstr "%1 faylını kopyalamaq mümkün olmadı"
+
+#~ msgctxt "%1 is a directory path, %2 an exit code"
+#~ msgid "Failed to set ownership for home directory %1: exit code %2"
+#~ msgstr ""
+#~ "%1 ev qovluğu üçün sahiblik təyin etmək mümkün olmadı: çıxış kodu %2"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to open file %1 for writing."
+#~ msgstr "Yazmaq üçün %1 faylını açmaq mümkün olmadı."
 
 #~ msgid "24-Hour Format"
 #~ msgstr "24 saat formatı"

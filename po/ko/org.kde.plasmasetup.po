@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 00:44+0000\n"
+"POT-Creation-Date: 2025-11-06 08:07+0000\n"
 "PO-Revision-Date: 2025-10-09 01:30+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -271,66 +271,6 @@ msgstr "암호:"
 msgid "Invalid input."
 msgstr "잘못 입력했습니다."
 
-#: src/auth/authhelper.cpp:26 src/auth/authhelper.cpp:123
-#: src/auth/authhelper.cpp:163 src/auth/authhelper.cpp:200
-#: src/auth/authhelper.cpp:225
-#, kde-format
-msgid "Username argument is missing or invalid."
-msgstr "사용자 이름 인자가 없거나 잘못되었습니다."
-
-#: src/auth/authhelper.cpp:37
-#, kde-format
-msgctxt "%1 is a directory path"
-msgid "Failed to create autostart directory: %1"
-msgstr "autostart 디렉터리를 생성할 수 없음: %1"
-
-#: src/auth/authhelper.cpp:46
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to open file for writing: %1"
-msgstr "파일에 쓰려고 열 수 없음: %1"
-
-#: src/auth/authhelper.cpp:53
-#, kde-format
-msgid "Failed to find the Plasma Setup executable path."
-msgstr "Plasma 초기 설정 실행 파일 경로를 찾을 수 없습니다."
-
-#: src/auth/authhelper.cpp:90
-#, kde-format
-msgctxt "%1 is an error message"
-msgid "Failed to disable systemd unit: %1"
-msgstr "systemd 유닛을 비활성화할 수 없음: %1"
-
-#: src/auth/authhelper.cpp:110
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to remove file %1"
-msgstr "%1 파일을 삭제할 수 없음"
-
-#: src/auth/authhelper.cpp:140
-#, kde-format
-msgctxt "%1 is a directory path"
-msgid "Failed to create .config directory: %1"
-msgstr ".config 디렉터리를 생성할 수 없음: %1"
-
-#: src/auth/authhelper.cpp:150 src/auth/authhelper.cpp:186
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to copy file %1"
-msgstr "%1 파일을 복사할 수 없음"
-
-#: src/auth/authhelper.cpp:212
-#, kde-format
-msgctxt "%1 is a directory path, %2 an exit code"
-msgid "Failed to set ownership for home directory %1: exit code %2"
-msgstr "홈 디렉터리 %1의 소유권을 설정할 수 없음: 종료 코드 %2"
-
-#: src/auth/authhelper.cpp:234
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to open file %1 for writing."
-msgstr "%1 파일에 쓰려고 열 수 없음"
-
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
@@ -416,6 +356,44 @@ msgstr "이미지 크기 조정 실패: 임시 파일을 열 수 없음"
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
 msgstr "이미지 크기 조정 실패: 임시 파일에 쓸 수 없음"
+
+#~ msgid "Username argument is missing or invalid."
+#~ msgstr "사용자 이름 인자가 없거나 잘못되었습니다."
+
+#~ msgctxt "%1 is a directory path"
+#~ msgid "Failed to create autostart directory: %1"
+#~ msgstr "autostart 디렉터리를 생성할 수 없음: %1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to open file for writing: %1"
+#~ msgstr "파일에 쓰려고 열 수 없음: %1"
+
+#~ msgid "Failed to find the Plasma Setup executable path."
+#~ msgstr "Plasma 초기 설정 실행 파일 경로를 찾을 수 없습니다."
+
+#~ msgctxt "%1 is an error message"
+#~ msgid "Failed to disable systemd unit: %1"
+#~ msgstr "systemd 유닛을 비활성화할 수 없음: %1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to remove file %1"
+#~ msgstr "%1 파일을 삭제할 수 없음"
+
+#~ msgctxt "%1 is a directory path"
+#~ msgid "Failed to create .config directory: %1"
+#~ msgstr ".config 디렉터리를 생성할 수 없음: %1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to copy file %1"
+#~ msgstr "%1 파일을 복사할 수 없음"
+
+#~ msgctxt "%1 is a directory path, %2 an exit code"
+#~ msgid "Failed to set ownership for home directory %1: exit code %2"
+#~ msgstr "홈 디렉터리 %1의 소유권을 설정할 수 없음: 종료 코드 %2"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to open file %1 for writing."
+#~ msgstr "%1 파일에 쓰려고 열 수 없음"
 
 #~ msgid "24-Hour Format"
 #~ msgstr "24시간제 형식"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 00:44+0000\n"
+"POT-Creation-Date: 2025-11-06 08:07+0000\n"
 "PO-Revision-Date: 2025-10-23 00:55+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -270,67 +270,6 @@ msgstr "Pasahitza:"
 msgid "Invalid input."
 msgstr "Sarrera baliogabea."
 
-#: src/auth/authhelper.cpp:26 src/auth/authhelper.cpp:123
-#: src/auth/authhelper.cpp:163 src/auth/authhelper.cpp:200
-#: src/auth/authhelper.cpp:225
-#, kde-format
-msgid "Username argument is missing or invalid."
-msgstr "Erabiltzaile-izena argumentua falta da edo baliogabea da."
-
-#: src/auth/authhelper.cpp:37
-#, kde-format
-msgctxt "%1 is a directory path"
-msgid "Failed to create autostart directory: %1"
-msgstr "Abio automatikorako direktorioa sortzea huts egin du: %1"
-
-#: src/auth/authhelper.cpp:46
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to open file for writing: %1"
-msgstr "Fitxategia idazteko irekitzea huts egin du: %1"
-
-#: src/auth/authhelper.cpp:53
-#, kde-format
-msgid "Failed to find the Plasma Setup executable path."
-msgstr "Plasma Ezarpenaren exekutagarriaren bide-izena aurkitzea huts egin du."
-
-#: src/auth/authhelper.cpp:90
-#, kde-format
-msgctxt "%1 is an error message"
-msgid "Failed to disable systemd unit: %1"
-msgstr "systemd unitatea ezgaitzea huts egin du: %1"
-
-#: src/auth/authhelper.cpp:110
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to remove file %1"
-msgstr "%1 fitxategia kentzea huts egin du"
-
-#: src/auth/authhelper.cpp:140
-#, kde-format
-msgctxt "%1 is a directory path"
-msgid "Failed to create .config directory: %1"
-msgstr ".config direktorioa sortzea huts egin du: %1"
-
-#: src/auth/authhelper.cpp:150 src/auth/authhelper.cpp:186
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to copy file %1"
-msgstr "%1 fitxategia kopiatzea huts egin du"
-
-#: src/auth/authhelper.cpp:212
-#, kde-format
-msgctxt "%1 is a directory path, %2 an exit code"
-msgid "Failed to set ownership for home directory %1: exit code %2"
-msgstr ""
-"%1 etxeko direktorioaren jabetza ezartzea huts egin du: irteera-kodea %2"
-
-#: src/auth/authhelper.cpp:234
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to open file %1 for writing."
-msgstr "%1 fitxategia idazteko irekitzea huts egin du."
-
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
@@ -420,6 +359,46 @@ msgid "Failed to resize image: writing to temp file failed"
 msgstr ""
 "Irudiaren neurria aldatzea huts egin du: aldi baterako fitxategian gordetzea "
 "huts egin du"
+
+#~ msgid "Username argument is missing or invalid."
+#~ msgstr "Erabiltzaile-izena argumentua falta da edo baliogabea da."
+
+#~ msgctxt "%1 is a directory path"
+#~ msgid "Failed to create autostart directory: %1"
+#~ msgstr "Abio automatikorako direktorioa sortzea huts egin du: %1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to open file for writing: %1"
+#~ msgstr "Fitxategia idazteko irekitzea huts egin du: %1"
+
+#~ msgid "Failed to find the Plasma Setup executable path."
+#~ msgstr ""
+#~ "Plasma Ezarpenaren exekutagarriaren bide-izena aurkitzea huts egin du."
+
+#~ msgctxt "%1 is an error message"
+#~ msgid "Failed to disable systemd unit: %1"
+#~ msgstr "systemd unitatea ezgaitzea huts egin du: %1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to remove file %1"
+#~ msgstr "%1 fitxategia kentzea huts egin du"
+
+#~ msgctxt "%1 is a directory path"
+#~ msgid "Failed to create .config directory: %1"
+#~ msgstr ".config direktorioa sortzea huts egin du: %1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to copy file %1"
+#~ msgstr "%1 fitxategia kopiatzea huts egin du"
+
+#~ msgctxt "%1 is a directory path, %2 an exit code"
+#~ msgid "Failed to set ownership for home directory %1: exit code %2"
+#~ msgstr ""
+#~ "%1 etxeko direktorioaren jabetza ezartzea huts egin du: irteera-kodea %2"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to open file %1 for writing."
+#~ msgstr "%1 fitxategia idazteko irekitzea huts egin du."
 
 #~ msgid "24-Hour Format"
 #~ msgstr "24 orduko formatua"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 00:44+0000\n"
+"POT-Creation-Date: 2025-11-06 08:07+0000\n"
 "PO-Revision-Date: 2025-11-04 08:33-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -266,66 +266,6 @@ msgstr "Senha:"
 msgid "Invalid input."
 msgstr "Entrada inválida."
 
-#: src/auth/authhelper.cpp:26 src/auth/authhelper.cpp:123
-#: src/auth/authhelper.cpp:163 src/auth/authhelper.cpp:200
-#: src/auth/authhelper.cpp:225
-#, kde-format
-msgid "Username argument is missing or invalid."
-msgstr "O argumento do nome de usuário está ausente ou é inválido."
-
-#: src/auth/authhelper.cpp:37
-#, kde-format
-msgctxt "%1 is a directory path"
-msgid "Failed to create autostart directory: %1"
-msgstr "Falha ao criar pasta de inicialização automática: %1"
-
-#: src/auth/authhelper.cpp:46
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to open file for writing: %1"
-msgstr "Falha ao abrir o arquivo para gravação: %1"
-
-#: src/auth/authhelper.cpp:53
-#, kde-format
-msgid "Failed to find the Plasma Setup executable path."
-msgstr "Falha ao encontrar o caminho executável da Configuração do Plasma."
-
-#: src/auth/authhelper.cpp:90
-#, kde-format
-msgctxt "%1 is an error message"
-msgid "Failed to disable systemd unit: %1"
-msgstr "Falha ao desabilitar a unidade systemd: %1"
-
-#: src/auth/authhelper.cpp:110
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to remove file %1"
-msgstr "Falha ao remover o arquivo %1"
-
-#: src/auth/authhelper.cpp:140
-#, kde-format
-msgctxt "%1 is a directory path"
-msgid "Failed to create .config directory: %1"
-msgstr "Falha ao criar a pasta .config: %1"
-
-#: src/auth/authhelper.cpp:150 src/auth/authhelper.cpp:186
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to copy file %1"
-msgstr "Falha ao copiar o arquivo %1"
-
-#: src/auth/authhelper.cpp:212
-#, kde-format
-msgctxt "%1 is a directory path, %2 an exit code"
-msgid "Failed to set ownership for home directory %1: exit code %2"
-msgstr "Falha ao definir a propriedade da pasta inicial %1: código de saída %2"
-
-#: src/auth/authhelper.cpp:234
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to open file %1 for writing."
-msgstr "Falha ao abrir o arquivo %1 para escrita."
-
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
@@ -412,6 +352,45 @@ msgstr "Falha ao redimensionar imagem: falha ao abrir o arquivo temporário"
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
 msgstr "Falha ao redimensionar imagem: falha ao gravar o arquivo temporário"
+
+#~ msgid "Username argument is missing or invalid."
+#~ msgstr "O argumento do nome de usuário está ausente ou é inválido."
+
+#~ msgctxt "%1 is a directory path"
+#~ msgid "Failed to create autostart directory: %1"
+#~ msgstr "Falha ao criar pasta de inicialização automática: %1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to open file for writing: %1"
+#~ msgstr "Falha ao abrir o arquivo para gravação: %1"
+
+#~ msgid "Failed to find the Plasma Setup executable path."
+#~ msgstr "Falha ao encontrar o caminho executável da Configuração do Plasma."
+
+#~ msgctxt "%1 is an error message"
+#~ msgid "Failed to disable systemd unit: %1"
+#~ msgstr "Falha ao desabilitar a unidade systemd: %1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to remove file %1"
+#~ msgstr "Falha ao remover o arquivo %1"
+
+#~ msgctxt "%1 is a directory path"
+#~ msgid "Failed to create .config directory: %1"
+#~ msgstr "Falha ao criar a pasta .config: %1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to copy file %1"
+#~ msgstr "Falha ao copiar o arquivo %1"
+
+#~ msgctxt "%1 is a directory path, %2 an exit code"
+#~ msgid "Failed to set ownership for home directory %1: exit code %2"
+#~ msgstr ""
+#~ "Falha ao definir a propriedade da pasta inicial %1: código de saída %2"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to open file %1 for writing."
+#~ msgstr "Falha ao abrir o arquivo %1 para escrita."
 
 #~ msgid "24-Hour Format"
 #~ msgstr "Formato de 24 horas"

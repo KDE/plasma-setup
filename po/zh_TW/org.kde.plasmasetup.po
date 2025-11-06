@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 00:44+0000\n"
+"POT-Creation-Date: 2025-11-06 08:07+0000\n"
 "PO-Revision-Date: 2025-09-30 16:39+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -268,66 +268,6 @@ msgstr "密碼："
 msgid "Invalid input."
 msgstr "無效輸入。"
 
-#: src/auth/authhelper.cpp:26 src/auth/authhelper.cpp:123
-#: src/auth/authhelper.cpp:163 src/auth/authhelper.cpp:200
-#: src/auth/authhelper.cpp:225
-#, kde-format
-msgid "Username argument is missing or invalid."
-msgstr "使用者參數缺乏或是無效。"
-
-#: src/auth/authhelper.cpp:37
-#, kde-format
-msgctxt "%1 is a directory path"
-msgid "Failed to create autostart directory: %1"
-msgstr "建立自動啟動目錄失敗：%1"
-
-#: src/auth/authhelper.cpp:46
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to open file for writing: %1"
-msgstr "開啟檔案以寫入時失敗：%1"
-
-#: src/auth/authhelper.cpp:53
-#, kde-format
-msgid "Failed to find the Plasma Setup executable path."
-msgstr "找不到《Plasma 初始設定》執行檔路徑。"
-
-#: src/auth/authhelper.cpp:90
-#, kde-format
-msgctxt "%1 is an error message"
-msgid "Failed to disable systemd unit: %1"
-msgstr "停用 systemd 單元失敗：%1"
-
-#: src/auth/authhelper.cpp:110
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to remove file %1"
-msgstr "移除檔案 %1 失敗"
-
-#: src/auth/authhelper.cpp:140
-#, kde-format
-msgctxt "%1 is a directory path"
-msgid "Failed to create .config directory: %1"
-msgstr "建立 .config 目錄失敗：%1"
-
-#: src/auth/authhelper.cpp:150 src/auth/authhelper.cpp:186
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to copy file %1"
-msgstr "複製檔案 %1 失敗"
-
-#: src/auth/authhelper.cpp:212
-#, kde-format
-msgctxt "%1 is a directory path, %2 an exit code"
-msgid "Failed to set ownership for home directory %1: exit code %2"
-msgstr "設定家目錄 %1 擁有者失敗：結束碼 %2"
-
-#: src/auth/authhelper.cpp:234
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to open file %1 for writing."
-msgstr "開啟檔案 %1 以寫入時失敗。"
-
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
@@ -413,6 +353,44 @@ msgstr "圖片尺寸調整失敗：無法開啟暫存檔"
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
 msgstr "圖片尺寸調整失敗：無法寫入至暫存檔"
+
+#~ msgid "Username argument is missing or invalid."
+#~ msgstr "使用者參數缺乏或是無效。"
+
+#~ msgctxt "%1 is a directory path"
+#~ msgid "Failed to create autostart directory: %1"
+#~ msgstr "建立自動啟動目錄失敗：%1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to open file for writing: %1"
+#~ msgstr "開啟檔案以寫入時失敗：%1"
+
+#~ msgid "Failed to find the Plasma Setup executable path."
+#~ msgstr "找不到《Plasma 初始設定》執行檔路徑。"
+
+#~ msgctxt "%1 is an error message"
+#~ msgid "Failed to disable systemd unit: %1"
+#~ msgstr "停用 systemd 單元失敗：%1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to remove file %1"
+#~ msgstr "移除檔案 %1 失敗"
+
+#~ msgctxt "%1 is a directory path"
+#~ msgid "Failed to create .config directory: %1"
+#~ msgstr "建立 .config 目錄失敗：%1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to copy file %1"
+#~ msgstr "複製檔案 %1 失敗"
+
+#~ msgctxt "%1 is a directory path, %2 an exit code"
+#~ msgid "Failed to set ownership for home directory %1: exit code %2"
+#~ msgstr "設定家目錄 %1 擁有者失敗：結束碼 %2"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to open file %1 for writing."
+#~ msgstr "開啟檔案 %1 以寫入時失敗。"
 
 #~ msgid "24-Hour Format"
 #~ msgstr "24 時制"

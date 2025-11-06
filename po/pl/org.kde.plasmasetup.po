@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 00:44+0000\n"
+"POT-Creation-Date: 2025-11-06 08:07+0000\n"
 "PO-Revision-Date: 2025-10-25 09:23+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -268,67 +268,6 @@ msgstr "Hasło:"
 msgid "Invalid input."
 msgstr "Nieprawidłowe dane wejściowe."
 
-#: src/auth/authhelper.cpp:26 src/auth/authhelper.cpp:123
-#: src/auth/authhelper.cpp:163 src/auth/authhelper.cpp:200
-#: src/auth/authhelper.cpp:225
-#, kde-format
-msgid "Username argument is missing or invalid."
-msgstr "Brakuj nazwy użytkownika lub jest nieprawidłowa."
-
-#: src/auth/authhelper.cpp:37
-#, kde-format
-msgctxt "%1 is a directory path"
-msgid "Failed to create autostart directory: %1"
-msgstr "Nie udało się utworzyć katalogu autostartu: %1"
-
-#: src/auth/authhelper.cpp:46
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to open file for writing: %1"
-msgstr "Nie udało się otworzyć pliku do zapisu: %1"
-
-#: src/auth/authhelper.cpp:53
-#, kde-format
-msgid "Failed to find the Plasma Setup executable path."
-msgstr "Nie udało się znaleźć ścieżki pliku wykonywalnego Ustawień Plazmy"
-
-#: src/auth/authhelper.cpp:90
-#, kde-format
-msgctxt "%1 is an error message"
-msgid "Failed to disable systemd unit: %1"
-msgstr "Nie udało się wyłączyć jednostki systemd: %1"
-
-#: src/auth/authhelper.cpp:110
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to remove file %1"
-msgstr "Nie udało się usunąć %1"
-
-#: src/auth/authhelper.cpp:140
-#, kde-format
-msgctxt "%1 is a directory path"
-msgid "Failed to create .config directory: %1"
-msgstr "Nie udało się utworzyć katalogu .config: %1"
-
-#: src/auth/authhelper.cpp:150 src/auth/authhelper.cpp:186
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to copy file %1"
-msgstr "Nie udało się skopiować pliku %1"
-
-#: src/auth/authhelper.cpp:212
-#, kde-format
-msgctxt "%1 is a directory path, %2 an exit code"
-msgid "Failed to set ownership for home directory %1: exit code %2"
-msgstr ""
-"Nie udało się ustawić właściciela na katalogu domowym %1: kod wyjścia %2"
-
-#: src/auth/authhelper.cpp:234
-#, kde-format
-msgctxt "%1 is a file path"
-msgid "Failed to open file %1 for writing."
-msgstr "Nie udało się otworzyć pliku %1 do zapisu."
-
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
@@ -418,6 +357,45 @@ msgid "Failed to resize image: writing to temp file failed"
 msgstr ""
 "Nie udało się zmienić rozmiaru obrazu: nie udało się zapisać do pliku "
 "tymczasowego"
+
+#~ msgid "Username argument is missing or invalid."
+#~ msgstr "Brakuj nazwy użytkownika lub jest nieprawidłowa."
+
+#~ msgctxt "%1 is a directory path"
+#~ msgid "Failed to create autostart directory: %1"
+#~ msgstr "Nie udało się utworzyć katalogu autostartu: %1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to open file for writing: %1"
+#~ msgstr "Nie udało się otworzyć pliku do zapisu: %1"
+
+#~ msgid "Failed to find the Plasma Setup executable path."
+#~ msgstr "Nie udało się znaleźć ścieżki pliku wykonywalnego Ustawień Plazmy"
+
+#~ msgctxt "%1 is an error message"
+#~ msgid "Failed to disable systemd unit: %1"
+#~ msgstr "Nie udało się wyłączyć jednostki systemd: %1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to remove file %1"
+#~ msgstr "Nie udało się usunąć %1"
+
+#~ msgctxt "%1 is a directory path"
+#~ msgid "Failed to create .config directory: %1"
+#~ msgstr "Nie udało się utworzyć katalogu .config: %1"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to copy file %1"
+#~ msgstr "Nie udało się skopiować pliku %1"
+
+#~ msgctxt "%1 is a directory path, %2 an exit code"
+#~ msgid "Failed to set ownership for home directory %1: exit code %2"
+#~ msgstr ""
+#~ "Nie udało się ustawić właściciela na katalogu domowym %1: kod wyjścia %2"
+
+#~ msgctxt "%1 is a file path"
+#~ msgid "Failed to open file %1 for writing."
+#~ msgstr "Nie udało się otworzyć pliku %1 do zapisu."
 
 #~ msgid "24-Hour Format"
 #~ msgstr "24 godzinny zapis czasu"
