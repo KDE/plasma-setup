@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-06 08:07+0000\n"
-"PO-Revision-Date: 2025-10-21 22:16+0300\n"
+"PO-Revision-Date: 2025-11-04 09:25+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -243,10 +243,9 @@ msgid "Dark Theme"
 msgstr "Темна тема"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
+#, kde-format
 msgid "Select your time zone."
-msgstr "Виберіть ваш часовий пояс і бажаний формат запису часу."
+msgstr "Виберіть ваш часовий пояс."
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
