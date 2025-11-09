@@ -60,31 +60,25 @@ msgstr ""
 "装软件以及访问系统中的所有文件。<nl/><nl/>请为此用户选择一个强密码。"
 
 #: modules/account/contents/ui/main.qml:145
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Full Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
-msgstr "全名"
+msgstr "完整姓名"
 
 #: modules/account/contents/ui/main.qml:163
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "用户名"
 
 #: modules/account/contents/ui/main.qml:175
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "密码"
 
 #: modules/account/contents/ui/main.qml:185
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "确认密码"
@@ -243,10 +237,9 @@ msgid "Dark Theme"
 msgstr "深色主题"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
+#, kde-format
 msgid "Select your time zone."
-msgstr "选择您的时区和首选的时间格式。"
+msgstr "选择您的时区。"
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
@@ -353,52 +346,3 @@ msgstr "调整图像大小失败：无法打开临时文件"
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
 msgstr "调整图像大小失败：无法写入临时文件"
-
-#~ msgid "Username argument is missing or invalid."
-#~ msgstr "用户名参数缺失或无效。"
-
-#~ msgctxt "%1 is a directory path"
-#~ msgid "Failed to create autostart directory: %1"
-#~ msgstr "创建自动启动目录失败：%1"
-
-#~ msgctxt "%1 is a file path"
-#~ msgid "Failed to open file for writing: %1"
-#~ msgstr "打开文件写入失败：%1"
-
-#~ msgid "Failed to find the Plasma Setup executable path."
-#~ msgstr "无法找到 Plasma 设置可执行程序路径。"
-
-#~ msgctxt "%1 is an error message"
-#~ msgid "Failed to disable systemd unit: %1"
-#~ msgstr "禁用 systemd 单元失败：%1"
-
-#~ msgctxt "%1 is a file path"
-#~ msgid "Failed to remove file %1"
-#~ msgstr "移除文件 %1 失败"
-
-#~ msgctxt "%1 is a directory path"
-#~ msgid "Failed to create .config directory: %1"
-#~ msgstr "创建 .config 目录失败：%1"
-
-#~ msgctxt "%1 is a file path"
-#~ msgid "Failed to copy file %1"
-#~ msgstr "复制文件 %1 失败"
-
-#~ msgctxt "%1 is a directory path, %2 an exit code"
-#~ msgid "Failed to set ownership for home directory %1: exit code %2"
-#~ msgstr "设置主目录 %1 所有权失败：退出代码 %2"
-
-#~ msgctxt "%1 is a file path"
-#~ msgid "Failed to open file %1 for writing."
-#~ msgstr "打开文件 %1 写入失败。"
-
-#~ msgid "24-Hour Format"
-#~ msgstr "24 小时格式"
-
-#~ msgctxt "@label:textfield"
-#~ msgid "Username"
-#~ msgstr "用户名"
-
-#~ msgctxt "@label:textfield"
-#~ msgid "Password"
-#~ msgstr "密码"
