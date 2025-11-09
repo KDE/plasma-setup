@@ -26,6 +26,7 @@ Name[sl]=Plasma Setup
 Name[sv]=Inställning av Plasma
 Name[tr]=Plasma İlk Kullanım Yardımcısı
 Name[uk]=Налаштування Плазми
+Name[zh_CN]=Plasma 设置
 Name[zh_TW]=Plasma 初始設定
 Icon=kauth-example
 URL=https://invent.kde.org/plasma/plasma-setup
@@ -126,6 +127,7 @@ Description[sl]=Onemogoči enoto systemd za Plasma Setup
 Description[sv]=Inaktivera systemd-enhet för inställning av Plasma
 Description[tr]=Plasma İlk Kullanım Yardımcısı için Systemd birimini devre dışı bırakın
 Description[uk]=Вимкнути модуль systemd для налаштовування Плазми
+Description[zh_CN]=禁用 Plasma 安装的 systemd 单元
 Description[zh_TW]=將《Plasma 初始設定》的 systemd 單元停用
 Policy=no
 
