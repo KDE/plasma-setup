@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-06 08:07+0000\n"
 "PO-Revision-Date: 2025-10-02 09:38+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -343,10 +343,3 @@ msgstr "Změna velikosti obrázku selhala: otevření dočasného souboru selhal
 #, kde-format
 msgid "Failed to resize image: writing to temp file failed"
 msgstr "Změna velikosti obrázku selhala: zápis do dočasného souboru selhal"
-
-#~ msgctxt "%1 is a file path"
-#~ msgid "Failed to open file for writing: %1"
-#~ msgstr "Nelze otevřít soubor pro zápis: %1"
-
-#~ msgid "24-Hour Format"
-#~ msgstr "24-hodinový formát"
