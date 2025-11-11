@@ -36,6 +36,17 @@ class PlasmaSetupAuthHelper : public QObject
 
 public Q_SLOTS:
     /**
+     * Creates a new user account using the system's useradd utility.
+     *
+     * @param args The arguments passed to the action, which should include:
+     * - String: "username": The username for the new user.
+     * - String: "fullName": The full name for the new user.
+     * - String: "password": The password for the new user.
+     * @return An ActionReply indicating success or failure.
+     */
+    ActionReply createuser(const QVariantMap &args);
+
+    /**
      * Creates an autostart hook for the newly created user to remove the autologin configuration.
      *
      * This function creates a desktop entry in the new user's autostart directory that will
