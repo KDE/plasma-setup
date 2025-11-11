@@ -4,6 +4,8 @@
 ecm_add_qml_module(account
     URI "org.kde.plasmasetup.account"
     GENERATE_PLUGIN_SOURCE
+    DEPENDENCIES
+        QtQuick
 )
 
 ecm_finalize_qml_module(account DESTINATION ${KDE_INSTALL_QMLDIR})

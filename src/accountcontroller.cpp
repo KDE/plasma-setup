@@ -5,17 +5,18 @@
 
 #include "accountcontroller.h"
 
-#include "accounts_interface.h"
 #include "plasmasetup_debug.h"
-#include "user.h"
+#include "usernamevalidator.h"
 
-#include <QDBusObjectPath>
+#include <KAuth/Action>
+#include <KAuth/ExecuteJob>
+#include <KLocalizedString>
 
-using namespace Qt::StringLiterals;
+#include <QApplication>
+#include <QVariantMap>
 
 AccountController::AccountController(QObject *parent)
     : QObject(parent)
-    , m_dbusInterface(new OrgFreedesktopAccountsInterface(u"org.freedesktop.Accounts"_s, u"/org/freedesktop/Accounts"_s, QDBusConnection::systemBus(), this))
 {
 }
 
@@ -77,20 +78,31 @@ bool AccountController::createUser()
 {
     qCInfo(PlasmaSetup) << "Creating user" << m_username << "with full name" << m_fullName;
 
-    bool isAdmin = true;
-    QDBusPendingReply<QDBusObjectPath> reply = m_dbusInterface->CreateUser(m_username, m_fullName, static_cast<qint32>(isAdmin));
-    reply.waitForFinished();
-    if (reply.isValid()) {
-        qCInfo(PlasmaSetup) << "User created with path" << reply.value().path();
-        User *createdUser = new User(this);
-        createdUser->setPath(reply.value());
-        createdUser->setPassword(m_password);
-        delete createdUser;
-        return true;
-    } else {
-        qCWarning(PlasmaSetup) << "Failed to create user:" << reply.error().message();
+    QList<QWindow *> topLevelWindows = QGuiApplication::topLevelWindows();
+    QWindow *window = topLevelWindows.isEmpty() ? nullptr : topLevelWindows.first();
+
+    KAuth::Action action(QStringLiteral("org.kde.plasmasetup.createuser"));
+    action.setParentWindow(window);
+    action.setHelperId(QStringLiteral("org.kde.plasmasetup"));
+    action.setArguments({
+        {QStringLiteral("username"), m_username},
+        {QStringLiteral("fullName"), m_fullName},
+        {QStringLiteral("password"), m_password},
+    });
+
+    KAuth::ExecuteJob *job = action.execute();
+    if (!job->exec()) {
+        const QString errorMessage =
+            job->errorString().isEmpty() ? QStringLiteral("Authorization or helper failure (code %1)").arg(job->error()) : job->errorString();
+        qCWarning(PlasmaSetup) << "Failed to create user:" << errorMessage;
         return false;
     }
+
+    const QVariantMap userData = job->data();
+    qCInfo(PlasmaSetup) << "User created successfully. UID:" << userData.value(QStringLiteral("uid")).toLongLong()
+                        << "Home:" << userData.value(QStringLiteral("homePath")).toString();
+
+    return true;
 }
 
 QString AccountController::password() const
@@ -102,6 +114,18 @@ void AccountController::setPassword(const QString &password)
 {
     m_password = password;
     Q_EMIT passwordChanged();
+}
+
+bool AccountController::isUsernameValid(const QString &username) const
+{
+    return PlasmaSetupValidation::Account::isUsernameValid(username);
+}
+
+QString AccountController::usernameValidationMessage(const QString &username) const
+{
+    const auto result = PlasmaSetupValidation::Account::validateUsername(username);
+
+    return PlasmaSetupValidation::Account::usernameValidationMessage(result);
 }
 
 #include "moc_accountcontroller.cpp"

@@ -7,9 +7,6 @@ add_subdirectory(bootutil)
 add_subdirectory(components)
 add_subdirectory(packagestructure)
 
-set_source_files_properties(org.freedesktop.Accounts.xml PROPERTIES NO_NAMESPACE TRUE)
-set_source_files_properties(org.freedesktop.Accounts.User.xml PROPERTIES NO_NAMESPACE TRUE)
-
 ecm_qt_declare_logging_category(logging_SRCS
     HEADER "plasmasetup_debug.h"
     IDENTIFIER "PlasmaSetup"
@@ -18,28 +15,14 @@ ecm_qt_declare_logging_category(logging_SRCS
     EXPORT PLASMASETUP
 )
 
-qt_add_dbus_interface(plasmasetup_DBUS_SRCS
-    org.freedesktop.Accounts.xml
-    accounts_interface
-)
-
-qt_add_dbus_interface(plasmasetup_DBUS_SRCS
-    org.freedesktop.Accounts.User.xml
-    user_interface
-)
-
 add_executable(plasma-setup
     main.cpp
     pagesmodel.cpp
     pagesmodel.h
-    controller.cpp
-    controller.h
     accountcontroller.cpp
     accountcontroller.h
     displayutil.cpp
     displayutil.h
-    user.cpp
-    user.h
     initialstartutil.cpp
     initialstartutil.h
     keyboardutil.cpp
@@ -47,18 +30,6 @@ add_executable(plasma-setup
     ${plasmasetup_DBUS_SRCS}
     ${logging_SRCS}
 )
-
-# FreeBSD systems might have libxcrypt but their shadow equivalent doesn't use it
-if(CMAKE_SYSTEM_NAME MATCHES "Linux")
-    pkg_check_modules(libxcrypt libxcrypt>=4)
-    if(libxcrypt_FOUND)
-        target_compile_definitions(plasma-setup PRIVATE -DHAVE_CRYPT_GENSALT=true)
-    else()
-        target_compile_definitions(plasma-setup PRIVATE -DHAVE_CRYPT_GENSALT=false)
-    endif()
-else()
-    target_compile_definitions(plasma-setup PRIVATE -DHAVE_CRYPT_GENSALT=false)
-endif()
 
 ecm_add_qml_module(plasma-setup GENERATE_PLUGIN_SOURCE
     URI "org.kde.plasmasetup"
@@ -90,7 +61,6 @@ target_link_libraries(plasma-setup
         KF6::Package
         KF6::ConfigGui
         PW::KWorkspace
-        crypt
         componentsplugin
         componentspluginplugin
 )

@@ -32,6 +32,11 @@ Name[zh_TW]=Plasma 初始設定
 Icon=kauth-example
 URL=https://invent.kde.org/plasma/plasma-setup
 
+[org.kde.plasmasetup.createuser]
+Name=Create User
+Description=Create the initial user account
+Policy=no
+
 [org.kde.plasmasetup.createnewuserautostarthook]
 Name=Create New User Autostart Hook
 Name[ar]=إنشاء خطاف بدء آلي لمستخدم جديد

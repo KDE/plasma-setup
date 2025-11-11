@@ -2,18 +2,23 @@
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
-#include <QDir>
-#include <QProcess>
-#include <QtDBus/QDBusInterface>
-#include <QtDBus/QDBusPendingReply>
+#include "authhelper.h"
+#include "../usernamevalidator.h"
+
+#include "config-plasma-setup.h"
 
 #include <KAuth/HelperSupport>
 #include <KConfigGroup>
 #include <KSharedConfig>
 
-#include "authhelper.h"
-#include "config-plasma-setup.h"
+#include <QDir>
+#include <QProcess>
+#include <QStandardPaths>
+#include <QtDBus/QDBusInterface>
+#include <QtDBus/QDBusPendingReply>
 
+#include <algorithm>
+#include <cerrno>
 #include <exception>
 #include <grp.h>
 #include <pwd.h>
@@ -86,6 +91,177 @@ private:
     PrivilegeGuard(const PrivilegeGuard &) = delete;
     PrivilegeGuard &operator=(const PrivilegeGuard &) = delete;
 };
+
+/**
+ * Find a system executable by searching custom paths first, then system PATH.
+ *
+ * @param executableName Name of the executable to find (e.g., "useradd")
+ * @return Full path to the executable, or empty string if not found
+ */
+static QString findExecutable(const QString &executableName)
+{
+    const QStringList searchPaths = {
+        QStringLiteral("/usr/sbin"),
+        QStringLiteral("/usr/bin"),
+        QStringLiteral("/sbin"),
+        QStringLiteral("/bin"),
+    };
+
+    QString result = QStandardPaths::findExecutable(executableName, searchPaths);
+    if (result.isEmpty()) {
+        // Fallback to default PATH search
+        result = QStandardPaths::findExecutable(executableName);
+    }
+
+    return result;
+}
+
+ActionReply PlasmaSetupAuthHelper::createuser(const QVariantMap &args)
+{
+    // Extract and validate input arguments.
+    //
+    // The password is handled directly as a QByteArray to allow secure memory clearing after use,
+    // which is not possible with QString and QVariant due to their internal memory management.
+    const QVariant usernameVariant = args.value(QStringLiteral("username"));
+    const QVariant fullNameVariant = args.value(QStringLiteral("fullName"));
+
+    // Ensure required arguments are present and can be converted to strings
+    if (!usernameVariant.canConvert<QString>() || !args.value(QStringLiteral("password")).canConvert<QByteArray>()) {
+        return makeErrorReply(QStringLiteral("Username or password argument is missing or invalid."));
+    }
+
+    const QString username = usernameVariant.toString().trimmed();
+    const QString fullName = fullNameVariant.canConvert<QString>() ? fullNameVariant.toString().trimmed() : QString();
+
+    const auto validationResult = PlasmaSetupValidation::Account::validateUsername(username);
+    if (validationResult != PlasmaSetupValidation::Account::UsernameValidationResult::Valid) {
+        return makeErrorReply(PlasmaSetupValidation::Account::usernameValidationMessage(validationResult));
+    }
+
+    QByteArray password = args.value(QStringLiteral("password")).toByteArray();
+
+    // Validate password is not empty
+    if (password.isEmpty()) {
+        // Clear password data from memory for security
+        std::fill(password.begin(), password.end(), '\0');
+        return makeErrorReply(QStringLiteral("Password cannot be empty."));
+    }
+
+    // Build useradd command arguments
+    QStringList useraddArguments;
+
+    // -m: Create a home directory for the new user
+    useraddArguments << QStringLiteral("-m");
+
+    // -U: Create a group with the same name as the user and add the user to this group
+    useraddArguments << QStringLiteral("-U");
+
+    // -c: Set the user's full name (comment field)
+    if (!fullName.isEmpty()) {
+        useraddArguments << QStringLiteral("-c") << fullName;
+    }
+
+    // The username to create
+    useraddArguments << username;
+
+    // Locate the useradd executable
+    const QString useraddBinary = findExecutable(QStringLiteral("useradd"));
+    if (useraddBinary.isEmpty()) {
+        return makeErrorReply(QStringLiteral("Could not locate useradd executable."));
+    }
+
+    // Execute useradd to create the user account
+    QProcess useraddProcess;
+    useraddProcess.start(useraddBinary, useraddArguments);
+
+    if (!useraddProcess.waitForStarted()) {
+        return makeErrorReply(QStringLiteral("Failed to start useradd: ") + useraddProcess.errorString());
+    }
+
+    if (!useraddProcess.waitForFinished()) {
+        useraddProcess.kill();
+        useraddProcess.waitForFinished();
+        return makeErrorReply(QStringLiteral("useradd timed out."));
+    }
+
+    // Check if useradd completed successfully
+    if (useraddProcess.exitStatus() != QProcess::NormalExit || useraddProcess.exitCode() != 0) {
+        const QString stderrOutput = QString::fromLocal8Bit(useraddProcess.readAllStandardError()).trimmed();
+        const QString stdoutOutput = QString::fromLocal8Bit(useraddProcess.readAllStandardOutput()).trimmed();
+        return makeErrorReply(QStringLiteral("useradd failed with exit code %1: %2 %3").arg(useraddProcess.exitCode()).arg(stderrOutput).arg(stdoutOutput));
+    }
+
+    // We set the password separately using chpasswd to avoid exposing it in command-line arguments
+    // that could be listened to in process listings.
+    //
+    // Locate the chpasswd executable to set the user's password
+    const QString chpasswdBinary = findExecutable(QStringLiteral("chpasswd"));
+    if (chpasswdBinary.isEmpty()) {
+        return makeErrorReply(QStringLiteral("User created but could not locate chpasswd executable."));
+    }
+
+    // Start chpasswd process
+    QProcess chpasswdProcess;
+    chpasswdProcess.start(chpasswdBinary);
+
+    if (!chpasswdProcess.waitForStarted()) {
+        return makeErrorReply(QStringLiteral("Failed to start chpasswd: ") + chpasswdProcess.errorString());
+    }
+
+    // Prepare password data in the format "username:password\n"
+    QByteArray passwordData = username.toUtf8();
+    passwordData.append(':');
+    passwordData.append(password);
+    passwordData.append('\n');
+
+    // Write password data to chpasswd's stdin
+    if (chpasswdProcess.write(passwordData) != passwordData.size()) {
+        // Writing to chpasswd failed.
+        //
+        // Clear password data from memory for security
+        std::fill(password.begin(), password.end(), '\0');
+        std::fill(passwordData.begin(), passwordData.end(), '\0');
+        // Kill the process and return an error
+        chpasswdProcess.kill();
+        chpasswdProcess.waitForFinished();
+        return makeErrorReply(QStringLiteral("Failed to write password to chpasswd: ") + chpasswdProcess.errorString());
+    }
+
+    // Close stdin to signal we're done writing
+    chpasswdProcess.closeWriteChannel();
+
+    // Clear password data from memory for security
+    std::fill(password.begin(), password.end(), '\0');
+    std::fill(passwordData.begin(), passwordData.end(), '\0');
+
+    // Wait for chpasswd to complete
+    if (!chpasswdProcess.waitForFinished()) {
+        chpasswdProcess.kill();
+        chpasswdProcess.waitForFinished();
+        return makeErrorReply(QStringLiteral("chpasswd timed out."));
+    }
+
+    // Check if chpasswd completed successfully
+    if (chpasswdProcess.exitStatus() != QProcess::NormalExit || chpasswdProcess.exitCode() != 0) {
+        const QString stderrOutput = QString::fromLocal8Bit(chpasswdProcess.readAllStandardError()).trimmed();
+        return makeErrorReply(QStringLiteral("chpasswd failed with exit code %1: %2").arg(chpasswdProcess.exitCode()).arg(stderrOutput));
+    }
+
+    // Retrieve and return the newly created user's information
+    try {
+        UserInfo userInfo = getUserInfo(username);
+        ActionReply reply = ActionReply::SuccessReply();
+        reply.setData({
+            {QStringLiteral("username"), userInfo.username},
+            {QStringLiteral("homePath"), userInfo.homePath},
+            {QStringLiteral("uid"), userInfo.uid},
+            {QStringLiteral("gid"), userInfo.gid},
+        });
+        return reply;
+    } catch (const std::runtime_error &e) {
+        return makeErrorReply(QStringLiteral("User created but failed to retrieve user info: ") + QString::fromStdString(e.what()));
+    }
+}
 
 ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap &args)
 {

@@ -21,7 +21,7 @@ polkit.addRule(function (action, subject) {
     var allowedActions = [
         "org.freedesktop.locale1.set-keyboard", // Keyboard layout
         "org.freedesktop.locale1.set-locale", // System locale
-        "org.freedesktop.accounts.user-administration", // User creation
+        "org.kde.plasmasetup.createuser", // User creation
         "org.kde.plasmasetup.createnewuserautostarthook", // Create autostart hook for new user to perform cleanup tasks
         "org.kde.plasmasetup.disablesystemdunit", // Disable plasma-setup systemd unit now that setup is complete
         "org.kde.plasmasetup.removeautologin", // Remove SDDM autologin

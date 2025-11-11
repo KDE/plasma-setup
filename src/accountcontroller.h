@@ -5,12 +5,9 @@
 
 #pragma once
 
-#include <QDBusObjectPath>
 #include <QObject>
 #include <QQmlEngine>
 #include <qqmlintegration.h>
-
-class OrgFreedesktopAccountsInterface;
 
 class AccountController : public QObject
 {
@@ -25,14 +22,14 @@ class AccountController : public QObject
 public:
     ~AccountController() override;
 
-    /*
+    /**
      * Returns the singleton instance of AccountController.
      *
      * This is intended to be used automatically by the QML engine.
      */
     static AccountController *create(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 
-    /*
+    /**
      * Returns the singleton instance of AccountController.
      *
      * If it doesn't exist, it will create one.
@@ -48,7 +45,28 @@ public:
     QString password() const;
     void setPassword(const QString &password);
 
+    /**
+     * Creates a new user account with the current username, full name, and password.
+     *
+     * @return true if the user was created successfully, false otherwise.
+     */
     Q_INVOKABLE bool createUser();
+
+    /**
+     * Validates the provided username according to system rules.
+     *
+     * @param username The username to validate.
+     * @return true if the username is valid, false otherwise.
+     */
+    Q_INVOKABLE bool isUsernameValid(const QString &username) const;
+
+    /**
+     * Provides a user-friendly validation message for the given username.
+     *
+     * @param username The username to validate.
+     * @return A localized validation message if invalid, or an empty string if valid.
+     */
+    Q_INVOKABLE QString usernameValidationMessage(const QString &username) const;
 
 Q_SIGNALS:
     void usernameChanged();
@@ -56,19 +74,17 @@ Q_SIGNALS:
     void passwordChanged();
 
 private:
-    /*
+    /**
      * Private constructor to enforce singleton pattern.
      *
      * Use `instance()` to get the singleton instance.
      */
     explicit AccountController(QObject *parent = nullptr);
 
-    /*
+    /**
      * Static instance of AccountController.
      */
     static AccountController *s_instance;
-
-    OrgFreedesktopAccountsInterface *const m_dbusInterface;
 
     QString m_username;
     QString m_fullName;
