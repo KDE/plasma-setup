@@ -49,6 +49,8 @@ void InitialStartUtil::finish()
     displayUtil.setGlobalThemeForNewUser(m_window, m_accountController->username());
     displayUtil.setScalingForNewUser(m_window, m_accountController->username());
 
+    // Create the `plasma-setup-done` flag file to indicate setup is complete.
+
     logOut();
 }
 

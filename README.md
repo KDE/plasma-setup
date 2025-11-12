@@ -55,6 +55,8 @@ sudo systemctl enable plasma-setup.service
 
 With the systemd service enabled, reboot your system and the initial setup will run automatically.
 
+<!-- Document the plasma-setup-done flag file creation, and its purpose -->
+
 -----
 
 The project is under active development and is not yet ready for production use.
