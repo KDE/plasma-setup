@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-06 08:07+0000\n"
-"PO-Revision-Date: 2025-09-25 13:40+0300\n"
+"PO-Revision-Date: 2025-11-11 19:21+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -63,34 +63,28 @@ msgstr ""
 "izvēlieties stipru paroli."
 
 #: modules/account/contents/ui/main.qml:145
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Full Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Pilns vārds"
 
 #: modules/account/contents/ui/main.qml:163
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Lietotājvārds"
 
 #: modules/account/contents/ui/main.qml:175
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Parole"
 
 #: modules/account/contents/ui/main.qml:185
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
-msgstr "Apstipriniet paroli"
+msgstr "Apstiprināt paroli"
 
 #: modules/account/contents/ui/main.qml:188
 #, kde-format
@@ -248,10 +242,9 @@ msgid "Dark Theme"
 msgstr "Tumšais motīvs"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
+#, kde-format
 msgid "Select your time zone."
-msgstr "Norādiet laika joslu un vēlamo laika formātu."
+msgstr "Norādiet savu laika joslu."
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
@@ -276,7 +269,7 @@ msgstr "Nederīga ievade."
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "Plasma Setup"
 
 #: src/main.cpp:37
 #, kde-format
@@ -289,11 +282,9 @@ msgid "© 2021-2024 KDE Community"
 msgstr "© 2021—2024 KDE kopiena"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Remove the initial setup autologin configuration."
+#, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
-msgstr ""
-"Noņemt sākotnējās iestatīšanas automātiskās ierakstīšanās konfigurāciju"
+msgstr "Noņemt „Plasma Setup“ automātiskās ierakstīšanās konfigurāciju."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
