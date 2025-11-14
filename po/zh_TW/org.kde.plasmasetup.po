@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-06 08:07+0000\n"
-"PO-Revision-Date: 2025-09-30 16:39+0900\n"
+"PO-Revision-Date: 2025-11-13 22:22+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -60,31 +60,25 @@ msgstr ""
 "體，並存取系統上的所有檔案。<nl/><nl/>請為這個使用者選擇高強度的密碼。"
 
 #: modules/account/contents/ui/main.qml:145
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Full Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "全名"
 
 #: modules/account/contents/ui/main.qml:163
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "使用者名稱"
 
 #: modules/account/contents/ui/main.qml:175
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "密碼"
 
 #: modules/account/contents/ui/main.qml:185
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "確認密碼"
@@ -243,10 +237,9 @@ msgid "Dark Theme"
 msgstr "暗色主題"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
+#, kde-format
 msgid "Select your time zone."
-msgstr "選取您的時區與偏好的時間格式。"
+msgstr "請選取您的時區。"
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
