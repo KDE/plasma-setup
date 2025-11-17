@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-06 08:07+0000\n"
-"PO-Revision-Date: 2025-10-21 19:46+0400\n"
-"Last-Translator: linux <xxmn77@gmail.com>\n"
+"PO-Revision-Date: 2025-11-16 17:29+0400\n"
+"Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -241,10 +241,9 @@ msgid "Dark Theme"
 msgstr "Qaranlıq görünüş"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
+#, kde-format
 msgid "Select your time zone."
-msgstr "Saaat qurşağınızı və istədiyiniz vaxt formatını seçin."
+msgstr "Saat qurşağını seçin."
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
