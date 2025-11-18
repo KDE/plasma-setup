@@ -29,3 +29,9 @@ install(
     FILES ${CMAKE_CURRENT_BINARY_DIR}/plasma-setup.desktop
     DESTINATION ${CMAKE_INSTALL_DATADIR}/plasma-setup
 )
+
+configure_file(kglobalshortcutsrc.in kglobalshortcutsrc)
+install(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/kglobalshortcutsrc
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/plasma-setup
+)
