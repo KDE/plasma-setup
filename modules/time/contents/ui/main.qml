@@ -8,7 +8,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.plasmasetup.time.private as Time
+import org.kde.plasmasetup.timeutil as Time
 import org.kde.plasma.workspace.timezoneselector as TimeZone
 
 import org.kde.plasmasetup.components as PlasmaSetupComponents
