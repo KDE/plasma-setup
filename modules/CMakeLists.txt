@@ -33,3 +33,4 @@ kpackage_install_package(wifi org.kde.plasmasetup.wifi packages plasma)
 # kpackage_install_package() will include all of the uncompiled source files.
 add_subdirectory(languageutil)
 add_subdirectory(prepareutil)
+add_subdirectory(timeutil)
