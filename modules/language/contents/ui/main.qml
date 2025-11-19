@@ -9,7 +9,7 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
-import org.kde.plasmasetup.language as Language
+import org.kde.plasmasetup.languageutil as Language
 
 import org.kde.plasmasetup.components as PlasmaSetupComponents
 

@@ -25,3 +25,10 @@ kpackage_install_package(time org.kde.plasmasetup.time packages plasma)
 
 add_subdirectory(wifi)
 kpackage_install_package(wifi org.kde.plasmasetup.wifi packages plasma)
+
+
+# ---------------------------- Helper Utilities ---------------------------- #
+
+# Helper utilities should be kept separate from the KPackage modules, otherwise
+# kpackage_install_package() will include all of the uncompiled source files.
+add_subdirectory(languageutil)

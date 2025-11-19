@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "languageutil.h"
-#include "plasmasetup_language_debug.h"
+#include "plasmasetup_languageutil_debug.h"
 
 #include <KLocalizedString>
 
@@ -82,9 +82,9 @@ void LanguageUtil::applyLanguageAsSystemDefault()
         watcher->deleteLater();
 
         if (watcher->isError()) {
-            qCWarning(PlasmaSetupLanguage) << "Failed to set system default language:" << watcher->error().message();
+            qCWarning(PlasmaSetupLanguageUtil) << "Failed to set system default language:" << watcher->error().message();
         } else {
-            qCInfo(PlasmaSetupLanguage) << "Successfully set system default language.";
+            qCInfo(PlasmaSetupLanguageUtil) << "Successfully set system default language.";
         }
     });
 }
