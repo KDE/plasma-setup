@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-20 00:44+0000\n"
 "PO-Revision-Date: 2025-11-13 22:22+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -27,28 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: modules/account/contents/ui/main.qml:70
-#, kde-format
-msgid "Upload new avatar"
-msgstr "上傳新的頭貼"
-
-#: modules/account/contents/ui/main.qml:87
-#, kde-format
-msgid "Remove current avatar"
-msgstr "移除目前頭貼"
-
-#: modules/account/contents/ui/main.qml:117
+#: modules/account/contents/ui/main.qml:67
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "我們需要一些細節來完成設定。"
 
-#: modules/account/contents/ui/main.qml:128
+#: modules/account/contents/ui/main.qml:78
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "這個使用者將會是一個管理員。"
 
-#: modules/account/contents/ui/main.qml:132
+#: modules/account/contents/ui/main.qml:82
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -59,34 +49,35 @@ msgstr ""
 "這個使用者將在系統上有管理員權限。<nl/><nl/>這代表他能變更系統設定、安裝軟"
 "體，並存取系統上的所有檔案。<nl/><nl/>請為這個使用者選擇高強度的密碼。"
 
-#: modules/account/contents/ui/main.qml:145
+#: modules/account/contents/ui/main.qml:95
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "全名"
 
-#: modules/account/contents/ui/main.qml:163
+#: modules/account/contents/ui/main.qml:113
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "使用者名稱"
 
-#: modules/account/contents/ui/main.qml:175
+#: modules/account/contents/ui/main.qml:132
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "密碼"
 
-#: modules/account/contents/ui/main.qml:185
+#: modules/account/contents/ui/main.qml:146
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "確認密碼"
 
-#: modules/account/contents/ui/main.qml:188
-#, kde-format
-msgctxt "@info:status"
-msgid "Passwords don’t match"
+#: modules/account/contents/ui/main.qml:164
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Passwords don’t match"
+msgid "Passwords must match"
 msgstr "密碼不符"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
@@ -320,32 +311,28 @@ msgctxt "@action:button"
 msgid "Finish"
 msgstr "完成"
 
-#: src/user.cpp:125
-#, kde-format
-msgctxt "@info, %1 is an error message"
-msgid "Failed to crop image: %1"
-msgstr "裁剪影像失敗：%1"
+#~ msgid "Upload new avatar"
+#~ msgstr "上傳新的頭貼"
 
-#: src/user.cpp:306
-#, kde-format
-msgctxt "%1 is the username"
-msgid "Could not get permission to save user %1"
-msgstr "無法取得權限儲存使用者 %1"
+#~ msgid "Remove current avatar"
+#~ msgstr "移除目前頭貼"
 
-#: src/user.cpp:311
-#, kde-format
-msgid "There was an error while saving changes"
-msgstr "儲存變更時出現錯誤"
+#~ msgctxt "@info, %1 is an error message"
+#~ msgid "Failed to crop image: %1"
+#~ msgstr "裁剪影像失敗：%1"
 
-#: src/user.cpp:412
-#, kde-format
-msgid "Failed to resize image: opening temp file failed"
-msgstr "圖片尺寸調整失敗：無法開啟暫存檔"
+#~ msgctxt "%1 is the username"
+#~ msgid "Could not get permission to save user %1"
+#~ msgstr "無法取得權限儲存使用者 %1"
 
-#: src/user.cpp:420
-#, kde-format
-msgid "Failed to resize image: writing to temp file failed"
-msgstr "圖片尺寸調整失敗：無法寫入至暫存檔"
+#~ msgid "There was an error while saving changes"
+#~ msgstr "儲存變更時出現錯誤"
+
+#~ msgid "Failed to resize image: opening temp file failed"
+#~ msgstr "圖片尺寸調整失敗：無法開啟暫存檔"
+
+#~ msgid "Failed to resize image: writing to temp file failed"
+#~ msgstr "圖片尺寸調整失敗：無法寫入至暫存檔"
 
 #~ msgid "Username argument is missing or invalid."
 #~ msgstr "使用者參數缺乏或是無效。"

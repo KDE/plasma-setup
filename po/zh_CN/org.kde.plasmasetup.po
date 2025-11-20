@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-20 00:44+0000\n"
 "PO-Revision-Date: 2024-07-15 19:45\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27,28 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tds00@qq.com"
 
-#: modules/account/contents/ui/main.qml:70
-#, kde-format
-msgid "Upload new avatar"
-msgstr "上传新头像"
-
-#: modules/account/contents/ui/main.qml:87
-#, kde-format
-msgid "Remove current avatar"
-msgstr "移除当前头像"
-
-#: modules/account/contents/ui/main.qml:117
+#: modules/account/contents/ui/main.qml:67
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "我们需要一些详细信息来完成设置。"
 
-#: modules/account/contents/ui/main.qml:128
+#: modules/account/contents/ui/main.qml:78
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "此用户将成为管理员。"
 
-#: modules/account/contents/ui/main.qml:132
+#: modules/account/contents/ui/main.qml:82
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -59,34 +49,35 @@ msgstr ""
 "此用户将在系统中拥有管理员权限。<nl/><nl/>这意味着此用户可以更改系统设置、安"
 "装软件以及访问系统中的所有文件。<nl/><nl/>请为此用户选择一个强密码。"
 
-#: modules/account/contents/ui/main.qml:145
+#: modules/account/contents/ui/main.qml:95
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "完整姓名"
 
-#: modules/account/contents/ui/main.qml:163
+#: modules/account/contents/ui/main.qml:113
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "用户名"
 
-#: modules/account/contents/ui/main.qml:175
+#: modules/account/contents/ui/main.qml:132
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "密码"
 
-#: modules/account/contents/ui/main.qml:185
+#: modules/account/contents/ui/main.qml:146
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "确认密码"
 
-#: modules/account/contents/ui/main.qml:188
-#, kde-format
-msgctxt "@info:status"
-msgid "Passwords don’t match"
+#: modules/account/contents/ui/main.qml:164
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Passwords don’t match"
+msgid "Passwords must match"
 msgstr "密码不匹配"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
@@ -320,29 +311,25 @@ msgctxt "@action:button"
 msgid "Finish"
 msgstr "完成"
 
-#: src/user.cpp:125
-#, kde-format
-msgctxt "@info, %1 is an error message"
-msgid "Failed to crop image: %1"
-msgstr "裁剪图像失败：%1"
+#~ msgid "Upload new avatar"
+#~ msgstr "上传新头像"
 
-#: src/user.cpp:306
-#, kde-format
-msgctxt "%1 is the username"
-msgid "Could not get permission to save user %1"
-msgstr "无法获取保存用户 %1 的权限"
+#~ msgid "Remove current avatar"
+#~ msgstr "移除当前头像"
 
-#: src/user.cpp:311
-#, kde-format
-msgid "There was an error while saving changes"
-msgstr "保存更改时出错"
+#~ msgctxt "@info, %1 is an error message"
+#~ msgid "Failed to crop image: %1"
+#~ msgstr "裁剪图像失败：%1"
 
-#: src/user.cpp:412
-#, kde-format
-msgid "Failed to resize image: opening temp file failed"
-msgstr "调整图像大小失败：无法打开临时文件"
+#~ msgctxt "%1 is the username"
+#~ msgid "Could not get permission to save user %1"
+#~ msgstr "无法获取保存用户 %1 的权限"
 
-#: src/user.cpp:420
-#, kde-format
-msgid "Failed to resize image: writing to temp file failed"
-msgstr "调整图像大小失败：无法写入临时文件"
+#~ msgid "There was an error while saving changes"
+#~ msgstr "保存更改时出错"
+
+#~ msgid "Failed to resize image: opening temp file failed"
+#~ msgstr "调整图像大小失败：无法打开临时文件"
+
+#~ msgid "Failed to resize image: writing to temp file failed"
+#~ msgstr "调整图像大小失败：无法写入临时文件"

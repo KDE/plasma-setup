@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-20 00:44+0000\n"
 "PO-Revision-Date: 2025-11-05 17:36+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -28,28 +28,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
 
-#: modules/account/contents/ui/main.qml:70
-#, kde-format
-msgid "Upload new avatar"
-msgstr "ارفع صورة رمزية جديدة"
-
-#: modules/account/contents/ui/main.qml:87
-#, kde-format
-msgid "Remove current avatar"
-msgstr "أزل الصورة الرمزية الحالية"
-
-#: modules/account/contents/ui/main.qml:117
+#: modules/account/contents/ui/main.qml:67
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "نحتاج إلى بعض التفاصيل لإكمال الإعداد."
 
-#: modules/account/contents/ui/main.qml:128
+#: modules/account/contents/ui/main.qml:78
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "سيكون هذا المستخدم مسؤولاً."
 
-#: modules/account/contents/ui/main.qml:132
+#: modules/account/contents/ui/main.qml:82
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -61,34 +51,35 @@ msgstr ""
 "يمكنه تغيير إعدادات النظام وتثبيت البرامج والوصول إلى جميع الملفات الموجودة "
 "على النظام.<nl/><nl/>اختر كلمة سر قوية لهذا المستخدم."
 
-#: modules/account/contents/ui/main.qml:145
+#: modules/account/contents/ui/main.qml:95
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "الاسم الكامل"
 
-#: modules/account/contents/ui/main.qml:163
+#: modules/account/contents/ui/main.qml:113
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "اسم المستخدم"
 
-#: modules/account/contents/ui/main.qml:175
+#: modules/account/contents/ui/main.qml:132
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "كلمة السّر"
 
-#: modules/account/contents/ui/main.qml:185
+#: modules/account/contents/ui/main.qml:146
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "تأكيد كلمة السر"
 
-#: modules/account/contents/ui/main.qml:188
-#, kde-format
-msgctxt "@info:status"
-msgid "Passwords don’t match"
+#: modules/account/contents/ui/main.qml:164
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Passwords don’t match"
+msgid "Passwords must match"
 msgstr "كلمتا السر لم تتطابقا."
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
@@ -324,32 +315,28 @@ msgctxt "@action:button"
 msgid "Finish"
 msgstr "أنهِ"
 
-#: src/user.cpp:125
-#, kde-format
-msgctxt "@info, %1 is an error message"
-msgid "Failed to crop image: %1"
-msgstr "فشل اقتصاص الصورة: %1"
+#~ msgid "Upload new avatar"
+#~ msgstr "ارفع صورة رمزية جديدة"
 
-#: src/user.cpp:306
-#, kde-format
-msgctxt "%1 is the username"
-msgid "Could not get permission to save user %1"
-msgstr "تعذر الحصول على إذن لحفظ المستخدم %1"
+#~ msgid "Remove current avatar"
+#~ msgstr "أزل الصورة الرمزية الحالية"
 
-#: src/user.cpp:311
-#, kde-format
-msgid "There was an error while saving changes"
-msgstr "حدث خطأ أثناء حفظ التغييرات"
+#~ msgctxt "@info, %1 is an error message"
+#~ msgid "Failed to crop image: %1"
+#~ msgstr "فشل اقتصاص الصورة: %1"
 
-#: src/user.cpp:412
-#, kde-format
-msgid "Failed to resize image: opening temp file failed"
-msgstr "فشل في تغيير حجم الصورة: فشل في فتح الملف المؤقت"
+#~ msgctxt "%1 is the username"
+#~ msgid "Could not get permission to save user %1"
+#~ msgstr "تعذر الحصول على إذن لحفظ المستخدم %1"
 
-#: src/user.cpp:420
-#, kde-format
-msgid "Failed to resize image: writing to temp file failed"
-msgstr "فشل في تغيير حجم الصورة: فشلت الكتابة إلى ملف مؤقت"
+#~ msgid "There was an error while saving changes"
+#~ msgstr "حدث خطأ أثناء حفظ التغييرات"
+
+#~ msgid "Failed to resize image: opening temp file failed"
+#~ msgstr "فشل في تغيير حجم الصورة: فشل في فتح الملف المؤقت"
+
+#~ msgid "Failed to resize image: writing to temp file failed"
+#~ msgstr "فشل في تغيير حجم الصورة: فشلت الكتابة إلى ملف مؤقت"
 
 #~ msgid "Username argument is missing or invalid."
 #~ msgstr "اسم المستخدم غير موجود أو غير صالح."

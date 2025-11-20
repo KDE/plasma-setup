@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-20 00:44+0000\n"
 "PO-Revision-Date: 2025-09-02 17:58+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -27,28 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "g.sora@tiscali.it"
 
-#: modules/account/contents/ui/main.qml:70
-#, kde-format
-msgid "Upload new avatar"
-msgstr "Incarga nove avatar"
-
-#: modules/account/contents/ui/main.qml:87
-#, kde-format
-msgid "Remove current avatar"
-msgstr "Remove avatar currente"
-
-#: modules/account/contents/ui/main.qml:117
+#: modules/account/contents/ui/main.qml:67
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "On necessita alcun detalios per completar le configuration."
 
-#: modules/account/contents/ui/main.qml:128
+#: modules/account/contents/ui/main.qml:78
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr ""
 
-#: modules/account/contents/ui/main.qml:132
+#: modules/account/contents/ui/main.qml:82
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -57,7 +47,7 @@ msgid ""
 "files on the system.<nl/><nl/>Choose a strong password for this user."
 msgstr ""
 
-#: modules/account/contents/ui/main.qml:145
+#: modules/account/contents/ui/main.qml:95
 #, fuzzy, kde-format
 #| msgctxt "@label:textfield"
 #| msgid "Full Name"
@@ -65,21 +55,21 @@ msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Nomine complete"
 
-#: modules/account/contents/ui/main.qml:163
+#: modules/account/contents/ui/main.qml:113
 #, fuzzy, kde-format
 #| msgid "Username"
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Nomine usator"
 
-#: modules/account/contents/ui/main.qml:175
+#: modules/account/contents/ui/main.qml:132
 #, fuzzy, kde-format
 #| msgid "Password"
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Contrasigno"
 
-#: modules/account/contents/ui/main.qml:185
+#: modules/account/contents/ui/main.qml:146
 #, fuzzy, kde-format
 #| msgctxt "@label:textfield"
 #| msgid "Confirm Password"
@@ -87,10 +77,11 @@ msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Confirma contrasigno"
 
-#: modules/account/contents/ui/main.qml:188
-#, kde-format
-msgctxt "@info:status"
-msgid "Passwords don’t match"
+#: modules/account/contents/ui/main.qml:164
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Passwords don’t match"
+msgid "Passwords must match"
 msgstr "Le contrasignos non coincide"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
@@ -327,33 +318,30 @@ msgctxt "@action:button"
 msgid "Finish"
 msgstr "Termina"
 
-#: src/user.cpp:125
-#, kde-format
-msgctxt "@info, %1 is an error message"
-msgid "Failed to crop image: %1"
-msgstr "Il falleva a tonder imagine: %1"
+#~ msgid "Upload new avatar"
+#~ msgstr "Incarga nove avatar"
 
-#: src/user.cpp:306
-#, fuzzy, kde-format
-#| msgid "Could not get permission to save user %1"
-msgctxt "%1 is the username"
-msgid "Could not get permission to save user %1"
-msgstr "Non poteva obtener permission a salveguardar usator %1"
+#~ msgid "Remove current avatar"
+#~ msgstr "Remove avatar currente"
 
-#: src/user.cpp:311
-#, kde-format
-msgid "There was an error while saving changes"
-msgstr "Il habeva un error durante que il salveguardava cambiamentos"
+#~ msgctxt "@info, %1 is an error message"
+#~ msgid "Failed to crop image: %1"
+#~ msgstr "Il falleva a tonder imagine: %1"
 
-#: src/user.cpp:412
-#, kde-format
-msgid "Failed to resize image: opening temp file failed"
-msgstr "Falleva a redimensionar image. il falleva a aperir file temp"
+#, fuzzy
+#~| msgid "Could not get permission to save user %1"
+#~ msgctxt "%1 is the username"
+#~ msgid "Could not get permission to save user %1"
+#~ msgstr "Non poteva obtener permission a salveguardar usator %1"
 
-#: src/user.cpp:420
-#, kde-format
-msgid "Failed to resize image: writing to temp file failed"
-msgstr "Falleva a redimensionar image. il falleva a scriber in file temp"
+#~ msgid "There was an error while saving changes"
+#~ msgstr "Il habeva un error durante que il salveguardava cambiamentos"
+
+#~ msgid "Failed to resize image: opening temp file failed"
+#~ msgstr "Falleva a redimensionar image. il falleva a aperir file temp"
+
+#~ msgid "Failed to resize image: writing to temp file failed"
+#~ msgstr "Falleva a redimensionar image. il falleva a scriber in file temp"
 
 #, fuzzy
 #~| msgctxt "@info"
