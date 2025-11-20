@@ -28,8 +28,6 @@ QString InitialStartUtil::distroName() const
 
 void InitialStartUtil::finish()
 {
-    disableSystemdUnit();
-
     const bool userCreated = m_accountController->createUser();
     if (!userCreated) {
         qCWarning(PlasmaSetup) << "Failed to create user:" << m_accountController->username();
@@ -49,6 +47,8 @@ void InitialStartUtil::finish()
     displayUtil.setGlobalThemeForNewUser(m_window, m_accountController->username());
     displayUtil.setScalingForNewUser(m_window, m_accountController->username());
 
+    createCompletionFlag();
+
     logOut();
 }
 
@@ -65,22 +65,6 @@ void InitialStartUtil::disablePlasmaSetupAutologin()
         qCWarning(PlasmaSetup) << "Failed to remove autologin configuration:" << job->errorString();
     } else {
         qCInfo(PlasmaSetup) << "Autologin configuration removed successfully.";
-    }
-}
-
-void InitialStartUtil::disableSystemdUnit()
-{
-    qCInfo(PlasmaSetup) << "Disabling systemd unit for Plasma Setup.";
-
-    KAuth::Action action(QStringLiteral("org.kde.plasmasetup.disablesystemdunit"));
-    action.setParentWindow(m_window);
-    action.setHelperId(QStringLiteral("org.kde.plasmasetup"));
-    KAuth::ExecuteJob *job = action.execute();
-
-    if (!job->exec()) {
-        qCWarning(PlasmaSetup) << "Failed to disable systemd unit:" << job->errorString();
-    } else {
-        qCInfo(PlasmaSetup) << "Systemd unit disabled successfully.";
     }
 }
 
@@ -104,6 +88,22 @@ void InitialStartUtil::setNewUserTempAutologin()
         qCWarning(PlasmaSetup) << "Failed to set temporary autologin for new user:" << job->errorString();
     } else {
         qCInfo(PlasmaSetup) << "Temporary autologin set for new user successfully.";
+    }
+}
+
+void InitialStartUtil::createCompletionFlag()
+{
+    qCInfo(PlasmaSetup) << "Creating plasma-setup completion flag file.";
+
+    KAuth::Action action(QStringLiteral("org.kde.plasmasetup.createflagfile"));
+    action.setParentWindow(m_window);
+    action.setHelperId(QStringLiteral("org.kde.plasmasetup"));
+    KAuth::ExecuteJob *job = action.execute();
+
+    if (!job->exec()) {
+        qCWarning(PlasmaSetup) << "Failed to create completion flag file:" << job->errorString();
+    } else {
+        qCInfo(PlasmaSetup) << "Completion flag file created successfully.";
     }
 }
 
