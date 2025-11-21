@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-20 00:44+0000\n"
-"PO-Revision-Date: 2025-11-04 12:58+0100\n"
+"PO-Revision-Date: 2025-11-20 10:05+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -78,11 +78,9 @@ msgid "Confirm Password"
 msgstr "Confirmació de contrasenya"
 
 #: modules/account/contents/ui/main.qml:164
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Passwords don’t match"
+#, kde-format
 msgid "Passwords must match"
-msgstr "Les contrasenyes no coincideixen"
+msgstr "Cal que les contrasenyes coincideixin"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format

@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-20 00:44+0000\n"
-"PO-Revision-Date: 2025-11-04 06:57+0100\n"
+"PO-Revision-Date: 2025-11-20 07:10+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -73,11 +73,9 @@ msgid "Confirm Password"
 msgstr "Potrdite geslo"
 
 #: modules/account/contents/ui/main.qml:164
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Passwords don’t match"
+#, kde-format
 msgid "Passwords must match"
-msgstr "Gesli se ne ujemata"
+msgstr "Gesli se morata ujemati"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format
