@@ -34,7 +34,25 @@ URL=https://invent.kde.org/plasma/plasma-setup
 
 [org.kde.plasmasetup.createuser]
 Name=Create User
+Name[ar]=أنشئ مستخدِم
+Name[ca]=Creació d'un usuari
+Name[he]=יצירת משתמש
+Name[ka]=მომხმარებლის შექმნა
+Name[pt_BR]=Criar usuário
+Name[sl]=Ustvari uporabnika
+Name[tr]=Kullanıcı Oluştur
+Name[uk]=Створення запису користувача
+Name[zh_TW]=建立使用者
 Description=Create the initial user account
+Description[ar]=أنشئ حساب المستخدم الأول
+Description[ca]=Crea el compte d'usuari inicial
+Description[he]=יצירת חשבון המשתמש הראשוני
+Description[ka]=საწყისი მომხმარებლის ანგარიშის შექმნა
+Description[pt_BR]=Cria a conta de usuário inicial
+Description[sl]=Ustvari začetni uporabnikov račun
+Description[tr]=İlk kullanıcı hesabını oluşturun
+Description[uk]=Створення початкового запису користувача
+Description[zh_TW]=建立初始使用者帳號
 Policy=no
 
 [org.kde.plasmasetup.createnewuserautostarthook]
