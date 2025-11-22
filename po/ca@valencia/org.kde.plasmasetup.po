@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-20 00:44+0000\n"
-"PO-Revision-Date: 2025-11-15 17:42+0100\n"
+"PO-Revision-Date: 2025-11-21 16:34+0100\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -79,11 +79,9 @@ msgid "Confirm Password"
 msgstr "Confirmeu la contrasenya"
 
 #: modules/account/contents/ui/main.qml:164
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Passwords don’t match"
+#, kde-format
 msgid "Passwords must match"
-msgstr "Les contrasenyes no coincidixen"
+msgstr "Les contrasenyes han de coincidir"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format
@@ -320,30 +318,3 @@ msgstr "Següent"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Finalitza"
-
-#~ msgid "Upload new avatar"
-#~ msgstr "Puja un avatar nou"
-
-#~ msgid "Remove current avatar"
-#~ msgstr "Elimina l'avatar actual"
-
-#~ msgctxt "@info, %1 is an error message"
-#~ msgid "Failed to crop image: %1"
-#~ msgstr "No s'ha pogut escapçar la imatge: %1"
-
-#~ msgctxt "%1 is the username"
-#~ msgid "Could not get permission to save user %1"
-#~ msgstr "No s'ha pogut obtindre el permís per a guardar l'usuari %1"
-
-#~ msgid "There was an error while saving changes"
-#~ msgstr "S'ha produït un error en guardar els canvis"
-
-#~ msgid "Failed to resize image: opening temp file failed"
-#~ msgstr ""
-#~ "No s'ha pogut redimensionar la imatge: ha fallat l'obertura del fitxer "
-#~ "temporal"
-
-#~ msgid "Failed to resize image: writing to temp file failed"
-#~ msgstr ""
-#~ "No s'ha pogut redimensionar la imatge: ha fallat en escriure en el fitxer "
-#~ "temporal"
