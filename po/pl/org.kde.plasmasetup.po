@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-20 00:44+0000\n"
-"PO-Revision-Date: 2025-11-08 09:20+0100\n"
+"PO-Revision-Date: 2025-11-22 21:17+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -77,11 +77,9 @@ msgid "Confirm Password"
 msgstr "Potwierdź hasło"
 
 #: modules/account/contents/ui/main.qml:164
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Passwords don’t match"
+#, kde-format
 msgid "Passwords must match"
-msgstr "Hasła nie są sobie równe"
+msgstr "Hasła muszą być takie same"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format

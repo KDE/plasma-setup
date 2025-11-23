@@ -74,11 +74,9 @@ msgid "Confirm Password"
 msgstr "确认密码"
 
 #: modules/account/contents/ui/main.qml:164
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Passwords don’t match"
+#, kde-format
 msgid "Passwords must match"
-msgstr "密码不匹配"
+msgstr "两次输入的密码必须一致"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format
@@ -310,26 +308,3 @@ msgstr "下一步"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "完成"
-
-#~ msgid "Upload new avatar"
-#~ msgstr "上传新头像"
-
-#~ msgid "Remove current avatar"
-#~ msgstr "移除当前头像"
-
-#~ msgctxt "@info, %1 is an error message"
-#~ msgid "Failed to crop image: %1"
-#~ msgstr "裁剪图像失败：%1"
-
-#~ msgctxt "%1 is the username"
-#~ msgid "Could not get permission to save user %1"
-#~ msgstr "无法获取保存用户 %1 的权限"
-
-#~ msgid "There was an error while saving changes"
-#~ msgstr "保存更改时出错"
-
-#~ msgid "Failed to resize image: opening temp file failed"
-#~ msgstr "调整图像大小失败：无法打开临时文件"
-
-#~ msgid "Failed to resize image: writing to temp file failed"
-#~ msgstr "调整图像大小失败：无法写入临时文件"
