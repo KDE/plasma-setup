@@ -47,6 +47,14 @@ public Q_SLOTS:
     ActionReply createuser(const QVariantMap &args);
 
     /**
+     * Creates the `/etc/plasma-setup-done` flag file when setup completes.
+     *
+     * @param args The arguments passed to the action (not used here).
+     * @return An ActionReply indicating success or failure.
+     */
+    ActionReply createflagfile(const QVariantMap &args);
+
+    /**
      * Creates an autostart hook for the newly created user to remove the autologin configuration.
      *
      * This function creates a desktop entry in the new user's autostart directory that will
@@ -57,17 +65,6 @@ public Q_SLOTS:
      * @return An ActionReply indicating success or failure.
      */
     ActionReply createnewuserautostarthook(const QVariantMap &args);
-
-    /**
-     * Disables the systemd unit for Plasma Setup.
-     *
-     * This action is used to disable the systemd unit which runs Plasma Setup
-     * once the first user has been created.
-     *
-     * @param args The arguments passed to the action (not used here).
-     * @return An ActionReply indicating success or failure.
-     */
-    ActionReply disablesystemdunit(const QVariantMap &args);
 
     /**
      * Removes the configuration file that enables autologin for Plasma Setup.

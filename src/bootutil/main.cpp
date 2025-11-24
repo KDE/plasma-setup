@@ -1,24 +1,17 @@
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+//
 // SPDX-License-Identifier: LGPL-2.1-or-later
-
-#include <QCoreApplication>
-#include <QDebug>
-#include <QProcess>
 
 #include "bootutil.h"
 #include "plasmasetup_bootutil_debug.h"
 
+#include <QCoreApplication>
+#include <QDebug>
+
 /**
-    Small utility to determine if Plasma Setup should run at boot time, and to run it if necessary.
+    Small utility that sets up the environment for Plasma Setup to run at boot time.
 
-    This is intended to be run as a systemd service at boot time, before the display manager starts.
-
-    This utility expects to be called one of the following ways:
-
-    1. With the command line flag `--first-run`, which indicates that this is the first boot and
-       Plasma Setup should run.
-
-    These should be managed by the systemd service files.
+    Should be run early in the boot sequence, before the display manager starts.
  */
 int main(int argc, char *argv[])
 {
@@ -28,16 +21,6 @@ int main(int argc, char *argv[])
 
     BootUtil bootUtil;
 
-    const bool isFirstRun = app.arguments().contains(QStringLiteral("--first-run"));
-
-    if (isFirstRun) {
-        qCInfo(PlasmaSetupBootUtil) << "First boot detected. Running setup...";
-        bootUtil.writeSDDMAutologin(true);
-        return 0;
-    }
-
-    qCInfo(PlasmaSetupBootUtil) << "Boot check completed. No action needed.";
-
-    // Exit the application
+    bootUtil.writeSDDMAutologin(true);
     return 0;
 }

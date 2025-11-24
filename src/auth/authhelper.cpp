@@ -263,6 +263,34 @@ ActionReply PlasmaSetupAuthHelper::createuser(const QVariantMap &args)
     }
 }
 
+ActionReply PlasmaSetupAuthHelper::createflagfile(const QVariantMap &args)
+{
+    Q_UNUSED(args);
+
+    const QString flagFilePath = QString::fromUtf8(PLASMA_SETUP_DONE_FLAG_PATH);
+    QFileInfo flagFileInfo(flagFilePath);
+    QDir parentDir = flagFileInfo.dir();
+
+    if (!parentDir.exists() && !parentDir.mkpath(QStringLiteral("."))) {
+        return makeErrorReply(QStringLiteral("Unable to create parent directory for flag file: ") + parentDir.path());
+    }
+
+    QFile flagFile(flagFilePath);
+    if (!flagFile.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
+        return makeErrorReply(QStringLiteral("Unable to write flag file: ") + flagFile.errorString());
+    }
+
+    QTextStream stream(&flagFile);
+    stream << "Plasma Setup completed at " << QDateTime::currentDateTimeUtc().toString(Qt::ISODate) << "Z\n";
+    flagFile.close();
+
+    if (chmod(flagFilePath.toUtf8().constData(), 0644) != 0) {
+        return makeErrorReply(QStringLiteral("Unable to set permissions on flag file: errno ") + QString::number(errno));
+    }
+
+    return ActionReply::SuccessReply();
+}
+
 ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap &args)
 {
     if (!args.contains(QStringLiteral("username")) || !args[QStringLiteral("username")].canConvert<QString>()) {
@@ -320,30 +348,6 @@ ActionReply PlasmaSetupAuthHelper::createnewuserautostarthook(const QVariantMap 
     } catch (const std::runtime_error &e) {
         return makeErrorReply(QStringLiteral("Failed to drop privileges: ") + QString::fromStdString(e.what()));
     }
-}
-
-ActionReply PlasmaSetupAuthHelper::disablesystemdunit(const QVariantMap &args)
-{
-    Q_UNUSED(args);
-
-    ActionReply actionReply;
-
-    QDBusInterface systemdInterface(QStringLiteral("org.freedesktop.systemd1"),
-                                    QStringLiteral("/org/freedesktop/systemd1"),
-                                    QStringLiteral("org.freedesktop.systemd1.Manager"),
-                                    QDBusConnection::systemBus());
-
-    QStringList unitFiles = {QStringLiteral("plasma-setup.service")};
-    bool runtime = false; // Disable permanently, not just for runtime
-
-    QDBusPendingReply<> dbusReply = systemdInterface.call(QStringLiteral("DisableUnitFiles"), unitFiles, runtime);
-    dbusReply.waitForFinished();
-
-    if (dbusReply.isError()) {
-        return makeErrorReply(QStringLiteral("Unable to disable systemd unit: ") + dbusReply.error().message());
-    }
-
-    return ActionReply::SuccessReply();
 }
 
 ActionReply PlasmaSetupAuthHelper::removeautologin(const QVariantMap &args)

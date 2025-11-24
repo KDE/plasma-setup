@@ -19,9 +19,12 @@ Description=Plasma Setup - Out-of-Box / First-Run setup wizard
 After=systemd-user-sessions.service plymouth-quit.service systemd-logind.service
 Before=display-manager.service
 
+# Only run if the `plasma-setup-done` flag file does not exist.
+ConditionPathExists=!${KDE_INSTALL_FULL_SYSCONFDIR}/plasma-setup-done
+
 [Service]
 Type=oneshot
-ExecStart=${CMAKE_INSTALL_FULL_LIBEXECDIR}/plasma-setup-bootutil --first-run
+ExecStart=${CMAKE_INSTALL_FULL_LIBEXECDIR}/plasma-setup-bootutil
 
 [Install]
 WantedBy=multi-user.target

@@ -22,8 +22,8 @@ polkit.addRule(function (action, subject) {
         "org.freedesktop.locale1.set-keyboard", // Keyboard layout
         "org.freedesktop.locale1.set-locale", // System locale
         "org.kde.plasmasetup.createuser", // User creation
+        "org.kde.plasmasetup.createflagfile", // Create completion flag file
         "org.kde.plasmasetup.createnewuserautostarthook", // Create autostart hook for new user to perform cleanup tasks
-        "org.kde.plasmasetup.disablesystemdunit", // Disable plasma-setup systemd unit now that setup is complete
         "org.kde.plasmasetup.removeautologin", // Remove SDDM autologin
         "org.kde.plasmasetup.setnewuserglobaltheme", // Set global theme for new user
         "org.kde.plasmasetup.setnewuserdisplayscaling", // Set display scaling for new user

@@ -70,6 +70,11 @@ Description[zh_CN]=创建初始用户账户
 Description[zh_TW]=建立初始使用者帳號
 Policy=no
 
+[org.kde.plasmasetup.createflagfile]
+Name=Create Completion Flag File
+Description=Write the /etc/plasma-setup-done marker to prevent rerunning setup
+Policy=no
+
 [org.kde.plasmasetup.createnewuserautostarthook]
 Name=Create New User Autostart Hook
 Name[ar]=إنشاء خطاف بدء آلي لمستخدم جديد
@@ -119,57 +124,6 @@ Description[tr]=Yeni oluşturulan kullanıcı için bir kendiliğinden başlatma
 Description[uk]=Створити скрипт автозапуску для новоствореного користувача
 Description[zh_CN]=为新创建的用户创建一个自动启动钩子
 Description[zh_TW]=為新建立的使用者建立自動啟動掛鉤
-Policy=no
-
-[org.kde.plasmasetup.disablesystemdunit]
-Name=Disable Systemd Unit
-Name[ar]=تعطيل وحدة Systemd
-Name[az]=Systemd modulunu söndürün
-Name[ca]=Desactiva la unitat del Systemd
-Name[ca@valencia]=Desactiva la unitat de Systemd
-Name[de]=Systemd-Unit deaktivieren
-Name[es]=Desactivar la unidad systemd
-Name[eu]=Ezgaitu Systemd Unitatea
-Name[fi]=Poista systemd-yksikkö käytöstä
-Name[fr]=Désactiver le module « systemd »
-Name[he]=השבתת יחידת systemd
-Name[it]=Disabilita l'unità di Systemd
-Name[ka]=Systemd-ის ერთეულის გამორთვა
-Name[ko]=systemd 유닛 비활성화
-Name[lv]=Izslēgt „Systemd“ vienību
-Name[nl]=Systemd-eenheid uitschakelen
-Name[pl]=Wyłącz jednostkę systemd
-Name[pt_BR]=Desabilitar unidade do systemd
-Name[sl]=Onemogoči enoto Systemd
-Name[sv]=Inaktivera Systemd-enhet
-Name[tr]=Systemd Birimini Devre Dışı Bırak
-Name[uk]=Вимкнути модуль Systemd
-Name[zh_CN]=禁用 Systemd 单元
-Name[zh_TW]=停用 systemd 單元
-Description=Disable the systemd unit for Plasma Setup
-Description[ar]=تعطيل وحدة systemd لإعداد بلازما
-Description[az]=Plasma qurulmasl üçün systemd modulunu qeyri aktiv etmək
-Description[ca]=Desactiva la unitat del «systemd» per a la configuració del Plasma
-Description[ca@valencia]=Desactiva la unitat de «systemd» per a la configuració de Plasma
-Description[de]=Die systemd-Unit für Plasma Setup deaktivieren
-Description[es]=Desactivar la unidad systemd para la configuración de Plasma
-Description[eu]=Ezgaitu Plasma Ezarpenerako systemd unitatea
-Description[fi]=Poista Plasma-asetuksen systemd-yksikkö käytöstä
-Description[fr]=Désactiver le module « systemd » pour la configuration de Plasma
-Description[he]=השבתת יחידת systemd להגדרות פלזמה
-Description[it]=Disabilitare l'unità systemd per Plasma Setup
-Description[ka]=Systemd-ის ერთეულის გამორთვა Plasma-ის მორგებისთვის
-Description[ko]=Plasma 초기 설정 systemd 유닛 비활성화
-Description[lv]=Izslēgt „systemd“ vienību „Plasma Setup“ darbībai
-Description[nl]=Systemd-eenheid uitschakelen voor Plasma opzet
-Description[pl]=Wyłącz jednostkę systemd dla Ustawień Plazmy
-Description[pt_BR]=Desabilitar a unidade systemd para a configuração do Plasma
-Description[sl]=Onemogoči enoto systemd za Plasma Setup
-Description[sv]=Inaktivera systemd-enhet för inställning av Plasma
-Description[tr]=Plasma İlk Kullanım Yardımcısı için Systemd birimini devre dışı bırakın
-Description[uk]=Вимкнути модуль systemd для налаштовування Плазми
-Description[zh_CN]=禁用 Plasma 安装的 systemd 单元
-Description[zh_TW]=將《Plasma 初始設定》的 systemd 單元停用
 Policy=no
 
 [org.kde.plasmasetup.removeautologin]

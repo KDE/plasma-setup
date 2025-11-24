@@ -55,6 +55,18 @@ sudo systemctl enable plasma-setup.service
 
 With the systemd service enabled, reboot your system and the initial setup will run automatically.
 
+### Completion flag file
+
+When setup finishes successfully it creates a flag file to indicate this at
+`/etc/plasma-setup-done`. The systemd unit checks for this flag and only runs if
+it does not exist, so the out-of-box experience only runs once. If you
+intentionally want to re-run the wizard (for example while developing Plasma
+Setup), remove the file manually and reboot:
+
+```bash
+sudo rm /etc/plasma-setup-done
+```
+
 -----
 
 The project is under active development and is not yet ready for production use.

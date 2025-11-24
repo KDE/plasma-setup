@@ -40,11 +40,6 @@ public:
 
 private:
     /**
-     * Disables the systemd unit that runs Plasma Setup on boot.
-     */
-    void disableSystemdUnit();
-
-    /**
      * Logs out of the plasma-setup user.
      *
      * This will cause the new user to be logged in automatically, since the autologin is set for the new user.
@@ -58,6 +53,11 @@ private:
      * facilitating the transition from the plasma-setup user to the newly created user account.
      */
     void setNewUserTempAutologin();
+
+    /**
+     * Creates the completion flag file (usually /etc/plasma-setup-done) to indicate that initial setup is complete.
+     */
+    void createCompletionFlag();
 
     /**
      * Creates an autostart hook for the new user to cleanup the initial setup configuration.
