@@ -1,4 +1,4 @@
-# German translation for kiss.
+# German translation for plasma-setup.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kiss package.
 # SPDX-FileCopyrightText: 2025 Flori G <Renner03@protonmail.com>
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: org.kde.initialsystemsetup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-20 00:44+0000\n"
-"PO-Revision-Date: 2025-09-06 23:17+0200\n"
+"PO-Revision-Date: 2025-11-13 20:29+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -53,31 +53,25 @@ msgstr ""
 "starkes Passwort für diesen Benutzer."
 
 #: modules/account/contents/ui/main.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Full Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Vollständiger Name"
 
 #: modules/account/contents/ui/main.qml:113
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Benutzername"
 
 #: modules/account/contents/ui/main.qml:132
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Passwort"
 
 #: modules/account/contents/ui/main.qml:146
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Passwort bestätigen"
@@ -205,6 +199,9 @@ msgid ""
 "Your device is now ready. <br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
+"Ihr Gerät ist jetzt bereit.<br /><br />Nach einem Klick auf <b>Abschließen</"
+"b> können Sie sich mit Ihrem neuen Benutzerkonto anmelden.<br /><br />Viel "
+"Spaß mit <b>%1</b>!"
 
 #: modules/keyboard/contents/ui/main.qml:161
 #, kde-format
@@ -237,10 +234,9 @@ msgid "Dark Theme"
 msgstr "Dunkles Design"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
+#, kde-format
 msgid "Select your time zone."
-msgstr "Wählen Sie Ihre Zeitzone und Ihr bevorzugtes Zeitformat."
+msgstr "Wählen Sie Ihre Zeitzone."
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
@@ -265,7 +261,7 @@ msgstr "Ungültige Eingabe."
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "Plasma Setup"
 
 #: src/main.cpp:37
 #, kde-format
@@ -278,12 +274,10 @@ msgid "© 2021-2024 KDE Community"
 msgstr "© 2021–2024 KDE Gemeinschaft"
 
 #: src/main.cpp:44
-#, fuzzy, kde-format
-#| msgid "Remove the initial setup autologin configuration."
+#, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr ""
-"Die Konfiguration zum automatischen Anmelden für die Ersteinrichtung "
-"entfernen."
+"Die Konfiguration zum automatischen Anmelden für Plasma Setup entfernen."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
