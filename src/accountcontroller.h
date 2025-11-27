@@ -7,6 +7,7 @@
 
 #include <QObject>
 #include <QQmlEngine>
+#include <QStringList>
 #include <qqmlintegration.h>
 
 class AccountController : public QObject
@@ -89,4 +90,14 @@ private:
     QString m_username;
     QString m_fullName;
     QString m_password;
+
+    /**
+     * Retrieves from the configuration the list of groups for newly created users.
+     *
+     * If no groups are specified by the configuration, falls back to the `wheel`
+     * group which most distributions use for admin/sudo access.
+     *
+     * @return A list of group names.
+     */
+    QStringList userGroupsFromConfig() const;
 };

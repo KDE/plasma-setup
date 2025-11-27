@@ -7,6 +7,7 @@
 #include <KAuth/ActionReply>
 
 #include <QTemporaryFile>
+#include <QVariant>
 
 using namespace KAuth;
 
@@ -110,6 +111,11 @@ public Q_SLOTS:
     ActionReply setnewusertempautologin(const QVariantMap &args);
 
 private:
+    /**
+     * Adds a user to the provided supplementary groups using usermod.
+     */
+    ActionReply addUserToExtraGroups(const QString &username, const QVariant &extraGroupsVariant);
+
     /**
      * Copies a source file to a temporary file with permissions that allow the new user to read it.
      *

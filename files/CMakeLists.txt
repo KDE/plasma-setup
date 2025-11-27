@@ -29,3 +29,8 @@ install(
     FILES ${CMAKE_CURRENT_BINARY_DIR}/plasma-setup.desktop
     DESTINATION ${CMAKE_INSTALL_DATADIR}/plasma-setup
 )
+
+install(
+    FILES plasmasetuprc
+    DESTINATION ${KDE_INSTALL_FULL_CONFDIR}
+)
