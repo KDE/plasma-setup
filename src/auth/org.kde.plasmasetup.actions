@@ -72,7 +72,25 @@ Policy=no
 
 [org.kde.plasmasetup.createflagfile]
 Name=Create Completion Flag File
+Name[ca]=Crea un fitxer d'indicadors de compleció
+Name[es]=Crear archivo indicador de compleción
+Name[he]=יצירת קובץ דגלון השלמה
+Name[ka]=დასრულების ალმის ფაილის შექმნა
+Name[nl]=Vlagbestand van voltooiing aanmaken
+Name[pt_BR]=Criar arquivo de marcador de completude
+Name[sl]=Ustvari datoteko z zastavicami za dokončanje
+Name[tr]=Tamamlanma Bayrağı Dosyası Oluştur
+Name[uk]=Створити файл прапорця завершення
 Description=Write the /etc/plasma-setup-done marker to prevent rerunning setup
+Description[ca]=Escriu el marcador /etc/plasma-setup-done per a evitar tornar a executar la configuració
+Description[es]=Escribir el marcador /etc/plasma-setup-done para no repetir la configuración
+Description[he]=לכתוב את הסמן ‎/etc/plasma-setup-done כדי למנוע את הרצת תוכנית ההתקנה שוב
+Description[ka]=/etc/plasma-setup-dome ფაილის ჩაწერა მორგების პროგრამის თავიდან გაშვების თავიდან ასაცილებლად
+Description[nl]=Schrijf de /etc/plasma-setup-done markering om opzet opnieuw uit te voeren te voorkomen
+Description[pt_BR]=Escreve o marcador /etc/plasma-setup-done para prevenir a reexecução da configuração
+Description[sl]=Zapiši označevalnik /etc/plasma-setup-done, da se prepreči ponovni zagon namestitvenega programa
+Description[tr]=Kurulumu yeniden çalıştırmayı önlemek için /etc/plasma-setup-done imleyicisini yazın
+Description[uk]=Записати позначку /etc/plasma-setup-done для запобігання повторному запуску налаштовування
 Policy=no
 
 [org.kde.plasmasetup.createnewuserautostarthook]
