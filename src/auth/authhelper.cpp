@@ -13,6 +13,7 @@
 
 #include <QDir>
 #include <QProcess>
+#include <QRegularExpression>
 #include <QStandardPaths>
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusPendingReply>
@@ -116,6 +117,42 @@ static QString findExecutable(const QString &executableName)
     return result;
 }
 
+/**
+ * Validate that a group name uses only safe characters and exists on the system.
+ *
+ * @return Empty string if the group is valid, or an error description otherwise.
+ */
+static QString validateGroupName(const QString &group)
+{
+    static const QRegularExpression allowedPattern(QStringLiteral("^[A-Za-z0-9_]+$"));
+    if (!allowedPattern.match(group).hasMatch()) {
+        return QStringLiteral("Invalid group name: %1").arg(group);
+    }
+
+    struct group grp;
+    struct group *result = nullptr;
+    QByteArray groupBytes = group.toLocal8Bit();
+    long bufsize = sysconf(_SC_GETGR_R_SIZE_MAX);
+    if (bufsize <= 0) {
+        bufsize = 16384; // fallback size
+    }
+    if (bufsize > INT_MAX) {
+        return QStringLiteral("System group buffer size too large: %1").arg(bufsize);
+    }
+    QByteArray buf(static_cast<int>(bufsize), 0);
+
+    const int ret = getgrnam_r(groupBytes.constData(), &grp, buf.data(), buf.size(), &result);
+    if (ret != 0) {
+        return QStringLiteral("System error while looking up group %1: error code %2").arg(group).arg(ret);
+    }
+
+    if (result == nullptr) {
+        return QStringLiteral("Unknown group: %1").arg(group);
+    }
+
+    return QString();
+}
+
 ActionReply PlasmaSetupAuthHelper::createuser(const QVariantMap &args)
 {
     // Extract and validate input arguments.
@@ -125,7 +162,7 @@ ActionReply PlasmaSetupAuthHelper::createuser(const QVariantMap &args)
     const QVariant usernameVariant = args.value(QStringLiteral("username"));
     const QVariant fullNameVariant = args.value(QStringLiteral("fullName"));
 
-    // Ensure required arguments are present and can be converted to strings
+    // Ensure required arguments are present and can be converted
     if (!usernameVariant.canConvert<QString>() || !args.value(QStringLiteral("password")).canConvert<QByteArray>()) {
         return makeErrorReply(QStringLiteral("Username or password argument is missing or invalid."));
     }
@@ -189,6 +226,11 @@ ActionReply PlasmaSetupAuthHelper::createuser(const QVariantMap &args)
         const QString stderrOutput = QString::fromLocal8Bit(useraddProcess.readAllStandardError()).trimmed();
         const QString stdoutOutput = QString::fromLocal8Bit(useraddProcess.readAllStandardOutput()).trimmed();
         return makeErrorReply(QStringLiteral("useradd failed with exit code %1: %2 %3").arg(useraddProcess.exitCode()).arg(stderrOutput).arg(stdoutOutput));
+    }
+
+    const ActionReply extraGroupReply = addUserToExtraGroups(username, args.value(QStringLiteral("extraGroups")));
+    if (extraGroupReply.type() != ActionReply::SuccessType) {
+        return extraGroupReply;
     }
 
     // We set the password separately using chpasswd to avoid exposing it in command-line arguments
@@ -514,6 +556,66 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
     stream << "Session=plasma\n";
     stream << "Relogin=true\n"; // Set Relogin to true for temporary autologin
     file.close();
+
+    return ActionReply::SuccessReply();
+}
+
+ActionReply PlasmaSetupAuthHelper::addUserToExtraGroups(const QString &username, const QVariant &extraGroupsVariant)
+{
+    if (!extraGroupsVariant.canConvert<QStringList>()) {
+        return makeErrorReply(QStringLiteral("Extra groups argument is missing or invalid."));
+    }
+
+    QStringList extraGroups;
+
+    const QStringList extraGroupsVariantList = extraGroupsVariant.toStringList();
+    extraGroups.reserve(extraGroupsVariantList.size());
+
+    for (const QString &group : extraGroupsVariantList) {
+        const QString trimmedGroup = group.trimmed();
+        if (!trimmedGroup.isEmpty()) {
+            const QString validationResult = validateGroupName(trimmedGroup);
+            if (!validationResult.isEmpty()) {
+                return makeErrorReply(validationResult);
+            }
+            extraGroups << trimmedGroup;
+        }
+    }
+
+    if (extraGroups.isEmpty()) {
+        return ActionReply::SuccessReply();
+    }
+
+    const QString usermodBinary = findExecutable(QStringLiteral("usermod"));
+    if (usermodBinary.isEmpty()) {
+        return makeErrorReply(QStringLiteral("Could not locate usermod executable for adding groups."));
+    }
+
+    QStringList usermodArguments;
+    usermodArguments << QStringLiteral("-a") << QStringLiteral("-G") << extraGroups.join(QLatin1Char(','));
+    usermodArguments << username;
+
+    QProcess usermodProcess;
+    usermodProcess.start(usermodBinary, usermodArguments);
+
+    if (!usermodProcess.waitForStarted()) {
+        return makeErrorReply(QStringLiteral("Failed to start usermod: ") + usermodProcess.errorString());
+    }
+
+    if (!usermodProcess.waitForFinished()) {
+        usermodProcess.kill();
+        usermodProcess.waitForFinished();
+        return makeErrorReply(QStringLiteral("usermod timed out when adding extra groups."));
+    }
+
+    if (usermodProcess.exitStatus() != QProcess::NormalExit || usermodProcess.exitCode() != 0) {
+        const QString stderrOutput = QString::fromLocal8Bit(usermodProcess.readAllStandardError()).trimmed();
+        const QString stdoutOutput = QString::fromLocal8Bit(usermodProcess.readAllStandardOutput()).trimmed();
+        return makeErrorReply(QStringLiteral("usermod failed with exit code %1 while adding extra groups: stderr: %2 stdout: %3")
+                                  .arg(usermodProcess.exitCode())
+                                  .arg(stderrOutput)
+                                  .arg(stdoutOutput));
+    }
 
     return ActionReply::SuccessReply();
 }

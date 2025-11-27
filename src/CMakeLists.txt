@@ -56,6 +56,7 @@ target_link_libraries(plasma-setup
         Qt::DBus
         Qt::Svg
         KF6::AuthCore
+        KF6::ConfigCore
         KF6::I18n
         KF6::I18nQml
         KF6::Package
@@ -63,6 +64,10 @@ target_link_libraries(plasma-setup
         PW::KWorkspace
         componentsplugin
         componentspluginplugin
+)
+
+target_include_directories(plasma-setup PRIVATE 
+    ${CMAKE_BINARY_DIR} # Allow include of config-plasma-setup.h
 )
 
 install(TARGETS plasma-setup RUNTIME DESTINATION ${CMAKE_INSTALL_LIBEXECDIR})

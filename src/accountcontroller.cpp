@@ -5,11 +5,14 @@
 
 #include "accountcontroller.h"
 
+#include "config-plasma-setup.h"
 #include "plasmasetup_debug.h"
 #include "usernamevalidator.h"
 
 #include <KAuth/Action>
 #include <KAuth/ExecuteJob>
+#include <KConfig>
+#include <KConfigGroup>
 #include <KLocalizedString>
 
 #include <QApplication>
@@ -88,6 +91,7 @@ bool AccountController::createUser()
         {QStringLiteral("username"), m_username},
         {QStringLiteral("fullName"), m_fullName},
         {QStringLiteral("password"), m_password},
+        {QStringLiteral("extraGroups"), userGroupsFromConfig()},
     });
 
     KAuth::ExecuteJob *job = action.execute();
@@ -126,6 +130,31 @@ QString AccountController::usernameValidationMessage(const QString &username) co
     const auto result = PlasmaSetupValidation::Account::validateUsername(username);
 
     return PlasmaSetupValidation::Account::usernameValidationMessage(result);
+}
+
+QStringList AccountController::userGroupsFromConfig() const
+{
+    QStringList parsedGroups;
+
+    const QString configPath = QString::fromUtf8(PLASMA_SETUP_CONFIG_PATH);
+    if (!configPath.isEmpty()) {
+        KConfig config(configPath, KConfig::SimpleConfig);
+        KConfigGroup accountsGroup(&config, QStringLiteral("Accounts"));
+        const QString configuredGroups = accountsGroup.readEntry(QStringLiteral("UserGroups"), QString());
+
+        if (!configuredGroups.isEmpty()) {
+            const auto groupNames = configuredGroups.split(QLatin1Char(','), Qt::SkipEmptyParts);
+            for (const QString &groupName : groupNames) {
+                parsedGroups << groupName.trimmed();
+            }
+        }
+    }
+
+    if (parsedGroups.isEmpty()) {
+        parsedGroups << QStringLiteral("wheel");
+    }
+
+    return parsedGroups;
 }
 
 #include "moc_accountcontroller.cpp"

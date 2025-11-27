@@ -67,6 +67,12 @@ Setup), remove the file manually and reboot:
 sudo rm /etc/plasma-setup-done
 ```
 
+### Configuration
+
+Plasma Setup can be customized via a system-wide configuration file located at
+`/etc/xdg/plasmasetuprc`. This file allows administrators to set default values
+and preferences, as well as control certain aspects of the setup process.
+
 -----
 
 The project is under active development and is not yet ready for production use.
