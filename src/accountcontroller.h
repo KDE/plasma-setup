@@ -19,6 +19,11 @@ class AccountController : public QObject
     Q_PROPERTY(QString fullName READ fullName WRITE setFullName NOTIFY fullNameChanged)
     Q_PROPERTY(QString password READ password WRITE setPassword NOTIFY passwordChanged)
 
+    /**
+     * Indicates whether at least one regular (non-system) user already exists on the system.
+     */
+    Q_PROPERTY(bool hasExistingUsers READ hasExistingUsers NOTIFY hasExistingUsersChanged)
+
 public:
     ~AccountController() override;
 
@@ -68,10 +73,16 @@ public:
      */
     Q_INVOKABLE QString usernameValidationMessage(const QString &username) const;
 
+    /**
+     * Returns whether the controller detected any pre-existing regular users.
+     */
+    bool hasExistingUsers() const;
+
 Q_SIGNALS:
     void usernameChanged();
     void fullNameChanged();
     void passwordChanged();
+    void hasExistingUsersChanged();
 
 private:
     /**
@@ -89,4 +100,34 @@ private:
     QString m_username;
     QString m_fullName;
     QString m_password;
+
+    /**
+     * Cached result of the existing-user detection. Defaults to false so the account page shows.
+     */
+    bool m_hasExistingUsers = false;
+
+    /**
+     * Runs the detection routine once during construction and emits when the value changes.
+     */
+    void initializeExistingUserFlag();
+
+    /**
+     * Checks if overriding account creation behavior via environment variable is requested.
+     *
+     * Reads the PLASMA_SETUP_USER_CREATION_OVERRIDE environment variable, which can be set to
+     * "enable" to force account creation to be enabled regardless of existing users. Useful for testing.
+     *
+     * @return true if an override was applied, false otherwise.
+     */
+    bool isAccountCreationOverrideEnabled();
+
+    /**
+     * Parses /etc/login.defs for UID_MIN, falling back to a sensible default.
+     */
+    int regularUserUidThreshold() const;
+
+    /**
+     * Enumerates passwd entries to determine if a regular user already exists.
+     */
+    bool detectExistingUsers(int minUid) const;
 };

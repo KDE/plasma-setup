@@ -27,6 +27,11 @@ public:
     QString distroName() const;
 
     /**
+     * Returns the localized completion message shown on the final page.
+     */
+    Q_INVOKABLE QString finishedMessage() const;
+
+    /**
      * Completes the initial setup process.
      */
     Q_INVOKABLE void finish();
@@ -39,6 +44,14 @@ public:
     void disablePlasmaSetupAutologin();
 
 private:
+    /**
+     * Performs the finishing steps specific to the creation of the new user.
+     *
+     * Does not handle the system-wide completion steps such as network configuration, keyboard layout, etc.
+     * This separation is needed for when Plasma Setup is run in a context where no user creation is needed.
+     */
+    void doUserCreationSteps();
+
     /**
      * Logs out of the plasma-setup user.
      *

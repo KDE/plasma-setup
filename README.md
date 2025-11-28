@@ -67,6 +67,16 @@ Setup), remove the file manually and reboot:
 sudo rm /etc/plasma-setup-done
 ```
 
+### Development Overrides
+
+For development and testing purposes it may be useful to override some of the
+behaviors of Plasma Setup. The following environment variables can be set to
+modify the behavior:
+
+- `PLASMA_SETUP_USER_CREATION_OVERRIDE=enable`: Forces the account creation
+  page to always be shown, whereas normally it would be skipped if existing
+  users are detected.
+
 -----
 
 The project is under active development and is not yet ready for production use.
