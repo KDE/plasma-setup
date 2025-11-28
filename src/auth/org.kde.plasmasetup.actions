@@ -72,6 +72,7 @@ Policy=no
 
 [org.kde.plasmasetup.createflagfile]
 Name=Create Completion Flag File
+Name[ar]=أنشئ ملف علامة الإكمال
 Name[ca]=Crea un fitxer d'indicadors de compleció
 Name[es]=Crear archivo indicador de compleción
 Name[he]=יצירת קובץ דגלון השלמה
@@ -82,6 +83,7 @@ Name[sl]=Ustvari datoteko z zastavicami za dokončanje
 Name[tr]=Tamamlanma Bayrağı Dosyası Oluştur
 Name[uk]=Створити файл прапорця завершення
 Description=Write the /etc/plasma-setup-done marker to prevent rerunning setup
+Description[ar]=اكتب علامة /etc/plasma-setup-done لمنع إعادة تشغيل الإعداد
 Description[ca]=Escriu el marcador /etc/plasma-setup-done per a evitar tornar a executar la configuració
 Description[es]=Escribir el marcador /etc/plasma-setup-done para no repetir la configuración
 Description[he]=לכתוב את הסמן ‎/etc/plasma-setup-done כדי למנוע את הרצת תוכנית ההתקנה שוב
