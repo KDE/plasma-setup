@@ -83,6 +83,8 @@ Name[pt_BR]=Criar arquivo de marcador de completude
 Name[sl]=Ustvari datoteko z zastavicami za dokončanje
 Name[tr]=Tamamlanma Bayrağı Dosyası Oluştur
 Name[uk]=Створити файл прапорця завершення
+Name[zh_CN]=创建补全标志文件
+Name[zh_TW]=建立完成旗標檔案
 Description=Write the /etc/plasma-setup-done marker to prevent rerunning setup
 Description[ar]=اكتب علامة /etc/plasma-setup-done لمنع إعادة تشغيل الإعداد
 Description[ca]=Escriu el marcador /etc/plasma-setup-done per a evitar tornar a executar la configuració
@@ -95,6 +97,8 @@ Description[pt_BR]=Escreve o marcador /etc/plasma-setup-done para prevenir a ree
 Description[sl]=Zapiši označevalnik /etc/plasma-setup-done, da se prepreči ponovni zagon namestitvenega programa
 Description[tr]=Kurulumu yeniden çalıştırmayı önlemek için /etc/plasma-setup-done imleyicisini yazın
 Description[uk]=Записати позначку /etc/plasma-setup-done для запобігання повторному запуску налаштовування
+Description[zh_CN]=写入 /etc/plasma-setup-done 标志以防止反复运行初始设置向导
+Description[zh_TW]=寫入 /etc/plasma-setup-done 檔案來標記設定已完成，以避免重複執行初始設定
 Policy=no
 
 [org.kde.plasmasetup.createnewuserautostarthook]
