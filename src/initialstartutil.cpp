@@ -9,6 +9,7 @@
 
 #include <KAuth/Action>
 #include <KAuth/ExecuteJob>
+#include <KLocalizedString>
 
 #include <QApplication>
 
@@ -26,8 +27,33 @@ QString InitialStartUtil::distroName() const
     return m_osrelease.name();
 }
 
+QString InitialStartUtil::finishedMessage() const
+{
+    if (m_accountController->hasExistingUsers()) {
+        return i18nc("%1 is the distro name", "Your device is now ready.<br /><br />Enjoy <b>%1</b>!", m_osrelease.name());
+    }
+
+    return i18nc(
+        "%1 is the distro name",
+        "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!",
+        m_osrelease.name() //
+    );
+}
+
 void InitialStartUtil::finish()
 {
+    doUserCreationSteps();
+    createCompletionFlag();
+    logOut();
+}
+
+void InitialStartUtil::doUserCreationSteps()
+{
+    if (m_accountController->hasExistingUsers()) {
+        qCInfo(PlasmaSetup) << "Skipping user creation steps since existing users were detected.";
+        return;
+    }
+
     const bool userCreated = m_accountController->createUser();
     if (!userCreated) {
         qCWarning(PlasmaSetup) << "Failed to create user:" << m_accountController->username();
@@ -46,10 +72,6 @@ void InitialStartUtil::finish()
     DisplayUtil displayUtil;
     displayUtil.setGlobalThemeForNewUser(m_window, m_accountController->username());
     displayUtil.setScalingForNewUser(m_window, m_accountController->username());
-
-    createCompletionFlag();
-
-    logOut();
 }
 
 void InitialStartUtil::disablePlasmaSetupAutologin()

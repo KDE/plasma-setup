@@ -65,6 +65,8 @@ feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAG
 
 ################# build and install #################
 
+set(LOGIN_DEFS_PATH "/etc/login.defs" CACHE PATH "Path to the login.defs file")
+
 configure_file(config-plasma-setup.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-plasma-setup.h)
 
 ecm_set_disabled_deprecation_versions(

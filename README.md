@@ -73,6 +73,28 @@ Plasma Setup can be customized via a system-wide configuration file located at
 `/etc/xdg/plasmasetuprc`. This file allows administrators to set default values
 and preferences, as well as control certain aspects of the setup process.
 
+#### Build-time options
+
+| Option            | Default           | Description                                                             |
+|-------------------|-------------------|-------------------------------------------------------------------------|
+| `LOGIN_DEFS_PATH` | `/etc/login.defs` | Path Plasma Setup reads to determine the minimum UID for regular users. |
+
+Override any option at configure time, for example:
+
+```bash
+cmake -B build/ -DLOGIN_DEFS_PATH=/usr/lib/sysusers/login.defs
+```
+
+### Development Overrides
+
+For development and testing purposes it may be useful to override some of the
+behaviors of Plasma Setup. The following environment variables can be set to
+modify the behavior:
+
+- `PLASMA_SETUP_USER_CREATION_OVERRIDE=enable`: Forces the account creation
+  page to always be shown, whereas normally it would be skipped if existing
+  users are detected.
+
 -----
 
 The project is under active development and is not yet ready for production use.
