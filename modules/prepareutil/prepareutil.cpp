@@ -21,18 +21,13 @@ PrepareUtil::PrepareUtil(QObject *parent)
     connect(new KScreen::GetConfigOperation(), &KScreen::GetConfigOperation::finished, this, [this](auto *op) {
         m_config = qobject_cast<KScreen::GetConfigOperation *>(op)->config();
 
-        int scaling = 100;
-
-        // to determine the scaling value:
-        // try to take the primary display's scaling, otherwise use the scaling of any of the displays
-        for (const KScreen::OutputPtr &output : m_config->outputs()) {
-            scaling = output->scale() * 100;
-            if (output->isPrimary()) {
-                break;
-            }
+        const KScreen::OutputPtr primaryOutput = m_config->primaryOutput();
+        if (primaryOutput) {
+            m_scaling = primaryOutput->scale() * 100;
+        } else {
+            m_scaling = 100;
         }
 
-        m_scaling = scaling;
         Q_EMIT scalingChanged();
     });
 
@@ -51,15 +46,11 @@ void PrepareUtil::setScaling(int scaling)
         return;
     }
 
-    const auto outputs = m_config->outputs();
+    // TODO: Find the display the app is on and only set the scaling for that display instead.
+    // Setting for all displays is not ideal since they can have different densities.
+    const auto output = m_config->primaryOutput();
     qreal scalingNum = ((double)scaling) / 100;
-
-    for (KScreen::OutputPtr output : outputs) {
-        // TODO: Find the display the app is on and only set the scaling for that display instead.
-        // Setting for all displays is not ideal since they can have different densities.
-        if (!output->isPrimary()) {
-            continue;
-        }
+    if (output) {
         output->setScale(scalingNum);
     }
 
