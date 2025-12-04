@@ -21,6 +21,10 @@ PrepareUtil::PrepareUtil(QObject *parent)
     connect(new KScreen::GetConfigOperation(), &KScreen::GetConfigOperation::finished, this, [this](auto *op) {
         m_config = qobject_cast<KScreen::GetConfigOperation *>(op)->config();
 
+        if (!m_config) {
+            return;
+        }
+
         const KScreen::OutputPtr primaryOutput = m_config->primaryOutput();
         if (primaryOutput) {
             m_scaling = primaryOutput->scale() * 100;
@@ -50,9 +54,11 @@ void PrepareUtil::setScaling(int scaling)
     // Setting for all displays is not ideal since they can have different densities.
     const auto output = m_config->primaryOutput();
     qreal scalingNum = ((double)scaling) / 100;
-    if (output) {
-        output->setScale(scalingNum);
+    if (!output) {
+        return;
     }
+
+    output->setScale(scalingNum);
 
     auto setop = new KScreen::SetConfigOperation(m_config, this);
     setop->exec();
