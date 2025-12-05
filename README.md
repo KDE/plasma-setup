@@ -95,6 +95,15 @@ modify the behavior:
   page to always be shown, whereas normally it would be skipped if existing
   users are detected.
 
+### Creating Custom Modules (for Distributions/Administrators)
+
+Plasma Setup supports extending the wizard with custom pages via KPackage
+modules. These modules can provide QML user interfaces and optional C++
+backends.
+
+For a complete guide on creating custom modules, see
+[`docs/CUSTOM_MODULES.md`](docs/CUSTOM_MODULES.md).
+
 -----
 
 The project is under active development and is not yet ready for production use.
