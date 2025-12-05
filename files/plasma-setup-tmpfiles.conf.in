@@ -30,5 +30,21 @@ f /run/plasma-setup/.config/kscreenlockerrc - - - - [Daemon]\nAutolock=false\nTi
 # Disable KWallet so it doesn't bother the user during initial setup
 f /run/plasma-setup/.config/kwalletrc - - - - [Wallet]\nEnabled=false
 
+# Prevent Plasma Desktop from populating with default widgets during initial
+# setup, e.g. no task manager, no system tray, no applications launcher, etc.
+# 
+# Putting [$i] at the top of the file locks it via KConfig's Kiosk mechanism.
+f /run/plasma-setup/.config/plasma-org.kde.plasma.desktop-appletsrc - - - - [$i]
+
 # Recursively set the ownership of the home directory
 Z /run/plasma-setup 0750 plasma-setup plasma-setup - -
+
+
+# ------------------ Files that should be root owned follow ------------------ #
+
+# Some files should be owned by root to prevent them being modified, e.g. with
+# defaults when the plasma-setup user first logs in.
+
+# Copy the custom global shortcuts file
+C /run/plasma-setup/.config/kglobalshortcutsrc - - - - ${CMAKE_INSTALL_FULL_DATADIR}/plasma-setup/kglobalshortcutsrc
+# z /run/plasma-setup/.config/kglobalshortcutsrc 0644 root root - -
