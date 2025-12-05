@@ -120,6 +120,8 @@ For QML-only modules:
 kpackage_install_package(. org.kde.plasmasetup.yourmodule packages plasma)
 ```
 
+The kpackage will end up installed under `/usr/share/plasma/packages/org.kde.plasmasetup.yourmodule/`.
+
 ## Adding C++ Backend Utilities
 
 For modules needing compiled code, create a
