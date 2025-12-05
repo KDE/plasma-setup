@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:44+0000\n"
+"POT-Creation-Date: 2025-12-05 00:44+0000\n"
 "PO-Revision-Date: 2025-11-20 18:43+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -214,17 +214,7 @@ msgstr "الرجاء اختر لغتك المفضلة"
 msgid "Search languages…"
 msgstr "ابحث اللغات…"
 
-#: modules/prepare/contents/ui/main.qml:38
-#, kde-format
-msgid "Adjust the size of elements on the screen."
-msgstr "اضبط حجم العناصر على الشاشة."
-
-#: modules/prepare/contents/ui/main.qml:49
-#, kde-format
-msgid "Display Scaling"
-msgstr "تحجيم العرض"
-
-#: modules/prepare/contents/ui/main.qml:74
+#: modules/prepare/contents/ui/main.qml:76
 #, kde-format
 msgid "Dark Theme"
 msgstr "سمة مظلمة"
@@ -312,6 +302,12 @@ msgstr "التالي"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "أنهِ"
+
+#~ msgid "Adjust the size of elements on the screen."
+#~ msgstr "اضبط حجم العناصر على الشاشة."
+
+#~ msgid "Display Scaling"
+#~ msgstr "تحجيم العرض"
 
 #~ msgid "Upload new avatar"
 #~ msgstr "ارفع صورة رمزية جديدة"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:44+0000\n"
+"POT-Creation-Date: 2025-12-05 00:44+0000\n"
 "PO-Revision-Date: 2025-11-16 17:29+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -216,17 +216,7 @@ msgstr "İstədiyiniz dili seçin."
 msgid "Search languages…"
 msgstr "Dilləri axtarmaq..."
 
-#: modules/prepare/contents/ui/main.qml:38
-#, kde-format
-msgid "Adjust the size of elements on the screen."
-msgstr "Ekrandakı elementlərin ölçüsünü tənzimləyin."
-
-#: modules/prepare/contents/ui/main.qml:49
-#, kde-format
-msgid "Display Scaling"
-msgstr "Ekran miqyası"
-
-#: modules/prepare/contents/ui/main.qml:74
+#: modules/prepare/contents/ui/main.qml:76
 #, kde-format
 msgid "Dark Theme"
 msgstr "Qaranlıq görünüş"
@@ -314,6 +304,12 @@ msgstr "İrəli"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Tamamlandı"
+
+#~ msgid "Adjust the size of elements on the screen."
+#~ msgstr "Ekrandakı elementlərin ölçüsünü tənzimləyin."
+
+#~ msgid "Display Scaling"
+#~ msgstr "Ekran miqyası"
 
 #~ msgid "Upload new avatar"
 #~ msgstr "Yeni avatar yükləyin"

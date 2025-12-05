@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.kde.initialsystemsetup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:44+0000\n"
+"POT-Creation-Date: 2025-12-05 00:44+0000\n"
 "PO-Revision-Date: 2025-11-13 20:29+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -218,17 +218,7 @@ msgstr "Bitte wählen Sie Ihre bevorzugte Sprache aus."
 msgid "Search languages…"
 msgstr "Sprachen durchsuchen …"
 
-#: modules/prepare/contents/ui/main.qml:38
-#, kde-format
-msgid "Adjust the size of elements on the screen."
-msgstr "Passen Sie die Größe der Elemente auf dem Bildschirm an."
-
-#: modules/prepare/contents/ui/main.qml:49
-#, kde-format
-msgid "Display Scaling"
-msgstr "Anzeigeskalierung"
-
-#: modules/prepare/contents/ui/main.qml:74
+#: modules/prepare/contents/ui/main.qml:76
 #, kde-format
 msgid "Dark Theme"
 msgstr "Dunkles Design"
@@ -317,6 +307,12 @@ msgstr "Weiter"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Abschließen"
+
+#~ msgid "Adjust the size of elements on the screen."
+#~ msgstr "Passen Sie die Größe der Elemente auf dem Bildschirm an."
+
+#~ msgid "Display Scaling"
+#~ msgstr "Anzeigeskalierung"
 
 #~ msgid "Upload new avatar"
 #~ msgstr "Neuen Avatar hochladen"

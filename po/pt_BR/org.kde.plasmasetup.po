@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:44+0000\n"
+"POT-Creation-Date: 2025-12-05 00:44+0000\n"
 "PO-Revision-Date: 2025-11-20 07:09-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -215,17 +215,7 @@ msgstr "Selecione seu idioma preferido."
 msgid "Search languages…"
 msgstr "Pesquisar idiomas…"
 
-#: modules/prepare/contents/ui/main.qml:38
-#, kde-format
-msgid "Adjust the size of elements on the screen."
-msgstr "Ajuste o tamanho dos elementos na tela."
-
-#: modules/prepare/contents/ui/main.qml:49
-#, kde-format
-msgid "Display Scaling"
-msgstr "Escala do monitor"
-
-#: modules/prepare/contents/ui/main.qml:74
+#: modules/prepare/contents/ui/main.qml:76
 #, kde-format
 msgid "Dark Theme"
 msgstr "Tema escuro"
@@ -314,6 +304,12 @@ msgstr "Próximo"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Concluir"
+
+#~ msgid "Adjust the size of elements on the screen."
+#~ msgstr "Ajuste o tamanho dos elementos na tela."
+
+#~ msgid "Display Scaling"
+#~ msgstr "Escala do monitor"
 
 #~ msgid "Upload new avatar"
 #~ msgstr "Enviar novo avatar"

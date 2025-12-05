@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:44+0000\n"
+"POT-Creation-Date: 2025-12-05 00:44+0000\n"
 "PO-Revision-Date: 2025-11-20 21:41+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -216,17 +216,7 @@ msgstr "Будь ласка, виберіть пріоритетну мову."
 msgid "Search languages…"
 msgstr "Шукати мови…"
 
-#: modules/prepare/contents/ui/main.qml:38
-#, kde-format
-msgid "Adjust the size of elements on the screen."
-msgstr "Скоригуйте розмір елементів на екрані."
-
-#: modules/prepare/contents/ui/main.qml:49
-#, kde-format
-msgid "Display Scaling"
-msgstr "Масштабування дисплея"
-
-#: modules/prepare/contents/ui/main.qml:74
+#: modules/prepare/contents/ui/main.qml:76
 #, kde-format
 msgid "Dark Theme"
 msgstr "Темна тема"
@@ -314,6 +304,12 @@ msgstr "Далі"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Завершити"
+
+#~ msgid "Adjust the size of elements on the screen."
+#~ msgstr "Скоригуйте розмір елементів на екрані."
+
+#~ msgid "Display Scaling"
+#~ msgstr "Масштабування дисплея"
 
 #~ msgid "Upload new avatar"
 #~ msgstr "Вивантажити новий аватар"

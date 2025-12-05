@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:44+0000\n"
+"POT-Creation-Date: 2025-12-05 00:44+0000\n"
 "PO-Revision-Date: 2025-11-21 13:20+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -215,17 +215,7 @@ msgstr "Selecteer uw taal met voorkeur."
 msgid "Search languages…"
 msgstr "Doorzoek talen…"
 
-#: modules/prepare/contents/ui/main.qml:38
-#, kde-format
-msgid "Adjust the size of elements on the screen."
-msgstr "Pas de grootte van de elementen op het scherm aan."
-
-#: modules/prepare/contents/ui/main.qml:49
-#, kde-format
-msgid "Display Scaling"
-msgstr "Schaal van het scherm"
-
-#: modules/prepare/contents/ui/main.qml:74
+#: modules/prepare/contents/ui/main.qml:76
 #, kde-format
 msgid "Dark Theme"
 msgstr "Donker thema"
@@ -315,6 +305,12 @@ msgstr "Volgende"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Beëindigen"
+
+#~ msgid "Adjust the size of elements on the screen."
+#~ msgstr "Pas de grootte van de elementen op het scherm aan."
+
+#~ msgid "Display Scaling"
+#~ msgstr "Schaal van het scherm"
 
 #~ msgid "Upload new avatar"
 #~ msgstr "Nieuwe avatar uploaden"

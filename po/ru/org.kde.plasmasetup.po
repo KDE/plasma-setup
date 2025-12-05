@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:44+0000\n"
+"POT-Creation-Date: 2025-12-05 00:44+0000\n"
 "PO-Revision-Date: 2025-10-27 12:00+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -215,17 +215,7 @@ msgstr "Выберите предпочитаемый язык."
 msgid "Search languages…"
 msgstr "Поиск языков…"
 
-#: modules/prepare/contents/ui/main.qml:38
-#, kde-format
-msgid "Adjust the size of elements on the screen."
-msgstr "Настройте размер элементов на экране."
-
-#: modules/prepare/contents/ui/main.qml:49
-#, kde-format
-msgid "Display Scaling"
-msgstr "Масштабирование экрана"
-
-#: modules/prepare/contents/ui/main.qml:74
+#: modules/prepare/contents/ui/main.qml:76
 #, kde-format
 msgid "Dark Theme"
 msgstr "Тёмная тема"
@@ -314,6 +304,12 @@ msgstr "Далее"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Завершить"
+
+#~ msgid "Adjust the size of elements on the screen."
+#~ msgstr "Настройте размер элементов на экране."
+
+#~ msgid "Display Scaling"
+#~ msgstr "Масштабирование экрана"
 
 #~ msgid "Upload new avatar"
 #~ msgstr "Отправить новое изображение"

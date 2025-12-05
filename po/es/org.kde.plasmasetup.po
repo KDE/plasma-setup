@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.kde.plasmasetup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:44+0000\n"
+"POT-Creation-Date: 2025-12-05 00:44+0000\n"
 "PO-Revision-Date: 2025-11-21 02:11+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -216,17 +216,7 @@ msgstr "Seleccione su idioma preferido."
 msgid "Search languages…"
 msgstr "Buscar idiomas…"
 
-#: modules/prepare/contents/ui/main.qml:38
-#, kde-format
-msgid "Adjust the size of elements on the screen."
-msgstr "Ajuste del tamaño de los elementos de la pantalla."
-
-#: modules/prepare/contents/ui/main.qml:49
-#, kde-format
-msgid "Display Scaling"
-msgstr "Escalado de la pantalla"
-
-#: modules/prepare/contents/ui/main.qml:74
+#: modules/prepare/contents/ui/main.qml:76
 #, kde-format
 msgid "Dark Theme"
 msgstr "Tema oscuro"
@@ -316,3 +306,9 @@ msgstr "Siguiente"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Terminar"
+
+#~ msgid "Adjust the size of elements on the screen."
+#~ msgstr "Ajuste del tamaño de los elementos de la pantalla."
+
+#~ msgid "Display Scaling"
+#~ msgstr "Escalado de la pantalla"

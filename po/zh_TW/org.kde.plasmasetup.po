@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:44+0000\n"
+"POT-Creation-Date: 2025-12-05 00:44+0000\n"
 "PO-Revision-Date: 2025-11-20 20:49+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -210,17 +210,7 @@ msgstr "請選擇您偏好使用的語言。"
 msgid "Search languages…"
 msgstr "搜尋語言…"
 
-#: modules/prepare/contents/ui/main.qml:38
-#, kde-format
-msgid "Adjust the size of elements on the screen."
-msgstr "請調整螢幕上元素的大小。"
-
-#: modules/prepare/contents/ui/main.qml:49
-#, kde-format
-msgid "Display Scaling"
-msgstr "顯示縮放"
-
-#: modules/prepare/contents/ui/main.qml:74
+#: modules/prepare/contents/ui/main.qml:76
 #, kde-format
 msgid "Dark Theme"
 msgstr "暗色主題"
@@ -308,6 +298,12 @@ msgstr "下一步"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "完成"
+
+#~ msgid "Adjust the size of elements on the screen."
+#~ msgstr "請調整螢幕上元素的大小。"
+
+#~ msgid "Display Scaling"
+#~ msgstr "顯示縮放"
 
 #~ msgid "Upload new avatar"
 #~ msgstr "上傳新的頭貼"

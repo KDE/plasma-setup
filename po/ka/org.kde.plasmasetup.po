@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:44+0000\n"
+"POT-Creation-Date: 2025-12-05 00:44+0000\n"
 "PO-Revision-Date: 2025-11-20 04:49+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -216,17 +216,7 @@ msgstr "აირჩიეთ სასურველი ენა."
 msgid "Search languages…"
 msgstr "ენის მოძებნა…"
 
-#: modules/prepare/contents/ui/main.qml:38
-#, kde-format
-msgid "Adjust the size of elements on the screen."
-msgstr "მოირგეთ ეკრანზე არსებული ელემენტების ზომები."
-
-#: modules/prepare/contents/ui/main.qml:49
-#, kde-format
-msgid "Display Scaling"
-msgstr "ეკრანის მასშტაბი"
-
-#: modules/prepare/contents/ui/main.qml:74
+#: modules/prepare/contents/ui/main.qml:76
 #, kde-format
 msgid "Dark Theme"
 msgstr "მუქი თემა"
@@ -314,6 +304,12 @@ msgstr "შემდეგი"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "დასრულება"
+
+#~ msgid "Adjust the size of elements on the screen."
+#~ msgstr "მოირგეთ ეკრანზე არსებული ელემენტების ზომები."
+
+#~ msgid "Display Scaling"
+#~ msgstr "ეკრანის მასშტაბი"
 
 #~ msgid "Upload new avatar"
 #~ msgstr "ახალი ავატარის ატვირთვა"

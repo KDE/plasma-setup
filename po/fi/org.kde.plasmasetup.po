@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:44+0000\n"
+"POT-Creation-Date: 2025-12-05 00:44+0000\n"
 "PO-Revision-Date: 2025-10-13 21:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -221,17 +221,7 @@ msgstr "Valitse suosimasi kieli."
 msgid "Search languages…"
 msgstr "Etsi kieliä…"
 
-#: modules/prepare/contents/ui/main.qml:38
-#, kde-format
-msgid "Adjust the size of elements on the screen."
-msgstr "Säädä näyttöalkioiden kokoa."
-
-#: modules/prepare/contents/ui/main.qml:49
-#, kde-format
-msgid "Display Scaling"
-msgstr "Näytön mittakaava"
-
-#: modules/prepare/contents/ui/main.qml:74
+#: modules/prepare/contents/ui/main.qml:76
 #, kde-format
 msgid "Dark Theme"
 msgstr "Tumma teema"
@@ -320,6 +310,12 @@ msgstr "Seuraava"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Viimeistele"
+
+#~ msgid "Adjust the size of elements on the screen."
+#~ msgstr "Säädä näyttöalkioiden kokoa."
+
+#~ msgid "Display Scaling"
+#~ msgstr "Näytön mittakaava"
 
 #~ msgid "Upload new avatar"
 #~ msgstr "Lähetä uusi avatar"

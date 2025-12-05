@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-20 00:44+0000\n"
+"POT-Creation-Date: 2025-12-05 00:44+0000\n"
 "PO-Revision-Date: 2025-11-20 10:50+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -214,17 +214,7 @@ msgstr "נא לבחור את השפה המועדפת עליך."
 msgid "Search languages…"
 msgstr "חיפוש שפות…"
 
-#: modules/prepare/contents/ui/main.qml:38
-#, kde-format
-msgid "Adjust the size of elements on the screen."
-msgstr "אפשר לכוון את גודל הרכיבים שעל המסך."
-
-#: modules/prepare/contents/ui/main.qml:49
-#, kde-format
-msgid "Display Scaling"
-msgstr "קנה מידה לתצוגה"
-
-#: modules/prepare/contents/ui/main.qml:74
+#: modules/prepare/contents/ui/main.qml:76
 #, kde-format
 msgid "Dark Theme"
 msgstr "ערכת עיצוב כהה"
@@ -312,6 +302,12 @@ msgstr "הבא"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "סיום"
+
+#~ msgid "Adjust the size of elements on the screen."
+#~ msgstr "אפשר לכוון את גודל הרכיבים שעל המסך."
+
+#~ msgid "Display Scaling"
+#~ msgstr "קנה מידה לתצוגה"
 
 #~ msgid "Upload new avatar"
 #~ msgstr "העלאת תמונה ייצוגית חדשה"
