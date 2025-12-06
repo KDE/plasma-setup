@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:44+0000\n"
+"POT-Creation-Date: 2025-12-06 00:44+0000\n"
 "PO-Revision-Date: 2025-11-22 18:14+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -25,18 +25,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "thomas.vergnaud@mailo.eu"
 
-#: modules/account/contents/ui/main.qml:67
+#: modules/account/contents/ui/main.qml:69
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Nous avons besoin de quelques détails pour terminer la configuration."
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:80
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Cet utilisateur sera un administrateur."
 
-#: modules/account/contents/ui/main.qml:82
+#: modules/account/contents/ui/main.qml:84
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -49,31 +49,31 @@ msgstr ""
 "installer un logiciel et accéder à tous les fichiers du système.<nl/><nl/"
 ">Veuillez sélectionner un mot de passe fort pour cet utilisateur."
 
-#: modules/account/contents/ui/main.qml:95
+#: modules/account/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Nom et prénom"
 
-#: modules/account/contents/ui/main.qml:113
+#: modules/account/contents/ui/main.qml:115
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
-#: modules/account/contents/ui/main.qml:132
+#: modules/account/contents/ui/main.qml:134
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Mot de passe"
 
-#: modules/account/contents/ui/main.qml:146
+#: modules/account/contents/ui/main.qml:148
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Confirmez le mot de passe"
 
-#: modules/account/contents/ui/main.qml:164
+#: modules/account/contents/ui/main.qml:166
 #, kde-format
 msgid "Passwords must match"
 msgstr "Les mots de passe doivent correspondre."
@@ -187,17 +187,6 @@ msgstr "Supprimer"
 msgid "Add APN"
 msgstr "Ajouter APN"
 
-#: modules/finished/contents/ui/main.qml:30
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid ""
-"Your device is now ready. <br /><br />After clicking <b>Finish</b> you will "
-"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
-"Votre périphérique est maintenant prêt. <br /><br />Après un clic sur "
-"<b>Terminer</b>, vous pourrez vous connecter à votre nouveau compte.<br /"
-"><br />Profitez bien de <b>%1</b> !"
-
 #: modules/keyboard/contents/ui/main.qml:161
 #, kde-format
 msgid "Select your keyboard layout and language."
@@ -244,6 +233,30 @@ msgstr "Mot de passe :"
 #, kde-format
 msgid "Invalid input."
 msgstr "Entrée non valable."
+
+#: src/initialstartutil.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "%1 is the distro name"
+#| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"Votre appareil est maintenant prêt. <br /><br />Profitez de <b>%1</b> !"
+
+#: src/initialstartutil.cpp:38
+#, fuzzy, kde-format
+#| msgctxt "%1 is the distro name"
+#| msgid ""
+#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
+#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"Votre périphérique est maintenant prêt. <br /><br />Après un clic sur "
+"<b>Terminer</b>, vous pourrez vous connecter à votre nouveau compte.<br /"
+"><br />Profitez bien de <b>%1</b> !"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
@@ -404,11 +417,6 @@ msgstr "Terminer"
 #~ msgstr ""
 #~ "Ajustez la luminosité de l'écran pour faciliter le processus "
 #~ "d'installation."
-
-#~ msgctxt "%1 is the distro name"
-#~ msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
-#~ msgstr ""
-#~ "Votre appareil est maintenant prêt. <br /><br />Profitez de <b>%1</b> !"
 
 #~ msgid "Language"
 #~ msgstr "Langue"

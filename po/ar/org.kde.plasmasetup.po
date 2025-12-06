@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:44+0000\n"
+"POT-Creation-Date: 2025-12-06 00:44+0000\n"
 "PO-Revision-Date: 2025-11-20 18:43+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -28,18 +28,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
 
-#: modules/account/contents/ui/main.qml:67
+#: modules/account/contents/ui/main.qml:69
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "نحتاج إلى بعض التفاصيل لإكمال الإعداد."
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:80
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "سيكون هذا المستخدم مسؤولاً."
 
-#: modules/account/contents/ui/main.qml:82
+#: modules/account/contents/ui/main.qml:84
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -51,31 +51,31 @@ msgstr ""
 "يمكنه تغيير إعدادات النظام وتثبيت البرامج والوصول إلى جميع الملفات الموجودة "
 "على النظام.<nl/><nl/>اختر كلمة سر قوية لهذا المستخدم."
 
-#: modules/account/contents/ui/main.qml:95
+#: modules/account/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "الاسم الكامل"
 
-#: modules/account/contents/ui/main.qml:113
+#: modules/account/contents/ui/main.qml:115
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "اسم المستخدم"
 
-#: modules/account/contents/ui/main.qml:132
+#: modules/account/contents/ui/main.qml:134
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "كلمة السّر"
 
-#: modules/account/contents/ui/main.qml:146
+#: modules/account/contents/ui/main.qml:148
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "تأكيد كلمة السر"
 
-#: modules/account/contents/ui/main.qml:164
+#: modules/account/contents/ui/main.qml:166
 #, kde-format
 msgid "Passwords must match"
 msgstr "يجب أن تتطابق كلمتي السر"
@@ -189,16 +189,6 @@ msgstr "احذف"
 msgid "Add APN"
 msgstr "أضف اسم نقطة الوصول APN"
 
-#: modules/finished/contents/ui/main.qml:30
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid ""
-"Your device is now ready. <br /><br />After clicking <b>Finish</b> you will "
-"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
-"جهازك جاهز الآن. <br /><br />بعد النقر على <b>أنهِ</b>، ستتمكن من الولوج إلى "
-"حسابك الجديد.<br /><br />استمتع بـ <b>%1</b>!"
-
 #: modules/keyboard/contents/ui/main.qml:161
 #, kde-format
 msgid "Select your keyboard layout and language."
@@ -243,6 +233,28 @@ msgstr "كلمة السر:"
 #, kde-format
 msgid "Invalid input."
 msgstr "إدخال غير صحيح"
+
+#: src/initialstartutil.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "%1 is the distro name"
+#| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr "جهازك جاهز الآن.<br /><br />استمتع مع <b>%1</b>!"
+
+#: src/initialstartutil.cpp:38
+#, fuzzy, kde-format
+#| msgctxt "%1 is the distro name"
+#| msgid ""
+#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
+#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"جهازك جاهز الآن. <br /><br />بعد النقر على <b>أنهِ</b>، ستتمكن من الولوج إلى "
+"حسابك الجديد.<br /><br />استمتع بـ <b>%1</b>!"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
@@ -395,10 +407,6 @@ msgstr "أنهِ"
 #~ "Adjust the screen brightness to be comfortable for the installation "
 #~ "process."
 #~ msgstr "اضبط سطوع الشاشة لتكون مريحة لعملية التثبيت."
-
-#~ msgctxt "%1 is the distro name"
-#~ msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
-#~ msgstr "جهازك جاهز الآن.<br /><br />استمتع مع <b>%1</b>!"
 
 #~ msgid "Language"
 #~ msgstr "اللغة"

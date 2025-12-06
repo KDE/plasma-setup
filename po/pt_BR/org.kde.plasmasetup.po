@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:44+0000\n"
+"POT-Creation-Date: 2025-12-06 00:44+0000\n"
 "PO-Revision-Date: 2025-11-20 07:09-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -28,18 +28,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "geraldosimiao@fedoraproject.org"
 
-#: modules/account/contents/ui/main.qml:67
+#: modules/account/contents/ui/main.qml:69
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Precisamos de alguns detalhes para concluir a configuração."
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:80
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Este usuário será um administrador."
 
-#: modules/account/contents/ui/main.qml:82
+#: modules/account/contents/ui/main.qml:84
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -52,31 +52,31 @@ msgstr ""
 "software e acessar todos os arquivos no sistema.<nl/><nl/>Escolha uma senha "
 "forte para este usuário."
 
-#: modules/account/contents/ui/main.qml:95
+#: modules/account/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Nome completo"
 
-#: modules/account/contents/ui/main.qml:113
+#: modules/account/contents/ui/main.qml:115
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Nome de usuário"
 
-#: modules/account/contents/ui/main.qml:132
+#: modules/account/contents/ui/main.qml:134
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Senha"
 
-#: modules/account/contents/ui/main.qml:146
+#: modules/account/contents/ui/main.qml:148
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Confirme a senha"
 
-#: modules/account/contents/ui/main.qml:164
+#: modules/account/contents/ui/main.qml:166
 #, kde-format
 msgid "Passwords must match"
 msgstr "As senhas devem coincidir"
@@ -190,16 +190,6 @@ msgstr "Excluir"
 msgid "Add APN"
 msgstr "Adicionar APN"
 
-#: modules/finished/contents/ui/main.qml:30
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid ""
-"Your device is now ready. <br /><br />After clicking <b>Finish</b> you will "
-"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
-"Seu dispositivo agora está pronto. <br /><br />Após clicar em <b>Concluir</"
-"b>, você poderá entrar em sua nova conta.<br /><br />Aproveite <b>%1</b>!"
-
 #: modules/keyboard/contents/ui/main.qml:161
 #, kde-format
 msgid "Select your keyboard layout and language."
@@ -244,6 +234,26 @@ msgstr "Senha:"
 #, kde-format
 msgid "Invalid input."
 msgstr "Entrada inválida."
+
+#: src/initialstartutil.cpp:33
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+
+#: src/initialstartutil.cpp:38
+#, fuzzy, kde-format
+#| msgctxt "%1 is the distro name"
+#| msgid ""
+#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
+#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"Seu dispositivo agora está pronto. <br /><br />Após clicar em <b>Concluir</"
+"b>, você poderá entrar em sua nova conta.<br /><br />Aproveite <b>%1</b>!"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format

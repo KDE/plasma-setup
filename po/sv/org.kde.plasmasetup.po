@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:44+0000\n"
+"POT-Creation-Date: 2025-12-06 00:44+0000\n"
 "PO-Revision-Date: 2025-10-22 20:23+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "stefan.asserhall@gmail.com"
 
-#: modules/account/contents/ui/main.qml:67
+#: modules/account/contents/ui/main.qml:69
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Vi behöver en del information för att kunna slutföra inställningen."
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:80
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Den här användaren blir administratör."
 
-#: modules/account/contents/ui/main.qml:82
+#: modules/account/contents/ui/main.qml:84
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -51,31 +51,31 @@ msgstr ""
 "komma åt alla filer på systemet.<nl/><nl/>Välj ett starkt lösenord för den "
 "här användaren."
 
-#: modules/account/contents/ui/main.qml:95
+#: modules/account/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Fullständigt namn"
 
-#: modules/account/contents/ui/main.qml:113
+#: modules/account/contents/ui/main.qml:115
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Användarnamn"
 
-#: modules/account/contents/ui/main.qml:132
+#: modules/account/contents/ui/main.qml:134
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Lösenord"
 
-#: modules/account/contents/ui/main.qml:146
+#: modules/account/contents/ui/main.qml:148
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Bekräfta lösenord"
 
-#: modules/account/contents/ui/main.qml:164
+#: modules/account/contents/ui/main.qml:166
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Passwords don’t match"
@@ -191,16 +191,6 @@ msgstr "Ta bort"
 msgid "Add APN"
 msgstr "Lägg till APN"
 
-#: modules/finished/contents/ui/main.qml:30
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid ""
-"Your device is now ready. <br /><br />After clicking <b>Finish</b> you will "
-"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
-"Apparaten är nu redo.<br /><br />När du klickat på <b>Slutför</b> kan du "
-"logga in på det nya kontot.<br /><br />Njut av <b>%1</b>!"
-
 #: modules/keyboard/contents/ui/main.qml:161
 #, kde-format
 msgid "Select your keyboard layout and language."
@@ -246,6 +236,28 @@ msgstr "Lösenord:"
 #, kde-format
 msgid "Invalid input."
 msgstr "Ogiltig inmatning."
+
+#: src/initialstartutil.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "%1 is the distro name"
+#| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr "Apparaten är nu redo.<br /><br />Njut av <b>%1</b>!"
+
+#: src/initialstartutil.cpp:38
+#, fuzzy, kde-format
+#| msgctxt "%1 is the distro name"
+#| msgid ""
+#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
+#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"Apparaten är nu redo.<br /><br />När du klickat på <b>Slutför</b> kan du "
+"logga in på det nya kontot.<br /><br />Njut av <b>%1</b>!"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
@@ -401,10 +413,6 @@ msgstr "Slutför"
 #~ msgstr ""
 #~ "Justera skärmens ljusstyrka så att den är bekväm för "
 #~ "installationsprocessen."
-
-#~ msgctxt "%1 is the distro name"
-#~ msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
-#~ msgstr "Apparaten är nu redo.<br /><br />Njut av <b>%1</b>!"
 
 #~ msgid "Language"
 #~ msgstr "Språk"

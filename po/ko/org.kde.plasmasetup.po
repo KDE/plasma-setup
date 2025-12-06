@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:44+0000\n"
+"POT-Creation-Date: 2025-12-06 00:44+0000\n"
 "PO-Revision-Date: 2025-10-09 01:30+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: modules/account/contents/ui/main.qml:67
+#: modules/account/contents/ui/main.qml:69
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "초기 설정을 완료하려면 몇 가지 정보가 필요합니다."
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:80
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "이 사용자는 관리자가 될 것입니다."
 
-#: modules/account/contents/ui/main.qml:82
+#: modules/account/contents/ui/main.qml:84
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -50,7 +50,7 @@ msgstr ""
 "트웨어 설치, 시스템의 모든 파일에 접근이 가능합니다.<nl/><nl/>이 사용자의 암"
 "호를 강력하게 설정하기를 추천합니다."
 
-#: modules/account/contents/ui/main.qml:95
+#: modules/account/contents/ui/main.qml:97
 #, fuzzy, kde-format
 #| msgctxt "@label:textfield"
 #| msgid "Full Name"
@@ -58,21 +58,21 @@ msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "전체 이름"
 
-#: modules/account/contents/ui/main.qml:113
+#: modules/account/contents/ui/main.qml:115
 #, fuzzy, kde-format
 #| msgid "Username"
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "사용자 이름"
 
-#: modules/account/contents/ui/main.qml:132
+#: modules/account/contents/ui/main.qml:134
 #, fuzzy, kde-format
 #| msgid "Password"
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "암호"
 
-#: modules/account/contents/ui/main.qml:146
+#: modules/account/contents/ui/main.qml:148
 #, fuzzy, kde-format
 #| msgctxt "@label:textfield"
 #| msgid "Confirm Password"
@@ -80,7 +80,7 @@ msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "암호 확인"
 
-#: modules/account/contents/ui/main.qml:164
+#: modules/account/contents/ui/main.qml:166
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Passwords don’t match"
@@ -196,16 +196,6 @@ msgstr "삭제"
 msgid "Add APN"
 msgstr "APN 추가"
 
-#: modules/finished/contents/ui/main.qml:30
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid ""
-"Your device is now ready. <br /><br />After clicking <b>Finish</b> you will "
-"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
-"장치가 준비되었습니다. <br /><br /><b>완료</b> 단추를 클릭하면 새 계정을 사용"
-"할 수 있습니다.<br /><br /><b>%1</b>을(를) 즐겁게 사용하세요!"
-
 #: modules/keyboard/contents/ui/main.qml:161
 #, kde-format
 msgid "Select your keyboard layout and language."
@@ -251,6 +241,27 @@ msgstr "암호:"
 #, kde-format
 msgid "Invalid input."
 msgstr "잘못 입력했습니다."
+
+#: src/initialstartutil.cpp:33
+#, fuzzy, kde-format
+#| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr "장치가 준비되었습니다. <br /><br /><b>%1</b>을(를) 즐겁게 사용하세요!"
+
+#: src/initialstartutil.cpp:38
+#, fuzzy, kde-format
+#| msgctxt "%1 is the distro name"
+#| msgid ""
+#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
+#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"장치가 준비되었습니다. <br /><br /><b>완료</b> 단추를 클릭하면 새 계정을 사용"
+"할 수 있습니다.<br /><br /><b>%1</b>을(를) 즐겁게 사용하세요!"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
@@ -399,13 +410,6 @@ msgstr "완료"
 #~ "Adjust the screen brightness to be comfortable for the installation "
 #~ "process."
 #~ msgstr "설치 과정을 편하게 볼 수 있도록 화면 밝기를 조정하십시오."
-
-#, fuzzy
-#~| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
-#~ msgctxt "%1 is the distro name"
-#~ msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
-#~ msgstr ""
-#~ "장치가 준비되었습니다. <br /><br /><b>%1</b>을(를) 즐겁게 사용하세요!"
 
 #~ msgid "Language"
 #~ msgstr "언어"

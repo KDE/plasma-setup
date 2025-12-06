@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:44+0000\n"
+"POT-Creation-Date: 2025-12-06 00:44+0000\n"
 "PO-Revision-Date: 2025-11-21 13:20+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "freekdekruijf@kde.nl"
 
-#: modules/account/contents/ui/main.qml:67
+#: modules/account/contents/ui/main.qml:69
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "We hebben een paar details nodig om de opzet te voltooien."
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:80
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Deze gebruiker zal een systeembeheerder zijn."
 
-#: modules/account/contents/ui/main.qml:82
+#: modules/account/contents/ui/main.qml:84
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -51,31 +51,31 @@ msgstr ""
 "installeren en toegang hebben tot alle bestanden op het systeem.<nl/><nl/"
 ">Kies een sterk wachtwoord voor deze gebruiker."
 
-#: modules/account/contents/ui/main.qml:95
+#: modules/account/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Volledige naam"
 
-#: modules/account/contents/ui/main.qml:113
+#: modules/account/contents/ui/main.qml:115
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: modules/account/contents/ui/main.qml:132
+#: modules/account/contents/ui/main.qml:134
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: modules/account/contents/ui/main.qml:146
+#: modules/account/contents/ui/main.qml:148
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Wachtwoord bevestigen"
 
-#: modules/account/contents/ui/main.qml:164
+#: modules/account/contents/ui/main.qml:166
 #, kde-format
 msgid "Passwords must match"
 msgstr "Wachtwoorden moeten overeenkomen"
@@ -189,17 +189,6 @@ msgstr "Verwijderen"
 msgid "Add APN"
 msgstr "APN toevoegen"
 
-#: modules/finished/contents/ui/main.qml:30
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid ""
-"Your device is now ready. <br /><br />After clicking <b>Finish</b> you will "
-"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
-"Uw apparaat is nu gereed. <br /><br />Na klikken op <b>Beëindigen</b> zult u "
-"in staat zijn u aan te melden in uw nieuwe account.<br /><br />Veel plezier "
-"<b>%1</b>!"
-
 #: modules/keyboard/contents/ui/main.qml:161
 #, kde-format
 msgid "Select your keyboard layout and language."
@@ -244,6 +233,29 @@ msgstr "Wachtwoord:"
 #, kde-format
 msgid "Invalid input."
 msgstr "Ongeldige invoer."
+
+#: src/initialstartutil.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "%1 is the distro name"
+#| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr "Uw apparaat is nu gereed. <br /><br />Veel plezier <b>%1</b>!"
+
+#: src/initialstartutil.cpp:38
+#, fuzzy, kde-format
+#| msgctxt "%1 is the distro name"
+#| msgid ""
+#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
+#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"Uw apparaat is nu gereed. <br /><br />Na klikken op <b>Beëindigen</b> zult u "
+"in staat zijn u aan te melden in uw nieuwe account.<br /><br />Veel plezier "
+"<b>%1</b>!"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
@@ -399,10 +411,6 @@ msgstr "Beëindigen"
 #~ "process."
 #~ msgstr ""
 #~ "Pas de schermhelderheid aan om comfortabel het installatieproces te doen."
-
-#~ msgctxt "%1 is the distro name"
-#~ msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
-#~ msgstr "Uw apparaat is nu gereed. <br /><br />Veel plezier <b>%1</b>!"
 
 #~ msgid "Language"
 #~ msgstr "Taal"

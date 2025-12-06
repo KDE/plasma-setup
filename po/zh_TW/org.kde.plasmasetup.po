@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:44+0000\n"
+"POT-Creation-Date: 2025-12-06 00:44+0000\n"
 "PO-Revision-Date: 2025-11-20 20:49+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: modules/account/contents/ui/main.qml:67
+#: modules/account/contents/ui/main.qml:69
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "我們需要一些細節來完成設定。"
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:80
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "這個使用者將會是一個管理員。"
 
-#: modules/account/contents/ui/main.qml:82
+#: modules/account/contents/ui/main.qml:84
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -49,31 +49,31 @@ msgstr ""
 "這個使用者將在系統上有管理員權限。<nl/><nl/>這代表他能變更系統設定、安裝軟"
 "體，並存取系統上的所有檔案。<nl/><nl/>請為這個使用者選擇高強度的密碼。"
 
-#: modules/account/contents/ui/main.qml:95
+#: modules/account/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "全名"
 
-#: modules/account/contents/ui/main.qml:113
+#: modules/account/contents/ui/main.qml:115
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "使用者名稱"
 
-#: modules/account/contents/ui/main.qml:132
+#: modules/account/contents/ui/main.qml:134
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "密碼"
 
-#: modules/account/contents/ui/main.qml:146
+#: modules/account/contents/ui/main.qml:148
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "確認密碼"
 
-#: modules/account/contents/ui/main.qml:164
+#: modules/account/contents/ui/main.qml:166
 #, kde-format
 msgid "Passwords must match"
 msgstr "密碼必須相符"
@@ -185,16 +185,6 @@ msgstr "刪除"
 msgid "Add APN"
 msgstr "新增 APN"
 
-#: modules/finished/contents/ui/main.qml:30
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid ""
-"Your device is now ready. <br /><br />After clicking <b>Finish</b> you will "
-"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
-"您的裝置現已就緒。<br /><br />點擊<b>完成</b>之後您便能夠登入您的新帳號。"
-"<br /><br />享受 <b>%1</b> 吧！"
-
 #: modules/keyboard/contents/ui/main.qml:161
 #, kde-format
 msgid "Select your keyboard layout and language."
@@ -239,6 +229,28 @@ msgstr "密碼："
 #, kde-format
 msgid "Invalid input."
 msgstr "無效輸入。"
+
+#: src/initialstartutil.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "%1 is the distro name"
+#| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr "您的裝置現已就緒。<br /><br />享受 <b>%1</b> 吧！"
+
+#: src/initialstartutil.cpp:38
+#, fuzzy, kde-format
+#| msgctxt "%1 is the distro name"
+#| msgid ""
+#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
+#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"您的裝置現已就緒。<br /><br />點擊<b>完成</b>之後您便能夠登入您的新帳號。"
+"<br /><br />享受 <b>%1</b> 吧！"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
@@ -387,10 +399,6 @@ msgstr "完成"
 #~ "Adjust the screen brightness to be comfortable for the installation "
 #~ "process."
 #~ msgstr "請為安裝過程調整螢幕亮度到舒服的程度。"
-
-#~ msgctxt "%1 is the distro name"
-#~ msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
-#~ msgstr "您的裝置現已就緒。<br /><br />享受 <b>%1</b> 吧！"
 
 #~ msgid "Language"
 #~ msgstr "語言"

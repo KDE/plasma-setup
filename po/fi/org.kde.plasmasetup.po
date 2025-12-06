@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:44+0000\n"
+"POT-Creation-Date: 2025-12-06 00:44+0000\n"
 "PO-Revision-Date: 2025-10-13 21:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translator@legisign.org"
 
-#: modules/account/contents/ui/main.qml:67
+#: modules/account/contents/ui/main.qml:69
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Asetuksen viimeistelyyn tarvitaan vielä vähän tietoja."
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:80
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Tästä käyttäjästä tulee pääkäyttäjä."
 
-#: modules/account/contents/ui/main.qml:82
+#: modules/account/contents/ui/main.qml:84
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -51,7 +51,7 @@ msgstr ""
 "päästä järjestelmän kaikkiin  tiedostoihin.<nl/>Valitse tälle käyttäjälle "
 "vahva salasana."
 
-#: modules/account/contents/ui/main.qml:95
+#: modules/account/contents/ui/main.qml:97
 #, fuzzy, kde-format
 #| msgctxt "@label:textfield"
 #| msgid "Full Name"
@@ -59,21 +59,21 @@ msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Koko nimi"
 
-#: modules/account/contents/ui/main.qml:113
+#: modules/account/contents/ui/main.qml:115
 #, fuzzy, kde-format
 #| msgid "Username"
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Käyttäjätunnus"
 
-#: modules/account/contents/ui/main.qml:132
+#: modules/account/contents/ui/main.qml:134
 #, fuzzy, kde-format
 #| msgid "Password"
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Salasana"
 
-#: modules/account/contents/ui/main.qml:146
+#: modules/account/contents/ui/main.qml:148
 #, fuzzy, kde-format
 #| msgctxt "@label:textfield"
 #| msgid "Confirm Password"
@@ -81,7 +81,7 @@ msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Vahvista salasana"
 
-#: modules/account/contents/ui/main.qml:164
+#: modules/account/contents/ui/main.qml:166
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Passwords don’t match"
@@ -195,17 +195,6 @@ msgstr "Poista"
 msgid "Add APN"
 msgstr "Lisää APN"
 
-# Viimeinen rivi on muutettu niin, ettei %1:tä joudu taivuttamaan
-#: modules/finished/contents/ui/main.qml:30
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid ""
-"Your device is now ready. <br /><br />After clicking <b>Finish</b> you will "
-"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
-"Laite on nyt valmis.<br /><br />Napsautettuasi <b>Viimeistele</b> uudelle "
-"tilille voi kirjautua.<br /><br /><b>%1</b> toivottaa sinut tervetulleeksi!"
-
 #: modules/keyboard/contents/ui/main.qml:161
 #, kde-format
 msgid "Select your keyboard layout and language."
@@ -251,6 +240,28 @@ msgstr "Salasana:"
 #, kde-format
 msgid "Invalid input."
 msgstr "Virheellinen syöte."
+
+#: src/initialstartutil.cpp:33
+#, fuzzy, kde-format
+#| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr "Laite on nyt valmis.<br /><br />Tämä on <b>%1</b>, nauti!"
+
+# Viimeinen rivi on muutettu niin, ettei %1:tä joudu taivuttamaan
+#: src/initialstartutil.cpp:38
+#, fuzzy, kde-format
+#| msgctxt "%1 is the distro name"
+#| msgid ""
+#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
+#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"Laite on nyt valmis.<br /><br />Napsautettuasi <b>Viimeistele</b> uudelle "
+"tilille voi kirjautua.<br /><br /><b>%1</b> toivottaa sinut tervetulleeksi!"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
@@ -401,12 +412,6 @@ msgstr "Viimeistele"
 #~ "Adjust the screen brightness to be comfortable for the installation "
 #~ "process."
 #~ msgstr "Säädä näytön kirkkaus asennukseen sopivaksi."
-
-#, fuzzy
-#~| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
-#~ msgctxt "%1 is the distro name"
-#~ msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
-#~ msgstr "Laite on nyt valmis.<br /><br />Tämä on <b>%1</b>, nauti!"
 
 #~ msgid "Language"
 #~ msgstr "Kieli"
