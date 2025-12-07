@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-06 00:44+0000\n"
-"PO-Revision-Date: 2025-11-20 21:41+0200\n"
+"PO-Revision-Date: 2025-12-06 16:36+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -236,27 +236,21 @@ msgid "Invalid input."
 msgstr "Некоректні вхідні дані."
 
 #: src/initialstartutil.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
-msgstr "Тепер ваш пристрій готовий. <br /><br />Насолоджуйтеся <b>%1</b>!"
+msgstr "Тепер ваш пристрій готовий.<br /><br />Насолоджуйтеся <b>%1</b>!"
 
 #: src/initialstartutil.cpp:38
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid ""
-#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
-#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid ""
 "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
-"Тепер ваш пристрій готовий. <br /><br />Після натискання кнопки "
-"<b>Завершити</b> ви зможете увійти до вашого нового облікового запису.<br /"
-"><br />Насолоджуйтеся <b>%1</b>!"
+"Тепер ваш пристрій готовий.<br /><br />Після натискання кнопки <b>Завершити</"
+"b> ви зможете увійти до вашого нового облікового запису.<br /><br /"
+">Насолоджуйтеся <b>%1</b>!"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format

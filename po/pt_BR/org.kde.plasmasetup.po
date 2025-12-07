@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-06 00:44+0000\n"
-"PO-Revision-Date: 2025-11-20 07:09-0300\n"
+"PO-Revision-Date: 2025-12-06 05:52-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -239,14 +239,10 @@ msgstr "Entrada inválida."
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
+msgstr "Seu dispositivo agora está pronto.<br /><br />Aproveite <b>%1</b>!"
 
 #: src/initialstartutil.cpp:38
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid ""
-#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
-#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid ""
 "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "

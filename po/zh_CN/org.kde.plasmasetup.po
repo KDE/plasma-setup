@@ -237,18 +237,12 @@ msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
 
 #: src/initialstartutil.cpp:38
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid ""
-#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
-#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid ""
 "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
-"您的设备现已准备就绪。<br /><br />点击 <b>完成</b> 后，您即可登录到新账户。"
-"<br /><br />祝您使用 <b>%1</b> 愉快！"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format

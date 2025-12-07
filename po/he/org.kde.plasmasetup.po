@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-06 00:44+0000\n"
-"PO-Revision-Date: 2025-11-20 10:50+0200\n"
+"PO-Revision-Date: 2025-12-06 08:19+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -238,20 +238,16 @@ msgstr "קלט שגוי."
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
+msgstr "המכשיר שלך מוכן כעת.<br /><br />בהצלחה עם <b>%1</b>!"
 
 #: src/initialstartutil.cpp:38
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid ""
-#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
-#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid ""
 "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
-"ההתקן שלך מוכן כעת. <br /><br />לאחר לחיצה על <b>סיום</b> יתאפשר לך להיכנס "
+"ההתקן שלך מוכן כעת.<br /><br />לאחר לחיצה על <b>סיום</b> יתאפשר לך להיכנס "
 "לחשבון החדש שלך.<br /><br />שיהיה בכיף עם <b>%1</b>!"
 
 #: src/main.cpp:35 src/qml/Main.qml:14

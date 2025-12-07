@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-06 00:44+0000\n"
-"PO-Revision-Date: 2025-11-20 10:05+0100\n"
+"PO-Revision-Date: 2025-12-06 10:13+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -240,22 +240,18 @@ msgstr "Entrada no vàlida."
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
+msgstr "El dispositiu ara està llest. <br /><br />Gaudiu de <b>%1</b>!"
 
 #: src/initialstartutil.cpp:38
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid ""
-#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
-#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid ""
 "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
-"El dispositiu ara està preparat. <br /><br />Després clicar <b>Finalitza</b> "
-"podreu iniciar la sessió al vostre compte nou.<br /><br />Gaudiu de <b>%1</"
-"b>!"
+"El dispositiu ara està llest. <br /><br />Després de fer clic a "
+"<b>Finalitza</b> podreu iniciar la sessió al vostre compte nou.<br /><br /"
+">Gaudiu de <b>%1</b>!"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
