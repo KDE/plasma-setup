@@ -22,6 +22,19 @@
 #include <pwd.h>
 
 /**
+ * @brief Minimum UID for user accounts
+ *
+ * This value represents the absolute lowest user ID value possible.
+ */
+constexpr int MINIMUM_USER_ID = 0;
+/**
+ * @brief Maximum UID for local user accounts
+ *
+ * This value represents the typical highest user ID value possible for
+ * local UNIX user accounts.
+ */
+constexpr int MAXIMUM_USER_ID = 65535;
+/**
  * @brief Default minimum UID for regular user accounts
  *
  * This value is used as a fallback when LOGIN_DEFS_PATH cannot be read
@@ -29,6 +42,14 @@
  * are typically reserved for system accounts.
  */
 constexpr int DEFAULT_MIN_REGULAR_USER_ID = 1000;
+/**
+ * @brief Default maximum UID for regular user accounts
+ *
+ * This value is used as a fallback when LOGIN_DEFS_PATH cannot be read
+ * or does not contain a valid UID_MAX setting. UIDs above this threshold
+ * are typically reserved for dynamic accounts.
+ */
+constexpr int DEFAULT_MAX_REGULAR_USER_ID = 65000;
 
 AccountController::AccountController(QObject *parent)
     : QObject(parent)
@@ -181,8 +202,8 @@ void AccountController::initializeExistingUserFlag()
         return;
     }
 
-    const int threshold = regularUserUidThreshold();
-    const bool hasExistingUsers = detectExistingUsers(threshold);
+    const std::pair<int, int> uidRange = regularUserUidRange();
+    const bool hasExistingUsers = detectExistingUsers(uidRange);
 
     if (!hasExistingUsers) {
         return;
@@ -213,18 +234,20 @@ bool AccountController::isAccountCreationOverrideEnabled()
     }
 }
 
-int AccountController::regularUserUidThreshold() const
+std::pair<int, int> AccountController::regularUserUidRange() const
 {
     const QString loginDefsPath = QStringLiteral(LOGIN_DEFS_PATH);
     QFile loginDefs(loginDefsPath);
     if (!loginDefs.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qCWarning(PlasmaSetup) << "Unable to open" << loginDefs.fileName() << ':' << loginDefs.errorString();
-        return DEFAULT_MIN_REGULAR_USER_ID;
+        return std::pair<int, int>{DEFAULT_MIN_REGULAR_USER_ID, DEFAULT_MAX_REGULAR_USER_ID};
     }
 
     QTextStream stream(&loginDefs);
     static const QRegularExpression whitespace(QStringLiteral("\\s+"));
 
+    int uidMinValue = DEFAULT_MIN_REGULAR_USER_ID;
+    int uidMaxValue = DEFAULT_MAX_REGULAR_USER_ID;
     while (!stream.atEnd()) {
         const QString trimmedLine = stream.readLine().trimmed();
         if (trimmedLine.isEmpty() || trimmedLine.startsWith(QLatin1Char('#'))) {
@@ -236,18 +259,26 @@ int AccountController::regularUserUidThreshold() const
             bool ok = false;
             const int parsedValue = tokens.at(1).toInt(&ok);
             if (ok && parsedValue >= 0) {
-                return parsedValue;
+                uidMinValue = parsedValue;
+            } else {
+                qCWarning(PlasmaSetup) << "Invalid UID_MIN value in" << loginDefs.fileName() << ':' << tokens.at(1);
             }
-
-            qCWarning(PlasmaSetup) << "Invalid UID_MIN value in" << loginDefs.fileName() << ':' << tokens.at(1);
-            break;
+        }
+        if (tokens.size() >= 2 && tokens.at(0) == QLatin1String("UID_MAX")) {
+            bool ok = false;
+            const int parsedValue = tokens.at(1).toInt(&ok);
+            if (ok && parsedValue >= 0) {
+                uidMaxValue = parsedValue;
+            } else {
+                qCWarning(PlasmaSetup) << "Invalid UID_MAX value in" << loginDefs.fileName() << ':' << tokens.at(1);
+            }
         }
     }
 
-    return DEFAULT_MIN_REGULAR_USER_ID;
+    return std::pair<int, int>{uidMinValue, uidMaxValue};
 }
 
-bool AccountController::detectExistingUsers(int minUid) const
+bool AccountController::detectExistingUsers(std::pair<int, int> uidRange) const
 {
     struct PasswdScopeGuard {
         PasswdScopeGuard()
@@ -260,10 +291,11 @@ bool AccountController::detectExistingUsers(int minUid) const
         }
     } guard;
 
-    const uid_t uidThreshold = static_cast<uid_t>(std::max(minUid, 0));
+    const uid_t uidMin = static_cast<uid_t>(std::max(uidRange.first, MINIMUM_USER_ID));
+    const uid_t uidMax = static_cast<uid_t>(std::min(uidRange.second, MAXIMUM_USER_ID));
     errno = 0;
     while (passwd *entry = getpwent()) {
-        if (entry->pw_uid >= uidThreshold) {
+        if (entry->pw_uid >= uidMin && entry->pw_uid <= uidMax) {
             return true;
         }
     }

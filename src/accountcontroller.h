@@ -10,6 +10,8 @@
 #include <QStringList>
 #include <qqmlintegration.h>
 
+#include <utility>
+
 class AccountController : public QObject
 {
     Q_OBJECT
@@ -123,19 +125,19 @@ private:
     bool isAccountCreationOverrideEnabled();
 
     /**
-     * Parses the configured login.defs for UID_MIN, falling back to a sensible default.
+     * Parses the configured login.defs for UID_MIN and UID_MAX, falling back to a sensible default.
      *
-     * @return The minimum UID considered to be a regular user.
+     * @return pair declaring the UID range for regular users.
      */
-    int regularUserUidThreshold() const;
+    std::pair<int, int> regularUserUidRange() const;
 
     /**
      * Enumerates passwd entries to determine if a regular user already exists.
      *
-     * @param minUid The minimum UID to consider as a regular user.
+     * @param uidRange The pair of UID values to consider as the range for a regular user.
      * @return true if at least one regular user is found, false otherwise.
      */
-    bool detectExistingUsers(int minUid) const;
+    bool detectExistingUsers(std::pair<int, int> uidRange) const;
 
     /**
      * Retrieves from the configuration the list of groups for newly created users.
