@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-06 00:44+0000\n"
-"PO-Revision-Date: 2025-10-23 00:55+0200\n"
+"PO-Revision-Date: 2025-12-07 11:14+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -79,11 +79,9 @@ msgid "Confirm Password"
 msgstr "Baieztatu pasahitza"
 
 #: modules/account/contents/ui/main.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Passwords don’t match"
+#, kde-format
 msgid "Passwords must match"
-msgstr "Pasahitzak ez datoz bat"
+msgstr "Pasahitzek bat etorri behar dute"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format
@@ -215,10 +213,9 @@ msgid "Dark Theme"
 msgstr "Gai iluna"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
+#, kde-format
 msgid "Select your time zone."
-msgstr "Hautatu zure ordu-eremua eta gogoko ordu-formatua."
+msgstr "Hautatu zure ordu-eremua."
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
@@ -241,27 +238,20 @@ msgid "Invalid input."
 msgstr "Sarrera baliogabea."
 
 #: src/initialstartutil.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
-msgstr "Zure gailua prest dago orain. <br /><br />Gozatu <b>%1</b>!"
+msgstr "Zure gailua orain prest dago. <br /><br />Gozatu <b>%1</b>!"
 
 #: src/initialstartutil.cpp:38
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid ""
-#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
-#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid ""
 "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
-"Zure gailua, orain, prest dago.<br /><br /><b>Bukatu</b> gainean klik egin "
-"ondoren zure kontu berrian saioa hasi ahal izango duzu.<br /><br />Gozatu <b>"
-"%1</b>!"
+"Zure gailua orain prest dago.<br /><br /><b>Bukatu</b>ri klik egin ondoren "
+"zure kontu berrian saioa hasi ahal izango duzu.<br /><br />Gozatu <b>%1</b>!"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
