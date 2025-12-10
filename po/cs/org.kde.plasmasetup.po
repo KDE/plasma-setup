@@ -72,11 +72,9 @@ msgid "Confirm Password"
 msgstr ""
 
 #: modules/account/contents/ui/main.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Passwords don’t match"
+#, kde-format
 msgid "Passwords must match"
-msgstr "Hesla se neshodují"
+msgstr "Hesla musí být stejná"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format
