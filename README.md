@@ -91,7 +91,7 @@ For development and testing purposes it may be useful to override some of the
 behaviors of Plasma Setup. The following environment variables can be set to
 modify the behavior:
 
-- `PLASMA_SETUP_USER_CREATION_OVERRIDE=enable`: Forces the account creation
+- `PLASMA_SETUP_USER_CREATION_OVERRIDE=1`: Forces the account creation
   page to always be shown, whereas normally it would be skipped if existing
   users are detected.
 

@@ -216,22 +216,14 @@ void AccountController::initializeExistingUserFlag()
 
 bool AccountController::isAccountCreationOverrideEnabled()
 {
-    const QByteArray overrideEnvVar = qgetenv("PLASMA_SETUP_USER_CREATION_OVERRIDE");
-    if (overrideEnvVar.isEmpty()) {
+    if (!qEnvironmentVariableIntValue("PLASMA_SETUP_USER_CREATION_OVERRIDE")) {
         return false;
     }
 
-    const QByteArray overrideValue = overrideEnvVar.trimmed().toLower();
-
-    if (overrideValue == "enable") {
-        m_hasExistingUsers = false;
-        Q_EMIT hasExistingUsersChanged();
-        qCInfo(PlasmaSetup) << "PLASMA_SETUP_USER_CREATION_OVERRIDE is set to enable; account creation will be enabled regardless of existing users.";
-        return true;
-    } else {
-        qCWarning(PlasmaSetup) << "Unknown value for PLASMA_SETUP_USER_CREATION_OVERRIDE:" << overrideEnvVar;
-        return false;
-    }
+    m_hasExistingUsers = false;
+    Q_EMIT hasExistingUsersChanged();
+    qCInfo(PlasmaSetup) << "PLASMA_SETUP_USER_CREATION_OVERRIDE is set to enable; account creation will be enabled regardless of existing users.";
+    return true;
 }
 
 std::pair<int, int> AccountController::regularUserUidRange() const

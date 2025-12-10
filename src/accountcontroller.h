@@ -118,7 +118,7 @@ private:
      * Checks if overriding account creation behavior via environment variable is requested.
      *
      * Reads the PLASMA_SETUP_USER_CREATION_OVERRIDE environment variable, which can be set to
-     * "enable" to force account creation to be enabled regardless of existing users. Useful for testing.
+     * 1 to force account creation to be enabled regardless of existing users. Useful for testing.
      *
      * @return true if an override was applied, false otherwise.
      */
