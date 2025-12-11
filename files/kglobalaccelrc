@@ -1,0 +1,9 @@
+# Customized global shortcuts for the plasma-setup session.
+# 
+# This file is used to disable all but a few essential global shortcuts during
+# setup, preventing users from triggering actions that could interfere with the
+# setup process.
+
+[General]
+useAllowList=true
+allowedShortcuts=kaccess\tToggle Screen Reader On and Off,kwin\tMoveZoomDown,kwin\tMoveZoomLeft,kwin\tMoveZoomRight,kwin\tMoveZoomUp,kwin\tview_actual_size,kwin\tview_zoom_in,kwin\tview_zoom_out

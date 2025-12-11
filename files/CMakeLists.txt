@@ -15,7 +15,7 @@ install(
 
 install(
     FILES "plasma-setup-sysuser.conf"
-    DESTINATION  "lib/sysusers.d"
+    DESTINATION "lib/sysusers.d"
 )
 
 configure_file(plasma-setup-tmpfiles.conf.in plasma-setup-tmpfiles.conf)
@@ -27,6 +27,11 @@ install(
 configure_file(plasma-setup.desktop.in plasma-setup.desktop)
 install(
     FILES ${CMAKE_CURRENT_BINARY_DIR}/plasma-setup.desktop
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/plasma-setup
+)
+
+install(
+    FILES "kglobalaccelrc"
     DESTINATION ${CMAKE_INSTALL_DATADIR}/plasma-setup
 )
 
