@@ -301,19 +301,3 @@ msgstr "Další"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Dokončit"
-
-#~ msgid "Upload new avatar"
-#~ msgstr "Odeslat nového avatara"
-
-#~ msgctxt "%1 is the username"
-#~ msgid "Could not get permission to save user %1"
-#~ msgstr "Pro uložení uživatele %1 chybí oprávnění"
-
-#~ msgid "There was an error while saving changes"
-#~ msgstr "Při ukládání změn došlo k chybě"
-
-#~ msgid "Failed to resize image: opening temp file failed"
-#~ msgstr "Změna velikosti obrázku selhala: otevření dočasného souboru selhalo"
-
-#~ msgid "Failed to resize image: writing to temp file failed"
-#~ msgstr "Změna velikosti obrázku selhala: zápis do dočasného souboru selhal"
