@@ -97,20 +97,6 @@ PlasmaSetupComponents.SetupModule {
 
             return -1; // Not found
         }
-
-        function setLayout(newIndex: int): void {
-            if (newIndex < 0 || newIndex >= rowCount()) {
-                console.warn("Invalid index for layout:", newIndex);
-                return;
-            }
-
-            const modelIndex = index(newIndex, 0);
-            const shortName = data(modelIndex, KItemModels.KRoleNames.role("shortName"));
-            const variantName = data(modelIndex, KItemModels.KRoleNames.role("variantName"));
-
-            // Set the keyboard layout using the utility function
-            KeyboardUtil.setLayout(shortName, variantName);
-        }
     }
 
     KItemModels.KSortFilterProxyModel {
@@ -194,7 +180,6 @@ PlasmaSetupComponents.SetupModule {
 
                         onCurrentIndexChanged: {
                             variantProxy.invalidateFilter();
-                            layoutsProxy.setLayout(currentIndex);
                         }
                     }
                 }
