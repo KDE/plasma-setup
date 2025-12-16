@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:44+0000\n"
+"POT-Creation-Date: 2025-12-16 06:52+0000\n"
 "PO-Revision-Date: 2025-12-06 17:29+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -190,7 +190,7 @@ msgstr "Elimina"
 msgid "Add APN"
 msgstr "Aggiungi APN"
 
-#: modules/keyboard/contents/ui/main.qml:161
+#: modules/keyboard/contents/ui/main.qml:147
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Seleziona la tua disposizione della tastiera e la lingua."

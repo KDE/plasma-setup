@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:44+0000\n"
+"POT-Creation-Date: 2025-12-16 06:52+0000\n"
 "PO-Revision-Date: 2025-12-06 05:52-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -190,7 +190,7 @@ msgstr "Excluir"
 msgid "Add APN"
 msgstr "Adicionar APN"
 
-#: modules/keyboard/contents/ui/main.qml:161
+#: modules/keyboard/contents/ui/main.qml:147
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Selecione o layout do teclado e o idioma."

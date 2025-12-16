@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-06 00:44+0000\n"
+"POT-Creation-Date: 2025-12-16 06:52+0000\n"
 "PO-Revision-Date: 2025-10-09 01:30+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -196,7 +196,7 @@ msgstr "삭제"
 msgid "Add APN"
 msgstr "APN 추가"
 
-#: modules/keyboard/contents/ui/main.qml:161
+#: modules/keyboard/contents/ui/main.qml:147
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "키보드 레이아웃과 언어를 선택하십시오."
