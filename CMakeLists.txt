@@ -96,3 +96,5 @@ ecm_qt_install_logging_categories(
     FILE plasmasetup.categories
     DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
+
+install(FILES org.kde.plasmasetup.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
