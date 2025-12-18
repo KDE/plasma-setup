@@ -28,6 +28,7 @@ polkit.addRule(function (action, subject) {
         "org.kde.plasmasetup.setnewuserglobaltheme", // Set global theme for new user
         "org.kde.plasmasetup.setnewuserdisplayscaling", // Set display scaling for new user
         "org.kde.plasmasetup.setnewusertempautologin", // Set temporary autologin for new user
+        "org.freedesktop.timedate1.set-timezone", // Set system timezone
     ];
 
     // Check if the current action is in our allowed list.
