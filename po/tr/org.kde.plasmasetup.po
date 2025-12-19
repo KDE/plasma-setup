@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-16 06:52+0000\n"
-"PO-Revision-Date: 2025-11-20 21:38+0300\n"
+"PO-Revision-Date: 2025-12-18 15:46+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -235,27 +235,21 @@ msgid "Invalid input."
 msgstr "Geçersiz giriş."
 
 #: src/initialstartutil.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
-"Aygıtınız artık hazır.<br /><br /><b>%1</b> işletim sisteminin keyfini "
+"Aygıtınız artık hazır. <br /><br /><b>%1</b> işletim sisteminin keyfini "
 "çıkarın!"
 
 #: src/initialstartutil.cpp:38
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid ""
-#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
-#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid ""
 "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
-"Aygıtınız artık hazır.<br /><br /><b>Bitir</b>’e tıkladıktan sonra yeni "
+"Aygıtınız artık hazır. <br /><br /><b>Bitir</b>’e tıkladıktan sonra yeni "
 "hesabınıza oturum açabileceksiniz.<br /><br /><b>%1</b> sisteminin keyfini "
 "çıkarın!"
 
