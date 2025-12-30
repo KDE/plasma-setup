@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-16 06:52+0000\n"
-"PO-Revision-Date: 2025-10-13 21:14+0300\n"
+"PO-Revision-Date: 2025-11-13 18:14+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -52,31 +52,25 @@ msgstr ""
 "vahva salasana."
 
 #: modules/account/contents/ui/main.qml:97
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Full Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Koko nimi"
 
 #: modules/account/contents/ui/main.qml:115
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Käyttäjätunnus"
 
 #: modules/account/contents/ui/main.qml:134
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Salasana"
 
 #: modules/account/contents/ui/main.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Vahvista salasana"
@@ -216,10 +210,9 @@ msgid "Dark Theme"
 msgstr "Tumma teema"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
+#, kde-format
 msgid "Select your time zone."
-msgstr "Valitse aikavyöhyke ja haluttu ajan esitysmuoto."
+msgstr "Valitse aikavyöhyke."
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format

@@ -1,0 +1,302 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-setup package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-setup\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-12-16 06:52+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: modules/account/contents/ui/main.qml:69
+#, kde-format
+msgid "We need a few details to complete the setup."
+msgstr ""
+
+#: modules/account/contents/ui/main.qml:80
+#, kde-format
+msgctxt "@info"
+msgid "This user will be an administrator."
+msgstr ""
+
+#: modules/account/contents/ui/main.qml:84
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"This user will have administrative privileges on the system.<nl/><nl/>This "
+"means that they can change system settings, install software, and access all "
+"files on the system.<nl/><nl/>Choose a strong password for this user."
+msgstr ""
+
+#: modules/account/contents/ui/main.qml:97
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Full Name"
+msgstr ""
+
+#: modules/account/contents/ui/main.qml:115
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Username"
+msgstr ""
+
+#: modules/account/contents/ui/main.qml:134
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Password"
+msgstr ""
+
+#: modules/account/contents/ui/main.qml:148
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Confirm Password"
+msgstr ""
+
+#: modules/account/contents/ui/main.qml:166
+#, kde-format
+msgid "Passwords must match"
+msgstr ""
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:14
+#, kde-format
+msgid "Edit APN"
+msgstr ""
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:38
+#, kde-format
+msgid "Name"
+msgstr ""
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:43
+#, kde-format
+msgid "APN"
+msgstr ""
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:48
+#, kde-format
+msgid "Username"
+msgstr ""
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:53
+#, kde-format
+msgid "Password"
+msgstr ""
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:58
+#, kde-format
+msgid "Network type"
+msgstr ""
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "4G/3G/2G"
+msgstr ""
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "3G/2G"
+msgstr ""
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "2G"
+msgstr ""
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "Only 4G"
+msgstr ""
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "Only 3G"
+msgstr ""
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "Only 2G"
+msgstr ""
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "Any"
+msgstr ""
+
+#: modules/cellular/contents/ui/main.qml:45
+#, kde-format
+msgid ""
+"Please configure your APN below for mobile data, further information will be "
+"available with your carrier."
+msgstr ""
+
+#: modules/cellular/contents/ui/main.qml:47
+#, kde-format
+msgid "You are connected to the mobile network."
+msgstr ""
+
+#: modules/cellular/contents/ui/main.qml:49
+#, kde-format
+msgid "Please insert a SIM card into your device."
+msgstr ""
+
+#: modules/cellular/contents/ui/main.qml:51
+#, kde-format
+msgid "Your device does not have a modem available."
+msgstr ""
+
+#: modules/cellular/contents/ui/main.qml:63
+#, kde-format
+msgid "Mobile Data"
+msgstr ""
+
+#: modules/cellular/contents/ui/main.qml:109
+#, kde-format
+msgid "Edit"
+msgstr ""
+
+#: modules/cellular/contents/ui/main.qml:117
+#, kde-format
+msgid "Delete"
+msgstr ""
+
+#: modules/cellular/contents/ui/main.qml:127
+#, kde-format
+msgid "Add APN"
+msgstr ""
+
+#: modules/keyboard/contents/ui/main.qml:147
+#, kde-format
+msgid "Select your keyboard layout and language."
+msgstr ""
+
+#: modules/language/contents/ui/main.qml:42
+#, kde-format
+msgid "Please select your preferred language."
+msgstr ""
+
+#: modules/language/contents/ui/main.qml:48
+#, kde-format
+msgid "Search languages…"
+msgstr ""
+
+#: modules/prepare/contents/ui/main.qml:76
+#, kde-format
+msgid "Dark Theme"
+msgstr ""
+
+#: modules/time/contents/ui/main.qml:32
+#, kde-format
+msgid "Select your time zone."
+msgstr ""
+
+#: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
+#, kde-format
+msgid "Connect to"
+msgstr ""
+
+#: modules/wifi/contents/ui/main.qml:76
+#, kde-format
+msgid "Connect to a WiFi network for network access."
+msgstr ""
+
+#: modules/wifi/contents/ui/PasswordField.qml:14
+#, kde-format
+msgid "Password:"
+msgstr ""
+
+#: modules/wifi/contents/ui/PasswordField.qml:26
+#, kde-format
+msgid "Invalid input."
+msgstr ""
+
+#: src/initialstartutil.cpp:33
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+
+#: src/initialstartutil.cpp:38
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+
+#: src/main.cpp:35 src/qml/Main.qml:14
+#, kde-format
+msgid "Plasma Setup"
+msgstr ""
+
+#: src/main.cpp:37
+#, kde-format
+msgid "Make Plasma yours"
+msgstr ""
+
+#: src/main.cpp:39
+#, kde-format
+msgid "© 2021-2024 KDE Community"
+msgstr ""
+
+#: src/main.cpp:44
+#, kde-format
+msgid "Remove the Plasma Setup autologin configuration."
+msgstr ""
+
+#: src/qml/LandingComponent.qml:103
+#, kde-format
+msgid "Welcome to<br/><b>Plasma Mobile</b>"
+msgstr ""
+
+#: src/qml/LandingComponent.qml:103
+#, kde-format
+msgid "Welcome to<br/><b>Plasma Desktop</b>"
+msgstr ""
+
+#: src/qml/LandingComponent.qml:117
+#, kde-format
+msgid "Begin Setup"
+msgstr ""
+
+#: src/qml/LandingComponent.qml:144
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid "Powered by<br/><b>%1</b>"
+msgstr ""
+
+#: src/qml/Wizard.qml:286
+#, kde-format
+msgctxt "@action:button"
+msgid "Back"
+msgstr ""
+
+#: src/qml/Wizard.qml:302
+#, kde-format
+msgctxt "@action:button"
+msgid "Next"
+msgstr ""
+
+#: src/qml/Wizard.qml:314
+#, kde-format
+msgctxt "@action:button"
+msgid "Finish"
+msgstr ""
