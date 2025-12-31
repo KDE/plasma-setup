@@ -76,6 +76,12 @@ void InitialStartUtil::doUserCreationSteps()
 
 void InitialStartUtil::disablePlasmaSetupAutologin()
 {
+#ifdef QT_DEBUG
+    // Not needed on developer machines, and would cause the auth helper to fail.
+    qCInfo(PlasmaSetup) << "Skipping autologin removal in debug mode.";
+    return;
+#endif
+
     qCInfo(PlasmaSetup) << "Removing autologin configuration for plasma-setup user.";
 
     KAuth::Action action(QStringLiteral("org.kde.plasmasetup.removeautologin"));
