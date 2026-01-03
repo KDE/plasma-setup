@@ -19,6 +19,8 @@ polkit.addRule(function (action, subject) {
 
     // Actions that are allowed without authentication for the "plasma-setup" user.
     var allowedActions = [
+        "org.freedesktop.hostname1.set-hostname", // Transient hostname
+        "org.freedesktop.hostname1.set-static-hostname", // Static hostname
         "org.freedesktop.locale1.set-keyboard", // Keyboard layout
         "org.freedesktop.locale1.set-locale", // System locale
         "org.kde.plasmasetup.createuser", // User creation

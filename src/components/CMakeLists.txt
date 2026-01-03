@@ -15,6 +15,11 @@ target_sources(componentsplugin PRIVATE
     setupmodule.h
 )
 
+qt_target_qml_sources(componentsplugin
+    QML_FILES
+        qml/Debouncer.qml
+)
+
 target_link_libraries(componentsplugin PRIVATE
     Qt6::Quick
     Qt6::Qml
