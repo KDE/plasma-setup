@@ -154,7 +154,7 @@ PlasmaSetupComponents.SetupModule {
                     }
                 }
 
-                Debouncer {
+                PlasmaSetupComponents.Debouncer {
                     id: debouncer
                 }
 

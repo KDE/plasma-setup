@@ -11,6 +11,9 @@ kpackage_install_package(account org.kde.plasmasetup.account packages plasma)
 add_subdirectory(finished)
 kpackage_install_package(finished org.kde.plasmasetup.finished packages plasma)
 
+add_subdirectory(hostname)
+kpackage_install_package(hostname org.kde.plasmasetup.hostname packages plasma)
+
 add_subdirectory(keyboard)
 kpackage_install_package(keyboard org.kde.plasmasetup.keyboard packages plasma)
 
@@ -31,6 +34,7 @@ kpackage_install_package(wifi org.kde.plasmasetup.wifi packages plasma)
 
 # Helper utilities should be kept separate from the KPackage modules, otherwise
 # kpackage_install_package() will include all of the uncompiled source files.
+add_subdirectory(hostnameutil)
 add_subdirectory(languageutil)
 add_subdirectory(prepareutil)
 add_subdirectory(timeutil)
