@@ -316,7 +316,12 @@ Kirigami.Page {
 
                         enabled: root.currentModule.nextEnabled
 
-                        onClicked: root.finishFinalPage()
+                        onClicked: {
+                            // Ensure the `Finish` button can only be click once.
+                            root.currentModule.nextEnabled = false;
+                            // Finalize and exit the wizard.
+                            root.finishFinalPage();
+                        }
                     }
                 }
             }

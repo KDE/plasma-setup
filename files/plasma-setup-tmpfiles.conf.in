@@ -30,5 +30,15 @@ f /run/plasma-setup/.config/kscreenlockerrc - - - - [Daemon]\nAutolock=false\nTi
 # Disable KWallet so it doesn't bother the user during initial setup
 f /run/plasma-setup/.config/kwalletrc - - - - [Wallet]\nEnabled=false
 
+# Prevent Plasma Desktop from populating with default widgets during initial
+# setup, e.g. no task manager, no system tray, no applications launcher, etc.
+#
+# We create an empty panel with 0 thickness (invisible) to prevent a default
+# empty panel from being created when there are no panels.
+f /run/plasma-setup/.config/plasma-org.kde.plasma.desktop-appletsrc - - - - [Containments][1]\nformfactor=2\nlocation=3\nplugin=org.kde.panel\n\n[Containments][1][General]\nthickness=0
+
+# Install the customized global shortcuts config
+C+ /run/plasma-setup/.config/kglobalaccelrc - - - - ${CMAKE_INSTALL_FULL_DATADIR}/plasma-setup/kglobalaccelrc
+
 # Recursively set the ownership of the home directory
 Z /run/plasma-setup 0750 plasma-setup plasma-setup - -
