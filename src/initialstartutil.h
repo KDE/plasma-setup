@@ -27,11 +27,6 @@ public:
     QString distroName() const;
 
     /**
-     * Returns the localized completion message shown on the final page.
-     */
-    Q_INVOKABLE QString finishedMessage() const;
-
-    /**
      * Completes the initial setup process.
      */
     Q_INVOKABLE void finish();

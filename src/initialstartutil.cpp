@@ -27,19 +27,6 @@ QString InitialStartUtil::distroName() const
     return m_osrelease.name();
 }
 
-QString InitialStartUtil::finishedMessage() const
-{
-    if (m_accountController->hasExistingUsers()) {
-        return i18nc("%1 is the distro name", "Your device is now ready.<br /><br />Enjoy <b>%1</b>!", m_osrelease.name());
-    }
-
-    return i18nc(
-        "%1 is the distro name",
-        "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!",
-        m_osrelease.name() //
-    );
-}
-
 void InitialStartUtil::finish()
 {
     doUserCreationSteps();

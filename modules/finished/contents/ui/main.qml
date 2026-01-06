@@ -17,6 +17,24 @@ PlasmaSetupComponents.SetupModule {
 
     nextEnabled: true
 
+    /*!
+    * The message shown to users who already have an account on the system.
+    */
+    property string existingUserFinishedMessage: i18nc( // qmllint disable unqualified
+        "%1 is the distro name",
+        "Your device is now ready.<br /><br />Enjoy <b>%1</b>!",
+        InitialStartUtil.distroName
+    )
+
+    /*!
+    * The message shown to users who have just created a new account.
+    */
+    property string newUserFinishedMessage: i18nc( // qmllint disable unqualified
+        "%1 is the distro name",
+        "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!",
+        InitialStartUtil.distroName
+    )
+
     contentItem: ColumnLayout {
         id: mainColumn
 
@@ -27,7 +45,9 @@ PlasmaSetupComponents.SetupModule {
                 id: finishedMessage
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-                text: InitialStartUtil.finishedMessage()
+                text: AccountController.hasExistingUsers
+                        ? root.existingUserFinishedMessage
+                        : root.newUserFinishedMessage
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
             }
