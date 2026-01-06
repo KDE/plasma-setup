@@ -93,7 +93,7 @@ QString hostnameValidationMessageForResult(HostnameValidationResult result)
     case HostnameValidationResult::Empty:
         return i18nc("@info", "Hostname cannot be empty.");
     case HostnameValidationResult::Disallowed:
-        return i18nc("@info", "Hostname cannot be \"localhost\" or \"localhost.localdomain\".");
+        return i18nc("@info", "Hostname cannot be “localhost” or “localhost.localdomain”.");
     case HostnameValidationResult::TooLong:
         return i18nc("@info", "Hostname is too long (maximum 253 characters).");
     case HostnameValidationResult::LeadingDot:
