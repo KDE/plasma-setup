@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-16 06:52+0000\n"
+"POT-Creation-Date: 2026-01-06 00:45+0000\n"
 "PO-Revision-Date: 2025-09-02 17:58+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -192,6 +192,74 @@ msgstr "Dele"
 #, kde-format
 msgid "Add APN"
 msgstr "Adde APN"
+
+#: modules/hostname/contents/ui/main.qml:86
+#, kde-format
+msgctxt "@info:usagetip"
+msgid "What should this device be called?"
+msgstr ""
+
+#: modules/hostname/contents/ui/main.qml:97
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Hostname:"
+msgstr ""
+
+#: modules/hostnameutil/hostnameutil.cpp:94
+#, kde-format
+msgctxt "@info"
+msgid "Hostname cannot be empty."
+msgstr ""
+
+#: modules/hostnameutil/hostnameutil.cpp:96
+#, kde-format
+msgctxt "@info"
+msgid "Hostname cannot be \"localhost\" or \"localhost.localdomain\"."
+msgstr ""
+
+#: modules/hostnameutil/hostnameutil.cpp:98
+#, kde-format
+msgctxt "@info"
+msgid "Hostname is too long (maximum 253 characters)."
+msgstr ""
+
+#: modules/hostnameutil/hostnameutil.cpp:100
+#, kde-format
+msgctxt "@info"
+msgid "Hostname cannot start with a dot."
+msgstr ""
+
+#: modules/hostnameutil/hostnameutil.cpp:102
+#, kde-format
+msgctxt "@info"
+msgid "Hostname cannot end with a dot."
+msgstr ""
+
+#: modules/hostnameutil/hostnameutil.cpp:104
+#, kde-format
+msgctxt "@info"
+msgid "Hostname cannot contain consecutive dots."
+msgstr ""
+
+#: modules/hostnameutil/hostnameutil.cpp:106
+#, kde-format
+msgctxt "@info"
+msgid "Hostname labels cannot be empty."
+msgstr ""
+
+#: modules/hostnameutil/hostnameutil.cpp:108
+#, kde-format
+msgctxt "@info"
+msgid "Each hostname label must be at most 63 characters."
+msgstr ""
+
+#: modules/hostnameutil/hostnameutil.cpp:110
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Hostnames may contain letters, numbers, and hyphens. Each label must start "
+"and end with a letter or number."
+msgstr ""
 
 #: modules/keyboard/contents/ui/main.qml:147
 #, fuzzy, kde-format
