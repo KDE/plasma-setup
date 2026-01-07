@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the plasma-setup package.
 #
 # SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
-# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-06 00:45+0000\n"
-"PO-Revision-Date: 2025-12-06 05:52-0300\n"
+"POT-Creation-Date: 2026-01-07 00:46+0000\n"
+"PO-Revision-Date: 2026-01-06 07:07-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -190,65 +190,84 @@ msgstr "Excluir"
 msgid "Add APN"
 msgstr "Adicionar APN"
 
+#: modules/finished/contents/ui/main.qml:25
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr "Seu dispositivo agora está pronto.<br /><br />Aproveite <b>%1</b>!"
+
+#: modules/finished/contents/ui/main.qml:34
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"Seu dispositivo agora está pronto. <br /><br />Após clicar em <b>Concluir</"
+"b>, você poderá entrar em sua nova conta.<br /><br />Aproveite <b>%1</b>!"
+
 #: modules/hostname/contents/ui/main.qml:86
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
-msgstr ""
+msgstr "Qual deve ser o nome desse dispositivo?"
 
 #: modules/hostname/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
-msgstr ""
+msgstr "Nome do host:"
 
 #: modules/hostnameutil/hostnameutil.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be empty."
-msgstr ""
+msgstr "O nome do host não pode ser vazio."
 
 #: modules/hostnameutil/hostnameutil.cpp:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Hostname cannot be \"localhost\" or \"localhost.localdomain\"."
 msgctxt "@info"
-msgid "Hostname cannot be \"localhost\" or \"localhost.localdomain\"."
+msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
 msgstr ""
+"O nome do host não pode ser \"localhost\" ou \"localhost.localdomain\"."
 
 #: modules/hostnameutil/hostnameutil.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "Hostname is too long (maximum 253 characters)."
-msgstr ""
+msgstr "O nome do host é muito longo (máximo de 253 characters)."
 
 #: modules/hostnameutil/hostnameutil.cpp:100
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot start with a dot."
-msgstr ""
+msgstr "O nome do host não pode iniciar com um ponto."
 
 #: modules/hostnameutil/hostnameutil.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot end with a dot."
-msgstr ""
+msgstr "O nome do host não pode terminar com um ponto."
 
 #: modules/hostnameutil/hostnameutil.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot contain consecutive dots."
-msgstr ""
+msgstr "O nome do host não pode conter pontos consecutivos."
 
 #: modules/hostnameutil/hostnameutil.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "Hostname labels cannot be empty."
-msgstr ""
+msgstr "Os rótulos de nome de host não podem estar vazios."
 
 #: modules/hostnameutil/hostnameutil.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Each hostname label must be at most 63 characters."
-msgstr ""
+msgstr "Cada rótulo de nome de host deve ter no máximo 63 caracteres."
 
 #: modules/hostnameutil/hostnameutil.cpp:110
 #, kde-format
@@ -257,6 +276,8 @@ msgid ""
 "Hostnames may contain letters, numbers, and hyphens. Each label must start "
 "and end with a letter or number."
 msgstr ""
+"Os nomes de host podem conter letras, números e hífenes. Cada rótulo deve "
+"começar e terminar com uma letra ou um número."
 
 #: modules/keyboard/contents/ui/main.qml:147
 #, kde-format
@@ -302,22 +323,6 @@ msgstr "Senha:"
 #, kde-format
 msgid "Invalid input."
 msgstr "Entrada inválida."
-
-#: src/initialstartutil.cpp:33
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
-msgstr "Seu dispositivo agora está pronto.<br /><br />Aproveite <b>%1</b>!"
-
-#: src/initialstartutil.cpp:38
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid ""
-"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
-"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
-"Seu dispositivo agora está pronto. <br /><br />Após clicar em <b>Concluir</"
-"b>, você poderá entrar em sua nova conta.<br /><br />Aproveite <b>%1</b>!"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format

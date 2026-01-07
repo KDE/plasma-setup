@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kiss package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2024, 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-06 00:45+0000\n"
-"PO-Revision-Date: 2025-12-06 10:56+0100\n"
+"POT-Creation-Date: 2026-01-07 00:46+0000\n"
+"PO-Revision-Date: 2026-01-06 12:45+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - 2025"
+msgstr "Freek de Kruijf - 2025-2026"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -189,65 +189,84 @@ msgstr "Verwijderen"
 msgid "Add APN"
 msgstr "APN toevoegen"
 
+#: modules/finished/contents/ui/main.qml:25
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr "Uw apparaat is nu gereed.<br /><br />Veel plezier <b>%1</b>!"
+
+#: modules/finished/contents/ui/main.qml:34
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"Uw apparaat is nu gereed.<br /><br />Na klikken op <b>Beëindigen</b> zult u "
+"in staat zijn u aan te melden in uw nieuwe account.<br /><br />Veel plezier "
+"<b>%1</b>!"
+
 #: modules/hostname/contents/ui/main.qml:86
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
-msgstr ""
+msgstr "Hoe moet dit apparaat genoemd worden?"
 
 #: modules/hostname/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
-msgstr ""
+msgstr "Hostnaam:"
 
 #: modules/hostnameutil/hostnameutil.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be empty."
-msgstr ""
+msgstr "Hostnaam mag niet leeg zijn."
 
 #: modules/hostnameutil/hostnameutil.cpp:96
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Hostname cannot be \"localhost\" or \"localhost.localdomain\"."
 msgctxt "@info"
-msgid "Hostname cannot be \"localhost\" or \"localhost.localdomain\"."
-msgstr ""
+msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
+msgstr "Hostnaam mag geen \"localhost\" of \"localhost.localdomain\" zijn."
 
 #: modules/hostnameutil/hostnameutil.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "Hostname is too long (maximum 253 characters)."
-msgstr ""
+msgstr "Hostnaam is te lang (maximaal 253 tekens)."
 
 #: modules/hostnameutil/hostnameutil.cpp:100
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot start with a dot."
-msgstr ""
+msgstr "Hostnaam mag niet met een punt beginnen."
 
 #: modules/hostnameutil/hostnameutil.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot end with a dot."
-msgstr ""
+msgstr "Hostnaam mag niet met een punt eindigen."
 
 #: modules/hostnameutil/hostnameutil.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot contain consecutive dots."
-msgstr ""
+msgstr "Hostnaam mag geen opvolgende punten bevatten."
 
 #: modules/hostnameutil/hostnameutil.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "Hostname labels cannot be empty."
-msgstr ""
+msgstr "Hostnaamlabel mag niet leeg zijn."
 
 #: modules/hostnameutil/hostnameutil.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Each hostname label must be at most 63 characters."
-msgstr ""
+msgstr "Elk hostnaamlabel mag hoogstens 63 tekens zijn."
 
 #: modules/hostnameutil/hostnameutil.cpp:110
 #, kde-format
@@ -256,6 +275,8 @@ msgid ""
 "Hostnames may contain letters, numbers, and hyphens. Each label must start "
 "and end with a letter or number."
 msgstr ""
+"Hostnamen mogen letters, cijfers en mintekens bevatten. Elk label moet met "
+"een letter of cijfer beginnen en eindigen."
 
 #: modules/keyboard/contents/ui/main.qml:147
 #, kde-format
@@ -301,23 +322,6 @@ msgstr "Wachtwoord:"
 #, kde-format
 msgid "Invalid input."
 msgstr "Ongeldige invoer."
-
-#: src/initialstartutil.cpp:33
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
-msgstr "Uw apparaat is nu gereed.<br /><br />Veel plezier <b>%1</b>!"
-
-#: src/initialstartutil.cpp:38
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid ""
-"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
-"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
-"Uw apparaat is nu gereed.<br /><br />Na klikken op <b>Beëindigen</b> zult u "
-"in staat zijn u aan te melden in uw nieuwe account.<br /><br />Veel plezier "
-"<b>%1</b>!"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-06 00:45+0000\n"
+"POT-Creation-Date: 2026-01-07 00:46+0000\n"
 "PO-Revision-Date: 2025-12-06 17:29+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -190,6 +190,22 @@ msgstr "Elimina"
 msgid "Add APN"
 msgstr "Aggiungi APN"
 
+#: modules/finished/contents/ui/main.qml:25
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr "Il tuo dispositivo è pronto.<br /><br />Divertiti con <b>%1</b>!"
+
+#: modules/finished/contents/ui/main.qml:34
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"Il tuo dispositivo è pronto.<br /><br />Dopo aver fatto clic su <b>Fine</b> "
+"potrai autenticarti al tuo nuovo account.<br /><br />Divertiti con <b>%1</b>!"
+
 #: modules/hostname/contents/ui/main.qml:86
 #, kde-format
 msgctxt "@info:usagetip"
@@ -211,7 +227,7 @@ msgstr ""
 #: modules/hostnameutil/hostnameutil.cpp:96
 #, kde-format
 msgctxt "@info"
-msgid "Hostname cannot be \"localhost\" or \"localhost.localdomain\"."
+msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
 msgstr ""
 
 #: modules/hostnameutil/hostnameutil.cpp:98
@@ -302,22 +318,6 @@ msgstr "Password:"
 #, kde-format
 msgid "Invalid input."
 msgstr "Digitazione non valida."
-
-#: src/initialstartutil.cpp:33
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
-msgstr "Il tuo dispositivo è pronto.<br /><br />Divertiti con <b>%1</b>!"
-
-#: src/initialstartutil.cpp:38
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid ""
-"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
-"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
-"Il tuo dispositivo è pronto.<br /><br />Dopo aver fatto clic su <b>Fine</b> "
-"potrai autenticarti al tuo nuovo account.<br /><br />Divertiti con <b>%1</b>!"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format

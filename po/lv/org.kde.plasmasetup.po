@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-06 00:45+0000\n"
+"POT-Creation-Date: 2026-01-07 00:46+0000\n"
 "PO-Revision-Date: 2025-11-11 19:21+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -192,6 +192,26 @@ msgstr "Dzēst"
 msgid "Add APN"
 msgstr "Pievienot APN"
 
+#: modules/finished/contents/ui/main.qml:25
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+
+#: modules/finished/contents/ui/main.qml:34
+#, fuzzy, kde-format
+#| msgctxt "%1 is the distro name"
+#| msgid ""
+#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
+#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"Jūsu ierīce ir gatava darbam. <br /><br />Kad noklikšķināsiet uz <b>Pabeigt</"
+"b>, varēsit ierakstīties savā jaunajā kontā.<br /><br />Baudiet <b>%1</b>!"
+
 #: modules/hostname/contents/ui/main.qml:86
 #, kde-format
 msgctxt "@info:usagetip"
@@ -213,7 +233,7 @@ msgstr ""
 #: modules/hostnameutil/hostnameutil.cpp:96
 #, kde-format
 msgctxt "@info"
-msgid "Hostname cannot be \"localhost\" or \"localhost.localdomain\"."
+msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
 msgstr ""
 
 #: modules/hostnameutil/hostnameutil.cpp:98
@@ -304,26 +324,6 @@ msgstr "Parole:"
 #, kde-format
 msgid "Invalid input."
 msgstr "Nederīga ievade."
-
-#: src/initialstartutil.cpp:33
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
-
-#: src/initialstartutil.cpp:38
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid ""
-#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
-#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
-msgctxt "%1 is the distro name"
-msgid ""
-"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
-"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
-"Jūsu ierīce ir gatava darbam. <br /><br />Kad noklikšķināsiet uz <b>Pabeigt</"
-"b>, varēsit ierakstīties savā jaunajā kontā.<br /><br />Baudiet <b>%1</b>!"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format

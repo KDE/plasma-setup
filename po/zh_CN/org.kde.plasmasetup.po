@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-06 00:45+0000\n"
+"POT-Creation-Date: 2026-01-07 00:46+0000\n"
 "PO-Revision-Date: 2024-07-15 19:45\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -185,6 +185,22 @@ msgstr "删除"
 msgid "Add APN"
 msgstr "添加 APN"
 
+#: modules/finished/contents/ui/main.qml:25
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr "您的设备已经准备就绪。<br /><br />请随心所欲地使用 <b>%1</b>！"
+
+#: modules/finished/contents/ui/main.qml:34
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"您的设备现已准备就绪。<br /><br />点击 <b>完成</b> 后，您即可登录到新账户。"
+"<br /><br />祝您使用 <b>%1</b> 愉快！"
+
 #: modules/hostname/contents/ui/main.qml:86
 #, kde-format
 msgctxt "@info:usagetip"
@@ -206,7 +222,7 @@ msgstr ""
 #: modules/hostnameutil/hostnameutil.cpp:96
 #, kde-format
 msgctxt "@info"
-msgid "Hostname cannot be \"localhost\" or \"localhost.localdomain\"."
+msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
 msgstr ""
 
 #: modules/hostnameutil/hostnameutil.cpp:98
@@ -297,22 +313,6 @@ msgstr "密码："
 #, kde-format
 msgid "Invalid input."
 msgstr "输入的内容无效。"
-
-#: src/initialstartutil.cpp:33
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
-msgstr "您的设备已经准备就绪。<br /><br />请随心所欲地使用 <b>%1</b>！"
-
-#: src/initialstartutil.cpp:38
-#, kde-format
-msgctxt "%1 is the distro name"
-msgid ""
-"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
-"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
-msgstr ""
-"您的设备现已准备就绪。<br /><br />点击 <b>完成</b> 后，您即可登录到新账户。"
-"<br /><br />祝您使用 <b>%1</b> 愉快！"
 
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
