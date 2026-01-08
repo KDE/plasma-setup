@@ -48,6 +48,7 @@ public:
 Q_SIGNALS:
     void availableLanguagesChanged();
     void currentLanguageChanged();
+    void initialLanguageOverrideApplied();
 
 private:
     /**
@@ -70,6 +71,17 @@ private:
      * that are supported by Plasma.
      */
     void loadAvailableLanguages();
+
+    /**
+     * Overrides the initial language if it is not available.
+     *
+     * If the current system language at boot is not in the list of available languages
+     * the picker uses, this function defaults to English and emits a signal to
+     * notify that an override has been applied so the UI can show the correct selection.
+     *
+     * This ensures that the language picker always starts with a valid default selection.
+     */
+    void overrideInitialLanguageIfNeeded();
 
     QStringList m_availableLanguages;
     QString m_currentLanguage;

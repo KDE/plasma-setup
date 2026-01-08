@@ -122,8 +122,19 @@ PlasmaSetupComponents.SetupModule {
 
                     Component.onCompleted: {
                         // Scroll to the current language when the view is ready
-                        if (Language.LanguageUtil.currentLanguage) {
-                            scrollToCurrentLanguage();
+                        Qt.callLater(() => {
+                            if (Language.LanguageUtil.currentLanguage) {
+                                scrollToCurrentLanguage();
+                            }
+                        });
+                    }
+
+                    Connections {
+                        target: Language.LanguageUtil
+
+                        // Scroll to the correct language if an initial override was applied.
+                        function onInitialLanguageOverrideApplied() {
+                            languageListView.scrollToCurrentLanguage();
                         }
                     }
                 }
