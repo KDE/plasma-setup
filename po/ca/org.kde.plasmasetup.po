@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-07 00:46+0000\n"
-"PO-Revision-Date: 2026-01-06 12:45+0100\n"
+"PO-Revision-Date: 2026-01-07 09:25+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -227,9 +227,7 @@ msgid "Hostname cannot be empty."
 msgstr "El nom de màquina no pot estar buit."
 
 #: modules/hostnameutil/hostnameutil.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Hostname cannot be \"localhost\" or \"localhost.localdomain\"."
+#, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
 msgstr "El nom de màquina no pot ser «localhost» ni «localhost.localdomain»."

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-07 00:46+0000\n"
-"PO-Revision-Date: 2026-01-06 07:07-0300\n"
+"PO-Revision-Date: 2026-01-07 08:28-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -225,13 +225,10 @@ msgid "Hostname cannot be empty."
 msgstr "O nome do host não pode ser vazio."
 
 #: modules/hostnameutil/hostnameutil.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Hostname cannot be \"localhost\" or \"localhost.localdomain\"."
+#, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
-msgstr ""
-"O nome do host não pode ser \"localhost\" ou \"localhost.localdomain\"."
+msgstr "O nome do host não pode ser “localhost“ ou “localhost.localdomain“."
 
 #: modules/hostnameutil/hostnameutil.cpp:98
 #, kde-format
