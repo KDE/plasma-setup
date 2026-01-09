@@ -63,11 +63,10 @@ void InitialStartUtil::doUserCreationSteps()
 
 void InitialStartUtil::disablePlasmaSetupAutologin()
 {
-#ifdef QT_DEBUG
-    // Not needed on developer machines, and would cause the auth helper to fail.
-    qCInfo(PlasmaSetup) << "Skipping autologin removal in debug mode.";
-    return;
-#endif
+    if (!runningAsPlasmaSetupUser()) {
+        qCInfo(PlasmaSetup) << "Not running as plasma-setup user; skipping autologin removal.";
+        return;
+    }
 
     qCInfo(PlasmaSetup) << "Removing autologin configuration for plasma-setup user.";
 
@@ -81,6 +80,11 @@ void InitialStartUtil::disablePlasmaSetupAutologin()
     } else {
         qCInfo(PlasmaSetup) << "Autologin configuration removed successfully.";
     }
+}
+
+bool InitialStartUtil::runningAsPlasmaSetupUser()
+{
+    return (qgetenv("USER") == "plasma-setup");
 }
 
 void InitialStartUtil::logOut()

@@ -38,6 +38,19 @@ public:
      */
     void disablePlasmaSetupAutologin();
 
+    /**
+     * Checks if the service is running as the plasma-setup user.
+     *
+     * Useful for conditionals where e.g. user/system settings shouldn't be modified when
+     * running on a developer's machine.
+     *
+     * We use this instead of QT_DEBUG for compatibility with distros that build with
+     * debug symbols enabled by default, like KDE Neon.
+     *
+     * @return true if running as plasma-setup user, false otherwise.
+     */
+    static bool runningAsPlasmaSetupUser();
+
 private:
     /**
      * Performs the finishing steps specific to the creation of the new user.

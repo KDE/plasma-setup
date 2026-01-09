@@ -3,6 +3,7 @@
 
 #include "keyboardutil.h"
 
+#include "initialstartutil.h"
 #include "plasmasetup_debug.h"
 
 #include <KConfig>
@@ -40,11 +41,11 @@ void KeyboardUtil::applyLayout()
         return;
     }
 
-#ifdef QT_DEBUG
-    qCInfo(PlasmaSetup) << "Skipping actual layout application in debug mode. Would have applied layout:" << m_layout.name
-                        << "with variant:" << m_layout.variant;
-    return;
-#endif
+    if (!InitialStartUtil::runningAsPlasmaSetupUser()) {
+        qCInfo(PlasmaSetup) << "Not running as plasma-setup user; skipping keyboard layout application. Would have applied layout:" << m_layout.name
+                            << "with variant:" << m_layout.variant;
+        return;
+    }
 
     qCInfo(PlasmaSetup) << "Applying keyboard layout:" << m_layout.name << "with variant:" << m_layout.variant;
 
