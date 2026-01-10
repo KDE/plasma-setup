@@ -149,5 +149,16 @@ Item {
             color: "white"
         }
     }
+
+    SessionMenu {
+        id: sessionMenu
+
+        anchors {
+            bottom: parent.bottom
+            right: parent.right
+            rightMargin: Kirigami.Units.gridUnit
+            bottomMargin: Kirigami.Units.gridUnit
+        }
+    }
 }
 

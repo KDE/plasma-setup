@@ -41,6 +41,7 @@ ecm_add_qml_module(plasma-setup GENERATE_PLUGIN_SOURCE
 qt_target_qml_sources(plasma-setup
     QML_FILES
         qml/Main.qml
+        qml/SessionMenu.qml
         qml/Wizard.qml
         qml/LandingComponent.qml
 )
