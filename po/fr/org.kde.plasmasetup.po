@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-07 00:46+0000\n"
-"PO-Revision-Date: 2026-01-07 13:39+0100\n"
+"PO-Revision-Date: 2026-01-08 09:33+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -228,6 +228,8 @@ msgstr "Le nom d'hôte ne peut pas être vide."
 msgctxt "@info"
 msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
 msgstr ""
+"Il est impossible de choisir « localhost » ou « localhost.localdomain » "
+"comme nom d'hôte."
 
 #: modules/hostnameutil/hostnameutil.cpp:98
 #, kde-format
