@@ -208,7 +208,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
-msgstr ""
+msgstr "Název počítače:"
 
 #: modules/hostnameutil/hostnameutil.cpp:94
 #, kde-format
