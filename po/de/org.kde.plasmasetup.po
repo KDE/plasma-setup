@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: org.kde.initialsystemsetup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-07 00:46+0000\n"
-"PO-Revision-Date: 2026-01-06 15:58+0100\n"
+"PO-Revision-Date: 2026-01-09 14:51+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -229,7 +229,7 @@ msgstr "Rechnername darf nicht leer sein."
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
-msgstr ""
+msgstr "Rechnername darf nicht „localhost“ oder „localhost.localdomain“ sein."
 
 #: modules/hostnameutil/hostnameutil.cpp:98
 #, kde-format
