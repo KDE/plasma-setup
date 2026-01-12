@@ -7,9 +7,9 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.plasma.private.kicker as Kicker
-import org.kde.plasma.components as PC3
 import org.kde.kirigami as Kirigami
 import org.kde.kitemmodels as KItemModels
 
@@ -60,19 +60,19 @@ RowLayout {
     Repeater {
         model: filteredModel
 
-        delegate: PC3.ToolButton {
+        delegate: ToolButton {
             required property int index
             required property var model
 
             text: model.display
             icon.name: model.decoration
 
-            display: PC3.AbstractButton.TextBesideIcon
+            display: AbstractButton.TextBesideIcon
             flat: false
 
-            PC3.ToolTip.text: text
-            PC3.ToolTip.visible: hovered || activeFocus
-            PC3.ToolTip.delay: Kirigami.Units.toolTipDelay
+            ToolTip.text: text
+            ToolTip.visible: hovered || activeFocus
+            ToolTip.delay: Kirigami.Units.toolTipDelay
 
             onClicked: filteredModel.trigger(index)
 
