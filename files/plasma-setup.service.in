@@ -22,6 +22,9 @@ Before=display-manager.service
 # Only run if the `plasma-setup-done` flag file does not exist.
 ConditionPathExists=!${KDE_INSTALL_FULL_SYSCONFDIR}/plasma-setup-done
 
+# Do not run in live environments (known condition for dracut)
+ConditionKernelCommandLine=!rd.live.image
+
 [Service]
 Type=oneshot
 ExecStart=${CMAKE_INSTALL_FULL_LIBEXECDIR}/plasma-setup-bootutil
