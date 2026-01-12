@@ -22,6 +22,7 @@ target_link_libraries(plasma-setup-bootutil
     PRIVATE
         KF6::ConfigCore
         Qt::Core
+        Qt::DBus
 )
 
 install(TARGETS plasma-setup-bootutil RUNTIME DESTINATION ${CMAKE_INSTALL_LIBEXECDIR})

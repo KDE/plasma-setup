@@ -16,7 +16,7 @@
 
 [Unit]
 Description=Plasma Setup - Out-of-Box / First-Run setup wizard
-After=systemd-user-sessions.service plymouth-quit.service systemd-logind.service
+After=systemd-user-sessions.service plymouth-quit.service systemd-logind.service dbus.service
 Before=display-manager.service
 
 # Only run if the `plasma-setup-done` flag file does not exist.

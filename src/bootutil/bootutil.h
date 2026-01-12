@@ -13,15 +13,15 @@ public:
     explicit BootUtil(QObject *parent = nullptr);
 
     /**
-     * Writes the autologin configuration for SDDM.
+     * Writes the autologin configuration.
      *
      * This function writes the necessary configuration to enable autologin
-     * for the SDDM display manager for the user "plasma-setup".
+     * for the display manager for the user "plasma-setup".
      *
      * @param autoLogin If true, enables autologin; if false, disables it.
      * @return true if the operation was successful, false otherwise.
      */
-    bool writeSDDMAutologin(const bool autoLogin);
+    bool writeDisplayManagerAutologin(const bool autoLogin);
 
 private:
     /**

@@ -26,7 +26,7 @@ polkit.addRule(function (action, subject) {
         "org.kde.plasmasetup.createuser", // User creation
         "org.kde.plasmasetup.createflagfile", // Create completion flag file
         "org.kde.plasmasetup.createnewuserautostarthook", // Create autostart hook for new user to perform cleanup tasks
-        "org.kde.plasmasetup.removeautologin", // Remove SDDM autologin
+        "org.kde.plasmasetup.removeautologin", // Remove display manager autologin
         "org.kde.plasmasetup.setnewuserglobaltheme", // Set global theme for new user
         "org.kde.plasmasetup.setnewuserdisplayscaling", // Set display scaling for new user
         "org.kde.plasmasetup.setnewusertempautologin", // Set temporary autologin for new user

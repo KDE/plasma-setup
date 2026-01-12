@@ -149,4 +149,9 @@ private:
      * @return An ActionReply representing the error.
      */
     ActionReply makeErrorReply(const QString &errorDescription);
+
+    /**
+     * Path to the config to the active display manager (sddm or plasmalogin)
+     */
+    static QString displayManagerConfigPath();
 };

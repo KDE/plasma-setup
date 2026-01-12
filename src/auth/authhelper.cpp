@@ -17,6 +17,7 @@
 #include <QStandardPaths>
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusPendingReply>
+#include <QtDBus/QDBusReply>
 
 #include <algorithm>
 #include <cerrno>
@@ -33,14 +34,19 @@
 constexpr int MIN_REGULAR_USER_UID = 1000;
 
 /**
- * Path to the Plasma Setup home directory.
- */
-const QString PLASMA_SETUP_HOMEDIR = QStringLiteral("/run/plasma-setup");
-
-/**
  * Path to the SDDM autologin configuration file.
  */
 const QString SDDM_AUTOLOGIN_CONFIG_PATH = QStringLiteral("/etc/sddm.conf.d/99-plasma-setup.conf");
+
+/**
+ * Path to the PlasmaLogin autologin configuration file.
+ */
+const QString PLASMALOGIN_AUTOLOGIN_CONFIG_PATH = QStringLiteral("/etc/plasmalogin.conf.d/99-plasma-setup.conf");
+
+/**
+ * Path to the Plasma Setup home directory.
+ */
+const QString PLASMA_SETUP_HOMEDIR = QStringLiteral("/run/plasma-setup");
 
 /**
  * RAII guard for temporarily dropping privileges to a specific user.
@@ -396,7 +402,7 @@ ActionReply PlasmaSetupAuthHelper::removeautologin(const QVariantMap &args)
 {
     Q_UNUSED(args);
 
-    QFileInfo fileInfo(SDDM_AUTOLOGIN_CONFIG_PATH);
+    QFileInfo fileInfo(displayManagerConfigPath());
 
     if (!fileInfo.exists()) {
         return ActionReply::SuccessReply();
@@ -545,9 +551,11 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
         return makeErrorReply(QStringLiteral("Failed to get user info: ") + QString::fromStdString(e.what()));
     }
 
-    QFile file(SDDM_AUTOLOGIN_CONFIG_PATH);
+    const QString displayManagerConfig = displayManagerConfigPath();
+
+    QFile file(displayManagerConfig);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        return makeErrorReply(QStringLiteral("Unable to open file ") + SDDM_AUTOLOGIN_CONFIG_PATH + QStringLiteral(" for writing: ") + file.errorString());
+        return makeErrorReply(QStringLiteral("Unable to open file ") + displayManagerConfig + QStringLiteral(" for writing: ") + file.errorString());
     }
 
     QTextStream stream(&file);
@@ -692,6 +700,21 @@ ActionReply PlasmaSetupAuthHelper::makeErrorReply(const QString &errorDescriptio
     ActionReply reply = ActionReply::HelperErrorReply();
     reply.setErrorDescription(errorDescription);
     return reply;
+}
+
+QString PlasmaSetupAuthHelper::displayManagerConfigPath()
+{
+    QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.systemd1"),
+                                                      QStringLiteral("/org/freedesktop/systemd1"),
+                                                      QStringLiteral("org.freedesktop.systemd1.Manager"),
+                                                      QStringLiteral("GetUnitFileState"));
+    msg << QStringLiteral("plasmalogin.service");
+
+    QDBusReply<QString> usingPlasmaLoginQuery = QDBusConnection::systemBus().call(msg);
+    if (usingPlasmaLoginQuery.value() == QLatin1String("enabled")) {
+        return PLASMALOGIN_AUTOLOGIN_CONFIG_PATH;
+    }
+    return SDDM_AUTOLOGIN_CONFIG_PATH;
 }
 
 KAUTH_HELPER_MAIN("org.kde.plasmasetup", PlasmaSetupAuthHelper)

@@ -21,6 +21,6 @@ int main(int argc, char *argv[])
 
     BootUtil bootUtil;
 
-    bootUtil.writeSDDMAutologin(true);
+    bootUtil.writeDisplayManagerAutologin(true);
     return 0;
 }
