@@ -30,7 +30,6 @@ const QString PLASMALOGIN_AUTOLOGIN_CONFIG_PATH = QStringLiteral("/etc/plasmalog
 /**
  * Path to the config to the active display manager (sddm or plasmalogin)
  */
-
 static QString displayManagerConfigPath()
 {
     QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.systemd1"),
