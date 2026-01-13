@@ -1,21 +1,21 @@
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
+#include "bootutil.h"
+
+#include "plasmasetup_bootutil_debug.h"
+
 #include <KConfig>
 #include <KConfigGroup>
 #include <KSharedConfig>
 
+#include <QDBusConnection>
+#include <QDBusReply>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <QProcess>
 #include <QTextStream>
-
-#include <QDBusConnection>
-#include <QDBusReply>
-
-#include "bootutil.h"
-#include "plasmasetup_bootutil_debug.h"
 
 /**
  * Path to the SDDM autologin configuration file.
