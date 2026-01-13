@@ -5,10 +5,11 @@
 
 cmake_minimum_required(VERSION 3.20)
 
-project(plasma-setup VERSION "0.1.0")
+set(PROJECT_VERSION "6.5.90")
+project(plasma-setup VERSION ${PROJECT_VERSION})
 
 set(QT_MIN_VERSION "6.10.0")
-set(KF_MIN_VERSION "6.5.0")
+set(KF6_MIN_VERSION "6.22.0")
 
 include(FeatureSummary)
 
@@ -16,7 +17,7 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 ################# set KDE specific information #################
-find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
+find_package(ECM ${KF6_MIN_VERSION} REQUIRED NO_MODULE)
 
 # where to look first for cmake modules, before ${CMAKE_ROOT}/Modules/ is checked
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
@@ -42,7 +43,7 @@ set_package_properties(Qt6 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required application components"
 )
-find_package(KF6 ${KF_MIN_VERSION} COMPONENTS Auth CoreAddons I18n Package Config)
+find_package(KF6 ${KF6_MIN_VERSION} COMPONENTS Auth CoreAddons I18n Package Config)
 set_package_properties(KF6 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required application components"
