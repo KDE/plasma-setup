@@ -37,7 +37,7 @@
         ],
         "Description": "Allow the user to set the system hostname.",
         "Description[ar]": "اسمح للمستخدم بتعيين اسم المضيف.",
-        "Description[ca@valencia]": "Permet a l'usuari establir el nom de màquina del sistema.",
+        "Description[ca@valencia]": "Permet a l'usuari establir el nom d'amfitrió del sistema.",
         "Description[ca]": "Permet a l'usuari establir el nom de màquina del sistema.",
         "Description[de]": "Dem Benutzer erlauben, den Rechnernamen des Systems festzulegen.",
         "Description[es]": "Permitir que el usuario defina el nombre de máquina del sistema.",
