@@ -9,20 +9,9 @@ import QtQuick.Controls as Controls
 
 import org.kde.plasma.networkmanagement as PlasmaNM
 import org.kde.kirigami as Kirigami
-import org.kde.ksvg as KSvg
-import org.kde.kirigamiaddons.formcard 1 as FormCard
 
-FormCard.AbstractFormDelegate {
+Controls.ItemDelegate {
     id: root
-
-    property var map : []
-    property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
-                                                    (SecurityType == PlasmaNM.Enums.StaticWep ||
-                                                     SecurityType == PlasmaNM.Enums.WpaPsk ||
-                                                     SecurityType == PlasmaNM.Enums.Wpa2Psk ||
-                                                     SecurityType == PlasmaNM.Enums.SAE)
-
-    verticalPadding: Kirigami.Units.largeSpacing
 
     contentItem: RowLayout {
         spacing: 0
@@ -72,30 +61,6 @@ FormCard.AbstractFormDelegate {
                 icon.name: 'network-connect'
                 enabled: false
             }
-        }
-    }
-
-    onClicked: {
-        changeState()
-    }
-
-    function changeState() {
-        if (Uuid || !predictableWirelessPassword) {
-            if (ConnectionState == PlasmaNM.Enums.Deactivated) {
-                if (!predictableWirelessPassword && !Uuid) {
-                    handler.addAndActivateConnection(DevicePath, SpecificPath);
-                } else {
-                    handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
-                }
-            } else{
-                //show popup
-            }
-        } else if (predictableWirelessPassword) {
-            connectionDialog.headingText = i18n("Connect to") + " " + ItemUniqueName;
-            connectionDialog.devicePath = DevicePath;
-            connectionDialog.specificPath = SpecificPath;
-            connectionDialog.securityType = SecurityType;
-            connectionDialog.openAndClear();
         }
     }
 }
