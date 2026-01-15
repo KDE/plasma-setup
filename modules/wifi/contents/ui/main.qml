@@ -9,7 +9,6 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.plasma.networkmanagement as PlasmaNM
 
 import org.kde.plasmasetup.components as PlasmaSetupComponents
@@ -76,10 +75,16 @@ PlasmaSetupComponents.SetupModule {
                 text: i18n("Connect to a WiFi network for network access.")
             }
 
-            FormCard.FormCard {
+            ScrollView {
                 id: savedCard
-
+                Layout.fillWidth: true
                 visible: enabledConnections.wirelessEnabled && count > 0
+
+                Component.onCompleted: {
+                    if (background) {
+                        background.visible = true;
+                    }
+                }
 
                 // number of visible entries
                 property int count: 0
@@ -93,40 +98,47 @@ PlasmaSetupComponents.SetupModule {
                     }
                 }
 
-                Repeater {
-                    id: connectedRepeater
-                    model: mobileProxyModel
-                    delegate: ConnectionItemDelegate {
-                        // connected or saved
-                        property bool shouldDisplay: (Uuid != "") || ConnectionState === PlasmaNM.Enums.Activated
-                        onShouldDisplayChanged: savedCard.updateCount()
+                ColumnLayout {
+                    id: column
 
-                        // separate property for visible since visible is false when the whole card is not visible
-                        visible: (Uuid != "") || ConnectionState === PlasmaNM.Enums.Activated
+                    width: savedCard.width
+
+                    Repeater {
+                        id: connectedRepeater
+                        model: mobileProxyModel
+                        delegate: ConnectionItemDelegate {
+                            // connected or saved
+                            property bool shouldDisplay: (Uuid != "") || ConnectionState === PlasmaNM.Enums.Activated
+                            onShouldDisplayChanged: savedCard.updateCount()
+
+                            // separate property for visible since visible is false when the whole card is not visible
+                            visible: (Uuid != "") || ConnectionState === PlasmaNM.Enums.Activated
+
+                            Layout.fillWidth: true
+                        }
                     }
                 }
             }
 
-            Kirigami.AbstractCard {
+            ScrollView {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 visible: enabledConnections.wirelessEnabled
 
-                ScrollView {
-                    anchors.fill: parent
-                    implicitHeight: mainColumn.height - titleLabel.height - savedCard.height - Kirigami.Units.gridUnit
+                Component.onCompleted: {
+                    if (background) {
+                        background.visible = true;
+                    }
+                }
 
-                    ListView {
-                        id: listView
+                ListView {
+                    clip: true
+                    model: mobileProxyModel
 
-                        clip: true
-                        model: mobileProxyModel
-
-                        delegate: ConnectionItemDelegate {
-                            width: ListView.view.width
-                            height: visible ? implicitHeight : 0
-                            visible: !((Uuid != "") || ConnectionState === PlasmaNM.Enums.Activated)
-                        }
+                    delegate: ConnectionItemDelegate {
+                        width: ListView.view.width
+                        height: visible ? implicitHeight : 0
+                        visible: !((Uuid != "") || ConnectionState === PlasmaNM.Enums.Activated)
                     }
                 }
             }

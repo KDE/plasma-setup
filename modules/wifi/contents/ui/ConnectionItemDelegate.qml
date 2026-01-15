@@ -9,10 +9,8 @@ import QtQuick.Controls as Controls
 
 import org.kde.plasma.networkmanagement as PlasmaNM
 import org.kde.kirigami as Kirigami
-import org.kde.ksvg as KSvg
-import org.kde.kirigamiaddons.formcard 1 as FormCard
 
-FormCard.AbstractFormDelegate {
+Controls.ItemDelegate {
     id: root
 
     property var map : []
@@ -21,8 +19,6 @@ FormCard.AbstractFormDelegate {
                                                      SecurityType == PlasmaNM.Enums.WpaPsk ||
                                                      SecurityType == PlasmaNM.Enums.Wpa2Psk ||
                                                      SecurityType == PlasmaNM.Enums.SAE)
-
-    verticalPadding: Kirigami.Units.largeSpacing
 
     contentItem: RowLayout {
         spacing: 0
