@@ -8,7 +8,6 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.plasmasetup.languageutil as Language
 
 import org.kde.plasmasetup.components as PlasmaSetupComponents
@@ -81,7 +80,7 @@ PlasmaSetupComponents.SetupModule {
 
                     currentIndex: -1 // Ensure focus is not on the listview
 
-                    delegate: FormCard.FormRadioDelegate {
+                    delegate: RadioDelegate {
                         required property string modelData
 
                         // Show and hide based on filter
