@@ -87,6 +87,7 @@ PlasmaSetupComponents.SetupModule {
                         // Show and hide based on filter
                         readonly property bool matchesFilter: languageListView.matchesFilter(modelData)
                         height: matchesFilter ? implicitHeight : 0
+                        width: ListView.view.width
                         visible: matchesFilter
 
                         // Get language name from locale code (e.g., "en_US" -> "English (United States)")
