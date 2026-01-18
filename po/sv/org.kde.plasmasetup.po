@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-07 00:46+0000\n"
-"PO-Revision-Date: 2025-10-22 20:23+0200\n"
+"PO-Revision-Date: 2026-01-17 21:16+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -76,11 +76,9 @@ msgid "Confirm Password"
 msgstr "Bekräfta lösenord"
 
 #: modules/account/contents/ui/main.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Passwords don’t match"
+#, kde-format
 msgid "Passwords must match"
-msgstr "Lösenorden stämmer inte överens"
+msgstr "Lösenord måste stämma"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format
@@ -192,19 +190,13 @@ msgid "Add APN"
 msgstr "Lägg till APN"
 
 #: modules/finished/contents/ui/main.qml:25
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
 msgstr "Apparaten är nu redo.<br /><br />Njut av <b>%1</b>!"
 
 #: modules/finished/contents/ui/main.qml:34
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid ""
-#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
-#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid ""
 "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
@@ -217,61 +209,61 @@ msgstr ""
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
-msgstr ""
+msgstr "Vad ska apparaten kallas?"
 
 #: modules/hostname/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
-msgstr ""
+msgstr "Värddatornamn:"
 
 #: modules/hostnameutil/hostnameutil.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be empty."
-msgstr ""
+msgstr "Värddatornamn kan inte vara tomt."
 
 #: modules/hostnameutil/hostnameutil.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
-msgstr ""
+msgstr "Värddatornamn kan inte vara “localhost” eller “localhost.localdomain”."
 
 #: modules/hostnameutil/hostnameutil.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "Hostname is too long (maximum 253 characters)."
-msgstr ""
+msgstr "Värddatornamn är för långt (maximalt 253 tecken)."
 
 #: modules/hostnameutil/hostnameutil.cpp:100
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot start with a dot."
-msgstr ""
+msgstr "Värddatornamn kan inte börja med en punkt."
 
 #: modules/hostnameutil/hostnameutil.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot end with a dot."
-msgstr ""
+msgstr "Värddatornamn kan inte sluta med en punkt."
 
 #: modules/hostnameutil/hostnameutil.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot contain consecutive dots."
-msgstr ""
+msgstr "Värddatornamn kan inte innehålla på varandra följande punkter."
 
 #: modules/hostnameutil/hostnameutil.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "Hostname labels cannot be empty."
-msgstr ""
+msgstr "Beteckning i värddatornamn kan inte vara tomma."
 
 #: modules/hostnameutil/hostnameutil.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Each hostname label must be at most 63 characters."
-msgstr ""
+msgstr "Varje beteckning i värddatornamn måste vara som mest 63 tecken."
 
 #: modules/hostnameutil/hostnameutil.cpp:110
 #, kde-format
@@ -280,6 +272,8 @@ msgid ""
 "Hostnames may contain letters, numbers, and hyphens. Each label must start "
 "and end with a letter or number."
 msgstr ""
+"Värddatornamn får innehålla bokstäver, siffror och bindestreck. Varje "
+"beteckning måste börja och sluta med en bokstav eller siffra."
 
 #: modules/keyboard/contents/ui/main.qml:147
 #, kde-format
@@ -302,10 +296,9 @@ msgid "Dark Theme"
 msgstr "Mörkt tema"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
+#, kde-format
 msgid "Select your time zone."
-msgstr "Välj din tidszon och önskat tidsformat."
+msgstr "Välj tidszon."
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
