@@ -214,6 +214,7 @@ Description[pt_BR]=Remover configuração de login automático do gerenciador de
 Description[sl]=Odstrani konfiguracijo samodejne prijave upravljalnika prikaza
 Description[tr]=Görüntü yöneticisinin kendiliğinden oturum açma yapılandırmasını kaldırın
 Description[uk]=Вилучити налаштування автозапуску засобу керування дисплеєм
+Description[zh_CN]=移除显示管理器自动登录配置
 Description[zh_TW]=移除登入畫面的自動登入配置
 Policy=no
 
@@ -417,5 +418,6 @@ Description[pt_BR]=Definir a configuração de login automático temporário do 
 Description[sl]=Nastavi začasno konfiguracijo samodejne prijave za novo ustvarjenega uporabnika
 Description[tr]=Yeni oluşturulan kullanıcı için görüntü yöneticisi geçici kendiliğinden oturum açma yapılandırmasını ayarlayın
 Description[uk]=Встановити налаштування тимчасового автоматичного входу засобу керування дисплеєм для новоствореного користувача
+Description[zh_CN]=设置新建用户的显示管理器临时自动登录配置
 Description[zh_TW]=為新建立的使用者設定登入畫面的暫時性自動登入配置
 Policy=no
