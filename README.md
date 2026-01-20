@@ -27,29 +27,29 @@ system's first user account and configuring initial settings.
 
 - Clone the repository:
 
-```bash
-git clone https://invent.kde.org/plasma/plasma-setup.git
-```
+  ```bash
+  git clone https://invent.kde.org/plasma/plasma-setup.git
+  ```
 
 - Build and install:
 
-```bash
-cmake -B build/
-cmake --build build/ --parallel
-sudo cmake --install build/
-```
+  ```bash
+  cmake -B build/
+  cmake --build build/ --parallel
+  sudo cmake --install build/
+  ```
 
 - Trigger system user creation:
 
-```bash
-sudo systemd-sysusers
-```
+  ```bash
+  sudo systemd-sysusers
+  ```
 
 - Enable the systemd service:
 
-```bash
-sudo systemctl enable plasma-setup.service
-```
+  ```bash
+  sudo systemctl enable plasma-setup.service
+  ```
 
 - Reboot:
 
