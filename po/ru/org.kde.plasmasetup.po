@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:46+0000\n"
+"POT-Creation-Date: 2026-01-20 03:01+0000\n"
 "PO-Revision-Date: 2025-10-27 12:00+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -279,12 +279,12 @@ msgstr ""
 msgid "Select your keyboard layout and language."
 msgstr ""
 
-#: modules/language/contents/ui/main.qml:42
+#: modules/language/contents/ui/main.qml:41
 #, kde-format
 msgid "Please select your preferred language."
 msgstr "Выберите предпочитаемый язык."
 
-#: modules/language/contents/ui/main.qml:48
+#: modules/language/contents/ui/main.qml:47
 #, kde-format
 msgid "Search languages…"
 msgstr "Поиск языков…"
