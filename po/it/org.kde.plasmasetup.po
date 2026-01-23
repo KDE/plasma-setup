@@ -1,6 +1,6 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kiss package.
-# SPDX-FileCopyrightText: 2024, 2025 Valter Mura <valtermura@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025, 2026 Valter Mura <valtermura@gmail.com>
 # SPDX-FileCopyrightText: 2025 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-20 03:01+0000\n"
-"PO-Revision-Date: 2025-12-06 17:29+0100\n"
+"PO-Revision-Date: 2026-01-15 18:15+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -210,61 +210,62 @@ msgstr ""
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
-msgstr ""
+msgstr "Come deve essere chiamato questo dispositivo?"
 
 #: modules/hostname/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
-msgstr ""
+msgstr "Nome Host:"
 
 #: modules/hostnameutil/hostnameutil.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be empty."
-msgstr ""
+msgstr "Il nome host non può essere vuoto."
 
 #: modules/hostnameutil/hostnameutil.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
-msgstr ""
+msgstr "Il nome host non può essere «localhost» o «localhost.localdomain»."
 
 #: modules/hostnameutil/hostnameutil.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "Hostname is too long (maximum 253 characters)."
-msgstr ""
+msgstr "Il nome host è troppo lungo (deve essere massimo 253 caratteri)."
 
 #: modules/hostnameutil/hostnameutil.cpp:100
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot start with a dot."
-msgstr ""
+msgstr "Il nome host non può iniziare con un punto."
 
 #: modules/hostnameutil/hostnameutil.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot end with a dot."
-msgstr ""
+msgstr "Il nome host non può terminare con un punto."
 
 #: modules/hostnameutil/hostnameutil.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot contain consecutive dots."
-msgstr ""
+msgstr "Il nome host non può contenere punti consecutivi."
 
 #: modules/hostnameutil/hostnameutil.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "Hostname labels cannot be empty."
-msgstr ""
+msgstr "Le etichette del nome host non possono essere vuote."
 
 #: modules/hostnameutil/hostnameutil.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Each hostname label must be at most 63 characters."
 msgstr ""
+"Ciascuna etichetta del nome host deve essere lunga al massimo 63 caratteri."
 
 #: modules/hostnameutil/hostnameutil.cpp:110
 #, kde-format
@@ -273,6 +274,8 @@ msgid ""
 "Hostnames may contain letters, numbers, and hyphens. Each label must start "
 "and end with a letter or number."
 msgstr ""
+"I nomi host possono contenere lettere, numeri e trattini. Ciascuna etichetta "
+"deve iniziare e terminare con una lettera o un numero."
 
 #: modules/keyboard/contents/ui/main.qml:147
 #, kde-format
