@@ -38,13 +38,13 @@ PlasmaSetupComponents.SetupModule {
 
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
-                text: i18n("Please select your preferred language.") // qmllint disable unqualified
+                text: i18n("Please select your preferred language.")
             }
 
             Kirigami.SearchField {
                 id: searchField
                 Layout.fillWidth: true
-                placeholderText: i18n("Search languages…") // qmllint disable unqualified
+                placeholderText: i18n("Search languages…")
                 property string filterString: ""
 
                 onTextChanged: {

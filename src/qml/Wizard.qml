@@ -283,7 +283,7 @@ Kirigami.Page {
                     Button {
                         Layout.alignment: Qt.AlignLeft
 
-                        text: i18nc("@action:button", "Back") // qmllint disable unqualified
+                        text: i18nc("@action:button", "Back")
                         icon.name: "arrow-left-symbolic"
 
                         onClicked: root.requestPreviousPage()
@@ -299,7 +299,7 @@ Kirigami.Page {
                         LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.LeftToRight // qmllint disable missing-property
 
                         visible: !root.onFinalPage
-                        text: i18nc("@action:button", "Next") // qmllint disable unqualified
+                        text: i18nc("@action:button", "Next")
                         icon.name: "arrow-right-symbolic"
 
                         enabled: root.currentModule.nextEnabled
@@ -311,7 +311,7 @@ Kirigami.Page {
                         Layout.alignment: Qt.AlignRight
 
                         visible: root.onFinalPage
-                        text: i18nc("@action:button", "Finish") // qmllint disable unqualified
+                        text: i18nc("@action:button", "Finish")
                         icon.name: "dialog-ok-symbolic"
 
                         enabled: root.currentModule.nextEnabled

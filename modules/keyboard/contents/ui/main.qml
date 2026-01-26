@@ -144,7 +144,7 @@ PlasmaSetupComponents.SetupModule {
 
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
-                text: i18n("Select your keyboard layout and language.") // qmllint disable unqualified
+                text: i18n("Select your keyboard layout and language.")
             }
 
             Kirigami.SearchField {

@@ -66,7 +66,7 @@ PlasmaSetupComponents.SetupModule {
             Label {
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
-                text: i18n("We need a few details to complete the setup.") // qmllint disable unqualified
+                text: i18n("We need a few details to complete the setup.")
 
                 Layout.leftMargin: Kirigami.Units.gridUnit
                 Layout.rightMargin: Kirigami.Units.gridUnit
@@ -77,11 +77,11 @@ PlasmaSetupComponents.SetupModule {
                 Layout.alignment: Qt.AlignHCenter
 
                 Label {
-                    text: i18nc("@info", "This user will be an administrator.") // qmllint disable unqualified
+                    text: i18nc("@info", "This user will be an administrator.")
                 }
 
                 Kirigami.ContextualHelpButton {
-                    toolTipText: xi18nc("@info", "This user will have administrative privileges on the system.<nl/><nl/>This means that they can change system settings, install software, and access all files on the system.<nl/><nl/>Choose a strong password for this user.") // qmllint disable unqualified
+                    toolTipText: xi18nc("@info", "This user will have administrative privileges on the system.<nl/><nl/>This means that they can change system settings, install software, and access all files on the system.<nl/><nl/>Choose a strong password for this user.")
                 }
             }
 
@@ -94,7 +94,7 @@ PlasmaSetupComponents.SetupModule {
                 TextField {
                     id: fullNameField
 
-                    Kirigami.FormData.label: i18nc("@label:textbox", "Full Name") // qmllint disable unqualified
+                    Kirigami.FormData.label: i18nc("@label:textbox", "Full Name")
                     property string previousText: ''
                     onTextChanged: {
                         if (usernameField.text.length === 0 || usernameField.text === previousText) {
@@ -112,7 +112,7 @@ PlasmaSetupComponents.SetupModule {
                 TextField {
                     id: usernameField
 
-                    Kirigami.FormData.label: i18nc("@label:textbox", "Username") // qmllint disable unqualified
+                    Kirigami.FormData.label: i18nc("@label:textbox", "Username")
 
                     Binding {
                         target: AccountController
@@ -131,7 +131,7 @@ PlasmaSetupComponents.SetupModule {
                 Kirigami.PasswordField {
                     id: passwordField
 
-                    Kirigami.FormData.label: i18nc("@label:textbox", "Password") // qmllint disable unqualified
+                    Kirigami.FormData.label: i18nc("@label:textbox", "Password")
                     placeholderText: "" // Form label already indicates this
                     onTextChanged: debouncer.reset()
 
@@ -145,7 +145,7 @@ PlasmaSetupComponents.SetupModule {
                 Kirigami.PasswordField {
                     id: repeatField
 
-                    Kirigami.FormData.label: i18nc("@label:textbox", "Confirm Password") // qmllint disable unqualified
+                    Kirigami.FormData.label: i18nc("@label:textbox", "Confirm Password")
                     placeholderText: "" // Form label already indicates this
                     onTextChanged: debouncer.reset()
 
@@ -163,7 +163,7 @@ PlasmaSetupComponents.SetupModule {
 
                     Layout.fillWidth: true
                     type: Kirigami.MessageType.Error
-                    text: i18n("Passwords must match") // qmllint disable unqualified
+                    text: i18n("Passwords must match")
                     visible: passwordField.text !== "" && repeatField.text !== "" && passwordField.text !== repeatField.text && debouncer.isTriggered
                 }
             }

@@ -83,7 +83,7 @@ PlasmaSetupComponents.SetupModule {
                 Layout.fillWidth: true
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
-                text: i18nc("@info:usagetip", "What should this device be called?") // qmllint disable unqualified
+                text: i18nc("@info:usagetip", "What should this device be called?")
             }
 
             Kirigami.FormLayout {
@@ -94,7 +94,7 @@ PlasmaSetupComponents.SetupModule {
                 TextField {
                     id: hostnameField
 
-                    Kirigami.FormData.label: i18nc("@label:textbox", "Hostname:") // qmllint disable unqualified
+                    Kirigami.FormData.label: i18nc("@label:textbox", "Hostname:")
 
                     text: HostnameUtil.hostname
                     onTextChanged: {

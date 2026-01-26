@@ -20,7 +20,7 @@ PlasmaSetupComponents.SetupModule {
     /*!
     * The message shown to users who already have an account on the system.
     */
-    property string existingUserFinishedMessage: i18nc( // qmllint disable unqualified
+    property string existingUserFinishedMessage: i18nc(
         "%1 is the distro name",
         "Your device is now ready.<br /><br />Enjoy <b>%1</b>!",
         InitialStartUtil.distroName
@@ -29,7 +29,7 @@ PlasmaSetupComponents.SetupModule {
     /*!
     * The message shown to users who have just created a new account.
     */
-    property string newUserFinishedMessage: i18nc( // qmllint disable unqualified
+    property string newUserFinishedMessage: i18nc(
         "%1 is the distro name",
         "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!",
         InitialStartUtil.distroName

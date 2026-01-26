@@ -29,7 +29,7 @@ PlasmaSetupComponents.SetupModule {
 
             wrapMode: Text.Wrap
             horizontalAlignment: Text.AlignHCenter
-            text: i18n("Select your time zone.") // qmllint disable unqualified
+            text: i18n("Select your time zone.")
         }
 
         Frame {
