@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:44+0000\n"
+"POT-Creation-Date: 2026-01-27 00:46+0000\n"
 "PO-Revision-Date: 2024-07-15 19:45\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -314,7 +314,7 @@ msgstr "密码："
 msgid "Invalid input."
 msgstr "输入的内容无效。"
 
-#: src/main.cpp:35 src/qml/Main.qml:14
+#: src/main.cpp:35 src/qml/Main.qml:11
 #, kde-format
 msgid "Plasma Setup"
 msgstr "Plasma 设置"

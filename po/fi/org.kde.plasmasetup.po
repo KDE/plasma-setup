@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:44+0000\n"
+"POT-Creation-Date: 2026-01-27 00:46+0000\n"
 "PO-Revision-Date: 2026-01-05 18:06+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -318,7 +318,7 @@ msgstr "Salasana:"
 msgid "Invalid input."
 msgstr "Virheellinen syöte."
 
-#: src/main.cpp:35 src/qml/Main.qml:14
+#: src/main.cpp:35 src/qml/Main.qml:11
 #, kde-format
 msgid "Plasma Setup"
 msgstr "Plasma-asetus"

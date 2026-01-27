@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.kde.initialsystemsetup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:44+0000\n"
+"POT-Creation-Date: 2026-01-27 00:46+0000\n"
 "PO-Revision-Date: 2024-11-12 17:03+0100\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -313,7 +313,7 @@ msgstr "Heslo:"
 msgid "Invalid input."
 msgstr ""
 
-#: src/main.cpp:35 src/qml/Main.qml:14
+#: src/main.cpp:35 src/qml/Main.qml:11
 #, kde-format
 msgid "Plasma Setup"
 msgstr ""

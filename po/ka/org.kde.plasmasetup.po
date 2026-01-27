@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:44+0000\n"
+"POT-Creation-Date: 2026-01-27 00:46+0000\n"
 "PO-Revision-Date: 2026-01-07 06:46+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -322,7 +322,7 @@ msgstr "პაროლი:"
 msgid "Invalid input."
 msgstr "არასწორი შეყვანა."
 
-#: src/main.cpp:35 src/qml/Main.qml:14
+#: src/main.cpp:35 src/qml/Main.qml:11
 #, kde-format
 msgid "Plasma Setup"
 msgstr "Plasma-ის მორგება"

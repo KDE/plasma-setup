@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kiss package.
 #
-# SPDX-FileCopyrightText: 2025 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2025, 2026 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:44+0000\n"
-"PO-Revision-Date: 2025-09-02 17:58+0200\n"
+"POT-Creation-Date: 2026-01-27 00:46+0000\n"
+"PO-Revision-Date: 2026-01-26 18:09+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -48,41 +48,33 @@ msgid ""
 msgstr ""
 
 #: modules/account/contents/ui/main.qml:97
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Full Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Nomine complete"
 
 #: modules/account/contents/ui/main.qml:115
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Nomine usator"
 
 #: modules/account/contents/ui/main.qml:134
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Contrasigno"
 
 #: modules/account/contents/ui/main.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Confirma contrasigno"
 
 #: modules/account/contents/ui/main.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Passwords don’t match"
+#, kde-format
 msgid "Passwords must match"
-msgstr "Le contrasignos non coincide"
+msgstr "Contrasigno debe coincider"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format
@@ -194,9 +186,7 @@ msgid "Add APN"
 msgstr "Adde APN"
 
 #: modules/finished/contents/ui/main.qml:25
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
 msgstr "Tu dispositivo es nunc preste. <br /><br /> Gaude de <b>%1</b>!"
@@ -219,7 +209,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
-msgstr ""
+msgstr "Nomine de Hospite:"
 
 #: modules/hostnameutil/hostnameutil.cpp:94
 #, kde-format
@@ -278,10 +268,9 @@ msgid ""
 msgstr ""
 
 #: modules/keyboard/contents/ui/main.qml:147
-#, fuzzy, kde-format
-#| msgid "Please select your preferred language."
+#, kde-format
 msgid "Select your keyboard layout and language."
-msgstr "Pro favor selige tu linguage preferite."
+msgstr "Pro favor selige tu disposition de claviero e linguage."
 
 #: modules/language/contents/ui/main.qml:41
 #, kde-format
@@ -289,8 +278,7 @@ msgid "Please select your preferred language."
 msgstr "Pro favor selige tu linguage preferite."
 
 #: modules/language/contents/ui/main.qml:47
-#, fuzzy, kde-format
-#| msgid "Search languages..."
+#, kde-format
 msgid "Search languages…"
 msgstr "Cerca linguages..."
 
@@ -300,10 +288,9 @@ msgid "Dark Theme"
 msgstr "Thema obscur"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
+#, kde-format
 msgid "Select your time zone."
-msgstr "Selige tu fuso horari e formato de tempore preferite."
+msgstr "Selige tu fuso horari ."
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
@@ -325,7 +312,7 @@ msgstr "Contrasigno:"
 msgid "Invalid input."
 msgstr "Entrata invalide."
 
-#: src/main.cpp:35 src/qml/Main.qml:14
+#: src/main.cpp:35 src/qml/Main.qml:11
 #, kde-format
 msgid "Plasma Setup"
 msgstr ""
