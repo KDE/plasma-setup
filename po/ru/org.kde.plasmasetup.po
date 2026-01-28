@@ -1,14 +1,14 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-setup package.
 #
-# SPDX-FileCopyrightText: 2025 Alexander Yavorskiy <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Alexander Yavorskiy <kekcuha@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-20 03:01+0000\n"
-"PO-Revision-Date: 2025-10-27 12:00+0200\n"
-"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
+"PO-Revision-Date: 2026-01-27 20:09+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -31,7 +31,7 @@ msgstr "kekcuha@gmail.com"
 #: modules/account/contents/ui/main.qml:69
 #, kde-format
 msgid "We need a few details to complete the setup."
-msgstr ""
+msgstr "Для завершения настройки требуется указать некоторые сведения."
 
 #: modules/account/contents/ui/main.qml:80
 #, kde-format
@@ -77,9 +77,7 @@ msgid "Confirm Password"
 msgstr "Подтверждение пароля"
 
 #: modules/account/contents/ui/main.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Passwords don’t match"
+#, kde-format
 msgid "Passwords must match"
 msgstr "Пароли не совпадают"
 
@@ -197,6 +195,7 @@ msgstr "Добавить APN"
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
+"Устройство готово к работе. <br /><br />Приятного использования <b>%1</b>!"
 
 #: modules/finished/contents/ui/main.qml:34
 #, kde-format
@@ -205,66 +204,68 @@ msgid ""
 "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
+"Устройство готово к.<br /><br />После нажатия <b>Готово</b> можно будет "
+"войти в новый аккаунт.<br /><br />Приятного использования <b>%1</b>!"
 
 #: modules/hostname/contents/ui/main.qml:86
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
-msgstr ""
+msgstr "Как назвать это устройство?"
 
 #: modules/hostname/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
-msgstr ""
+msgstr "Имя устройства:"
 
 #: modules/hostnameutil/hostnameutil.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be empty."
-msgstr ""
+msgstr "Имя устройства не может быть пустым."
 
 #: modules/hostnameutil/hostnameutil.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
-msgstr ""
+msgstr "Имя устройства не может быть «localhost» или «localhost.localdomain»"
 
 #: modules/hostnameutil/hostnameutil.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "Hostname is too long (maximum 253 characters)."
-msgstr ""
+msgstr "Имя устройства не может быть длиннее 253 символов."
 
 #: modules/hostnameutil/hostnameutil.cpp:100
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot start with a dot."
-msgstr ""
+msgstr "Имя устройства не может начинаться с точки."
 
 #: modules/hostnameutil/hostnameutil.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot end with a dot."
-msgstr ""
+msgstr "Имя устройства не может заканчиваться точкой."
 
 #: modules/hostnameutil/hostnameutil.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot contain consecutive dots."
-msgstr ""
+msgstr "Имя устройства не может содержать последовательные точки."
 
 #: modules/hostnameutil/hostnameutil.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "Hostname labels cannot be empty."
-msgstr ""
+msgstr "Метки имени устройства не могут быть пустыми."
 
 #: modules/hostnameutil/hostnameutil.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Each hostname label must be at most 63 characters."
-msgstr ""
+msgstr "Каждая метка имени устройства должна быть не длиннее 63 символов."
 
 #: modules/hostnameutil/hostnameutil.cpp:110
 #, kde-format
@@ -273,11 +274,13 @@ msgid ""
 "Hostnames may contain letters, numbers, and hyphens. Each label must start "
 "and end with a letter or number."
 msgstr ""
+"Имя устройства может содержать буквы, цифры и дефисы. Каждая метка должна "
+"начинаться и заканчиваться буквой или цифрой."
 
 #: modules/keyboard/contents/ui/main.qml:147
 #, kde-format
 msgid "Select your keyboard layout and language."
-msgstr ""
+msgstr "Выберите раскладку клавиатуры и язык."
 
 #: modules/language/contents/ui/main.qml:41
 #, kde-format
@@ -292,18 +295,17 @@ msgstr "Поиск языков…"
 #: modules/prepare/contents/ui/main.qml:76
 #, kde-format
 msgid "Dark Theme"
-msgstr "Тёмная тема"
+msgstr "Тёмное оформление"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
+#, kde-format
 msgid "Select your time zone."
-msgstr "Выберите часовой пояс и предпочитаемый формат времени."
+msgstr "Выберите свой часовой пояс."
 
 #: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
-#, fuzzy, kde-format
+#, kde-format
 msgid "Connect to"
-msgstr "Подключение к"
+msgstr "Подключиться"
 
 #: modules/wifi/contents/ui/main.qml:76
 #, kde-format
@@ -323,12 +325,12 @@ msgstr "Неверное значение."
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "Приложение для настройки Plasma"
 
 #: src/main.cpp:37
 #, kde-format
 msgid "Make Plasma yours"
-msgstr ""
+msgstr "Персонализация Plasma"
 
 #: src/main.cpp:39
 #, kde-format
@@ -339,6 +341,7 @@ msgstr "© Сообщество KDE, 2021-2024"
 #, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr ""
+"Удалить конфигурацию автоматического входа приложения для настройки Plasma."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
@@ -348,12 +351,12 @@ msgstr "Добро пожаловать в<br/><b>Plasma Mobile</b>"
 #: src/qml/LandingComponent.qml:103
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr ""
+msgstr "Добро пожаловать в <br/><b>KDE Plasma</b>"
 
 #: src/qml/LandingComponent.qml:117
 #, kde-format
 msgid "Begin Setup"
-msgstr ""
+msgstr "Начать настройку"
 
 #: src/qml/LandingComponent.qml:144
 #, kde-format
