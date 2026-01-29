@@ -44,6 +44,7 @@
         "Description[bg]": "Разрешаване на потребителя да зададе името на акаунта.",
         "Description[ca@valencia]": "Permet a l'usuari establir el nom del compte.",
         "Description[ca]": "Permet a l'usuari establir el nom del compte.",
+        "Description[cs]": "Povolit uživateli nastavit název účtu.",
         "Description[de]": "Dem Benutzer erlauben, den Kontonamen festzulegen.",
         "Description[es]": "Permitir que el usuario defina el nombre de la cuenta.",
         "Description[eu]": "Eman erabiltzaileari kontuaren izena ezartzeko aukera.",
