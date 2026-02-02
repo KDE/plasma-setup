@@ -12,6 +12,13 @@ Kirigami.AbstractApplicationWindow {
 
     visibility: Window.FullScreen
 
+    // Disable the default shortcut for quitting the application.
+    //
+    // This is to prevent users from accidentally quitting the setup wizard
+    // by pressing Ctrl+Q, which is the default shortcut for quitting Kirigami
+    // applications.
+    quitAction.shortcut: ""
+
     Wizard {
         anchors.fill: parent
     }
