@@ -17,7 +17,7 @@ Kirigami.AbstractApplicationWindow {
     // This is to prevent users from accidentally quitting the setup wizard
     // by pressing Ctrl+Q, which is the default shortcut for quitting Kirigami
     // applications.
-    quitAction.shortcut: ""
+    quitAction.enabled: false
 
     Wizard {
         anchors.fill: parent
