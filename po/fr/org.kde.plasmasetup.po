@@ -287,7 +287,7 @@ msgstr ""
 #: modules/language/contents/ui/main.qml:41
 #, kde-format
 msgid "Please select your preferred language."
-msgstr "Veuillez sélectionnée votre langue préférée."
+msgstr "Veuillez sélectionner votre langue préférée."
 
 #: modules/language/contents/ui/main.qml:47
 #, kde-format
