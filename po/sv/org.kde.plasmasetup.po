@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 03:01+0000\n"
+"POT-Creation-Date: 2026-02-04 03:03+0000\n"
 "PO-Revision-Date: 2026-01-17 21:16+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -300,15 +300,15 @@ msgstr "Mörkt tema"
 msgid "Select your time zone."
 msgstr "Välj tidszon."
 
-#: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
-#, kde-format
-msgid "Connect to"
-msgstr "Anslut till"
-
-#: modules/wifi/contents/ui/main.qml:76
+#: modules/wifi/contents/ui/main.qml:75
 #, kde-format
 msgid "Connect to a WiFi network for network access."
 msgstr "Anslut till ett WIFI-nätverk för nätverksåtkomst."
+
+#: modules/wifi/contents/ui/main.qml:167
+#, kde-format
+msgid "Connect to"
+msgstr "Anslut till"
 
 #: modules/wifi/contents/ui/PasswordField.qml:14
 #, kde-format

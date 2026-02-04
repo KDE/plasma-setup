@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 03:01+0000\n"
+"POT-Creation-Date: 2026-02-04 03:03+0000\n"
 "PO-Revision-Date: 2025-12-06 15:02+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -302,15 +302,15 @@ msgstr "Ciemny tryb"
 msgid "Select your time zone."
 msgstr "Ustaw swoją strefę czasową."
 
-#: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
-#, kde-format
-msgid "Connect to"
-msgstr "Połącz z"
-
-#: modules/wifi/contents/ui/main.qml:76
+#: modules/wifi/contents/ui/main.qml:75
 #, kde-format
 msgid "Connect to a WiFi network for network access."
 msgstr "Podłącz się do WiFi, aby uzyskać dostęp do sieci."
+
+#: modules/wifi/contents/ui/main.qml:167
+#, kde-format
+msgid "Connect to"
+msgstr "Połącz z"
 
 #: modules/wifi/contents/ui/PasswordField.qml:14
 #, kde-format

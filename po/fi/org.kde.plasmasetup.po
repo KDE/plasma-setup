@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 03:01+0000\n"
+"POT-Creation-Date: 2026-02-04 03:03+0000\n"
 "PO-Revision-Date: 2026-01-05 18:06+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -298,15 +298,15 @@ msgstr "Tumma teema"
 msgid "Select your time zone."
 msgstr "Valitse aikavyöhyke."
 
-#: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
-#, kde-format
-msgid "Connect to"
-msgstr "Yhdistä"
-
-#: modules/wifi/contents/ui/main.qml:76
+#: modules/wifi/contents/ui/main.qml:75
 #, kde-format
 msgid "Connect to a WiFi network for network access."
 msgstr "Yhdistä verkkoyhteyttä varten langattomaan verkkoon."
+
+#: modules/wifi/contents/ui/main.qml:167
+#, kde-format
+msgid "Connect to"
+msgstr "Yhdistä"
 
 #: modules/wifi/contents/ui/PasswordField.qml:14
 #, kde-format
