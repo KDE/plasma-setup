@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-27 00:46+0000\n"
+"POT-Creation-Date: 2026-02-04 00:46+0000\n"
 "PO-Revision-Date: 2025-11-11 19:21+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -305,15 +305,15 @@ msgstr "Tumšais motīvs"
 msgid "Select your time zone."
 msgstr "Norādiet savu laika joslu."
 
-#: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
-#, kde-format
-msgid "Connect to"
-msgstr "Savienoties ar"
-
-#: modules/wifi/contents/ui/main.qml:76
+#: modules/wifi/contents/ui/main.qml:75
 #, kde-format
 msgid "Connect to a WiFi network for network access."
 msgstr "Lai piekļūtu internetam, savienojieties ar „WiFi“ tīklu."
+
+#: modules/wifi/contents/ui/main.qml:167
+#, kde-format
+msgid "Connect to"
+msgstr "Savienoties ar"
 
 #: modules/wifi/contents/ui/PasswordField.qml:14
 #, kde-format

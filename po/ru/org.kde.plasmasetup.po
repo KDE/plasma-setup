@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-27 00:46+0000\n"
+"POT-Creation-Date: 2026-02-04 00:46+0000\n"
 "PO-Revision-Date: 2026-01-27 20:09+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -302,15 +302,15 @@ msgstr "Тёмное оформление"
 msgid "Select your time zone."
 msgstr "Выберите свой часовой пояс."
 
-#: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
-#, kde-format
-msgid "Connect to"
-msgstr "Подключиться"
-
-#: modules/wifi/contents/ui/main.qml:76
+#: modules/wifi/contents/ui/main.qml:75
 #, kde-format
 msgid "Connect to a WiFi network for network access."
 msgstr "Подключитесь к сети Wi-Fi для получения сетевого доступа."
+
+#: modules/wifi/contents/ui/main.qml:167
+#, kde-format
+msgid "Connect to"
+msgstr "Подключиться"
 
 #: modules/wifi/contents/ui/PasswordField.qml:14
 #, kde-format

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-27 00:46+0000\n"
-"PO-Revision-Date: 2026-01-30 12:08+0100\n"
+"POT-Creation-Date: 2026-02-04 00:46+0000\n"
+"PO-Revision-Date: 2026-02-03 16:58+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -46,6 +46,10 @@ msgid ""
 "means that they can change system settings, install software, and access all "
 "files on the system.<nl/><nl/>Choose a strong password for this user."
 msgstr ""
+"Iste ustor habera privilegios administrative sur le systema.<nl/><nl/>Isto "
+"significa que ille pote cambiar le preferentias de systema, installer "
+"software, e acceder a omne files sur le systema.<nl/><nl/>Selige un "
+"contrasigno forte per iste usator."
 
 #: modules/account/contents/ui/main.qml:97
 #, kde-format
@@ -198,6 +202,8 @@ msgid ""
 "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
+"Tu dispositivo es nunc preste.<br /><br />Post cliccar <b>Fini (Termina)</b> "
+"tu potera signat in tu nove conto.<br /><br />Gaude <b>%1</b>!"
 
 #: modules/hostname/contents/ui/main.qml:86
 #, kde-format
@@ -296,15 +302,15 @@ msgstr "Thema obscur"
 msgid "Select your time zone."
 msgstr "Selige tu fuso horari ."
 
-#: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
-#, kde-format
-msgid "Connect to"
-msgstr "Connecte a"
-
-#: modules/wifi/contents/ui/main.qml:76
+#: modules/wifi/contents/ui/main.qml:75
 #, kde-format
 msgid "Connect to a WiFi network for network access."
 msgstr "Connecte a unrete WiFi per accesso de rete."
+
+#: modules/wifi/contents/ui/main.qml:167
+#, kde-format
+msgid "Connect to"
+msgstr "Connecte a"
 
 #: modules/wifi/contents/ui/PasswordField.qml:14
 #, kde-format

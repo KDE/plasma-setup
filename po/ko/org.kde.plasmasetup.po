@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kiss package.
-# SPDX-FileCopyrightText: 2024, 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-27 00:46+0000\n"
-"PO-Revision-Date: 2025-10-09 01:30+0200\n"
+"POT-Creation-Date: 2026-02-04 00:46+0000\n"
+"PO-Revision-Date: 2026-02-03 22:20+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -51,41 +51,33 @@ msgstr ""
 "호를 강력하게 설정하기를 추천합니다."
 
 #: modules/account/contents/ui/main.qml:97
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Full Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "전체 이름"
 
 #: modules/account/contents/ui/main.qml:115
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "사용자 이름"
 
 #: modules/account/contents/ui/main.qml:134
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "암호"
 
 #: modules/account/contents/ui/main.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "암호 확인"
 
 #: modules/account/contents/ui/main.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Passwords don’t match"
+#, kde-format
 msgid "Passwords must match"
-msgstr "암호가 일치하지 않음"
+msgstr "암호가 일치해야 함"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format
@@ -197,85 +189,84 @@ msgid "Add APN"
 msgstr "APN 추가"
 
 #: modules/finished/contents/ui/main.qml:25
-#, fuzzy, kde-format
-#| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
-msgstr "장치가 준비되었습니다. <br /><br /><b>%1</b>을(를) 즐겁게 사용하세요!"
+msgstr ""
+"장치가 준비되었습니다. <br /><br /><b>%1</b>을(를) 즐겁게 사용하세요!|/|장치"
+"가 준비되었습니다. <br /><br /><b>%1</b>$[을를 %1] 즐겁게 사용하세요!"
 
 #: modules/finished/contents/ui/main.qml:34
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid ""
-#| "Your device is now ready. <br /><br />After clicking <b>Finish</b> you "
-#| "will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid ""
 "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
 "장치가 준비되었습니다. <br /><br /><b>완료</b> 단추를 클릭하면 새 계정을 사용"
-"할 수 있습니다.<br /><br /><b>%1</b>을(를) 즐겁게 사용하세요!"
+"할 수 있습니다.<br /><br /><b>%1</b>을(를) 즐겁게 사용하세요!|/|장치가 준비되"
+"었습니다. <br /><br /><b>완료</b> 단추를 클릭하면 새 계정을 사용할 수 있습니"
+"다.<br /><br /><b>%1</b>$[을를 %1] 즐겁게 사용하세요!"
 
 #: modules/hostname/contents/ui/main.qml:86
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
-msgstr ""
+msgstr "이 장치를 어떻게 불러야 합니까?"
 
 #: modules/hostname/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
-msgstr ""
+msgstr "호스트 이름:"
 
 #: modules/hostnameutil/hostnameutil.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be empty."
-msgstr ""
+msgstr "호스트 이름을 비워 둘 수 없습니다."
 
 #: modules/hostnameutil/hostnameutil.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
-msgstr ""
+msgstr "호스트 이름은 \"localhost\"나 \"localhost.localdomain\"일 수 없습니다."
 
 #: modules/hostnameutil/hostnameutil.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "Hostname is too long (maximum 253 characters)."
-msgstr ""
+msgstr "호스트 이름이 너무 깁니다(최대 253자)."
 
 #: modules/hostnameutil/hostnameutil.cpp:100
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot start with a dot."
-msgstr ""
+msgstr "호스트 이름은 마침표(.)로 시작할 수 없습니다."
 
 #: modules/hostnameutil/hostnameutil.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot end with a dot."
-msgstr ""
+msgstr "호스트 이름은 마침표(.)로 끝날 수 없습니다."
 
 #: modules/hostnameutil/hostnameutil.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot contain consecutive dots."
-msgstr ""
+msgstr "호스트 이름에 연속된 마침표(.)가 들어갈 수 없습니다."
 
 #: modules/hostnameutil/hostnameutil.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "Hostname labels cannot be empty."
-msgstr ""
+msgstr "호스트 이름 레이블을 비워 둘 수 없습니다."
 
 #: modules/hostnameutil/hostnameutil.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Each hostname label must be at most 63 characters."
-msgstr ""
+msgstr "각 호스트 이름 레이블은 최대 63글자만 사용할 수 있습니다."
 
 #: modules/hostnameutil/hostnameutil.cpp:110
 #, kde-format
@@ -284,6 +275,8 @@ msgid ""
 "Hostnames may contain letters, numbers, and hyphens. Each label must start "
 "and end with a letter or number."
 msgstr ""
+"호스트 이름에는 글자, 숫자, 하이픈(-)만 포함될 수 있습니다. 각각 레이블은 글"
+"자나 숫자로 시작하거나 끝나야 합니다."
 
 #: modules/keyboard/contents/ui/main.qml:147
 #, kde-format
@@ -306,20 +299,19 @@ msgid "Dark Theme"
 msgstr "어두운 테마"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
-msgid "Select your time zone."
-msgstr "시간대와 선호하는 날짜 형식을 선택하십시오."
-
-#: modules/wifi/contents/ui/ConnectionItemDelegate.qml:94
 #, kde-format
-msgid "Connect to"
-msgstr "다음에 연결"
+msgid "Select your time zone."
+msgstr "시간대를 선택하십시오."
 
-#: modules/wifi/contents/ui/main.qml:76
+#: modules/wifi/contents/ui/main.qml:75
 #, kde-format
 msgid "Connect to a WiFi network for network access."
 msgstr "네트워크 접근을 위해서 Wi-Fi 네트워크에 연결합니다."
+
+#: modules/wifi/contents/ui/main.qml:167
+#, kde-format
+msgid "Connect to"
+msgstr "다음에 연결"
 
 #: modules/wifi/contents/ui/PasswordField.qml:14
 #, kde-format
