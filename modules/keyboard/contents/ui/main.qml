@@ -226,8 +226,7 @@ PlasmaSetupComponents.SetupModule {
 
         Accessible.name: delegate.description
 
-        contentItem: Kirigami.IconTitleSubtitle {
-            icon.source: KCMKeyboard.Flags.getIcon(delegate.shortName)
+        contentItem: Kirigami.TitleSubtitle {
             title: delegate.description
             wrapMode: Text.Wrap
         }
