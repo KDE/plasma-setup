@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kiss package.
 #
-# SPDX-FileCopyrightText: 2025 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2025, 2026 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-04 03:03+0000\n"
-"PO-Revision-Date: 2025-09-02 17:58+0200\n"
+"PO-Revision-Date: 2026-02-05 16:53+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -36,7 +36,7 @@ msgstr "On necessita alcun detalios per completar le configuration."
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
-msgstr ""
+msgstr "Iste usator essera un administrator"
 
 #: modules/account/contents/ui/main.qml:84
 #, kde-kuit-format
@@ -46,43 +46,39 @@ msgid ""
 "means that they can change system settings, install software, and access all "
 "files on the system.<nl/><nl/>Choose a strong password for this user."
 msgstr ""
+"Iste ustor habera privilegios administrative sur le systema.<nl/><nl/>Isto "
+"significa que ille pote cambiar le preferentias de systema, installer "
+"software, e acceder a omne files sur le systema.<nl/><nl/>Selige un "
+"contrasigno forte per iste usator."
 
 #: modules/account/contents/ui/main.qml:97
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Full Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Nomine complete"
 
 #: modules/account/contents/ui/main.qml:115
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Nomine usator"
 
 #: modules/account/contents/ui/main.qml:134
-#, fuzzy, kde-format
-#| msgid "Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Contrasigno"
 
 #: modules/account/contents/ui/main.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Confirma contrasigno"
 
 #: modules/account/contents/ui/main.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Passwords don’t match"
+#, kde-format
 msgid "Passwords must match"
-msgstr "Le contrasignos non coincide"
+msgstr "Contrasigno debe coincider"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format
@@ -194,9 +190,7 @@ msgid "Add APN"
 msgstr "Adde APN"
 
 #: modules/finished/contents/ui/main.qml:25
-#, fuzzy, kde-format
-#| msgctxt "%1 is the distro name"
-#| msgid "Your device is now ready. <br /><br />Enjoy <b>%1</b>!"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
 msgstr "Tu dispositivo es nunc preste. <br /><br /> Gaude de <b>%1</b>!"
@@ -208,66 +202,70 @@ msgid ""
 "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
+"Tu dispositivo es nunc preste.<br /><br />Post cliccar <b>Fini (Termina)</b> "
+"tu potera signat in tu nove conto.<br /><br />Gaude <b>%1</b>!"
 
 #: modules/hostname/contents/ui/main.qml:86
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
-msgstr ""
+msgstr "Come essera appellate iste dispositivo?"
 
 #: modules/hostname/contents/ui/main.qml:97
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
-msgstr ""
+msgstr "Nomine de Hospite:"
 
 #: modules/hostnameutil/hostnameutil.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be empty."
-msgstr ""
+msgstr "Nomine de Hospite nonpote esser vacue."
 
 #: modules/hostnameutil/hostnameutil.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
 msgstr ""
+"Nomine de hospite Hostname non pote esser “localhost” o “localhost."
+"localdomain”."
 
 #: modules/hostnameutil/hostnameutil.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "Hostname is too long (maximum 253 characters)."
-msgstr ""
+msgstr "Nomine de hospite es troppolonge (maximum 253 characteres)"
 
 #: modules/hostnameutil/hostnameutil.cpp:100
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot start with a dot."
-msgstr ""
+msgstr "Nomine de hospite non pote initiar con un puncto."
 
 #: modules/hostnameutil/hostnameutil.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot end with a dot."
-msgstr ""
+msgstr "Nomine de hospite non pote terminar con un puncto."
 
 #: modules/hostnameutil/hostnameutil.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot contain consecutive dots."
-msgstr ""
+msgstr "Nomine de hospite nonpote continer punctos consecutive."
 
 #: modules/hostnameutil/hostnameutil.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "Hostname labels cannot be empty."
-msgstr ""
+msgstr "Etiquettas de nomine de hospite non pote esser vacue."
 
 #: modules/hostnameutil/hostnameutil.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Each hostname label must be at most 63 characters."
-msgstr ""
+msgstr "Cata etiquetta de nomine de hospite debe esser al plus 63 characteres."
 
 #: modules/hostnameutil/hostnameutil.cpp:110
 #, kde-format
@@ -276,12 +274,13 @@ msgid ""
 "Hostnames may contain letters, numbers, and hyphens. Each label must start "
 "and end with a letter or number."
 msgstr ""
+"Nomines de hospite pote continer litteras, numeros, e tractos de union. Cata "
+"etiquetta initia e termina con un lettera o un numero."
 
 #: modules/keyboard/contents/ui/main.qml:147
-#, fuzzy, kde-format
-#| msgid "Please select your preferred language."
+#, kde-format
 msgid "Select your keyboard layout and language."
-msgstr "Pro favor selige tu linguage preferite."
+msgstr "Pro favor selige tu disposition de claviero e linguage."
 
 #: modules/language/contents/ui/main.qml:41
 #, kde-format
@@ -289,8 +288,7 @@ msgid "Please select your preferred language."
 msgstr "Pro favor selige tu linguage preferite."
 
 #: modules/language/contents/ui/main.qml:47
-#, fuzzy, kde-format
-#| msgid "Search languages..."
+#, kde-format
 msgid "Search languages…"
 msgstr "Cerca linguages..."
 
@@ -300,10 +298,9 @@ msgid "Dark Theme"
 msgstr "Thema obscur"
 
 #: modules/time/contents/ui/main.qml:32
-#, fuzzy, kde-format
-#| msgid "Select your time zone and preferred time format."
+#, kde-format
 msgid "Select your time zone."
-msgstr "Selige tu fuso horari e formato de tempore preferite."
+msgstr "Selige tu fuso horari ."
 
 #: modules/wifi/contents/ui/main.qml:75
 #, kde-format
@@ -328,12 +325,12 @@ msgstr "Entrata invalide."
 #: src/main.cpp:35 src/qml/Main.qml:14
 #, kde-format
 msgid "Plasma Setup"
-msgstr ""
+msgstr "Configuration de Plasma (Plasma Setup)"
 
 #: src/main.cpp:37
 #, kde-format
 msgid "Make Plasma yours"
-msgstr ""
+msgstr "Face Plasma tue"
 
 #: src/main.cpp:39
 #, kde-format
@@ -343,7 +340,7 @@ msgstr "© 2021-2024 Communitate de KDE"
 #: src/main.cpp:44
 #, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
-msgstr ""
+msgstr "Remove le configuration de autologin de Plasma Setup."
 
 #: src/qml/LandingComponent.qml:103
 #, kde-format
