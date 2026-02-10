@@ -1,0 +1,385 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the plasma-setup package.
+# SPDX-FileCopyrightText: 2026 Sergiu Bivol <sergiu@cip.md>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-setup\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-02-04 03:03+0000\n"
+"PO-Revision-Date: 2026-02-05 15:00+0000\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.08.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sergiu Bivol"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sergiu@cip.md"
+
+#: modules/account/contents/ui/main.qml:69
+#, kde-format
+msgid "We need a few details to complete the setup."
+msgstr "Sunt necesare câteva detalii pentru a finaliza configurarea."
+
+#: modules/account/contents/ui/main.qml:80
+#, kde-format
+msgctxt "@info"
+msgid "This user will be an administrator."
+msgstr "Acest utilizator va fi un administrator."
+
+#: modules/account/contents/ui/main.qml:84
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"This user will have administrative privileges on the system.<nl/><nl/>This "
+"means that they can change system settings, install software, and access all "
+"files on the system.<nl/><nl/>Choose a strong password for this user."
+msgstr ""
+"Acest utilizator va avea privilegii de administrare în sistem.<nl/><nl/"
+">Aceasta înseamnă că vor putea modifica configurația sistemului, instala "
+"programe și accesa toate fișierele din sistem.<nl/><nl/>Alegeți o parolă "
+"puternică pentru acest utilizator."
+
+#: modules/account/contents/ui/main.qml:97
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Full Name"
+msgstr "Nume complet"
+
+#: modules/account/contents/ui/main.qml:115
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Username"
+msgstr "Nume de utilizator"
+
+#: modules/account/contents/ui/main.qml:134
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Password"
+msgstr "Parolă"
+
+#: modules/account/contents/ui/main.qml:148
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Confirm Password"
+msgstr "Confirmați parola"
+
+#: modules/account/contents/ui/main.qml:166
+#, kde-format
+msgid "Passwords must match"
+msgstr "Parolele trebuie să se potrivească"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:14
+#, kde-format
+msgid "Edit APN"
+msgstr "Modifică APN"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:38
+#, kde-format
+msgid "Name"
+msgstr "Denumire"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:43
+#, kde-format
+msgid "APN"
+msgstr "APN"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:48
+#, kde-format
+msgid "Username"
+msgstr "Utilizator"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:53
+#, kde-format
+msgid "Password"
+msgstr "Parolă"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:58
+#, kde-format
+msgid "Network type"
+msgstr "Tip rețea"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "4G/3G/2G"
+msgstr "4G/3G/2G"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "3G/2G"
+msgstr "3G/2G"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "2G"
+msgstr "2G"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "Only 4G"
+msgstr "Doar 4G"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "Only 3G"
+msgstr "Doar 3G"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "Only 2G"
+msgstr "Doar 2G"
+
+#: modules/cellular/contents/ui/EditProfileDialog.qml:59
+#, kde-format
+msgid "Any"
+msgstr "Oricare"
+
+#: modules/cellular/contents/ui/main.qml:45
+#, kde-format
+msgid ""
+"Please configure your APN below for mobile data, further information will be "
+"available with your carrier."
+msgstr ""
+"Configurați mai jos APN-ul pentru date mobile. Puteți afla informații "
+"suplimentare de la operator."
+
+#: modules/cellular/contents/ui/main.qml:47
+#, kde-format
+msgid "You are connected to the mobile network."
+msgstr "Sunteți conectat la rețeaua mobilă."
+
+#: modules/cellular/contents/ui/main.qml:49
+#, kde-format
+msgid "Please insert a SIM card into your device."
+msgstr "Introduceți o cartelă SIM în dispozitiv."
+
+#: modules/cellular/contents/ui/main.qml:51
+#, kde-format
+msgid "Your device does not have a modem available."
+msgstr "Dispozitivul nu are niciun modem disponibil."
+
+#: modules/cellular/contents/ui/main.qml:63
+#, kde-format
+msgid "Mobile Data"
+msgstr "Date mobile"
+
+#: modules/cellular/contents/ui/main.qml:109
+#, kde-format
+msgid "Edit"
+msgstr "Modifică"
+
+#: modules/cellular/contents/ui/main.qml:117
+#, kde-format
+msgid "Delete"
+msgstr "Șterge"
+
+#: modules/cellular/contents/ui/main.qml:127
+#, kde-format
+msgid "Add APN"
+msgstr "Adaugă APN"
+
+#: modules/finished/contents/ui/main.qml:25
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
+msgstr "Dispozitivul e pregătit acum.<br /><br />Bucurați-vă de <b>%1</b>!"
+
+#: modules/finished/contents/ui/main.qml:34
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid ""
+"Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
+"be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
+msgstr ""
+"Dispozitivul e pregătit acum.<br /><br />După ce apăsați pe <b>Termină</b>, "
+"veți putea să vă autentificați în noul cont.<br /><br />Bucurați-vă de <b>"
+"%1</b>!"
+
+#: modules/hostname/contents/ui/main.qml:86
+#, kde-format
+msgctxt "@info:usagetip"
+msgid "What should this device be called?"
+msgstr "Cum să fie numit acest dispozitiv?"
+
+#: modules/hostname/contents/ui/main.qml:97
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Hostname:"
+msgstr "Numele gazdei:"
+
+#: modules/hostnameutil/hostnameutil.cpp:94
+#, kde-format
+msgctxt "@info"
+msgid "Hostname cannot be empty."
+msgstr "Numele gazdei nu poate fi gol."
+
+#: modules/hostnameutil/hostnameutil.cpp:96
+#, kde-format
+msgctxt "@info"
+msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
+msgstr "Numele gazdei nu poate fi „localhost” sau „localhost.localdomain”."
+
+#: modules/hostnameutil/hostnameutil.cpp:98
+#, kde-format
+msgctxt "@info"
+msgid "Hostname is too long (maximum 253 characters)."
+msgstr "Numele gazdei e prea lung (maxim 253 de caractere)."
+
+#: modules/hostnameutil/hostnameutil.cpp:100
+#, kde-format
+msgctxt "@info"
+msgid "Hostname cannot start with a dot."
+msgstr "Numele gazdei nu poate începe cu punct."
+
+#: modules/hostnameutil/hostnameutil.cpp:102
+#, kde-format
+msgctxt "@info"
+msgid "Hostname cannot end with a dot."
+msgstr "Numele gazdei nu se poate sfârși cu punct."
+
+#: modules/hostnameutil/hostnameutil.cpp:104
+#, kde-format
+msgctxt "@info"
+msgid "Hostname cannot contain consecutive dots."
+msgstr "Numele gazdei nu poate conține puncte consecutive."
+
+#: modules/hostnameutil/hostnameutil.cpp:106
+#, kde-format
+msgctxt "@info"
+msgid "Hostname labels cannot be empty."
+msgstr "Numele gazdei nu poate avea etichete goale."
+
+#: modules/hostnameutil/hostnameutil.cpp:108
+#, kde-format
+msgctxt "@info"
+msgid "Each hostname label must be at most 63 characters."
+msgstr ""
+"Fiecare etichetă pentru numele gazdei trebuie să aibă cel mult 63 de "
+"caractere."
+
+#: modules/hostnameutil/hostnameutil.cpp:110
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Hostnames may contain letters, numbers, and hyphens. Each label must start "
+"and end with a letter or number."
+msgstr ""
+"Numele gazdei poate să conțină litere, numere și cratime. Fiecare etichetă "
+"trebuie să înceapă și să se sfârșească cu o literă sau număr."
+
+#: modules/keyboard/contents/ui/main.qml:147
+#, kde-format
+msgid "Select your keyboard layout and language."
+msgstr "Alegeți-vă aranjamentul de tastatură și limba."
+
+#: modules/language/contents/ui/main.qml:41
+#, kde-format
+msgid "Please select your preferred language."
+msgstr "Alegeți limba preferată."
+
+#: modules/language/contents/ui/main.qml:47
+#, kde-format
+msgid "Search languages…"
+msgstr "Caută limba…"
+
+#: modules/prepare/contents/ui/main.qml:76
+#, kde-format
+msgid "Dark Theme"
+msgstr "Tematică întunecată"
+
+#: modules/time/contents/ui/main.qml:32
+#, kde-format
+msgid "Select your time zone."
+msgstr "Alegeți-vă fusul orar."
+
+#: modules/wifi/contents/ui/main.qml:75
+#, kde-format
+msgid "Connect to a WiFi network for network access."
+msgstr "Conectați-vă la o rețea WiFi pentru acces la rețea."
+
+#: modules/wifi/contents/ui/main.qml:167
+#, kde-format
+msgid "Connect to"
+msgstr "Conectează la"
+
+#: modules/wifi/contents/ui/PasswordField.qml:14
+#, kde-format
+msgid "Password:"
+msgstr "Parolă:"
+
+#: modules/wifi/contents/ui/PasswordField.qml:26
+#, kde-format
+msgid "Invalid input."
+msgstr "Date de intrare nevalide."
+
+#: src/main.cpp:35 src/qml/Main.qml:14
+#, kde-format
+msgid "Plasma Setup"
+msgstr "Configurare Plasma"
+
+#: src/main.cpp:37
+#, kde-format
+msgid "Make Plasma yours"
+msgstr "Personalizați-vă Plasma"
+
+#: src/main.cpp:39
+#, kde-format
+msgid "© 2021-2024 KDE Community"
+msgstr "© 2021-2024 Comunitatea KDE"
+
+#: src/main.cpp:44
+#, kde-format
+msgid "Remove the Plasma Setup autologin configuration."
+msgstr ""
+"Elimină configurările de autentificare automată din configurarea Plasma."
+
+#: src/qml/LandingComponent.qml:103
+#, kde-format
+msgid "Welcome to<br/><b>Plasma Mobile</b>"
+msgstr "Bun venit la<br/><b>Plasma Mobile</b>"
+
+#: src/qml/LandingComponent.qml:103
+#, kde-format
+msgid "Welcome to<br/><b>Plasma Desktop</b>"
+msgstr "Bun venit la<br/><b>Biroul Plasma</b>"
+
+#: src/qml/LandingComponent.qml:117
+#, kde-format
+msgid "Begin Setup"
+msgstr "Începe configurarea"
+
+#: src/qml/LandingComponent.qml:144
+#, kde-format
+msgctxt "%1 is the distro name"
+msgid "Powered by<br/><b>%1</b>"
+msgstr "Propulsată de<br/><b>%1</b>"
+
+#: src/qml/Wizard.qml:286
+#, kde-format
+msgctxt "@action:button"
+msgid "Back"
+msgstr "Înapoi"
+
+#: src/qml/Wizard.qml:302
+#, kde-format
+msgctxt "@action:button"
+msgid "Next"
+msgstr "Următor"
+
+#: src/qml/Wizard.qml:314
+#, kde-format
+msgctxt "@action:button"
+msgid "Finish"
+msgstr "Termină"
