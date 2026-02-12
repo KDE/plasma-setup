@@ -4,13 +4,16 @@
 #
 # SPDX-License-Identifier: LGPL-2.1-or-later
 
-# systemd service file for loading the Plasma Setup application
+# systemd service file for loading Plasma Setup
 #
-# This service instructs plasma-setup to run in first user mode,
-# which is used to set up the initial user account and perform first-run tasks.
+# This service runs plasma-setup's bootutil binary, which decides whether to
+# launch the Plasma Setup wizard based on the presence of a flag file
+# (`plasma-setup-done`) in the system configuration directory.
 #
-# This service is intended to be enabled after the system installation if 
-# new user setup is desired, and will be disabled after the initial user is created.
+# If the flag file does not exist, the wizard starts at boot time before the
+# login manager, and will guide the user through the initial setup process. Once
+# the user completes the setup, the flag file is created to prevent the wizard
+# from running again on subsequent boots.
 #
 # systemd/system/plasma-setup.service
 
