@@ -20,6 +20,10 @@ system's first user account and configuring initial settings.
 - Network configuration
 
 
+<!-- Constrain the max width slightly, so the video isn't absurdly large on big screens -->
+![Promo video showing off a run through Plasma Setup](https://cdn.kde.org/promo/Announcements/Plasma/6.6/plasma-setup_promo.mp4){width=800px}
+
+
 ## Getting Started
 
 > [!caution]
