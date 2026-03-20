@@ -26,8 +26,22 @@ system's first user account and configuring initial settings.
 
 ## Getting Started
 
-> [!caution]
-> It is not recommended to install this on your system — you should use a virtual machine instead. Installing this on real hardware will leave behind files not trivially uninstallable and could leave your system in a non-function state.
+### Building from Source
+
+#### With `kde-builder`
+
+The easiest way to build Plasma Setup is using
+[kde-builder](https://develop.kde.org/docs/getting-started/building/kde-builder-setup/).
+
+```bash
+# Build
+kde-builder plasma-setup
+# Run to test or iterate on the GUI, without affecting your system
+kde-builder --run plasma-setup
+```
+
+
+#### Manually
 
 - Clone the repository:
 
