@@ -20,38 +20,42 @@ PlasmaSetupComponents.SetupModule {
         id: mainColumn
         spacing: Kirigami.Units.gridUnit
 
-        Label {
-            id: titleLabel
-            Layout.leftMargin: Kirigami.Units.gridUnit
-            Layout.rightMargin: Kirigami.Units.gridUnit
-            Layout.topMargin: Kirigami.Units.gridUnit
-            Layout.fillWidth: true
-
-            wrapMode: Text.Wrap
-            horizontalAlignment: Text.AlignHCenter
-            text: i18n("Select your time zone.")
-        }
-
-        Frame {
+        Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            TimeZone.TimezoneSelector {
-                id: timezoneSelector
-
+            Frame {
                 anchors.fill: parent
+                visible: !Kirigami.Settings.isMobile
+            }
 
+            Label {
+                anchors {
+                    bottom: tzSelector.top
+                    bottomMargin: Kirigami.Units.gridUnit
+                    horizontalCenter: parent.horizontalCenter
+                }
+                width: Math.min(parent.width, Kirigami.Units.gridUnit * 24) - Kirigami.Units.gridUnit * 2
+                wrapMode: Text.Wrap
+                horizontalAlignment: Text.AlignHCenter
+                text: i18n("Select your time zone.")
+            }
+
+            TimeZone.TimezoneSelector {
+                id: tzSelector
+                anchors.centerIn: parent
+                width: Kirigami.Settings.isMobile
+                    ? Math.min(parent.width, Kirigami.Units.gridUnit * 24)
+                    : parent.width
+                height: Kirigami.Settings.isMobile ? implicitHeight : parent.height
                 Component.onCompleted: {
                     // Initialize the selector with the current time zone.
                     //
                     // We do this in Component.onCompleted instead of in the property
                     // binding directly because otherwise the combobox is empty.
-                    selectedTimeZone = Time.TimeUtil.currentTimeZone;
+                    selectedTimeZone = Time.TimeUtil.currentTimeZone
                 }
-
-                onSelectedTimeZoneChanged: {
-                    Time.TimeUtil.currentTimeZone = selectedTimeZone;
-                }
+                onSelectedTimeZoneChanged: Time.TimeUtil.currentTimeZone = selectedTimeZone
             }
         }
     }

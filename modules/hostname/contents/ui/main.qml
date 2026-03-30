@@ -69,61 +69,71 @@ PlasmaSetupComponents.SetupModule {
     nextEnabled: !root.validationPending && root.debouncedHostnameValid
 
     contentItem: ScrollView {
-        anchors.centerIn: parent
-        width: Math.min(mainColumn.implicitWidth + (Kirigami.Units.gridUnit * 2), parent.width)
-        height: Math.min(mainColumn.implicitHeight, parent.height)
+        id: scroll
+        anchors.fill: parent
+        clip: true
 
-        ColumnLayout {
-            id: mainColumn
+        Item {
+            id: centered
+            width: Math.min(scroll.availableWidth, Kirigami.Units.gridUnit * 32)
+            height: scroll.availableHeight
+            anchors.horizontalCenter: parent.horizontalCenter
 
-            spacing: Kirigami.Units.gridUnit
+            ColumnLayout {
+                id: mainColumn
+                anchors.centerIn: parent
+                width: parent.width - Kirigami.Units.gridUnit * 2
 
-            Label {
-                id: titleLabel
-                Layout.fillWidth: true
-                wrapMode: Text.Wrap
-                horizontalAlignment: Text.AlignHCenter
-                text: i18nc("@info:usagetip", "What should this device be called?")
-            }
+                spacing: Kirigami.Units.gridUnit
 
-            Kirigami.FormLayout {
-                Layout.leftMargin: Kirigami.Units.gridUnit
-                Layout.rightMargin: Kirigami.Units.gridUnit
-                Layout.fillWidth: true
-
-                TextField {
-                    id: hostnameField
-
-                    Kirigami.FormData.label: i18nc("@label:textbox", "Hostname:")
-
-                    text: HostnameUtil.hostname
-                    onTextChanged: {
-                        root.hasEdited = true;
-                        root.validationPending = true;
-                        validationDebouncer.reset();
-                    }
-
-                    onEditingFinished: {
-                        HostnameUtil.hostname = text;
-                        // `onEditingFinished` means the user pressed Enter or
-                        // moved focus away so we want to validate immediately
-                        // rather than waiting for the debouncer.
-                        validationDebouncer.stop();
-                        root.updateValidation();
-                    }
-                }
-
-                Kirigami.InlineMessage {
+                Label {
+                    id: titleLabel
                     Layout.fillWidth: true
-                    visible: root.hasEdited && !root.validationPending && root.debouncedHostnameMessage.length > 0
-                    text: root.debouncedHostnameMessage
-                    type: Kirigami.MessageType.Error
+                    wrapMode: Text.Wrap
+                    horizontalAlignment: Text.AlignHCenter
+                    text: i18nc("@info:usagetip", "What should this device be called?")
                 }
 
-                PlasmaSetupComponents.Debouncer {
-                    id: validationDebouncer
+                Kirigami.FormLayout {
+                    Layout.fillWidth: true
 
-                    onDebounced: root.updateValidation()
+                    TextField {
+                        id: hostnameField
+
+                        Kirigami.FormData.label: i18nc("@label:textbox", "Hostname:")
+                        inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhNoPredictiveText
+
+                        Layout.fillWidth: true
+                        Layout.minimumWidth: 0
+
+                        text: HostnameUtil.hostname
+                        onTextChanged: {
+                            root.hasEdited = true;
+                            root.validationPending = true;
+                            validationDebouncer.reset();
+                        }
+
+                        onEditingFinished: {
+                            HostnameUtil.hostname = text;
+                            // `onEditingFinished` means the user pressed Enter or
+                            // moved focus away so we want to validate immediately
+                            // rather than waiting for the debouncer.
+                            validationDebouncer.stop();
+                            root.updateValidation();
+                        }
+                    }
+
+                    Kirigami.InlineMessage {
+                        Layout.fillWidth: true
+                        visible: root.hasEdited && !root.validationPending && root.debouncedHostnameMessage.length > 0
+                        text: root.debouncedHostnameMessage
+                        type: Kirigami.MessageType.Error
+                    }
+
+                    PlasmaSetupComponents.Debouncer {
+                        id: validationDebouncer
+                        onDebounced: root.updateValidation()
+                    }
                 }
             }
         }

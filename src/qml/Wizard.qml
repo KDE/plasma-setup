@@ -136,6 +136,11 @@ Kirigami.Page {
     LandingComponent {
         id: landingComponent
         anchors.fill: parent
+        /*
+         * On desktop, the landing page remains visible as a backdrop while the wizard steps float over it as a card.
+         * On mobile, the steps take up the full screen so the landing is hidden once the user navigates into the wizard (showingLanding becomes false).
+         */
+        visible: !Kirigami.Settings.isMobile || root.showingLanding
 
         onRequestNextPage: {
             root.showingLanding = false;
@@ -203,8 +208,12 @@ Kirigami.Page {
             radius: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.cornerRadius + 8
 
             anchors {
+                // On mobile, behave like a full-height page (no floating card)
                 fill: Kirigami.Settings.isMobile ? parent : undefined
-                topMargin: Kirigami.Settings.isMobile ? root.height * 0.3 : undefined
+
+                topMargin: 0
+
+                // Only center the floating card on desktop
                 centerIn: Kirigami.Settings.isMobile ? undefined : parent
             }
 
@@ -345,12 +354,15 @@ Kirigami.Page {
         }
 
         visible: index === 0 // the binding is broken later
-        contentItem: module?.contentItem
+        contentItem: item.module?.contentItem
 
         Binding {
             target: item.module
-            property: 'cardWidth'
-            value: Math.min(Kirigami.Units.gridUnit * 30, item.contentItem.width - Kirigami.Units.gridUnit * 2)
+            property: "cardWidth"
+            value: Math.min(
+                Kirigami.Units.gridUnit * 30,
+                item.width - item.leftPadding - item.rightPadding - Kirigami.Units.gridUnit * 2
+            )
         }
 
         clip: true

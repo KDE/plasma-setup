@@ -22,6 +22,8 @@ import org.kde.plasma.private.kcm_keyboard as KCMKeyboard
 PlasmaSetupComponents.SetupModule {
     id: root
 
+    available: !Kirigami.Settings.isMobile
+
     function onPageActivated(): void {
         // Temporarily disable the highlight move duration so the correct
         // layout is preselected when the page is activated.

@@ -19,10 +19,11 @@ import org.kde.kitemmodels as KItemModels
     A widget that displays buttons for system session actions like restart and shutdown. Intended to
     be placed in the landing page / outside of the wizard steps to allow users to easily manage the session.
 */
-RowLayout {
+Flow {
     id: root
 
     spacing: Kirigami.Units.gridUnit
+    flow: Flow.LeftToRight
 
     Kicker.SystemModel {
         id: systemModel
