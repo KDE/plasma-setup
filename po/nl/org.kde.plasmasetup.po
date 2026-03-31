@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-04 00:46+0000\n"
+"POT-Creation-Date: 2026-03-31 00:46+0000\n"
 "PO-Revision-Date: 2026-01-07 13:14+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "freekdekruijf@kde.nl"
 
-#: modules/account/contents/ui/main.qml:69
+#: modules/account/contents/ui/main.qml:74
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "We hebben een paar details nodig om de opzet te voltooien."
 
-#: modules/account/contents/ui/main.qml:80
+#: modules/account/contents/ui/main.qml:85
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Deze gebruiker zal een systeembeheerder zijn."
 
-#: modules/account/contents/ui/main.qml:84
+#: modules/account/contents/ui/main.qml:89
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -51,31 +51,31 @@ msgstr ""
 "installeren en toegang hebben tot alle bestanden op het systeem.<nl/><nl/"
 ">Kies een sterk wachtwoord voor deze gebruiker."
 
-#: modules/account/contents/ui/main.qml:97
+#: modules/account/contents/ui/main.qml:102
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Volledige naam"
 
-#: modules/account/contents/ui/main.qml:115
+#: modules/account/contents/ui/main.qml:120
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: modules/account/contents/ui/main.qml:134
+#: modules/account/contents/ui/main.qml:140
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: modules/account/contents/ui/main.qml:148
+#: modules/account/contents/ui/main.qml:154
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Wachtwoord bevestigen"
 
-#: modules/account/contents/ui/main.qml:166
+#: modules/account/contents/ui/main.qml:172
 #, kde-format
 msgid "Passwords must match"
 msgstr "Wachtwoorden moeten overeenkomen"
@@ -206,13 +206,13 @@ msgstr ""
 "in staat zijn u aan te melden in uw nieuwe account.<br /><br />Veel plezier "
 "<b>%1</b>!"
 
-#: modules/hostname/contents/ui/main.qml:86
+#: modules/hostname/contents/ui/main.qml:94
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
 msgstr "Hoe moet dit apparaat genoemd worden?"
 
-#: modules/hostname/contents/ui/main.qml:97
+#: modules/hostname/contents/ui/main.qml:103
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
@@ -276,7 +276,7 @@ msgstr ""
 "Hostnamen mogen letters, cijfers en mintekens bevatten. Elk label moet met "
 "een letter of cijfer beginnen en eindigen."
 
-#: modules/keyboard/contents/ui/main.qml:147
+#: modules/keyboard/contents/ui/main.qml:149
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Selecteer uw toetsenbordindeling en taal."
@@ -296,7 +296,7 @@ msgstr "Doorzoek talen…"
 msgid "Dark Theme"
 msgstr "Donker thema"
 
-#: modules/time/contents/ui/main.qml:32
+#: modules/time/contents/ui/main.qml:41
 #, kde-format
 msgid "Select your time zone."
 msgstr "Selecteer uw tijdzone."
@@ -343,40 +343,40 @@ msgstr ""
 "Verwijder het opzetten van Plasma uit de configuratie voor automatisch "
 "aanmelden."
 
-#: src/qml/LandingComponent.qml:103
+#: src/qml/LandingComponent.qml:125
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
 msgstr "Welkome bij<br/><b>Plasma Mobile</b>"
 
-#: src/qml/LandingComponent.qml:103
+#: src/qml/LandingComponent.qml:126
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
 msgstr "Welkom bij<br/><b>Plasma bureaublad</b>"
 
-#: src/qml/LandingComponent.qml:117
+#: src/qml/LandingComponent.qml:140
 #, kde-format
 msgid "Begin Setup"
 msgstr "Begin met opzetten"
 
-#: src/qml/LandingComponent.qml:144
+#: src/qml/LandingComponent.qml:171
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Aangedreven door<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:286
+#: src/qml/Wizard.qml:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Terug"
 
-#: src/qml/Wizard.qml:302
+#: src/qml/Wizard.qml:311
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Volgende"
 
-#: src/qml/Wizard.qml:314
+#: src/qml/Wizard.qml:323
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

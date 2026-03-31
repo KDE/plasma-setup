@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-04 00:46+0000\n"
+"POT-Creation-Date: 2026-03-31 00:46+0000\n"
 "PO-Revision-Date: 2026-01-24 16:52+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -30,18 +30,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus"
 
-#: modules/account/contents/ui/main.qml:69
+#: modules/account/contents/ui/main.qml:74
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Ezarpena osatzeko xehetasun batzuk behar ditugu."
 
-#: modules/account/contents/ui/main.qml:80
+#: modules/account/contents/ui/main.qml:85
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Erabiltzaile hau administratzailea izango da."
 
-#: modules/account/contents/ui/main.qml:84
+#: modules/account/contents/ui/main.qml:89
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -54,31 +54,31 @@ msgstr ""
 "eta sistemako fitxategi guztiak atzi ditzakeela.<nl/><nl/>Erabiltzaile "
 "honentzako pasahitz sendo bat aukeratu."
 
-#: modules/account/contents/ui/main.qml:97
+#: modules/account/contents/ui/main.qml:102
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Izen osoa"
 
-#: modules/account/contents/ui/main.qml:115
+#: modules/account/contents/ui/main.qml:120
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Erabiltzaile-izena"
 
-#: modules/account/contents/ui/main.qml:134
+#: modules/account/contents/ui/main.qml:140
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Pasahitza"
 
-#: modules/account/contents/ui/main.qml:148
+#: modules/account/contents/ui/main.qml:154
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Baieztatu pasahitza"
 
-#: modules/account/contents/ui/main.qml:166
+#: modules/account/contents/ui/main.qml:172
 #, kde-format
 msgid "Passwords must match"
 msgstr "Pasahitzek bat etorri behar dute"
@@ -208,13 +208,13 @@ msgstr ""
 "Zure gailua orain prest dago.<br /><br /><b>Bukatu</b>ri klik egin ondoren "
 "zure kontu berrian saioa hasi ahal izango duzu.<br /><br />Gozatu <b>%1</b>!"
 
-#: modules/hostname/contents/ui/main.qml:86
+#: modules/hostname/contents/ui/main.qml:94
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
 msgstr "Nola deitu behar zaio gailu honi?"
 
-#: modules/hostname/contents/ui/main.qml:97
+#: modules/hostname/contents/ui/main.qml:103
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
@@ -278,7 +278,7 @@ msgstr ""
 "Ostalari-izenek letrak, zenbakiak, eta marratxoak izan ditzake. Etiketak "
 "letra batekin edo zenbaki batekin hasi eta bukatu behar dute."
 
-#: modules/keyboard/contents/ui/main.qml:147
+#: modules/keyboard/contents/ui/main.qml:149
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Hautatu zure teklatuaren antolaera eta hizkuntza."
@@ -298,7 +298,7 @@ msgstr "Bilatu hizkuntzak…"
 msgid "Dark Theme"
 msgstr "Gai iluna"
 
-#: modules/time/contents/ui/main.qml:32
+#: modules/time/contents/ui/main.qml:41
 #, kde-format
 msgid "Select your time zone."
 msgstr "Hautatu zure ordu-eremua."
@@ -343,40 +343,40 @@ msgstr "© 2021-2024 KDE Komunitatea"
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr "Kendu Plasma Ezarpena saioan automatikoki sartzeko konfigurazioa."
 
-#: src/qml/LandingComponent.qml:103
+#: src/qml/LandingComponent.qml:125
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
 msgstr "Ongi etorri <br/><b>Plasma Mugikorrera</b>"
 
-#: src/qml/LandingComponent.qml:103
+#: src/qml/LandingComponent.qml:126
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
 msgstr "Ongietorri <br/><b>Plasma mahaigainera</b>"
 
-#: src/qml/LandingComponent.qml:117
+#: src/qml/LandingComponent.qml:140
 #, kde-format
 msgid "Begin Setup"
 msgstr "Hasi ezartzen"
 
-#: src/qml/LandingComponent.qml:144
+#: src/qml/LandingComponent.qml:171
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "<br/><b>%1</b>(e)k bultzatua"
 
-#: src/qml/Wizard.qml:286
+#: src/qml/Wizard.qml:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Atzera"
 
-#: src/qml/Wizard.qml:302
+#: src/qml/Wizard.qml:311
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Hurrengoa"
 
-#: src/qml/Wizard.qml:314
+#: src/qml/Wizard.qml:323
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

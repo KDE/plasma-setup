@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-04 00:46+0000\n"
+"POT-Creation-Date: 2026-03-31 00:46+0000\n"
 "PO-Revision-Date: 2026-01-23 20:43+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "stefan.asserhall@gmail.com"
 
-#: modules/account/contents/ui/main.qml:69
+#: modules/account/contents/ui/main.qml:74
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Vi behöver en del information för att kunna slutföra inställningen."
 
-#: modules/account/contents/ui/main.qml:80
+#: modules/account/contents/ui/main.qml:85
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Den här användaren blir administratör."
 
-#: modules/account/contents/ui/main.qml:84
+#: modules/account/contents/ui/main.qml:89
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -51,31 +51,31 @@ msgstr ""
 "komma åt alla filer på systemet.<nl/><nl/>Välj ett starkt lösenord för den "
 "här användaren."
 
-#: modules/account/contents/ui/main.qml:97
+#: modules/account/contents/ui/main.qml:102
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Fullständigt namn"
 
-#: modules/account/contents/ui/main.qml:115
+#: modules/account/contents/ui/main.qml:120
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Användarnamn"
 
-#: modules/account/contents/ui/main.qml:134
+#: modules/account/contents/ui/main.qml:140
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Lösenord"
 
-#: modules/account/contents/ui/main.qml:148
+#: modules/account/contents/ui/main.qml:154
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Bekräfta lösenord"
 
-#: modules/account/contents/ui/main.qml:166
+#: modules/account/contents/ui/main.qml:172
 #, kde-format
 msgid "Passwords must match"
 msgstr "Lösenord måste stämma"
@@ -205,13 +205,13 @@ msgstr ""
 "Apparaten är nu redo.<br /><br />När du klickat på <b>Slutför</b> kan du "
 "logga in på det nya kontot.<br /><br />Njut av <b>%1</b>!"
 
-#: modules/hostname/contents/ui/main.qml:86
+#: modules/hostname/contents/ui/main.qml:94
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
 msgstr "Vad ska apparaten kallas?"
 
-#: modules/hostname/contents/ui/main.qml:97
+#: modules/hostname/contents/ui/main.qml:103
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
@@ -275,7 +275,7 @@ msgstr ""
 "Värddatornamn får innehålla bokstäver, siffror och bindestreck. Varje "
 "beteckning måste börja och sluta med en bokstav eller siffra."
 
-#: modules/keyboard/contents/ui/main.qml:147
+#: modules/keyboard/contents/ui/main.qml:149
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Välj tangentbordslayout och språk."
@@ -295,7 +295,7 @@ msgstr "Sök efter språk…"
 msgid "Dark Theme"
 msgstr "Mörkt tema"
 
-#: modules/time/contents/ui/main.qml:32
+#: modules/time/contents/ui/main.qml:41
 #, kde-format
 msgid "Select your time zone."
 msgstr "Välj tidszon."
@@ -340,40 +340,40 @@ msgstr "© 2021-2024 KDE-gemenskapen"
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr "Tog bort automatisk inloggningsinställning för inställning av Plasma."
 
-#: src/qml/LandingComponent.qml:103
+#: src/qml/LandingComponent.qml:125
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
 msgstr "Välkommen till <br/><b>Plasma Mobil</b>"
 
-#: src/qml/LandingComponent.qml:103
+#: src/qml/LandingComponent.qml:126
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
 msgstr "Välkommen till<br/><b>Plasma skrivbord</b>"
 
-#: src/qml/LandingComponent.qml:117
+#: src/qml/LandingComponent.qml:140
 #, kde-format
 msgid "Begin Setup"
 msgstr "Börja inställningen"
 
-#: src/qml/LandingComponent.qml:144
+#: src/qml/LandingComponent.qml:171
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Drivs av <br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:286
+#: src/qml/Wizard.qml:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Tillbaka"
 
-#: src/qml/Wizard.qml:302
+#: src/qml/Wizard.qml:311
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Nästa"
 
-#: src/qml/Wizard.qml:314
+#: src/qml/Wizard.qml:323
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

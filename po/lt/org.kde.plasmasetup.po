@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-04 00:46+0000\n"
+"POT-Creation-Date: 2026-03-31 00:46+0000\n"
 "PO-Revision-Date: 2026-01-14 15:54+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -29,18 +29,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "<>"
 
-#: modules/account/contents/ui/main.qml:69
+#: modules/account/contents/ui/main.qml:74
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Norint užbaigti sąranką, reikia šiek tiek informacijos."
 
-#: modules/account/contents/ui/main.qml:80
+#: modules/account/contents/ui/main.qml:85
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Šis naudotojas bus administratorius."
 
-#: modules/account/contents/ui/main.qml:84
+#: modules/account/contents/ui/main.qml:89
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -53,31 +53,31 @@ msgstr ""
 "ir gauti prieigą prie visų sistemoje esančių failų.<nl/><nl/>Šiam naudotojui "
 "pasirinkite stiprų slaptažodį."
 
-#: modules/account/contents/ui/main.qml:97
+#: modules/account/contents/ui/main.qml:102
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Vardas, pavardė"
 
-#: modules/account/contents/ui/main.qml:115
+#: modules/account/contents/ui/main.qml:120
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Naudotojo vardas"
 
-#: modules/account/contents/ui/main.qml:134
+#: modules/account/contents/ui/main.qml:140
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Slaptažodis"
 
-#: modules/account/contents/ui/main.qml:148
+#: modules/account/contents/ui/main.qml:154
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Pakartokite slaptažodį"
 
-#: modules/account/contents/ui/main.qml:166
+#: modules/account/contents/ui/main.qml:172
 #, kde-format
 msgid "Passwords must match"
 msgstr "Slaptažodžiai privalo sutapti"
@@ -209,13 +209,13 @@ msgstr ""
 "galėsite prisijungti prie savo naujosios paskyros.<br /><br />Mėgaukitės <b>"
 "%1</b>!"
 
-#: modules/hostname/contents/ui/main.qml:86
+#: modules/hostname/contents/ui/main.qml:94
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
 msgstr "Kaip turėtų vadintis šis įrenginys?"
 
-#: modules/hostname/contents/ui/main.qml:97
+#: modules/hostname/contents/ui/main.qml:103
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
@@ -280,7 +280,7 @@ msgstr ""
 "Mazgo pavadinime gali būti raidės, skaičiai ir brūkšneliai. Kiekviena "
 "etiketė privalo prasidėti ir pasibaigti raide arba skaičiumi."
 
-#: modules/keyboard/contents/ui/main.qml:147
+#: modules/keyboard/contents/ui/main.qml:149
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Pasirinkite klaviatūros išdėstymą ir kalbą."
@@ -300,7 +300,7 @@ msgstr "Ieškoti kalbų…"
 msgid "Dark Theme"
 msgstr "Tamsus apipavidalinimas"
 
-#: modules/time/contents/ui/main.qml:32
+#: modules/time/contents/ui/main.qml:41
 #, kde-format
 msgid "Select your time zone."
 msgstr "Pasirinkite laiko juostą."
@@ -349,40 +349,40 @@ msgstr ""
 "Pašalinti Plasma sąrankos automatinio prisijungimo prie paskyros "
 "konfigūraciją."
 
-#: src/qml/LandingComponent.qml:103
+#: src/qml/LandingComponent.qml:125
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
 msgstr "Jus sveikina<br/><b>Plasma Mobile</b>"
 
-#: src/qml/LandingComponent.qml:103
+#: src/qml/LandingComponent.qml:126
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
 msgstr "Jus sveikina<br/><b>Plasma darbalaukis</b>"
 
-#: src/qml/LandingComponent.qml:117
+#: src/qml/LandingComponent.qml:140
 #, kde-format
 msgid "Begin Setup"
 msgstr "Pradėti sąranką"
 
-#: src/qml/LandingComponent.qml:144
+#: src/qml/LandingComponent.qml:171
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Veikia su<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:286
+#: src/qml/Wizard.qml:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Atgal"
 
-#: src/qml/Wizard.qml:302
+#: src/qml/Wizard.qml:311
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Kitas"
 
-#: src/qml/Wizard.qml:314
+#: src/qml/Wizard.qml:323
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

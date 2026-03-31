@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-04 00:46+0000\n"
+"POT-Creation-Date: 2026-03-31 00:46+0000\n"
 "PO-Revision-Date: 2026-02-03 22:20+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: modules/account/contents/ui/main.qml:69
+#: modules/account/contents/ui/main.qml:74
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "초기 설정을 완료하려면 몇 가지 정보가 필요합니다."
 
-#: modules/account/contents/ui/main.qml:80
+#: modules/account/contents/ui/main.qml:85
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "이 사용자는 관리자가 될 것입니다."
 
-#: modules/account/contents/ui/main.qml:84
+#: modules/account/contents/ui/main.qml:89
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -50,31 +50,31 @@ msgstr ""
 "트웨어 설치, 시스템의 모든 파일에 접근이 가능합니다.<nl/><nl/>이 사용자의 암"
 "호를 강력하게 설정하기를 추천합니다."
 
-#: modules/account/contents/ui/main.qml:97
+#: modules/account/contents/ui/main.qml:102
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "전체 이름"
 
-#: modules/account/contents/ui/main.qml:115
+#: modules/account/contents/ui/main.qml:120
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "사용자 이름"
 
-#: modules/account/contents/ui/main.qml:134
+#: modules/account/contents/ui/main.qml:140
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "암호"
 
-#: modules/account/contents/ui/main.qml:148
+#: modules/account/contents/ui/main.qml:154
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "암호 확인"
 
-#: modules/account/contents/ui/main.qml:166
+#: modules/account/contents/ui/main.qml:172
 #, kde-format
 msgid "Passwords must match"
 msgstr "암호가 일치해야 함"
@@ -208,13 +208,13 @@ msgstr ""
 "었습니다. <br /><br /><b>완료</b> 단추를 클릭하면 새 계정을 사용할 수 있습니"
 "다.<br /><br /><b>%1</b>$[을를 %1] 즐겁게 사용하세요!"
 
-#: modules/hostname/contents/ui/main.qml:86
+#: modules/hostname/contents/ui/main.qml:94
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
 msgstr "이 장치를 어떻게 불러야 합니까?"
 
-#: modules/hostname/contents/ui/main.qml:97
+#: modules/hostname/contents/ui/main.qml:103
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
@@ -278,7 +278,7 @@ msgstr ""
 "호스트 이름에는 글자, 숫자, 하이픈(-)만 포함될 수 있습니다. 각각 레이블은 글"
 "자나 숫자로 시작하거나 끝나야 합니다."
 
-#: modules/keyboard/contents/ui/main.qml:147
+#: modules/keyboard/contents/ui/main.qml:149
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "키보드 레이아웃과 언어를 선택하십시오."
@@ -298,7 +298,7 @@ msgstr "언어 검색…"
 msgid "Dark Theme"
 msgstr "어두운 테마"
 
-#: modules/time/contents/ui/main.qml:32
+#: modules/time/contents/ui/main.qml:41
 #, kde-format
 msgid "Select your time zone."
 msgstr "시간대를 선택하십시오."
@@ -343,40 +343,40 @@ msgstr "© 2021-2024 KDE Community"
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr "Plasma 초기 설정 자동 로그인 설정을 삭제합니다."
 
-#: src/qml/LandingComponent.qml:103
+#: src/qml/LandingComponent.qml:125
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
 msgstr "<b>Plasma 모바일</b>에<br/>오신 것을 환영합니다"
 
-#: src/qml/LandingComponent.qml:103
+#: src/qml/LandingComponent.qml:126
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
 msgstr "<b>Plasma 데스크톱</b>에<br/>오신 것을 환영합니다"
 
-#: src/qml/LandingComponent.qml:117
+#: src/qml/LandingComponent.qml:140
 #, kde-format
 msgid "Begin Setup"
 msgstr "설정 시작"
 
-#: src/qml/LandingComponent.qml:144
+#: src/qml/LandingComponent.qml:171
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Powered by<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:286
+#: src/qml/Wizard.qml:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "뒤로"
 
-#: src/qml/Wizard.qml:302
+#: src/qml/Wizard.qml:311
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "다음"
 
-#: src/qml/Wizard.qml:314
+#: src/qml/Wizard.qml:323
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
