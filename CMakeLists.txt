@@ -62,8 +62,6 @@ find_package(KF6Screen CONFIG REQUIRED)
 find_package(LibKWorkspace REQUIRED)
 find_package(PkgConfig REQUIRED)
 
-feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
-
 ################# build and install #################
 
 set(LOGIN_DEFS_PATH "/etc/login.defs" CACHE PATH "Path to the login.defs file")
