@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+// SPDX-FileCopyrightText: 2026 Hadi Chokr <hadichokr@icloud.com>
 //
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
@@ -113,7 +114,18 @@ void AccountController::setFullName(const QString &fullName)
 
 bool AccountController::createUser()
 {
-    qCInfo(PlasmaSetup) << "Creating user" << m_username << "with full name" << m_fullName;
+    // Read btrfs home setting from plasmasetuprc; only meaningful on Linux
+    bool btrfsHome = false;
+#ifdef __linux__
+    const QString configPath = QString::fromUtf8(PLASMA_SETUP_CONFIG_PATH);
+    if (!configPath.isEmpty()) {
+        KConfig config(configPath, KConfig::SimpleConfig);
+        KConfigGroup accountsGroup(&config, QStringLiteral("Accounts"));
+        btrfsHome = accountsGroup.readEntry(QStringLiteral("BtrfsHome"), false);
+    }
+#endif
+
+    qCInfo(PlasmaSetup) << "Creating user" << m_username << "with full name" << m_fullName << "with a BTRFS home:" << btrfsHome;
 
     QList<QWindow *> topLevelWindows = QGuiApplication::topLevelWindows();
     QWindow *window = topLevelWindows.isEmpty() ? nullptr : topLevelWindows.first();
@@ -124,6 +136,7 @@ bool AccountController::createUser()
     action.setArguments({
         {QStringLiteral("username"), m_username},
         {QStringLiteral("fullName"), m_fullName},
+        {QStringLiteral("btrfsHome"), btrfsHome},
         {QStringLiteral("password"), m_password},
         {QStringLiteral("extraGroups"), userGroupsFromConfig()},
     });

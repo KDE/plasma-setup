@@ -20,3 +20,20 @@
 #
 # NOTE: Leaving this key empty results in the hard-coded default of "wheel".
 UserGroups=wheel
+
+# When enabled, Plasma Setup will pass the flag
+# --btrfs-subvolume-home to useradd(8). The home directory is then
+# created as a separate subvolume (e.g., @home/konqi), which is useful
+# for snapshots, quotas, and rollbacks of just the user data rather
+# than all of /home.
+#
+# Default: false
+# Example: BtrfsHome=true
+#
+# NOTE: This option depends on the useradd command from shadow-utils
+#       supporting --btrfs-subvolume-home. If your system uses busybox
+#       or another minimal useradd that lacks this flag, keep this
+#       option set to false. Otherwise, user creation will fail.
+#
+#       This option has no effect on non-Linux platforms.
+BtrfsHome=false
