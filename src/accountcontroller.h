@@ -148,4 +148,11 @@ private:
      * @return A list of group names.
      */
     QStringList userGroupsFromConfig() const;
+
+    /**
+     * Retrieves from the configuration the arguments to useradd(8) for creating users.
+     *
+     * @return A list of arguments.
+     */
+    QStringList useraddArgumentsFromConfig() const;
 };

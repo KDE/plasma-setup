@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+// SPDX-FileCopyrightText: 2026 Hadi Chokr <hadichokr@icloud.com>
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
@@ -167,6 +168,7 @@ ActionReply PlasmaSetupAuthHelper::createuser(const QVariantMap &args)
     // which is not possible with QString and QVariant due to their internal memory management.
     const QVariant usernameVariant = args.value(QStringLiteral("username"));
     const QVariant fullNameVariant = args.value(QStringLiteral("fullName"));
+    const QVariant extraArgsVariant = args.value(QStringLiteral("extraArgs"));
 
     // Ensure required arguments are present and can be converted
     if (!usernameVariant.canConvert<QString>() || !args.value(QStringLiteral("password")).canConvert<QByteArray>()) {
@@ -175,6 +177,7 @@ ActionReply PlasmaSetupAuthHelper::createuser(const QVariantMap &args)
 
     const QString username = usernameVariant.toString().trimmed();
     const QString fullName = fullNameVariant.canConvert<QString>() ? fullNameVariant.toString().trimmed() : QString();
+    const QStringList extraArgs = extraArgsVariant.toStringList();
 
     const auto validationResult = PlasmaSetupValidation::Account::validateUsername(username);
     if (validationResult != PlasmaSetupValidation::Account::UsernameValidationResult::Valid) {
@@ -202,6 +205,11 @@ ActionReply PlasmaSetupAuthHelper::createuser(const QVariantMap &args)
     // -c: Set the user's full name (comment field)
     if (!fullName.isEmpty()) {
         useraddArguments << QStringLiteral("-c") << fullName;
+    }
+
+    // Extra arguments from plasmasetuprc
+    if (!extraArgs.isEmpty()) {
+        useraddArguments << extraArgs;
     }
 
     // The username to create

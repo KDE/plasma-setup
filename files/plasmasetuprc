@@ -20,3 +20,9 @@
 #
 # NOTE: Leaving this key empty results in the hard-coded default of "wheel".
 UserGroups=wheel
+
+# Plasma Setup will pass the arguments defined below to useradd(8).
+# Note: Commas are seen as spaces so act as argument separators.
+#
+# Example: UseraddArgs=--btrfs-subvolume-home,-s,/usr/bin/zsh
+UseraddArgs=

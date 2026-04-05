@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+// SPDX-FileCopyrightText: 2026 Hadi Chokr <hadichokr@icloud.com>
 //
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
@@ -124,6 +125,7 @@ bool AccountController::createUser()
     action.setArguments({
         {QStringLiteral("username"), m_username},
         {QStringLiteral("fullName"), m_fullName},
+        {QStringLiteral("extraArgs"), useraddArgumentsFromConfig()},
         {QStringLiteral("password"), m_password},
         {QStringLiteral("extraGroups"), userGroupsFromConfig()},
     });
@@ -164,6 +166,19 @@ QString AccountController::usernameValidationMessage(const QString &username) co
     const auto result = PlasmaSetupValidation::Account::validateUsername(username);
 
     return PlasmaSetupValidation::Account::usernameValidationMessage(result);
+}
+
+QStringList AccountController::useraddArgumentsFromConfig() const
+{
+    QStringList extraArgs;
+    const QString configPath = QString::fromUtf8(PLASMA_SETUP_CONFIG_PATH);
+    if (!configPath.isEmpty()) {
+        KConfig config(configPath, KConfig::SimpleConfig);
+        KConfigGroup accountsGroup(&config, QStringLiteral("Accounts"));
+        extraArgs = accountsGroup.readEntry(QStringLiteral("UseraddArgs"), QStringList());
+    }
+
+    return extraArgs;
 }
 
 QStringList AccountController::userGroupsFromConfig() const
