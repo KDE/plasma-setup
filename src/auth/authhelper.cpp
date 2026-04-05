@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+// SPDX-FileCopyrightText: 2026 Hadi Chokr <hadichokr@icloud.com>
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
@@ -167,6 +168,7 @@ ActionReply PlasmaSetupAuthHelper::createuser(const QVariantMap &args)
     // which is not possible with QString and QVariant due to their internal memory management.
     const QVariant usernameVariant = args.value(QStringLiteral("username"));
     const QVariant fullNameVariant = args.value(QStringLiteral("fullName"));
+    const QVariant extraArgsVariant = args.value(QStringLiteral("extraArgs"));
 
     // Ensure required arguments are present and can be converted
     if (!usernameVariant.canConvert<QString>() || !args.value(QStringLiteral("password")).canConvert<QByteArray>()) {
@@ -175,6 +177,9 @@ ActionReply PlasmaSetupAuthHelper::createuser(const QVariantMap &args)
 
     const QString username = usernameVariant.toString().trimmed();
     const QString fullName = fullNameVariant.canConvert<QString>() ? fullNameVariant.toString().trimmed() : QString();
+    const QStringList extraArgs = extraArgsVariant.toStringList();
+    qDebug() << "createuser: extraArgs received from controller:" << extraArgs
+             << "(count:" << extraArgs.size() << ")";
 
     const auto validationResult = PlasmaSetupValidation::Account::validateUsername(username);
     if (validationResult != PlasmaSetupValidation::Account::UsernameValidationResult::Valid) {
@@ -204,6 +209,20 @@ ActionReply PlasmaSetupAuthHelper::createuser(const QVariantMap &args)
         useraddArguments << QStringLiteral("-c") << fullName;
     }
 
+    // Extra arguments from plasmasetuprc — trim each entry to guard against
+    // KConfig splitting "arg, arg" into ["arg", " arg"] with a leading space.
+    if (!extraArgs.isEmpty()) {
+        qDebug() << "createuser: appending extra useradd args (pre-trim):" << extraArgs;
+        for (const QString &arg : extraArgs) {
+            const QString trimmed = arg.trimmed();
+            if (!trimmed.isEmpty()) {
+                useraddArguments << trimmed;
+            }
+        }
+    } else {
+        qDebug() << "createuser: no extra useradd args";
+    }
+
     // The username to create
     useraddArguments << username;
 
@@ -212,6 +231,8 @@ ActionReply PlasmaSetupAuthHelper::createuser(const QVariantMap &args)
     if (useraddBinary.isEmpty()) {
         return makeErrorReply(QStringLiteral("Could not locate useradd executable."));
     }
+
+    qInfo() << "createuser: final useradd argv:" << useraddBinary << useraddArguments;
 
     // Execute useradd to create the user account
     QProcess useraddProcess;
