@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+// SPDX-FileCopyrightText: 2026 Hadi Chokr <hadichokr@icloud.com>
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
@@ -176,6 +177,12 @@ ActionReply PlasmaSetupAuthHelper::createuser(const QVariantMap &args)
     const QString username = usernameVariant.toString().trimmed();
     const QString fullName = fullNameVariant.canConvert<QString>() ? fullNameVariant.toString().trimmed() : QString();
 
+#ifdef __linux__
+    const bool btrfsHome = args.value(QStringLiteral("btrfsHome")).toBool();
+#else
+    const bool btrfsHome = false;
+#endif
+
     const auto validationResult = PlasmaSetupValidation::Account::validateUsername(username);
     if (validationResult != PlasmaSetupValidation::Account::UsernameValidationResult::Valid) {
         return makeErrorReply(PlasmaSetupValidation::Account::usernameValidationMessage(validationResult));
@@ -196,7 +203,15 @@ ActionReply PlasmaSetupAuthHelper::createuser(const QVariantMap &args)
     // -m: Create a home directory for the new user
     useraddArguments << QStringLiteral("-m");
 
-    // -U: Create a group with the same name as the user and add the user to this group
+#ifdef __linux__
+    // --btrfs-subvolume-home: Create a home directory as a BTRFS subvolume
+    if (btrfsHome) {
+        useraddArguments << QStringLiteral("--btrfs-subvolume-home");
+    }
+#endif
+
+    // -U: Create a group with the same name as the user and add the user to this
+    // group
     useraddArguments << QStringLiteral("-U");
 
     // -c: Set the user's full name (comment field)
