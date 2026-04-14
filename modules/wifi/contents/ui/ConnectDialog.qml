@@ -41,7 +41,7 @@ Components.MessageDialog {
     onAccepted: {
         if (passwordField.acceptableInput) {
             root.close();
-            root.handler.addAndActivateConnection(devicePath, specificPath, passwordField.text, PlasmaNM.Handler.StoreForAllUsers);
+            root.handler.addAndActivateConnection(devicePath, specificPath, passwordField.text);
         }
         passwordField.focus = false;
     }
