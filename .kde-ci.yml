@@ -15,4 +15,4 @@ Dependencies:
 
 Options:
   enable-lsan: true
-  run-qmllint: true
+  run-qmllint: false # https://qt-project.atlassian.net/browse/QTBUG-145572
