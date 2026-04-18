@@ -28,10 +28,14 @@ PlasmaSetupComponents.SetupModule {
         // Temporarily disable the highlight move duration so the correct
         // layout is preselected when the page is activated.
         layoutsView.highlightMoveDuration = 0;
-        // Set the initial current item to the system locale's layout.
-        layoutsView.currentIndex = layoutsProxy.layoutForLocaleIndex();
+        variantView.highlightMoveDuration = 0;
+        // Set the initial current item to the system's current layout.
+        layoutsView.currentIndex = layoutsProxy.findCurrentLayoutIndex();
+        // Set the initial current variant to the system's current variant.
+        variantView.currentIndex = variantProxy.findCurrentVariantIndex();
         // Reset the highlight move duration to the default value.
         layoutsView.highlightMoveDuration = -1;
+        variantView.highlightMoveDuration = -1;
     }
 
     KCMKeyboard.LayoutSearchModel {
@@ -77,26 +81,26 @@ PlasmaSetupComponents.SetupModule {
             return true;
         }
 
-        // Reads the default locale and returns the index of the keyboard layout
-        // that matches it.
-        function layoutForLocaleIndex(): int {
-            const locale = Qt.locale();
-            const localeName = locale.name;
+        // Returns the index matching the system's current keyboard layout, or -1 if not found.
+        function findCurrentLayoutIndex(): int {
+            // If there are multiple layouts configured (e.g. "us,ru") we only want to consider the
+            // second one for layout selection — in such a case the first one should be `us` to
+            // pair with a non-latin layout.
+            const layoutName = KeyboardUtil.layoutName.split(",").pop().trim();
 
-            // Iterate through the rows to find the layout that matches the locale
+            // Iterate through the rows to find the layout that matches the system's current layout.
             for (let i = 0; i < rowCount(); i++) {
                 const proxyIndex = index(i, 0);
                 const shortName = data(proxyIndex, KItemModels.KRoleNames.role("shortName"));
                 const description = data(proxyIndex, KItemModels.KRoleNames.role("description"));
-                const variantName = data(proxyIndex, KItemModels.KRoleNames.role("variantName"));
 
-                // For now just hardcode the English (US) layout.
-                // TODO: Add support for _actually_ finding the layout for the current locale.
-                if (description === "English (US)" && variantName === "") {
-                    return i; // Return the index of the matching layout
+                if (shortName === layoutName) {
+                    console.warn("Found keyboard layout matching system default:", shortName, description);
+                    return i;
                 }
             }
 
+            console.warn("No keyboard layout matching system default found for layout name:", layoutName);
             return -1; // Not found
         }
     }
@@ -126,6 +130,40 @@ PlasmaSetupComponents.SetupModule {
             }
 
             return true;
+        }
+
+        // Returns the index matching the system's current keyboard layout variant, or -1 if not found.
+        function findCurrentVariantIndex(): int {
+            const layoutIndex = layoutsView.currentIndex;
+            if (layoutIndex === -1) {
+                return -1; // No layout selected, so no variant to find
+            }
+
+            const layoutModelIndex = layoutsProxy.index(layoutIndex, 0);
+            const layoutShortName = layoutsProxy.data(layoutModelIndex, KItemModels.KRoleNames.role("shortName"));
+
+            // The system's current layout variant, if any (e.g. "dvorak" in "us(dvorak)").
+            //
+            // If there are multiple variants configured (e.g. a layout of "us,ru(bak)") we only
+            // want to consider the second one for variant selection — in such a case the first one
+            // should be a blank variant for the latin fallback layout, while the second one is for
+            // the actual non-latin layout we care about showing in the picker.
+            const currentVariantName = KeyboardUtil.layoutVariant.split(",").pop().trim();
+
+            // Iterate through the rows to find the variant that matches the system's current variant for the selected layout.
+            for (let i = 0; i < rowCount(); i++) {
+                const proxyIndex = index(i, 0);
+                const shortName = data(proxyIndex, KItemModels.KRoleNames.role("shortName"));
+                const variantName = data(proxyIndex, KItemModels.KRoleNames.role("variantName"));
+
+                if (shortName === layoutShortName && variantName === currentVariantName) {
+                    console.warn("Found keyboard variant matching system default. Layout:", shortName, "Variant:", variantName);
+                    return i;
+                }
+            }
+
+            console.warn("No keyboard variant matching system default found for layout:", layoutShortName, "and variant name:", currentVariantName);
+            return -1; // Not found
         }
     }
 
@@ -223,7 +261,9 @@ PlasmaSetupComponents.SetupModule {
 
         onClicked: {
             ListView.view.currentIndex = index;
-            KeyboardUtil.setLayout(shortName, variantName);
+            KeyboardUtil.layoutName = shortName;
+            KeyboardUtil.layoutVariant = variantName;
+            KeyboardUtil.applyLayout();
         }
 
         Accessible.name: delegate.description
