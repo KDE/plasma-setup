@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:46+0000\n"
+"POT-Creation-Date: 2026-04-20 00:49+0000\n"
 "PO-Revision-Date: 2026-01-15 18:15+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -277,7 +277,7 @@ msgstr ""
 "I nomi host possono contenere lettere, numeri e trattini. Ciascuna etichetta "
 "deve iniziare e terminare con una lettera o un numero."
 
-#: modules/keyboard/contents/ui/main.qml:149
+#: modules/keyboard/contents/ui/main.qml:187
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Seleziona la tua disposizione della tastiera e la lingua."

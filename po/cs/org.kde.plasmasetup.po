@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:46+0000\n"
+"POT-Creation-Date: 2026-04-20 00:49+0000\n"
 "PO-Revision-Date: 2026-01-27 22:14+0100\n"
 "Last-Translator: Jan Papez (honyczek) <honyczek@centrum.cz>\n"
 "Language-Team: Czech <kde-i18n-cs@kde.org>\n"
@@ -277,7 +277,7 @@ msgstr ""
 "Názvy hostitelů mohou obsahovat písmena, čísla a pomlčky. Každý štítek musí "
 "začínat a končit písmenem nebo číslem."
 
-#: modules/keyboard/contents/ui/main.qml:149
+#: modules/keyboard/contents/ui/main.qml:187
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Vyberte si rozložení kláves a váš jazyk."

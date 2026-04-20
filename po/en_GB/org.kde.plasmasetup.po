@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:46+0000\n"
+"POT-Creation-Date: 2026-04-20 00:49+0000\n"
 "PO-Revision-Date: 2024-08-03 13:36+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -270,7 +270,7 @@ msgid ""
 "and end with a letter or number."
 msgstr ""
 
-#: modules/keyboard/contents/ui/main.qml:149
+#: modules/keyboard/contents/ui/main.qml:187
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr ""

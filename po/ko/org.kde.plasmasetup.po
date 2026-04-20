@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:46+0000\n"
+"POT-Creation-Date: 2026-04-20 00:49+0000\n"
 "PO-Revision-Date: 2026-02-03 22:20+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -278,7 +278,7 @@ msgstr ""
 "호스트 이름에는 글자, 숫자, 하이픈(-)만 포함될 수 있습니다. 각각 레이블은 글"
 "자나 숫자로 시작하거나 끝나야 합니다."
 
-#: modules/keyboard/contents/ui/main.qml:149
+#: modules/keyboard/contents/ui/main.qml:187
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "키보드 레이아웃과 언어를 선택하십시오."

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:46+0000\n"
+"POT-Creation-Date: 2026-04-20 00:49+0000\n"
 "PO-Revision-Date: 2026-01-24 16:52+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -278,7 +278,7 @@ msgstr ""
 "Ostalari-izenek letrak, zenbakiak, eta marratxoak izan ditzake. Etiketak "
 "letra batekin edo zenbaki batekin hasi eta bukatu behar dute."
 
-#: modules/keyboard/contents/ui/main.qml:149
+#: modules/keyboard/contents/ui/main.qml:187
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Hautatu zure teklatuaren antolaera eta hizkuntza."
