@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-04 03:03+0000\n"
-"PO-Revision-Date: 2026-02-05 16:53+0100\n"
+"PO-Revision-Date: 2026-04-30 17:26+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -221,7 +221,7 @@ msgstr "Nomine de Hospite:"
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be empty."
-msgstr "Nomine de Hospite nonpote esser vacue."
+msgstr "Nomine de Hospite non pote esser vacue."
 
 #: modules/hostnameutil/hostnameutil.cpp:96
 #, kde-format
@@ -253,7 +253,7 @@ msgstr "Nomine de hospite non pote terminar con un puncto."
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot contain consecutive dots."
-msgstr "Nomine de hospite nonpote continer punctos consecutive."
+msgstr "Nomine de hospite non pote continer punctos consecutive."
 
 #: modules/hostnameutil/hostnameutil.cpp:106
 #, kde-format
