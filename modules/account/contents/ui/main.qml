@@ -30,6 +30,10 @@ PlasmaSetupComponents.SetupModule {
 
     nextEnabled: root.usernameValid && passwordField.text.length > 0 && repeatField.text === passwordField.text
 
+    function onPageActivated() {
+        fullNameField.forceActiveFocus();
+    }
+
     contentItem: ScrollView {
         id: scroll
         clip: true

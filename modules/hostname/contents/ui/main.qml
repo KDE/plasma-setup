@@ -53,6 +53,7 @@ PlasmaSetupComponents.SetupModule {
             let prefix = username.length > 0 ? username : "plasma";
             hostnameField.text = prefix + "-pc";
         }
+        hostnameField.forceActiveFocus();
     }
 
     /**

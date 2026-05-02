@@ -36,6 +36,7 @@ PlasmaSetupComponents.SetupModule {
         // Reset the highlight move duration to the default value.
         layoutsView.highlightMoveDuration = -1;
         variantView.highlightMoveDuration = -1;
+        searchField.forceActiveFocus();
     }
 
     KCMKeyboard.LayoutSearchModel {
