@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 00:49+0000\n"
+"POT-Creation-Date: 2026-05-03 00:46+0000\n"
 "PO-Revision-Date: 2026-02-03 22:20+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: modules/account/contents/ui/main.qml:74
+#: modules/account/contents/ui/main.qml:78
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "초기 설정을 완료하려면 몇 가지 정보가 필요합니다."
 
-#: modules/account/contents/ui/main.qml:85
+#: modules/account/contents/ui/main.qml:89
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "이 사용자는 관리자가 될 것입니다."
 
-#: modules/account/contents/ui/main.qml:89
+#: modules/account/contents/ui/main.qml:93
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -50,31 +50,31 @@ msgstr ""
 "트웨어 설치, 시스템의 모든 파일에 접근이 가능합니다.<nl/><nl/>이 사용자의 암"
 "호를 강력하게 설정하기를 추천합니다."
 
-#: modules/account/contents/ui/main.qml:102
+#: modules/account/contents/ui/main.qml:106
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "전체 이름"
 
-#: modules/account/contents/ui/main.qml:120
+#: modules/account/contents/ui/main.qml:124
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "사용자 이름"
 
-#: modules/account/contents/ui/main.qml:140
+#: modules/account/contents/ui/main.qml:144
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "암호"
 
-#: modules/account/contents/ui/main.qml:154
+#: modules/account/contents/ui/main.qml:158
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "암호 확인"
 
-#: modules/account/contents/ui/main.qml:172
+#: modules/account/contents/ui/main.qml:176
 #, kde-format
 msgid "Passwords must match"
 msgstr "암호가 일치해야 함"
@@ -208,13 +208,13 @@ msgstr ""
 "었습니다. <br /><br /><b>완료</b> 단추를 클릭하면 새 계정을 사용할 수 있습니"
 "다.<br /><br /><b>%1</b>$[을를 %1] 즐겁게 사용하세요!"
 
-#: modules/hostname/contents/ui/main.qml:94
+#: modules/hostname/contents/ui/main.qml:95
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
 msgstr "이 장치를 어떻게 불러야 합니까?"
 
-#: modules/hostname/contents/ui/main.qml:103
+#: modules/hostname/contents/ui/main.qml:104
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
@@ -278,7 +278,7 @@ msgstr ""
 "호스트 이름에는 글자, 숫자, 하이픈(-)만 포함될 수 있습니다. 각각 레이블은 글"
 "자나 숫자로 시작하거나 끝나야 합니다."
 
-#: modules/keyboard/contents/ui/main.qml:187
+#: modules/keyboard/contents/ui/main.qml:188
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "키보드 레이아웃과 언어를 선택하십시오."
