@@ -9,7 +9,7 @@ set(PROJECT_VERSION "6.6.90")
 project(plasma-setup VERSION ${PROJECT_VERSION})
 
 set(QT_MIN_VERSION "6.10.0")
-set(KF6_MIN_VERSION "6.24.0")
+set(KF6_MIN_VERSION "6.26.0")
 
 include(FeatureSummary)
 
