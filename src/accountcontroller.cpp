@@ -159,6 +159,23 @@ bool AccountController::isUsernameValid(const QString &username) const
     return PlasmaSetupValidation::Account::isUsernameValid(username);
 }
 
+QString AccountController::sanitizeUsername(const QString &username) const
+{
+    static const QRegularExpression whiteSpace(QStringLiteral("\\s"));
+    static const QRegularExpression quotationMarks(QStringLiteral("[\\'`´’‘\"]"));
+    static const QRegularExpression combiningDiacriticalMarks(QStringLiteral("[\u0300-\u036F]"));
+
+    // Doing toUpper first forces some characters to transliterate
+    QString sanitizedUsername = username.toUpper().toLower().remove(whiteSpace);
+
+    sanitizedUsername = sanitizedUsername.remove(quotationMarks);
+
+    // Separate and remove combining diacritical marks
+    sanitizedUsername = sanitizedUsername.normalized(QString::NormalizationForm_D).remove(combiningDiacriticalMarks);
+
+    return sanitizedUsername;
+}
+
 QString AccountController::usernameValidationMessage(const QString &username) const
 {
     const auto result = PlasmaSetupValidation::Account::validateUsername(username);

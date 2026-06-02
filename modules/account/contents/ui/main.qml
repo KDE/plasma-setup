@@ -107,7 +107,7 @@ PlasmaSetupComponents.SetupModule {
                         property string previousText: ''
                         onTextChanged: {
                             if (usernameField.text.length === 0 || usernameField.text === previousText) {
-                                usernameField.text = previousText = fullNameField.text.toLowerCase().replace(/\s/g, '');
+                                usernameField.text = previousText = AccountController.sanitizeUsername(fullNameField.text)
                             }
                         }
 

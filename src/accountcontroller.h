@@ -69,6 +69,14 @@ public:
     Q_INVOKABLE bool isUsernameValid(const QString &username) const;
 
     /**
+     * Sanitize the provided username by removing or substituting invalid characters.
+     *
+     * @param username The username to sanitize
+     * @return The sanitized username
+     */
+    Q_INVOKABLE QString sanitizeUsername(const QString &username) const;
+
+    /**
      * Provides a user-friendly validation message for the given username.
      *
      * @param username The username to validate.
