@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+// SPDX-FileCopyrightText: 2026 Jesús T. <hello.triplean.dev@gmail.com>
 //
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
