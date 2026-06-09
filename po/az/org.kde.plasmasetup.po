@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-03 00:46+0000\n"
+"POT-Creation-Date: 2026-06-09 00:46+0000\n"
 "PO-Revision-Date: 2025-11-16 17:29+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xxmn77@gmail.com"
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:79
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Quraşdırmanı tamamlamaq üçün bir neçə detal lazımdır."
 
-#: modules/account/contents/ui/main.qml:89
+#: modules/account/contents/ui/main.qml:90
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Bu istifadəçi adminstrator olacaq."
 
-#: modules/account/contents/ui/main.qml:93
+#: modules/account/contents/ui/main.qml:94
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -51,31 +51,31 @@ msgstr ""
 "fayl sisteminə daxil ola bilərlər.<nl/><nl/>Bu istifadəçi üçün güclü "
 "şifrədən istifadə edin."
 
-#: modules/account/contents/ui/main.qml:106
+#: modules/account/contents/ui/main.qml:107
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Tam ad"
 
-#: modules/account/contents/ui/main.qml:124
+#: modules/account/contents/ui/main.qml:125
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "İstifadəşi adı"
 
-#: modules/account/contents/ui/main.qml:144
+#: modules/account/contents/ui/main.qml:145
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Şifrə"
 
-#: modules/account/contents/ui/main.qml:158
+#: modules/account/contents/ui/main.qml:159
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Şifrənin təsdiqi"
 
-#: modules/account/contents/ui/main.qml:176
+#: modules/account/contents/ui/main.qml:177
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Passwords don’t match"

@@ -1,43 +1,42 @@
-# Copyright (C) 2025 This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the plasma-setup package.
 #
-# SPDX-FileCopyrightText: 2025, 2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
-# SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2026 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-09 00:46+0000\n"
-"PO-Revision-Date: 2026-03-06 16:12-0300\n"
-"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
-"Language: pt_BR\n"
+"PO-Revision-Date: 2026-06-08 22:51+0200\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Geraldo Simiao"
+msgstr "Kiszel Kristóf"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "geraldosimiao@fedoraproject.org"
+msgstr "ulysses@fsf.hu"
 
 #: modules/account/contents/ui/main.qml:79
 #, kde-format
 msgid "We need a few details to complete the setup."
-msgstr "Precisamos de alguns detalhes para concluir a configuração."
+msgstr "A beállítás befejezéséhez néhány részletre van szükségünk."
 
 #: modules/account/contents/ui/main.qml:90
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
-msgstr "Este usuário será um administrador."
+msgstr "Ez a felhasználó rendszergazda lesz."
 
 #: modules/account/contents/ui/main.qml:94
 #, kde-kuit-format
@@ -47,49 +46,49 @@ msgid ""
 "means that they can change system settings, install software, and access all "
 "files on the system.<nl/><nl/>Choose a strong password for this user."
 msgstr ""
-"Este usuário terá privilégios administrativos no sistema.<nl/><nl/>Isso "
-"significa que ele pode alterar as configurações do sistema, instalar "
-"software e acessar todos os arquivos no sistema.<nl/><nl/>Escolha uma senha "
-"forte para este usuário."
+"Ennek a felhasználónak rendszergazdai jogai lesznek a rendszeren.<nl/><nl/"
+">Ez azt jelenti, hogy módosíthatja a rendszer beállításait, szoftvereket "
+"telepíthet, és mindenhez hozzáfér a fájlrendszeren.<nl/><nl/>Erős jelszót "
+"adjon ennek a felhasználónak."
 
 #: modules/account/contents/ui/main.qml:107
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
-msgstr "Nome completo"
+msgstr "Teljes név"
 
 #: modules/account/contents/ui/main.qml:125
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
-msgstr "Nome de usuário"
+msgstr "Felhasználónév"
 
 #: modules/account/contents/ui/main.qml:145
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
-msgstr "Senha"
+msgstr "Jelszó"
 
 #: modules/account/contents/ui/main.qml:159
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
-msgstr "Confirme a senha"
+msgstr "Jelszó megerősítése"
 
 #: modules/account/contents/ui/main.qml:177
 #, kde-format
 msgid "Passwords must match"
-msgstr "As senhas devem coincidir"
+msgstr "A jelszavaknak egyezniük kell"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:14
 #, kde-format
 msgid "Edit APN"
-msgstr "Editar APN"
+msgstr "APN szerkesztése"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:38
 #, kde-format
 msgid "Name"
-msgstr "Nome"
+msgstr "Név"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:43
 #, kde-format
@@ -99,17 +98,17 @@ msgstr "APN"
 #: modules/cellular/contents/ui/EditProfileDialog.qml:48
 #, kde-format
 msgid "Username"
-msgstr "Nome de usuário"
+msgstr "Felhasználónév"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:53
 #, kde-format
 msgid "Password"
-msgstr "Senha"
+msgstr "Jelszó"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:58
 #, kde-format
 msgid "Network type"
-msgstr "Tipo de rede"
+msgstr "Hálózattípus"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
@@ -129,22 +128,22 @@ msgstr "2G"
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 4G"
-msgstr "Somente 4G"
+msgstr "Csak 4G"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 3G"
-msgstr "Somente 3G"
+msgstr "Csak 3G"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Only 2G"
-msgstr "Somente 2G"
+msgstr "Csak 2G"
 
 #: modules/cellular/contents/ui/EditProfileDialog.qml:59
 #, kde-format
 msgid "Any"
-msgstr "Qualquer um"
+msgstr "Bármely"
 
 #: modules/cellular/contents/ui/main.qml:45
 #, kde-format
@@ -152,49 +151,50 @@ msgid ""
 "Please configure your APN below for mobile data, further information will be "
 "available with your carrier."
 msgstr ""
-"Configure seu APN (nome do ponto de acesso) abaixo para dados móveis. Mais "
-"informações estarão disponíveis com sua operadora."
+"Kérjük, állítsa be az APN-jét az alábbiakban a mobil adatkapcsolathoz,  "
+"további információk a  szolgáltatónál érhetők el."
 
 #: modules/cellular/contents/ui/main.qml:47
 #, kde-format
 msgid "You are connected to the mobile network."
-msgstr "Você está conectado à rede móvel."
+msgstr "Ön kapcsolódott a mobilhálózathoz."
 
 #: modules/cellular/contents/ui/main.qml:49
 #, kde-format
 msgid "Please insert a SIM card into your device."
-msgstr "Insira um cartão SIM no seu dispositivo."
+msgstr "Kérjük, helyezzen be egy SIM-kártyát az eszközbe."
 
 #: modules/cellular/contents/ui/main.qml:51
 #, kde-format
 msgid "Your device does not have a modem available."
-msgstr "Seu dispositivo não tem um modem disponível."
+msgstr "A készülék nem rendelkezik modemmel."
 
 #: modules/cellular/contents/ui/main.qml:63
 #, kde-format
 msgid "Mobile Data"
-msgstr "Dados móveis"
+msgstr "Mobil adatkapcsolat"
 
 #: modules/cellular/contents/ui/main.qml:109
 #, kde-format
 msgid "Edit"
-msgstr "Editar"
+msgstr "Szerkesztés"
 
 #: modules/cellular/contents/ui/main.qml:117
 #, kde-format
 msgid "Delete"
-msgstr "Excluir"
+msgstr "Törlés"
 
 #: modules/cellular/contents/ui/main.qml:127
 #, kde-format
 msgid "Add APN"
-msgstr "Adicionar APN"
+msgstr "APN hozzáadása"
 
 #: modules/finished/contents/ui/main.qml:25
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
-msgstr "Seu dispositivo agora está pronto.<br /><br />Aproveite <b>%1</b>!"
+msgstr ""
+"Az eszköze most már kész.<br /><br />Élvezze a(z) <b>%1</b> használatát!"
 
 #: modules/finished/contents/ui/main.qml:34
 #, kde-format
@@ -203,68 +203,69 @@ msgid ""
 "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
-"Seu dispositivo agora está pronto. <br /><br />Após clicar em <b>Concluir</"
-"b>, você poderá entrar em sua nova conta.<br /><br />Aproveite <b>%1</b>!"
+"Az eszköze most már kész.<br /><br />A <b>Befejezés</b> gombra kattintás "
+"után bejelentkezhet az új fiókjába.<br /><br />Élvezze a(z) <b>%1</b> "
+"használatát!"
 
 #: modules/hostname/contents/ui/main.qml:95
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
-msgstr "Qual deve ser o nome desse dispositivo?"
+msgstr "Mi legyen az eszköz neve?"
 
 #: modules/hostname/contents/ui/main.qml:104
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
-msgstr "Nome do host:"
+msgstr "Gépnév:"
 
 #: modules/hostnameutil/hostnameutil.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be empty."
-msgstr "O nome do host não pode ser vazio."
+msgstr "A gépnév nem lehet üres."
 
 #: modules/hostnameutil/hostnameutil.cpp:96
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
-msgstr "O nome do host não pode ser “localhost“ ou “localhost.localdomain“."
+msgstr "A gépnév nem lehet „localhost” vagy „localhost.localdomain”"
 
 #: modules/hostnameutil/hostnameutil.cpp:98
 #, kde-format
 msgctxt "@info"
 msgid "Hostname is too long (maximum 253 characters)."
-msgstr "O nome do host é muito longo (máximo de 253 characters)."
+msgstr "A gépnév túl hosszú (maximum 253 karakter)."
 
 #: modules/hostnameutil/hostnameutil.cpp:100
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot start with a dot."
-msgstr "O nome do host não pode iniciar com um ponto."
+msgstr "A gépnév nem kezdődhet ponttal."
 
 #: modules/hostnameutil/hostnameutil.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot end with a dot."
-msgstr "O nome do host não pode terminar com um ponto."
+msgstr "A gépnév nem végződhet ponttal."
 
 #: modules/hostnameutil/hostnameutil.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot contain consecutive dots."
-msgstr "O nome do host não pode conter pontos consecutivos."
+msgstr "A gépnév nem tartalmazhat egymást követő pontokat."
 
 #: modules/hostnameutil/hostnameutil.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "Hostname labels cannot be empty."
-msgstr "Os rótulos de nome de host não podem estar vazios."
+msgstr "A gépnévcímkék nem lehetnek üresek."
 
 #: modules/hostnameutil/hostnameutil.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Each hostname label must be at most 63 characters."
-msgstr "Cada rótulo de nome de host deve ter no máximo 63 caracteres."
+msgstr "Minden gépnévcímke legfeljebb 63 karakter hosszú lehet."
 
 #: modules/hostnameutil/hostnameutil.cpp:110
 #, kde-format
@@ -273,189 +274,110 @@ msgid ""
 "Hostnames may contain letters, numbers, and hyphens. Each label must start "
 "and end with a letter or number."
 msgstr ""
-"Os nomes de host podem conter letras, números e hífenes. Cada rótulo deve "
-"começar e terminar com uma letra ou um número."
+"A gépnév tartalmazhat betűket, számokat és kötőjeleket. Minden címkének "
+"betűvel vagy számmal kell kezdődnie és végződnie."
 
 #: modules/keyboard/contents/ui/main.qml:188
 #, kde-format
 msgid "Select your keyboard layout and language."
-msgstr "Selecione o layout do teclado e o idioma."
+msgstr "Válassza ki a billentyűzetkiosztást és a nyelvet."
 
 #: modules/language/contents/ui/main.qml:41
 #, kde-format
 msgid "Please select your preferred language."
-msgstr "Selecione seu idioma preferido."
+msgstr "Válassza ki az elsődleges nyelvet."
 
 #: modules/language/contents/ui/main.qml:47
 #, kde-format
 msgid "Search languages…"
-msgstr "Pesquisar idiomas…"
+msgstr "Nyelvek keresése…"
 
 #: modules/prepare/contents/ui/main.qml:76
 #, kde-format
 msgid "Dark Theme"
-msgstr "Tema escuro"
+msgstr "Sötét téma"
 
 #: modules/time/contents/ui/main.qml:41
 #, kde-format
 msgid "Select your time zone."
-msgstr "Selecione seu fuso horário."
+msgstr "Válassza ki az időzónáját."
 
 #: modules/wifi/contents/ui/main.qml:75
 #, kde-format
 msgid "Connect to a WiFi network for network access."
-msgstr "Conecte-se a uma rede WiFi para ter acesso à rede."
+msgstr "Kapcsolódjon egy WiFi hálózathoz a hálózati hozzáférését."
 
 #: modules/wifi/contents/ui/main.qml:167
 #, kde-format
 msgid "Connect to"
-msgstr "Conectar a"
+msgstr "Kapcsolódás ehhez:"
 
 #: modules/wifi/contents/ui/PasswordField.qml:14
 #, kde-format
 msgid "Password:"
-msgstr "Senha:"
+msgstr "Jelszó:"
 
 #: modules/wifi/contents/ui/PasswordField.qml:26
 #, kde-format
 msgid "Invalid input."
-msgstr "Entrada inválida."
+msgstr "Érvénytelen bemenet."
 
 #: src/main.cpp:35 src/qml/Main.qml:11
 #, kde-format
 msgid "Plasma Setup"
-msgstr "Configuração do Plasma"
+msgstr "Plasma Beállítás"
 
 #: src/main.cpp:37
 #, kde-format
 msgid "Make Plasma yours"
-msgstr "Deixe o plasma do seu jeito!"
+msgstr "Tegye a Plasmát a sajátjává"
 
 #: src/main.cpp:39
 #, kde-format
 msgid "© 2021-2024 KDE Community"
-msgstr "© 2021-2024 Comunidade KDE"
+msgstr "© A KDE közösség, 2021-2024."
 
 #: src/main.cpp:44
 #, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr ""
-"Remover a configuração de login automático para a Configuração do Plasma."
+"A Plasma Beállítás automatikus bejelentkezési konfigurációjának eltávolítása."
 
 #: src/qml/LandingComponent.qml:125
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr "Bem-vindo ao<br/><b>Plasma Mobile</b>"
+msgstr "Üdvözli a<br/><b>Plasma Mobile</b>"
 
 #: src/qml/LandingComponent.qml:126
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr "Bem-vindo ao<br/><b>Plasma Desktop</b>"
+msgstr "Üdvözli a <br/><b>Plasma Asztal</b>"
 
 #: src/qml/LandingComponent.qml:140
 #, kde-format
 msgid "Begin Setup"
-msgstr "Iniciar configuração"
+msgstr "Beállítás megkezdése"
 
 #: src/qml/LandingComponent.qml:171
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
-msgstr "Distribuído por<br/><b>%1</b>"
+msgstr "A gépházban a(z) <br/><b>%1</b>"
 
 #: src/qml/Wizard.qml:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
-msgstr "Voltar"
+msgstr "Vissza"
 
 #: src/qml/Wizard.qml:311
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
-msgstr "Próximo"
+msgstr "Következő"
 
 #: src/qml/Wizard.qml:323
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
-msgstr "Concluir"
-
-#~ msgid "Adjust the size of elements on the screen."
-#~ msgstr "Ajuste o tamanho dos elementos na tela."
-
-#~ msgid "Display Scaling"
-#~ msgstr "Escala do monitor"
-
-#~ msgid "Upload new avatar"
-#~ msgstr "Enviar novo avatar"
-
-#~ msgid "Remove current avatar"
-#~ msgstr "Remover avatar atual"
-
-#~ msgctxt "@info, %1 is an error message"
-#~ msgid "Failed to crop image: %1"
-#~ msgstr "Falha ao cortar a imagem: %1"
-
-#~ msgctxt "%1 is the username"
-#~ msgid "Could not get permission to save user %1"
-#~ msgstr "Não foi possível obter permissão para salvar o usuário %1"
-
-#~ msgid "There was an error while saving changes"
-#~ msgstr "Um erro ocorreu ao salvar as alterações"
-
-#~ msgid "Failed to resize image: opening temp file failed"
-#~ msgstr "Falha ao redimensionar imagem: falha ao abrir o arquivo temporário"
-
-#~ msgid "Failed to resize image: writing to temp file failed"
-#~ msgstr "Falha ao redimensionar imagem: falha ao gravar o arquivo temporário"
-
-#~ msgid "Username argument is missing or invalid."
-#~ msgstr "O argumento do nome de usuário está ausente ou é inválido."
-
-#~ msgctxt "%1 is a directory path"
-#~ msgid "Failed to create autostart directory: %1"
-#~ msgstr "Falha ao criar pasta de inicialização automática: %1"
-
-#~ msgctxt "%1 is a file path"
-#~ msgid "Failed to open file for writing: %1"
-#~ msgstr "Falha ao abrir o arquivo para gravação: %1"
-
-#~ msgid "Failed to find the Plasma Setup executable path."
-#~ msgstr "Falha ao encontrar o caminho executável da Configuração do Plasma."
-
-#~ msgctxt "%1 is an error message"
-#~ msgid "Failed to disable systemd unit: %1"
-#~ msgstr "Falha ao desabilitar a unidade systemd: %1"
-
-#~ msgctxt "%1 is a file path"
-#~ msgid "Failed to remove file %1"
-#~ msgstr "Falha ao remover o arquivo %1"
-
-#~ msgctxt "%1 is a directory path"
-#~ msgid "Failed to create .config directory: %1"
-#~ msgstr "Falha ao criar a pasta .config: %1"
-
-#~ msgctxt "%1 is a file path"
-#~ msgid "Failed to copy file %1"
-#~ msgstr "Falha ao copiar o arquivo %1"
-
-#~ msgctxt "%1 is a directory path, %2 an exit code"
-#~ msgid "Failed to set ownership for home directory %1: exit code %2"
-#~ msgstr ""
-#~ "Falha ao definir a propriedade da pasta inicial %1: código de saída %2"
-
-#~ msgctxt "%1 is a file path"
-#~ msgid "Failed to open file %1 for writing."
-#~ msgstr "Falha ao abrir o arquivo %1 para escrita."
-
-#~ msgid "24-Hour Format"
-#~ msgstr "Formato de 24 horas"
-
-#~ msgctxt "@label:textfield"
-#~ msgid "Username"
-#~ msgstr "Nome de usuário"
-
-#~ msgctxt "@label:textfield"
-#~ msgid "Password"
-#~ msgstr "Senha"
+msgstr "Befejezés"

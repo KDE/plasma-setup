@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.kde.initialsystemsetup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-03 00:46+0000\n"
+"POT-Creation-Date: 2026-06-09 00:46+0000\n"
 "PO-Revision-Date: 2026-01-09 14:51+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -28,18 +28,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-i18n-de@kde.org"
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:79
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Um die Einrichtung abzuschließen, benötigen wir noch ein paar Details."
 
-#: modules/account/contents/ui/main.qml:89
+#: modules/account/contents/ui/main.qml:90
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Dieser Benutzer wird ein Administrator."
 
-#: modules/account/contents/ui/main.qml:93
+#: modules/account/contents/ui/main.qml:94
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -52,31 +52,31 @@ msgstr ""
 "und auf alle Dateien auf dem System zugreifen kann.<nl/><nl/>Wählen Sie ein "
 "starkes Passwort für diesen Benutzer."
 
-#: modules/account/contents/ui/main.qml:106
+#: modules/account/contents/ui/main.qml:107
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Vollständiger Name"
 
-#: modules/account/contents/ui/main.qml:124
+#: modules/account/contents/ui/main.qml:125
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Benutzername"
 
-#: modules/account/contents/ui/main.qml:144
+#: modules/account/contents/ui/main.qml:145
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Passwort"
 
-#: modules/account/contents/ui/main.qml:158
+#: modules/account/contents/ui/main.qml:159
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Passwort bestätigen"
 
-#: modules/account/contents/ui/main.qml:176
+#: modules/account/contents/ui/main.qml:177
 #, kde-format
 msgid "Passwords must match"
 msgstr "Passwörter müssen übereinstimmen"

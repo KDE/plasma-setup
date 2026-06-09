@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-03 00:46+0000\n"
+"POT-Creation-Date: 2026-06-09 00:46+0000\n"
 "PO-Revision-Date: 2026-01-09 00:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:79
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "我們需要一些細節來完成設定。"
 
-#: modules/account/contents/ui/main.qml:89
+#: modules/account/contents/ui/main.qml:90
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "這個使用者將會是一個管理員。"
 
-#: modules/account/contents/ui/main.qml:93
+#: modules/account/contents/ui/main.qml:94
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -49,31 +49,31 @@ msgstr ""
 "這個使用者將在系統上有管理員權限。<nl/><nl/>這代表他能變更系統設定、安裝軟"
 "體，並存取系統上的所有檔案。<nl/><nl/>請為這個使用者選擇高強度的密碼。"
 
-#: modules/account/contents/ui/main.qml:106
+#: modules/account/contents/ui/main.qml:107
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "全名"
 
-#: modules/account/contents/ui/main.qml:124
+#: modules/account/contents/ui/main.qml:125
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "使用者名稱"
 
-#: modules/account/contents/ui/main.qml:144
+#: modules/account/contents/ui/main.qml:145
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "密碼"
 
-#: modules/account/contents/ui/main.qml:158
+#: modules/account/contents/ui/main.qml:159
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "確認密碼"
 
-#: modules/account/contents/ui/main.qml:176
+#: modules/account/contents/ui/main.qml:177
 #, kde-format
 msgid "Passwords must match"
 msgstr "密碼必須相符"

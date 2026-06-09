@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-03 00:46+0000\n"
+"POT-Creation-Date: 2026-06-09 00:46+0000\n"
 "PO-Revision-Date: 2026-03-03 17:29+0200\n"
 "Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -28,18 +28,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "toms.trasuns@posteo.net"
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:79
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Lai pabeigtu iestatīšanu, vajadzīgs nedaudz informācijas"
 
-#: modules/account/contents/ui/main.qml:89
+#: modules/account/contents/ui/main.qml:90
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Šis lietotājs būs administrators"
 
-#: modules/account/contents/ui/main.qml:93
+#: modules/account/contents/ui/main.qml:94
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -52,31 +52,31 @@ msgstr ""
 "programmatūru un piekļūt visām datnēm sistēmā.<nl/><nl/>Lietotājam "
 "izvēlieties stipru paroli."
 
-#: modules/account/contents/ui/main.qml:106
+#: modules/account/contents/ui/main.qml:107
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Pilns vārds"
 
-#: modules/account/contents/ui/main.qml:124
+#: modules/account/contents/ui/main.qml:125
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Lietotājvārds"
 
-#: modules/account/contents/ui/main.qml:144
+#: modules/account/contents/ui/main.qml:145
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Parole"
 
-#: modules/account/contents/ui/main.qml:158
+#: modules/account/contents/ui/main.qml:159
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Apstiprināt paroli"
 
-#: modules/account/contents/ui/main.qml:176
+#: modules/account/contents/ui/main.qml:177
 #, kde-format
 msgid "Passwords must match"
 msgstr "Parolēm ir jāsakrīt"

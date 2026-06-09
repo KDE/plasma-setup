@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-03 00:46+0000\n"
+"POT-Creation-Date: 2026-06-09 00:46+0000\n"
 "PO-Revision-Date: 2026-01-23 20:43+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "stefan.asserhall@gmail.com"
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:79
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Vi behöver en del information för att kunna slutföra inställningen."
 
-#: modules/account/contents/ui/main.qml:89
+#: modules/account/contents/ui/main.qml:90
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Den här användaren blir administratör."
 
-#: modules/account/contents/ui/main.qml:93
+#: modules/account/contents/ui/main.qml:94
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -51,31 +51,31 @@ msgstr ""
 "komma åt alla filer på systemet.<nl/><nl/>Välj ett starkt lösenord för den "
 "här användaren."
 
-#: modules/account/contents/ui/main.qml:106
+#: modules/account/contents/ui/main.qml:107
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Fullständigt namn"
 
-#: modules/account/contents/ui/main.qml:124
+#: modules/account/contents/ui/main.qml:125
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Användarnamn"
 
-#: modules/account/contents/ui/main.qml:144
+#: modules/account/contents/ui/main.qml:145
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Lösenord"
 
-#: modules/account/contents/ui/main.qml:158
+#: modules/account/contents/ui/main.qml:159
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Bekräfta lösenord"
 
-#: modules/account/contents/ui/main.qml:176
+#: modules/account/contents/ui/main.qml:177
 #, kde-format
 msgid "Passwords must match"
 msgstr "Lösenord måste stämma"
