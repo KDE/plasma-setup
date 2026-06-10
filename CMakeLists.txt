@@ -70,7 +70,7 @@ configure_file(config-plasma-setup.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-pl
 
 ecm_set_disabled_deprecation_versions(
     QT 6.8.3
-    KF 6.26.0
+    KF 6.27.0
 )
 
 add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII -DQT_NO_URL_CAST_FROM_STRING)
