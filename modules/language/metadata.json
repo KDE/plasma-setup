@@ -45,6 +45,7 @@
         "Description": "Allow the user to set the system language.",
         "Description[ar]": "اسمح للمستخدم بتعيين لغة النظام.",
         "Description[az]": "İstifadəçiyə sistem dilini təyin etməyə icazə vermək.",
+        "Description[bg]": "Позволяване на потребителя да задават езика на системата.",
         "Description[ca@valencia]": "Permet a l'usuari establir l'idioma del sistema.",
         "Description[ca]": "Permet a l'usuari establir l'idioma del sistema.",
         "Description[cs]": "Povolit uživateli nastavit systémový jazyk.",

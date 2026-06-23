@@ -46,6 +46,7 @@
         "Description": "Allows the user to configure the environment before using it.",
         "Description[ar]": "يسمح للمستخدم بتهيئة البيئة قبل استخدامها.",
         "Description[az]": "İstifadəçiyə mühiti istifadə etmədən öncə onu tənzimləməyə icazə vermək.",
+        "Description[bg]": "Позволява на потребителя да конфигурира средата преди употреба.",
         "Description[ca@valencia]": "Permet a l'usuari configurar l'entorn abans d'utilitzar-lo.",
         "Description[ca]": "Permet a l'usuari configurar l'entorn abans d'utilitzar-lo.",
         "Description[cs]": "Umožní uživateli nastavit prostředí ještě před tím, než je začne používat.",

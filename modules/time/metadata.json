@@ -85,6 +85,7 @@
         "Description": "Allow the user to set the timezone.",
         "Description[ar]": "اسمح للمستخدم بتعيين المنطقة الزمنية.",
         "Description[az]": "istifadəçiyə saat qurşağını təyin etməyə icazə vermək.",
+        "Description[bg]": "Позволяване на потребителя да задава часовия пояс.",
         "Description[ca@valencia]": "Permet a l'usuari establir el fus horari.",
         "Description[ca]": "Permet a l'usuari establir el fus horari.",
         "Description[cs]": "Povolit uživateli nastavit časovou zónu.",

@@ -46,6 +46,7 @@
         "Description": "Shown when the initial system setup is completed, and the user can commit the changes.",
         "Description[ar]": "يظهر عند اكتمال الإعداد الأولي للنظام، ويمكن للمستخدم الالتزام بالتغييرات.",
         "Description[az]": "İlkin sistem qurulması başa çatdıqda göstərilir və istifadəçi dəyişiklikləri tətbiq edə bilər.",
+        "Description[bg]": "Показва се след завършване на първоначалната настройка на системата и възможност за финализиране на промените.",
         "Description[ca@valencia]": "Es mostra quan s'ha completat la configuració inicial del sistema i l'usuari pot publicar els canvis.",
         "Description[ca]": "Es mostra quan s'ha completat la configuració inicial del sistema i l'usuari pot publicar els canvis.",
         "Description[cs]": "Zobrazí se jakmile je úvodní nastavení systému dokončeno a uživatel může zapsat změny.",
