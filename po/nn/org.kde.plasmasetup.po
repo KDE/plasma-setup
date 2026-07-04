@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-09 00:46+0000\n"
-"PO-Revision-Date: 2026-06-27 11:44+0200\n"
+"PO-Revision-Date: 2026-07-03 19:28+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
@@ -47,6 +47,9 @@ msgid ""
 "means that they can change system settings, install software, and access all "
 "files on the system.<nl/><nl/>Choose a strong password for this user."
 msgstr ""
+"Denne brukaren vil ha administrator­løyve på systemet.<nl/><nl/>Dette gjer at "
+"hen kan endra system­innstillingar, installera programvare og få tilgang til "
+"alle filene på systemet.<nl/><nl/>Vel eit sterkt passord for denne brukaren."
 
 #: modules/account/contents/ui/main.qml:107
 #, kde-format
@@ -199,6 +202,8 @@ msgid ""
 "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will "
 "be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!"
 msgstr ""
+"Systemet er no klart.<br /><br />Når du trykkjer <b>Fullfør</b>, kan du "
+"logga inn på den nye kontoen.<br /><br />Kos deg med <b>%1</b>!"
 
 #: modules/hostname/contents/ui/main.qml:95
 #, kde-format
@@ -252,13 +257,13 @@ msgstr "Vertsnamnet kan ikkje ha fleire etterfølgjande punktum."
 #, kde-format
 msgctxt "@info"
 msgid "Hostname labels cannot be empty."
-msgstr ""
+msgstr "Vertsnamnet kan ikkje vera tomt."
 
 #: modules/hostnameutil/hostnameutil.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Each hostname label must be at most 63 characters."
-msgstr ""
+msgstr "Vertsnamnet kan ha maks 63 teikn."
 
 #: modules/hostnameutil/hostnameutil.cpp:110
 #, kde-format
@@ -267,6 +272,8 @@ msgid ""
 "Hostnames may contain letters, numbers, and hyphens. Each label must start "
 "and end with a letter or number."
 msgstr ""
+"Vertsnamnet kan innehalda bokstavar, siffer og bindestrekar. Det må starta "
+"og slutt med ein bokstav eller eit tal."
 
 #: modules/keyboard/contents/ui/main.qml:188
 #, kde-format
@@ -331,7 +338,7 @@ msgstr "© 2021-2024 KDE-fellesskapet"
 #: src/main.cpp:44
 #, kde-format
 msgid "Remove the Plasma Setup autologin configuration."
-msgstr ""
+msgstr "Fjern oppsettet for automatisk innlogging."
 
 #: src/qml/LandingComponent.qml:125
 #, kde-format
