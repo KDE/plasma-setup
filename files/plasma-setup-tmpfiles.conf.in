@@ -25,7 +25,7 @@ f /run/plasma-setup/.config/plasma-welcomerc - - - - [General]\nLastSeenVersion=
 #
 # The plasma-setup special user does not have a password (nor would it be appropriate
 # to require one during first user setup).
-f /run/plasma-setup/.config/kscreenlockerrc - - - - [Daemon]\nAutolock=false\nTimeout=0
+f /run/plasma-setup/.config/kscreenlockerrc - - - - [Daemon]\nAutolock=false\nLockOnResume=false\nTimeout=0
 
 # Disable KWallet so it doesn't bother the user during initial setup
 f /run/plasma-setup/.config/kwalletrc - - - - [Wallet]\nEnabled=false
