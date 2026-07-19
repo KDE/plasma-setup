@@ -77,6 +77,12 @@ Kirigami.Page {
         InitialStartUtil.finish();
     }
 
+    function activatePage(item): void {
+        if (item && item.module && typeof item.module.onPageActivated === "function") {
+            item.module.onPageActivated();
+        }
+    }
+
     function requestNextPage(): void {
         if (previousStepAnim.running || currentStepAnim.running || nextStepAnim.running) {
             return;
@@ -91,10 +97,7 @@ Kirigami.Page {
         // This allows the module to perform any necessary setup, and check if
         // any data it relies on has been updated since the last activation.
         if (currentIndex + 1 < stepCount) {
-            let nextItem = stepsRepeater.itemAt(currentIndex + 1);
-            if (nextItem && nextItem.module && typeof nextItem.module.onPageActivated === "function") {
-                nextItem.module.onPageActivated();
-            }
+            activatePage(stepsRepeater.itemAt(currentIndex + 1));
         }
 
         currentIndex++;
@@ -123,6 +126,8 @@ Kirigami.Page {
             currentIndex--;
             stepHeading.changeText(currentStepItem.name);
 
+            activatePage(stepsRepeater.itemAt(currentIndex));
+
             currentStepItemX = -root.width;
             currentStepItem.visible = true;
 
@@ -145,6 +150,8 @@ Kirigami.Page {
         onRequestNextPage: {
             root.showingLanding = false;
             stepHeading.changeText(root.currentStepItem.name);
+
+            activatePage(root.currentStepItem);
         }
     }
 

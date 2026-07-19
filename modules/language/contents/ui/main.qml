@@ -22,6 +22,10 @@ import org.kde.plasmasetup.components as PlasmaSetupComponents
 PlasmaSetupComponents.SetupModule {
     id: root
 
+    function onPageActivated(): void {
+        searchField.forceActiveFocus();
+    }
+
     contentItem: ColumnLayout {
         id: mainColumn
 
