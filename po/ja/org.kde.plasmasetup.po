@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-09 00:46+0000\n"
+"POT-Creation-Date: 2026-07-21 00:46+0000\n"
 "PO-Revision-Date: 2026-06-09 22:46+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
@@ -279,12 +279,12 @@ msgstr ""
 msgid "Select your keyboard layout and language."
 msgstr "キーボードのレイアウトと言語を選択してください。"
 
-#: modules/language/contents/ui/main.qml:41
+#: modules/language/contents/ui/main.qml:45
 #, kde-format
 msgid "Please select your preferred language."
 msgstr "使用する言語を選択してください。"
 
-#: modules/language/contents/ui/main.qml:47
+#: modules/language/contents/ui/main.qml:51
 #, kde-format
 msgid "Search languages…"
 msgstr "言語を検索…"
@@ -360,19 +360,19 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Powered by<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:295
+#: src/qml/Wizard.qml:302
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "戻る"
 
-#: src/qml/Wizard.qml:311
+#: src/qml/Wizard.qml:318
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "次へ"
 
-#: src/qml/Wizard.qml:323
+#: src/qml/Wizard.qml:330
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

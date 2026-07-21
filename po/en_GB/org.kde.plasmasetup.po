@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-09 00:46+0000\n"
+"POT-Creation-Date: 2026-07-21 00:46+0000\n"
 "PO-Revision-Date: 2024-08-03 13:36+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -275,12 +275,12 @@ msgstr ""
 msgid "Select your keyboard layout and language."
 msgstr ""
 
-#: modules/language/contents/ui/main.qml:41
+#: modules/language/contents/ui/main.qml:45
 #, kde-format
 msgid "Please select your preferred language."
 msgstr ""
 
-#: modules/language/contents/ui/main.qml:47
+#: modules/language/contents/ui/main.qml:51
 #, kde-format
 msgid "Search languages…"
 msgstr ""
@@ -357,20 +357,20 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr ""
 
-#: src/qml/Wizard.qml:295
+#: src/qml/Wizard.qml:302
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr ""
 
-#: src/qml/Wizard.qml:311
+#: src/qml/Wizard.qml:318
 #, fuzzy, kde-format
 #| msgid "Next"
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Next"
 
-#: src/qml/Wizard.qml:323
+#: src/qml/Wizard.qml:330
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-09 00:46+0000\n"
+"POT-Creation-Date: 2026-07-21 00:46+0000\n"
 "PO-Revision-Date: 2026-06-25 15:52+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -282,12 +282,12 @@ msgstr ""
 msgid "Select your keyboard layout and language."
 msgstr "Выберите раскладку клавиатуры и язык."
 
-#: modules/language/contents/ui/main.qml:41
+#: modules/language/contents/ui/main.qml:45
 #, kde-format
 msgid "Please select your preferred language."
 msgstr "Выберите предпочитаемый язык."
 
-#: modules/language/contents/ui/main.qml:47
+#: modules/language/contents/ui/main.qml:51
 #, kde-format
 msgid "Search languages…"
 msgstr "Поиск языков…"
@@ -364,19 +364,19 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "На основе<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:295
+#: src/qml/Wizard.qml:302
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Назад"
 
-#: src/qml/Wizard.qml:311
+#: src/qml/Wizard.qml:318
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Далее"
 
-#: src/qml/Wizard.qml:323
+#: src/qml/Wizard.qml:330
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
