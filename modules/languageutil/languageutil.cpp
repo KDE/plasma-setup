@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+// SPDX-FileCopyrightText: 2026 Tiziano Gaia <ti.gaia@proton.me>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "languageutil.h"
@@ -9,12 +10,17 @@
 #include <QCoreApplication>
 #include <QDBusConnection>
 #include <QDBusReply>
+#include <QLocale>
 #include <QTimer>
 
 LanguageUtil::LanguageUtil(QObject *parent)
     : QObject(parent)
 {
     loadAvailableLanguages();
+
+    m_languageModel.setStringList(m_availableLanguages);
+    m_languageProxyModel.setSourceModel(&m_languageModel);
+
     m_currentLanguage = QLocale::system().name();
     qCInfo(PlasmaSetupLanguageUtil) << "System language detected as:" << m_currentLanguage;
     overrideInitialLanguageIfNeeded();
@@ -23,6 +29,28 @@ LanguageUtil::LanguageUtil(QObject *parent)
 QStringList LanguageUtil::availableLanguages() const
 {
     return m_availableLanguages;
+}
+
+QString LanguageUtil::languageFilter() const
+{
+    return m_languageFilter;
+}
+
+QAbstractItemModel *LanguageUtil::languageModel()
+{
+    return &m_languageProxyModel;
+}
+
+void LanguageUtil::setLanguageFilter(const QString &filter)
+{
+    if (m_languageFilter == filter) {
+        return;
+    }
+
+    m_languageFilter = filter;
+    m_languageProxyModel.setFilterString(filter);
+
+    Q_EMIT languageFilterChanged();
 }
 
 QString LanguageUtil::currentLanguage() const

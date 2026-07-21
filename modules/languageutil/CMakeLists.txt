@@ -16,6 +16,7 @@ ecm_add_qml_module(plasmasetup_languageutil
     GENERATE_PLUGIN_SOURCE
     SOURCES
         languageutil.cpp
+        languagesortfilterproxymodel.cpp
         ${logging_SRCS}
 )
 

@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+// SPDX-FileCopyrightText: 2026 Tiziano Gaia <ti.gaia@proton.me>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 pragma ComponentBehavior: Bound
@@ -49,10 +50,9 @@ PlasmaSetupComponents.SetupModule {
                 id: searchField
                 Layout.fillWidth: true
                 placeholderText: i18n("Search languages…")
-                property string filterString: ""
 
                 onTextChanged: {
-                    filterString = text.toLowerCase();
+                    Language.LanguageUtil.languageFilter = text;
                 }
             }
 
@@ -69,45 +69,35 @@ PlasmaSetupComponents.SetupModule {
                 ListView {
                     id: languageListView
                     clip: true
-                    model: Language.LanguageUtil.availableLanguages
-
-                    // Filter languages based on search text
-                    function matchesFilter(language) {
-                        if (!searchField.filterString) {
-                            return true;
-                        }
-
-                        // Get language name from locale code
-                        const localeName = Qt.locale(language).nativeLanguageName;
-                        return language.toLowerCase().includes(searchField.filterString) || localeName.toLowerCase().includes(searchField.filterString);
-                    }
+                    model: Language.LanguageUtil.languageModel
 
                     currentIndex: -1 // Ensure focus is not on the listview
 
                     delegate: RadioDelegate {
-                        required property string modelData
+                        required property string languageCode
 
-                        // Show and hide based on filter
-                        readonly property bool matchesFilter: languageListView.matchesFilter(modelData)
-                        height: matchesFilter ? implicitHeight : 0
                         width: ListView.view.width
-                        visible: matchesFilter
 
                         // Get language name from locale code (e.g., "en_US" -> "English (United States)")
                         text: {
-                            const locale = Qt.locale(modelData);
+                            const locale = Qt.locale(languageCode);
                             const localeName = locale.nativeLanguageName;
+
                             // First letter to uppercase
-                            return localeName.charAt(0).toUpperCase() + localeName.slice(1) + " (" + locale.nativeCountryName + ")";
+                            return localeName.charAt(0).toUpperCase()
+                                + localeName.slice(1)
+                                + " ("
+                                + locale.nativeCountryName
+                                + ")";
                         }
 
-                        checked: Language.LanguageUtil.currentLanguage === modelData
+                        checked: Language.LanguageUtil.currentLanguage === languageCode
 
                         onToggled: {
-                            if (checked && modelData !== Language.LanguageUtil.currentLanguage) {
-                                Language.LanguageUtil.currentLanguage = modelData;
+                            if (checked && languageCode !== Language.LanguageUtil.currentLanguage) {
+                                Language.LanguageUtil.currentLanguage = languageCode;
                                 Language.LanguageUtil.applyLanguage();
-                                checked = Qt.binding(() => Language.LanguageUtil.currentLanguage === modelData);
+                                checked = Qt.binding(() => Language.LanguageUtil.currentLanguage === languageCode);
                             }
                         }
                     }
@@ -115,10 +105,13 @@ PlasmaSetupComponents.SetupModule {
                     function scrollToCurrentLanguage() {
                         // Find the index of the current language
                         const currentLang = Language.LanguageUtil.currentLanguage;
-                        for (let i = 0; i < model.length; i++) {
-                            if (model[i] === currentLang) {
+
+                        for (let i = 0; i < languageListView.count; i++) {
+                            const item = languageListView.itemAtIndex(i);
+
+                            if (item && item.languageCode === currentLang) {
                                 // Position the view at the current language with some offset
-                                positionViewAtIndex(i, ListView.Center);
+                                languageListView.positionViewAtIndex(i, ListView.Center);
                                 break;
                             }
                         }

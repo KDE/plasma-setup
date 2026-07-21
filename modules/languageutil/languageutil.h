@@ -1,10 +1,14 @@
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+// SPDX-FileCopyrightText: 2026 Tiziano Gaia <ti.gaia@proton.me>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #pragma once
 
 #include <QObject>
 #include <QQmlEngine>
+#include <QStringListModel>
+
+#include "languagesortfilterproxymodel.h"
 
 /**
  * Handles language choice.
@@ -29,6 +33,22 @@ class LanguageUtil : public QObject
     Q_PROPERTY(QStringList availableLanguages READ availableLanguages NOTIFY availableLanguagesChanged)
 
     /**
+     * Model containing the available languages.
+     *
+     * This model supports filtering through languageFilter and is exposed
+     * directly to QML views that display the available language choices.
+     */
+    Q_PROPERTY(QAbstractItemModel *languageModel READ languageModel CONSTANT)
+
+    /**
+     * Search filter applied to the language model.
+     *
+     * Updating this value filters languages by their code, native name,
+     * or English name.
+     */
+    Q_PROPERTY(QString languageFilter READ languageFilter WRITE setLanguageFilter NOTIFY languageFilterChanged)
+
+    /**
      * The language code of the currently selected language.
      */
     Q_PROPERTY(QString currentLanguage READ currentLanguage WRITE setCurrentLanguage NOTIFY currentLanguageChanged)
@@ -37,6 +57,10 @@ public:
     explicit LanguageUtil(QObject *parent = nullptr);
 
     QStringList availableLanguages() const;
+    QAbstractItemModel *languageModel();
+    QString languageFilter() const;
+    void setLanguageFilter(const QString &filter);
+
     QString currentLanguage() const;
     void setCurrentLanguage(const QString &language);
 
@@ -47,6 +71,7 @@ public:
 
 Q_SIGNALS:
     void availableLanguagesChanged();
+    void languageFilterChanged();
     void currentLanguageChanged();
     void initialLanguageOverrideApplied();
 
@@ -84,5 +109,8 @@ private:
     void overrideInitialLanguageIfNeeded();
 
     QStringList m_availableLanguages;
+    QStringListModel m_languageModel;
+    LanguageSortFilterProxyModel m_languageProxyModel;
+    QString m_languageFilter;
     QString m_currentLanguage;
 };
