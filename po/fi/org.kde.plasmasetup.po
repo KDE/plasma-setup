@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-21 00:46+0000\n"
+"POT-Creation-Date: 2026-07-22 00:47+0000\n"
 "PO-Revision-Date: 2026-01-05 18:06+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -278,12 +278,12 @@ msgstr ""
 msgid "Select your keyboard layout and language."
 msgstr "Valitse näppäimistöasettelu ja kieli."
 
-#: modules/language/contents/ui/main.qml:45
+#: modules/language/contents/ui/main.qml:46
 #, kde-format
 msgid "Please select your preferred language."
 msgstr "Valitse suosimasi kieli."
 
-#: modules/language/contents/ui/main.qml:51
+#: modules/language/contents/ui/main.qml:52
 #, kde-format
 msgid "Search languages…"
 msgstr "Etsi kieliä…"

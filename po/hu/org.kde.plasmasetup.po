@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-21 00:46+0000\n"
+"POT-Creation-Date: 2026-07-22 00:47+0000\n"
 "PO-Revision-Date: 2026-06-08 22:51+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -282,12 +282,12 @@ msgstr ""
 msgid "Select your keyboard layout and language."
 msgstr "Válassza ki a billentyűzetkiosztást és a nyelvet."
 
-#: modules/language/contents/ui/main.qml:45
+#: modules/language/contents/ui/main.qml:46
 #, kde-format
 msgid "Please select your preferred language."
 msgstr "Válassza ki az elsődleges nyelvet."
 
-#: modules/language/contents/ui/main.qml:51
+#: modules/language/contents/ui/main.qml:52
 #, kde-format
 msgid "Search languages…"
 msgstr "Nyelvek keresése…"

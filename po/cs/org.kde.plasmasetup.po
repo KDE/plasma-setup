@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-21 00:46+0000\n"
+"POT-Creation-Date: 2026-07-22 00:47+0000\n"
 "PO-Revision-Date: 2026-01-27 22:14+0100\n"
 "Last-Translator: Jan Papez (honyczek) <honyczek@centrum.cz>\n"
 "Language-Team: Czech <kde-i18n-cs@kde.org>\n"
@@ -282,12 +282,12 @@ msgstr ""
 msgid "Select your keyboard layout and language."
 msgstr "Vyberte si rozložení kláves a váš jazyk."
 
-#: modules/language/contents/ui/main.qml:45
+#: modules/language/contents/ui/main.qml:46
 #, kde-format
 msgid "Please select your preferred language."
 msgstr "Zvolte si prosím váš preferovaný jazyk."
 
-#: modules/language/contents/ui/main.qml:51
+#: modules/language/contents/ui/main.qml:52
 #, kde-format
 msgid "Search languages…"
 msgstr "Vyhledat jazyky..."

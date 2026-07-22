@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.kde.initialsystemsetup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-21 00:46+0000\n"
+"POT-Creation-Date: 2026-07-22 00:47+0000\n"
 "PO-Revision-Date: 2024-11-12 17:03+0100\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -278,12 +278,12 @@ msgstr ""
 msgid "Select your keyboard layout and language."
 msgstr "Vyberte rozloženie klávesnice a jazyk."
 
-#: modules/language/contents/ui/main.qml:45
+#: modules/language/contents/ui/main.qml:46
 #, kde-format
 msgid "Please select your preferred language."
 msgstr "Vyberte prosím preferovaný jazyk."
 
-#: modules/language/contents/ui/main.qml:51
+#: modules/language/contents/ui/main.qml:52
 #, kde-format
 msgid "Search languages…"
 msgstr "Hľadať jazyky…"
