@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2023 Devin Lin <devin@kde.org>
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+// SPDX-FileCopyrightText: 2026 Tiziano Gaia <ti.gaia@proton.me>
 //
 // SPDX-License-Identifier: GPL-2.0-or-later
 
@@ -72,6 +73,10 @@ Kirigami.Page {
         requestPreviousPage();
     }
 
+    function activateLanding(): void {
+        landingComponent.activateLanding();
+    }
+
     function finishFinalPage(): void {
         // Finalize the initial setup process and exit the wizard.
         InitialStartUtil.finish();
@@ -101,6 +106,11 @@ Kirigami.Page {
         }
 
         currentIndex++;
+
+        if (root.onFinalPage) {
+            finishButton.forceActiveFocus(Qt.TabFocusReason);
+        }
+
         stepHeading.changeText(currentStepItem.name);
 
         currentStepItemX = root.width;
@@ -119,7 +129,7 @@ Kirigami.Page {
 
         if (currentIndex === 0) {
             root.showingLanding = true;
-            landingComponent.returnToLanding();
+            landingComponent.activateLanding();
         } else {
             nextStepItemX = 0;
 
@@ -141,6 +151,8 @@ Kirigami.Page {
     LandingComponent {
         id: landingComponent
         anchors.fill: parent
+
+        landingActive: root.showingLanding
         /*
          * On desktop, the landing page remains visible as a backdrop while the wizard steps float over it as a card.
          * On mobile, the steps take up the full screen so the landing is hidden once the user navigates into the wizard (showingLanding becomes false).
@@ -180,6 +192,8 @@ Kirigami.Page {
     Item {
         id: stepsComponent
         anchors.fill: parent
+
+        enabled: !root.showingLanding
 
         // animation when we switch to step stage
         opacity: root.showingLanding ? 0 : 1
@@ -303,6 +317,9 @@ Kirigami.Page {
                         icon.name: "arrow-left-symbolic"
 
                         onClicked: root.requestPreviousPage()
+
+                        Keys.onEnterPressed: clicked()
+                        Keys.onReturnPressed: clicked()
                     }
 
                     Item {
@@ -321,9 +338,14 @@ Kirigami.Page {
                         enabled: root.currentModule.nextEnabled
 
                         onClicked: root.requestNextPage()
+
+                        Keys.onEnterPressed: clicked()
+                        Keys.onReturnPressed: clicked()
                     }
 
                     Button {
+                        id: finishButton
+
                         Layout.alignment: Qt.AlignRight
 
                         visible: root.onFinalPage
@@ -338,6 +360,9 @@ Kirigami.Page {
                             // Finalize and exit the wizard.
                             root.finishFinalPage();
                         }
+
+                        Keys.onEnterPressed: clicked()
+                        Keys.onReturnPressed: clicked()
                     }
                 }
             }

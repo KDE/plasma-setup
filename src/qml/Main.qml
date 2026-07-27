@@ -1,4 +1,6 @@
 // SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
+// SPDX-FileCopyrightText: 2026 Tiziano Gaia <ti.gaia@proton.me>
+//
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 import QtQuick
@@ -19,7 +21,14 @@ Kirigami.AbstractApplicationWindow {
     // applications.
     quitAction.enabled: false
 
+    onActiveChanged: {
+        if (active) {
+            wizard.activateLanding();
+        }
+    }
+
     Wizard {
+        id: wizard
         anchors.fill: parent
     }
 }

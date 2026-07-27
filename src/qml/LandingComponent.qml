@@ -1,5 +1,8 @@
 // SPDX-FileCopyrightText: 2023 Devin Lin <devin@kde.org>
+// SPDX-FileCopyrightText: 2026 Tiziano Gaia <ti.gaia@proton.me>
+//
 // SPDX-License-Identifier: GPL-2.0-or-later
+
 
 import QtCore
 import QtQuick
@@ -17,12 +20,16 @@ Item {
     readonly property real scaleLanding: 1.2
     readonly property real scaleSteps: 1
 
+    property bool landingActive: true
+
     signal requestNextPage()
 
-    function returnToLanding() {
+    function activateLanding(): void {
         backgroundImage.scale = scaleLanding;
         contentOpacityAnim.to = 1;
         contentOpacityAnim.restart();
+
+        button.forceActiveFocus(Qt.TabFocusReason);
     }
 
     property real contentOpacity: 0
@@ -104,8 +111,6 @@ Item {
         anchors.bottomMargin: Kirigami.Units.gridUnit * 2
         spacing: Kirigami.Units.largeSpacing
 
-        opacity: root.contentOpacity
-
         // spacers expand only on roomy screens to keep center content centered
         Item {
             Layout.fillWidth: true
@@ -115,6 +120,11 @@ Item {
 
         ColumnLayout {
             id: centerBlock
+
+            enabled: root.landingActive
+
+            opacity: root.contentOpacity
+
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignHCenter
             spacing: Kirigami.Units.largeSpacing
@@ -146,6 +156,9 @@ Item {
                     contentOpacityAnim.restart();
                     root.requestNextPage()
                 }
+
+                Keys.onEnterPressed: clicked()
+                Keys.onReturnPressed: clicked()
             }
         }
 
@@ -165,6 +178,8 @@ Item {
 
             Kirigami.Heading {
                 id: poweredBy
+
+                opacity: root.contentOpacity
                 width: parent.width
                 y: root.isNarrow ? 0 : (parent.height - height) / 2
 
