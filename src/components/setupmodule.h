@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2024 Devin Lin <devin@kde.org>
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+// SPDX-FileCopyrightText: 2026 Tiziano Gaia <ti.gaia@proton.me>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #pragma once
@@ -43,6 +44,10 @@ Q_SIGNALS:
     void contentItemChanged();
     void nextEnabledChanged();
     void cardWidthChanged();
+    /*!
+     * Emitted when the module requests the same action as clicking the Next button.
+     */
+    void nextRequested();
 
 private:
     bool m_available{true};

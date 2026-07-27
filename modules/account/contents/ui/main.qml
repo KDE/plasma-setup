@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
 // SPDX-FileCopyrightText: 2026 Jesús T. <hello.triplean.dev@gmail.com>
+// SPDX-FileCopyrightText: 2026 Tiziano Gaia <ti.gaia@proton.me>
 //
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
@@ -158,6 +159,13 @@ PlasmaSetupComponents.SetupModule {
 
                         Kirigami.FormData.label: i18nc("@label:textbox", "Confirm Password")
                         placeholderText: "" // Form label already indicates this
+
+                        onAccepted: {
+                            if (root.nextEnabled) {
+                                root.nextRequested();
+                            }
+                        }
+
                         onTextChanged: debouncer.reset()
 
                         onEditingFinished: {

@@ -438,5 +438,20 @@ Kirigami.Page {
                 item.updateRootItems();
             }
         }
+
+        // Allow modules to request the default "Next" action
+        Connections {
+            target: item.module
+
+            function onNextRequested(): void {
+                if (root.onFinalPage) {
+                    return;
+                }
+
+                if (root.currentModule === item.module && item.module.nextEnabled) {
+                    root.requestNextPage();
+                }
+            }
+        }
     }
 }

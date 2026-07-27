@@ -114,6 +114,12 @@ PlasmaSetupComponents.SetupModule {
                             validationDebouncer.reset();
                         }
 
+                        onAccepted: {
+                            if (root.nextEnabled) {
+                                root.nextRequested();
+                            }
+                        }
+
                         onEditingFinished: {
                             HostnameUtil.hostname = text;
                             // `onEditingFinished` means the user pressed Enter or

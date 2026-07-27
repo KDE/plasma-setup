@@ -1,5 +1,6 @@
 <!--
     SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+    SPDX-FileCopyrightText: 2026 Tiziano Gaia <ti.gaia@proton.me>
     SPDX-License-Identifier: CC0-1.0
 -->
 
@@ -111,6 +112,9 @@ Key properties:
 - **`nextEnabled`**: Set to `false` to disable Next button until validation
   requirements are met
 - **`contentItem`**: The actual page content to display
+
+Key signals:
+- **`nextRequested()`**: Emit this signal to request the same action as clicking the Next button (e.g., when the user presses Enter in the last input field)
 
 ### CMakeLists.txt
 
