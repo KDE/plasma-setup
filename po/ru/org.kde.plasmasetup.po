@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-22 00:47+0000\n"
+"POT-Creation-Date: 2026-08-01 00:50+0000\n"
 "PO-Revision-Date: 2026-06-25 15:52+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -322,7 +322,7 @@ msgstr "Пароль:"
 msgid "Invalid input."
 msgstr "Неверное значение."
 
-#: src/main.cpp:35 src/qml/Main.qml:11
+#: src/main.cpp:35 src/qml/Main.qml:13
 #, kde-format
 msgid "Plasma Setup"
 msgstr "Средство первоначальной настройки Plasma"
@@ -343,40 +343,40 @@ msgid "Remove the Plasma Setup autologin configuration."
 msgstr ""
 "Удалить конфигурацию автоматического входа приложения для настройки Plasma."
 
-#: src/qml/LandingComponent.qml:125
+#: src/qml/LandingComponent.qml:135
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
 msgstr "Добро пожаловать в<br/><b>Plasma Mobile</b>"
 
-#: src/qml/LandingComponent.qml:126
+#: src/qml/LandingComponent.qml:136
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
 msgstr "Добро пожаловать в <br/><b>KDE Plasma</b>"
 
-#: src/qml/LandingComponent.qml:140
+#: src/qml/LandingComponent.qml:150
 #, kde-format
 msgid "Begin Setup"
 msgstr "Начать настройку"
 
-#: src/qml/LandingComponent.qml:171
+#: src/qml/LandingComponent.qml:186
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "На основе<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:302
+#: src/qml/Wizard.qml:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Назад"
 
-#: src/qml/Wizard.qml:318
+#: src/qml/Wizard.qml:335
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Далее"
 
-#: src/qml/Wizard.qml:330
+#: src/qml/Wizard.qml:352
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

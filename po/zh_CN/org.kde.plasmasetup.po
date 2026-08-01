@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-22 00:47+0000\n"
+"POT-Creation-Date: 2026-08-01 00:50+0000\n"
 "PO-Revision-Date: 2024-07-15 19:45\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -314,7 +314,7 @@ msgstr "密码："
 msgid "Invalid input."
 msgstr "输入的内容无效。"
 
-#: src/main.cpp:35 src/qml/Main.qml:11
+#: src/main.cpp:35 src/qml/Main.qml:13
 #, kde-format
 msgid "Plasma Setup"
 msgstr "Plasma 设置"
@@ -334,40 +334,40 @@ msgstr "© 2021-2024 KDE Community"
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr "移除 Plasma 设置自动登录配置。"
 
-#: src/qml/LandingComponent.qml:125
+#: src/qml/LandingComponent.qml:135
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
 msgstr "欢迎使用<br/><b>Plasma Mobile</b>"
 
-#: src/qml/LandingComponent.qml:126
+#: src/qml/LandingComponent.qml:136
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
 msgstr "欢迎使用<br/><b>Plasma 桌面</b>"
 
-#: src/qml/LandingComponent.qml:140
+#: src/qml/LandingComponent.qml:150
 #, kde-format
 msgid "Begin Setup"
 msgstr "开始设置"
 
-#: src/qml/LandingComponent.qml:171
+#: src/qml/LandingComponent.qml:186
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "运行的发行版：<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:302
+#: src/qml/Wizard.qml:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "后退"
 
-#: src/qml/Wizard.qml:318
+#: src/qml/Wizard.qml:335
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "下一步"
 
-#: src/qml/Wizard.qml:330
+#: src/qml/Wizard.qml:352
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

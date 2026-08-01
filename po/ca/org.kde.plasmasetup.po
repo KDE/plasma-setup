@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-22 00:47+0000\n"
+"POT-Creation-Date: 2026-08-01 00:50+0000\n"
 "PO-Revision-Date: 2026-01-07 09:25+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -323,7 +323,7 @@ msgstr "Contrasenya:"
 msgid "Invalid input."
 msgstr "Entrada no vàlida."
 
-#: src/main.cpp:35 src/qml/Main.qml:11
+#: src/main.cpp:35 src/qml/Main.qml:13
 #, kde-format
 msgid "Plasma Setup"
 msgstr "Configuració del Plasma"
@@ -345,40 +345,40 @@ msgstr ""
 "Elimina la configuració d'inici de sessió automàtic de la configuració del "
 "Plasma."
 
-#: src/qml/LandingComponent.qml:125
+#: src/qml/LandingComponent.qml:135
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
 msgstr "Us donem la benvinguda al<br/><b>Plasma Mobile</b>"
 
-#: src/qml/LandingComponent.qml:126
+#: src/qml/LandingComponent.qml:136
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
 msgstr "Us donem la benvinguda a <br/>l'<b>escriptori Plasma </b>"
 
-#: src/qml/LandingComponent.qml:140
+#: src/qml/LandingComponent.qml:150
 #, kde-format
 msgid "Begin Setup"
 msgstr "Comença la configuració"
 
-#: src/qml/LandingComponent.qml:171
+#: src/qml/LandingComponent.qml:186
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Funciona amb<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:302
+#: src/qml/Wizard.qml:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Enrere"
 
-#: src/qml/Wizard.qml:318
+#: src/qml/Wizard.qml:335
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Següent"
 
-#: src/qml/Wizard.qml:330
+#: src/qml/Wizard.qml:352
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

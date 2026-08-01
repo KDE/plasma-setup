@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-22 00:47+0000\n"
+"POT-Creation-Date: 2026-08-01 00:50+0000\n"
 "PO-Revision-Date: 2026-02-05 15:00+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -324,7 +324,7 @@ msgstr "Parolă:"
 msgid "Invalid input."
 msgstr "Date de intrare nevalide."
 
-#: src/main.cpp:35 src/qml/Main.qml:11
+#: src/main.cpp:35 src/qml/Main.qml:13
 #, kde-format
 msgid "Plasma Setup"
 msgstr "Configurare Plasma"
@@ -345,40 +345,40 @@ msgid "Remove the Plasma Setup autologin configuration."
 msgstr ""
 "Elimină configurările de autentificare automată din configurarea Plasma."
 
-#: src/qml/LandingComponent.qml:125
+#: src/qml/LandingComponent.qml:135
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
 msgstr "Bun venit la<br/><b>Plasma Mobile</b>"
 
-#: src/qml/LandingComponent.qml:126
+#: src/qml/LandingComponent.qml:136
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
 msgstr "Bun venit la<br/><b>Biroul Plasma</b>"
 
-#: src/qml/LandingComponent.qml:140
+#: src/qml/LandingComponent.qml:150
 #, kde-format
 msgid "Begin Setup"
 msgstr "Începe configurarea"
 
-#: src/qml/LandingComponent.qml:171
+#: src/qml/LandingComponent.qml:186
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Propulsată de<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:302
+#: src/qml/Wizard.qml:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Înapoi"
 
-#: src/qml/Wizard.qml:318
+#: src/qml/Wizard.qml:335
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Următor"
 
-#: src/qml/Wizard.qml:330
+#: src/qml/Wizard.qml:352
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

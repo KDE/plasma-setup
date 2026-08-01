@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-22 00:47+0000\n"
+"POT-Creation-Date: 2026-08-01 00:50+0000\n"
 "PO-Revision-Date: 2026-01-24 16:52+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -323,7 +323,7 @@ msgstr "Pasahitza:"
 msgid "Invalid input."
 msgstr "Sarrera baliogabea."
 
-#: src/main.cpp:35 src/qml/Main.qml:11
+#: src/main.cpp:35 src/qml/Main.qml:13
 #, kde-format
 msgid "Plasma Setup"
 msgstr "Plasma Ezarpena"
@@ -343,40 +343,40 @@ msgstr "© 2021-2024 KDE Komunitatea"
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr "Kendu Plasma Ezarpena saioan automatikoki sartzeko konfigurazioa."
 
-#: src/qml/LandingComponent.qml:125
+#: src/qml/LandingComponent.qml:135
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
 msgstr "Ongi etorri <br/><b>Plasma Mugikorrera</b>"
 
-#: src/qml/LandingComponent.qml:126
+#: src/qml/LandingComponent.qml:136
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
 msgstr "Ongietorri <br/><b>Plasma mahaigainera</b>"
 
-#: src/qml/LandingComponent.qml:140
+#: src/qml/LandingComponent.qml:150
 #, kde-format
 msgid "Begin Setup"
 msgstr "Hasi ezartzen"
 
-#: src/qml/LandingComponent.qml:171
+#: src/qml/LandingComponent.qml:186
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "<br/><b>%1</b>(e)k bultzatua"
 
-#: src/qml/Wizard.qml:302
+#: src/qml/Wizard.qml:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Atzera"
 
-#: src/qml/Wizard.qml:318
+#: src/qml/Wizard.qml:335
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Hurrengoa"
 
-#: src/qml/Wizard.qml:330
+#: src/qml/Wizard.qml:352
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

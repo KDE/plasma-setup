@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-22 00:47+0000\n"
+"POT-Creation-Date: 2026-08-01 00:50+0000\n"
 "PO-Revision-Date: 2026-07-24 23:09-0500\n"
 "Last-Translator: A S Alam <aman@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -315,7 +315,7 @@ msgstr "ਪਾਸਵਰਡ:"
 msgid "Invalid input."
 msgstr "ਗਲਤ ਇਨਪੁੱਟ ਹੈ।"
 
-#: src/main.cpp:35 src/qml/Main.qml:11
+#: src/main.cpp:35 src/qml/Main.qml:13
 #, kde-format
 msgid "Plasma Setup"
 msgstr "ਪਲਾਜ਼ਮਾ ਸੈਟਅੱਪ"
@@ -335,40 +335,40 @@ msgstr "© 2021-2024 KDE ਕਮਿਊਨਟੀ"
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr ""
 
-#: src/qml/LandingComponent.qml:125
+#: src/qml/LandingComponent.qml:135
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Mobile</b>"
 msgstr "<b>ਪਲਾਜ਼ਮਾ ਮੋਬਾਇਲ</b><br/>ਵਲੋਂ ਜੀ ਆਇਆਂ ਨੂੰ"
 
-#: src/qml/LandingComponent.qml:126
+#: src/qml/LandingComponent.qml:136
 #, kde-format
 msgid "Welcome to<br/><b>Plasma Desktop</b>"
 msgstr "<b>ਪਲਾਜ਼ਮਾ ਡੈਸਕਟਾਪ</b></b>ਵਲੋਂ ਜੀ ਆਇਆਂ ਨੂੰ"
 
-#: src/qml/LandingComponent.qml:140
+#: src/qml/LandingComponent.qml:150
 #, kde-format
 msgid "Begin Setup"
 msgstr "ਸੈਟਅੱਪ ਸ਼ੁਰੂ ਕਰੋ"
 
-#: src/qml/LandingComponent.qml:171
+#: src/qml/LandingComponent.qml:186
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "<b>%1</b><br/>ਦੇ ਸਹਿਯੋਗ ਨਾਲ"
 
-#: src/qml/Wizard.qml:302
+#: src/qml/Wizard.qml:316
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "ਪਿੱਛੇ"
 
-#: src/qml/Wizard.qml:318
+#: src/qml/Wizard.qml:335
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "ਅੱਗੇ"
 
-#: src/qml/Wizard.qml:330
+#: src/qml/Wizard.qml:352
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
