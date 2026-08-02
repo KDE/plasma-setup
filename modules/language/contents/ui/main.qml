@@ -52,7 +52,7 @@ PlasmaSetupComponents.SetupModule {
                 placeholderText: i18n("Search languages…")
 
                 onTextChanged: {
-                    Language.LanguageUtil.languageFilter = text;
+                    Language.LanguageUtil.languageModel.setFilterString(text)
                 }
             }
 
@@ -103,18 +103,13 @@ PlasmaSetupComponents.SetupModule {
                     }
 
                     function scrollToCurrentLanguage() {
-                        // Find the index of the current language
-                        const currentLang = Language.LanguageUtil.currentLanguage;
-                        const model = languageListView.model;
+                        // Find the current language row in the filtered model
+                        const row = languageListView.model.rowForLanguage(
+                            Language.LanguageUtil.currentLanguage
+                        );
 
-                        for (let i = 0; i < model.rowCount(); i++) {
-                            const index = model.index(i, 0);
-
-                            if (model.data(index, model.languageCode) === currentLang) {
-                                // Position the view at the current language with some offset
-                                languageListView.positionViewAtIndex(i, ListView.Center);
-                                break;
-                            }
+                        if (row >= 0) {
+                            languageListView.positionViewAtIndex(row, ListView.Center);
                         }
                     }
 

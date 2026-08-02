@@ -18,15 +18,30 @@ class LanguageSortFilterProxyModel : public QSortFilterProxyModel
     Q_OBJECT
 
 public:
+    enum Roles : int {
+        LanguageCodeRole = Qt::UserRole + 1,
+    };
+
     explicit LanguageSortFilterProxyModel(QObject *parent = nullptr);
 
-    void setFilterString(const QString &filter);
+    /**
+     * Sets the text used to filter the language list.
+     *
+     * The filter is applied by filterAcceptsRow() to the language code,
+     * native language name, and English language name.
+     */
+    Q_INVOKABLE void setFilterString(const QString &filter);
+
+    /**
+     * Returns the row of a language in the proxy model.
+     *
+     * The returned row can be passed directly to item views using this model.
+     * Returns -1 if the language is not found.
+     */
+    Q_INVOKABLE int rowForLanguage(const QString &language) const;
 
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
     QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-
-private:
-    QString m_filterString;
 };

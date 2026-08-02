@@ -16,41 +16,17 @@
 LanguageUtil::LanguageUtil(QObject *parent)
     : QObject(parent)
 {
-    loadAvailableLanguages();
-
-    m_languageModel.setStringList(m_availableLanguages);
     m_languageProxyModel.setSourceModel(&m_languageModel);
+    loadAvailableLanguages();
 
     m_currentLanguage = QLocale::system().name();
     qCInfo(PlasmaSetupLanguageUtil) << "System language detected as:" << m_currentLanguage;
     overrideInitialLanguageIfNeeded();
 }
 
-QStringList LanguageUtil::availableLanguages() const
-{
-    return m_availableLanguages;
-}
-
-QString LanguageUtil::languageFilter() const
-{
-    return m_languageFilter;
-}
-
-QAbstractItemModel *LanguageUtil::languageModel()
+LanguageSortFilterProxyModel *LanguageUtil::languageModel()
 {
     return &m_languageProxyModel;
-}
-
-void LanguageUtil::setLanguageFilter(const QString &filter)
-{
-    if (m_languageFilter == filter) {
-        return;
-    }
-
-    m_languageFilter = filter;
-    m_languageProxyModel.setFilterString(filter);
-
-    Q_EMIT languageFilterChanged();
 }
 
 QString LanguageUtil::currentLanguage() const
@@ -122,21 +98,23 @@ void LanguageUtil::applyLanguageAsSystemDefault()
 
 void LanguageUtil::loadAvailableLanguages()
 {
-    m_availableLanguages = KLocalizedString::availableDomainTranslations("plasmashell").values();
+    QStringList languages = KLocalizedString::availableDomainTranslations("plasmashell").values();
 
     // Ensure we at least have English available
-    if (!m_availableLanguages.contains(QStringLiteral("en_US"))) {
-        m_availableLanguages.append(QStringLiteral("en_US"));
+    if (!languages.contains(QStringLiteral("en_US"))) {
+        languages.append(QStringLiteral("en_US"));
     }
 
-    m_availableLanguages.sort();
+    languages.sort();
 
-    Q_EMIT availableLanguagesChanged();
+    m_languageModel.setStringList(languages);
 }
 
 void LanguageUtil::overrideInitialLanguageIfNeeded()
 {
-    if (m_availableLanguages.contains(m_currentLanguage)) {
+    const QStringList languages = m_languageModel.stringList();
+
+    if (languages.contains(m_currentLanguage)) {
         // Current language is available; no override needed.
         return;
     }
@@ -146,7 +124,7 @@ void LanguageUtil::overrideInitialLanguageIfNeeded()
     QString baseLanguage = m_currentLanguage.split(QStringLiteral("_")).first();
 
     // The language list didn't contain the full locale, but maybe it has the base language.
-    if (m_availableLanguages.contains(baseLanguage)) {
+    if (languages.contains(baseLanguage)) {
         qCInfo(PlasmaSetupLanguageUtil) << "Current language" << m_currentLanguage << "is not available. Overriding to base language" << baseLanguage << ".";
         m_currentLanguage = baseLanguage;
     } else {

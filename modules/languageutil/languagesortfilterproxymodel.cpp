@@ -12,18 +12,33 @@ LanguageSortFilterProxyModel::LanguageSortFilterProxyModel(QObject *parent)
 
 void LanguageSortFilterProxyModel::setFilterString(const QString &filter)
 {
-    if (m_filterString == filter) {
+    if (filter == filterRegularExpression().pattern()) {
         return;
     }
 
     beginFilterChange();
-    m_filterString = filter;
+    setFilterRegularExpression(QRegularExpression(QRegularExpression::escape(filter), QRegularExpression::CaseInsensitiveOption));
     endFilterChange();
+}
+
+int LanguageSortFilterProxyModel::rowForLanguage(const QString &language) const
+{
+    for (int row = 0; row < rowCount(); ++row) {
+        const QModelIndex index = this->index(row, 0);
+
+        if (data(index, LanguageCodeRole).toString() == language) {
+            return row;
+        }
+    }
+
+    return -1;
 }
 
 bool LanguageSortFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
 {
-    if (m_filterString.isEmpty()) {
+    const QRegularExpression regex = filterRegularExpression();
+
+    if (regex.pattern().isEmpty()) {
         return true;
     }
 
@@ -31,24 +46,22 @@ bool LanguageSortFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelI
     const QString language = sourceModel()->data(index, Qt::DisplayRole).toString();
 
     const QLocale locale(language);
-
     const QString nativeName = locale.nativeLanguageName();
     const QString englishName = QLocale::languageToString(locale.language());
 
-    return language.contains(m_filterString, Qt::CaseInsensitive) || nativeName.contains(m_filterString, Qt::CaseInsensitive)
-        || englishName.contains(m_filterString, Qt::CaseInsensitive);
+    return regex.match(language).hasMatch() || regex.match(nativeName).hasMatch() || regex.match(englishName).hasMatch();
 }
 
 QHash<int, QByteArray> LanguageSortFilterProxyModel::roleNames() const
 {
     auto roles = QSortFilterProxyModel::roleNames();
-    roles[Qt::UserRole + 1] = "languageCode";
+    roles[LanguageCodeRole] = "languageCode";
     return roles;
 }
 
 QVariant LanguageSortFilterProxyModel::data(const QModelIndex &index, int role) const
 {
-    if (role == Qt::UserRole + 1) {
+    if (role == LanguageCodeRole) {
         return sourceModel()->data(mapToSource(index), Qt::DisplayRole);
     }
 

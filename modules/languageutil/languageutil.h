@@ -25,28 +25,12 @@ class LanguageUtil : public QObject
     QML_SINGLETON
 
     /**
-     * List of available languages in the system.
-     *
-     * A list of language codes that are available for use in the application.
-     * Each entry in the list represents a language that can be selected by the user.
-     */
-    Q_PROPERTY(QStringList availableLanguages READ availableLanguages NOTIFY availableLanguagesChanged)
-
-    /**
      * Model containing the available languages.
      *
-     * This model supports filtering through languageFilter and is exposed
-     * directly to QML views that display the available language choices.
+     * This model supports filtering and is exposed directly to QML views
+     * that display the available language choices.
      */
-    Q_PROPERTY(QAbstractItemModel *languageModel READ languageModel CONSTANT)
-
-    /**
-     * Search filter applied to the language model.
-     *
-     * Updating this value filters languages by their code, native name,
-     * or English name.
-     */
-    Q_PROPERTY(QString languageFilter READ languageFilter WRITE setLanguageFilter NOTIFY languageFilterChanged)
+    Q_PROPERTY(LanguageSortFilterProxyModel *languageModel READ languageModel CONSTANT)
 
     /**
      * The language code of the currently selected language.
@@ -56,10 +40,7 @@ class LanguageUtil : public QObject
 public:
     explicit LanguageUtil(QObject *parent = nullptr);
 
-    QStringList availableLanguages() const;
-    QAbstractItemModel *languageModel();
-    QString languageFilter() const;
-    void setLanguageFilter(const QString &filter);
+    LanguageSortFilterProxyModel *languageModel();
 
     QString currentLanguage() const;
     void setCurrentLanguage(const QString &language);
@@ -70,8 +51,6 @@ public:
     Q_INVOKABLE void applyLanguage();
 
 Q_SIGNALS:
-    void availableLanguagesChanged();
-    void languageFilterChanged();
     void currentLanguageChanged();
     void initialLanguageOverrideApplied();
 
@@ -92,7 +71,7 @@ private:
     /**
      * Loads the available languages from the system.
      *
-     * This function populates the availableLanguages list with the languages
+     * This function populates the language model with the languages
      * that are supported by Plasma.
      */
     void loadAvailableLanguages();
@@ -108,9 +87,7 @@ private:
      */
     void overrideInitialLanguageIfNeeded();
 
-    QStringList m_availableLanguages;
     QStringListModel m_languageModel;
     LanguageSortFilterProxyModel m_languageProxyModel;
-    QString m_languageFilter;
     QString m_currentLanguage;
 };
