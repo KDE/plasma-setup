@@ -105,11 +105,12 @@ PlasmaSetupComponents.SetupModule {
                     function scrollToCurrentLanguage() {
                         // Find the index of the current language
                         const currentLang = Language.LanguageUtil.currentLanguage;
+                        const model = languageListView.model;
 
-                        for (let i = 0; i < languageListView.count; i++) {
-                            const item = languageListView.itemAtIndex(i);
+                        for (let i = 0; i < model.rowCount(); i++) {
+                            const index = model.index(i, 0);
 
-                            if (item && item.languageCode === currentLang) {
+                            if (model.data(index, model.languageCode) === currentLang) {
                                 // Position the view at the current language with some offset
                                 languageListView.positionViewAtIndex(i, ListView.Center);
                                 break;
