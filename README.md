@@ -124,5 +124,5 @@ For a complete guide on creating custom modules, see
 
 -----
 
-The project is under active development and is not yet ready for production use.
+The project is under active development.
 Contributions and suggestions are very welcome.
