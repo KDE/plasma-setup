@@ -70,10 +70,6 @@ Flow {
             display: AbstractButton.TextBesideIcon
             flat: false
 
-            ToolTip.text: text
-            ToolTip.visible: hovered || activeFocus
-            ToolTip.delay: Kirigami.Units.toolTipDelay
-
             onClicked: filteredModel.trigger(index)
 
             Keys.onEnterPressed: clicked()
