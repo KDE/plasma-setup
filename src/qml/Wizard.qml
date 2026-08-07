@@ -189,6 +189,15 @@ Kirigami.Page {
         }
     }
 
+    // Allow modules to request navigation to the next wizard page.
+    Connections {
+        target: root.currentModule
+
+        function onRequestNextPage(): void {
+            root.requestNextPage();
+        }
+    }
+
     Item {
         id: stepsComponent
         anchors.fill: parent

@@ -122,6 +122,14 @@ PlasmaSetupComponents.SetupModule {
                             validationDebouncer.stop();
                             root.updateValidation();
                         }
+
+                        onAccepted: {
+                            validationDebouncer.stop();
+                            root.updateValidation();
+                            if (root.nextEnabled) {
+                                root.requestNextPage();
+                            }
+                        }
                     }
 
                     Kirigami.InlineMessage {

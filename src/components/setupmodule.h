@@ -43,6 +43,7 @@ Q_SIGNALS:
     void contentItemChanged();
     void nextEnabledChanged();
     void cardWidthChanged();
+    void requestNextPage();
 
 private:
     bool m_available{true};
