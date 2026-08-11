@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:50+0000\n"
+"POT-Creation-Date: 2026-08-11 00:47+0000\n"
 "PO-Revision-Date: 2026-01-27 22:14+0100\n"
 "Last-Translator: Jan Papez (honyczek) <honyczek@centrum.cz>\n"
 "Language-Team: Czech <kde-i18n-cs@kde.org>\n"
@@ -28,18 +28,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "vit@pelcak.org"
 
-#: modules/account/contents/ui/main.qml:79
+#: modules/account/contents/ui/main.qml:80
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Pro dokončení nastavení potřebujeme zjistit pár podrobností."
 
-#: modules/account/contents/ui/main.qml:90
+#: modules/account/contents/ui/main.qml:91
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Tento uživatel bude správce."
 
-#: modules/account/contents/ui/main.qml:94
+#: modules/account/contents/ui/main.qml:95
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -51,31 +51,31 @@ msgstr ""
 "může měnit systémová nastavení, instalovat software a přístupovat ke všem "
 "souborům v systému.<nl/><nl/>Vyberte pro tohoto uživatele silné heslo."
 
-#: modules/account/contents/ui/main.qml:107
+#: modules/account/contents/ui/main.qml:108
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Celé jméno"
 
-#: modules/account/contents/ui/main.qml:125
+#: modules/account/contents/ui/main.qml:126
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Uživatelské jméno"
 
-#: modules/account/contents/ui/main.qml:145
+#: modules/account/contents/ui/main.qml:146
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Heslo"
 
-#: modules/account/contents/ui/main.qml:159
+#: modules/account/contents/ui/main.qml:160
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Potvrdit heslo"
 
-#: modules/account/contents/ui/main.qml:177
+#: modules/account/contents/ui/main.qml:185
 #, kde-format
 msgid "Passwords must match"
 msgstr "Hesla musí být stejná"
