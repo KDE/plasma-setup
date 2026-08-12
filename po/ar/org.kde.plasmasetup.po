@@ -37,7 +37,7 @@ msgstr "نحتاج إلى بعض التفاصيل لإكمال الإعداد."
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
-msgstr "سيكون هذا المستخدم مسؤولاً."
+msgstr "سيكون هذا المستخدم مسؤولًا."
 
 #: modules/account/contents/ui/main.qml:95
 #, kde-kuit-format
