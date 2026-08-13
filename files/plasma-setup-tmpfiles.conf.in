@@ -19,7 +19,7 @@ C /run/plasma-setup/.config/autostart/plasma-setup.desktop - - - - ${CMAKE_INSTA
 #
 # This works because plasma-welcome checks this config to decide whether to
 # run or not. A bit hacky, might break if plasma-welcome changes.
-f /run/plasma-setup/.config/plasma-welcomerc - - - - [General]\nLastSeenVersion=6.4.2
+f /run/plasma-setup/.config/plasma-welcomerc - - - - [General]\nLastSeenVersion=6.4.2\nShowUpdatePage=false
 
 # Disable screen locking, leaving only screen dimming / blanking enabled.
 #
