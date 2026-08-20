@@ -36,6 +36,29 @@ PlasmaSetupComponents.SetupModule {
         fullNameField.forceActiveFocus();
     }
 
+    /*!
+     * Ensures that the given item is visible within the scroll view.
+     *
+     * Moves the scroll position when necessary, leaving a small margin around
+     * the item so that its associated form label remains visible as well.
+     */
+    function ensureVisible(item: Item): void {
+        const flickable = scroll.contentItem;
+        const itemPos = item.mapToItem(flickable.contentItem, 0, 0);
+        const margin = Kirigami.Units.gridUnit;
+
+        const itemTop = itemPos.y;
+        const itemBottom = itemPos.y + item.height;
+        const visibleTop = flickable.contentY;
+        const visibleBottom = visibleTop + flickable.height;
+
+        if (itemTop < visibleTop + margin) {
+            flickable.contentY = Math.max(0, itemTop - margin);
+        } else if (itemBottom > visibleBottom - margin) {
+            flickable.contentY = itemBottom - flickable.height + margin;
+        }
+    }
+
     contentItem: ScrollView {
         id: scroll
         clip: true
@@ -49,7 +72,8 @@ PlasmaSetupComponents.SetupModule {
 
             ColumnLayout {
                 Layout.alignment: Qt.AlignHCenter
-                width: root.cardWidth
+                Layout.fillWidth: true
+                Layout.maximumWidth: root.cardWidth
 
                 KirigamiComponents.AvatarButton {
                     id: avatar
@@ -84,14 +108,30 @@ PlasmaSetupComponents.SetupModule {
                     Layout.fillWidth: true
                 }
 
-                RowLayout {
-                    Layout.alignment: Qt.AlignHCenter
+                Item {
+                    Layout.fillWidth: true
+                    implicitHeight: Math.max(administratorLabel.implicitHeight, helpButton.implicitHeight)
 
                     Label {
+                        id: administratorLabel
+
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        width: Math.min(
+                            implicitWidth,
+                            root.cardWidth - helpButton.implicitWidth - Kirigami.Units.largeSpacing
+                        )
+
                         text: i18nc("@info", "This user will be an administrator.")
+                        horizontalAlignment: Text.AlignHCenter
+                        wrapMode: Text.Wrap
                     }
 
                     Kirigami.ContextualHelpButton {
+                        id: helpButton
+
+                        anchors.left: administratorLabel.right
+                        anchors.verticalCenter: administratorLabel.verticalCenter
+
                         toolTipText: xi18nc("@info", "This user will have administrative privileges on the system.<nl/><nl/>This means that they can change system settings, install software, and access all files on the system.<nl/><nl/>Choose a strong password for this user.")
                     }
                 }
@@ -102,10 +142,19 @@ PlasmaSetupComponents.SetupModule {
                 }
 
                 Kirigami.FormLayout {
+                    Layout.fillWidth: true
+
                     TextField {
                         id: fullNameField
 
                         Kirigami.FormData.label: i18nc("@label:textbox", "Full Name")
+
+                        onActiveFocusChanged: {
+                            if (activeFocus) {
+                                Qt.callLater(() => root.ensureVisible(fullNameField));
+                            }
+                        }
+
                         property string previousText: ''
                         onTextChanged: {
                             if (usernameField.text.length === 0 || usernameField.text === previousText) {
@@ -124,6 +173,13 @@ PlasmaSetupComponents.SetupModule {
                         id: usernameField
 
                         Kirigami.FormData.label: i18nc("@label:textbox", "Username")
+
+                        onActiveFocusChanged: {
+                            if (activeFocus) {
+                                Qt.callLater(() => root.ensureVisible(usernameField));
+                            }
+                        }
+
                         inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhNoPredictiveText
 
                         Binding {
@@ -144,6 +200,13 @@ PlasmaSetupComponents.SetupModule {
                         id: passwordField
 
                         Kirigami.FormData.label: i18nc("@label:textbox", "Password")
+
+                        onActiveFocusChanged: {
+                            if (activeFocus) {
+                                Qt.callLater(() => root.ensureVisible(passwordField));
+                            }
+                        }
+
                         placeholderText: "" // Form label already indicates this
                         onTextChanged: debouncer.reset()
 
@@ -158,6 +221,13 @@ PlasmaSetupComponents.SetupModule {
                         id: repeatField
 
                         Kirigami.FormData.label: i18nc("@label:textbox", "Confirm Password")
+
+                        onActiveFocusChanged: {
+                            if (activeFocus) {
+                                Qt.callLater(() => root.ensureVisible(repeatField));
+                            }
+                        }
+
                         placeholderText: "" // Form label already indicates this
 
                         onAccepted: {
