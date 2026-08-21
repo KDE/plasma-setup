@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-03 00:46+0000\n"
+"POT-Creation-Date: 2026-08-21 02:42+0000\n"
 "PO-Revision-Date: 2026-06-09 22:46+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
@@ -26,18 +26,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "5602mint@gmail.com\t"
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:102
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "最後に、いくつかの情報を入力してください。"
 
-#: modules/account/contents/ui/main.qml:89
+#: modules/account/contents/ui/main.qml:122
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "このユーザーは管理者として作成されます。"
 
-#: modules/account/contents/ui/main.qml:93
+#: modules/account/contents/ui/main.qml:133
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -50,31 +50,31 @@ msgstr ""
 "べてのファイルにアクセスできるようになります。<nl/><nl/>そのため、このユー"
 "ザーには安全性の高いパスワードを設定してください。"
 
-#: modules/account/contents/ui/main.qml:106
+#: modules/account/contents/ui/main.qml:148
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "フルネーム"
 
-#: modules/account/contents/ui/main.qml:124
+#: modules/account/contents/ui/main.qml:173
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "ユーザー名"
 
-#: modules/account/contents/ui/main.qml:144
+#: modules/account/contents/ui/main.qml:200
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "パスワード"
 
-#: modules/account/contents/ui/main.qml:158
+#: modules/account/contents/ui/main.qml:221
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "パスワードの再入力"
 
-#: modules/account/contents/ui/main.qml:176
+#: modules/account/contents/ui/main.qml:246
 #, kde-format
 msgid "Passwords must match"
 msgstr "パスワードが一致していません"

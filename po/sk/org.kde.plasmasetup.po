@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: org.kde.initialsystemsetup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-03 00:46+0000\n"
+"POT-Creation-Date: 2026-08-21 02:42+0000\n"
 "PO-Revision-Date: 2024-11-12 17:03+0100\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -25,18 +25,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
 
-#: modules/account/contents/ui/main.qml:78
+#: modules/account/contents/ui/main.qml:102
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Potrebujeme niekoľko údajov na dokončenie nastavenia."
 
-#: modules/account/contents/ui/main.qml:89
+#: modules/account/contents/ui/main.qml:122
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "This user bude an administrator."
 
-#: modules/account/contents/ui/main.qml:93
+#: modules/account/contents/ui/main.qml:133
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -48,31 +48,31 @@ msgstr ""
 "means that they can change system settings, install software, and access all "
 "files on the system.<nl/><nl/>Choose a strong password for this user."
 
-#: modules/account/contents/ui/main.qml:106
+#: modules/account/contents/ui/main.qml:148
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Celé meno"
 
-#: modules/account/contents/ui/main.qml:124
+#: modules/account/contents/ui/main.qml:173
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Meno používateľa"
 
-#: modules/account/contents/ui/main.qml:144
+#: modules/account/contents/ui/main.qml:200
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Heslo"
 
-#: modules/account/contents/ui/main.qml:158
+#: modules/account/contents/ui/main.qml:221
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Heslo:"
 
-#: modules/account/contents/ui/main.qml:176
+#: modules/account/contents/ui/main.qml:246
 #, kde-format
 msgid "Passwords must match"
 msgstr "Heslá sa musia zhodovať"
