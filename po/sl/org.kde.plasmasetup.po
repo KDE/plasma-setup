@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-11 00:47+0000\n"
+"POT-Creation-Date: 2026-08-21 00:47+0000\n"
 "PO-Revision-Date: 2026-01-07 07:53+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -25,18 +25,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net"
 
-#: modules/account/contents/ui/main.qml:80
+#: modules/account/contents/ui/main.qml:104
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Za dokončanje nastavitve potrebujemo nekaj podrobnosti."
 
-#: modules/account/contents/ui/main.qml:91
+#: modules/account/contents/ui/main.qml:124
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Ta uporabnik bo skrbnik."
 
-#: modules/account/contents/ui/main.qml:95
+#: modules/account/contents/ui/main.qml:135
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -48,31 +48,31 @@ msgstr ""
 "lahko spreminja sistemske nastavitve, namešča programsko opremo in dostopa "
 "do vseh datotek v sistemu.<nl/><nl/>Izberite močno geslo za tega uporabnika."
 
-#: modules/account/contents/ui/main.qml:108
+#: modules/account/contents/ui/main.qml:150
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Polno ime"
 
-#: modules/account/contents/ui/main.qml:126
+#: modules/account/contents/ui/main.qml:175
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Uporabniško ime"
 
-#: modules/account/contents/ui/main.qml:146
+#: modules/account/contents/ui/main.qml:202
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Geslo"
 
-#: modules/account/contents/ui/main.qml:160
+#: modules/account/contents/ui/main.qml:223
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Potrdite geslo"
 
-#: modules/account/contents/ui/main.qml:185
+#: modules/account/contents/ui/main.qml:255
 #, kde-format
 msgid "Passwords must match"
 msgstr "Gesli se morata ujemati"

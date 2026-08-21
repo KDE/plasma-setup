@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-11 00:47+0000\n"
+"POT-Creation-Date: 2026-08-21 00:47+0000\n"
 "PO-Revision-Date: 2026-04-30 17:18+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "g.sora@tiscali.it"
 
-#: modules/account/contents/ui/main.qml:80
+#: modules/account/contents/ui/main.qml:104
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "On necessita alcun detalios per completar le configuration."
 
-#: modules/account/contents/ui/main.qml:91
+#: modules/account/contents/ui/main.qml:124
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Iste usator essera un administrator"
 
-#: modules/account/contents/ui/main.qml:95
+#: modules/account/contents/ui/main.qml:135
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -51,31 +51,31 @@ msgstr ""
 "software, e acceder a omne files sur le systema.<nl/><nl/>Selige un "
 "contrasigno forte per iste usator."
 
-#: modules/account/contents/ui/main.qml:108
+#: modules/account/contents/ui/main.qml:150
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Nomine complete"
 
-#: modules/account/contents/ui/main.qml:126
+#: modules/account/contents/ui/main.qml:175
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Nomine usator"
 
-#: modules/account/contents/ui/main.qml:146
+#: modules/account/contents/ui/main.qml:202
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Contrasigno"
 
-#: modules/account/contents/ui/main.qml:160
+#: modules/account/contents/ui/main.qml:223
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Confirma contrasigno"
 
-#: modules/account/contents/ui/main.qml:185
+#: modules/account/contents/ui/main.qml:255
 #, kde-format
 msgid "Passwords must match"
 msgstr "Contrasigno debe coincider"

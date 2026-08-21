@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-11 00:47+0000\n"
+"POT-Creation-Date: 2026-08-21 00:47+0000\n"
 "PO-Revision-Date: 2026-07-03 19:28+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -29,18 +29,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "karl@huftis.org"
 
-#: modules/account/contents/ui/main.qml:80
+#: modules/account/contents/ui/main.qml:104
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Me treng litt informasjon for å fullføra oppsettet."
 
-#: modules/account/contents/ui/main.qml:91
+#: modules/account/contents/ui/main.qml:124
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Denne brukaren vil verta administrator."
 
-#: modules/account/contents/ui/main.qml:95
+#: modules/account/contents/ui/main.qml:135
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -52,31 +52,31 @@ msgstr ""
 "hen kan endra system­innstillingar, installera programvare og få tilgang til "
 "alle filene på systemet.<nl/><nl/>Vel eit sterkt passord for denne brukaren."
 
-#: modules/account/contents/ui/main.qml:108
+#: modules/account/contents/ui/main.qml:150
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Fullt namn"
 
-#: modules/account/contents/ui/main.qml:126
+#: modules/account/contents/ui/main.qml:175
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Brukarnamn"
 
-#: modules/account/contents/ui/main.qml:146
+#: modules/account/contents/ui/main.qml:202
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Passord"
 
-#: modules/account/contents/ui/main.qml:160
+#: modules/account/contents/ui/main.qml:223
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Stadfest passordet"
 
-#: modules/account/contents/ui/main.qml:185
+#: modules/account/contents/ui/main.qml:255
 #, kde-format
 msgid "Passwords must match"
 msgstr "Passorda må vera like"

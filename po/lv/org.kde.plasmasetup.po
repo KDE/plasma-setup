@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-11 00:47+0000\n"
+"POT-Creation-Date: 2026-08-21 00:47+0000\n"
 "PO-Revision-Date: 2026-03-03 17:29+0200\n"
 "Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -28,18 +28,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "toms.trasuns@posteo.net"
 
-#: modules/account/contents/ui/main.qml:80
+#: modules/account/contents/ui/main.qml:104
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Lai pabeigtu iestatīšanu, vajadzīgs nedaudz informācijas"
 
-#: modules/account/contents/ui/main.qml:91
+#: modules/account/contents/ui/main.qml:124
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Šis lietotājs būs administrators"
 
-#: modules/account/contents/ui/main.qml:95
+#: modules/account/contents/ui/main.qml:135
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -52,31 +52,31 @@ msgstr ""
 "programmatūru un piekļūt visām datnēm sistēmā.<nl/><nl/>Lietotājam "
 "izvēlieties stipru paroli."
 
-#: modules/account/contents/ui/main.qml:108
+#: modules/account/contents/ui/main.qml:150
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Pilns vārds"
 
-#: modules/account/contents/ui/main.qml:126
+#: modules/account/contents/ui/main.qml:175
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Lietotājvārds"
 
-#: modules/account/contents/ui/main.qml:146
+#: modules/account/contents/ui/main.qml:202
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Parole"
 
-#: modules/account/contents/ui/main.qml:160
+#: modules/account/contents/ui/main.qml:223
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Apstiprināt paroli"
 
-#: modules/account/contents/ui/main.qml:185
+#: modules/account/contents/ui/main.qml:255
 #, kde-format
 msgid "Passwords must match"
 msgstr "Parolēm ir jāsakrīt"

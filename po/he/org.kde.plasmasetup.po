@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-11 00:47+0000\n"
+"POT-Creation-Date: 2026-08-21 00:47+0000\n"
 "PO-Revision-Date: 2026-01-06 15:10+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,18 +28,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: modules/account/contents/ui/main.qml:80
+#: modules/account/contents/ui/main.qml:104
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "יש להוסיף כמה פרטים כדי להשלים את ההקמה."
 
-#: modules/account/contents/ui/main.qml:91
+#: modules/account/contents/ui/main.qml:124
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "המשתמש הזה יהפוך למנהל."
 
-#: modules/account/contents/ui/main.qml:95
+#: modules/account/contents/ui/main.qml:135
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -51,31 +51,31 @@ msgstr ""
 "אפשרות לשנות הגדרות מערכת, להתקין תוכנות ולגשת לכל הקבצים במערכת.<nl/><nl/"
 ">חשוב לבחור למשתמש הזה סיסמה חזקה."
 
-#: modules/account/contents/ui/main.qml:108
+#: modules/account/contents/ui/main.qml:150
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "שם מלא"
 
-#: modules/account/contents/ui/main.qml:126
+#: modules/account/contents/ui/main.qml:175
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "שם משתמש"
 
-#: modules/account/contents/ui/main.qml:146
+#: modules/account/contents/ui/main.qml:202
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "סיסמה"
 
-#: modules/account/contents/ui/main.qml:160
+#: modules/account/contents/ui/main.qml:223
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "אימות הסיסמה"
 
-#: modules/account/contents/ui/main.qml:185
+#: modules/account/contents/ui/main.qml:255
 #, kde-format
 msgid "Passwords must match"
 msgstr "הסיסמאות חייבות להיות תואמות"
