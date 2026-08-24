@@ -1,0 +1,17 @@
+{
+    "KPackageStructure": "KDE/PlasmaSetup",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Bharadwaj Raju",
+                "Email": "bharadwaj.raju@machinesoul.in"
+            }
+        ],
+        "Description": "Offers to restore from a backup",
+        "Id": "org.kde.plasmasetup.restorebackup",
+        "License": "LGPL-2.0-or-later",
+        "Name": "Restore from Backup"
+    },
+    "X-KDE-ParentApp": "org.kde.plasmasetup",
+    "X-KDE-Weight": 11
+}

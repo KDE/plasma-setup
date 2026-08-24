@@ -29,6 +29,8 @@ kpackage_install_package(time org.kde.plasmasetup.time packages plasma)
 add_subdirectory(wifi)
 kpackage_install_package(wifi org.kde.plasmasetup.wifi packages plasma)
 
+add_subdirectory(restorebackup)
+kpackage_install_package(restorebackup org.kde.plasmasetup.restorebackup packages plasma)
 
 # ---------------------------- Helper Utilities ---------------------------- #
 
