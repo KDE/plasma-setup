@@ -8,6 +8,8 @@ import org.kde.kirigami as Kirigami
 
 ItemDelegate {
     id: root
+    required property int index
+    required property string description
 
     contentItem: RowLayout {
         spacing: 0
@@ -27,7 +29,7 @@ ItemDelegate {
 
         Label {
             Layout.fillWidth: true
-            text: modelData
+            text: description
         }
     }
 }
