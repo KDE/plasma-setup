@@ -6,9 +6,14 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.plasmasetup.components as PlasmaSetupComponents
+import org.kde.plasmasetup.restorebackuputil as RestoreBackupUtil
 
 PlasmaSetupComponents.SetupModule {
     id: root
+
+    RestoreBackupUtil.ExternalDrivesModel {
+        id: externalDrivesModel
+    }
 
     available: true
     nextEnabled: true
@@ -42,15 +47,11 @@ PlasmaSetupComponents.SetupModule {
                     }
                 }
 
-                ColumnLayout {
-                    width: externalDrivesView.width
-
-                    Repeater {
-                        model: ["16 GiB Pendrive", "32 GiB Pendrive"]
-                        delegate: ExternalDriveDelegate {
-                            Layout.fillWidth: true
-                            hoverEnabled: false
-                        }
+                ListView {
+                    model: externalDrivesModel
+                    delegate: ExternalDriveDelegate {
+                        Layout.fillWidth: true
+                        hoverEnabled: false
                     }
                 }
             }

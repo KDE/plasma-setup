@@ -43,7 +43,7 @@ set_package_properties(Qt6 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required application components"
 )
-find_package(KF6 ${KF6_MIN_VERSION} COMPONENTS Auth CoreAddons I18n Package Config)
+find_package(KF6 ${KF6_MIN_VERSION} COMPONENTS Auth CoreAddons I18n Package Config Solid)
 set_package_properties(KF6 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required application components"
