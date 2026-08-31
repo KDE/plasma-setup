@@ -1,11 +1,11 @@
-# SPDX-FileCopyrightText: 2024, 2025, 2026 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2024-2026 Xavier Besnard <xavier.besnard@kde.org>
 # SPDX-FileCopyrightText: 2025 Thomas Vergnaud <thomas.vergnaud@mailo.eu>
 msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-21 00:47+0000\n"
-"PO-Revision-Date: 2026-04-03 19:45+0200\n"
+"PO-Revision-Date: 2026-08-29 20:48+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -221,7 +221,7 @@ msgstr "Nom d'hôte :"
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be empty."
-msgstr "Le nom d'hôte ne peut pas être vide."
+msgstr "Il est impossible que le nom d'hôte soit vide."
 
 #: modules/hostnameutil/hostnameutil.cpp:96
 #, kde-format
