@@ -9,8 +9,7 @@ import org.kde.kirigami as Kirigami
 ItemDelegate {
     id: root
     required property int index
-    required property string description
-    required property string mountPath
+    required property string username
 
     contentItem: RowLayout {
         spacing: 0
@@ -24,13 +23,13 @@ ItemDelegate {
                 implicitWidth: Kirigami.Units.iconSizes.smallMedium
                 implicitHeight: Kirigami.Units.iconSizes.smallMedium
                 anchors.centerIn: parent
-                source: "drive-removable-media-symbolic"
+                source: "backup"
             }
         }
 
         Label {
             Layout.fillWidth: true
-            text: description
+            text: username
         }
     }
 }

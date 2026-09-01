@@ -4,6 +4,9 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import QtQml.Models
+
+import org.kde.coreaddons
 import org.kde.kirigami as Kirigami
 import org.kde.plasmasetup.components as PlasmaSetupComponents
 import org.kde.plasmasetup.restorebackuputil as RestoreBackupUtil
@@ -11,8 +14,8 @@ import org.kde.plasmasetup.restorebackuputil as RestoreBackupUtil
 PlasmaSetupComponents.SetupModule {
     id: root
 
-    RestoreBackupUtil.ExternalDrivesModel {
-        id: externalDrivesModel
+    RestoreBackupUtil.ExternalDriveBackupsModel {
+        id: backupsModel
     }
 
     available: true
@@ -30,16 +33,18 @@ PlasmaSetupComponents.SetupModule {
                 Layout.rightMargin: Kirigami.Units.gridUnit
                 Layout.bottomMargin: Kirigami.Units.gridUnit
                 Layout.fillWidth: true
-
+                visible: backupsView.rows == 0
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
-                text: i18n("If you have an external drive with backups on it, you can choose to restore from it now.")
+                text: i18n("If you have an external drive with backups, you can plug it in to restore from it now.")
             }
 
             ScrollView {
-                id: externalDrivesView
+                id: backupsScrollView
                 Layout.fillWidth: true
                 Layout.bottomMargin: Kirigami.Units.gridUnit
+
+                visible: backupsView.rows > 0
 
                 Component.onCompleted: {
                     if (background) {
@@ -47,11 +52,22 @@ PlasmaSetupComponents.SetupModule {
                     }
                 }
 
-                ListView {
-                    model: externalDrivesModel
-                    delegate: ExternalDriveDelegate {
-                        Layout.fillWidth: true
+                TreeView {
+                    id: backupsView
+                    model: backupsModel
+                    columnWidthProvider: function(_col) { return backupsView.width }
+                    Layout.fillWidth: true
+                    delegate: TreeViewDelegate {
                         hoverEnabled: false
+                        implicitWidth: backupsView.width
+                        contentItem: Label {
+                            text: depth === 0
+                                  ? model.display
+                                  : i18n("User ‘%1’ on %2 (in %3)",
+                                         model.username,
+                                         Format.formatRelativeDateTime(model.date, Locale.ShortFormat),
+                                         model.relativeFsPath)
+                        }
                     }
                 }
             }

@@ -38,12 +38,12 @@ include(ECMQmlModule)
 include(ECMQtDeclareLoggingCategory)
 
 ################# Find dependencies #################
-find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS Core Gui Qml QuickControls2 Svg Widgets DBus)
+find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS Core Gui Qml QuickControls2 Svg Widgets DBus Concurrent)
 set_package_properties(Qt6 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required application components"
 )
-find_package(KF6 ${KF6_MIN_VERSION} COMPONENTS Auth CoreAddons I18n Package Config Solid)
+find_package(KF6 ${KF6_MIN_VERSION} COMPONENTS Auth CoreAddons I18n Package Config Solid KIO)
 set_package_properties(KF6 PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required application components"

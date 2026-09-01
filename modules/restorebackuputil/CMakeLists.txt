@@ -5,14 +5,16 @@ ecm_add_qml_module(plasmasetup_restorebackuputil
     URI "org.kde.plasmasetup.restorebackuputil"
     GENERATE_PLUGIN_SOURCE
     SOURCES
-        externaldrivesmodel.cpp
-        externaldrivesmodel.h
+        externaldrivebackupsmodel.cpp
+        externaldrivebackupsmodel.h
 )
 
 target_link_libraries(plasmasetup_restorebackuputil PRIVATE
     Qt::Core
     Qt::Qml
+    Qt::Concurrent
     KF6::Solid
+    KF6::KIOCore
 )
 
 ecm_finalize_qml_module(plasmasetup_restorebackuputil)
