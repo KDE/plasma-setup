@@ -6,7 +6,6 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQml.Models
 
-import org.kde.coreaddons
 import org.kde.kirigami as Kirigami
 import org.kde.plasmasetup.components as PlasmaSetupComponents
 import org.kde.plasmasetup.restorebackuputil as RestoreBackupUtil
@@ -31,7 +30,6 @@ PlasmaSetupComponents.SetupModule {
 
     contentItem: ColumnLayout {
         ColumnLayout {
-            Layout.maximumWidth: root.cardWidth
             Layout.alignment: Qt.AlignCenter
             spacing: Kirigami.Units.smallSpacing
 
@@ -46,59 +44,72 @@ PlasmaSetupComponents.SetupModule {
                 text: i18n("If you have an external drive with backups, you can plug it in to restore from it now.")
             }
 
-            ScrollView {
-                id: backupsScrollView
-                visible: selectedDrive !== null
+            Item {
                 Layout.fillWidth: true
                 Layout.bottomMargin: Kirigami.Units.gridUnit
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 12
 
-                Component.onCompleted: {
-                    if (background) {
-                        background.visible = true;
+                RowLayout {
+                    id: drivesBackupsLayout
+                    anchors.fill: parent
+                    spacing: Kirigami.Units.smallSpacing
+
+                    ScrollView {
+                        id: drivesScrollView
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        Layout.maximumWidth: selectedDrive === null ? -1 : drivesBackupsLayout.width / 2
+
+                        Component.onCompleted: if (background) background.visible = true
+
+                        ListView {
+                            id: drivesListView
+                            Layout.fillWidth: true
+                            clip: true
+
+                            model: backupsModel
+                            delegate: ExternalDriveDelegate {
+                                implicitWidth: drivesListView.width
+                                onClicked: {
+                                    drivesListView.currentIndex = index;
+                                    const modelIndex = backupsModel.index(index, 0);
+                                    console.warn("calling canFetchMore...")
+                                    if (backupsModel.canFetchMore(modelIndex)) {
+                                        console.warn("couldFetchMore!")
+                                        backupsModel.fetchMore(modelIndex);
+                                    } else {
+                                        console.warn("couldntFetchMore...")
+                                    }
+                                    selectedDrive = modelIndex;
+                                }
+                            }
+                        }
                     }
-                }
 
-                ListView {
-                    id: backupsListView
-                    model: driveBackupsModel
-                    Layout.fillWidth: true
-                    delegate: FoundBackupDelegate {
-                        implicitWidth: backupsListView.width
-                    }
-                }
-            }
+                    ScrollView {
+                        id: backupsScrollView
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        Layout.maximumWidth: drivesBackupsLayout.width / 2
+                        visible: selectedDrive !== null
 
-            ScrollView {
-                id: drivesScrollView
-                Layout.fillWidth: true
-                Layout.bottomMargin: Kirigami.Units.gridUnit
+                        Component.onCompleted: if (background) background.visible = true
 
-                visible: selectedDrive === null
+                        ListView {
+                            id: backupsListView
+                            clip: true
 
-                Component.onCompleted: {
-                    if (background) {
-                        background.visible = true;
-                    }
-                }
-
-                ListView {
-                    id: drivesListView
-                    model: backupsModel
-                    Layout.fillWidth: true
-                    delegate: ExternalDriveDelegate {
-                        implicitWidth: drivesListView.width
-                        onClicked: {
-                            console.warn(backupsModel.index(index, 0))
-                            backupsModel.fetchMore(backupsModel.index(index, 0))
-                            selectedDrive = backupsModel.index(index, 0)
+                            model: driveBackupsModel
+                            activeFocusOnTab: true
+                            delegate: FoundBackupDelegate {
+                                implicitWidth: backupsListView.width
+                                onClicked: {
+                                    backupsListView.currentIndex = index;
+                                }
+                            }
                         }
                     }
                 }
-            }
-
-            Button {
-                Layout.alignment: Qt.AlignCenter
-                text: i18n("Browse manually…")
             }
         }
     }
