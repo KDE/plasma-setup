@@ -4,18 +4,21 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
+
+import org.kde.coreaddons
 import org.kde.kirigami as Kirigami
 
 ItemDelegate {
     id: root
     required property int index
     required property string username
+    required property var date
 
     contentItem: RowLayout {
         spacing: 0
 
         Item {
-            Layout.rightMargin: Kirigami.Units.gridUnit
+            Layout.rightMargin: Kirigami.Units.smallSpacing
             implicitWidth: Kirigami.Units.iconSizes.smallMedium
             implicitHeight: Kirigami.Units.iconSizes.smallMedium
 
@@ -29,7 +32,7 @@ ItemDelegate {
 
         Label {
             Layout.fillWidth: true
-            text: username
+            text: date !== undefined ? Format.formatRelativeDateTime(date, Locale.LongFormat) : ""
         }
     }
 }

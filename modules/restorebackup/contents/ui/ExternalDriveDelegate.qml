@@ -16,7 +16,7 @@ ItemDelegate {
         spacing: 0
 
         Item {
-            Layout.rightMargin: Kirigami.Units.gridUnit
+            Layout.rightMargin: Kirigami.Units.smallSpacing
             implicitWidth: Kirigami.Units.iconSizes.smallMedium
             implicitHeight: Kirigami.Units.iconSizes.smallMedium
 
