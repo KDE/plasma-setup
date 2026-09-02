@@ -17,6 +17,8 @@ struct HomeBackup {
     QString datestamp;
     QDateTime date;
     QString username;
+
+    bool operator==(const HomeBackup &) const = default;
 };
 
 class ExternalDriveBackupsModel : public QAbstractItemModel

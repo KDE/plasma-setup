@@ -112,15 +112,21 @@ void ExternalDriveBackupsModel::removeDrive(const QString &udi)
         return;
     }
 
-    beginRemoveRows(createIndex(idx, 0, quintptr(0)), 0, driveBackups.value(udi, {}).size() - 1);
-    driveBackups.remove(udi);
-    endRemoveRows();
+    // beginRemoveRows(createIndex(idx, 0, quintptr(0)), 0, driveBackups.value(udi, {}).size() - 1);
+    // driveBackups.remove(udi);
+    // endRemoveRows();
 
     beginRemoveRows({}, idx, idx);
     drives.removeAt(idx);
     endRemoveRows();
 
-    // TODO cancel its watchers
+    driveBackups.remove(udi);
+    auto *watcher = driveSearchWatchers.value(udi, nullptr);
+    if (watcher) {
+        watcher->cancel();
+        watcher->deleteLater();
+    }
+    driveSearchWatchers.remove(udi);
 }
 
 int ExternalDriveBackupsModel::rowCount(const QModelIndex &parent) const
@@ -210,8 +216,6 @@ void ExternalDriveBackupsModel::fetchMore(const QModelIndex &parent)
     if (!parent.isValid() || parent.internalId() != 0 || parent.row() >= drives.size()) {
         return;
     }
-
-    if (!data(parent, Roles::DriveIsMountedRole).toBool()) { }
 
     const QString &udi = drives.at(parent.row());
     Solid::Device device(udi);
@@ -385,6 +389,9 @@ void ExternalDriveBackupsModel::addHomeBackup(const QString &driveUdi,
             return backup.date.toMSecsSinceEpoch() < newVal;
         });
         auto idx = std::distance(backups.begin(), it);
+        if (backups.size() > idx && backups.at(idx) == backupInfo) {
+            return;
+        }
         beginInsertRows(createIndex(parentRow, 0, quintptr(0)), idx, idx);
         backups.insert(it, backupInfo);
         endInsertRows();
