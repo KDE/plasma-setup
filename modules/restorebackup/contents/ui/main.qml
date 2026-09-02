@@ -14,8 +14,16 @@ import org.kde.plasmasetup.restorebackuputil as RestoreBackupUtil
 PlasmaSetupComponents.SetupModule {
     id: root
 
+    property var selectedDrive: null
+
     RestoreBackupUtil.ExternalDriveBackupsModel {
         id: backupsModel
+    }
+
+    DelegateModel {
+        id: driveBackupsModel
+        model: backupsModel
+        rootIndex: selectedDrive
     }
 
     available: true
@@ -33,7 +41,6 @@ PlasmaSetupComponents.SetupModule {
                 Layout.rightMargin: Kirigami.Units.gridUnit
                 Layout.bottomMargin: Kirigami.Units.gridUnit
                 Layout.fillWidth: true
-                visible: backupsView.rows == 0
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
                 text: i18n("If you have an external drive with backups, you can plug it in to restore from it now.")
@@ -41,10 +48,9 @@ PlasmaSetupComponents.SetupModule {
 
             ScrollView {
                 id: backupsScrollView
+                visible: selectedDrive !== null
                 Layout.fillWidth: true
                 Layout.bottomMargin: Kirigami.Units.gridUnit
-
-                visible: backupsView.rows > 0
 
                 Component.onCompleted: {
                     if (background) {
@@ -52,21 +58,39 @@ PlasmaSetupComponents.SetupModule {
                     }
                 }
 
-                TreeView {
-                    id: backupsView
-                    model: backupsModel
-                    columnWidthProvider: function(_col) { return backupsView.width }
+                ListView {
+                    id: backupsListView
+                    model: driveBackupsModel
                     Layout.fillWidth: true
-                    delegate: TreeViewDelegate {
-                        hoverEnabled: false
-                        implicitWidth: backupsView.width
-                        contentItem: Label {
-                            text: depth === 0
-                                  ? model.display
-                                  : i18n("User ‘%1’ on %2 (in %3)",
-                                         model.username,
-                                         Format.formatRelativeDateTime(model.date, Locale.ShortFormat),
-                                         model.relativeFsPath)
+                    delegate: FoundBackupDelegate {
+                        implicitWidth: backupsListView.width
+                    }
+                }
+            }
+
+            ScrollView {
+                id: drivesScrollView
+                Layout.fillWidth: true
+                Layout.bottomMargin: Kirigami.Units.gridUnit
+
+                visible: selectedDrive === null
+
+                Component.onCompleted: {
+                    if (background) {
+                        background.visible = true;
+                    }
+                }
+
+                ListView {
+                    id: drivesListView
+                    model: backupsModel
+                    Layout.fillWidth: true
+                    delegate: ExternalDriveDelegate {
+                        implicitWidth: drivesListView.width
+                        onClicked: {
+                            console.warn(backupsModel.index(index, 0))
+                            backupsModel.fetchMore(backupsModel.index(index, 0))
+                            selectedDrive = backupsModel.index(index, 0)
                         }
                     }
                 }
