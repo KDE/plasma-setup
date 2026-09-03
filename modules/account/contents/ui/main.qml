@@ -169,6 +169,7 @@ PlasmaSetupComponents.SetupModule {
                         }
                     }
 
+
                     TextField {
                         id: usernameField
 
@@ -182,11 +183,27 @@ PlasmaSetupComponents.SetupModule {
 
                         inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhNoPredictiveText
 
+                        enabled: !BackupController.restoreWanted
+                        Binding on text {
+                            when: BackupController.restoreWanted
+                            value: BackupController.username
+                        }
+
                         Binding {
                             target: AccountController
                             property: 'username'
                             value: usernameField.text
                         }
+                    }
+
+                    Kirigami.ContextualHelpButton {
+                        id: usernameImmutableHelpButton
+                        visible: BackupController.restoreWanted
+
+                        anchors.left: usernameField.right
+                        anchors.verticalCenter: usernameField.verticalCenter
+
+                        toolTipText: xi18nc("@info", "Since you chose to restore from a backup, the username will be set to the one in the backup.")
                     }
 
                     Kirigami.InlineMessage {

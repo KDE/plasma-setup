@@ -8,15 +8,16 @@ import QtQml.Models
 
 import org.kde.coreaddons
 import org.kde.kirigami as Kirigami
+import org.kde.plasmasetup
 import org.kde.plasmasetup.components as PlasmaSetupComponents
-import org.kde.plasmasetup.restorebackuputil as RestoreBackupUtil
+import org.kde.plasmasetup.selectbackuputil as SelectBackupUtil
 
 PlasmaSetupComponents.SetupModule {
     id: root
 
     property var selectedDrive: null
 
-    RestoreBackupUtil.ExternalDriveBackupsModel {
+    SelectBackupUtil.ExternalDriveBackupsModel {
         id: backupsModel
     }
 
@@ -91,7 +92,7 @@ PlasmaSetupComponents.SetupModule {
                             ListView.onRemove: {
                                 if (selectedDrive !== null && selectedDrive.row === index) {
                                     selectedDrive = null;
-                                    currentIndex = -1;
+                                    ListView.view.currentIndex = -1;
                                 }
                             }
                             onClicked: {
@@ -128,6 +129,23 @@ PlasmaSetupComponents.SetupModule {
                             onClicked: {
                                 ListView.view.currentIndex = index;
                             }
+                            ListView.onRemove: {
+                                if (ListView.view.currentIndex === index) {
+                                    BackupController.restoreWanted = false;
+                                    ListView.view.currentIndex = -1;
+                                }
+                            }
+                        }
+
+                        onCurrentIndexChanged: {
+                            if (backupsListView.currentIndex === -1) {
+                                BackupController.restoreWanted = false;
+                                BackupController.username = "";
+                                BackupController.sourceUrl = "";
+                            }
+                            const backup = backupsListView.currentItem;
+                            BackupController.username = backup.username;
+                            BackupController.sourceUrl = backup.sourceUrl;
                         }
                     }
                 }
@@ -140,13 +158,16 @@ PlasmaSetupComponents.SetupModule {
                     if (backupsListView.currentIndex === -1) {
                         return "";
                     }
-                    const backup = backupsListView.currentItem
-                    i18n("Restore from backup of user ‘%1’ taken on %2 (located at %3)?",
+                    const backup = backupsListView.currentItem;
+                    return i18n("Restore from backup of user ‘%1’ taken on %2 (located at %3)?",
                          backup.username,
                          Format.formatRelativeDateTime(backup.date, Locale.LongFormat),
-                         backup.relativeFsPath)
+                         backup.relativeFsPath);
                 }
-                checked: true
+                checked: false
+                onCheckedChanged: {
+                    BackupController.restoreWanted = checked;
+                }
             }
         }
     }

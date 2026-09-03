@@ -8,7 +8,7 @@
             }
         ],
         "Description": "Offers to restore from a backup",
-        "Id": "org.kde.plasmasetup.restorebackup",
+        "Id": "org.kde.plasmasetup.selectbackup",
         "License": "LGPL-2.0-or-later",
         "Name": "Restore from Backup"
     },

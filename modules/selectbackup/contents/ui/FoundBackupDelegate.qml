@@ -14,6 +14,7 @@ ItemDelegate {
     required property string username
     required property var date
     required property string relativeFsPath
+    required property var sourceUrl
 
     implicitWidth: ListView.view.width
     highlighted: ListView.isCurrentItem
