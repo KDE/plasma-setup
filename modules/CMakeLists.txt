@@ -29,8 +29,8 @@ kpackage_install_package(time org.kde.plasmasetup.time packages plasma)
 add_subdirectory(wifi)
 kpackage_install_package(wifi org.kde.plasmasetup.wifi packages plasma)
 
-add_subdirectory(restorebackup)
-kpackage_install_package(restorebackup org.kde.plasmasetup.restorebackup packages plasma)
+add_subdirectory(selectbackup)
+kpackage_install_package(selectbackup org.kde.plasmasetup.selectbackup packages plasma)
 
 # ---------------------------- Helper Utilities ---------------------------- #
 
@@ -40,4 +40,4 @@ add_subdirectory(hostnameutil)
 add_subdirectory(languageutil)
 add_subdirectory(prepareutil)
 add_subdirectory(timeutil)
-add_subdirectory(restorebackuputil)
+add_subdirectory(selectbackuputil)

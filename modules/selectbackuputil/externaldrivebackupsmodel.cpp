@@ -302,10 +302,17 @@ QVariant ExternalDriveBackupsModel::data(const QModelIndex &index, int role) con
         return backup.date;
     case Roles::BackupFSPathRole:
         return backup.fsPath;
-    case Roles::BackupRelativeFSPathRole:
+    case Roles::BackupRelativeFSPathRole: {
         Solid::Device device(driveUdi);
         const auto *access = device.as<Solid::StorageAccess>();
         return QDir(access->filePath()).relativeFilePath(backup.fsPath);
+    }
+    case Roles::BackupSourceUrlRole: {
+        QUrl bupUrl;
+        bupUrl.setScheme("bup"_L1);
+        bupUrl.setPath(QDir::cleanPath(backup.fsPath + "/%1/%2/home/%3"_L1.arg(backup.bupName, backup.datestamp, backup.username)));
+        return bupUrl;
+    }
     }
 
     return {};
@@ -324,6 +331,7 @@ QHash<int, QByteArray> ExternalDriveBackupsModel::roleNames() const
         {Roles::BackupDateRole, "date"_ba},
         {Roles::BackupFSPathRole, "fsPath"_ba},
         {Roles::BackupRelativeFSPathRole, "relativeFsPath"_ba},
+        {Roles::BackupSourceUrlRole, "sourceUrl"_ba},
     };
 }
 

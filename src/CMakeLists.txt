@@ -27,6 +27,8 @@ add_executable(plasma-setup
     initialstartutil.h
     keyboardutil.cpp
     keyboardutil.h
+    backupcontroller.cpp
+    backupcontroller.h
     ${plasmasetup_DBUS_SRCS}
     ${logging_SRCS}
 )

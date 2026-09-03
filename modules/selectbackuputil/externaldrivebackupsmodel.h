@@ -38,6 +38,7 @@ public:
         BackupDateRole,
         BackupFSPathRole,
         BackupRelativeFSPathRole,
+        BackupSourceUrlRole,
     };
     Q_ENUM(Roles)
 
