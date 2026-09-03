@@ -13,5 +13,5 @@
         "Name": "Restore from Backup"
     },
     "X-KDE-ParentApp": "org.kde.plasmasetup",
-    "X-KDE-Weight": 0
+    "X-KDE-Weight": 11
 }
