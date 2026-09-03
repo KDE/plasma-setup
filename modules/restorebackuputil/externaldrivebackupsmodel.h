@@ -32,6 +32,7 @@ public:
         DriveIsMountedRole,
         DriveMountPathRole,
         DriveUDIRole,
+        DriveIsScanningRole,
 
         BackupUsernameRole,
         BackupDateRole,
@@ -58,7 +59,7 @@ private:
     void removeDrive(const QString &udi);
     QList<QString> drives;
     QHash<QString, QList<HomeBackup>> driveBackups;
-    QHash<QString, QFutureWatcher<QString> *> driveSearchWatchers;
+    QHash<QString, QPointer<QFutureWatcher<QString>>> driveSearchWatchers;
     void exploreFs(const QString &path);
 
     /* a bup repo looks like:

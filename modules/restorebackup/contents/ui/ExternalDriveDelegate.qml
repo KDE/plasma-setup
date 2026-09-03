@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
+
 import org.kde.kirigami as Kirigami
 
 ItemDelegate {
@@ -11,6 +12,10 @@ ItemDelegate {
     required property int index
     required property string description
     required property string mountPath
+    required property bool isScanning
+
+    implicitWidth: ListView.view.width
+    highlighted: ListView.isCurrentItem
 
     contentItem: RowLayout {
         spacing: 0

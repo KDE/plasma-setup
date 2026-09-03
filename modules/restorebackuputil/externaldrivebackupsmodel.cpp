@@ -112,16 +112,12 @@ void ExternalDriveBackupsModel::removeDrive(const QString &udi)
         return;
     }
 
-    // beginRemoveRows(createIndex(idx, 0, quintptr(0)), 0, driveBackups.value(udi, {}).size() - 1);
-    // driveBackups.remove(udi);
-    // endRemoveRows();
-
     beginRemoveRows({}, idx, idx);
     drives.removeAt(idx);
     endRemoveRows();
 
     driveBackups.remove(udi);
-    auto *watcher = driveSearchWatchers.value(udi, nullptr);
+    auto watcher = driveSearchWatchers.value(udi, nullptr);
     if (watcher) {
         watcher->cancel();
         watcher->deleteLater();
@@ -191,7 +187,7 @@ bool ExternalDriveBackupsModel::hasChildren(const QModelIndex &parent) const
 {
     if (parent.isValid() && parent.internalId() == 0 && parent.row() < drives.size()) {
         const QString &udi = drives.at(parent.row());
-        const auto *watcher = driveSearchWatchers.value(udi, nullptr);
+        const auto watcher = driveSearchWatchers.value(udi, nullptr);
         if (watcher && watcher->isFinished() && driveBackups.value(udi, {}).size() == 0) {
             return false;
         }
@@ -241,7 +237,12 @@ void ExternalDriveBackupsModel::driveMounted(const QString &udi, const QString &
         listBupRepo(udi, res);
     });
 
+    const auto driveIdx = createIndex(drives.indexOf(udi), 0);
+    Q_EMIT dataChanged(driveIdx, driveIdx, {Roles::DriveIsScanningRole});
     watcher->setFuture(QtConcurrent::run(&scanDirectory, mountPath));
+    connect(watcher, &QFutureWatcher<QString>::finished, this, [this, driveIdx] {
+        Q_EMIT dataChanged(driveIdx, driveIdx, {Roles::DriveIsScanningRole});
+    });
     driveSearchWatchers.insert(udi, std::move(watcher));
 }
 
@@ -270,6 +271,10 @@ QVariant ExternalDriveBackupsModel::data(const QModelIndex &index, int role) con
             return access->isAccessible();
         case Roles::DriveMountPathRole:
             return access->filePath();
+        case Roles::DriveIsScanningRole: {
+            const auto watcher = driveSearchWatchers.value(udi, nullptr);
+            return watcher && watcher->isRunning();
+        }
         default:
             return {};
         }
@@ -314,6 +319,7 @@ QHash<int, QByteArray> ExternalDriveBackupsModel::roleNames() const
         {Roles::DriveUDIRole, "udi"_ba},
         {Roles::DriveIsMountedRole, "isMounted"_ba},
         {Roles::DriveMountPathRole, "mountPath"_ba},
+        {Roles::DriveIsScanningRole, "isScanning"_ba},
         {Roles::BackupUsernameRole, "username"_ba},
         {Roles::BackupDateRole, "date"_ba},
         {Roles::BackupFSPathRole, "fsPath"_ba},
