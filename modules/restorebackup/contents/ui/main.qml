@@ -6,6 +6,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQml.Models
 
+import org.kde.coreaddons
 import org.kde.kirigami as Kirigami
 import org.kde.plasmasetup.components as PlasmaSetupComponents
 import org.kde.plasmasetup.restorebackuputil as RestoreBackupUtil
@@ -31,85 +32,121 @@ PlasmaSetupComponents.SetupModule {
     contentItem: ColumnLayout {
         ColumnLayout {
             Layout.alignment: Qt.AlignCenter
-            spacing: Kirigami.Units.smallSpacing
+            spacing: Kirigami.Units.gridUnit
 
-            Label {
-                id: titleLabel
-                Layout.leftMargin: Kirigami.Units.gridUnit
-                Layout.rightMargin: Kirigami.Units.gridUnit
-                Layout.bottomMargin: Kirigami.Units.gridUnit
-                Layout.fillWidth: true
-                wrapMode: Text.Wrap
-                horizontalAlignment: Text.AlignHCenter
-                text: i18n("If you have an external drive with backups, you can plug it in to restore from it now.")
-            }
+            RowLayout {
+                id: drivesBackupsLayout
 
-            Item {
                 Layout.fillWidth: true
-                Layout.bottomMargin: Kirigami.Units.gridUnit
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 12
 
-                RowLayout {
-                    id: drivesBackupsLayout
-                    anchors.fill: parent
-                    spacing: Kirigami.Units.smallSpacing
+                spacing: Kirigami.Units.smallSpacing
 
-                    ScrollView {
-                        id: drivesScrollView
+                Item {
+                    visible: drivesListView.count === 0
+                    Layout.alignment: Qt.AlignCenter
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+
+                    Kirigami.PlaceholderMessage {
+                        anchors.centerIn: parent
+                        width: parent.width - (Kirigami.Units.largeSpacing * 4)
+
+                        text: i18n("If you have an external drive with backups, you can plug it in to restore from it now.")
+                    }
+                }
+
+                ScrollView {
+                    id: drivesScrollView
+
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.maximumWidth: selectedDrive === null ? -1 : drivesBackupsLayout.width / 2
+
+                    visible: drivesListView.count !== 0
+
+                    Component.onCompleted: if (background) background.visible = true
+
+                    ListView {
+                        id: drivesListView
+
                         Layout.fillWidth: true
-                        Layout.fillHeight: true
-                        Layout.maximumWidth: selectedDrive === null ? -1 : drivesBackupsLayout.width / 2
 
-                        Component.onCompleted: if (background) background.visible = true
+                        clip: true
+                        currentIndex: -1
 
-                        ListView {
-                            id: drivesListView
-                            Layout.fillWidth: true
-                            clip: true
-
-                            model: backupsModel
-                            delegate: ExternalDriveDelegate {
-                                implicitWidth: drivesListView.width
-                                onClicked: {
-                                    drivesListView.currentIndex = index;
-                                    const modelIndex = backupsModel.index(index, 0);
-                                    console.warn("calling canFetchMore...")
-                                    if (backupsModel.canFetchMore(modelIndex)) {
-                                        console.warn("couldFetchMore!")
-                                        backupsModel.fetchMore(modelIndex);
-                                    } else {
-                                        console.warn("couldntFetchMore...")
-                                    }
-                                    selectedDrive = modelIndex;
+                        model: backupsModel
+                        onCurrentIndexChanged: {
+                            if (currentIndex === -1) {
+                                selectedDrive = null;
+                                return;
+                            }
+                            const modelIndex = backupsModel.index(currentIndex, 0);
+                            if (backupsModel.canFetchMore(modelIndex)) {
+                                backupsModel.fetchMore(modelIndex);
+                            }
+                            selectedDrive = modelIndex;
+                        }
+                        delegate: ExternalDriveDelegate {
+                            ListView.onRemove: {
+                                if (selectedDrive !== null && selectedDrive.row === index) {
+                                    selectedDrive = null;
+                                    currentIndex = -1;
                                 }
                             }
-                        }
-                    }
-
-                    ScrollView {
-                        id: backupsScrollView
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-                        Layout.maximumWidth: drivesBackupsLayout.width / 2
-                        visible: selectedDrive !== null
-
-                        Component.onCompleted: if (background) background.visible = true
-
-                        ListView {
-                            id: backupsListView
-                            clip: true
-
-                            model: driveBackupsModel
-                            activeFocusOnTab: true
-                            delegate: FoundBackupDelegate {
-                                implicitWidth: backupsListView.width
-                                onClicked: {
-                                    backupsListView.currentIndex = index;
-                                }
+                            onClicked: {
+                                ListView.view.currentIndex = index;
                             }
                         }
                     }
                 }
+
+                ScrollView {
+                    id: backupsScrollView
+
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    Layout.maximumWidth: drivesBackupsLayout.width / 2
+
+                    visible: selectedDrive !== null
+
+                    Component.onCompleted: if (background) background.visible = true
+
+                    ListView {
+                        id: backupsListView
+                        clip: true
+                        currentIndex: -1
+
+                        BusyIndicator {
+                            anchors.centerIn: parent
+                            running: backupsListView.count === 0 && drivesListView.currentItem && drivesListView.currentItem.isScanning
+                        }
+
+                        model: driveBackupsModel
+                        activeFocusOnTab: true
+                        delegate: FoundBackupDelegate {
+                            onClicked: {
+                                ListView.view.currentIndex = index;
+                            }
+                        }
+                    }
+                }
+            }
+
+            CheckBox {
+                visible: backupsListView.currentIndex !== -1
+                Layout.fillWidth: true
+                text: {
+                    if (backupsListView.currentIndex === -1) {
+                        return "";
+                    }
+                    const backup = backupsListView.currentItem
+                    i18n("Restore from backup of user ‘%1’ taken on %2 (located at %3)?",
+                         backup.username,
+                         Format.formatRelativeDateTime(backup.date, Locale.LongFormat),
+                         backup.relativeFsPath)
+                }
+                checked: true
             }
         }
     }

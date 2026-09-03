@@ -13,6 +13,10 @@ ItemDelegate {
     required property int index
     required property string username
     required property var date
+    required property string relativeFsPath
+
+    implicitWidth: ListView.view.width
+    highlighted: ListView.isCurrentItem
 
     contentItem: RowLayout {
         spacing: 0
