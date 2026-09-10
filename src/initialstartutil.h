@@ -13,18 +13,21 @@
 #include <sessionmanagement.h>
 
 #include "accountcontroller.h"
+#include "backupcontroller.h"
 
 class InitialStartUtil : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
     QML_SINGLETON
-    Q_PROPERTY(QString distroName READ distroName CONSTANT);
+    Q_PROPERTY(QString distroName READ distroName CONSTANT)
+    Q_PROPERTY(bool backupRestoreRunning READ backupRestoreRunning NOTIFY backupRestoreRunningChanged)
 
 public:
     InitialStartUtil(QObject *parent = nullptr);
 
     QString distroName() const;
+    bool backupRestoreRunning() const;
 
     /**
      * Completes the initial setup process.
@@ -51,6 +54,9 @@ public:
      */
     static bool runningAsPlasmaSetupUser();
 
+Q_SIGNALS:
+    void backupRestoreRunningChanged();
+
 private:
     /**
      * Performs the finishing steps specific to the creation of the new user.
@@ -59,6 +65,11 @@ private:
      * This separation is needed for when Plasma Setup is run in a context where no user creation is needed.
      */
     void doUserCreationSteps();
+
+    /**
+     * Restores the selected backup, if any, to the newly created user, then logs out once finished.
+     */
+    void restoreBackupAndLogOut();
 
     /**
      * Logs out of the plasma-setup user.
@@ -91,6 +102,11 @@ private:
     AccountController *m_accountController;
 
     /**
+     * The backup controller instance.
+     */
+    BackupController *m_backupController;
+
+    /**
      * Provides access to the operating system information.
      */
     KOSRelease m_osrelease;
@@ -107,4 +123,9 @@ private:
      * Provides session management capabilities, notably for logging out of plasma-setup user session.
      */
     SessionManagement m_session;
+
+    /**
+     * State of restoring backup.
+     */
+    bool m_backupRestoreRunning = false;
 };

@@ -3,6 +3,8 @@
 
 #include "backupcontroller.h"
 
+#include <QGuiApplication>
+
 #include "config-plasma-setup.h"
 
 BackupController::BackupController(QObject *parent)
@@ -55,15 +57,59 @@ void BackupController::setRestoreWanted(bool restoreWanted)
     }
 }
 
-QUrl BackupController::sourceUrl() const
+QString BackupController::sourceDir() const
 {
-    return m_sourceUrl;
+    return m_sourceDir;
 }
 
-void BackupController::setSourceUrl(const QUrl &sourceUrl)
+void BackupController::setSourceDir(const QString &sourceDir)
 {
-    if (m_sourceUrl != sourceUrl) {
-        m_sourceUrl = sourceUrl;
-        Q_EMIT sourceUrlChanged();
+    if (m_sourceDir != sourceDir) {
+        m_sourceDir = sourceDir;
+        Q_EMIT sourceDirChanged();
     }
+}
+
+QString BackupController::sourceName() const
+{
+    return m_sourceName;
+}
+
+void BackupController::setSourceName(const QString &sourceName)
+{
+    if (m_sourceName != sourceName) {
+        m_sourceName = sourceName;
+        Q_EMIT sourceNameChanged();
+    }
+}
+
+QString BackupController::sourceRevision() const
+{
+    return m_sourceRevision;
+}
+
+void BackupController::setSourceRevision(const QString &sourceRevision)
+{
+    if (m_sourceRevision != sourceRevision) {
+        m_sourceRevision = sourceRevision;
+        Q_EMIT sourceRevisionChanged();
+    }
+}
+
+KAuth::Action BackupController::restoreAction()
+{
+    QList<QWindow *> topLevelWindows = QGuiApplication::topLevelWindows();
+    QWindow *window = topLevelWindows.isEmpty() ? nullptr : topLevelWindows.first();
+
+    KAuth::Action action(QStringLiteral("org.kde.plasmasetup.restorebackup"));
+    action.setParentWindow(window);
+    action.setHelperId(QStringLiteral("org.kde.plasmasetup"));
+    action.setArguments({
+        {QStringLiteral("username"), m_username},
+        {QStringLiteral("backupDir"), m_sourceDir},
+        {QStringLiteral("backupName"), m_sourceName},
+        {QStringLiteral("backupRevision"), m_sourceRevision},
+    });
+
+    return action;
 }

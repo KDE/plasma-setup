@@ -18,6 +18,24 @@ PlasmaSetupComponents.SetupModule {
     nextEnabled: true
 
     /*!
+     * The message shown if a backup was selected to be restored.
+     */
+    property string backupRestoreRequestedMessage: i18n("Your device is almost ready. After clicking <b>Finish</b>, your backup will be restored, and you will be able to sign in to your account.")
+
+    /*!
+     * The message shown if a backup is actively being restored.
+     */
+    property string backupRestoreInProgressMessage: i18n("Your device is almost ready. Once your backup is restored, you will be able to sign in to your account.")
+
+    /*!
+     * The message shown if a backup has finished being restored.
+     */
+    property string backupRestoreFinishedMessage: i18nc(
+        "%1 is the distro name",
+        "Your device is now ready.<br /><br />Enjoy <b>%1</b>!",
+        InitialStartUtil.distroName
+    )
+    /*!
     * The message shown to users who already have an account on the system.
     */
     property string existingUserFinishedMessage: i18nc(
@@ -45,9 +63,17 @@ PlasmaSetupComponents.SetupModule {
                 id: finishedMessage
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-                text: AccountController.hasExistingUsers
+                text: {
+                    if (BackupController.restoreWanted) {
+                        if (InitialStartUtil.backupRestoreRunning) {
+                            return root.backupRestoreInProgressMessage;
+                        }
+                        return root.backupRestoreRequestedMessage;
+                    }
+                    return AccountController.hasExistingUsers
                         ? root.existingUserFinishedMessage
-                        : root.newUserFinishedMessage
+                        : root.newUserFinishedMessage;
+                }
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
             }

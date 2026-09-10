@@ -13,8 +13,10 @@ ItemDelegate {
     required property int index
     required property string username
     required property var date
+    required property string fsPath
     required property string relativeFsPath
-    required property var sourceUrl
+    required property string name
+    required property string revision
 
     implicitWidth: ListView.view.width
     highlighted: ListView.isCurrentItem

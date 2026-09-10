@@ -14,7 +14,6 @@ target_link_libraries(plasmasetup_selectbackuputil PRIVATE
     Qt::Qml
     Qt::Concurrent
     KF6::Solid
-    KF6::KIOCore
 )
 
 ecm_finalize_qml_module(plasmasetup_selectbackuputil)

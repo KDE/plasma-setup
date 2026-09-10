@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include <KAuth/Action>
+
 #include <QObject>
 #include <QQmlEngine>
 #include <qqmlintegration.h>
@@ -15,7 +17,9 @@ class BackupController : public QObject
 
     Q_PROPERTY(bool restoreWanted READ restoreWanted WRITE setRestoreWanted NOTIFY restoreWantedChanged)
     Q_PROPERTY(QString username READ username WRITE setUsername NOTIFY usernameChanged)
-    Q_PROPERTY(QUrl sourceUrl READ sourceUrl WRITE setSourceUrl NOTIFY sourceUrlChanged)
+    Q_PROPERTY(QString sourceDir READ sourceDir WRITE setSourceDir NOTIFY sourceDirChanged)
+    Q_PROPERTY(QString sourceName READ sourceName WRITE setSourceName NOTIFY sourceNameChanged)
+    Q_PROPERTY(QString sourceRevision READ sourceRevision WRITE setSourceRevision NOTIFY sourceRevisionChanged)
 
 public:
     ~BackupController() override = default;
@@ -40,13 +44,23 @@ public:
     QString username() const;
     void setUsername(const QString &username);
 
-    QUrl sourceUrl() const;
-    void setSourceUrl(const QUrl &sourceUrl);
+    QString sourceDir() const;
+    void setSourceDir(const QString &sourceDir);
+
+    QString sourceName() const;
+    void setSourceName(const QString &sourceName);
+
+    QString sourceRevision() const;
+    void setSourceRevision(const QString &sourceRevision);
+
+    KAuth::Action restoreAction();
 
 Q_SIGNALS:
     void restoreWantedChanged();
     void usernameChanged();
-    void sourceUrlChanged();
+    void sourceDirChanged();
+    void sourceNameChanged();
+    void sourceRevisionChanged();
 
 private:
     /**
@@ -63,5 +77,8 @@ private:
 
     bool m_restoreWanted = false;
     QString m_username;
+    QString m_sourceDir;
+    QString m_sourceName;
+    QString m_sourceRevision;
     QUrl m_sourceUrl;
 };
