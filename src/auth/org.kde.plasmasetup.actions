@@ -584,3 +584,8 @@ Description[uk]=Встановити налаштування тимчасово
 Description[zh_CN]=设置新建用户的显示管理器临时自动登录配置
 Description[zh_TW]=為新建立的使用者設定登入畫面的暫時性自動登入配置
 Policy=no
+
+[org.kde.plasmasetup.restorebackup]
+Name=Restore Backup
+Description=Restore backup for newly creater user
+Policy=no

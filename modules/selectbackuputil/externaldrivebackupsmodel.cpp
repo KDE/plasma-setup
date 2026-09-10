@@ -4,10 +4,9 @@
 #include "externaldrivebackupsmodel.h"
 
 #include <QDirIterator>
+#include <QProcess>
 #include <QString>
 #include <QtConcurrentRun>
-
-#include <KIO/ListJob>
 
 #include <Solid/Device>
 #include <Solid/DeviceInterface>
@@ -307,12 +306,10 @@ QVariant ExternalDriveBackupsModel::data(const QModelIndex &index, int role) con
         const auto *access = device.as<Solid::StorageAccess>();
         return QDir(access->filePath()).relativeFilePath(backup.fsPath);
     }
-    case Roles::BackupSourceUrlRole: {
-        QUrl bupUrl;
-        bupUrl.setScheme("bup"_L1);
-        bupUrl.setPath(QDir::cleanPath(backup.fsPath + "/%1/%2/home/%3"_L1.arg(backup.bupName, backup.datestamp, backup.username)));
-        return bupUrl;
-    }
+    case Roles::BackupRevisionRole:
+        return backup.datestamp;
+    case Roles::BackupNameRole:
+        return backup.bupName;
     }
 
     return {};
@@ -331,64 +328,87 @@ QHash<int, QByteArray> ExternalDriveBackupsModel::roleNames() const
         {Roles::BackupDateRole, "date"_ba},
         {Roles::BackupFSPathRole, "fsPath"_ba},
         {Roles::BackupRelativeFSPathRole, "relativeFsPath"_ba},
-        {Roles::BackupSourceUrlRole, "sourceUrl"_ba},
+        {Roles::BackupNameRole, "name"_ba},
+        {Roles::BackupRevisionRole, "revision"_ba},
     };
 }
 
 void ExternalDriveBackupsModel::listBupRepo(const QString &driveUdi, const QString &repoPath)
 {
-    QUrl bupUrl;
-    bupUrl.setScheme("bup"_L1);
-    bupUrl.setPath(repoPath);
-    KIO::ListJob *job = KIO::listDir(bupUrl, KIO::HideProgressInfo, KIO::ListJob::ListFlag::ExcludeDotAndDotDot);
-    QObject::connect(job, &KIO::ListJob::entries, this, [this, repoPath, driveUdi](KIO::Job *, const KIO::UDSEntryList &entries) {
-        for (const KIO::UDSEntry &entry : entries) {
-            listBupRepoBackups(driveUdi, repoPath, entry.stringValue(KIO::UDSEntry::UDS_NAME));
-        }
-    });
+    QProcess *bupLsTopLevelProcess = new QProcess(this);
+    QObject::connect(bupLsTopLevelProcess,
+                     &QProcess::finished,
+                     this,
+                     [this, bupLsTopLevelProcess, driveUdi, repoPath](int exitCode, QProcess::ExitStatus exitStatus) {
+                         if (exitStatus != QProcess::NormalExit || exitCode != 0) {
+                             qDebug() << "bupLsTopLevelProcess fail" << exitCode;
+                             qDebug() << bupLsTopLevelProcess->readAllStandardError();
+                             qDebug() << bupLsTopLevelProcess->readAllStandardOutput();
+                             return;
+                         }
+                         const QStringList bupNames = QString::fromUtf8(bupLsTopLevelProcess->readAllStandardOutput()).split('\n'_L1, Qt::SkipEmptyParts);
+                         for (const auto &name : bupNames) {
+                             listBupRepoBackups(driveUdi, repoPath, name);
+                         }
+                         bupLsTopLevelProcess->deleteLater();
+                     });
+    bupLsTopLevelProcess->start("bup"_L1, {"--bup-dir"_L1, repoPath, "ls"_L1});
 }
 
 void ExternalDriveBackupsModel::listBupRepoBackups(const QString &driveUdi, const QString &repoPath, const QString &name)
 {
-    QUrl bupUrl;
-    bupUrl.setScheme("bup"_L1);
-    bupUrl.setPath(QDir::cleanPath(repoPath + "/"_L1 + name));
-    KIO::ListJob *job = KIO::listDir(bupUrl, KIO::HideProgressInfo, KIO::ListJob::ListFlag::ExcludeDotAndDotDot);
-    QObject::connect(job, &KIO::ListJob::entries, this, [this, repoPath, name, driveUdi](KIO::Job *, const KIO::UDSEntryList &entries) {
-        for (const KIO::UDSEntry &entry : entries) {
-            const QString datestamp = entry.stringValue(KIO::UDSEntry::UDS_NAME);
-            const QDateTime date = QDateTime::fromSecsSinceEpoch(entry.numberValue(KIO::UDSEntry::UDS_MODIFICATION_TIME));
-            listBupRepoDate(driveUdi, repoPath, name, datestamp, date);
-        }
-    });
+    QProcess *bupLsRevisionsProcess = new QProcess(this);
+    QObject::connect(bupLsRevisionsProcess,
+                     &QProcess::finished,
+                     this,
+                     [this, bupLsRevisionsProcess, driveUdi, repoPath, name](int exitCode, QProcess::ExitStatus exitStatus) {
+                         if (exitStatus != QProcess::NormalExit || exitCode != 0) {
+                             qDebug() << "bupLsRevisionsProcess fail";
+                             return;
+                         }
+                         const QStringList revisions = QString::fromUtf8(bupLsRevisionsProcess->readAllStandardOutput()).split('\n'_L1, Qt::SkipEmptyParts);
+                         for (const auto &revision : revisions) {
+                             if (revision == "latest"_L1) {
+                                 continue;
+                             }
+                             listBupRepoDate(driveUdi, repoPath, name, revision);
+                         }
+                         bupLsRevisionsProcess->deleteLater();
+                     });
+    bupLsRevisionsProcess->start("bup"_L1, {"--bup-dir"_L1, repoPath, "ls"_L1, name});
 }
 
-void ExternalDriveBackupsModel::listBupRepoDate(const QString &driveUdi, const QString &repoPath, const QString &name, const QString &datestamp, QDateTime date)
+void ExternalDriveBackupsModel::listBupRepoDate(const QString &driveUdi, const QString &repoPath, const QString &name, const QString &datestamp)
 {
-    QUrl bupUrl;
-    bupUrl.setScheme("bup"_L1);
-    bupUrl.setPath(QDir::cleanPath(repoPath + "/%1/%2/home"_L1.arg(name, datestamp)));
-    KIO::ListJob *job = KIO::listDir(bupUrl, KIO::HideProgressInfo, KIO::ListJob::ListFlag::ExcludeDotAndDotDot);
-    QObject::connect(job, &KIO::ListJob::entries, this, [this, repoPath, name, datestamp, date, driveUdi](KIO::Job *, const KIO::UDSEntryList &entries) {
-        for (const KIO::UDSEntry &entry : entries) {
-            const QString username = entry.stringValue(KIO::UDSEntry::UDS_NAME);
-            addHomeBackup(driveUdi, repoPath, name, datestamp, date, username);
-        }
-    });
+    QProcess *bupLsUserHomesProcess = new QProcess(this);
+    QObject::connect(bupLsUserHomesProcess,
+                     &QProcess::finished,
+                     this,
+                     [this, bupLsUserHomesProcess, driveUdi, repoPath, name, datestamp](int exitCode, QProcess::ExitStatus exitStatus) {
+                         if (exitStatus != QProcess::NormalExit || exitCode != 0) {
+                             qDebug() << "bupLsUserHomesProcess fail";
+                             return;
+                         }
+                         const QStringList users = QString::fromUtf8(bupLsUserHomesProcess->readAllStandardOutput()).split('\n'_L1, Qt::SkipEmptyParts);
+                         for (const auto &user : users) {
+                             addHomeBackup(driveUdi, repoPath, name, datestamp, user);
+                         }
+                         bupLsUserHomesProcess->deleteLater();
+                     });
+    bupLsUserHomesProcess->start("bup"_L1, {"--bup-dir"_L1, repoPath, "ls"_L1, "%1/%2/home"_L1.arg(name, datestamp)});
 }
 
 void ExternalDriveBackupsModel::addHomeBackup(const QString &driveUdi,
                                               const QString &repoPath,
                                               const QString &name,
                                               const QString &datestamp,
-                                              QDateTime date,
                                               const QString &username)
 {
     struct HomeBackup backupInfo;
     backupInfo.fsPath = repoPath;
     backupInfo.bupName = name;
+    backupInfo.date = QDateTime::fromString(datestamp, "yyyy-MM-dd-hhmmss"_L1, QTimeZone::LocalTime);
     backupInfo.datestamp = datestamp;
-    backupInfo.date = date;
     backupInfo.username = username;
 
     int parentRow = drives.indexOf(driveUdi);

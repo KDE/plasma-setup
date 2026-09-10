@@ -16,6 +16,7 @@
 InitialStartUtil::InitialStartUtil(QObject *parent)
     : QObject{parent}
     , m_accountController(AccountController::instance())
+    , m_backupController(BackupController::instance())
 {
     QList<QWindow *> topLevelWindows = QGuiApplication::topLevelWindows();
     m_window = topLevelWindows.isEmpty() ? nullptr : topLevelWindows.first();
@@ -27,11 +28,20 @@ QString InitialStartUtil::distroName() const
     return m_osrelease.name();
 }
 
+bool InitialStartUtil::backupRestoreRunning() const
+{
+    return m_backupRestoreRunning;
+}
+
 void InitialStartUtil::finish()
 {
     doUserCreationSteps();
     createCompletionFlag();
-    logOut();
+    if (m_backupController->restoreWanted()) {
+        restoreBackupAndLogOut();
+    } else {
+        logOut();
+    }
 }
 
 void InitialStartUtil::doUserCreationSteps()
@@ -59,6 +69,29 @@ void InitialStartUtil::doUserCreationSteps()
     DisplayUtil displayUtil;
     displayUtil.setGlobalThemeForNewUser(m_window, m_accountController->username());
     displayUtil.setScalingForNewUser(m_window, m_accountController->username());
+}
+
+void InitialStartUtil::restoreBackupAndLogOut()
+{
+    if (!m_backupController->restoreWanted()) {
+        return;
+    }
+
+    KAuth::Action restoreAction = m_backupController->restoreAction();
+    KAuth::ExecuteJob *job = restoreAction.execute();
+    QObject::connect(job, &KJob::result, this, [this](KJob *job) {
+        if (job->error()) {
+            const QString errorMessage =
+                job->errorString().isEmpty() ? QStringLiteral("Authorization or helper failure (code %1)").arg(job->error()) : job->errorString();
+            qCWarning(PlasmaSetup) << "Failed to create user:" << errorMessage;
+        }
+        m_backupRestoreRunning = false;
+        Q_EMIT backupRestoreRunningChanged();
+        logOut();
+    });
+    m_backupRestoreRunning = true;
+    Q_EMIT backupRestoreRunningChanged();
+    job->start();
 }
 
 void InitialStartUtil::disablePlasmaSetupAutologin()

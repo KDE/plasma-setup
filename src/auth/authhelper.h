@@ -110,6 +110,18 @@ public Q_SLOTS:
      */
     ActionReply setnewusertempautologin(const QVariantMap &args);
 
+    /**
+     * Restores the selected backup for the newly created user.
+     *
+     * @param args The arguments passed to the action, which should include:
+     * - String: "username": The username of the newly creater user.
+     * - String: "backupDir": Path to backup directory.
+     * - String: "backupName": Name of backup inside directory (corresponds to bup "branch").
+     * - String: "backupRevision": Revision to restore.
+     * @return An ActionReply indicating success or failure.
+     */
+    ActionReply restorebackup(const QVariantMap &args);
+
 private:
     /**
      * Adds a user to the provided supplementary groups using usermod.

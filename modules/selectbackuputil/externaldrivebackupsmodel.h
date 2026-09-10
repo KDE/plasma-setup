@@ -38,7 +38,8 @@ public:
         BackupDateRole,
         BackupFSPathRole,
         BackupRelativeFSPathRole,
-        BackupSourceUrlRole,
+        BackupNameRole,
+        BackupRevisionRole,
     };
     Q_ENUM(Roles)
 
@@ -72,9 +73,8 @@ private:
      */
     void listBupRepo(const QString &driveUdi, const QString &repoPath);
     void listBupRepoBackups(const QString &driveUdi, const QString &repoPath, const QString &name);
-    void listBupRepoDate(const QString &driveUdi, const QString &repoPath, const QString &name, const QString &datestamp, QDateTime date);
-    void
-    addHomeBackup(const QString &driveUdi, const QString &repoPath, const QString &name, const QString &datestamp, QDateTime date, const QString &username);
+    void listBupRepoDate(const QString &driveUdi, const QString &repoPath, const QString &name, const QString &datestamp);
+    void addHomeBackup(const QString &driveUdi, const QString &repoPath, const QString &name, const QString &datestamp, const QString &username);
 
     void driveMounted(const QString &udi, const QString &mountPath);
 };

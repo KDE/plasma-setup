@@ -141,11 +141,15 @@ PlasmaSetupComponents.SetupModule {
                             if (backupsListView.currentIndex === -1) {
                                 BackupController.restoreWanted = false;
                                 BackupController.username = "";
-                                BackupController.sourceUrl = "";
+                                BackupController.sourceDir = "";
+                                BackupController.sourceName = "";
+                                BackupController.sourceRevision = "";
                             }
                             const backup = backupsListView.currentItem;
                             BackupController.username = backup.username;
-                            BackupController.sourceUrl = backup.sourceUrl;
+                            BackupController.sourceDir = backup.fsPath;
+                            BackupController.sourceName = backup.name;
+                            BackupController.sourceRevision = backup.revision;
                         }
                     }
                 }

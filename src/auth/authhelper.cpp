@@ -15,6 +15,7 @@
 #include <QProcess>
 #include <QRegularExpression>
 #include <QStandardPaths>
+#include <QUrl>
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusPendingReply>
 #include <QtDBus/QDBusReply>
@@ -564,6 +565,51 @@ ActionReply PlasmaSetupAuthHelper::setnewusertempautologin(const QVariantMap &ar
     stream << "Session=plasma\n";
     stream << "Relogin=true\n"; // Set Relogin to true for temporary autologin
     file.close();
+
+    return ActionReply::SuccessReply();
+}
+
+ActionReply PlasmaSetupAuthHelper::restorebackup(const QVariantMap &args)
+{
+    const QVariant usernameVariant = args.value(QStringLiteral("username"));
+    const QVariant backupDirVariant = args.value(QStringLiteral("backupDir"));
+    const QVariant backupNameVariant = args.value(QStringLiteral("backupName"));
+    const QVariant backupRevisionVariant = args.value(QStringLiteral("backupRevision"));
+
+    if (!usernameVariant.canConvert<QString>() || !backupDirVariant.canConvert<QString>() || !backupNameVariant.canConvert<QString>()
+        || !backupRevisionVariant.canConvert<QString>()) {
+        return makeErrorReply(QStringLiteral("Username or source URL argument is missing or invalid."));
+    }
+
+    const QString username = usernameVariant.toString().trimmed();
+    const QString backupDir = backupDirVariant.toString().trimmed();
+    const QString backupName = backupNameVariant.toString().trimmed();
+    const QString backupRevision = backupRevisionVariant.toString().trimmed();
+
+    UserInfo userInfo;
+    try {
+        userInfo = getUserInfo(username);
+    } catch (const std::runtime_error &e) {
+        return makeErrorReply(QStringLiteral("Failed to get user info: ") + QString::fromStdString(e.what()));
+    }
+
+    QProcess restoreProcess;
+    restoreProcess.start(findExecutable(QStringLiteral("bup")),
+                         {
+                             QStringLiteral("--bup-dir"),
+                             backupDir,
+                             QStringLiteral("restore"),
+                             QStringLiteral("%1/%2/home/%3").arg(backupName, backupRevision, username),
+                         });
+
+    if (!restoreProcess.waitForStarted()) {
+        return makeErrorReply(QStringLiteral("Failed to start bup: ") + restoreProcess.errorString());
+    }
+
+    restoreProcess.waitForFinished(-1);
+    if (restoreProcess.exitStatus() == QProcess::CrashExit || restoreProcess.exitCode() != 0) {
+        return makeErrorReply(QStringLiteral("Bup restore failed: ") + QString::fromUtf8(restoreProcess.readAllStandardError()));
+    }
 
     return ActionReply::SuccessReply();
 }
