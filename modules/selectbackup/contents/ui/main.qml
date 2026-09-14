@@ -30,16 +30,39 @@ PlasmaSetupComponents.SetupModule {
     available: true
     nextEnabled: true
 
+    Binding {
+        target: BackupController
+        property: "restoreWanted"
+        value: !dontRestoreCheck.checked && backupsListView.currentIndex !== -1
+    }
+
     contentItem: ColumnLayout {
+        anchors.fill: parent
+
         ColumnLayout {
             Layout.alignment: Qt.AlignCenter
-            spacing: Kirigami.Units.gridUnit
+
+            RadioButton {
+                id: dontRestoreCheck
+                checked: true
+                text: i18n("Do not restore from a backup")
+            }
+
+            RadioButton {
+                id: doRestoreCheck
+                text: i18n("Restore from this backup:")
+            }
+
 
             RowLayout {
                 id: drivesBackupsLayout
+                enabled: doRestoreCheck.checked
 
+                Layout.alignment: Qt.AlignCenter
                 Layout.fillWidth: true
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 12
+                Layout.maximumHeight: Kirigami.Units.gridUnit * 20
+                Layout.maximumWidth: Kirigami.Units.gridUnit * 35
 
                 spacing: Kirigami.Units.smallSpacing
 
@@ -131,7 +154,6 @@ PlasmaSetupComponents.SetupModule {
                             }
                             ListView.onRemove: {
                                 if (ListView.view.currentIndex === index) {
-                                    BackupController.restoreWanted = false;
                                     ListView.view.currentIndex = -1;
                                 }
                             }
@@ -139,7 +161,6 @@ PlasmaSetupComponents.SetupModule {
 
                         onCurrentIndexChanged: {
                             if (backupsListView.currentIndex === -1) {
-                                BackupController.restoreWanted = false;
                                 BackupController.username = "";
                                 BackupController.sourceDir = "";
                                 BackupController.sourceName = "";
@@ -155,22 +176,19 @@ PlasmaSetupComponents.SetupModule {
                 }
             }
 
-            CheckBox {
-                visible: backupsListView.currentIndex !== -1
-                Layout.fillWidth: true
+            Label {
+                Layout.maximumWidth: Kirigami.Units.gridUnit * 35
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 3  // prevent layout shift
+                wrapMode: Text.Wrap
                 text: {
-                    if (backupsListView.currentIndex === -1) {
-                        return "";
-                    }
                     const backup = backupsListView.currentItem;
-                    return i18n("Restore from backup of user ‘%1’ taken on %2 (located at %3)?",
-                         backup.username,
-                         Format.formatRelativeDateTime(backup.date, Locale.LongFormat),
-                         backup.relativeFsPath);
-                }
-                checked: false
-                onCheckedChanged: {
-                    BackupController.restoreWanted = checked;
+                    if (!backup || !BackupController.restoreWanted) {
+                        return "\n\n";
+                    }
+                    return i18n("User <b>‘%1’</b> will be restored from the backup taken at %2 (located at %3).",
+                           backup.username,
+                           Format.formatRelativeDateTime(backup.date, Locale.LongFormat),
+                           backup.relativeFsPath);
                 }
             }
         }
