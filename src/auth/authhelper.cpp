@@ -593,13 +593,19 @@ ActionReply PlasmaSetupAuthHelper::restorebackup(const QVariantMap &args)
         return makeErrorReply(QStringLiteral("Failed to get user info: ") + QString::fromStdString(e.what()));
     }
 
+    // bup refuses to write into existing directories, so we write into a temporary folder
+    // then move that with rsync to the actual home directory
+
     QProcess restoreProcess;
     restoreProcess.start(findExecutable(QStringLiteral("bup")),
                          {
                              QStringLiteral("--bup-dir"),
                              backupDir,
                              QStringLiteral("restore"),
-                             QStringLiteral("%1/%2/home/%3").arg(backupName, backupRevision, username),
+                             // the trailing slash is significant -- see https://bup.github.io/man/bup-restore.1.html
+                             QStringLiteral("%1/%2/home/%3/").arg(backupName, backupRevision, username),
+                             QStringLiteral("--outdir"),
+                             QStringLiteral("/home/%1/.plasma-setup-bup-restore-tmp").arg(username),
                          });
 
     if (!restoreProcess.waitForStarted()) {
@@ -610,6 +616,32 @@ ActionReply PlasmaSetupAuthHelper::restorebackup(const QVariantMap &args)
     if (restoreProcess.exitStatus() == QProcess::CrashExit || restoreProcess.exitCode() != 0) {
         return makeErrorReply(QStringLiteral("Bup restore failed: ") + QString::fromUtf8(restoreProcess.readAllStandardError()));
     }
+
+    QProcess moveProcess;
+    moveProcess.start(findExecutable(QStringLiteral("rsync")),
+                      {
+                          QStringLiteral("--archive"),
+                          QStringLiteral("--remove-source-files"),
+                          QStringLiteral("/home/%1/.plasma-setup-bup-restore-tmp/").arg(username),
+                          QStringLiteral("/home/%1/").arg(username),
+                      });
+
+    if (!moveProcess.waitForStarted()) {
+        return makeErrorReply(QStringLiteral("Failed to start rsync: ") + moveProcess.errorString());
+    }
+
+    moveProcess.waitForFinished(-1);
+    if (moveProcess.exitStatus() == QProcess::CrashExit || moveProcess.exitCode() != 0) {
+        return makeErrorReply(QStringLiteral("Rsync move failed: ") + QString::fromUtf8(moveProcess.readAllStandardError()));
+    }
+
+    // at this point, it will only have empty subdirectories all the way down
+    // but the subdirectories are there, so we can't just use rmdir...
+    QDir(QStringLiteral("/home/%1/.plasma-setup-bup-restore-tmp").arg(username)).removeRecursively();
+
+    // home permissions can become too permissive after this process, so reset them
+    QFile::setPermissions(QStringLiteral("/home/%1").arg(username), QFile::Permission::ReadOwner | QFile::Permission::WriteOwner | QFile::Permission::ExeOwner);
+    ::chown(QStringLiteral("/home/%1").arg(username).toUtf8().constData(), userInfo.uid, userInfo.gid);
 
     return ActionReply::SuccessReply();
 }
