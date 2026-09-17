@@ -79,11 +79,7 @@ Kirigami.Page {
 
     function finishFinalPage(): void {
         // Finalize the initial setup process and exit the wizard.
-        InitialStartUtil.finish(!BackupController.restoreWanted);
-        // TODO actually, get rid of the logout bool param, and just have the logout call inside
-        // InitialStartUtil::finish wait for backup restoration to finish
-        // and have the BackupController emit progress signals
-        // which we can show progress for in the meantime
+        InitialStartUtil.finish();
     }
 
     function activatePage(item): void {
