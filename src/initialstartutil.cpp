@@ -83,7 +83,7 @@ void InitialStartUtil::restoreBackupAndLogOut()
         if (job->error()) {
             const QString errorMessage =
                 job->errorString().isEmpty() ? QStringLiteral("Authorization or helper failure (code %1)").arg(job->error()) : job->errorString();
-            qCWarning(PlasmaSetup) << "Failed to create user:" << errorMessage;
+            qCWarning(PlasmaSetup) << "Failed to restore backup:" << errorMessage;
         }
         m_backupRestoreRunning = false;
         Q_EMIT backupRestoreRunningChanged();
