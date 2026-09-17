@@ -31,7 +31,10 @@ polkit.addRule(function (action, subject) {
         "org.kde.plasmasetup.setnewuserglobaltheme", // Set global theme for new user
         "org.kde.plasmasetup.setnewuserdisplayscaling", // Set display scaling for new user
         "org.kde.plasmasetup.setnewusertempautologin", // Set temporary autologin for new user
+        "org.kde.plasmasetup.restorebackup", // Restore backup
         "org.freedesktop.timedate1.set-timezone", // Set system timezone
+        "org.freedesktop.udisks2.filesystem-mount", // Mount external drives
+        "org.freedesktop.udisks2.filesystem-mount-other-seat", // Mount external drives
     ];
 
     // Check if the current action is in our allowed list.
