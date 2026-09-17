@@ -20,12 +20,16 @@ PlasmaSetupComponents.SetupModule {
     /*!
      * The message shown if a backup was selected to be restored.
      */
-    property string backupRestoreRequestedMessage: i18n("Your device is almost ready. After clicking <b>Finish</b>, your backup will be restored, and you will be able to sign in to your account.")
+    property string backupRestoreRequestedMessage: i18n("Your device is almost ready.<br /><br />After clicking <b>Finish</b>, your backup will be restored, and you will be able to sign in to your account.")
 
     /*!
      * The message shown if a backup is actively being restored.
      */
-    property string backupRestoreInProgressMessage: i18n("Your device is almost ready. Once your backup is restored, you will be able to sign in to your account.")
+    property string backupRestoreInProgressMessage: i18nc(
+        "%1 is the distro name",
+        "Your device is almost ready.<br /><br />Your backup is being restored. Once done, you will be able to sign in to your account.<br /><br />Enjoy <b>%1</b>!",
+        InitialStartUtil.distroName
+    )
 
     /*!
      * The message shown if a backup has finished being restored.
@@ -76,6 +80,13 @@ PlasmaSetupComponents.SetupModule {
                 }
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
+            }
+
+            ProgressBar {
+                Layout.fillWidth: true
+                from: 0
+                to: 100
+                indeterminate: true
             }
 
             Image {
