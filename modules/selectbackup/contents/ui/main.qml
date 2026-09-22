@@ -183,7 +183,7 @@ PlasmaSetupComponents.SetupModule {
                 text: {
                     const backup = backupsListView.currentItem;
                     if (!backup || !BackupController.restoreWanted) {
-                        return "\n\n";
+                        return "";
                     }
                     return i18n("User <b>‘%1’</b> will be restored from the backup taken at %2 (located at %3).",
                            backup.username,
