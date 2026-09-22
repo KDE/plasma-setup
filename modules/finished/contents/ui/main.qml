@@ -20,40 +20,43 @@ PlasmaSetupComponents.SetupModule {
     /*!
      * The message shown if a backup was selected to be restored.
      */
-    property string backupRestoreRequestedMessage: i18n("Your device is almost ready.<br /><br />After clicking <b>Finish</b>, your backup will be restored, and you will be able to sign in to your account.")
+    property string backupRestoreRequestedMessage: xi18nc(
+        "@info finishing setup",
+        "Your device is almost ready.<nl/><nl/>After clicking <interface>Finish</interface>, your backup will be restored, and you will be able to sign in to your account."
+    )
 
     /*!
      * The message shown if a backup is actively being restored.
      */
-    property string backupRestoreInProgressMessage: i18nc(
-        "%1 is the distro name",
-        "Your device is almost ready.<br /><br />Your backup is being restored. Once done, you will be able to sign in to your account.<br /><br />Enjoy <b>%1</b>!",
+    property string backupRestoreInProgressMessage: xi18nc(
+        "@info finishing setup; %1 is the distro name",
+        "Your device is almost ready.<nl/><nl/>Your backup is being restored. Once done, you will be able to sign in to your account.<nl/><nl/>Enjoy <application>%1</application>!",
         InitialStartUtil.distroName
     )
 
     /*!
      * The message shown if a backup has finished being restored.
      */
-    property string backupRestoreFinishedMessage: i18nc(
-        "%1 is the distro name",
-        "Your device is now ready.<br /><br />Enjoy <b>%1</b>!",
+    property string backupRestoreFinishedMessage: xi18nc(
+        "@info finishing setup; %1 is the distro name",
+        "Your device is now ready.<nl/><nl/>Enjoy <application>%1</application>!",
         InitialStartUtil.distroName
     )
     /*!
     * The message shown to users who already have an account on the system.
     */
-    property string existingUserFinishedMessage: i18nc(
-        "%1 is the distro name",
-        "Your device is now ready.<br /><br />Enjoy <b>%1</b>!",
+    property string existingUserFinishedMessage: xi18nc(
+        "@info finishing setup; %1 is the distro name",
+        "Your device is now ready.<nl/><nl/>Enjoy <application>%1</application>!",
         InitialStartUtil.distroName
     )
 
     /*!
     * The message shown to users who have just created a new account.
     */
-    property string newUserFinishedMessage: i18nc(
-        "%1 is the distro name",
-        "Your device is now ready.<br /><br />After clicking <b>Finish</b> you will be able to sign in to your new account.<br /><br />Enjoy <b>%1</b>!",
+    property string newUserFinishedMessage: xi18nc(
+        "@info finishing setup; %1 is the distro name",
+        "Your device is now ready.<nl/><nl/>After clicking <interface>Finish</interface> you will be able to sign in to your new account.<nl/><nl/>Enjoy <application>%1</application>!",
         InitialStartUtil.distroName
     )
 
@@ -84,8 +87,7 @@ PlasmaSetupComponents.SetupModule {
 
             ProgressBar {
                 Layout.fillWidth: true
-                from: 0
-                to: 100
+                visible: InitialStartUtil.backupRestoreRunning
                 indeterminate: true
             }
 
