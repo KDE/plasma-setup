@@ -118,9 +118,7 @@ PlasmaSetupComponents.SetupModule {
                                     ListView.view.currentIndex = -1;
                                 }
                             }
-                            onClicked: {
-                                ListView.view.currentIndex = index;
-                            }
+                            onClicked: ListView.view.currentIndex = index
                         }
                     }
                 }
