@@ -14,5 +14,5 @@
 useAllowList=true
 
 [AllowedShortcuts]
-kaccess=Toggle Screen Reader On and Off
+org.kde.screenreader.desktop=toggleScreenReader
 kwin=MoveZoomDown,MoveZoomLeft,MoveZoomRight,MoveZoomUp,view_actual_size,view_zoom_in,view_zoom_out
