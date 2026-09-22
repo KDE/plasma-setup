@@ -203,7 +203,7 @@ PlasmaSetupComponents.SetupModule {
                         anchors.left: usernameField.right
                         anchors.verticalCenter: usernameField.verticalCenter
 
-                        toolTipText: xi18nc("@info", "Since you chose to restore from a backup, the username will be set to the one in the backup.")
+                        toolTipText: xi18nc("@info", "Username will be set to the one in the backup selected earlier.")
                     }
 
                     Kirigami.InlineMessage {

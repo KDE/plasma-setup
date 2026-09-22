@@ -76,7 +76,7 @@ PlasmaSetupComponents.SetupModule {
                         anchors.centerIn: parent
                         width: parent.width - (Kirigami.Units.largeSpacing * 4)
 
-                        text: i18n("If you have an external drive with backups, you can plug it in to restore from it now.")
+                        text: i18nc("@info:usagetip", "If you’d like to restore from a backup on an external disk that was made using Plasma’s built-in backup system, plug the disk in now.")
                     }
                 }
 
