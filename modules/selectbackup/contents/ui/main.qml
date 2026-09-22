@@ -89,7 +89,7 @@ PlasmaSetupComponents.SetupModule {
 
                     visible: drivesListView.count !== 0
 
-                    Component.onCompleted: if (background) background.visible = true
+                    Kirigami.StyleHints.showFramedBackground: true
 
                     ListView {
                         id: drivesListView
@@ -132,7 +132,7 @@ PlasmaSetupComponents.SetupModule {
 
                     visible: selectedDrive !== null
 
-                    Component.onCompleted: if (background) background.visible = true
+                    Kirigami.StyleHints.showFramedBackground: true
 
                     ListView {
                         id: backupsListView
