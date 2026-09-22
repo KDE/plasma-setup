@@ -45,12 +45,12 @@ PlasmaSetupComponents.SetupModule {
             RadioButton {
                 id: dontRestoreCheck
                 checked: true
-                text: i18n("Do not restore from a backup")
+                text: i18nc("@option:radio", "Do not restore from a backup")
             }
 
             RadioButton {
                 id: doRestoreCheck
-                text: i18n("Restore from this backup:")
+                text: i18nc("@option:radio this element is followed by a list view of backups", "Restore from this backup:")
             }
         }
 
@@ -180,7 +180,8 @@ PlasmaSetupComponents.SetupModule {
                 if (!backup || !BackupController.restoreWanted) {
                     return "";
                 }
-                return i18n("User <b>‘%1’</b> will be restored from the backup taken at %2 (located at %3).",
+                return xi18nc("@info %1 is username, %2 is a relative date and time, %3 is a partial filesystem path",
+                              "User ‘<emphasis strong=\"yes\">%1</emphasis>’ will be restored from the backup taken at %2 (located at <filename>%3</filename>).",
                         backup.username,
                         Format.formatRelativeDateTime(backup.date, Locale.LongFormat),
                         backup.relativeFsPath);
