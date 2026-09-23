@@ -100,7 +100,18 @@ PlasmaSetupComponents.SetupModule {
                         }
                         selectedDrive = modelIndex;
                     }
-                    delegate: ExternalDriveDelegate {
+                    delegate: ItemDelegate {
+                        required property int index
+                        required property string description
+                        required property string mountPath
+                        required property bool isScanning
+
+                        text: description
+                        icon.name: "drive-removable-media-symbolic"
+
+                        implicitWidth: ListView.view.width
+                        highlighted: ListView.isCurrentItem
+
                         ListView.onRemove: {
                             if (selectedDrive !== null && selectedDrive.row === index) {
                                 selectedDrive = null;
@@ -135,7 +146,21 @@ PlasmaSetupComponents.SetupModule {
 
                     model: driveBackupsModel
                     activeFocusOnTab: true
-                    delegate: FoundBackupDelegate {
+                    delegate: ItemDelegate {
+                        required property int index
+                        required property string username
+                        required property var date
+                        required property string fsPath
+                        required property string relativeFsPath
+                        required property string name
+                        required property string revision
+
+                        implicitWidth: ListView.view.width
+                        highlighted: ListView.isCurrentItem
+
+                        text: date !== undefined ? Format.formatRelativeDateTime(date, Locale.LongFormat) : ""
+                        icon.name: "backup"
+
                         onClicked: {
                             ListView.view.currentIndex = index;
                         }
