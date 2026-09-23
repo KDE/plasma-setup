@@ -39,7 +39,6 @@
                 "Name[sl]": "Devin Lin",
                 "Name[sv]": "Devin Lin",
                 "Name[tr]": "Devin Lin",
-                "Name[ug]": "Devin Lin",
                 "Name[uk]": "Devin Lin",
                 "Name[zh_CN]": "Devin Lin",
                 "Name[zh_TW]": "Devin Lin"
@@ -78,6 +77,7 @@
         "Description[sl]": "Dovoli uporabniku, da konfigurira mobilno omrežje.",
         "Description[sv]": "Låt användaren ställa in mobilnätet.",
         "Description[tr]": "Kullanıcının hücresel ağı yapılandırmasına olanak tanır.",
+        "Description[ug]": "ئىشلەتكۈچىنىڭ كۆچمە تورنى سەپلىشىگە يول قويىدۇ.",
         "Description[uk]": "Дозволити користувачеві налаштовувати стільникову мережу.",
         "Description[zh_CN]": "允许用户配置移动网络。",
         "Description[zh_TW]": "允許使用者設定行動網路。",
@@ -116,6 +116,7 @@
         "Name[sl]": "Mobilni",
         "Name[sv]": "Mobil",
         "Name[tr]": "Hücresel",
+        "Name[ug]": "كۆچمە تېلېفون",
         "Name[uk]": "Стільниковий",
         "Name[zh_CN]": "移动网络",
         "Name[zh_TW]": "行動電話"

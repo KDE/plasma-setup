@@ -39,7 +39,6 @@
                 "Name[sl]": "Carl Schwan",
                 "Name[sv]": "Carl Schwan",
                 "Name[tr]": "Carl Schwan",
-                "Name[ug]": "Carl Schwan",
                 "Name[uk]": "Carl Schwan",
                 "Name[zh_CN]": "Carl Schwan",
                 "Name[zh_TW]": "Carl Schwan"
@@ -78,6 +77,7 @@
         "Description[sl]": "Dovoli uporabniku, da nastavi ime računa.",
         "Description[sv]": "Låt användaren ange kontonamnet.",
         "Description[tr]": "Kullanıcının hesap adını ayarlamasına olanak tanır.",
+        "Description[ug]": "ئىشلەتكۈچىنىڭ ھېساب ئاتىنى تەڭشىشىگە يول قويىدۇ.",
         "Description[uk]": "Дозволити користувачеві встановлювати назву облікового запису.",
         "Description[zh_CN]": "允许用户设置账户名称。",
         "Description[zh_TW]": "允許使用者設定帳號名稱。",
@@ -117,6 +117,7 @@
         "Name[sl]": "O vas",
         "Name[sv]": "Om dig",
         "Name[tr]": "Senin Hakkında",
+        "Name[ug]": "ھەققىڭىزدە",
         "Name[uk]": "Про себе",
         "Name[zh_CN]": "个人信息",
         "Name[zh_TW]": "關於您",

@@ -39,7 +39,6 @@
                 "Name[sl]": "Devin Lin",
                 "Name[sv]": "Devin Lin",
                 "Name[tr]": "Devin Lin",
-                "Name[ug]": "Devin Lin",
                 "Name[uk]": "Devin Lin",
                 "Name[zh_CN]": "Devin Lin",
                 "Name[zh_TW]": "Devin Lin"
@@ -119,6 +118,7 @@
         "Description[sl]": "Dovoli uporabniku, da nastavi časovni pas.",
         "Description[sv]": "Låt användaren ställa in tidszonen.",
         "Description[tr]": "Kullanıcının zaman dilimini ayarlamasına olanak tanır.",
+        "Description[ug]": "ئىشلەتكۈچىنىڭ ۋاقىت رايونىنى تەڭشىشىگە يول قويىدۇ.",
         "Description[uk]": "Дозволити користувачеві встановлювати часовий пояс.",
         "Description[zh_CN]": "允许用户设置时区。",
         "Description[zh_TW]": "允許使用者設定時區。",
