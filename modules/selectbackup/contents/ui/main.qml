@@ -64,20 +64,6 @@ PlasmaSetupComponents.SetupModule {
 
             spacing: Kirigami.Units.smallSpacing
 
-            Item {
-                visible: drivesListView.count === 0
-                Layout.alignment: Qt.AlignCenter
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-
-                Kirigami.PlaceholderMessage {
-                    anchors.centerIn: parent
-                    width: parent.width - (Kirigami.Units.largeSpacing * 4)
-
-                    text: i18nc("@info:usagetip", "If you’d like to restore from a backup on an external disk that was made using Plasma’s built-in backup system, plug the disk in now.")
-                }
-            }
-
             ScrollView {
                 id: drivesScrollView
 
@@ -85,12 +71,19 @@ PlasmaSetupComponents.SetupModule {
                 Layout.fillHeight: true
                 Layout.maximumWidth: selectedDrive === null ? -1 : Math.round(drivesBackupsLayout.width / 2)
 
-                visible: drivesListView.count !== 0
-
                 Kirigami.StyleHints.showFramedBackground: true
 
                 ListView {
                     id: drivesListView
+
+                    Kirigami.PlaceholderMessage {
+                        visible: drivesListView.count === 0
+
+                        anchors.centerIn: parent
+                        width: parent.width - (Kirigami.Units.largeSpacing * 4)
+
+                        text: i18nc("@info:usagetip", "If you’d like to restore from a backup on an external disk that was made using Plasma’s built-in backup system, plug the disk in now.")
+                    }
 
                     clip: true
                     currentIndex: -1
