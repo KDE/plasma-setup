@@ -8,6 +8,7 @@ import QtQml.Models
 
 import org.kde.coreaddons
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.delegates as KirigamiDelegates
 import org.kde.plasmasetup
 import org.kde.plasmasetup.components as PlasmaSetupComponents
 import org.kde.plasmasetup.selectbackuputil as SelectBackupUtil
@@ -146,7 +147,7 @@ PlasmaSetupComponents.SetupModule {
 
                     model: driveBackupsModel
                     activeFocusOnTab: true
-                    delegate: ItemDelegate {
+                    delegate: KirigamiDelegates.SubtitleDelegate {
                         required property int index
                         required property string username
                         required property var date
@@ -159,6 +160,7 @@ PlasmaSetupComponents.SetupModule {
                         highlighted: ListView.isCurrentItem
 
                         text: date !== undefined ? Format.formatRelativeDateTime(date, Locale.LongFormat) : ""
+                        subtitle: username
                         icon.name: "backup"
 
                         onClicked: {
