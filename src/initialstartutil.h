@@ -13,6 +13,7 @@
 #include <sessionmanagement.h>
 
 #include "accountcontroller.h"
+#include "components/setupmodule.h"
 
 class InitialStartUtil : public QObject
 {
@@ -30,6 +31,9 @@ public:
      * Completes the initial setup process.
      */
     Q_INVOKABLE void finish();
+
+    Q_INVOKABLE void registerPostSetupAction(SetupModule *);
+    Q_INVOKABLE void finishPostSetupAction(SetupModule *);
 
     /**
      * Removes the autologin configuration for Plasma Setup.
@@ -50,6 +54,9 @@ public:
      * @return true if running as plasma-setup user, false otherwise.
      */
     static bool runningAsPlasmaSetupUser();
+
+Q_SIGNALS:
+    void aboutToFinish();
 
 private:
     /**
@@ -107,4 +114,6 @@ private:
      * Provides session management capabilities, notably for logging out of plasma-setup user session.
      */
     SessionManagement m_session;
+
+    QSet<SetupModule *> m_postSetupActionModules;
 };

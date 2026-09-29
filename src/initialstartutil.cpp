@@ -27,6 +27,19 @@ QString InitialStartUtil::distroName() const
     return m_osrelease.name();
 }
 
+void InitialStartUtil::registerPostSetupAction(SetupModule *module)
+{
+    m_postSetupActionModules.insert(module);
+}
+
+void InitialStartUtil::finishPostSetupAction(SetupModule *module)
+{
+    m_postSetupActionModules.remove(module);
+    if (m_postSetupActionModules.empty()) {
+        logOut();
+    }
+}
+
 void InitialStartUtil::finish()
 {
     if (!runningAsPlasmaSetupUser()) {
@@ -36,7 +49,10 @@ void InitialStartUtil::finish()
 
     doUserCreationSteps();
     createCompletionFlag();
-    logOut();
+    Q_EMIT aboutToFinish();
+    if (m_postSetupActionModules.empty()) {
+        logOut();
+    }
 }
 
 void InitialStartUtil::doUserCreationSteps()
