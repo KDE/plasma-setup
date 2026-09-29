@@ -41,6 +41,12 @@ PlasmaSetupComponents.SetupModule {
         ColumnLayout {
             Layout.alignment: Qt.AlignCenter
 
+            ProgressBar {
+                Layout.fillWidth: true
+                visible: !root.nextEnabled  // Wizard sets this to false once the Finish button is clicked
+                indeterminate: true
+            }
+
             Label {
                 id: finishedMessage
                 Layout.fillWidth: true
