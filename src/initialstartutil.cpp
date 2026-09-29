@@ -35,7 +35,7 @@ void InitialStartUtil::registerPostSetupAction(SetupModule *module)
 void InitialStartUtil::finishPostSetupAction(SetupModule *module)
 {
     m_postSetupActionModules.remove(module);
-    if (m_postSetupActionModules.empty()) {
+    if (m_postSetupActionModules.empty() && m_inPostSetup) {
         logOut();
     }
 }
@@ -44,6 +44,7 @@ void InitialStartUtil::finish()
 {
     doUserCreationSteps();
     createCompletionFlag();
+    m_inPostSetup = true;
     Q_EMIT aboutToFinish();
     if (m_postSetupActionModules.empty()) {
         logOut();
