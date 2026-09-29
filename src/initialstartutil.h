@@ -115,5 +115,6 @@ private:
      */
     SessionManagement m_session;
 
+    bool m_inPostSetup = false;
     QSet<SetupModule *> m_postSetupActionModules;
 };

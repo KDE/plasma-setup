@@ -177,3 +177,10 @@ The best way to learn is by examining the existing modules in the
 [`modules/`](../modules) directory. Start with simpler modules like
 [`wifi/`](../modules/wifi) (QML-only) or [`language/`](../modules/language)
 (with C++ backend) to understand the patterns.
+
+## Post-Setup Actions
+
+If your module wants to perform some action after the user has been created, before Plasma Setup
+logs out, then you can call `InitialStartUtil.registerPostSetupAction(SetupModule *)` with your
+module as the argument. Then, once user setup is done, `InitialStartUtil` will emit the `aboutToFinish`
+signal. Then, you can do your action, and once done, call `InitialStartUtil.finishPostSetupAction(SetupModule *)`.
