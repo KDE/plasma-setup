@@ -112,6 +112,20 @@ void AccountController::setFullName(const QString &fullName)
     Q_EMIT fullNameChanged();
 }
 
+bool AccountController::isUsernameFixed() const
+{
+    return m_isUsernameFixed;
+}
+
+void AccountController::setIsUsernameFixed(bool fixed)
+{
+    if (fixed == m_isUsernameFixed) {
+        return;
+    }
+    m_isUsernameFixed = fixed;
+    Q_EMIT isUsernameFixedChanged();
+}
+
 bool AccountController::createUser()
 {
     qCInfo(PlasmaSetup) << "Creating user" << m_username << "with full name" << m_fullName;

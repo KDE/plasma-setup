@@ -182,10 +182,18 @@ PlasmaSetupComponents.SetupModule {
 
                         inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhNoPredictiveText
 
+                        enabled: !AccountController.isUsernameFixed
+
+                        Binding on text {
+                            when: AccountController.isUsernameFixed
+                            value: AccountController.username
+                        }
+
                         Binding {
                             target: AccountController
                             property: 'username'
                             value: usernameField.text
+                            when: !AccountController.isUsernameFixed
                         }
                     }
 

@@ -28,6 +28,12 @@ class AccountController : public QObject
      */
     Q_PROPERTY(bool hasExistingUsers READ hasExistingUsers NOTIFY hasExistingUsersChanged)
 
+    /**
+     * Whether the username is fixed to a certain value by some module.
+     * For example, when restoring from a backup, the username is set from the backup.
+     */
+    Q_PROPERTY(bool isUsernameFixed READ isUsernameFixed WRITE setIsUsernameFixed NOTIFY isUsernameFixedChanged)
+
 public:
     ~AccountController() override;
 
@@ -53,6 +59,9 @@ public:
 
     QString password() const;
     void setPassword(const QString &password);
+
+    bool isUsernameFixed() const;
+    void setIsUsernameFixed(bool fixed);
 
     /**
      * Creates a new user account with the current username, full name, and password.
@@ -95,6 +104,7 @@ Q_SIGNALS:
     void fullNameChanged();
     void passwordChanged();
     void hasExistingUsersChanged();
+    void isUsernameFixedChanged();
 
 private:
     /**
@@ -112,6 +122,7 @@ private:
     QString m_username;
     QString m_fullName;
     QString m_password;
+    bool m_isUsernameFixed = false;
 
     /**
      * Cached result of the existing-user detection. Defaults to false so the account page shows.
