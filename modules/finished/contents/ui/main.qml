@@ -39,13 +39,8 @@ PlasmaSetupComponents.SetupModule {
         id: mainColumn
 
         ColumnLayout {
+            spacing: Kirigami.Units.gridUnit
             Layout.alignment: Qt.AlignCenter
-
-            ProgressBar {
-                Layout.fillWidth: true
-                visible: !root.nextEnabled  // Wizard sets this to false once the Finish button is clicked
-                indeterminate: true
-            }
 
             Label {
                 id: finishedMessage
@@ -58,10 +53,16 @@ PlasmaSetupComponents.SetupModule {
                 horizontalAlignment: Text.AlignHCenter
             }
 
+            ProgressBar {
+                Layout.preferredWidth: Kirigami.Units.gridUnit * 30
+                Layout.alignment: Qt.AlignHCenter
+                visible: !root.nextEnabled  // Wizard sets this to false once the Finish button is clicked
+                indeterminate: true
+            }
+
             Image {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter
-                Layout.topMargin: Kirigami.Units.gridUnit
                 Layout.maximumHeight: mainColumn.height - finishedMessage.height - Kirigami.Units.gridUnit
                 fillMode: Image.PreserveAspectFit
                 source: "konqi-calling.png"
