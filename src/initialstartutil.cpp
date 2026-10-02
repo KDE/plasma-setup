@@ -29,6 +29,11 @@ QString InitialStartUtil::distroName() const
 
 void InitialStartUtil::finish()
 {
+    if (!runningAsPlasmaSetupUser()) {
+        qCInfo(PlasmaSetup) << "Not running as plasma-setup user; skipping finish steps.";
+        return;
+    }
+
     doUserCreationSteps();
     createCompletionFlag();
     logOut();
