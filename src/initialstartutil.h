@@ -9,11 +9,11 @@
 #include <QWindow>
 #include <qqmlintegration.h>
 
+#include <KJob>
 #include <KOSRelease>
 #include <sessionmanagement.h>
 
 #include "accountcontroller.h"
-#include "components/setupmodule.h"
 
 class InitialStartUtil : public QObject
 {
@@ -32,8 +32,22 @@ public:
      */
     Q_INVOKABLE void finish();
 
-    Q_INVOKABLE void registerPostSetupAction(SetupModule *);
-    Q_INVOKABLE void finishPostSetupAction(SetupModule *);
+    /*!
+        \fn void registerPostSetupAction(KJob *action, QString description)
+
+        Registers the given \a action to be started after user creation.
+        A human-readable description of the action should be given in \a description.
+
+        This allows modules to run post-setup hooks for the new user.
+     */
+    Q_INVOKABLE void registerPostSetupAction(KJob *action, QString description);
+
+    /*!
+        \fn void unregisterPostSetupAction(KJob *action)
+
+        Unregisters the given \a action from the table of post-setup actions.
+     */
+    Q_INVOKABLE void unregisterPostSetupAction(KJob *action);
 
     /**
      * Removes the autologin configuration for Plasma Setup.
@@ -54,9 +68,6 @@ public:
      * @return true if running as plasma-setup user, false otherwise.
      */
     static bool runningAsPlasmaSetupUser();
-
-Q_SIGNALS:
-    void aboutToFinish();
 
 private:
     /**
@@ -92,6 +103,13 @@ private:
      */
     void createNewUserAutostartHook();
 
+    /*!
+     * Slot that handles a finished post-setup action.
+     *
+     * Once all post-setup actions are finished, we proceed to logout.
+     */
+    void finishPostSetupAction(KJob *);
+
     /*
      * The account controller instance that manages the new user account creation.
      */
@@ -115,6 +133,5 @@ private:
      */
     SessionManagement m_session;
 
-    bool m_inPostSetup = false;
-    QSet<SetupModule *> m_postSetupActionModules;
+    QHash<KJob *, QString> m_postSetupActions;
 };
