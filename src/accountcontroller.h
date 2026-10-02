@@ -28,9 +28,12 @@ class AccountController : public QObject
      */
     Q_PROPERTY(bool hasExistingUsers READ hasExistingUsers NOTIFY hasExistingUsersChanged)
 
-    /**
-     * Whether the username is fixed to a certain value by some module.
-     * For example, when restoring from a backup, the username is set from the backup.
+    /*!
+        \property AccountController::isUsernameFixed
+        \brief Whether the username is fixed to a certain value by some module.
+
+        If this property is set, the username cannot be edited in the UI.
+        For example, when restoring from a backup, the username is set from the backup. False by default.
      */
     Q_PROPERTY(bool isUsernameFixed READ isUsernameFixed WRITE setIsUsernameFixed NOTIFY isUsernameFixedChanged)
 
