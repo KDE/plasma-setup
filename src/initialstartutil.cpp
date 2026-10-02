@@ -27,15 +27,28 @@ QString InitialStartUtil::distroName() const
     return m_osrelease.name();
 }
 
-void InitialStartUtil::registerPostSetupAction(SetupModule *module)
+void InitialStartUtil::registerPostSetupAction(KJob *action, QString description)
 {
-    m_postSetupActionModules.insert(module);
+    qInfo(PlasmaSetup) << "registered post-setup action" << action << description;
+    m_postSetupActions.insert(action, description);
+    connect(action, &KJob::finished, this, &InitialStartUtil::finishPostSetupAction, Qt::QueuedConnection);
 }
 
-void InitialStartUtil::finishPostSetupAction(SetupModule *module)
+void InitialStartUtil::unregisterPostSetupAction(KJob *action)
 {
-    m_postSetupActionModules.remove(module);
-    if (m_postSetupActionModules.empty() && m_inPostSetup) {
+    qInfo(PlasmaSetup) << "unregistering post-setup action" << action << m_postSetupActions.value(action);
+    m_postSetupActions.remove(action);
+}
+
+void InitialStartUtil::finishPostSetupAction(KJob *action)
+{
+    qInfo(PlasmaSetup) << "finished post-setup action" << action << m_postSetupActions.value(action);
+    if (action->error()) {
+        qCritical(PlasmaSetup) << "post-setup action encountered an error:" << action->errorText() << action->errorString();
+    }
+    m_postSetupActions.remove(action);
+    if (m_postSetupActions.empty()) {
+        qCritical() << "post-setup actions all done.";
         logOut();
     }
 }
@@ -44,10 +57,12 @@ void InitialStartUtil::finish()
 {
     doUserCreationSteps();
     createCompletionFlag();
-    m_inPostSetup = true;
-    Q_EMIT aboutToFinish();
-    if (m_postSetupActionModules.empty()) {
+    if (m_postSetupActions.empty()) {
         logOut();
+    } else {
+        for (KJob *action : m_postSetupActions.keys()) {
+            action->start();
+        }
     }
 }
 
