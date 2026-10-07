@@ -39,99 +39,11 @@ PlasmaSetupComponents.SetupModule {
         searchField.forceActiveFocus();
     }
 
-    KCMKeyboard.LayoutSearchModel {
-        id: layoutSearchProxy
-        sourceModel: KCMKeyboard.LayoutModel {}
-        searchString: ""
-    }
-
-    KItemModels.KSortFilterProxyModel {
-        id: layoutsProxy
-        sourceModel: layoutSearchProxy
-        sortRoleName: "searchScore"
-        sortOrder: Qt.AscendingOrder
-
-        filterRowCallback: function (row, parent) {
-            const modelIndex = sourceModel.index(row, 0, parent);
-            const currentVariantName = modelIndex.data(KItemModels.KRoleNames.role("variantName"));
-            const description = modelIndex.data(KItemModels.KRoleNames.role("description"));
-
-            if (currentVariantName !== '') {
-                return false;
-            }
-
-            if (searchField.text.length > 0) {
-                const score = modelIndex.data(KItemModels.KRoleNames.role("searchScore"));
-                if (score !== 0) {
-                    return true;
-                }
-                const shortNameRole = KItemModels.KRoleNames.role("shortName");
-                const currentName = modelIndex.data(shortNameRole);
-                const searchScoreRole = KItemModels.KRoleNames.role("searchScore");
-                for (let i = 0; i < sourceModel.rowCount(); i++) {
-                    const index = sourceModel.index(i, 0, parent);
-                    const name = sourceModel.data(index, shortNameRole);
-                    const variantSearchScore = sourceModel.data(index, searchScoreRole);
-                    if (name === currentName && variantSearchScore > 100) {
-                        return true;
-                    }
-                }
-                return false;
-            }
-
-            return true;
-        }
-
-        // Returns the index matching the system's current keyboard layout, or -1 if not found.
-        function findCurrentLayoutIndex(): int {
-            // If there are multiple layouts configured (e.g. "us,ru") we only want to consider the
-            // second one for layout selection — in such a case the first one should be `us` to
-            // pair with a non-latin layout.
-            const layoutName = KeyboardUtil.layoutName.split(",").pop().trim();
-
-            // Iterate through the rows to find the layout that matches the system's current layout.
-            for (let i = 0; i < rowCount(); i++) {
-                const proxyIndex = index(i, 0);
-                const shortName = data(proxyIndex, KItemModels.KRoleNames.role("shortName"));
-                const description = data(proxyIndex, KItemModels.KRoleNames.role("description"));
-
-                if (shortName === layoutName) {
-                    console.warn("Found keyboard layout matching system default:", shortName, description);
-                    return i;
-                }
-            }
-
-            console.warn("No keyboard layout matching system default found for layout name:", layoutName);
-            return -1; // Not found
-        }
-    }
-
-    KItemModels.KSortFilterProxyModel {
+    KCMKeyboard.VariantsModel {
         id: variantProxy
-        sourceModel: layoutSearchProxy
-        sortRoleName: "searchScore"
-        sortOrder: Qt.AscendingOrder
-
-        filterRowCallback: function (row, parent) {
-            if (!layoutsView.currentItem) {
-                return false;
-            }
-
-            const modelIndex = sourceModel.index(row, 0, parent);
-            const currentName = modelIndex.data(KItemModels.KRoleNames.role("shortName"));
-            const selectedName = layoutsView.currentItem.shortName;
-
-            if (currentName !== selectedName) {
-                return false;
-            }
-
-            if (searchField.text.length > 0) {
-                const searchScore = modelIndex.data(KItemModels.KRoleNames.role("searchScore"));
-                return searchScore > 100;
-            }
-
-            return true;
-        }
+        sourceModel: layoutModel
+        searchString: searchField.text
+        shortName: layoutsView.currentItem?.shortName ?? ""
 
         // Returns the index matching the system's current keyboard layout variant, or -1 if not found.
         function findCurrentVariantIndex(): int {
@@ -191,9 +103,6 @@ PlasmaSetupComponents.SetupModule {
             Kirigami.SearchField {
                 id: searchField
                 Layout.fillWidth: true
-                onAccepted: {
-                    layoutSearchProxy.searchString = searchField.text.trim();
-                }
             }
 
             RowLayout {
@@ -214,14 +123,39 @@ PlasmaSetupComponents.SetupModule {
 
                     contentItem: ListView {
                         id: layoutsView
-                        model: layoutsProxy
+                        model: KCMKeyboard.LayoutSearchModel {
+                            id: layoutsProxy
+                            sourceModel: KCMKeyboard.LayoutModel {
+                                id: layoutModel
+                            }
+                            searchString: searchField.text
+
+                            // Returns the index matching the system's current keyboard layout, or -1 if not found.
+                            function findCurrentLayoutIndex(): int {
+                                // If there are multiple layouts configured (e.g. "us,ru") we only want to consider the
+                                // second one for layout selection — in such a case the first one should be `us` to
+                                // pair with a non-latin layout.
+                                const layoutName = KeyboardUtil.layoutName.split(",").pop().trim();
+
+                                // Iterate through the rows to find the layout that matches the system's current layout.
+                                for (let i = 0; i < layoutsProxy.rowCount(); i++) {
+                                    const proxyIndex = layoutsProxy.index(i, 0);
+                                    const shortName = layoutsProxy.data(proxyIndex, KItemModels.KRoleNames.role("shortName"));
+                                    const description = layoutsProxy.data(proxyIndex, KItemModels.KRoleNames.role("description"));
+
+                                    if (shortName === layoutName) {
+                                        console.warn("Found keyboard layout matching system default:", shortName, description);
+                                        return i;
+                                    }
+                                }
+
+                                console.warn("No keyboard layout matching system default found for layout name:", layoutName);
+                                return -1; // Not found
+                            }
+                        }
                         delegate: LayoutDelegate {}
                         keyNavigationEnabled: true
                         activeFocusOnTab: true
-
-                        onCurrentIndexChanged: {
-                            variantProxy.invalidateFilter();
-                        }
                     }
                 }
 
