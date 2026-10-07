@@ -32,6 +32,7 @@ Kirigami.Page {
     property Control previousStepItem: null
     property PlasmaSetupComponents.SetupModule currentModule: null
 
+    readonly property int setupState: InitialStartUtil.state
     readonly property bool onFinalPage: currentIndex === (stepCount - 1)
 
     // step animation
@@ -75,11 +76,6 @@ Kirigami.Page {
 
     function activateLanding(): void {
         landingComponent.activateLanding();
-    }
-
-    function finishFinalPage(): void {
-        // Finalize the initial setup process and exit the wizard.
-        InitialStartUtil.finish();
     }
 
     function activatePage(item): void {
@@ -313,6 +309,8 @@ Kirigami.Page {
                     Button {
                         Layout.alignment: Qt.AlignLeft
 
+                        visible: root.setupState === InitialStartUtil.Asking
+                        enabled: root.setupState === InitialStartUtil.Asking
                         text: i18nc("@action:button", "Back")
                         icon.name: "arrow-left-symbolic"
 
@@ -344,11 +342,30 @@ Kirigami.Page {
                     }
 
                     Button {
+                        id: confirmButton
+
+                        Layout.alignment: Qt.AlignRight
+
+                        visible: root.onFinalPage && root.setupState === InitialStartUtil.Asking
+                        text: i18nc("@action:button", "Confirm")
+                        icon.name: "dialog-ok-symbolic"
+
+                        enabled: root.currentModule.nextEnabled
+
+                        onClicked: {
+                            InitialStartUtil.finish()
+                        }
+
+                        Keys.onEnterPressed: clicked()
+                        Keys.onReturnPressed: clicked()
+                    }
+
+                    Button {
                         id: finishButton
 
                         Layout.alignment: Qt.AlignRight
 
-                        visible: root.onFinalPage
+                        visible: root.onFinalPage && root.setupState === InitialStartUtil.Finished
                         text: i18nc("@action:button", "Finish")
                         icon.name: "dialog-ok-symbolic"
 
@@ -357,8 +374,7 @@ Kirigami.Page {
                         onClicked: {
                             // Ensure the `Finish` button can only be click once.
                             root.currentModule.nextEnabled = false;
-                            // Finalize and exit the wizard.
-                            root.finishFinalPage();
+                            InitialStartUtil.logOut();
                         }
 
                         Keys.onEnterPressed: clicked()

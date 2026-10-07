@@ -18,6 +18,14 @@ PlasmaSetupComponents.SetupModule {
     nextEnabled: true
 
     /*!
+    * The message shown before the user confirms setup.
+    */
+    property string almostReadyMessage: xi18nc(
+        "@info",
+        "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</interface>, the system will start being prepared."
+    )
+
+    /*!
     * The message shown to users who already have an account on the system.
     */
     property string existingUserFinishedMessage: i18nc(
@@ -46,9 +54,15 @@ PlasmaSetupComponents.SetupModule {
                 id: finishedMessage
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-                text: AccountController.hasExistingUsers
+                visible: InitialStartUtil.state === InitialStartUtil.Finished || InitialStartUtil.state === InitialStartUtil.Asking
+                text: {
+                    if (InitialStartUtil.state === InitialStartUtil.Asking) {
+                        return root.almostReadyMessage
+                    }
+                    return AccountController.hasExistingUsers
                         ? root.existingUserFinishedMessage
                         : root.newUserFinishedMessage
+                }
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
             }
@@ -56,7 +70,7 @@ PlasmaSetupComponents.SetupModule {
             ProgressBar {
                 Layout.preferredWidth: Kirigami.Units.gridUnit * 30
                 Layout.alignment: Qt.AlignHCenter
-                visible: !root.nextEnabled  // Wizard sets this to false once the Finish button is clicked
+                visible: InitialStartUtil.state === InitialStartUtil.Finishing
                 indeterminate: true
             }
 
@@ -64,6 +78,7 @@ PlasmaSetupComponents.SetupModule {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter
                 Layout.maximumHeight: mainColumn.height - finishedMessage.height - Kirigami.Units.gridUnit
+                visible: InitialStartUtil.state === InitialStartUtil.Finished
                 fillMode: Image.PreserveAspectFit
                 source: "konqi-calling.png"
             }
