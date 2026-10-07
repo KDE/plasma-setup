@@ -42,6 +42,7 @@ Controls.ItemDelegate {
             elide: Text.ElideRight
             font.bold: ConnectionState === PlasmaNM.Enums.Activated
             Accessible.ignored: true // base class sets this text on root already
+            textFormat: Text.PlainText
         }
 
         RowLayout {
