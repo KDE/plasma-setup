@@ -51,13 +51,15 @@ PlasmaSetupComponents.SetupModule {
             Layout.alignment: Qt.AlignCenter
 
             Label {
-                id: finishedMessage
+                id: statusMessage
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-                visible: InitialStartUtil.state === InitialStartUtil.Finished || InitialStartUtil.state === InitialStartUtil.Asking
                 text: {
                     if (InitialStartUtil.state === InitialStartUtil.Asking) {
                         return root.almostReadyMessage
+                    }
+                    if (InitialStartUtil.state === InitialStartUtil.Finishing) {
+                        return InitialStartUtil.postSetupActionNames.join("<br/>");
                     }
                     return AccountController.hasExistingUsers
                         ? root.existingUserFinishedMessage
@@ -77,7 +79,7 @@ PlasmaSetupComponents.SetupModule {
             Image {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter
-                Layout.maximumHeight: mainColumn.height - finishedMessage.height - Kirigami.Units.gridUnit
+                Layout.maximumHeight: mainColumn.height - statusMessage.height - Kirigami.Units.gridUnit
                 visible: InitialStartUtil.state === InitialStartUtil.Finished
                 fillMode: Image.PreserveAspectFit
                 source: "konqi-calling.png"
