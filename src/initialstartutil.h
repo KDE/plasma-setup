@@ -21,14 +21,34 @@ class InitialStartUtil : public QObject
     QML_ELEMENT
     QML_SINGLETON
     Q_PROPERTY(QString distroName READ distroName CONSTANT);
+    Q_PROPERTY(int state READ state NOTIFY stateChanged)
+    Q_PROPERTY(QStringList postSetupActionNames READ postSetupActionNames NOTIFY postSetupActionNamesChanged)
 
 public:
     InitialStartUtil(QObject *parent = nullptr);
 
-    QString distroName() const;
+    enum SetupState {
+        Asking,
+        Finishing,
+        Finished,
+    };
+    Q_ENUM(SetupState)
 
-    /**
-     * Completes the initial setup process.
+    QString distroName() const;
+    int state() const;
+    QStringList postSetupActionNames() const;
+
+    /*!
+        \fn void logOut()
+
+        Logs out of the plasma-setup user.
+     */
+    Q_INVOKABLE void logOut();
+
+    /*!
+        \fn void finish()
+
+        Runs setup actions, such as creating the new user. Does not log out.
      */
     Q_INVOKABLE void finish();
 
@@ -69,6 +89,10 @@ public:
      */
     static bool runningAsPlasmaSetupUser();
 
+Q_SIGNALS:
+    void stateChanged();
+    void postSetupActionNamesChanged();
+
 private:
     /**
      * Performs the finishing steps specific to the creation of the new user.
@@ -77,13 +101,6 @@ private:
      * This separation is needed for when Plasma Setup is run in a context where no user creation is needed.
      */
     void doUserCreationSteps();
-
-    /**
-     * Logs out of the plasma-setup user.
-     *
-     * This will cause the new user to be logged in automatically, since the autologin is set for the new user.
-     */
-    void logOut();
 
     /**
      * Enables temporary autologin for the specified new user.
@@ -133,5 +150,6 @@ private:
      */
     SessionManagement m_session;
 
+    int m_state = SetupState::Asking;
     QHash<KJob *, QString> m_postSetupActions;
 };
