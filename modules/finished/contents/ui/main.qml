@@ -22,7 +22,7 @@ PlasmaSetupComponents.SetupModule {
     */
     property string almostReadyMessage: xi18nc(
         "@info",
-        "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</interface>, the system will start being prepared."
+        "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</interface>, the system will finish initial setup."
     )
 
     /*!
