@@ -43,6 +43,8 @@ PlasmaSetupComponents.SetupModule {
         InitialStartUtil.distroName
     )
 
+    readonly property bool shouldShowProgressBar: InitialStartUtil.state === InitialStartUtil.Finishing && InitialStartUtil.postSetupActionNames.length > 0
+
     contentItem: ColumnLayout {
         id: mainColumn
 
@@ -58,7 +60,7 @@ PlasmaSetupComponents.SetupModule {
                     if (InitialStartUtil.state === InitialStartUtil.Asking) {
                         return root.almostReadyMessage
                     }
-                    if (InitialStartUtil.state === InitialStartUtil.Finishing) {
+                    if (root.shouldShowProgressBar) {
                         return InitialStartUtil.postSetupActionNames.join("<br/>");
                     }
                     return AccountController.hasExistingUsers
@@ -71,8 +73,9 @@ PlasmaSetupComponents.SetupModule {
 
             ProgressBar {
                 Layout.preferredWidth: Kirigami.Units.gridUnit * 30
+                Layout.minimumWidth: Kirigami.Units.gridUnit * 30
                 Layout.alignment: Qt.AlignHCenter
-                visible: InitialStartUtil.state === InitialStartUtil.Finishing
+                visible: root.shouldShowProgressBar
                 indeterminate: true
             }
 
@@ -80,7 +83,7 @@ PlasmaSetupComponents.SetupModule {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter
                 Layout.maximumHeight: mainColumn.height - statusMessage.height - Kirigami.Units.gridUnit
-                visible: InitialStartUtil.state === InitialStartUtil.Finished
+                visible: InitialStartUtil.state === InitialStartUtil.Finished || (InitialStartUtil.state === InitialStartUtil.Finishing && !root.shouldShowProgressBar)
                 fillMode: Image.PreserveAspectFit
                 source: "konqi-calling.png"
             }
