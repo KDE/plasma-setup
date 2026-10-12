@@ -92,7 +92,7 @@
         "Description[zh_TW]": "在初始系統設定完成時顯示，讓使用者能提交變更。",
         "Id": "org.kde.plasmasetup.finished",
         "License": "LGPL-2.0-or-later",
-        "Name": "Completed!",
+        "Name": "Finish",
         "Name[ar]": "اكتمل!",
         "Name[az]": "Tamamlandı!",
         "Name[bg]": "Завършено!",
