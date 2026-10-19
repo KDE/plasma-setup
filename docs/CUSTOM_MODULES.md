@@ -177,3 +177,11 @@ The best way to learn is by examining the existing modules in the
 [`modules/`](../modules) directory. Start with simpler modules like
 [`wifi/`](../modules/wifi) (QML-only) or [`language/`](../modules/language)
 (with C++ backend) to understand the patterns.
+
+## Post-Setup Actions
+
+If your module wants to perform some action after the user has been created, before Plasma Setup
+logs out, then you can create a [`KJob`](https://api.kde.org/kjob.html) and register it through
+`InitialStartUtil::registerPostSetupAction(KJob *action, QString description)`. Your job must
+emit the result signal upon completion, otherwise it will block setup from exiting. You can
+un-register an action using `InitialStartUtil::unregisterPostSetupAction(KJob *action)`.

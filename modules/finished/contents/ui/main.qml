@@ -18,6 +18,14 @@ PlasmaSetupComponents.SetupModule {
     nextEnabled: true
 
     /*!
+    * The message shown before the user confirms setup.
+    */
+    property string almostReadyMessage: xi18nc(
+        "@info",
+        "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</interface>, the system will finish initial setup."
+    )
+
+    /*!
     * The message shown to users who already have an account on the system.
     */
     property string existingUserFinishedMessage: i18nc(
@@ -35,28 +43,47 @@ PlasmaSetupComponents.SetupModule {
         InitialStartUtil.distroName
     )
 
+    readonly property bool shouldShowProgressBar: InitialStartUtil.state === InitialStartUtil.Finishing && InitialStartUtil.postSetupActionNames.length > 0
+
     contentItem: ColumnLayout {
         id: mainColumn
 
         ColumnLayout {
+            spacing: Kirigami.Units.gridUnit
             Layout.alignment: Qt.AlignCenter
 
             Label {
-                id: finishedMessage
+                id: statusMessage
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
-                text: AccountController.hasExistingUsers
+                text: {
+                    if (InitialStartUtil.state === InitialStartUtil.Asking) {
+                        return root.almostReadyMessage
+                    }
+                    if (root.shouldShowProgressBar) {
+                        return InitialStartUtil.postSetupActionNames.join("<br/>");
+                    }
+                    return AccountController.hasExistingUsers
                         ? root.existingUserFinishedMessage
                         : root.newUserFinishedMessage
+                }
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
+            }
+
+            ProgressBar {
+                Layout.preferredWidth: Kirigami.Units.gridUnit * 30
+                Layout.minimumWidth: Kirigami.Units.gridUnit * 30
+                Layout.alignment: Qt.AlignHCenter
+                visible: root.shouldShowProgressBar
+                indeterminate: true
             }
 
             Image {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter
-                Layout.topMargin: Kirigami.Units.gridUnit
-                Layout.maximumHeight: mainColumn.height - finishedMessage.height - Kirigami.Units.gridUnit
+                Layout.maximumHeight: mainColumn.height - statusMessage.height - Kirigami.Units.gridUnit
+                visible: InitialStartUtil.state === InitialStartUtil.Finished || (InitialStartUtil.state === InitialStartUtil.Finishing && !root.shouldShowProgressBar)
                 fillMode: Image.PreserveAspectFit
                 source: "konqi-calling.png"
             }

@@ -9,6 +9,7 @@
 #include <QWindow>
 #include <qqmlintegration.h>
 
+#include <KJob>
 #include <KOSRelease>
 #include <sessionmanagement.h>
 
@@ -20,16 +21,53 @@ class InitialStartUtil : public QObject
     QML_ELEMENT
     QML_SINGLETON
     Q_PROPERTY(QString distroName READ distroName CONSTANT);
+    Q_PROPERTY(int state READ state NOTIFY stateChanged)
+    Q_PROPERTY(QStringList postSetupActionNames READ postSetupActionNames NOTIFY postSetupActionNamesChanged)
 
 public:
     InitialStartUtil(QObject *parent = nullptr);
 
-    QString distroName() const;
+    enum SetupState {
+        Asking,
+        Finishing,
+        Finished,
+    };
+    Q_ENUM(SetupState)
 
-    /**
-     * Completes the initial setup process.
+    QString distroName() const;
+    int state() const;
+    QStringList postSetupActionNames() const;
+
+    /*!
+        \fn void logOut()
+
+        Logs out of the plasma-setup user.
+     */
+    Q_INVOKABLE void logOut();
+
+    /*!
+        \fn void finish()
+
+        Runs setup actions, such as creating the new user. Does not log out.
      */
     Q_INVOKABLE void finish();
+
+    /*!
+        \fn void registerPostSetupAction(KJob *action, QString description)
+
+        Registers the given \a action to be started after user creation.
+        A human-readable description of the action should be given in \a description.
+
+        This allows modules to run post-setup hooks for the new user.
+     */
+    Q_INVOKABLE void registerPostSetupAction(KJob *action, QString description);
+
+    /*!
+        \fn void unregisterPostSetupAction(KJob *action)
+
+        Unregisters the given \a action from the table of post-setup actions.
+     */
+    Q_INVOKABLE void unregisterPostSetupAction(KJob *action);
 
     /**
      * Removes the autologin configuration for Plasma Setup.
@@ -51,6 +89,10 @@ public:
      */
     static bool runningAsPlasmaSetupUser();
 
+Q_SIGNALS:
+    void stateChanged();
+    void postSetupActionNamesChanged();
+
 private:
     /**
      * Performs the finishing steps specific to the creation of the new user.
@@ -59,13 +101,6 @@ private:
      * This separation is needed for when Plasma Setup is run in a context where no user creation is needed.
      */
     void doUserCreationSteps();
-
-    /**
-     * Logs out of the plasma-setup user.
-     *
-     * This will cause the new user to be logged in automatically, since the autologin is set for the new user.
-     */
-    void logOut();
 
     /**
      * Enables temporary autologin for the specified new user.
@@ -84,6 +119,13 @@ private:
      * Creates an autostart hook for the new user to cleanup the initial setup configuration.
      */
     void createNewUserAutostartHook();
+
+    /*!
+     * Slot that handles a finished post-setup action.
+     *
+     * Once all post-setup actions are finished, we proceed to logout.
+     */
+    void finishPostSetupAction(KJob *);
 
     /*
      * The account controller instance that manages the new user account creation.
@@ -107,4 +149,7 @@ private:
      * Provides session management capabilities, notably for logging out of plasma-setup user session.
      */
     SessionManagement m_session;
+
+    int m_state = SetupState::Asking;
+    QHash<KJob *, QString> m_postSetupActions;
 };

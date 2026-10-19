@@ -27,16 +27,67 @@ QString InitialStartUtil::distroName() const
     return m_osrelease.name();
 }
 
+int InitialStartUtil::state() const
+{
+    return m_state;
+}
+
+QStringList InitialStartUtil::postSetupActionNames() const
+{
+    return m_postSetupActions.values();
+}
+
+void InitialStartUtil::registerPostSetupAction(KJob *action, QString description)
+{
+    qInfo(PlasmaSetup) << "registered post-setup action" << action << description;
+    m_postSetupActions.insert(action, description);
+    Q_EMIT postSetupActionNamesChanged();
+    connect(action, &KJob::finished, this, &InitialStartUtil::finishPostSetupAction, Qt::QueuedConnection);
+}
+
+void InitialStartUtil::unregisterPostSetupAction(KJob *action)
+{
+    qInfo(PlasmaSetup) << "unregistering post-setup action" << action << m_postSetupActions.value(action);
+    m_postSetupActions.remove(action);
+    Q_EMIT postSetupActionNamesChanged();
+}
+
+void InitialStartUtil::finishPostSetupAction(KJob *action)
+{
+    qInfo(PlasmaSetup) << "finished post-setup action" << action << m_postSetupActions.value(action);
+    if (action->error()) {
+        qCritical(PlasmaSetup) << "post-setup action encountered an error:" << action->errorText() << action->errorString();
+    }
+    m_postSetupActions.remove(action);
+    Q_EMIT postSetupActionNamesChanged();
+    if (m_postSetupActions.empty()) {
+        m_state = SetupState::Finished;
+        Q_EMIT stateChanged();
+    }
+}
+
 void InitialStartUtil::finish()
 {
     if (!runningAsPlasmaSetupUser()) {
         qCInfo(PlasmaSetup) << "Not running as plasma-setup user; skipping finish steps.";
+        m_state = SetupState::Finished;
+        Q_EMIT stateChanged();
         return;
     }
 
+    m_state = SetupState::Finishing;
+    Q_EMIT stateChanged();
+
     doUserCreationSteps();
     createCompletionFlag();
-    logOut();
+    if (m_postSetupActions.empty()) {
+        m_state = SetupState::Finished;
+        Q_EMIT stateChanged();
+    } else {
+        for (KJob *action : m_postSetupActions.keys()) {
+            action->start();
+        }
+    }
 }
 
 void InitialStartUtil::doUserCreationSteps()
