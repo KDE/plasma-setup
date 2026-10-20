@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2023 by Devin Lin <devin@kde.org>
+// SPDX-FileCopyrightText: 2026 Onat Ribar <onatribar@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
@@ -31,6 +32,8 @@ public:
 
     bool usingDarkTheme() const;
     void setUsingDarkTheme(bool usingDarkTheme);
+
+    Q_INVOKABLE QStringList welcomeGreetings(bool isMobile) const;
 
 Q_SIGNALS:
     void scalingChanged();

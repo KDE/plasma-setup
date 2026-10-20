@@ -1,8 +1,10 @@
 // SPDX-FileCopyrightText: 2023 by Devin Lin <devin@kde.org>
+// SPDX-FileCopyrightText: 2026 Onat Ribar <onatribar@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "prepareutil.h"
 
+#include <KLocalizedString>
 #include <KScreen/ConfigMonitor>
 #include <KScreen/GetConfigOperation>
 #include <KScreen/Output>
@@ -11,6 +13,8 @@
 #include <QDBusPendingCallWatcher>
 #include <QDBusPendingReply>
 #include <QProcess>
+
+#include <algorithm>
 
 using namespace Qt::StringLiterals;
 
@@ -100,6 +104,38 @@ void PrepareUtil::setUsingDarkTheme(bool usingDarkTheme)
 
     m_usingDarkTheme = usingDarkTheme;
     Q_EMIT usingDarkThemeChanged();
+}
+
+QStringList PrepareUtil::welcomeGreetings(bool isMobile) const
+{
+    const char *text = isMobile ? "Welcome to<br/><b>Plasma Mobile</b>" : "Welcome to<br/><b>Plasma Desktop</b>";
+    const KLocalizedString source = ki18nd("org.kde.plasmasetup", text);
+
+    // Shown first, matches the language every other i18n() string on this
+    // screen (e.g. the "Begin Setup" button) is already in. Falls back to
+    // English automatically via toString() if untranslated for this locale.
+    const QString firstGreeting = source.toString(KLocalizedString::languages());
+
+    auto languages = KLocalizedString::availableDomainTranslations("org.kde.plasmasetup");
+    QStringList sortedLanguages(languages.begin(), languages.end());
+    std::sort(sortedLanguages.begin(), sortedLanguages.end());
+
+    QStringList greetings{firstGreeting};
+    QSet<QString> seenGreetings{firstGreeting};
+
+    for (const QString &language : std::as_const(sortedLanguages)) {
+        const QString greeting = source.toString({language});
+        // Skip languages whose catalog doesn't cover this specific string yet
+        // (falls back to the English source) and any duplicate renderings.
+        if (seenGreetings.contains(greeting)) {
+            continue;
+        }
+
+        seenGreetings.insert(greeting);
+        greetings.append(greeting);
+    }
+
+    return greetings;
 }
 
 #include "moc_prepareutil.cpp"

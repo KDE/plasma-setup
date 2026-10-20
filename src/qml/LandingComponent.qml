@@ -1,8 +1,10 @@
 // SPDX-FileCopyrightText: 2023 Devin Lin <devin@kde.org>
 // SPDX-FileCopyrightText: 2026 Tiziano Gaia <ti.gaia@proton.me>
+// SPDX-FileCopyrightText: 2026 Onat Ribar <onatribar@gmail.com>
 //
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+pragma ComponentBehavior: Bound
 
 import QtCore
 import QtQuick
@@ -23,6 +25,40 @@ Item {
     property bool landingActive: true
 
     signal requestNextPage()
+
+    readonly property list<string> welcomeGreetings:
+        Prepare.PrepareUtil.welcomeGreetings(Kirigami.Settings.isMobile)
+    property int greetingIndex: 0
+    readonly property int greetingHoldDuration: Kirigami.Units.veryLongDuration * 12
+    readonly property int greetingFadeDuration: Kirigami.Units.veryLongDuration * 3
+
+    property real greetingOpacity: 1
+    Behavior on greetingOpacity {
+        NumberAnimation {
+            duration: root.greetingFadeDuration
+            easing.type: Easing.InOutQuad
+        }
+    }
+
+    Timer {
+        id: greetingRotationTimer
+        interval: root.greetingHoldDuration + root.greetingFadeDuration
+        repeat: true
+        running: root.landingActive && Kirigami.Units.longDuration > 1
+        onTriggered: {
+            root.greetingOpacity = 0;
+            greetingFadeInTimer.restart();
+        }
+    }
+
+    Timer {
+        id: greetingFadeInTimer
+        interval: root.greetingFadeDuration
+        onTriggered: {
+            root.greetingIndex = (root.greetingIndex + 1) % root.welcomeGreetings.length;
+            root.greetingOpacity = 1;
+        }
+    }
 
     function activateLanding(): void {
         backgroundImage.scale = scaleLanding;
@@ -129,17 +165,55 @@ Item {
             Layout.alignment: Qt.AlignHCenter
             spacing: Kirigami.Units.largeSpacing
 
-            Label {
+            // reserves the height of the tallest greeting, so the button below
+            // doesn't jump around as greetings of different lengths rotate
+            Item {
+                id: greetingArea
                 Layout.fillWidth: true
-                text: Kirigami.Settings.isMobile
-                    ? i18n("Welcome to<br/><b>Plasma Mobile</b>")
-                    : i18n("Welcome to<br/><b>Plasma Desktop</b>")
+                Layout.preferredHeight: {
+                    let tallest = greetingLabel.implicitHeight;
+                    for (let i = 0; i < greetingSizer.count; i++) {
+                        const sizer = greetingSizer.itemAt(i);
+                        if (sizer) {
+                            tallest = Math.max(tallest, sizer.implicitHeight);
+                        }
+                    }
+                    return tallest;
+                }
 
-                horizontalAlignment: Text.AlignHCenter
-                wrapMode: Text.Wrap
+                // invisible copies of every greeting, only used for measuring
+                Repeater {
+                    id: greetingSizer
+                    model: root.welcomeGreetings
 
-                font.pointSize: 18
-                color: "white"
+                    Label {
+                        required property string modelData
+
+                        width: greetingArea.width
+                        visible: false
+                        text: modelData
+
+                        horizontalAlignment: Text.AlignHCenter
+                        wrapMode: Text.Wrap
+                        font: greetingLabel.font
+                    }
+                }
+
+                Label {
+                    id: greetingLabel
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.bottom: parent.bottom
+
+                    opacity: root.greetingOpacity
+                    text: root.welcomeGreetings[root.greetingIndex]
+
+                    horizontalAlignment: Text.AlignHCenter
+                    wrapMode: Text.Wrap
+
+                    font.pointSize: 18
+                    color: "white"
+                }
             }
 
             Button {
