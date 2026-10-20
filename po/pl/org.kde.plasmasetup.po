@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-21 00:47+0000\n"
+"POT-Creation-Date: 2026-10-20 00:54+0000\n"
 "PO-Revision-Date: 2026-02-21 09:00+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -64,19 +64,19 @@ msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Nazwa użytkownika"
 
-#: modules/account/contents/ui/main.qml:202
+#: modules/account/contents/ui/main.qml:210
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Hasło"
 
-#: modules/account/contents/ui/main.qml:223
+#: modules/account/contents/ui/main.qml:231
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Potwierdź hasło"
 
-#: modules/account/contents/ui/main.qml:255
+#: modules/account/contents/ui/main.qml:263
 #, kde-format
 msgid "Passwords must match"
 msgstr "Hasła muszą być takie same"
@@ -191,6 +191,14 @@ msgid "Add APN"
 msgstr "Dodaj APN"
 
 #: modules/finished/contents/ui/main.qml:25
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
+"interface>, the system will finish initial setup."
+msgstr ""
+
+#: modules/finished/contents/ui/main.qml:33
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
@@ -198,7 +206,7 @@ msgstr ""
 "Twoje urządzenie jest teraz gotowe.<br /><br />Przyjemności z używania <b>"
 "%1</b>!"
 
-#: modules/finished/contents/ui/main.qml:34
+#: modules/finished/contents/ui/main.qml:42
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid ""
@@ -366,19 +374,27 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Stworzone przez<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:316
+#: src/qml/Wizard.qml:314
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Wstecz"
 
-#: src/qml/Wizard.qml:335
+#: src/qml/Wizard.qml:333
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Dalej"
 
-#: src/qml/Wizard.qml:352
+#: src/qml/Wizard.qml:350
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Confirm Password"
+msgctxt "@action:button"
+msgid "Confirm"
+msgstr "Potwierdź hasło"
+
+#: src/qml/Wizard.qml:369
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

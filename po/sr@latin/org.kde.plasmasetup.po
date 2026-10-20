@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-21 00:47+0000\n"
+"POT-Creation-Date: 2026-10-20 00:54+0000\n"
 "PO-Revision-Date: 2026-10-06 10:30+0200\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -62,19 +62,19 @@ msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Korisničko ime"
 
-#: modules/account/contents/ui/main.qml:202
+#: modules/account/contents/ui/main.qml:210
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Lozinka"
 
-#: modules/account/contents/ui/main.qml:223
+#: modules/account/contents/ui/main.qml:231
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Potvrdite lozinku"
 
-#: modules/account/contents/ui/main.qml:255
+#: modules/account/contents/ui/main.qml:263
 #, kde-format
 msgid "Passwords must match"
 msgstr "Lozinke se moraju poklapati"
@@ -189,12 +189,20 @@ msgid "Add APN"
 msgstr "Dodaj APN"
 
 #: modules/finished/contents/ui/main.qml:25
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
+"interface>, the system will finish initial setup."
+msgstr ""
+
+#: modules/finished/contents/ui/main.qml:33
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
 msgstr "Uređaj je sada spreman.<br /><br />Uživajte u sistemu <b>%1</b>!"
 
-#: modules/finished/contents/ui/main.qml:34
+#: modules/finished/contents/ui/main.qml:42
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid ""
@@ -362,19 +370,27 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Pokreće<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:316
+#: src/qml/Wizard.qml:314
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Nazad"
 
-#: src/qml/Wizard.qml:335
+#: src/qml/Wizard.qml:333
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Sledeće"
 
-#: src/qml/Wizard.qml:352
+#: src/qml/Wizard.qml:350
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Confirm Password"
+msgctxt "@action:button"
+msgid "Confirm"
+msgstr "Potvrdite lozinku"
+
+#: src/qml/Wizard.qml:369
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

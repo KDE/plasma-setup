@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-21 00:47+0000\n"
+"POT-Creation-Date: 2026-10-20 00:54+0000\n"
 "PO-Revision-Date: 2026-01-23 20:43+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -63,19 +63,19 @@ msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Användarnamn"
 
-#: modules/account/contents/ui/main.qml:202
+#: modules/account/contents/ui/main.qml:210
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Lösenord"
 
-#: modules/account/contents/ui/main.qml:223
+#: modules/account/contents/ui/main.qml:231
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Bekräfta lösenord"
 
-#: modules/account/contents/ui/main.qml:255
+#: modules/account/contents/ui/main.qml:263
 #, kde-format
 msgid "Passwords must match"
 msgstr "Lösenord måste stämma"
@@ -190,12 +190,20 @@ msgid "Add APN"
 msgstr "Lägg till APN"
 
 #: modules/finished/contents/ui/main.qml:25
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
+"interface>, the system will finish initial setup."
+msgstr ""
+
+#: modules/finished/contents/ui/main.qml:33
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Your device is now ready.<br /><br />Enjoy <b>%1</b>!"
 msgstr "Apparaten är nu redo.<br /><br />Njut av <b>%1</b>!"
 
-#: modules/finished/contents/ui/main.qml:34
+#: modules/finished/contents/ui/main.qml:42
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid ""
@@ -361,19 +369,27 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Drivs av <br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:316
+#: src/qml/Wizard.qml:314
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Tillbaka"
 
-#: src/qml/Wizard.qml:335
+#: src/qml/Wizard.qml:333
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Nästa"
 
-#: src/qml/Wizard.qml:352
+#: src/qml/Wizard.qml:350
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Confirm Password"
+msgctxt "@action:button"
+msgid "Confirm"
+msgstr "Bekräfta lösenord"
+
+#: src/qml/Wizard.qml:369
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
