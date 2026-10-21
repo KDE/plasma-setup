@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+// SPDX-FileCopyrightText: 2026 Onat Ribar <onatribar@gmail.com>
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 

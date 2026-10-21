@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
 // SPDX-FileCopyrightText: 2026 Jesús T. <hello.triplean.dev@gmail.com>
 // SPDX-FileCopyrightText: 2026 Tiziano Gaia <ti.gaia@proton.me>
+// SPDX-FileCopyrightText: 2026 Onat Ribar <onatribar@gmail.com>
 //
 // SPDX-License-Identifier: LGPL-2.0-or-later
 

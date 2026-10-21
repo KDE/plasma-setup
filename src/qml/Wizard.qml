@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2023 Devin Lin <devin@kde.org>
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
 // SPDX-FileCopyrightText: 2026 Tiziano Gaia <ti.gaia@proton.me>
+// SPDX-FileCopyrightText: 2026 Onat Ribar <onatribar@gmail.com>
 //
 // SPDX-License-Identifier: GPL-2.0-or-later
 
