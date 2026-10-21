@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:54+0000\n"
-"PO-Revision-Date: 2026-10-04 09:08+0200\n"
-"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
+"POT-Creation-Date: 2026-10-21 00:53+0000\n"
+"PO-Revision-Date: 2026-10-20 11:20+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -197,6 +197,8 @@ msgid ""
 "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
 "interface>, the system will finish initial setup."
 msgstr ""
+"Устройство почти готово.<nl/><nl/>После нажатия кнопки "
+"<interface>Подтвердить</interface> система завершит первоначальную настройку."
 
 #: modules/finished/contents/ui/main.qml:33
 #, kde-format
@@ -352,22 +354,12 @@ msgid "Remove the Plasma Setup autologin configuration."
 msgstr ""
 "Удалить конфигурацию автоматического входа приложения для настройки Plasma."
 
-#: src/qml/LandingComponent.qml:135
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr "Добро пожаловать в<br/><b>Plasma Mobile</b>"
-
-#: src/qml/LandingComponent.qml:136
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr "Добро пожаловать в <br/><b>KDE Plasma</b>"
-
-#: src/qml/LandingComponent.qml:150
+#: src/qml/LandingComponent.qml:224
 #, kde-format
 msgid "Begin Setup"
 msgstr "Начать настройку"
 
-#: src/qml/LandingComponent.qml:186
+#: src/qml/LandingComponent.qml:260
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
@@ -386,18 +378,22 @@ msgid "Next"
 msgstr "Далее"
 
 #: src/qml/Wizard.qml:350
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@action:button"
 msgid "Confirm"
-msgstr "Подтверждение пароля"
+msgstr "Подтвердить"
 
 #: src/qml/Wizard.qml:369
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Завершить"
+
+#~ msgid "Welcome to<br/><b>Plasma Mobile</b>"
+#~ msgstr "Добро пожаловать в<br/><b>Plasma Mobile</b>"
+
+#~ msgid "Welcome to<br/><b>Plasma Desktop</b>"
+#~ msgstr "Добро пожаловать в <br/><b>KDE Plasma</b>"
 
 #~ msgid "Adjust the size of elements on the screen."
 #~ msgstr "Настройте размер элементов на экране."

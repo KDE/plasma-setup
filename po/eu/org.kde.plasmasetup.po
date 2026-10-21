@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:54+0000\n"
+"POT-Creation-Date: 2026-10-21 00:53+0000\n"
 "PO-Revision-Date: 2026-01-24 16:52+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -351,22 +351,12 @@ msgstr "© 2021-2024 KDE Komunitatea"
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr "Kendu Plasma Ezarpena saioan automatikoki sartzeko konfigurazioa."
 
-#: src/qml/LandingComponent.qml:135
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr "Ongi etorri <br/><b>Plasma Mugikorrera</b>"
-
-#: src/qml/LandingComponent.qml:136
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr "Ongietorri <br/><b>Plasma mahaigainera</b>"
-
-#: src/qml/LandingComponent.qml:150
+#: src/qml/LandingComponent.qml:224
 #, kde-format
 msgid "Begin Setup"
 msgstr "Hasi ezartzen"
 
-#: src/qml/LandingComponent.qml:186
+#: src/qml/LandingComponent.qml:260
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
@@ -397,6 +387,12 @@ msgstr "Baieztatu pasahitza"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Bukatu"
+
+#~ msgid "Welcome to<br/><b>Plasma Mobile</b>"
+#~ msgstr "Ongi etorri <br/><b>Plasma Mugikorrera</b>"
+
+#~ msgid "Welcome to<br/><b>Plasma Desktop</b>"
+#~ msgstr "Ongietorri <br/><b>Plasma mahaigainera</b>"
 
 #~ msgid "Adjust the size of elements on the screen."
 #~ msgstr "Doitu pantailako elementuen neurria."

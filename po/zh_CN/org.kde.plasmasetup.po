@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:54+0000\n"
+"POT-Creation-Date: 2026-10-21 00:53+0000\n"
 "PO-Revision-Date: 2024-07-15 19:45\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -342,22 +342,12 @@ msgstr "© 2021-2024 KDE Community"
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr "移除 Plasma 设置自动登录配置。"
 
-#: src/qml/LandingComponent.qml:135
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr "欢迎使用<br/><b>Plasma Mobile</b>"
-
-#: src/qml/LandingComponent.qml:136
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr "欢迎使用<br/><b>Plasma 桌面</b>"
-
-#: src/qml/LandingComponent.qml:150
+#: src/qml/LandingComponent.qml:224
 #, kde-format
 msgid "Begin Setup"
 msgstr "开始设置"
 
-#: src/qml/LandingComponent.qml:186
+#: src/qml/LandingComponent.qml:260
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
@@ -388,3 +378,9 @@ msgstr "确认密码"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "完成"
+
+#~ msgid "Welcome to<br/><b>Plasma Mobile</b>"
+#~ msgstr "欢迎使用<br/><b>Plasma Mobile</b>"
+
+#~ msgid "Welcome to<br/><b>Plasma Desktop</b>"
+#~ msgstr "欢迎使用<br/><b>Plasma 桌面</b>"

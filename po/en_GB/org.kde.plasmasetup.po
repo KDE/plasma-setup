@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:54+0000\n"
+"POT-Creation-Date: 2026-10-21 00:53+0000\n"
 "PO-Revision-Date: 2024-08-03 13:36+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -343,23 +343,13 @@ msgstr ""
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr ""
 
-#: src/qml/LandingComponent.qml:135
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr ""
-
-#: src/qml/LandingComponent.qml:136
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr ""
-
-#: src/qml/LandingComponent.qml:150
+#: src/qml/LandingComponent.qml:224
 #, fuzzy, kde-format
 #| msgid "User Setup"
 msgid "Begin Setup"
 msgstr "User Setup"
 
-#: src/qml/LandingComponent.qml:186
+#: src/qml/LandingComponent.qml:260
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"

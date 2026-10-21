@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:54+0000\n"
+"POT-Creation-Date: 2026-10-21 00:53+0000\n"
 "PO-Revision-Date: 2026-01-09 00:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -342,22 +342,12 @@ msgstr "© 2021-2024 KDE 社群"
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr "移除《Plasma 初始設定》自動登入配置。"
 
-#: src/qml/LandingComponent.qml:135
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr "歡迎來到<br/><b>Plasma 行動</b>"
-
-#: src/qml/LandingComponent.qml:136
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr "歡迎來到<br/><b>Plasma 桌面</b>"
-
-#: src/qml/LandingComponent.qml:150
+#: src/qml/LandingComponent.qml:224
 #, kde-format
 msgid "Begin Setup"
 msgstr "開始設定"
 
-#: src/qml/LandingComponent.qml:186
+#: src/qml/LandingComponent.qml:260
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
@@ -388,6 +378,12 @@ msgstr "確認密碼"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "完成"
+
+#~ msgid "Welcome to<br/><b>Plasma Mobile</b>"
+#~ msgstr "歡迎來到<br/><b>Plasma 行動</b>"
+
+#~ msgid "Welcome to<br/><b>Plasma Desktop</b>"
+#~ msgstr "歡迎來到<br/><b>Plasma 桌面</b>"
 
 #~ msgid "Adjust the size of elements on the screen."
 #~ msgstr "請調整螢幕上元素的大小。"

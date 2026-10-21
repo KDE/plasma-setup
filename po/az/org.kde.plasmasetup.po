@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:54+0000\n"
+"POT-Creation-Date: 2026-10-21 00:53+0000\n"
 "PO-Revision-Date: 2025-11-16 17:29+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -352,22 +352,12 @@ msgstr "© 2021-2024 KDE Cəmiyyəti"
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr "Plasma qurulması üçün avtomatik tənzimləməni silin."
 
-#: src/qml/LandingComponent.qml:135
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr "<br/><b>Plasma Mobile</b> Sizi Salamlayır"
-
-#: src/qml/LandingComponent.qml:136
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr "<br/><b>Plasma Masaüstü</b> Sizi Salamlayır"
-
-#: src/qml/LandingComponent.qml:150
+#: src/qml/LandingComponent.qml:224
 #, kde-format
 msgid "Begin Setup"
 msgstr "Quraşdırmağa başlayın"
 
-#: src/qml/LandingComponent.qml:186
+#: src/qml/LandingComponent.qml:260
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
@@ -398,6 +388,12 @@ msgstr "Şifrənin təsdiqi"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Tamamlandı"
+
+#~ msgid "Welcome to<br/><b>Plasma Mobile</b>"
+#~ msgstr "<br/><b>Plasma Mobile</b> Sizi Salamlayır"
+
+#~ msgid "Welcome to<br/><b>Plasma Desktop</b>"
+#~ msgstr "<br/><b>Plasma Masaüstü</b> Sizi Salamlayır"
 
 #~ msgid "Adjust the size of elements on the screen."
 #~ msgstr "Ekrandakı elementlərin ölçüsünü tənzimləyin."

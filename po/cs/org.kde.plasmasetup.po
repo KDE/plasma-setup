@@ -1,22 +1,23 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kiss package.
 # SPDX-FileCopyrightText: 2024, 2025 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 # SPDX-FileCopyrightText: 2026 Jan Papez (honyczek)
 msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:54+0000\n"
-"PO-Revision-Date: 2026-01-27 22:14+0100\n"
-"Last-Translator: Jan Papez (honyczek) <honyczek@centrum.cz>\n"
-"Language-Team: Czech <kde-i18n-cs@kde.org>\n"
+"POT-Creation-Date: 2026-10-21 00:53+0000\n"
+"PO-Revision-Date: 2026-10-20 13:13+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -197,6 +198,8 @@ msgid ""
 "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
 "interface>, the system will finish initial setup."
 msgstr ""
+"Vaše zařízení je téměř připraveno.<nl/><nl/>Po kliknutí na "
+"<interface>Potvrdit</interface> systém dokončí počáteční nastavení."
 
 #: modules/finished/contents/ui/main.qml:33
 #, kde-format
@@ -351,22 +354,12 @@ msgid "Remove the Plasma Setup autologin configuration."
 msgstr ""
 "Odstranit konfiguraci automatického přihlášení Úvodního nastavení Plasmy."
 
-#: src/qml/LandingComponent.qml:135
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr "Vítejte v prostředí<br/><b>Plasma Mobile</b>"
-
-#: src/qml/LandingComponent.qml:136
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr "Vítejte v prostředí <br/><b>Pracovní plochy Plasma</b>"
-
-#: src/qml/LandingComponent.qml:150
+#: src/qml/LandingComponent.qml:224
 #, kde-format
 msgid "Begin Setup"
 msgstr "Začít s nastavením"
 
-#: src/qml/LandingComponent.qml:186
+#: src/qml/LandingComponent.qml:260
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
@@ -385,15 +378,19 @@ msgid "Next"
 msgstr "Další"
 
 #: src/qml/Wizard.qml:350
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@action:button"
 msgid "Confirm"
-msgstr "Potvrdit heslo"
+msgstr "Potvrdit"
 
 #: src/qml/Wizard.qml:369
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Dokončit"
+
+#~ msgid "Welcome to<br/><b>Plasma Mobile</b>"
+#~ msgstr "Vítejte v prostředí<br/><b>Plasma Mobile</b>"
+
+#~ msgid "Welcome to<br/><b>Plasma Desktop</b>"
+#~ msgstr "Vítejte v prostředí <br/><b>Pracovní plochy Plasma</b>"

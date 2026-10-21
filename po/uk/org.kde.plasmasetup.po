@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the kiss package.
 #
-# Fracture dept <yurchor@ukr.net>, 2024, 2025, 2026.
+# SPDX-FileCopyrightText: 2024, 2025, 2026 Fracture dept <yurchor@ukr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:54+0000\n"
-"PO-Revision-Date: 2026-01-07 18:23+0200\n"
+"POT-Creation-Date: 2026-10-21 00:53+0000\n"
+"PO-Revision-Date: 2026-10-20 09:16+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -197,6 +197,9 @@ msgid ""
 "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
 "interface>, the system will finish initial setup."
 msgstr ""
+"Ваш пристрій майже готовий.<nl/><nl/>Після натискання "
+"<interface>Підтвердити</interface> система завершить початкове "
+"налаштовування."
 
 #: modules/finished/contents/ui/main.qml:33
 #, kde-format
@@ -350,22 +353,12 @@ msgstr "© Спільнота KDE, 2021–2024"
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr "Вилучити налаштування автоматичного входу для налаштовування Плазми."
 
-#: src/qml/LandingComponent.qml:135
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr "Вітаємо у<br/><b>Plasma Mobile</b>"
-
-#: src/qml/LandingComponent.qml:136
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr "Вітаємо у<br/><b>стільниці Плазми</b>"
-
-#: src/qml/LandingComponent.qml:150
+#: src/qml/LandingComponent.qml:224
 #, kde-format
 msgid "Begin Setup"
 msgstr "Почати налаштовування"
 
-#: src/qml/LandingComponent.qml:186
+#: src/qml/LandingComponent.qml:260
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
@@ -384,18 +377,22 @@ msgid "Next"
 msgstr "Далі"
 
 #: src/qml/Wizard.qml:350
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@action:button"
 msgid "Confirm"
-msgstr "Підтвердження пароля"
+msgstr "Підтвердити"
 
 #: src/qml/Wizard.qml:369
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Завершити"
+
+#~ msgid "Welcome to<br/><b>Plasma Mobile</b>"
+#~ msgstr "Вітаємо у<br/><b>Plasma Mobile</b>"
+
+#~ msgid "Welcome to<br/><b>Plasma Desktop</b>"
+#~ msgstr "Вітаємо у<br/><b>стільниці Плазми</b>"
 
 #~ msgid "Adjust the size of elements on the screen."
 #~ msgstr "Скоригуйте розмір елементів на екрані."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:54+0000\n"
+"POT-Creation-Date: 2026-10-21 00:53+0000\n"
 "PO-Revision-Date: 2025-06-22 12:25+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -352,22 +352,12 @@ msgstr "© 2021-2024 Comunidade KDE"
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr ""
 
-#: src/qml/LandingComponent.qml:135
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr "Benvida a<br/><b>Plasma Mobile</b>"
-
-#: src/qml/LandingComponent.qml:136
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr "Benvida ao<br/><b>escritorio Plasma</b>"
-
-#: src/qml/LandingComponent.qml:150
+#: src/qml/LandingComponent.qml:224
 #, kde-format
 msgid "Begin Setup"
 msgstr "Iniciar a preparación"
 
-#: src/qml/LandingComponent.qml:186
+#: src/qml/LandingComponent.qml:260
 #, fuzzy, kde-format
 #| msgid "Powered by<br/><b>%1</b>"
 msgctxt "%1 is the distro name"
@@ -399,6 +389,12 @@ msgstr "Confirmar o contrasinal"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Rematar"
+
+#~ msgid "Welcome to<br/><b>Plasma Mobile</b>"
+#~ msgstr "Benvida a<br/><b>Plasma Mobile</b>"
+
+#~ msgid "Welcome to<br/><b>Plasma Desktop</b>"
+#~ msgstr "Benvida ao<br/><b>escritorio Plasma</b>"
 
 #~ msgid "Adjust the size of elements on the screen."
 #~ msgstr "Axuste o tamaño dos elementos na pantalla."

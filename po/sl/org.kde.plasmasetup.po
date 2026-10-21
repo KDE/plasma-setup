@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:54+0000\n"
-"PO-Revision-Date: 2026-01-07 07:53+0100\n"
+"POT-Creation-Date: 2026-10-21 00:53+0000\n"
+"PO-Revision-Date: 2026-10-20 12:25+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -193,6 +193,8 @@ msgid ""
 "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
 "interface>, the system will finish initial setup."
 msgstr ""
+"Vaša naprava je skoraj pripravljena.<nl/><nl/>Ko kliknete <interface>Potrdi</"
+"interface>, bo sistem dokončal začetno nastavitev."
 
 #: modules/finished/contents/ui/main.qml:33
 #, kde-format
@@ -347,22 +349,12 @@ msgstr "© 2021–2024 Skupnost KDE"
 msgid "Remove the Plasma Setup autologin configuration."
 msgstr "Odstranite konfiguracijo samodejne prijave namestitve Plasma."
 
-#: src/qml/LandingComponent.qml:135
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Mobile</b>"
-msgstr "Dobrodošli v<br/><b>Plasma Mobile</b>"
-
-#: src/qml/LandingComponent.qml:136
-#, kde-format
-msgid "Welcome to<br/><b>Plasma Desktop</b>"
-msgstr "Dobrodošli v<br/><b>Plasma Desktop</b>"
-
-#: src/qml/LandingComponent.qml:150
+#: src/qml/LandingComponent.qml:224
 #, kde-format
 msgid "Begin Setup"
 msgstr "Začni namestitev"
 
-#: src/qml/LandingComponent.qml:186
+#: src/qml/LandingComponent.qml:260
 #, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
@@ -381,18 +373,22 @@ msgid "Next"
 msgstr "Naprej"
 
 #: src/qml/Wizard.qml:350
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@action:button"
 msgid "Confirm"
-msgstr "Potrdite geslo"
+msgstr "Potrdite"
 
 #: src/qml/Wizard.qml:369
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Končaj"
+
+#~ msgid "Welcome to<br/><b>Plasma Mobile</b>"
+#~ msgstr "Dobrodošli v<br/><b>Plasma Mobile</b>"
+
+#~ msgid "Welcome to<br/><b>Plasma Desktop</b>"
+#~ msgstr "Dobrodošli v<br/><b>Plasma Desktop</b>"
 
 #~ msgid "Adjust the size of elements on the screen."
 #~ msgstr "Prilagodite velikost elementov na zaslonu."
