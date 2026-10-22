@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:53+0000\n"
+"POT-Creation-Date: 2026-10-22 00:52+0000\n"
 "PO-Revision-Date: 2026-02-05 15:00+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -28,18 +28,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sergiu@cip.md"
 
-#: modules/account/contents/ui/main.qml:104
+#: modules/account/contents/ui/main.qml:105
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Sunt necesare câteva detalii pentru a finaliza configurarea."
 
-#: modules/account/contents/ui/main.qml:124
+#: modules/account/contents/ui/main.qml:125
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Acest utilizator va fi un administrator."
 
-#: modules/account/contents/ui/main.qml:135
+#: modules/account/contents/ui/main.qml:136
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -52,31 +52,31 @@ msgstr ""
 "programe și accesa toate fișierele din sistem.<nl/><nl/>Alegeți o parolă "
 "puternică pentru acest utilizator."
 
-#: modules/account/contents/ui/main.qml:150
+#: modules/account/contents/ui/main.qml:151
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Nume complet"
 
-#: modules/account/contents/ui/main.qml:175
+#: modules/account/contents/ui/main.qml:176
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Nume de utilizator"
 
-#: modules/account/contents/ui/main.qml:210
+#: modules/account/contents/ui/main.qml:211
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Parolă"
 
-#: modules/account/contents/ui/main.qml:231
+#: modules/account/contents/ui/main.qml:232
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Confirmați parola"
 
-#: modules/account/contents/ui/main.qml:263
+#: modules/account/contents/ui/main.qml:264
 #, kde-format
 msgid "Passwords must match"
 msgstr "Parolele trebuie să se potrivească"
@@ -215,13 +215,13 @@ msgstr ""
 "veți putea să vă autentificați în noul cont.<br /><br />Bucurați-vă de <b>"
 "%1</b>!"
 
-#: modules/hostname/contents/ui/main.qml:95
+#: modules/hostname/contents/ui/main.qml:96
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
 msgstr "Cum să fie numit acest dispozitiv?"
 
-#: modules/hostname/contents/ui/main.qml:104
+#: modules/hostname/contents/ui/main.qml:105
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
@@ -287,7 +287,7 @@ msgstr ""
 "Numele gazdei poate să conțină litere, numere și cratime. Fiecare etichetă "
 "trebuie să înceapă și să se sfârșească cu o literă sau număr."
 
-#: modules/keyboard/contents/ui/main.qml:188
+#: modules/keyboard/contents/ui/main.qml:189
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Alegeți-vă aranjamentul de tastatură și limba."
@@ -307,7 +307,7 @@ msgstr "Caută limba…"
 msgid "Dark Theme"
 msgstr "Tematică întunecată"
 
-#: modules/time/contents/ui/main.qml:41
+#: modules/time/contents/ui/main.qml:42
 #, kde-format
 msgid "Select your time zone."
 msgstr "Alegeți-vă fusul orar."
@@ -364,19 +364,19 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Propulsată de<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:314
+#: src/qml/Wizard.qml:315
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Înapoi"
 
-#: src/qml/Wizard.qml:333
+#: src/qml/Wizard.qml:334
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Următor"
 
-#: src/qml/Wizard.qml:350
+#: src/qml/Wizard.qml:351
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox"
 #| msgid "Confirm Password"
@@ -384,7 +384,7 @@ msgctxt "@action:button"
 msgid "Confirm"
 msgstr "Confirmați parola"
 
-#: src/qml/Wizard.qml:369
+#: src/qml/Wizard.qml:370
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

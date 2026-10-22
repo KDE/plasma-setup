@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:53+0000\n"
+"POT-Creation-Date: 2026-10-22 00:52+0000\n"
 "PO-Revision-Date: 2026-06-09 22:46+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
@@ -26,18 +26,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "5602mint@gmail.com\t"
 
-#: modules/account/contents/ui/main.qml:104
+#: modules/account/contents/ui/main.qml:105
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "最後に、いくつかの情報を入力してください。"
 
-#: modules/account/contents/ui/main.qml:124
+#: modules/account/contents/ui/main.qml:125
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "このユーザーは管理者として作成されます。"
 
-#: modules/account/contents/ui/main.qml:135
+#: modules/account/contents/ui/main.qml:136
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -50,31 +50,31 @@ msgstr ""
 "べてのファイルにアクセスできるようになります。<nl/><nl/>そのため、このユー"
 "ザーには安全性の高いパスワードを設定してください。"
 
-#: modules/account/contents/ui/main.qml:150
+#: modules/account/contents/ui/main.qml:151
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "フルネーム"
 
-#: modules/account/contents/ui/main.qml:175
+#: modules/account/contents/ui/main.qml:176
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "ユーザー名"
 
-#: modules/account/contents/ui/main.qml:210
+#: modules/account/contents/ui/main.qml:211
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "パスワード"
 
-#: modules/account/contents/ui/main.qml:231
+#: modules/account/contents/ui/main.qml:232
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "パスワードの再入力"
 
-#: modules/account/contents/ui/main.qml:263
+#: modules/account/contents/ui/main.qml:264
 #, kde-format
 msgid "Passwords must match"
 msgstr "パスワードが一致していません"
@@ -210,13 +210,13 @@ msgstr ""
 "デバイスの準備ができました。<br /><br /><b>完了</b>を押すと、新しいアカウント"
 "にサインインできるようになります。<br /><br /><b>%1</b> をお楽しみください！"
 
-#: modules/hostname/contents/ui/main.qml:95
+#: modules/hostname/contents/ui/main.qml:96
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
 msgstr "このデバイスの名前はなんですか？"
 
-#: modules/hostname/contents/ui/main.qml:104
+#: modules/hostname/contents/ui/main.qml:105
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
@@ -282,7 +282,7 @@ msgstr ""
 "ホスト名に入力できるのは、文字、数字、ハイフンです。各ラベルの最初と最後は文"
 "字または数字にする必要があります。"
 
-#: modules/keyboard/contents/ui/main.qml:188
+#: modules/keyboard/contents/ui/main.qml:189
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "キーボードのレイアウトと言語を選択してください。"
@@ -302,7 +302,7 @@ msgstr "言語を検索…"
 msgid "Dark Theme"
 msgstr "ダークテーマ"
 
-#: modules/time/contents/ui/main.qml:41
+#: modules/time/contents/ui/main.qml:42
 #, kde-format
 msgid "Select your time zone."
 msgstr ""
@@ -358,19 +358,19 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Powered by<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:314
+#: src/qml/Wizard.qml:315
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "戻る"
 
-#: src/qml/Wizard.qml:333
+#: src/qml/Wizard.qml:334
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "次へ"
 
-#: src/qml/Wizard.qml:350
+#: src/qml/Wizard.qml:351
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox"
 #| msgid "Confirm Password"
@@ -378,7 +378,7 @@ msgctxt "@action:button"
 msgid "Confirm"
 msgstr "パスワードの再入力"
 
-#: src/qml/Wizard.qml:369
+#: src/qml/Wizard.qml:370
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

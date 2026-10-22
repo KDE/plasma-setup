@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:53+0000\n"
+"POT-Creation-Date: 2026-10-22 00:52+0000\n"
 "PO-Revision-Date: 2026-01-09 00:09+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: modules/account/contents/ui/main.qml:104
+#: modules/account/contents/ui/main.qml:105
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "我們需要一些細節來完成設定。"
 
-#: modules/account/contents/ui/main.qml:124
+#: modules/account/contents/ui/main.qml:125
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "這個使用者將會是一個管理員。"
 
-#: modules/account/contents/ui/main.qml:135
+#: modules/account/contents/ui/main.qml:136
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -49,31 +49,31 @@ msgstr ""
 "這個使用者將在系統上有管理員權限。<nl/><nl/>這代表他能變更系統設定、安裝軟"
 "體，並存取系統上的所有檔案。<nl/><nl/>請為這個使用者選擇高強度的密碼。"
 
-#: modules/account/contents/ui/main.qml:150
+#: modules/account/contents/ui/main.qml:151
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "全名"
 
-#: modules/account/contents/ui/main.qml:175
+#: modules/account/contents/ui/main.qml:176
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "使用者名稱"
 
-#: modules/account/contents/ui/main.qml:210
+#: modules/account/contents/ui/main.qml:211
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "密碼"
 
-#: modules/account/contents/ui/main.qml:231
+#: modules/account/contents/ui/main.qml:232
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "確認密碼"
 
-#: modules/account/contents/ui/main.qml:263
+#: modules/account/contents/ui/main.qml:264
 #, kde-format
 msgid "Passwords must match"
 msgstr "密碼必須相符"
@@ -209,13 +209,13 @@ msgstr ""
 "您的裝置現已就緒。<br /><br />點擊<b>完成</b>之後您便能夠登入您的新帳號。"
 "<br /><br />享受 <b>%1</b> 吧！"
 
-#: modules/hostname/contents/ui/main.qml:95
+#: modules/hostname/contents/ui/main.qml:96
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
 msgstr "這台裝置應該叫做什麼名字？"
 
-#: modules/hostname/contents/ui/main.qml:104
+#: modules/hostname/contents/ui/main.qml:105
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
@@ -277,7 +277,7 @@ msgid ""
 "and end with a letter or number."
 msgstr "主機名稱可以包含字母、數字和 \"-\"。每個標籤必須以字母或數字開頭。"
 
-#: modules/keyboard/contents/ui/main.qml:188
+#: modules/keyboard/contents/ui/main.qml:189
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "請選擇您的鍵盤佈局與語言。"
@@ -297,7 +297,7 @@ msgstr "搜尋語言…"
 msgid "Dark Theme"
 msgstr "暗色主題"
 
-#: modules/time/contents/ui/main.qml:41
+#: modules/time/contents/ui/main.qml:42
 #, kde-format
 msgid "Select your time zone."
 msgstr "請選取您的時區。"
@@ -353,19 +353,19 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "基於<br/><b>%1</b>"
 
-#: src/qml/Wizard.qml:314
+#: src/qml/Wizard.qml:315
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "返回"
 
-#: src/qml/Wizard.qml:333
+#: src/qml/Wizard.qml:334
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "下一步"
 
-#: src/qml/Wizard.qml:350
+#: src/qml/Wizard.qml:351
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox"
 #| msgid "Confirm Password"
@@ -373,7 +373,7 @@ msgctxt "@action:button"
 msgid "Confirm"
 msgstr "確認密碼"
 
-#: src/qml/Wizard.qml:369
+#: src/qml/Wizard.qml:370
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"

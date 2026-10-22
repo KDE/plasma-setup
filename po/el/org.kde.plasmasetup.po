@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:53+0000\n"
+"POT-Creation-Date: 2026-10-22 00:52+0000\n"
 "PO-Revision-Date: 2026-10-20 12:04+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
@@ -33,18 +33,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tripoleft@protonmail.com"
 
-#: modules/account/contents/ui/main.qml:104
+#: modules/account/contents/ui/main.qml:105
 #, kde-format
 msgid "We need a few details to complete the setup."
 msgstr "Χρειαζόμαστε μερικές λεπτομέρειες για να ολοκληρώσουμε την ρύθμιση."
 
-#: modules/account/contents/ui/main.qml:124
+#: modules/account/contents/ui/main.qml:125
 #, kde-format
 msgctxt "@info"
 msgid "This user will be an administrator."
 msgstr "Αυτός ο χρήστης θα είναι ένας διαχειριστής."
 
-#: modules/account/contents/ui/main.qml:135
+#: modules/account/contents/ui/main.qml:136
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -57,31 +57,31 @@ msgstr ""
 "λογισμικό και να προσπελάσουν όλα τα αρχεία στο σύστημα.<nl/><nl/> Επιλέξτε "
 "έναν ισχυρό κωδικό πρόσβασης γι' αυτόν τον χρήστη."
 
-#: modules/account/contents/ui/main.qml:150
+#: modules/account/contents/ui/main.qml:151
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Πλήρες όνομα"
 
-#: modules/account/contents/ui/main.qml:175
+#: modules/account/contents/ui/main.qml:176
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Username"
 msgstr "Όνομα χρήστη"
 
-#: modules/account/contents/ui/main.qml:210
+#: modules/account/contents/ui/main.qml:211
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Password"
 msgstr "Κωδικός πρόσβασης"
 
-#: modules/account/contents/ui/main.qml:231
+#: modules/account/contents/ui/main.qml:232
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Επιβεβαίωση κωδικού"
 
-#: modules/account/contents/ui/main.qml:263
+#: modules/account/contents/ui/main.qml:264
 #, kde-format
 msgid "Passwords must match"
 msgstr "Οι κωδικοί πρέπει να είναι ίδιοι"
@@ -220,13 +220,13 @@ msgstr ""
 "μπορείτε να συνδεθείτε στον νέο σας λογαριασμό.<br /><br />Απολαύστε το <b>"
 "%1</b>!"
 
-#: modules/hostname/contents/ui/main.qml:95
+#: modules/hostname/contents/ui/main.qml:96
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "What should this device be called?"
 msgstr "Πώς θα λέγεται αυτή η συσκευή;"
 
-#: modules/hostname/contents/ui/main.qml:104
+#: modules/hostname/contents/ui/main.qml:105
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Hostname:"
@@ -293,7 +293,7 @@ msgstr ""
 "Τα ονόματα υπολογιστή μπορούν να περιέχουν γράμματα, νούμερα και παύλες. "
 "Κάθε ετικέτα πρέπει να ξεκινάει και να τελειώνει με γράμμα ή νούμερο."
 
-#: modules/keyboard/contents/ui/main.qml:188
+#: modules/keyboard/contents/ui/main.qml:189
 #, kde-format
 msgid "Select your keyboard layout and language."
 msgstr "Επιλέξτε την διάταξη και γλώσσα του πληκτρολογίου σας."
@@ -313,7 +313,7 @@ msgstr "Αναζήτηση γλωσσών..."
 msgid "Dark Theme"
 msgstr "Σκούρο θέμα"
 
-#: modules/time/contents/ui/main.qml:41
+#: modules/time/contents/ui/main.qml:42
 #, kde-format
 msgid "Select your time zone."
 msgstr "Επιλέξτε την ζώνη ώρας σας."
@@ -369,19 +369,19 @@ msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Με την υποστήριξη του <b>%1</b>"
 
-#: src/qml/Wizard.qml:314
+#: src/qml/Wizard.qml:315
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Πίσω"
 
-#: src/qml/Wizard.qml:333
+#: src/qml/Wizard.qml:334
 #, kde-format
 msgctxt "@action:button"
 msgid "Next"
 msgstr "Επόμενο"
 
-#: src/qml/Wizard.qml:350
+#: src/qml/Wizard.qml:351
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox"
 #| msgid "Confirm Password"
@@ -389,7 +389,7 @@ msgctxt "@action:button"
 msgid "Confirm"
 msgstr "Επιβεβαίωση κωδικού"
 
-#: src/qml/Wizard.qml:369
+#: src/qml/Wizard.qml:370
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
