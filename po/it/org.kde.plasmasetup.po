@@ -1,6 +1,6 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kiss package.
-# SPDX-FileCopyrightText: 2024, 2025, 2026 Valter Mura <valtermura@gmail.com>
+# SPDX-FileCopyrightText: 2024-2026 Valter Mura <valtermura@gmail.com>
 # SPDX-FileCopyrightText: 2025 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-22 00:52+0000\n"
-"PO-Revision-Date: 2026-01-15 18:15+0100\n"
+"PO-Revision-Date: 2026-10-22 23:44+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -197,6 +197,9 @@ msgid ""
 "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
 "interface>, the system will finish initial setup."
 msgstr ""
+"Il tuo dispositivo è quasi pronto.<nl/><nl/>Dopo aver fatto clic su "
+"<interface>Conferma</interface>, il sistema terminerà la configurazione "
+"iniziale."
 
 #: modules/finished/contents/ui/main.qml:33
 #, kde-format
@@ -374,12 +377,10 @@ msgid "Next"
 msgstr "Successivo"
 
 #: src/qml/Wizard.qml:351
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@action:button"
 msgid "Confirm"
-msgstr "Conferma password"
+msgstr "Conferma"
 
 #: src/qml/Wizard.qml:370
 #, kde-format

@@ -193,6 +193,8 @@ msgid ""
 "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
 "interface>, the system will finish initial setup."
 msgstr ""
+"Vaše zariadenie je takmer pripravené.<nl/><nl/>Po kliknutí na "
+"<interface>Potvrdiť</interface> systém dokončí počiatočné nastavenie."
 
 #: modules/finished/contents/ui/main.qml:33
 #, kde-format
@@ -370,12 +372,10 @@ msgid "Next"
 msgstr "Ďalej"
 
 #: src/qml/Wizard.qml:351
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@action:button"
 msgid "Confirm"
-msgstr "Heslo:"
+msgstr "Potvrdiť"
 
 #: src/qml/Wizard.qml:370
 #, kde-format

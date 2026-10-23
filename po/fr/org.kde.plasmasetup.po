@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-22 00:52+0000\n"
-"PO-Revision-Date: 2026-08-29 20:48+0200\n"
+"PO-Revision-Date: 2026-10-21 10:03+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -194,6 +194,9 @@ msgid ""
 "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
 "interface>, the system will finish initial setup."
 msgstr ""
+"Votre périphérique est presque prêt.<nl/><nl/>Après un clic sur "
+"<interface>Confirmer</interface>, le système terminera la configuration "
+"initiale."
 
 #: modules/finished/contents/ui/main.qml:33
 #, kde-format
@@ -378,12 +381,10 @@ msgid "Next"
 msgstr "Suivant"
 
 #: src/qml/Wizard.qml:351
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@action:button"
 msgid "Confirm"
-msgstr "Confirmez le mot de passe"
+msgstr "Confirmer"
 
 #: src/qml/Wizard.qml:370
 #, kde-format
