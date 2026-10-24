@@ -385,9 +385,3 @@ msgstr "Stadfest passordet"
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Fullfør"
-
-#~ msgid "Welcome to<br/><b>Plasma Mobile</b>"
-#~ msgstr "Velkommen til<br/><b>Plasma Mobile</b>"
-
-#~ msgid "Welcome to<br/><b>Plasma Desktop</b>"
-#~ msgstr "Velkommen til<br/><b>Plasma-skrivebordet</b>"
