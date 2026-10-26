@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-22 00:52+0000\n"
-"PO-Revision-Date: 2026-01-11 10:55+0100\n"
+"PO-Revision-Date: 2026-10-25 11:40+0100\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -199,6 +199,8 @@ msgid ""
 "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
 "interface>, the system will finish initial setup."
 msgstr ""
+"l vostre dispositiu està quasi a punt.<nl/><nl/>Després de cliqueu damunt "
+"<interface>Confirma</interface>, el sistema acabarà la configuració inicial."
 
 #: modules/finished/contents/ui/main.qml:33
 #, kde-format
@@ -380,21 +382,13 @@ msgid "Next"
 msgstr "Següent"
 
 #: src/qml/Wizard.qml:351
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@action:button"
 msgid "Confirm"
-msgstr "Confirmeu la contrasenya"
+msgstr "Confirma"
 
 #: src/qml/Wizard.qml:370
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Finalitza"
-
-#~ msgid "Welcome to<br/><b>Plasma Mobile</b>"
-#~ msgstr "Us donem la benvinguda a<br/><b>Plasma Mobile</b>"
-
-#~ msgid "Welcome to<br/><b>Plasma Desktop</b>"
-#~ msgstr "Us donem la benvinguda a <br/>l'<b>escriptori Plasma </b>"
