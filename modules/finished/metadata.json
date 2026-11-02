@@ -95,6 +95,7 @@
         "Id": "org.kde.plasmasetup.finished",
         "License": "LGPL-2.0-or-later",
         "Name": "Finish",
+        "Name[ar]": "أنهِ",
         "Name[bg]": "Край",
         "Name[ca@valencia]": "Finalització",
         "Name[ca]": "Finalització",
