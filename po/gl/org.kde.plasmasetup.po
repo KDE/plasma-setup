@@ -48,9 +48,7 @@ msgid ""
 msgstr ""
 
 #: modules/account/contents/ui/main.qml:150
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Full Name"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Full Name"
 msgstr "Nome completo"
@@ -70,9 +68,7 @@ msgid "Password"
 msgstr "Contrasinal"
 
 #: modules/account/contents/ui/main.qml:223
-#, fuzzy, kde-format
-#| msgctxt "@label:textfield"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Confirm Password"
 msgstr "Confirmar o contrasinal"
@@ -360,8 +356,7 @@ msgid "Begin Setup"
 msgstr "Iniciar a preparación"
 
 #: src/qml/LandingComponent.qml:186
-#, fuzzy, kde-format
-#| msgid "Powered by<br/><b>%1</b>"
+#, kde-format
 msgctxt "%1 is the distro name"
 msgid "Powered by<br/><b>%1</b>"
 msgstr "Feito con<br/><b>%1</b>"
