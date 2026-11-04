@@ -102,6 +102,7 @@
         "Name[cs]": "Dokončit",
         "Name[es]": "Terminar",
         "Name[fr]": "Terminer",
+        "Name[he]": "סיום",
         "Name[it]": "Fine",
         "Name[ka]": "დასრულება",
         "Name[lt]": "Užbaigti",
@@ -113,6 +114,7 @@
         "Name[sl]": "Končaj",
         "Name[tr]": "Bitir",
         "Name[uk]": "Завершення",
+        "Name[zh_TW]": "完成",
         "Version": "1.0"
     },
     "NoDisplay": true,
