@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kiss package.
 #
-# SPDX-FileCopyrightText: 2024, 2025, 2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2024-2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-22 00:52+0000\n"
-"PO-Revision-Date: 2026-01-09 00:09+0900\n"
+"PO-Revision-Date: 2026-11-03 19:53+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.03.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -192,6 +192,8 @@ msgid ""
 "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
 "interface>, the system will finish initial setup."
 msgstr ""
+"您的裝置即將準備就緒。<nl/><nl/>點擊 <interface>確認</interface> 後，系統將完"
+"成初始設定。"
 
 #: modules/finished/contents/ui/main.qml:33
 #, kde-format
@@ -366,12 +368,10 @@ msgid "Next"
 msgstr "下一步"
 
 #: src/qml/Wizard.qml:351
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@action:button"
 msgid "Confirm"
-msgstr "確認密碼"
+msgstr "確認"
 
 #: src/qml/Wizard.qml:370
 #, kde-format
