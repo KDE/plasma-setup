@@ -223,7 +223,7 @@ Kirigami.Page {
             color: Kirigami.Theme.backgroundColor
             clip: true
 
-            radius: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.cornerRadius + 8
+            radius: Kirigami.Settings.isMobile ? 0 : Kirigami.Units.cornerRadius
 
             anchors {
                 // On mobile, behave like a full-height page (no floating card)
