@@ -22,7 +22,7 @@ import org.kde.plasmasetup.hostnameutil
 PlasmaSetupComponents.SetupModule {
     id: root
 
-    available: HostnameUtil.hostnameIsDefault()
+    available: !HostnameUtil.isHostnameSet()
 
     /**
     * Whether the user has modified the field.

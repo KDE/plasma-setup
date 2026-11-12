@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Kristen McWilliam <kristen@kde.org>
+// SPDX-FileCopyrightText: 2026 Harald Sitter <sitter@kde.org>
 //
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
@@ -120,8 +121,13 @@ HostnameUtil::HostnameUtil(QObject *parent)
                                                            QStringLiteral("/org/freedesktop/hostname1"),
                                                            QDBusConnection::systemBus(),
                                                            this))
+    , m_hostname([this] {
+        if (auto defaultHostname = m_dbusInterface->defaultHostname(); !defaultHostname.isEmpty()) {
+            return defaultHostname;
+        }
+        return m_dbusInterface->hostname(); // This property is never empty
+    }())
 {
-    loadHostname();
 }
 
 QString HostnameUtil::hostname() const
@@ -129,18 +135,15 @@ QString HostnameUtil::hostname() const
     return m_hostname;
 }
 
-bool HostnameUtil::hostnameIsDefault() const
+bool HostnameUtil::isHostnameSet() const
 {
-    if (m_hostname.startsWith(QStringLiteral("localhost"))) {
+    if (auto hostname = m_dbusInterface->hostname(); hostname.startsWith(QStringLiteral("localhost"))) {
         qCDebug(PlasmaSetupHostnameUtil) << "Hostname starts with 'localhost', considered default.";
-        return true;
+        return false;
     }
 
-    QString defaultHostname = m_dbusInterface->defaultHostname();
-    bool currentHostnameIsDefault = m_hostname == defaultHostname;
-    qCDebug(PlasmaSetupHostnameUtil) << "Current hostname:" << m_hostname << "; Default hostname from hostnamed:" << defaultHostname
-                                     << "; Is default:" << currentHostnameIsDefault;
-    return currentHostnameIsDefault;
+    auto hasStaticHostname = !m_dbusInterface->staticHostname().isEmpty();
+    return hasStaticHostname;
 }
 
 void HostnameUtil::setHostname(const QString &hostname)
@@ -173,40 +176,6 @@ QString HostnameUtil::hostnameValidationMessage(const QString &hostname) const
 {
     const HostnameValidationResult result = validateHostname(hostname.trimmed());
     return hostnameValidationMessageForResult(result);
-}
-
-void HostnameUtil::loadHostname()
-{
-    QString hostname = readHostnameViaDBus(QStringLiteral("StaticHostname"));
-    if (hostname.isEmpty()) {
-        hostname = readHostnameViaDBus(QStringLiteral("Hostname"));
-    }
-    if (hostname.isEmpty()) {
-        hostname = QSysInfo::machineHostName();
-    }
-
-    hostname = hostname.trimmed();
-
-    if (hostname != m_hostname) {
-        m_hostname = hostname;
-        Q_EMIT hostnameChanged();
-    }
-}
-
-QString HostnameUtil::readHostnameViaDBus(const QString &propertyName)
-{
-    QString value;
-
-    if (propertyName == QLatin1String("StaticHostname")) {
-        value = m_dbusInterface->staticHostname();
-    } else if (propertyName == QLatin1String("Hostname")) {
-        value = m_dbusInterface->hostname();
-    } else {
-        qCWarning(PlasmaSetupHostnameUtil) << "Unknown property name requested:" << propertyName;
-        return {};
-    }
-
-    return value;
 }
 
 void HostnameUtil::setHostnameOnSystem(const QString &hostname)

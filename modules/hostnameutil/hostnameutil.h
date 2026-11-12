@@ -38,14 +38,11 @@ public:
     QString hostname() const;
 
     /**
-     * Checks if the current hostname is the system default.
+     * Checks if the system has a static hostname set.
      *
-     * The hostname is considered the default if it matches the
-     * default hostname provided by hostnamed, or if it begins with "localhost".
-     *
-     * @return True if the hostname is the default, false otherwise.
+     * @return True if a static hostname is set, false otherwise.
      */
-    Q_INVOKABLE bool hostnameIsDefault() const;
+    Q_INVOKABLE bool isHostnameSet() const;
 
     /**
      * Checks if the provided hostname is valid.
@@ -82,19 +79,6 @@ Q_SIGNALS:
     void hostnameChanged();
 
 private:
-    /**
-     * Reads the current hostname from the system.
-     */
-    void loadHostname();
-
-    /**
-     * Attempts to read the hostname via D-Bus.
-     *
-     * @param propertyName The D-Bus property name to read, e.g., "StaticHostname" or "Hostname".
-     * @return The retrieved value, or an empty string on failure.
-     */
-    QString readHostnameViaDBus(const QString &propertyName);
-
     /**
      * Applies the requested hostname to the system.
      *
