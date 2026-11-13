@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-22 00:52+0000\n"
+"POT-Creation-Date: 2026-11-13 01:01+0000\n"
 "PO-Revision-Date: 2026-02-03 22:20+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -228,55 +228,55 @@ msgctxt "@label:textbox"
 msgid "Hostname:"
 msgstr "호스트 이름:"
 
-#: modules/hostnameutil/hostnameutil.cpp:94
+#: modules/hostnameutil/hostnameutil.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be empty."
 msgstr "호스트 이름을 비워 둘 수 없습니다."
 
-#: modules/hostnameutil/hostnameutil.cpp:96
+#: modules/hostnameutil/hostnameutil.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
 msgstr "호스트 이름은 \"localhost\"나 \"localhost.localdomain\"일 수 없습니다."
 
-#: modules/hostnameutil/hostnameutil.cpp:98
+#: modules/hostnameutil/hostnameutil.cpp:99
 #, kde-format
 msgctxt "@info"
 msgid "Hostname is too long (maximum 253 characters)."
 msgstr "호스트 이름이 너무 깁니다(최대 253자)."
 
-#: modules/hostnameutil/hostnameutil.cpp:100
+#: modules/hostnameutil/hostnameutil.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot start with a dot."
 msgstr "호스트 이름은 마침표(.)로 시작할 수 없습니다."
 
-#: modules/hostnameutil/hostnameutil.cpp:102
+#: modules/hostnameutil/hostnameutil.cpp:103
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot end with a dot."
 msgstr "호스트 이름은 마침표(.)로 끝날 수 없습니다."
 
-#: modules/hostnameutil/hostnameutil.cpp:104
+#: modules/hostnameutil/hostnameutil.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot contain consecutive dots."
 msgstr "호스트 이름에 연속된 마침표(.)가 들어갈 수 없습니다."
 
-#: modules/hostnameutil/hostnameutil.cpp:106
+#: modules/hostnameutil/hostnameutil.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid "Hostname labels cannot be empty."
 msgstr "호스트 이름 레이블을 비워 둘 수 없습니다."
 
-#: modules/hostnameutil/hostnameutil.cpp:108
+#: modules/hostnameutil/hostnameutil.cpp:109
 #, kde-format
 msgctxt "@info"
 msgid "Each hostname label must be at most 63 characters."
 msgstr "각 호스트 이름 레이블은 최대 63글자만 사용할 수 있습니다."
 
-#: modules/hostnameutil/hostnameutil.cpp:110
+#: modules/hostnameutil/hostnameutil.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid ""

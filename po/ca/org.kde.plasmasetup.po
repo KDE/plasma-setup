@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-22 00:52+0000\n"
+"POT-Creation-Date: 2026-11-13 01:01+0000\n"
 "PO-Revision-Date: 2026-10-20 09:15+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -230,55 +230,55 @@ msgctxt "@label:textbox"
 msgid "Hostname:"
 msgstr "Nom de màquina:"
 
-#: modules/hostnameutil/hostnameutil.cpp:94
+#: modules/hostnameutil/hostnameutil.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be empty."
 msgstr "El nom de màquina no pot estar buit."
 
-#: modules/hostnameutil/hostnameutil.cpp:96
+#: modules/hostnameutil/hostnameutil.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
 msgstr "El nom de màquina no pot ser «localhost» ni «localhost.localdomain»."
 
-#: modules/hostnameutil/hostnameutil.cpp:98
+#: modules/hostnameutil/hostnameutil.cpp:99
 #, kde-format
 msgctxt "@info"
 msgid "Hostname is too long (maximum 253 characters)."
 msgstr "El nom de màquina és massa llarg (màxim 253 caràcters)."
 
-#: modules/hostnameutil/hostnameutil.cpp:100
+#: modules/hostnameutil/hostnameutil.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot start with a dot."
 msgstr "El nom de màquina no pot començar amb un punt."
 
-#: modules/hostnameutil/hostnameutil.cpp:102
+#: modules/hostnameutil/hostnameutil.cpp:103
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot end with a dot."
 msgstr "El nom de màquina no pot acabar amb un punt."
 
-#: modules/hostnameutil/hostnameutil.cpp:104
+#: modules/hostnameutil/hostnameutil.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot contain consecutive dots."
 msgstr "El nom de màquina no pot contenir punts consecutius."
 
-#: modules/hostnameutil/hostnameutil.cpp:106
+#: modules/hostnameutil/hostnameutil.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid "Hostname labels cannot be empty."
 msgstr "Les etiquetes del nom de màquina no poden estar buides."
 
-#: modules/hostnameutil/hostnameutil.cpp:108
+#: modules/hostnameutil/hostnameutil.cpp:109
 #, kde-format
 msgctxt "@info"
 msgid "Each hostname label must be at most 63 characters."
 msgstr "Cada etiqueta del nom de màquina pot tenir 63 caràcters com a màxim."
 
-#: modules/hostnameutil/hostnameutil.cpp:110
+#: modules/hostnameutil/hostnameutil.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid ""

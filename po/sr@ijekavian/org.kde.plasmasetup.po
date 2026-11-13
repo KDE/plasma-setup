@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-22 00:52+0000\n"
+"POT-Creation-Date: 2026-11-13 01:01+0000\n"
 "PO-Revision-Date: 2026-10-06 10:30+0200\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -224,55 +224,55 @@ msgctxt "@label:textbox"
 msgid "Hostname:"
 msgstr "Име домаћина:"
 
-#: modules/hostnameutil/hostnameutil.cpp:94
+#: modules/hostnameutil/hostnameutil.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be empty."
 msgstr "Име домаћина не смије бити празно."
 
-#: modules/hostnameutil/hostnameutil.cpp:96
+#: modules/hostnameutil/hostnameutil.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
 msgstr "Име домаћина не смије бити „localhost“ ни „localhost.localdomain“."
 
-#: modules/hostnameutil/hostnameutil.cpp:98
+#: modules/hostnameutil/hostnameutil.cpp:99
 #, kde-format
 msgctxt "@info"
 msgid "Hostname is too long (maximum 253 characters)."
 msgstr "Име домаћина је предугачко (највише 253 знака)."
 
-#: modules/hostnameutil/hostnameutil.cpp:100
+#: modules/hostnameutil/hostnameutil.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot start with a dot."
 msgstr "Име домаћина не смије почињати тачком."
 
-#: modules/hostnameutil/hostnameutil.cpp:102
+#: modules/hostnameutil/hostnameutil.cpp:103
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot end with a dot."
 msgstr "Име домаћина не смије се завршавати тачком."
 
-#: modules/hostnameutil/hostnameutil.cpp:104
+#: modules/hostnameutil/hostnameutil.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot contain consecutive dots."
 msgstr "Име домаћина не смије садржати узастопне тачке."
 
-#: modules/hostnameutil/hostnameutil.cpp:106
+#: modules/hostnameutil/hostnameutil.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid "Hostname labels cannot be empty."
 msgstr "Етикете у имену домаћина не смију бити празне."
 
-#: modules/hostnameutil/hostnameutil.cpp:108
+#: modules/hostnameutil/hostnameutil.cpp:109
 #, kde-format
 msgctxt "@info"
 msgid "Each hostname label must be at most 63 characters."
 msgstr "Свака етикета у имену домаћина смије имати највише 63 знака."
 
-#: modules/hostnameutil/hostnameutil.cpp:110
+#: modules/hostnameutil/hostnameutil.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid ""

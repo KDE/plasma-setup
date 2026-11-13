@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-22 00:52+0000\n"
+"POT-Creation-Date: 2026-11-13 01:01+0000\n"
 "PO-Revision-Date: 2026-02-05 15:00+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -227,49 +227,49 @@ msgctxt "@label:textbox"
 msgid "Hostname:"
 msgstr "Numele gazdei:"
 
-#: modules/hostnameutil/hostnameutil.cpp:94
+#: modules/hostnameutil/hostnameutil.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be empty."
 msgstr "Numele gazdei nu poate fi gol."
 
-#: modules/hostnameutil/hostnameutil.cpp:96
+#: modules/hostnameutil/hostnameutil.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot be “localhost” or “localhost.localdomain”."
 msgstr "Numele gazdei nu poate fi „localhost” sau „localhost.localdomain”."
 
-#: modules/hostnameutil/hostnameutil.cpp:98
+#: modules/hostnameutil/hostnameutil.cpp:99
 #, kde-format
 msgctxt "@info"
 msgid "Hostname is too long (maximum 253 characters)."
 msgstr "Numele gazdei e prea lung (maxim 253 de caractere)."
 
-#: modules/hostnameutil/hostnameutil.cpp:100
+#: modules/hostnameutil/hostnameutil.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot start with a dot."
 msgstr "Numele gazdei nu poate începe cu punct."
 
-#: modules/hostnameutil/hostnameutil.cpp:102
+#: modules/hostnameutil/hostnameutil.cpp:103
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot end with a dot."
 msgstr "Numele gazdei nu se poate sfârși cu punct."
 
-#: modules/hostnameutil/hostnameutil.cpp:104
+#: modules/hostnameutil/hostnameutil.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid "Hostname cannot contain consecutive dots."
 msgstr "Numele gazdei nu poate conține puncte consecutive."
 
-#: modules/hostnameutil/hostnameutil.cpp:106
+#: modules/hostnameutil/hostnameutil.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid "Hostname labels cannot be empty."
 msgstr "Numele gazdei nu poate avea etichete goale."
 
-#: modules/hostnameutil/hostnameutil.cpp:108
+#: modules/hostnameutil/hostnameutil.cpp:109
 #, kde-format
 msgctxt "@info"
 msgid "Each hostname label must be at most 63 characters."
@@ -277,7 +277,7 @@ msgstr ""
 "Fiecare etichetă pentru numele gazdei trebuie să aibă cel mult 63 de "
 "caractere."
 
-#: modules/hostnameutil/hostnameutil.cpp:110
+#: modules/hostnameutil/hostnameutil.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid ""
