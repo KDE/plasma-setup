@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: plasma-setup\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-13 01:01+0000\n"
-"PO-Revision-Date: 2026-10-06 10:30+0200\n"
+"PO-Revision-Date: 2026-11-14 16:15+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@latin\n"
@@ -195,6 +195,8 @@ msgid ""
 "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
 "interface>, the system will finish initial setup."
 msgstr ""
+"Vaš uređaj je skoro spreman.<nl/><nl/>Kad kliknete na <interface>Potvrdi</"
+"interface>, sistem će dovršiti početno podešavanje."
 
 #: modules/finished/contents/ui/main.qml:33
 #, kde-format
@@ -373,21 +375,13 @@ msgid "Next"
 msgstr "Sledeće"
 
 #: src/qml/Wizard.qml:351
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@action:button"
 msgid "Confirm"
-msgstr "Potvrdite lozinku"
+msgstr "Potvrdi"
 
 #: src/qml/Wizard.qml:370
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "Završi"
-
-#~ msgid "Welcome to<br/><b>Plasma Mobile</b>"
-#~ msgstr "Dobro došli u<br/><b>mobilnu Plasmu</b>"
-
-#~ msgid "Welcome to<br/><b>Plasma Desktop</b>"
-#~ msgstr "Dobro došli u<br/><b>Plasma površ</b>"
