@@ -150,11 +150,10 @@ void HostnameUtil::setHostname(const QString &hostname)
 {
     qCInfo(PlasmaSetupHostnameUtil) << "Setting hostname to:" << hostname;
 
-    const QString trimmed = hostname.trimmed();
-    if (trimmed == m_hostname) {
-        return;
-    }
+    // Do not return early if the hostname is unchanged! This setter is the only way to fixate a possible transient or
+    // default hostname.
 
+    const QString trimmed = hostname.trimmed();
     const HostnameValidationResult validationResult = validateHostname(trimmed);
     if (validationResult != HostnameValidationResult::Valid) {
         qCWarning(PlasmaSetupHostnameUtil) << "Rejected invalid hostname" << trimmed << hostnameValidationMessage(trimmed);

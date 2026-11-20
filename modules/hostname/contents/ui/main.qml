@@ -55,6 +55,10 @@ PlasmaSetupComponents.SetupModule {
             hostnameField.text = prefix + "-pc";
         }
         hostnameField.forceActiveFocus();
+        // The setter fixates the hostname. We want to do this here because the incoming hostname may be transient
+        // and if the user does not change the name it would not necessarily persist or be the same name on next boot.
+        const currentHostname = hostnameField.text
+        HostnameUtil.hostname = currentHostname
     }
 
     /**
