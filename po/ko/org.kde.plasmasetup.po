@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kiss\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-13 01:01+0000\n"
-"PO-Revision-Date: 2026-02-03 22:20+0100\n"
+"PO-Revision-Date: 2026-11-21 22:19+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -195,6 +195,8 @@ msgid ""
 "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
 "interface>, the system will finish initial setup."
 msgstr ""
+"장치가 거의 다 준비되었습니다.<nl/><nl/><interface>확인</interface>을 클릭하"
+"면 시스템의 초기 설정이 완료됩니다."
 
 #: modules/finished/contents/ui/main.qml:33
 #, kde-format
@@ -375,12 +377,10 @@ msgid "Next"
 msgstr "다음"
 
 #: src/qml/Wizard.qml:351
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@action:button"
 msgid "Confirm"
-msgstr "암호 확인"
+msgstr "확인"
 
 #: src/qml/Wizard.qml:370
 #, kde-format
