@@ -192,6 +192,8 @@ msgid ""
 "Your device is almost ready.<nl/><nl/>After clicking <interface>Confirm</"
 "interface>, the system will finish initial setup."
 msgstr ""
+"设备即将就绪。<nl/><nl/>点击 <interface>确认</interface> 之后，系统将完成初步"
+"安装。"
 
 #: modules/finished/contents/ui/main.qml:33
 #, kde-format
@@ -366,21 +368,13 @@ msgid "Next"
 msgstr "下一步"
 
 #: src/qml/Wizard.qml:351
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Confirm Password"
+#, kde-format
 msgctxt "@action:button"
 msgid "Confirm"
-msgstr "确认密码"
+msgstr "确认"
 
 #: src/qml/Wizard.qml:370
 #, kde-format
 msgctxt "@action:button"
 msgid "Finish"
 msgstr "完成"
-
-#~ msgid "Welcome to<br/><b>Plasma Mobile</b>"
-#~ msgstr "欢迎使用<br/><b>Plasma Mobile</b>"
-
-#~ msgid "Welcome to<br/><b>Plasma Desktop</b>"
-#~ msgstr "欢迎使用<br/><b>Plasma 桌面</b>"
