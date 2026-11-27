@@ -13,6 +13,8 @@
 #include <QLocale>
 #include <QTimer>
 
+#include <clocale>
+
 LanguageUtil::LanguageUtil(QObject *parent)
     : QObject(parent)
 {
@@ -56,9 +58,18 @@ void LanguageUtil::applyLanguage()
 
 void LanguageUtil::applyLanguageForCurrentSession()
 {
+    const QLocale locale(m_currentLanguage);
+    const QByteArray localeName = locale.name().toUtf8() + ".UTF-8";
+
     qputenv("LANGUAGE", m_currentLanguage.toUtf8());
-    qputenv("LANG", m_currentLanguage.toUtf8());
-    QLocale::setDefault(QLocale(m_currentLanguage));
+    qputenv("LANG", localeName);
+
+    // Update libc as well as Qt so gettext can translate when switching from C.UTF-8.
+    if (!std::setlocale(LC_MESSAGES, localeName.constData())) {
+        qCWarning(PlasmaSetupLanguageUtil) << "Failed to set message locale:" << localeName;
+    }
+
+    QLocale::setDefault(locale);
 
     QEvent localeChangeEvent(QEvent::LocaleChange);
     QCoreApplication::sendEvent(QCoreApplication::instance(), &localeChangeEvent);
